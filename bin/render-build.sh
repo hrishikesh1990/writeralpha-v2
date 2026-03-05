@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
 
-echo "==> Removing stale Gemfile.lock..."
-rm -f Gemfile.lock
-
 echo "==> Installing gems..."
 bundle install
 
