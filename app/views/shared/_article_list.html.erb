@@ -1,0 +1,15 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-gray-900 mb-8"><%= title %></h1>
+  <% if articles.respond_to?(:any?) && articles.any? %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <% articles.each do |article| %>
+        <a href="<%= blog_post_path(article) %>" class="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition p-5 group">
+          <h3 class="font-semibold text-gray-900 group-hover:text-purple-700"><%= article.title %></h3>
+          <p class="text-sm text-gray-500 mt-2 line-clamp-2"><%= article.excerpt %></p>
+        </a>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-gray-500 text-center py-12">Content coming soon.</p>
+  <% end %>
+</div>

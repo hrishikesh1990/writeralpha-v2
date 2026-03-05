@@ -1,0 +1,58 @@
+<section class="bg-gradient-to-br from-purple-50 via-white to-indigo-50 py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Discover <span class="text-purple-700">Gemstones</span> & Find the Perfect <span class="text-indigo-600">Name</span></h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Expert guides on <%= @gemstone_count %> gemstones, crystal healing, and 50,000+ creative business & team name ideas.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="/gemstones" class="bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-800 transition">Explore Gemstones</a>
+      <a href="/business-names" class="bg-white text-purple-700 border-2 border-purple-700 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">Business Names</a>
+      <a href="/team-names" class="bg-white text-indigo-600 border-2 border-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition">Team Names</a>
+    </div>
+  </div>
+</section>
+
+<% if @featured_gemstones.any? %>
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Popular Gemstones</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <% @featured_gemstones.each do |gem| %>
+        <a href="<%= gemstone_path(gem) %>" class="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition p-5 group">
+          <div class="w-full h-32 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-lg mb-3 flex items-center justify-center"><span class="text-3xl">💎</span></div>
+          <h3 class="font-semibold text-gray-900 group-hover:text-purple-700"><%= gem.name %></h3>
+          <p class="text-sm text-gray-500 mt-1 line-clamp-2"><%= gem.subtitle %></p>
+          <div class="flex flex-wrap gap-1 mt-2">
+            <% gem.colors.first(3).each do |c| %>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"><%= c.name %></span>
+            <% end %>
+          </div>
+        </a>
+      <% end %>
+    </div>
+    <div class="text-center mt-8"><a href="/gemstones" class="text-purple-700 font-semibold hover:text-purple-800">View All Gemstones →</a></div>
+  </div>
+</section>
+<% end %>
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Find Your Birthstone</h2>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-3">
+      <% %w[January February March April May June July August September October November December].each do |month| %>
+        <a href="/gemstones/birth-month/<%= month.downcase %>" class="bg-white hover:bg-purple-50 rounded-lg p-3 text-center transition border border-gray-200">
+          <span class="block text-sm font-medium text-gray-700"><%= month %></span>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Browse A-Z</h2>
+    <div class="flex flex-wrap justify-center gap-2">
+      <% ('A'..'Z').each do |letter| %>
+        <a href="/gemstones/starting-with/<%= letter.downcase %>" class="w-10 h-10 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:bg-purple-700 hover:text-white hover:border-purple-700 text-gray-700 font-semibold transition text-sm"><%= letter %></a>
+      <% end %>
+    </div>
+  </div>
+</section>

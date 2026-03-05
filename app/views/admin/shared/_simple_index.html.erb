@@ -1,0 +1,16 @@
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-2xl font-bold"><%= title %> (<%= records.count %>)</h1>
+  <a href="<%= new_path %>" class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm">+ New</a>
+</div>
+<div class="bg-white rounded-lg shadow-sm">
+  <table class="w-full"><tbody>
+    <% records.each do |r| %><tr class="border-t hover:bg-gray-50">
+      <td class="px-4 py-3 font-medium"><%= r.name %></td>
+      <td class="px-4 py-3 text-sm text-gray-500"><%= r.slug rescue "" %></td>
+      <td class="px-4 py-3 text-right">
+        <a href="<%= edit_path.call(r) %>" class="text-xs text-gray-700">Edit</a>
+        <a href="<%= delete_path.call(r) %>" data-turbo-method="delete" data-turbo-confirm="Delete?" class="text-xs text-red-500 ml-2">Del</a>
+      </td>
+    </tr><% end %>
+  </tbody></table>
+</div>

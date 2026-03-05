@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -e
+echo "=== Setting up WriteAlpha V2 ==="
+echo "Installing gems..."
+bundle install
+echo "Creating database..."
+bin/rails db:create
+echo "Running migrations..."
+bin/rails db:migrate
+echo "Seeding data (36 gemstones, 8 articles, 12 categories)..."
+bin/rails db:seed
+echo ""
+echo "=== Setup complete! ==="
+echo "Run: bin/dev"
+echo "Visit: http://localhost:3000"
+echo "Admin: http://localhost:3000/admin"

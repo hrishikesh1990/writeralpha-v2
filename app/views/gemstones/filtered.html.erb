@@ -1,0 +1,7 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <nav class="text-sm text-gray-500 mb-4"><a href="/" class="hover:text-purple-700">Home</a> › <a href="/gemstones" class="hover:text-purple-700">Gemstones</a> › <span class="text-gray-900"><%= @filter_name %></span></nav>
+  <h1 class="text-3xl font-bold text-gray-900 mb-2"><%= @filter_name %> Gemstones</h1>
+  <p class="text-gray-600 mb-8"><%= @meta[:description] %></p>
+  <%= render partial: "gemstones/grid", locals: { gemstones: @gemstones } %>
+  <div class="mt-8"><a href="<%= gemstones_path %>" class="text-purple-700 hover:text-purple-800 font-medium">← Back to All Gemstones</a></div>
+</div>

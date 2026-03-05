@@ -1,0 +1,57 @@
+<%= form_with(model: [:admin, gemstone], class: "space-y-6") do |f| %>
+  <% if gemstone.errors.any? %><div class="bg-red-50 border border-red-200 rounded-lg p-4"><ul class="text-sm text-red-700"><% gemstone.errors.full_messages.each do |m| %><li><%= m %></li><% end %></ul></div><% end %>
+  <div class="bg-white rounded-lg shadow-sm p-6">
+    <h2 class="font-semibold text-lg mb-4">Basic Info</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div><label class="block text-sm font-medium mb-1">Name *</label><%= f.text_field :name, class: "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Slug</label><%= f.text_field :slug, class: "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50" %></div>
+      <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">Subtitle</label><%= f.text_field :subtitle, class: "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm" %></div>
+      <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">Description</label><%= f.text_area :description, rows: 4, class: "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm" %></div>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-sm p-6">
+    <h2 class="font-semibold text-lg mb-4">Properties</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div><label class="block text-sm font-medium mb-1">Mohs Hardness</label><%= f.number_field :mohs_hardness, step: 0.5, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Transparency</label><%= f.select :transparency_id, @transparencies.map{|t|[t.name,t.id]}, {include_blank:"—"}, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Lustre</label><%= f.select :lustre_id, @lustres.map{|l|[l.name,l.id]}, {include_blank:"—"}, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Birth Month</label><%= f.select :birth_month_id, @birth_months.map{|b|[b.name,b.id]}, {include_blank:"—"}, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Element</label><%= f.select :element, %w[Fire Water Earth Air Spirit].map{|e|[e,e]}, {include_blank:"—"}, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Ruling Planet</label><%= f.text_field :ruling_planet, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-sm p-6">
+    <h2 class="font-semibold text-lg mb-4">Associations</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div><label class="block text-sm font-medium mb-2">Colors</label><div class="flex flex-wrap gap-2"><% @colors.each do |c| %>
+        <label class="inline-flex items-center gap-1 text-sm"><input type="checkbox" name="color_ids[]" value="<%= c.id %>" <%= "checked" if gemstone.colors.include?(c) %> class="rounded border-gray-300 text-purple-600"><%= c.name %></label>
+      <% end %></div></div>
+      <div><label class="block text-sm font-medium mb-2">Healing Powers</label><div class="flex flex-wrap gap-2"><% @healing_powers.each do |hp| %>
+        <label class="inline-flex items-center gap-1 text-sm"><input type="checkbox" name="healing_power_ids[]" value="<%= hp.id %>" <%= "checked" if gemstone.healing_powers.include?(hp) %> class="rounded border-gray-300 text-purple-600"><%= hp.name %></label>
+      <% end %></div></div>
+      <div class="md:col-span-2"><label class="block text-sm font-medium mb-2">Zodiac Signs</label><div class="flex flex-wrap gap-2"><% @zodiac_signs.each do |z| %>
+        <label class="inline-flex items-center gap-1 text-sm"><input type="checkbox" name="zodiac_sign_ids[]" value="<%= z.id %>" <%= "checked" if gemstone.zodiac_signs.include?(z) %> class="rounded border-gray-300 text-purple-600"><%= z.symbol %> <%= z.name %></label>
+      <% end %></div></div>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-sm p-6">
+    <h2 class="font-semibold text-lg mb-4">Content (Sub-Pages)</h2>
+    <div class="space-y-4">
+      <% [[:meaning_content,"Meaning & Properties"],[:who_should_not_wear_content,"Who Should Not Wear"],[:water_safety_content,"Can Go in Water?"],[:sleeping_with_content,"Sleeping Under Pillow"],[:how_to_identify_content,"How to Identify"],[:how_to_cleanse_content,"How to Cleanse"],[:combinations_content,"Crystal Combinations"],[:affirmations_content,"Affirmations"],[:price_guide_content,"Price Guide"]].each do |field, label| %>
+        <div><label class="block text-sm font-medium mb-1"><%= label %></label><%= f.text_area field, rows: 5, class: "w-full border rounded-lg px-3 py-2 text-sm font-mono" %></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-sm p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div><label class="block text-sm font-medium mb-1">Meta Title</label><%= f.text_field :meta_title, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="block text-sm font-medium mb-1">Image URL</label><%= f.text_field :featured_image_url, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">Meta Description</label><%= f.text_area :meta_description, rows: 2, class: "w-full border rounded-lg px-3 py-2 text-sm" %></div>
+      <div><label class="inline-flex items-center gap-2"><%= f.check_box :published, class: "rounded border-gray-300 text-purple-600" %> Published</label></div>
+    </div>
+  </div>
+  <div class="flex gap-3">
+    <%= f.submit gemstone.new_record? ? "Create Gemstone" : "Update Gemstone", class: "bg-purple-700 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-purple-800 cursor-pointer" %>
+    <a href="/admin/gemstones" class="text-gray-500 px-4 py-2 text-sm">Cancel</a>
+  </div>
+<% end %>

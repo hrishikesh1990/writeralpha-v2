@@ -1,0 +1,24 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">Angel Numbers</h1>
+  <p class="text-gray-600 mb-8">Discover the spiritual meaning behind angel numbers.</p>
+  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+    <% [111,222,333,444,555,666,777,888,999,1111,1010,1212,1234,000,1122].each do |n| %>
+      <a href="<%= angel_number_path(number: n) %>" class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-purple-300 hover:shadow-md transition group">
+        <span class="text-2xl font-bold text-purple-700 group-hover:text-purple-800"><%= n %></span>
+      </a>
+    <% end %>
+  </div>
+  <% if @articles.respond_to?(:any?) && @articles.any? %>
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Angel Number Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <% @articles.each do |a| %>
+          <a href="<%= blog_post_path(a) %>" class="bg-white rounded-xl border hover:shadow-md transition p-5 group">
+            <h3 class="font-semibold group-hover:text-purple-700"><%= a.title %></h3>
+            <p class="text-sm text-gray-500 mt-2"><%= a.excerpt %></p>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

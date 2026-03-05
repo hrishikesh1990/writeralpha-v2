@@ -1,0 +1,25 @@
+<h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+  <% @stats.each do |label, count| %>
+    <div class="bg-white rounded-lg shadow-sm p-5"><p class="text-sm text-gray-500"><%= label.to_s.humanize %></p><p class="text-3xl font-bold text-purple-700"><%= count %></p></div>
+  <% end %>
+</div>
+<div class="flex gap-3 mb-8">
+  <a href="/admin/gemstones/new" class="bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-800">+ New Gemstone</a>
+  <a href="/admin/articles/new" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">+ New Article</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="bg-white rounded-lg shadow-sm">
+    <div class="px-5 py-4 border-b font-semibold">Recent Gemstones</div>
+    <% @recent_gemstones.each do |g| %>
+      <div class="flex justify-between px-5 py-3 border-b border-gray-50 hover:bg-gray-50"><span class="font-medium"><%= g.name %></span><a href="<%= edit_admin_gemstone_path(g) %>" class="text-sm text-purple-700">Edit</a></div>
+    <% end %>
+  </div>
+  <div class="bg-white rounded-lg shadow-sm">
+    <div class="px-5 py-4 border-b font-semibold">Recent Articles</div>
+    <% @recent_articles.each do |a| %>
+      <div class="flex justify-between px-5 py-3 border-b border-gray-50 hover:bg-gray-50"><span class="font-medium text-sm"><%= a.title.truncate(50) %></span><a href="<%= edit_admin_article_path(a) %>" class="text-sm text-indigo-600">Edit</a></div>
+    <% end %>
+    <% if @recent_articles.empty? %><p class="p-5 text-gray-500 text-sm">No articles yet.</p><% end %>
+  </div>
+</div>

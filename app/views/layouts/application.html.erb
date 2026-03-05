@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= @meta&.dig(:title) || "Writer Alpha — Gemstone & Business Naming Guide" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="<%= @meta&.dig(:description) || "Explore gemstones, crystals, and business naming ideas." %>">
+  <meta charset="utf-8">
+  <link rel="canonical" href="<%= request.original_url.split('?').first %>">
+  <meta property="og:title" content="<%= @meta&.dig(:title) || "Writer Alpha" %>">
+  <meta property="og:description" content="<%= @meta&.dig(:description) %>">
+  <meta property="og:url" content="<%= request.original_url %>">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col">
+  <!-- Nav -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-xl font-bold text-purple-700">Writer Alpha</a>
+          <div class="hidden md:flex ml-10 space-x-6">
+            <a href="/gemstones" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Gemstones</a>
+            <a href="/business-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Business Names</a>
+            <a href="/team-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Team Names</a>
+            <a href="/instagram-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Instagram Names</a>
+            <a href="/angel-numbers" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Angel Numbers</a>
+            <a href="/blog" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Blog</a>
+          </div>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-4 py-3 space-y-2">
+      <a href="/gemstones" class="block text-gray-600 py-1">Gemstones</a>
+      <a href="/business-names" class="block text-gray-600 py-1">Business Names</a>
+      <a href="/team-names" class="block text-gray-600 py-1">Team Names</a>
+      <a href="/instagram-names" class="block text-gray-600 py-1">Instagram Names</a>
+      <a href="/angel-numbers" class="block text-gray-600 py-1">Angel Numbers</a>
+      <a href="/blog" class="block text-gray-600 py-1">Blog</a>
+    </div>
+  </nav>
+
+  <!-- Flash -->
+  <% if notice %><div class="max-w-7xl mx-auto px-4 mt-4"><div class="bg-green-50 border border-green-200 text-green-800 rounded-lg p-3 text-sm"><%= notice %></div></div><% end %>
+
+  <!-- Main -->
+  <main class="flex-1"><%= yield %></main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 border-t mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-purple-700 mb-3">Writer Alpha</h3>
+          <p class="text-sm text-gray-500">Gemstones, crystals, and business naming.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2 text-sm">Gemstones</h4>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li><a href="/gemstones" class="hover:text-purple-700">All Gemstones</a></li>
+            <li><a href="/gemstones/color/blue" class="hover:text-purple-700">Blue Gemstones</a></li>
+            <li><a href="/gemstones/healing/protection" class="hover:text-purple-700">Protection Crystals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2 text-sm">Names</h4>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li><a href="/business-names" class="hover:text-purple-700">Business Names</a></li>
+            <li><a href="/team-names" class="hover:text-purple-700">Team Names</a></li>
+            <li><a href="/instagram-names" class="hover:text-purple-700">Instagram Names</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-700 mb-2 text-sm">Company</h4>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li><a href="/about" class="hover:text-purple-700">About</a></li>
+            <li><a href="/contact" class="hover:text-purple-700">Contact</a></li>
+            <li><a href="/admin" class="hover:text-purple-700">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t mt-8 pt-8 text-center text-sm text-gray-400">&copy; <%= Date.current.year %> Writer Alpha</div>
+    </div>
+  </footer>
+</body>
+</html>

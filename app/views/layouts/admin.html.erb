@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin — Writer Alpha</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="bg-gray-100 text-gray-900 antialiased">
+  <nav class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4"><div class="flex justify-between h-14">
+      <div class="flex items-center space-x-6">
+        <a href="/admin" class="font-bold text-white">WA Admin</a>
+        <a href="/admin/gemstones" class="text-gray-300 hover:text-white text-sm">Gemstones</a>
+        <a href="/admin/articles" class="text-gray-300 hover:text-white text-sm">Articles</a>
+        <a href="/admin/categories" class="text-gray-300 hover:text-white text-sm">Categories</a>
+        <a href="/admin/redirects" class="text-gray-300 hover:text-white text-sm">Redirects</a>
+      </div>
+      <div class="flex items-center"><a href="/" class="text-gray-400 hover:text-white text-sm" target="_blank">View Site</a></div>
+    </div></div>
+  </nav>
+  <% if notice %><div class="max-w-7xl mx-auto px-4 mt-4"><div class="bg-green-50 border border-green-200 text-green-800 rounded-lg p-3 text-sm"><%= notice %></div></div><% end %>
+  <main class="max-w-7xl mx-auto px-4 py-8"><%= yield %></main>
+</body>
+</html>

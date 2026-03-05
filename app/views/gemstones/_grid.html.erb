@@ -1,0 +1,20 @@
+<% if gemstones.any? %>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <% gemstones.each do |gem| %>
+      <a href="<%= gemstone_path(gem) %>" class="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition p-5 group">
+        <div class="w-full h-32 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-lg mb-3 flex items-center justify-center"><span class="text-3xl">💎</span></div>
+        <h3 class="font-semibold text-gray-900 group-hover:text-purple-700 transition"><%= gem.name %></h3>
+        <p class="text-sm text-gray-500 mt-1 line-clamp-2"><%= gem.subtitle %></p>
+        <div class="flex flex-wrap gap-1 mt-2">
+          <% gem.colors.first(3).each do |c| %><span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"><%= c.name %></span><% end %>
+          <% if gem.mohs_hardness %><span class="text-xs bg-purple-50 text-purple-600 px-2 py-0.5 rounded-full">Mohs: <%= gem.mohs_hardness %></span><% end %>
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% else %>
+  <div class="text-center py-16 text-gray-500">
+    <p class="text-lg">No gemstones found.</p>
+    <a href="<%= gemstones_path %>" class="text-purple-700 mt-2 inline-block">Browse all gemstones</a>
+  </div>
+<% end %>

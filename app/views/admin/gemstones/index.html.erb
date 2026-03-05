@@ -1,0 +1,25 @@
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-2xl font-bold">Gemstones (<%= @gemstones.count %>)</h1>
+  <a href="/admin/gemstones/new" class="bg-purple-700 text-white px-4 py-2 rounded-lg text-sm">+ New</a>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-x-auto">
+  <table class="w-full"><thead class="bg-gray-50"><tr>
+    <th class="px-4 py-3 text-left text-xs text-gray-500 font-medium">Name</th>
+    <th class="px-4 py-3 text-left text-xs text-gray-500 font-medium">Colors</th>
+    <th class="px-4 py-3 text-left text-xs text-gray-500 font-medium">Hardness</th>
+    <th class="px-4 py-3 text-left text-xs text-gray-500 font-medium">Published</th>
+    <th class="px-4 py-3"></th>
+  </tr></thead><tbody>
+    <% @gemstones.each do |g| %><tr class="border-t hover:bg-gray-50">
+      <td class="px-4 py-3"><span class="font-medium"><%= g.name %></span><br><span class="text-xs text-gray-400"><%= g.slug %></span></td>
+      <td class="px-4 py-3"><div class="flex flex-wrap gap-1"><% g.colors.each do |c| %><span class="text-xs bg-gray-100 px-2 py-0.5 rounded-full"><%= c.name %></span><% end %></div></td>
+      <td class="px-4 py-3 text-sm"><%= g.mohs_hardness %></td>
+      <td class="px-4 py-3"><%= g.published? ? '<span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Live</span>'.html_safe : '<span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">Draft</span>'.html_safe %></td>
+      <td class="px-4 py-3 text-right space-x-2">
+        <a href="<%= gemstone_path(g) %>" class="text-xs text-gray-400 hover:text-gray-600" target="_blank">View</a>
+        <a href="<%= edit_admin_gemstone_path(g) %>" class="text-xs text-purple-700">Edit</a>
+        <a href="<%= admin_gemstone_path(g) %>" data-turbo-method="delete" data-turbo-confirm="Delete?" class="text-xs text-red-500">Del</a>
+      </td>
+    </tr><% end %>
+  </tbody></table>
+</div>
