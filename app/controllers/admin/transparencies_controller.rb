@@ -1,5 +1,5 @@
 module Admin
-  class TransparencysController < BaseController
+  class TransparenciesController < BaseController
     before_action :set_record, only: [:edit, :update, :destroy]
     def index; @records = Transparency.order(:name); end
     def new; @record = Transparency.new; end
