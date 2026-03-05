@@ -1,0 +1,24 @@
+databases:
+  - name: writeralpha-v2-db
+    plan: free
+    databaseName: writeralpha_v2_production
+    user: writeralpha
+
+services:
+  - type: web
+    name: writeralpha-v2
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: writeralpha-v2-db
+          property: connectionString
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
