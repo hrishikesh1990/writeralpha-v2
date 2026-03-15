@@ -1,1 +1,197 @@
 @import "tailwindcss";
+
+/* Article prose styling */
+.prose {
+  color: #374151;
+  line-height: 1.75;
+  font-size: 1.125rem;
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+/* Headings */
+.prose h2 {
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.33;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prose h3 {
+  color: #111827;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.4;
+}
+
+.prose h4 {
+  color: #111827;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+/* Links */
+.prose a {
+  color: #7c3aed;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: #6d28d9;
+}
+
+/* Bold / Emphasis */
+.prose strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Lists */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose li::marker {
+  color: #6b7280;
+}
+
+.prose ol > li::marker {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Nested lists reduce spacing */
+.prose li > ul,
+.prose li > ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Images */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose figure img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose figcaption {
+  color: #6b7280;
+  font-size: 0.875em;
+  line-height: 1.4;
+  margin-top: 0.75em;
+  text-align: center;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  font-style: italic;
+  color: #4b5563;
+  border-left: 3px solid #7c3aed;
+  padding-left: 1em;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+}
+
+/* Horizontal rules */
+.prose hr {
+  border-color: #e5e7eb;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+/* prose-lg size adjustments */
+.prose-lg {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .prose-lg {
+    font-size: 1.175rem;
+  }
+}
+
+/* Remove excessive spacing between consecutive lists (TOC-like) */
+.prose ul + ul,
+.prose ol + ol {
+  margin-top: 0;
+}
+
+/* Ensure the first element after a heading has no extra top margin */
+.prose h2 + p,
+.prose h3 + p,
+.prose h2 + ul,
+.prose h3 + ul,
+.prose h2 + ol,
+.prose h3 + ol,
+.prose h2 + figure,
+.prose h3 + figure {
+  margin-top: 0.75em;
+}
+
+/* Responsive images in content */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .prose h2 {
+    font-size: 1.35em;
+  }
+
+  .prose h3 {
+    font-size: 1.15em;
+  }
+
+  .prose img {
+    border-radius: 0.375rem;
+  }
+}

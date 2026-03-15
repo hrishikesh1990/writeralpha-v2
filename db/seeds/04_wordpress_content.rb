@@ -1574,66 +1574,18 @@ Article.find_or_create_by!(slug: "seo-strategy-for-startups") do |a|
   a.published_at = DateTime.parse("2021-11-01T11:28:00")
 end
 
-cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
-Article.find_or_create_by!(slug: "confirmation") do |a|
-  a.title = "Confirmation"
-  a.excerpt = ""
-  a.content = "Thank you for your purchase!\n\nYour purchase session could not be retrieved."
-  a.category = cat
-  a.published = true
-  a.published_at = DateTime.parse("2024-03-31T04:51:08")
-end
-
-cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
-Article.find_or_create_by!(slug: "order-history") do |a|
-  a.title = "Order History"
-  a.excerpt = ""
-  a.content = ""
-  a.category = cat
-  a.published = true
-  a.published_at = DateTime.parse("2024-03-31T04:51:08")
-end
-
-cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
-Article.find_or_create_by!(slug: "transaction-failed") do |a|
-  a.title = "Transaction Failed"
-  a.excerpt = ""
-  a.content = "Your transaction failed; please try again or contact site support."
-  a.category = cat
-  a.published = true
-  a.published_at = DateTime.parse("2024-03-31T04:51:08")
-end
-
-cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
-Article.find_or_create_by!(slug: "receipt") do |a|
-  a.title = "Receipt"
-  a.excerpt = ""
-  a.content = "Sorry, trouble retrieving order receipt."
-  a.category = cat
-  a.published = true
-  a.published_at = DateTime.parse("2024-03-31T04:51:08")
-end
-
-cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
-Article.find_or_create_by!(slug: "checkout") do |a|
-  a.title = "Checkout"
-  a.excerpt = ""
-  a.content = "Your cart is empty."
-  a.category = cat
-  a.published = true
-  a.published_at = DateTime.parse("2024-03-31T04:51:08")
-end
+# Removed: confirmation, order-history, transaction-failed, receipt, checkout (transactional stubs)
 
 cat = Category.find_by(slug: "page") || Category.find_or_create_by!(name: "Page", slug: "page")
 Article.find_or_create_by!(slug: "write-for-us") do |a|
   a.title = "Write for Us: Lifestyle, Travel, Fashion, Jewellery, Gemstones & More"
   a.excerpt = ""
-  a.content = "Submit a high quality guest post and write for us on Lifestyle, Travel, Jewellery, Gemstones & related domains. Read on to know more about how to submit a guest post on Writer Alpha.\n\nWriter Alpha is an information hub for gemstones, business, startups & technology. Are you interested to write a guest post for us?\n\nWe accept guest posts from startup founders, working professionals, bloggers & thought leaders. Our guidelines will help you understand what to expect and how to get published on Writer Alpha.\n\n## Guidelines for guest post on Writer Alpha\n\n• Please ensure that your article is grammatically correct, easy to read, and flows smoothly.\n• Additionally, it is important that your content is completely original and not previously published.\n• Ensure that all data, references, and quotes are properly attributed.\n• Finally, if you include a link to your website or content, it should be placed at the end of the article and not be overly promotional. Please note that links at the beginning of the article will be removed.\n\n## How to submit your guest post pitch?\n\nTo submit your pitch or to inquire about getting published, please send your guest post pitch to hrishikesh@flexiple.com. Please use “Guest Post: Writer Alpha” as the subject line of your email.\n\n## Formatting guidelines\n\n• To ensure your article meets the guidelines, please ensure it contains at least 1000 words and includes appropriate headings (H2, H3) for subheadings.\n• To improve readability, use simple sentences and keep paragraphs to no more than 4 to 6 sentences.\n• Additionally, please keep sub-sections concise and under 400 words.\n• Aim to use plain language without jargon, buzzwords, or unnecessary filler words to make the content easily understandable.\n• Utilize bullet points where possible to break up dense text.\n• Finally, make sure to include alt text and sources for all images you use.\n\n## Guest post topics\n\nOur content focuses on specific topics to ensure it is relevant to our readers. If you wish to contribute a guest post, we welcome submissions on the following subjects:\n\n• Gemstones\n• Startups\n• Business\n• Entrepreneurship\n• SEO\n• Email Marketing\n• Content Marketing\n• Social Media Marketing\n• Digital Marketing\n• Conversion Optimization\n• Productivity\n• Web Design\n• Web Development\n• Blogging\n\n## Review process for guest posts\n\n• We aim to respond to your guest post pitch within 3-5 business days to inform you of our decision and the next steps.\n• If we proceed with your pitch/article, we will provide guidance on any necessary changes or iterations.\n• Please note that we reserve the right to reject or modify your submission as needed.\n• If we publish your article, you agree not to publish it elsewhere, including your own blog or website.\n• However, if we do not proceed with your article, we relinquish all rights to it, and you are free to publish or use it as you wish.\n\n## How to search for us on Google?\n\nThe following keywords or search phrases are commonly used to find us on Google:\n\n• Gemstones + Guest Post\n• Startups + Guest Post\n• Business + Guest Post\n• Entrepreneurship + Guest Post\n• SEO + Guest Post\n• Email Marketing + Guest Post\n• Content Marketing + Guest Post\n• Social Media Marketing + Guest Post\n• Digital Marketing + Guest Post\n• Conversion Optimization + Guest Post\n• Productivity + Guest Post\n• Web Design + Guest Post\n• Web Development + Guest Post\n• Blogging + Guest Post\n• Write for Us + Gemstones\n• Write for Us + Startups\n• Write for Us + Business\n• Write for Us + Entrepreneurship\n• Write for Us + SEO\n• Write for Us + Email Marketing\n• Write for Us + Content Marketing\n• Write for Us + Social Media Marketing\n• Write for Us + Digital Marketing\n• Write for Us + Conversion Optimization\n• Write for Us + Productivity\n• Write for Us + Web Design\n• Write for Us + Web Development\n• Write for Us + Blogging"
+  a.content = "" # Content imported from WordPress API via rake content:reimport
   a.category = cat
   a.published = true
   a.published_at = DateTime.parse("2023-02-16T16:43:24")
 end
 
-puts "=== WordPress content imported! ==="
-puts "  Gemstones updated: 86"
-puts "  Articles created: 102"
+puts “=== WordPress content imported! ===”
+puts “  Gemstones updated: #{Gemstone.count}”
+puts “  Articles created: #{Article.count}”

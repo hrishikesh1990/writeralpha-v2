@@ -2,7 +2,13 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
     <% gemstones.each do |gem| %>
       <a href="<%= gemstone_path(gem) %>" class="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition p-5 group">
-        <div class="w-full h-32 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-lg mb-3 flex items-center justify-center"><span class="text-3xl">💎</span></div>
+        <div class="w-full h-32 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+          <% if gem.featured_image_url.present? %>
+            <img src="<%= gem.featured_image_url %>" alt="<%= gem.name %>" class="w-full h-full object-cover" loading="lazy">
+          <% else %>
+            <span class="text-3xl">💎</span>
+          <% end %>
+        </div>
         <h3 class="font-semibold text-gray-900 group-hover:text-purple-700 transition"><%= gem.name %></h3>
         <p class="text-sm text-gray-500 mt-1 line-clamp-2"><%= gem.subtitle %></p>
         <div class="flex flex-wrap gap-1 mt-2">

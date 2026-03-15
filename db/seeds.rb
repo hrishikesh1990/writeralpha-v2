@@ -154,41 +154,11 @@ cats.each { |slug, name| Category.find_or_create_by!(slug: slug) { |c| c.name = 
 puts "  #{Category.count} categories"
 
 # ===== ARTICLES =====
-puts "Seeding articles..."
-biz_cat = Category.find_by(slug: "business-names")
-ig_cat = Category.find_by(slug: "instagram-names")
-team_cat = Category.find_by(slug: "team-names")
+# Articles are seeded from WordPress content in db/seeds/04_wordpress_content.rb
+# No dummy articles here — all content comes from the live WordPress site
+puts "\n--- Loading additional seed files ---"
+Dir[Rails.root.join("db/seeds/*.rb")].sort.each { |f| load f }
 
-articles = [
-  {t:"1000+ Instagram Usernames for Boys: Cool, Funny & Attitude",s:"instagram-usernames-for-boys",cat:ig_cat,
-   e:"Best Instagram usernames for boys. Cool, funny, attitude names.",
-   c:"Top 100 Instagram Names for Boys:\n1. CoolGuy2026\n2. EpicHero\n3. AdventureSeeker\n4. TheRealMaverick\n5. UrbanExplorer\n6. FutureLegend\n7. TechGuru\n8. StyleIcon\n9. MusicMaestro\n10. GameChanger"},
-  {t:"3200+ Cleaning Business Names",s:"cleaning-business-names",cat:biz_cat,
-   e:"Unique cleaning business name ideas.",
-   c:"Top Cleaning Names:\n1. Spotless Solutions\n2. Clean Sweep Co.\n3. Pristine Cleaners\n4. Shine Bright Cleaning\n5. Dust Busters Inc."},
-  {t:"500+ Boutique Names: Chic & Creative",s:"boutique-names",cat:biz_cat,
-   e:"Chic boutique name ideas.",c:"Top Names:\n1. Velvet & Vine\n2. The Style Attic\n3. Blush Boutique\n4. Urban Chic\n5. Dainty Darling"},
-  {t:"500+ Food Truck Names: Creative & Catchy",s:"food-truck-names",cat:biz_cat,
-   e:"Creative food truck names.",c:"Top Names:\n1. Rolling Feast\n2. Street Eats Co.\n3. Flavor on Wheels\n4. The Roaming Kitchen\n5. Bite & Go"},
-  {t:"700+ Football Team Names: Funny & Creative",s:"football",cat:team_cat,
-   e:"Football team name ideas.",c:"Top Names:\n1. Thunder Bolts\n2. Iron Eagles\n3. Storm Chasers\n4. Night Hawks\n5. Fire Breathers"},
-  {t:"600+ Trivia Team Names: Clever & Winning",s:"trivia",cat:team_cat,
-   e:"Trivia team name ideas.",c:"Top Names:\n1. Quiz Whiz Kids\n2. Brain Busters\n3. The Know-It-Alls\n4. Fact Finders\n5. Smarty Pants"},
-  {t:"Catchy Jewelry Slogans & Taglines",s:"jewelry-slogans",cat:Category.find_by(slug:"slogans"),
-   e:"Jewelry slogans that sell.",c:"1. Shine from within\n2. Every piece tells a story\n3. Sparkle with confidence\n4. Handcrafted with love"},
-  {t:"500+ Crystal Company Names",s:"crystal-company-names",cat:biz_cat,
-   e:"Crystal business names.",c:"1. Crystal Haven\n2. Mystic Gems\n3. The Crystal Garden\n4. Moonstone Market\n5. Sacred Stones"},
-]
-
-articles.each do |data|
-  Article.find_or_create_by!(slug: data[:s]) do |a|
-    a.title = data[:t]; a.content = data[:c]; a.excerpt = data[:e]
-    a.category = data[:cat]; a.published = true
-    a.published_at = Time.current - rand(1..90).days
-  end
-end
-
-puts "  #{Article.count} articles seeded"
 puts "\n=== Seeding complete! ==="
 puts "  Gemstones: #{Gemstone.count}"
 puts "  Articles: #{Article.count}"
