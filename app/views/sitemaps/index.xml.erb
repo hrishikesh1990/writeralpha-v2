@@ -9,8 +9,6 @@
   <% @healing_powers.each do |hp| %><url><loc><%= gemstones_by_healing_url(value: hp.slug) %></loc><priority>0.6</priority></url><% end %>
   <% @birth_months.each do |bm| %><url><loc><%= gemstones_by_birth_month_url(value: bm.name.downcase) %></loc><priority>0.6</priority></url><% end %>
   <% @zodiac_signs.each do |z| %><url><loc><%= gemstones_by_zodiac_url(value: z.slug) %></loc><priority>0.6</priority></url><% end %>
-  <url><loc><%= business_names_url %></loc><priority>0.8</priority></url>
-  <url><loc><%= team_names_url %></loc><priority>0.7</priority></url>
   <url><loc><%= angel_numbers_url %></loc><priority>0.6</priority></url>
   <% @articles.each do |a| %><url><loc><%= blog_post_url(a) %></loc><lastmod><%= a.updated_at.strftime("%Y-%m-%d") %></lastmod><priority>0.6</priority></url><% end %>
 </urlset>

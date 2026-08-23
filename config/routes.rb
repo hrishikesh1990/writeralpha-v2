@@ -54,31 +54,6 @@ Rails.application.routes.draw do
   get "angel-numbers", to: "angel_numbers#index", as: :angel_numbers
   get "angel-numbers/:number", to: "angel_numbers#show", as: :angel_number
 
-  # ===== BUSINESS NAMING =====
-  get "business-names", to: "business_names#index", as: :business_names
-  get "business-names/style/:style", to: "business_names#by_style", as: :business_names_by_style
-  get "business-names/:slug", to: "business_names#show", as: :business_name
-
-  # ===== TEAM NAMES =====
-  get "team-names", to: "team_names#index", as: :team_names
-  get "team-names/:slug", to: "team_names#show", as: :team_name
-  get "group-names", to: "team_names#groups_index", as: :group_names
-  get "group-names/:slug", to: "team_names#group_show", as: :group_name
-
-  # ===== SOCIAL MEDIA NAMES =====
-  get "instagram-names", to: "platform_names#index", defaults: { platform: "instagram" }, as: :instagram_names
-  get "instagram-names/:slug", to: "platform_names#show", defaults: { platform: "instagram" }, as: :instagram_name
-  get "tiktok-names", to: "platform_names#index", defaults: { platform: "tiktok" }, as: :tiktok_names
-  get "youtube-names", to: "platform_names#index", defaults: { platform: "youtube" }, as: :youtube_names
-  get "gaming-names", to: "platform_names#index", defaults: { platform: "gaming" }, as: :gaming_names
-  get "discord-names", to: "platform_names#index", defaults: { platform: "discord" }, as: :discord_names
-
-  # ===== SLOGANS / TOOLS / GUIDES / START =====
-  get "slogans/:slug", to: "content_pages#show", defaults: { section: "slogans" }, as: :slogan
-  get "tools/:slug", to: "content_pages#show", defaults: { section: "tools" }, as: :tool
-  get "guides/:slug", to: "content_pages#show", defaults: { section: "guides" }, as: :guide
-  get "start/:slug", to: "content_pages#show", defaults: { section: "start" }, as: :start_guide
-
   # ===== SHARED =====
   get "blog", to: "blog#index", as: :blog
   get "blog/:slug", to: "blog#show", as: :blog_post
@@ -86,4 +61,31 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact"
   get "write-for-us", to: "pages#write_for_us"
   get "sitemap.xml", to: "sitemaps#index", defaults: { format: :xml }
+
+  # ===== LEGACY WORDPRESS IMAGES (backlinked — 301 to CDN once configured) =====
+  get "wp-content/uploads/*image_path", to: "legacy#image", format: false, as: :legacy_image
+
+  # ===== RETIRED SECTIONS (naming niche killed Aug 2026) → 410 Gone =====
+  # A 410 tells Google the removal is deliberate; faster deindex than 404.
+  %w[
+    business-names team-names group-names instagram-names tiktok-names
+    youtube-names gaming-names discord-names slogans tools guides start
+  ].each do |section|
+    get "#{section}(/*rest)", to: "legacy#gone", format: false
+  end
+
+  # ===== LEGACY WORDPRESS PATHS =====
+  # /gemstone/* (old singular prefix) resolves via the redirects table.
+  # Backlinked off-topic sections (twitter-threads, design, hiring, marketing) 301 home.
+  # Old /business/* paths are gone (410), a handful with backlinks 301 home.
+  get "twitter-threads(/*rest)", to: redirect("/", status: 301), format: false
+  get "design(/*rest)", to: redirect("/", status: 301), format: false
+  get "hiring(/*rest)", to: redirect("/", status: 301), format: false
+  get "marketing(/*rest)", to: redirect("/", status: 301), format: false
+  get "business(/*rest)", to: "legacy#business", format: false
+  get "gemstone/*old_path", to: "legacy#resolve", format: false
+
+  # Final catch-all: consult redirects table, else 404
+  match "*unmatched", to: "legacy#resolve", via: :get, format: false,
+        constraints: ->(req) { !req.path.start_with?("/rails/", "/assets/", "/up") }
 end

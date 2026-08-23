@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= @meta&.dig(:title) || "Writer Alpha — Gemstone & Business Naming Guide" %></title>
+  <title><%= @meta&.dig(:title) || "Writer Alpha — Gemstone & Crystal Guide" %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="<%= @meta&.dig(:description) || "Explore gemstones, crystals, and business naming ideas." %>">
+  <meta name="description" content="<%= @meta&.dig(:description) || "Expert guides to gemstones, crystal healing, zodiac stones, and birthstones." %>">
   <meta charset="utf-8">
   <link rel="canonical" href="<%= request.original_url.split('?').first %>">
   <meta property="og:title" content="<%= @meta&.dig(:title) || "Writer Alpha" %>">
@@ -22,10 +22,10 @@
         <div class="flex items-center">
           <a href="/" class="text-xl font-bold text-purple-700">Writer Alpha</a>
           <div class="hidden md:flex ml-10 space-x-6">
-            <a href="/gemstones" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Gemstones</a>
-            <a href="/business-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Business Names</a>
-            <a href="/team-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Team Names</a>
-            <a href="/instagram-names" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Instagram Names</a>
+            <a href="/gemstones" class="text-gray-600 hover:text-purple-700 text-sm font-medium">All Gemstones</a>
+            <a href="/gemstones/healing/protection" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Healing Crystals</a>
+            <a href="/gemstones/zodiac/aries" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Zodiac Stones</a>
+            <a href="/gemstones/birth-month/january" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Birthstones</a>
             <a href="/angel-numbers" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Angel Numbers</a>
             <a href="/blog" class="text-gray-600 hover:text-purple-700 text-sm font-medium">Blog</a>
           </div>
@@ -38,10 +38,10 @@
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-4 py-3 space-y-2">
-      <a href="/gemstones" class="block text-gray-600 py-1">Gemstones</a>
-      <a href="/business-names" class="block text-gray-600 py-1">Business Names</a>
-      <a href="/team-names" class="block text-gray-600 py-1">Team Names</a>
-      <a href="/instagram-names" class="block text-gray-600 py-1">Instagram Names</a>
+      <a href="/gemstones" class="block text-gray-600 py-1">All Gemstones</a>
+      <a href="/gemstones/healing/protection" class="block text-gray-600 py-1">Healing Crystals</a>
+      <a href="/gemstones/zodiac/aries" class="block text-gray-600 py-1">Zodiac Stones</a>
+      <a href="/gemstones/birth-month/january" class="block text-gray-600 py-1">Birthstones</a>
       <a href="/angel-numbers" class="block text-gray-600 py-1">Angel Numbers</a>
       <a href="/blog" class="block text-gray-600 py-1">Blog</a>
     </div>
@@ -59,7 +59,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h3 class="font-bold text-purple-700 mb-3">Writer Alpha</h3>
-          <p class="text-sm text-gray-500">Gemstones, crystals, and business naming.</p>
+          <p class="text-sm text-gray-500">Your guide to gemstones, crystal healing, and spiritual meaning.</p>
         </div>
         <div>
           <h4 class="font-semibold text-gray-700 mb-2 text-sm">Gemstones</h4>
@@ -70,11 +70,11 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-700 mb-2 text-sm">Names</h4>
+          <h4 class="font-semibold text-gray-700 mb-2 text-sm">Explore</h4>
           <ul class="space-y-1 text-sm text-gray-500">
-            <li><a href="/business-names" class="hover:text-purple-700">Business Names</a></li>
-            <li><a href="/team-names" class="hover:text-purple-700">Team Names</a></li>
-            <li><a href="/instagram-names" class="hover:text-purple-700">Instagram Names</a></li>
+            <li><a href="/angel-numbers" class="hover:text-purple-700">Angel Numbers</a></li>
+            <li><a href="/gemstones/zodiac/aries" class="hover:text-purple-700">Zodiac Stones</a></li>
+            <li><a href="/blog" class="hover:text-purple-700">Blog</a></li>
           </ul>
         </div>
         <div>
