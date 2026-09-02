@@ -67,16 +67,17 @@ class GemstonesController < ApplicationController
   end
 
   def load_filter_options
-    @colors = Color.joins(:gemstones).merge(Gemstone.published).distinct.order(:id)
-    @healing_powers = HealingPower.joins(:gemstones).merge(Gemstone.published).distinct.order(:id)
-    @transparencies = Transparency.joins(:gemstones).merge(Gemstone.published).distinct.order(:id)
+    browsable = Gemstone.published.listed
+    @colors = Color.joins(:gemstones).merge(browsable).distinct.order(:id)
+    @healing_powers = HealingPower.joins(:gemstones).merge(browsable).distinct.order(:id)
+    @transparencies = Transparency.joins(:gemstones).merge(browsable).distinct.order(:id)
     @zodiac_signs = ZodiacSign.order(:id)
-    @letters = Gemstone.published.pluck(:name).map { |n| n[0].upcase }.uniq.sort
-    @total_count = Gemstone.published.count
+    @letters = browsable.pluck(:name).map { |n| n[0].upcase }.uniq.sort
+    @total_count = browsable.count
   end
 
   def directory_scope
-    Gemstone.published.alphabetical.preload(:colors, :healing_powers, :transparency)
+    Gemstone.published.listed.alphabetical.preload(:colors, :healing_powers, :transparency)
   end
 
   def active_filters_from_params
@@ -105,7 +106,7 @@ class GemstonesController < ApplicationController
   def similar_stones(gemstone)
     color_ids = gemstone.color_ids
     power_ids = gemstone.healing_power_ids
-    Gemstone.published.where.not(id: gemstone.id).includes(:colors, :healing_powers)
+    Gemstone.published.listed.where.not(id: gemstone.id).includes(:colors, :healing_powers)
       .map { |g| [g, (g.color_ids & color_ids).size + (g.healing_power_ids & power_ids).size] }
       .select { |_, score| score.positive? }
       .sort_by { |g, score| [-score, g.name] }

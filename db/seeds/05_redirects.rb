@@ -1,141 +1,153 @@
 puts "=== Seeding legacy URL redirects (gemstone migration map) ==="
 
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-pyrite-stone") { |r| r.new_path = "/gemstones/pyrite/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-amethyst-stone") { |r| r.new_path = "/gemstones/amethyst/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-jade") { |r| r.new_path = "/gemstones/jade/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-tortoise-ring") { |r| r.new_path = "/gemstones/tortoise-ring/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-tiger-eye-stone") { |r| r.new_path = "/gemstones/tiger-eye/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-lava-stone") { |r| r.new_path = "/gemstones/lava/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-rose-quartz") { |r| r.new_path = "/gemstones/rose-quartz/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-garnet-stone") { |r| r.new_path = "/gemstones/garnet/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-turquoise-stone") { |r| r.new_path = "/gemstones/turquoise/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-peridot") { |r| r.new_path = "/gemstones/peridot/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-black-onyx") { |r| r.new_path = "/gemstones/black-onyx/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-aquamarine-stone") { |r| r.new_path = "/gemstones/aquamarine/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-cats-eye-stone") { |r| r.new_path = "/gemstones/cats-eye/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-lapis-lazuli") { |r| r.new_path = "/gemstones/lapis-lazuli/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/salt-safe-crystals") { |r| r.new_path = "/learn/salt-safe-crystals"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-pyrite-go-in-water") { |r| r.new_path = "/gemstones/pyrite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-citrine-stone") { |r| r.new_path = "/gemstones/citrine/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-black-tourmaline-under-pillow") { |r| r.new_path = "/gemstones/black-tourmaline/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-jade-go-in-water") { |r| r.new_path = "/gemstones/jade/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-opal") { |r| r.new_path = "/gemstones/opal/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-obsidian-go-in-water") { |r| r.new_path = "/gemstones/obsidian/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-for-jealousy") { |r| r.new_path = "/crystals/crystals-for-jealousy"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-green-aventurine-under-pillow") { |r| r.new_path = "/gemstones/green-aventurine/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-lapis-lazuli-go-in-water") { |r| r.new_path = "/gemstones/lapis-lazuli/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/pink-agate-meaning") { |r| r.new_path = "/gemstones/pink-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-labradorite-go-in-water") { |r| r.new_path = "/gemstones/labradorite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-citrine-go-in-water") { |r| r.new_path = "/gemstones/citrine/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-tigers-eye-under-pillow") { |r| r.new_path = "/gemstones/tigers-eye/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-black-tourmaline-go-in-water") { |r| r.new_path = "/gemstones/black-tourmaline/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-moldavite-under-pillow") { |r| r.new_path = "/gemstones/moldavite/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/who-should-not-wear-emerald") { |r| r.new_path = "/gemstones/emerald/who-should-not-wear"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-black-onyx-go-in-water") { |r| r.new_path = "/gemstones/black-onyx/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-green-aventurine-go-in-water") { |r| r.new_path = "/gemstones/green-aventurine/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/larvikite-vs-labradorite") { |r| r.new_path = "/compare/larvikite-vs-labradorite"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-lepidolite-go-in-water") { |r| r.new_path = "/gemstones/lepidolite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-larimar-go-in-water-essential-care-tips-for-your-gemstone") { |r| r.new_path = "/gemstones/larimar/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-hematite-go-in-water") { |r| r.new_path = "/gemstones/hematite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-howlite-go-in-water") { |r| r.new_path = "/gemstones/howlite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-rose-quartz-under-pillow") { |r| r.new_path = "/gemstones/rose-quartz/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-opal-go-in-water") { |r| r.new_path = "/gemstones/opal/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/are-rocks-alive") { |r| r.new_path = "/learn/are-rocks-alive"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-garnet-go-in-water") { |r| r.new_path = "/gemstones/garnet/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-malachite-go-in-water") { |r| r.new_path = "/gemstones/malachite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-red-jasper-go-in-water") { |r| r.new_path = "/gemstones/red-jasper/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-for-independence") { |r| r.new_path = "/crystals/crystals-for-independence"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-amazonite-go-in-water") { |r| r.new_path = "/gemstones/amazonite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-for-nurses") { |r| r.new_path = "/crystals/crystals-for-nurses"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-flower-agate-go-in-water") { |r| r.new_path = "/gemstones/flower-agate/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-rose-quartz-go-in-water") { |r| r.new_path = "/gemstones/rose-quartz/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-selenite-go-in-water") { |r| r.new_path = "/gemstones/selenite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/larvikite-meaning") { |r| r.new_path = "/gemstones/larvikite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sleeping-with-amethyst-under-pillow") { |r| r.new_path = "/gemstones/amethyst/sleeping-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/green-aventurine-meaning-properties-benefits-uses") { |r| r.new_path = "/gemstones/green-aventurine/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/sun-safe-crystals") { |r| r.new_path = "/learn/sun-safe-crystals"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/tree-agate-vs-moss-agate") { |r| r.new_path = "/compare/tree-agate-vs-moss-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-opalite-go-in-water") { |r| r.new_path = "/gemstones/opalite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-identify-kimberlite") { |r| r.new_path = "/learn/how-to-identify-kimberlite"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crazy-lace-agate") { |r| r.new_path = "/gemstones/crazy-lace-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-amethyst-go-in-water") { |r| r.new_path = "/gemstones/amethyst/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-calcite-go-in-water") { |r| r.new_path = "/gemstones/calcite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/white-agate-meaning") { |r| r.new_path = "/gemstones/white-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-carnelian-go-in-water") { |r| r.new_path = "/gemstones/carnelian/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-sodalite-go-in-water") { |r| r.new_path = "/gemstones/sodalite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-strawberry-quartz-go-in-water") { |r| r.new_path = "/gemstones/strawberry-quartz/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-clear-quartz-go-in-water") { |r| r.new_path = "/gemstones/clear-quartz/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/ruby-zoisite-meaning") { |r| r.new_path = "/gemstones/ruby-zoisite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-moldavite-go-in-water") { |r| r.new_path = "/gemstones/moldavite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-rhodonite-go-in-water") { |r| r.new_path = "/gemstones/rhodonite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-tigers-eye-go-in-water") { |r| r.new_path = "/gemstones/tigers-eye/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/hematoid-quartz-meaning") { |r| r.new_path = "/gemstones/hematoid-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-aquamarine-go-in-water") { |r| r.new_path = "/gemstones/aquamarine/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-fluorite-go-in-water") { |r| r.new_path = "/gemstones/fluorite/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/hematite-rings-meaning") { |r| r.new_path = "/gemstones/hematite-rings/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/best-crystals-for-connection-with-others") { |r| r.new_path = "/crystals/best-crystals-for-connection-with-others"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-smoky-quartz-go-in-water") { |r| r.new_path = "/gemstones/smoky-quartz/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-agate-go-in-water") { |r| r.new_path = "/gemstones/agate/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/what-is-botswana-agate-everything-you-need-to-know-about-botswana-agate") { |r| r.new_path = "/gemstones/botswana-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/blue-lace-agate-meaning") { |r| r.new_path = "/gemstones/blue-lace-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/lava-stone-meaning") { |r| r.new_path = "/gemstones/lava-stone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/red-agate-meaning") { |r| r.new_path = "/gemstones/red-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-blue-lace-agate-go-in-water") { |r| r.new_path = "/gemstones/blue-lace-agate/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/purple-quartz-vs-amethyst") { |r| r.new_path = "/compare/purple-quartz-vs-amethyst"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/moldavite-meaning") { |r| r.new_path = "/gemstones/moldavite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/garden-quartz-meaning") { |r| r.new_path = "/gemstones/garden-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/larimar-meaning") { |r| r.new_path = "/gemstones/larimar/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/rose-quartz-meaning") { |r| r.new_path = "/gemstones/rose-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/yellow-calcite-meaning") { |r| r.new_path = "/gemstones/yellow-calcite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-moss-agate-go-in-water") { |r| r.new_path = "/gemstones/moss-agate/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/grape-agate") { |r| r.new_path = "/gemstones/grape-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/opalite-crystal") { |r| r.new_path = "/gemstones/opalite-crystal"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-for-protection") { |r| r.new_path = "/crystals/crystals-for-protection"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/hematite-meaning") { |r| r.new_path = "/gemstones/hematite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/flower-agate-meaning") { |r| r.new_path = "/gemstones/flower-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-to-sleep-with-under-your-pillow") { |r| r.new_path = "/learn/crystals-to-sleep-with"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crackle-quartz-meaning") { |r| r.new_path = "/gemstones/crackle-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-moonstone-go-in-water") { |r| r.new_path = "/gemstones/moonstone/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/moonstone-meaning") { |r| r.new_path = "/gemstones/moonstone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/druzy-quartz-meaning") { |r| r.new_path = "/gemstones/druzy-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/blue-sandstone-meaning") { |r| r.new_path = "/gemstones/blue-sandstone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/what-crystals-can-go-in-water") { |r| r.new_path = "/learn/what-crystals-can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/blue-tigers-eye-meaning") { |r| r.new_path = "/gemstones/blue-tigers-eye/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/green-goldstone-meaning") { |r| r.new_path = "/gemstones/green-goldstone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/strawberry-quartz-meaning") { |r| r.new_path = "/gemstones/strawberry-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/peach-moonstone-meaning") { |r| r.new_path = "/gemstones/peach-moonstone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/black-agate") { |r| r.new_path = "/gemstones/black-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/rainbow-hematite-meaning") { |r| r.new_path = "/gemstones/rainbow-hematite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/can-aventurine-go-in-water") { |r| r.new_path = "/gemstones/aventurine/can-go-in-water"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-know-if-a-chakra-bracelet-is-real") { |r| r.new_path = "/learn/how-to-know-if-a-chakra-bracelet-is-real"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/white-quartz-meaning") { |r| r.new_path = "/gemstones/white-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-charge-crystals") { |r| r.new_path = "/learn/how-to-charge-crystals"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/crystals-for-anxiety") { |r| r.new_path = "/crystals/crystals-for-anxiety"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/blue-onyx-meaning") { |r| r.new_path = "/gemstones/blue-onyx/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/carnelian-agate") { |r| r.new_path = "/gemstones/carnelian-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/fancy-jasper-meaning") { |r| r.new_path = "/gemstones/fancy-jasper/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/black-moonstone-meaning") { |r| r.new_path = "/gemstones/black-moonstone/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/cherry-quartz-meaning") { |r| r.new_path = "/gemstones/cherry-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/jade-crystal-meaning") { |r| r.new_path = "/gemstones/jade-crystal/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/moss-agate-meaning") { |r| r.new_path = "/gemstones/moss-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/tree-agate-meaning") { |r| r.new_path = "/gemstones/tree-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/indian-agate-meaning") { |r| r.new_path = "/gemstones/indian-agate/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/enhydro-agate") { |r| r.new_path = "/gemstones/enhydro-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/labradorite-meaning") { |r| r.new_path = "/gemstones/labradorite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/brazilian-agate") { |r| r.new_path = "/gemstones/brazilian-agate"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/black-obsidian-meaning") { |r| r.new_path = "/gemstones/black-obsidian/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/aura-quartz-healing-properties") { |r| r.new_path = "/gemstones/aura-quartz-healing-properties"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/black-onyx-meaning") { |r| r.new_path = "/gemstones/black-onyx/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/11-best-crystals-for-grief") { |r| r.new_path = "/crystals/11-best-crystals-for-grief"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/red-tigers-eye-meaning") { |r| r.new_path = "/gemstones/red-tigers-eye/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/green-opal-meaning") { |r| r.new_path = "/gemstones/green-opal/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/black-tourmaline-meaning") { |r| r.new_path = "/gemstones/black-tourmaline/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/caribbean-calcite-meaning") { |r| r.new_path = "/gemstones/caribbean-calcite/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/best-crystals-for-sleep-enhance-sleep-quality-naturally") { |r| r.new_path = "/crystals/best-crystals-for-sleep-enhance-sleep-quality-naturally"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-cleanse-crystals") { |r| r.new_path = "/learn/how-to-cleanse-crystals"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/smoky-quartz-meaning") { |r| r.new_path = "/gemstones/smoky-quartz/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/amethyst-meaning") { |r| r.new_path = "/gemstones/amethyst/meaning"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-tell-if-black-tourmaline-is-real") { |r| r.new_path = "/learn/how-to-tell-if-black-tourmaline-is-real"; r.status_code = 301 }
-Redirect.find_or_create_by!(old_path: "/gemstone/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real") { |r| r.new_path = "/learn/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real"; r.status_code = 301 }
+# Upsert so that editing a target here and re-running the seed updates
+# existing rows (find_or_create_by! would silently keep the old target).
+# Targets must point at pages that actually exist: gemstone slugs come from
+# db/seeds.rb + db/seeds/06_wordpress_extra_gemstones.rb, article slugs
+# from db/seeds/04_wordpress_content.rb.
+def redirect!(old_path, new_path, status: 301)
+  r = Redirect.find_or_initialize_by(old_path: old_path)
+  r.new_path = new_path
+  r.status_code = status
+  r.save!
+end
+
+redirect!("/gemstone/who-should-not-wear-pyrite-stone", "/gemstones/pyrite/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-amethyst-stone", "/gemstones/amethyst/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-jade", "/gemstones/jade/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-tortoise-ring", "/gemstones/tortoise-ring/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-tiger-eye-stone", "/gemstones/tiger-eye/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-lava-stone", "/gemstones/lava-stone/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-rose-quartz", "/gemstones/rose-quartz/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-garnet-stone", "/gemstones/garnet/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-turquoise-stone", "/gemstones/turquoise/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-peridot", "/gemstones/peridot/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-black-onyx", "/gemstones/black-onyx/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-aquamarine-stone", "/gemstones/aquamarine/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-cats-eye-stone", "/gemstones/cats-eye/who-should-not-wear")
+redirect!("/gemstone/who-should-not-wear-lapis-lazuli", "/gemstones/lapis-lazuli/who-should-not-wear")
+redirect!("/gemstone/salt-safe-crystals", "/learn/salt-safe-crystals")
+redirect!("/gemstone/can-pyrite-go-in-water", "/gemstones/pyrite/can-go-in-water")
+redirect!("/gemstone/who-should-not-wear-citrine-stone", "/gemstones/citrine/who-should-not-wear")
+redirect!("/gemstone/sleeping-with-black-tourmaline-under-pillow", "/gemstones/black-tourmaline/sleeping-with")
+redirect!("/gemstone/can-jade-go-in-water", "/gemstones/jade/can-go-in-water")
+redirect!("/gemstone/who-should-not-wear-opal", "/gemstones/opal/who-should-not-wear")
+redirect!("/gemstone/can-obsidian-go-in-water", "/gemstones/obsidian/can-go-in-water")
+redirect!("/gemstone/crystals-for-jealousy", "/crystals/crystals-for-jealousy")
+redirect!("/gemstone/sleeping-with-green-aventurine-under-pillow", "/gemstones/aventurine/sleeping-with")
+redirect!("/gemstone/can-lapis-lazuli-go-in-water", "/gemstones/lapis-lazuli/can-go-in-water")
+redirect!("/gemstone/pink-agate-meaning", "/gemstones/pink-agate/meaning")
+redirect!("/gemstone/can-labradorite-go-in-water", "/gemstones/labradorite/can-go-in-water")
+redirect!("/gemstone/can-citrine-go-in-water", "/gemstones/citrine/can-go-in-water")
+redirect!("/gemstone/sleeping-with-tigers-eye-under-pillow", "/gemstones/tiger-eye/sleeping-with")
+redirect!("/gemstone/can-black-tourmaline-go-in-water", "/gemstones/black-tourmaline/can-go-in-water")
+redirect!("/gemstone/sleeping-with-moldavite-under-pillow", "/gemstones/moldavite/sleeping-with")
+redirect!("/gemstone/who-should-not-wear-emerald", "/gemstones/emerald/who-should-not-wear")
+redirect!("/gemstone/can-black-onyx-go-in-water", "/gemstones/black-onyx/can-go-in-water")
+redirect!("/gemstone/can-green-aventurine-go-in-water", "/gemstones/aventurine/can-go-in-water")
+redirect!("/gemstone/larvikite-vs-labradorite", "/compare/larvikite-vs-labradorite")
+redirect!("/gemstone/can-lepidolite-go-in-water", "/gemstones/lepidolite/can-go-in-water")
+redirect!("/gemstone/can-larimar-go-in-water-essential-care-tips-for-your-gemstone", "/gemstones/larimar/can-go-in-water")
+redirect!("/gemstone/can-hematite-go-in-water", "/gemstones/hematite/can-go-in-water")
+redirect!("/gemstone/can-howlite-go-in-water", "/gemstones/howlite/can-go-in-water")
+redirect!("/gemstone/sleeping-with-rose-quartz-under-pillow", "/gemstones/rose-quartz/sleeping-with")
+redirect!("/gemstone/can-opal-go-in-water", "/gemstones/opal/can-go-in-water")
+redirect!("/gemstone/are-rocks-alive", "/learn/are-rocks-alive")
+redirect!("/gemstone/can-garnet-go-in-water", "/gemstones/garnet/can-go-in-water")
+redirect!("/gemstone/can-malachite-go-in-water", "/gemstones/malachite/can-go-in-water")
+redirect!("/gemstone/can-red-jasper-go-in-water", "/gemstones/red-jasper/can-go-in-water")
+redirect!("/gemstone/crystals-for-independence", "/crystals/crystals-for-independence")
+redirect!("/gemstone/can-amazonite-go-in-water", "/gemstones/amazonite/can-go-in-water")
+redirect!("/gemstone/crystals-for-nurses", "/crystals/crystals-for-nurses")
+redirect!("/gemstone/can-flower-agate-go-in-water", "/gemstones/flower-agate/can-go-in-water")
+redirect!("/gemstone/can-rose-quartz-go-in-water", "/gemstones/rose-quartz/can-go-in-water")
+redirect!("/gemstone/can-selenite-go-in-water", "/gemstones/selenite/can-go-in-water")
+redirect!("/gemstone/larvikite-meaning", "/gemstones/larvikite/meaning")
+redirect!("/gemstone/sleeping-with-amethyst-under-pillow", "/gemstones/amethyst/sleeping-with")
+redirect!("/gemstone/green-aventurine-meaning-properties-benefits-uses", "/gemstones/aventurine/meaning")
+redirect!("/gemstone/sun-safe-crystals", "/learn/sun-safe-crystals")
+redirect!("/gemstone/tree-agate-vs-moss-agate", "/compare/tree-agate-vs-moss-agate")
+redirect!("/gemstone/can-opalite-go-in-water", "/gemstones/opalite/can-go-in-water")
+redirect!("/gemstone/how-to-identify-kimberlite", "/learn/how-to-identify-kimberlite")
+redirect!("/gemstone/crazy-lace-agate", "/gemstones/crazy-lace-agate")
+redirect!("/gemstone/can-amethyst-go-in-water", "/gemstones/amethyst/can-go-in-water")
+redirect!("/gemstone/can-calcite-go-in-water", "/gemstones/calcite/can-go-in-water")
+redirect!("/gemstone/white-agate-meaning", "/gemstones/white-agate/meaning")
+redirect!("/gemstone/can-carnelian-go-in-water", "/gemstones/carnelian/can-go-in-water")
+redirect!("/gemstone/can-sodalite-go-in-water", "/gemstones/sodalite/can-go-in-water")
+redirect!("/gemstone/can-strawberry-quartz-go-in-water", "/gemstones/strawberry-quartz/can-go-in-water")
+redirect!("/gemstone/can-clear-quartz-go-in-water", "/gemstones/clear-quartz/can-go-in-water")
+redirect!("/gemstone/ruby-zoisite-meaning", "/gemstones/ruby-zoisite/meaning")
+redirect!("/gemstone/can-moldavite-go-in-water", "/gemstones/moldavite/can-go-in-water")
+redirect!("/gemstone/can-rhodonite-go-in-water", "/gemstones/rhodonite/can-go-in-water")
+redirect!("/gemstone/can-tigers-eye-go-in-water", "/gemstones/tiger-eye/can-go-in-water")
+redirect!("/gemstone/hematoid-quartz-meaning", "/gemstones/hematoid-quartz/meaning")
+redirect!("/gemstone/can-aquamarine-go-in-water", "/gemstones/aquamarine/can-go-in-water")
+redirect!("/gemstone/can-fluorite-go-in-water", "/gemstones/fluorite/can-go-in-water")
+redirect!("/gemstone/hematite-rings-meaning", "/gemstones/hematite-rings/meaning")
+redirect!("/gemstone/best-crystals-for-connection-with-others", "/crystals/best-crystals-for-connection-with-others")
+redirect!("/gemstone/can-smoky-quartz-go-in-water", "/gemstones/smoky-quartz/can-go-in-water")
+redirect!("/gemstone/can-agate-go-in-water", "/gemstones/agate/can-go-in-water")
+redirect!("/gemstone/what-is-botswana-agate-everything-you-need-to-know-about-botswana-agate", "/gemstones/botswana-agate")
+redirect!("/gemstone/blue-lace-agate-meaning", "/gemstones/blue-lace-agate/meaning")
+redirect!("/gemstone/lava-stone-meaning", "/gemstones/lava-stone/meaning")
+redirect!("/gemstone/red-agate-meaning", "/gemstones/red-agate/meaning")
+redirect!("/gemstone/can-blue-lace-agate-go-in-water", "/gemstones/blue-lace-agate/can-go-in-water")
+redirect!("/gemstone/purple-quartz-vs-amethyst", "/compare/purple-quartz-vs-amethyst")
+redirect!("/gemstone/moldavite-meaning", "/gemstones/moldavite/meaning")
+redirect!("/gemstone/garden-quartz-meaning", "/gemstones/garden-quartz/meaning")
+redirect!("/gemstone/larimar-meaning", "/gemstones/larimar/meaning")
+redirect!("/gemstone/rose-quartz-meaning", "/gemstones/rose-quartz/meaning")
+redirect!("/gemstone/yellow-calcite-meaning", "/gemstones/yellow-calcite/meaning")
+redirect!("/gemstone/can-moss-agate-go-in-water", "/gemstones/moss-agate/can-go-in-water")
+redirect!("/gemstone/grape-agate", "/gemstones/grape-agate")
+redirect!("/gemstone/opalite-crystal", "/gemstones/opalite")
+redirect!("/gemstone/crystals-for-protection", "/crystals/crystals-for-protection")
+redirect!("/gemstone/hematite-meaning", "/gemstones/hematite/meaning")
+redirect!("/gemstone/flower-agate-meaning", "/gemstones/flower-agate/meaning")
+redirect!("/gemstone/crystals-to-sleep-with-under-your-pillow", "/learn/crystals-to-sleep-with-under-your-pillow")
+redirect!("/gemstone/crackle-quartz-meaning", "/gemstones/crackle-quartz/meaning")
+redirect!("/gemstone/can-moonstone-go-in-water", "/gemstones/moonstone/can-go-in-water")
+redirect!("/gemstone/moonstone-meaning", "/gemstones/moonstone/meaning")
+redirect!("/gemstone/druzy-quartz-meaning", "/gemstones/druzy-quartz/meaning")
+redirect!("/gemstone/blue-sandstone-meaning", "/gemstones/blue-sandstone/meaning")
+redirect!("/gemstone/what-crystals-can-go-in-water", "/learn/what-crystals-can-go-in-water")
+redirect!("/gemstone/blue-tigers-eye-meaning", "/gemstones/blue-tigers-eye/meaning")
+redirect!("/gemstone/green-goldstone-meaning", "/gemstones/green-goldstone/meaning")
+redirect!("/gemstone/strawberry-quartz-meaning", "/gemstones/strawberry-quartz/meaning")
+redirect!("/gemstone/peach-moonstone-meaning", "/gemstones/peach-moonstone/meaning")
+redirect!("/gemstone/black-agate", "/gemstones/black-agate")
+redirect!("/gemstone/rainbow-hematite-meaning", "/gemstones/rainbow-hematite/meaning")
+redirect!("/gemstone/can-aventurine-go-in-water", "/gemstones/aventurine/can-go-in-water")
+redirect!("/gemstone/how-to-know-if-a-chakra-bracelet-is-real", "/learn/how-to-know-if-a-chakra-bracelet-is-real")
+redirect!("/gemstone/white-quartz-meaning", "/gemstones/white-quartz/meaning")
+redirect!("/gemstone/how-to-charge-crystals", "/learn/how-to-charge-crystals")
+redirect!("/gemstone/crystals-for-anxiety", "/crystals/crystals-for-anxiety")
+redirect!("/gemstone/blue-onyx-meaning", "/gemstones/blue-onyx/meaning")
+redirect!("/gemstone/carnelian-agate", "/gemstones/carnelian-agate")
+redirect!("/gemstone/fancy-jasper-meaning", "/gemstones/fancy-jasper/meaning")
+redirect!("/gemstone/black-moonstone-meaning", "/gemstones/black-moonstone/meaning")
+redirect!("/gemstone/cherry-quartz-meaning", "/gemstones/cherry-quartz/meaning")
+redirect!("/gemstone/jade-crystal-meaning", "/gemstones/jade-crystal/meaning")
+redirect!("/gemstone/moss-agate-meaning", "/gemstones/moss-agate/meaning")
+redirect!("/gemstone/tree-agate-meaning", "/gemstones/tree-agate/meaning")
+redirect!("/gemstone/indian-agate-meaning", "/gemstones/indian-agate/meaning")
+redirect!("/gemstone/enhydro-agate", "/gemstones/enhydro-agate")
+redirect!("/gemstone/labradorite-meaning", "/gemstones/labradorite/meaning")
+redirect!("/gemstone/brazilian-agate", "/gemstones/brazilian-agate")
+redirect!("/gemstone/black-obsidian-meaning", "/gemstones/black-obsidian/meaning")
+redirect!("/gemstone/aura-quartz-healing-properties", "/gemstones/angel-aura-quartz")
+redirect!("/gemstone/black-onyx-meaning", "/gemstones/black-onyx/meaning")
+redirect!("/gemstone/11-best-crystals-for-grief", "/crystals/11-best-crystals-for-grief")
+redirect!("/gemstone/red-tigers-eye-meaning", "/gemstones/red-tigers-eye/meaning")
+redirect!("/gemstone/green-opal-meaning", "/gemstones/green-opal/meaning")
+redirect!("/gemstone/black-tourmaline-meaning", "/gemstones/black-tourmaline/meaning")
+redirect!("/gemstone/caribbean-calcite-meaning", "/gemstones/caribbean-calcite/meaning")
+redirect!("/gemstone/best-crystals-for-sleep-enhance-sleep-quality-naturally", "/crystals/best-crystals-for-sleep-enhance-sleep-quality-naturally")
+redirect!("/gemstone/how-to-cleanse-crystals", "/learn/how-to-cleanse-crystals")
+redirect!("/gemstone/smoky-quartz-meaning", "/gemstones/smoky-quartz/meaning")
+redirect!("/gemstone/amethyst-meaning", "/gemstones/amethyst/meaning")
+redirect!("/gemstone/how-to-tell-if-black-tourmaline-is-real", "/learn/how-to-tell-if-black-tourmaline-is-real")
+redirect!("/gemstone/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real", "/learn/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real")
 
 puts "  #{Redirect.count} redirects active"

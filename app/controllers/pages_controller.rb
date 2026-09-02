@@ -6,11 +6,11 @@ class PagesController < ApplicationController
     by_slug = Gemstone.published.where(slug: FEATURED_SLUGS).includes(:colors, :healing_powers).index_by(&:slug)
     @featured_gemstones = FEATURED_SLUGS.filter_map { |slug| by_slug[slug] }
     if @featured_gemstones.size < FEATURED_SLUGS.size
-      @featured_gemstones += Gemstone.published.alphabetical.where.not(slug: FEATURED_SLUGS)
+      @featured_gemstones += Gemstone.published.listed.alphabetical.where.not(slug: FEATURED_SLUGS)
         .includes(:colors, :healing_powers).limit(FEATURED_SLUGS.size - @featured_gemstones.size).to_a
     end
 
-    @gemstone_count = Gemstone.published.count
+    @gemstone_count = Gemstone.published.listed.count
     @color_count = Color.count
     @healing_power_count = HealingPower.count
     @zodiac_signs = ZodiacSign.order(:id)

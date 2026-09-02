@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_05_095319) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_02_120000) do
   create_table "articles", force: :cascade do |t|
     t.integer "category_id", null: false
     t.text "content"
@@ -122,6 +122,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_05_095319) do
     t.string "featured_image_url"
     t.text "how_to_cleanse_content"
     t.text "how_to_identify_content"
+    t.boolean "listed", default: true, null: false
     t.integer "lustre_id"
     t.text "meaning_content"
     t.text "meta_description"
@@ -143,6 +144,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_05_095319) do
     t.text "zodiac_content"
     t.index ["birth_month_id"], name: "index_gemstones_on_birth_month_id"
     t.index ["lustre_id"], name: "index_gemstones_on_lustre_id"
+    t.index ["published", "listed"], name: "index_gemstones_on_published_and_listed"
     t.index ["published"], name: "index_gemstones_on_published"
     t.index ["slug"], name: "index_gemstones_on_slug", unique: true
     t.index ["transparency_id"], name: "index_gemstones_on_transparency_id"

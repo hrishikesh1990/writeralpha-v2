@@ -1,6 +1,6 @@
 <% gemstone = @gemstone %>
 <% primary_color = gemstone.colors.first %>
-<% facts = gemstone_facts(gemstone) %>
+<% facts = gemstone_facts(gemstone).reject { |_, value| value == "—" } %>
 
 <!-- Hub hero -->
 <section class="px-5 pb-2 pt-7 sm:px-11" data-screen-label="Hub hero">
@@ -36,6 +36,7 @@
           <% end %>
         </div>
       <% end %>
+      <% if facts.any? %>
       <dl class="mt-[26px] grid max-w-[620px] grid-cols-2 gap-[10px] sm:grid-cols-4">
         <% facts.each do |label, value| %>
           <div class="rounded-[14px] border border-violet/10 bg-white/80 px-[14px] py-3">
@@ -44,6 +45,7 @@
           </div>
         <% end %>
       </dl>
+      <% end %>
     </div>
   </div>
 </section>

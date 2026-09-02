@@ -69,7 +69,7 @@ Rails.application.routes.draw do
   # A 410 tells Google the removal is deliberate; faster deindex than 404.
   %w[
     business-names team-names group-names instagram-names tiktok-names
-    youtube-names gaming-names discord-names slogans tools guides start
+    youtube-names gaming-names discord-names slogans tools guides start downloads
   ].each do |section|
     get "#{section}(/*rest)", to: "legacy#gone", format: false
   end

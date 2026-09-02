@@ -11,6 +11,13 @@ namespace :content do
       list_type = nil # :ul or :ol
       paragraph_lines = []
 
+      # WordPress exports carry a "Table of Contents / Toggle / • item" block
+      # whose items are the exact section titles that follow in the body.
+      # Swallow that block and promote the matching body lines to <h2>.
+      toc_items = []
+      in_toc = false
+      normalize = ->(str) { str.strip.sub(/:\z/, "").downcase }
+
       flush_paragraph = -> {
         unless paragraph_lines.empty?
           text_block = paragraph_lines.join("<br>").strip
@@ -29,10 +36,29 @@ namespace :content do
       lines.each do |line|
         stripped = line.strip
 
-        # Skip "Table of Contents" and "Toggle" lines
+        # Skip "Table of Contents" and "Toggle" lines, then collect the TOC bullets
         if stripped == "Table of Contents" || stripped == "Toggle"
           flush_paragraph.call
           close_list.call
+          in_toc = true
+          next
+        end
+        if in_toc
+          if stripped.match?(/\A[•\-\*]\s/)
+            toc_items << normalize.call(stripped.sub(/\A[•\-\*]\s*/, ""))
+            next
+          elsif stripped.empty?
+            next
+          else
+            in_toc = false
+          end
+        end
+
+        # Body line that repeats a TOC entry => section heading
+        if toc_items.any? && !stripped.empty? && toc_items.include?(normalize.call(stripped))
+          flush_paragraph.call
+          close_list.call
+          html_parts << "<h2>#{stripped.sub(/:\z/, '')}</h2>"
           next
         end
 

@@ -60,7 +60,7 @@ module Admin
         :zodiac_content, :chakra_content,
         :mohs_hardness, :chemical_formula, :crystal_system, :element, :ruling_planet,
         :transparency_id, :lustre_id, :birth_month_id,
-        :featured_image_url, :meta_title, :meta_description, :published
+        :featured_image_url, :meta_title, :meta_description, :published, :listed
       )
     end
 

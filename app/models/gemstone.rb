@@ -19,6 +19,9 @@ class Gemstone < ApplicationRecord
   before_validation :generate_slug, if: -> { slug.blank? && name.present? }
 
   scope :published, -> { where(published: true) }
+  # Listed stones appear in the directory, home page and filter counts.
+  # Unlisted ones (thin WordPress imports) stay reachable by URL and in the sitemap.
+  scope :listed, -> { where(listed: true) }
   scope :alphabetical, -> { order(:name) }
   scope :starting_with, ->(letter) { where("gemstones.name LIKE ?", "#{letter}%") }
   scope :search, ->(q) { where("LOWER(gemstones.name) LIKE ? OR LOWER(gemstones.subtitle) LIKE ?", *(["%#{sanitize_sql_like(q.to_s.downcase)}%"] * 2)) }
