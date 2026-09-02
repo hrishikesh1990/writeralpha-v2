@@ -38,5 +38,12 @@ module WriteralphaV2
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # gzip HTML/CSS/JS responses (Fly's proxy does not compress for us).
+    config.middleware.use Rack::Deflater
+
+    # 301 www./trailing-slash variants to the canonical apex URL (see lib/middleware).
+    require_relative "../lib/middleware/canonical_host"
+    config.middleware.insert_before Rack::Runtime, CanonicalHost
   end
 end

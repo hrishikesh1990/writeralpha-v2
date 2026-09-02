@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= @meta&.dig(:title) || "WriterAlpha — Gemstone & Crystal Guide" %></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="<%= @meta&.dig(:description) || "Expert guides to gemstones, crystal healing, zodiac stones, and birthstones." %>">
+  <% page_title = @meta&.dig(:title).presence || "WriterAlpha — Gemstone & Crystal Guide" %>
+  <% page_description = @meta&.dig(:description).presence || "Expert guides to gemstones and crystals — meanings, healing powers, zodiac and birthstone connections, care and safety." %>
   <meta charset="utf-8">
-  <link rel="canonical" href="<%= request.original_url.split('?').first %>">
-  <meta property="og:title" content="<%= @meta&.dig(:title) || "WriterAlpha" %>">
-  <meta property="og:description" content="<%= @meta&.dig(:description) %>">
-  <meta property="og:url" content="<%= request.original_url %>">
+  <title><%= page_title %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="<%= page_description %>">
+  <link rel="canonical" href="<%= canonical_url %>">
+  <meta property="og:site_name" content="WriterAlpha">
+  <meta property="og:type" content="<%= @meta&.dig(:type) || "website" %>">
+  <meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:url" content="<%= canonical_url %>">
+  <meta property="og:image" content="<%= og_image_url(@meta&.dig(:image)) %>">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= page_title %>">
+  <meta name="twitter:description" content="<%= page_description %>">
+  <meta name="twitter:image" content="<%= og_image_url(@meta&.dig(:image)) %>">
   <meta name="theme-color" content="#fbfaff">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <%= yield :jsonld %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +42,6 @@
       <nav class="flex min-w-0 items-center gap-1 overflow-x-auto text-[13.5px] text-ui [scrollbar-width:none]" aria-label="Primary">
         <%= link_to "Gemstones", gemstones_path, class: nav_link_class(nav_active?(:gemstones)) %>
         <%= link_to "Crystals for", gemstones_by_healing_path(value: "protection"), class: nav_link_class(nav_active?(:crystals)) %>
-        <%= link_to "Angel numbers", angel_numbers_path, class: nav_link_class(nav_active?(:angel_numbers)) %>
         <%= link_to "Learn", blog_path(category: "learn"), class: nav_link_class(nav_active?(:learn)) %>
         <%= link_to "Blog", blog_path, class: nav_link_class(nav_active?(:blog)) %>
         <% if content_for?(:nav_cta) %>

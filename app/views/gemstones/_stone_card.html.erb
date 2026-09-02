@@ -19,9 +19,6 @@
     <% else %>
       <span></span>
     <% end %>
-    <% if gemstone.featured_image_url.blank? %>
-      <span class="relative font-mono text-[9px] tracking-[0.08em] text-white/90">PHOTO</span>
-    <% end %>
   </div>
   <div class="<%= spec[:body] %>">
     <div class="<%= spec[:name] %> font-semibold text-ink"><%= gemstone.name %></div>

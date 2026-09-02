@@ -3,10 +3,10 @@
 # (36 curated stones). They are the destinations of ~60 legacy redirects in
 # 05_redirects.rb, so without them those URLs 301 into a 404.
 #
-# New stones are created published but UNLISTED (thin metadata: no colors,
-# healing powers, zodiac or photo). Content fields are filled only when blank,
-# so re-running this on production never overwrites the HTML content that was
-# synced there. Run `bin/rails content:convert` afterwards to turn the plain
+# New stones are created published and listed (the directory shows every
+# stone; thin ones fall back to the gradient placeholder). Content fields are
+# filled only when blank, so re-running this on production never overwrites
+# the HTML content that was synced there. Run `bin/rails content:convert` afterwards to turn the plain
 # WordPress text into HTML with <h2> sections.
 puts "=== Importing extra WordPress gemstones (unlisted) ==="
 
@@ -18,8 +18,14 @@ data = JSON.parse(File.read(Rails.root.join("db/wordpress_data/transformed_gemst
 ALIASES = {
   "tigers-eye" => "tiger-eye",
   "green-aventurine" => "aventurine",
-  "what-is-botswana-agate-everything-you-need-to-know-about-botswana-agate" => "botswana-agate"
+  "what-is-botswana-agate-everything-you-need-to-know-about-botswana-agate" => "botswana-agate",
+  # Duplicate hubs merged into the canonical stone (see 05_redirects.rb).
+  "jade-crystal" => "jade",
+  "lava" => "lava-stone"
 }.freeze
+
+# Slugs that used to exist as separate records before the merge above.
+MERGED_DUPLICATES = %w[jade-crystal lava].freeze
 
 # Keys that are not gemstones (handled as articles below).
 ARTICLE_KEYS = %w[tree-agate-vs-moss-agate].freeze
@@ -37,12 +43,25 @@ NAMES = {
 
 CONTENT_FIELDS = %w[meaning_content water_safety_content who_should_not_wear_content sleeping_with_content].freeze
 
-# Featured photos that exist in public/images/posts (and on Tigris) for the
-# imported stones. The original WordPress uploads for the rest were never
-# rehosted, so they keep the gradient placeholder.
+# Featured photos (WebP, on Tigris under posts/) for stones that had none:
+# matched from the original WordPress uploads by post slug or stone name.
+# Stones without a usable original keep the gradient placeholder.
 FEATURED_IMAGES = {
-  "ruby-zoisite" => "/images/posts/ruby-zoisite-meaning.jpeg",
-  "larvikite" => "/images/posts/larvikite-vs-labradorite.png"
+  "agate" => "/images/posts/agate-featured.webp",
+  "blue-sandstone" => "/images/posts/blue-sandstone-featured.webp",
+  "calcite" => "/images/posts/calcite-featured.webp",
+  "caribbean-calcite" => "/images/posts/caribbean-calcite-featured.webp",
+  "cats-eye" => "/images/posts/who-should-not-wear-cats-eye-stone.webp",
+  "cherry-quartz" => "/images/posts/cherry-quartz-featured.webp",
+  "flower-agate" => "/images/posts/flower-agate-featured.webp",
+  "green-opal" => "/images/posts/green-opal-featured.webp",
+  "indian-agate" => "/images/posts/indian-agate-featured.webp",
+  "larimar" => "/images/posts/larimar-meaning.webp",
+  "larvikite" => "/images/posts/larvikite-vs-labradorite.webp",
+  "moss-agate" => "/images/posts/moss-agate-featured.webp",
+  "red-agate" => "/images/posts/red-agate-featured.webp",
+  "ruby-zoisite" => "/images/posts/ruby-zoisite-meaning.webp",
+  "tree-agate" => "/images/posts/tree-agate-meaning.webp"
 }.freeze
 
 created = 0
@@ -60,7 +79,7 @@ data.each do |key, attrs|
     gem.meta_title = attrs["title"].presence
     gem.description = attrs["description"].presence
     gem.published = true
-    gem.listed = false
+    gem.listed = true
     changed = true
   end
 
@@ -88,6 +107,15 @@ data.each do |key, attrs|
   end
   gem.save!
 end
+
+# Remove the merged duplicate records (their content already lives on the
+# canonical stone via ALIASES above) and make sure every stone is listed.
+Gemstone.where(slug: MERGED_DUPLICATES).find_each do |dup|
+  dup.destroy!
+  puts "  Removed duplicate hub: #{dup.slug}"
+end
+relisted = Gemstone.published.where(listed: false).update_all(listed: true)
+puts "  Listed #{relisted} previously unlisted stones" if relisted.positive?
 
 # Comparison article that WordPress filed under gemstones.
 if (cmp = data["tree-agate-vs-moss-agate"])

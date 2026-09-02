@@ -57,6 +57,29 @@ module GemstonesHelper
     "background:rgba(#{r},#{g},#{b},0.10);color:##{hex}"
   end
 
+  # Hub <title>: describes the overview page without promising the full
+  # "complete guide" (that lives at /meaning).
+  def gemstone_hub_title(gemstone)
+    "#{gemstone.name}: Properties, Healing Powers & Guides"
+  end
+
+  def gemstone_hub_description(gemstone)
+    parts = []
+    parts << "#{gemstone.name}, #{gemstone.subtitle.downcase.delete_prefix('the ')}." if gemstone.subtitle.present?
+    parts << plain_excerpt(gemstone.description, length: 110) if gemstone.description.present?
+    powers = gemstone.healing_powers.first(3).map(&:name)
+    parts << "Healing powers: #{powers.join(', ')}." if powers.any?
+    parts << "Mohs #{format_mohs(gemstone.mohs_hardness)}." if gemstone.mohs_hardness
+    meta_description(parts.join(" ").presence || "#{gemstone.name} facts, meaning, healing powers and care guides.")
+  end
+
+  def filter_page_description(filter_name, filter_type, gemstones)
+    names = gemstones.first(4).map(&:name)
+    lead = "#{gemstones.size} #{filter_name.to_s.downcase} #{'gemstone'.pluralize(gemstones.size)}"
+    lead += " — #{names.to_sentence(last_word_connector: ' and ')}" if names.any?
+    meta_description("#{lead}. Meanings, healing powers, hardness and care tips for every #{filter_type.to_s.downcase} match.")
+  end
+
   def format_mohs(value)
     return nil if value.nil?
 

@@ -52,8 +52,22 @@ class Gemstone < ApplicationRecord
     { title_tpl: "Is %{name} Expensive? Price Guide", short: "Is It Expensive? Price Guide", path: "price-guide", icon: "💰" },
   ].freeze
 
+  # Sub-page path => content column. Most follow "<path>_content"; the water
+  # guide is the exception.
+  SUB_PAGE_FIELDS = SUB_PAGES.to_h { |sp| [sp[:path], sp[:path] == "can-go-in-water" ? "water_safety_content" : "#{sp[:path].tr('-', '_')}_content"] }.freeze
+
+  def sub_page_content(path)
+    field = SUB_PAGE_FIELDS[path.to_s.tr("_", "-")]
+    field && self[field].presence
+  end
+
   def hub_sub_pages
     SUB_PAGES.map { |sp| { title: sp[:title_tpl] % { name: name }, short: sp[:short], path: sp[:path], icon: sp[:icon] } }
+  end
+
+  # Only guides that actually have content — never link to a placeholder.
+  def available_sub_pages
+    hub_sub_pages.select { |sp| sub_page_content(sp[:path]) }
   end
 
   private

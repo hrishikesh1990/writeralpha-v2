@@ -4,28 +4,21 @@
   <p class="mt-2 text-[14px] font-light text-muted">Discover the spiritual meaning behind the numbers you keep seeing.</p>
 </section>
 
-<section class="px-5 pb-8 pt-2 sm:px-11">
-  <div class="grid grid-cols-3 gap-[10px] sm:grid-cols-4 lg:grid-cols-6">
-    <% [111, 222, 333, 444, 555, 666, 777, 888, 999, 1111, 1010, 1212, 1234, "000", 1122].each do |n| %>
-      <a href="<%= angel_number_path(number: n) %>" class="flex flex-col items-center gap-[6px] rounded-[16px] border border-violet/10 bg-white/80 px-2 py-4 shadow-card-soft card-transition hover:border-violet/35 hover:shadow-tile-hover">
-        <span class="text-gradient text-[22px] font-semibold leading-none"><%= n %></span>
-        <span class="font-mono text-[8.5px] uppercase tracking-[0.16em] text-faint">Angel number</span>
-      </a>
-    <% end %>
-  </div>
-</section>
-
-<% if @articles.respond_to?(:any?) && @articles.any? %>
+<% if @articles.any? %>
 <section class="px-5 pb-14 pt-4 sm:px-11">
   <h2 class="mb-5 text-[22px] font-semibold text-ink">Angel number guides</h2>
   <div class="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-3">
     <% @articles.each do |a| %>
-      <a href="<%= blog_post_path(a) %>" class="flex items-center gap-[14px] rounded-[16px] border border-violet/10 bg-white/80 px-[18px] py-4 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+      <a href="<%= a.canonical_path %>" class="flex items-center gap-[14px] rounded-[16px] border border-violet/10 bg-white/80 px-[18px] py-4 card-transition hover:border-violet/35 hover:shadow-guide-hover">
         <span class="flex size-[38px] flex-none items-center justify-center rounded-[12px] bg-violet/8 text-[16px]">✦</span>
         <span class="text-[13px] font-medium leading-[1.4] text-ink"><%= a.title %></span>
         <span class="ml-auto text-arrow" aria-hidden="true">→</span>
       </a>
-    <% end %>
+        <% end %>
   </div>
+</section>
+<% else %>
+<section class="px-5 pb-14 pt-2 sm:px-11">
+  <div class="py-16 text-center font-light text-muted">Angel number guides are being written. <a href="<%= gemstones_path %>" class="font-medium text-violet-deep">Explore the gemstone directory</a> in the meantime.</div>
 </section>
 <% end %>

@@ -18,7 +18,15 @@ class PagesController < ApplicationController
               description: "#{@gemstone_count} stones, 11 ways to search — by color, healing power, zodiac, birth month and more." }
   end
 
-  def about; end
-  def contact; end
-  def write_for_us; end
+  def about
+    @meta = { title: "About WriterAlpha — the atlas of stones", description: "WriterAlpha is a guide to gemstones and crystals: meanings, healing properties, zodiac and birthstone connections, care and safety." }
+  end
+
+  def contact
+    @meta = { title: "Contact WriterAlpha", description: "Questions, corrections, or a stone you'd like covered? Get in touch with the WriterAlpha editorial team." }
+  end
+
+  def write_for_us
+    @meta = { title: "Write for WriterAlpha — guest posts on crystals & gemstones", description: "Pitch a guest post on gemstones, crystals or crystal healing to WriterAlpha." }
+  end
 end

@@ -1,4 +1,5 @@
 <%# locals: crumbs — array of [label, path_or_nil]; last item rendered as plain text %>
+<% breadcrumb_jsonld(crumbs.map { |label, path| [label, path || request.path] }) %>
 <nav class="font-mono text-[10.5px] uppercase tracking-[0.2em] text-faint" aria-label="Breadcrumb">
   <% crumbs.each_with_index do |(label, path), i| %>
     <% if i.positive? %> / <% end %>

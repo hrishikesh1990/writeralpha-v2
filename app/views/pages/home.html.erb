@@ -1,4 +1,9 @@
 <% content_for :nav_cta, "1" %>
+<% jsonld("@context" => "https://schema.org", "@graph" => [
+     { "@type" => "Organization", "@id" => canonical_url("/") + "#organization", "name" => "WriterAlpha", "url" => canonical_url("/"), "logo" => og_image_url(nil), "description" => "The atlas of stones — gemstone and crystal meanings, healing powers, zodiac and birthstone guides." },
+     { "@type" => "WebSite", "@id" => canonical_url("/") + "#website", "name" => "WriterAlpha", "url" => canonical_url("/"), "publisher" => { "@id" => canonical_url("/") + "#organization" },
+       "potentialAction" => { "@type" => "SearchAction", "target" => { "@type" => "EntryPoint", "urlTemplate" => canonical_url(gemstones_path) + "?q={search_term_string}" }, "query-input" => "required name=search_term_string" } }
+   ]) %>
 
 <!-- Hero -->
 <section class="relative px-5 pb-14 pt-16 text-center sm:px-11" data-screen-label="Hero">

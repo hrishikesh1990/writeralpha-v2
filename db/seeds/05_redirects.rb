@@ -128,7 +128,7 @@ redirect!("/gemstone/carnelian-agate", "/gemstones/carnelian-agate")
 redirect!("/gemstone/fancy-jasper-meaning", "/gemstones/fancy-jasper/meaning")
 redirect!("/gemstone/black-moonstone-meaning", "/gemstones/black-moonstone/meaning")
 redirect!("/gemstone/cherry-quartz-meaning", "/gemstones/cherry-quartz/meaning")
-redirect!("/gemstone/jade-crystal-meaning", "/gemstones/jade-crystal/meaning")
+redirect!("/gemstone/jade-crystal-meaning", "/gemstones/jade/meaning")
 redirect!("/gemstone/moss-agate-meaning", "/gemstones/moss-agate/meaning")
 redirect!("/gemstone/tree-agate-meaning", "/gemstones/tree-agate/meaning")
 redirect!("/gemstone/indian-agate-meaning", "/gemstones/indian-agate/meaning")
@@ -149,5 +149,12 @@ redirect!("/gemstone/smoky-quartz-meaning", "/gemstones/smoky-quartz/meaning")
 redirect!("/gemstone/amethyst-meaning", "/gemstones/amethyst/meaning")
 redirect!("/gemstone/how-to-tell-if-black-tourmaline-is-real", "/learn/how-to-tell-if-black-tourmaline-is-real")
 redirect!("/gemstone/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real", "/learn/how-to-tell-if-black-tourmaline-is-real?utm_source=rss&utm_medium=rss&utm_campaign=how-to-tell-if-black-tourmaline-is-real")
+
+# Duplicate hubs merged into the canonical stone (jade-crystal -> jade,
+# lava -> lava-stone). GemstonesController#load_gemstone consults these.
+redirect!("/gemstones/jade-crystal", "/gemstones/jade")
+redirect!("/gemstones/jade-crystal/meaning", "/gemstones/jade/meaning")
+redirect!("/gemstones/lava", "/gemstones/lava-stone")
+redirect!("/gemstones/lava/who-should-not-wear", "/gemstones/lava-stone/who-should-not-wear")
 
 puts "  #{Redirect.count} redirects active"

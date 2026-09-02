@@ -3,6 +3,7 @@
 <% crumbs = [["Home", root_path]] %>
 <% crumbs << [breadcrumb_section, breadcrumb_path] if breadcrumb_section %>
 <% crumbs << [title, nil] %>
+<% if article %><% article_jsonld(headline: title, description: @meta&.dig(:description), image: article.try(:featured_image_url), published: article.try(:published_at), modified: article.try(:updated_at)) %><% faq_jsonld(html) %><% end %>
 
 <div class="grid items-start gap-11 px-5 pb-14 pt-7 sm:px-11 lg:grid-cols-[1fr_300px]">
   <article data-screen-label="Article">

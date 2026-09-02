@@ -2,9 +2,6 @@ class GemstonesController < ApplicationController
   # Directory filter dimensions accepted as query params (AND-combined).
   FILTER_KEYS = %i[color healing transparency zodiac letter birth_month lustre element planet shape cut].freeze
 
-  # Sub-page keys whose content column doesn't follow the "<key>_content" pattern.
-  CONTENT_FIELDS = { "can_go_in_water" => "water_safety_content" }.freeze
-
   before_action :load_gemstone, only: [:show, :sub_page]
   before_action :load_filter_options, only: [:index, :by_filter]
 
@@ -18,19 +15,21 @@ class GemstonesController < ApplicationController
 
   def show
     @similar_gemstones = similar_stones(@gemstone)
-    @meta = { title: "#{@gemstone.name}: Meaning, Properties & Complete Guide",
-              description: @gemstone.meta_description || "Learn everything about #{@gemstone.name}." }
+    @meta = { title: helpers.gemstone_hub_title(@gemstone),
+              description: @gemstone.meta_description.presence || helpers.gemstone_hub_description(@gemstone),
+              image: @gemstone.featured_image_url }
   end
 
   def sub_page
-    page_key = params[:page]
-    content_field = CONTENT_FIELDS.fetch(page_key, "#{page_key}_content")
-    @content = @gemstone.respond_to?(content_field) ? @gemstone.send(content_field) : nil
+    path = params[:page].to_s.tr("_", "-")
+    @sub_page = Gemstone::SUB_PAGES.find { |s| s[:path] == path }
+    @content = @gemstone.sub_page_content(path)
+    # A guide that was never written is a 404, not a placeholder page.
+    return render_not_found if @sub_page.nil? || @content.blank?
 
-    @sub_page = Gemstone::SUB_PAGES.find { |s| s[:path] == page_key.tr("_", "-") }
-    @page_title = @sub_page ? (@sub_page[:title_tpl] % { name: @gemstone.name }) : @gemstone.name
-    @page_icon = @sub_page&.dig(:icon) || "💎"
-    @meta = { title: @page_title, description: "#{@page_title}. Complete guide and expert advice." }
+    @page_title = @sub_page[:title_tpl] % { name: @gemstone.name }
+    @page_icon = @sub_page[:icon]
+    @meta = { title: @page_title, description: helpers.meta_description(@content), type: "article", image: @gemstone.featured_image_url }
     render "gemstones/sub_page"
   end
 
@@ -55,15 +54,24 @@ class GemstonesController < ApplicationController
     @gemstones = apply_filters(directory_scope, @active).distinct
     @filter_type_label = ft.tr("_", " ").capitalize
     @heading = "#{@filter_name} gemstones"
-    @meta = { title: "#{@filter_name} Gemstones — Complete Guide",
-              description: "Discover all #{@filter_name&.downcase} gemstones and crystals." }
+    @meta = { title: "#{@filter_name} Gemstones — #{@gemstones.size} #{'Stone'.pluralize(@gemstones.size)} With Meanings & Properties",
+              description: helpers.filter_page_description(@filter_name, @filter_type_label, @gemstones) }
     render "gemstones/index"
   end
 
   private
 
+  # Unknown slugs consult the redirects table first (merged duplicates such
+  # as jade-crystal -> jade), then 404 inside the layout.
   def load_gemstone
-    @gemstone = Gemstone.published.includes(:colors, :healing_powers, :zodiac_signs, :transparency, :lustre, :birth_month).find_by!(slug: params[:slug])
+    @gemstone = Gemstone.published.includes(:colors, :healing_powers, :zodiac_signs, :transparency, :lustre, :birth_month).find_by(slug: params[:slug])
+    return if @gemstone
+
+    if (entry = Redirect.find_by(old_path: request.path))
+      redirect_to entry.new_path, status: (entry.status_code || 301)
+    else
+      render_not_found
+    end
   end
 
   def load_filter_options

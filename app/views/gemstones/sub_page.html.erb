@@ -1,6 +1,8 @@
 <% gemstone = @gemstone %>
 <% html, headings = content_with_headings(@content) %>
-<% other_guides = gemstone.hub_sub_pages.reject { |g| g[:path] == @sub_page&.dig(:path) } %>
+<% other_guides = gemstone.available_sub_pages.reject { |g| g[:path] == @sub_page&.dig(:path) } %>
+<% article_jsonld(headline: @page_title, description: @meta[:description], image: gemstone.featured_image_url, published: gemstone.created_at, modified: gemstone.updated_at) %>
+<% faq_jsonld(html) %>
 <% facts = gemstone_facts(gemstone).values_at(0, 1, 2, 3, 6).reject { |_, value| value == "—" } %>
 <% section_label = (@sub_page&.dig(:path) || "guide").tr("-", " ") %>
 
@@ -12,25 +14,16 @@
     <div class="mt-4 flex flex-wrap items-center gap-[14px] text-[12px] font-light text-faint">
       <span class="size-[26px] rounded-full bg-[linear-gradient(145deg,#c4b5fd,#8a6fd0)]" aria-hidden="true"></span>
       <span>WriterAlpha Editorial</span><span>·</span><span>Updated <%= gemstone.updated_at.strftime("%b %Y") %></span>
-      <% if @content.present? %><span>·</span><span><%= reading_time(@content) %> min read</span><% end %>
+      <span>·</span><span><%= reading_time(@content) %> min read</span>
     </div>
 
     <div class="relative mt-[26px] flex h-[220px] items-end justify-end overflow-hidden rounded-[22px] p-[14px] shadow-article-hero sm:h-[300px]" style="background:<%= stone_gradient(gemstone) %>">
       <% if gemstone.featured_image_url.present? %>
         <img src="<%= image_url_for(gemstone.featured_image_url) %>" alt="<%= gemstone.name %>" class="absolute inset-0 h-full w-full object-cover">
-      <% else %>
-        <span class="relative font-mono text-[10px] uppercase tracking-[0.1em] text-white/85">Hero photo</span>
       <% end %>
     </div>
 
-    <% if @content.present? %>
-      <div class="article mt-8"><%= render_content(html) %></div>
-    <% else %>
-      <div class="mt-8 max-w-[680px] rounded-[18px] border border-violet/16 bg-violet/6 px-[26px] py-[22px]">
-        <div class="mb-[10px] font-mono text-[10px] uppercase tracking-[0.18em] text-violet">✦ Coming soon</div>
-        <p class="text-[14.5px] leading-[1.7] text-callout-text">This guide is being written. In the meantime, explore the other <%= gemstone.name %> guides in the sidebar.</p>
-      </div>
-    <% end %>
+    <div class="article mt-8"><%= render_content(html) %></div>
   </article>
 
   <!-- Sidebar -->
@@ -48,13 +41,13 @@
 
     <div class="relative overflow-hidden rounded-[18px] bg-ink/97 px-[22px] py-5">
       <div class="absolute -right-[30px] -top-10 h-[140px] w-[180px] blur-[16px] pointer-events-none" style="background:radial-gradient(ellipse,rgba(124,58,237,0.55),transparent 70%)" aria-hidden="true"></div>
-      <div class="relative mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">More <%= gemstone.name %> guides</div>
+      <div class="relative mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-lavender"><%= other_guides.any? ? "More #{gemstone.name} guides" : "About #{gemstone.name}" %></div>
       <div class="relative flex flex-col gap-[10px]">
         <% other_guides.first(5).each do |guide| %>
           <a href="/gemstones/<%= gemstone.slug %>/<%= guide[:path] %>" class="flex items-baseline gap-[9px] text-[12.5px] leading-[1.4] text-white/85 hover:text-white"><span class="text-[11px]"><%= guide[:icon] %></span><%= guide[:short] %></a>
         <% end %>
       </div>
-      <a href="<%= gemstone_path(gemstone) %>" class="relative mt-4 block text-[12px] font-medium text-lavender hover:text-white">All <%= Gemstone::SUB_PAGES.size %> guides →</a>
+      <a href="<%= gemstone_path(gemstone) %>" class="relative mt-4 block text-[12px] font-medium text-lavender hover:text-white"><%= gemstone.name %> overview<%= other_guides.any? ? " & all #{other_guides.size + 1} guides" : "" %> →</a>
     </div>
 
     <% if facts.any? %>

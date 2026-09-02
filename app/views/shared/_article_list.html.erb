@@ -12,7 +12,7 @@
   <% if list.any? %>
     <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
       <% list.each do |article| %>
-        <a href="<%= blog_post_path(article) %>" class="block rounded-[20px] border border-violet/10 bg-white/80 p-3 shadow-card card-transition hover:border-violet/35 hover:shadow-card-hover">
+        <a href="<%= article.canonical_path %>" class="block rounded-[20px] border border-violet/10 bg-white/80 p-3 shadow-card card-transition hover:border-violet/35 hover:shadow-card-hover">
           <div class="relative flex h-[140px] items-end justify-end overflow-hidden rounded-[14px] bg-[linear-gradient(145deg,#b48fd0,#5f9bc0)] p-2">
             <% if article.featured_image_url.present? %>
               <img src="<%= image_url_for(article.featured_image_url) %>" alt="<%= article.title %>" class="absolute inset-0 h-full w-full object-cover" loading="lazy" onerror="this.remove()">

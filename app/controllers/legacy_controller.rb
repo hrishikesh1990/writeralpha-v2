@@ -12,11 +12,11 @@ class LegacyController < ApplicationController
   ].freeze
 
   # Legacy WordPress image paths (several have external backlinks, e.g.
-  # indian-agate1.jpeg with 32 referring domains). Once IMAGE_CDN_BASE is set
-  # (e.g. https://fly.storage.tigris.dev/writeralpha-images), we 301 the old
-  # path to the same path on the CDN, preserving image link equity.
+  # indian-agate1.jpeg with 32 referring domains). The original uploads tree
+  # is mirrored on Tigris under wp-content/uploads/…, so we 301 to the same
+  # path on IMAGE_BASE_URL (the bucket fly.toml already points at).
   def image
-    base = ENV["IMAGE_CDN_BASE"].presence
+    base = ENV["IMAGE_BASE_URL"].presence
     if base
       redirect_to "#{base.chomp('/')}/wp-content/uploads/#{params[:image_path]}", status: :moved_permanently, allow_other_host: true
     else
