@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for writeralpha-v2-rough-grass-4046 on 2026-03-15T12:27:58+05:30
+# fly.toml app configuration file generated for writeralpha-v2
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'writeralpha-v2-rough-grass-4046'
+app = 'writeralpha-v2'
 primary_region = 'sjc'
 console_command = '/rails/bin/rails console'
 
@@ -16,6 +16,7 @@ console_command = '/rails/bin/rails console'
   RAILS_ENV = 'production'
   RAILS_LOG_TO_STDOUT = 'true'
   RAILS_SERVE_STATIC_FILES = 'true'
+  IMAGE_BASE_URL = 'https://writeralpha-images.fly.storage.tigris.dev'
 
 [http_service]
   internal_port = 3000

@@ -42,3 +42,6 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+# Self-hosted images are served from Tigris object storage in production (see IMAGE_BASE_URL in fly.toml)
+/public/images/

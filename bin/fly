@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Project-scoped flyctl: uses ./.fly for auth/config so this project's
+# Fly.io login is independent of the global ~/.fly login.
+# Usage: bin/fly auth login   (once), then bin/fly deploy, bin/fly logs, etc.
+set -euo pipefail
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+export FLY_CONFIG_DIR="$PROJECT_ROOT/.fly"
+mkdir -p "$FLY_CONFIG_DIR"
+exec flyctl "$@"

@@ -38,3 +38,13 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Ignore key files for decrypting credentials and more.
+/config/credentials/*.key
+
+
+# Project-scoped Fly.io login/config (see bin/fly)
+/.fly/
+
+# macOS Finder metadata
+.DS_Store
