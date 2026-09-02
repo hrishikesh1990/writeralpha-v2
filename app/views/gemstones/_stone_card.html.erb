@@ -1,0 +1,37 @@
+<%# Shared stone card. locals: gemstone, variant (:home | :directory | :compact) %>
+<%
+  variant ||= :home
+  spec = {
+    home:      { image: "h-[140px]", name: "text-[16px]",   sub: "text-[11.5px]", body: "px-2 pt-[14px] pb-2", tags: "mt-3",     tags?: true,  mohs?: false, shadow: "shadow-card" },
+    directory: { image: "h-[130px]", name: "text-[15.5px]", sub: "text-[11px]",   body: "px-2 pt-[13px] pb-[7px]", tags: "mt-[11px]", tags?: true, mohs?: true, shadow: "shadow-card" },
+    compact:   { image: "h-[110px]", name: "text-[15px]",   sub: "text-[11px]",   body: "px-2 pt-3 pb-[6px]", tags: "", tags?: false, mohs?: false, shadow: "" }
+  }.fetch(variant)
+  powers = gemstone.healing_powers.first(2)
+  mohs = format_mohs(gemstone.mohs_hardness)
+%>
+<a href="<%= gemstone_path(gemstone) %>" class="block rounded-[20px] border border-violet/10 bg-white/80 p-3 card-transition hover:border-violet/35 hover:shadow-card-hover <%= spec[:shadow] %>">
+  <div class="relative flex <%= spec[:image] %> items-end justify-between overflow-hidden rounded-[14px] p-2" style="background:<%= stone_gradient(gemstone) %>">
+    <% if gemstone.featured_image_url.present? %>
+      <img src="<%= image_url_for(gemstone.featured_image_url) %>" alt="<%= gemstone.name %>" class="absolute inset-0 h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+    <% end %>
+    <% if spec[:mohs?] && mohs %>
+      <span class="relative rounded-full px-2 py-[3px] font-mono text-[9px] tracking-[0.08em] text-white/90 <%= gemstone.featured_image_url.present? ? "bg-black/40 backdrop-blur-[2px]" : "bg-black/18" %>">MOHS <%= mohs %></span>
+    <% else %>
+      <span></span>
+    <% end %>
+    <% if gemstone.featured_image_url.blank? %>
+      <span class="relative font-mono text-[9px] tracking-[0.08em] text-white/90">PHOTO</span>
+    <% end %>
+  </div>
+  <div class="<%= spec[:body] %>">
+    <div class="<%= spec[:name] %> font-semibold text-ink"><%= gemstone.name %></div>
+    <div class="mt-[3px] <%= spec[:sub] %> font-light text-muted"><%= gemstone.subtitle %></div>
+    <% if spec[:tags?] && powers.any? %>
+      <div class="flex flex-wrap gap-[5px] <%= spec[:tags] %>">
+        <% powers.each_with_index do |power, i| %>
+          <span class="rounded-full px-[10px] py-1 text-[10px] leading-none <%= i.zero? ? "bg-violet/8 text-violet-deep" : "bg-sky/10 text-sky-text" %>"><%= power.name %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</a>

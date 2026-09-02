@@ -1,7 +1,11 @@
 class BlogController < ApplicationController
   def index
     @articles = Article.published.recent.includes(:category)
-    @meta = { title: "Blog — Writer Alpha", description: "Latest articles." }
+    if params[:category].present?
+      @category = Category.find_by(slug: params[:category])
+      @articles = @articles.in_category(params[:category])
+    end
+    @meta = { title: "#{@category ? @category.name : 'Blog'} — WriterAlpha", description: "Latest articles." }
   end
 
   def show

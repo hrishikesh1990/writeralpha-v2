@@ -1,197 +1,248 @@
 @import "tailwindcss";
 
-/* Article prose styling */
-.prose {
-  color: #374151;
-  line-height: 1.75;
-  font-size: 1.125rem;
+/* ---------------------------------------------------------------------------
+   "Aura" design tokens — see design_handoff_aura_ui/README.md
+   --------------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: #2f2a52;          /* headings, dark panels */
+  --color-body: #4b4568;         /* article body copy */
+  --color-ui: #524b7a;           /* UI text */
+  --color-muted: #6b6491;        /* secondary text */
+  --color-faint: #8a84ab;        /* meta / eyebrows */
+  --color-logo: #3b3563;         /* wordmark */
+  --color-violet: #7c3aed;       /* accent */
+  --color-violet-deep: #6d28d9;  /* link default / active pill text */
+  --color-violet-deeper: #5b21b6;/* link hover */
+  --color-sky: #4f8fdd;          /* secondary accent */
+  --color-sky-text: #3b6fb5;     /* secondary tag text */
+  --color-lavender: #c4b5fd;     /* light accent on dark panels */
+  --color-arrow: #c0bad8;        /* guide row chevron */
+  --color-placeholder: #9a93bd;  /* search placeholder */
+  --color-pill-off: #f6f4fb;     /* filter pill off bg (used at /90) */
+  --color-callout-text: #3b3563;
+
+  --shadow-card: 0 4px 24px rgba(80, 60, 160, 0.06);
+  --shadow-card-soft: 0 4px 24px rgba(80, 60, 160, 0.05);
+  --shadow-card-hover: 0 10px 36px rgba(80, 60, 160, 0.14);
+  --shadow-tile-hover: 0 8px 32px rgba(80, 60, 160, 0.12);
+  --shadow-guide-hover: 0 8px 28px rgba(80, 60, 160, 0.12);
+  --shadow-search: 0 8px 32px rgba(124, 58, 237, 0.10);
+  --shadow-hero: 0 20px 60px rgba(80, 60, 160, 0.25);
+  --shadow-article-hero: 0 16px 48px rgba(80, 60, 160, 0.2);
 }
 
-.prose > * + * {
-  margin-top: 1.25em;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--color-ui);
+    background: linear-gradient(160deg, #fbfaff 0%, #f3effc 45%, #eef4fb 100%) fixed;
+  }
+  a {
+    color: var(--color-violet-deep);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-violet-deeper);
+  }
 }
 
-/* Headings */
-.prose h2 {
-  color: #111827;
-  font-weight: 700;
-  font-size: 1.5em;
-  margin-top: 2em;
-  margin-bottom: 0.75em;
-  line-height: 1.33;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e5e7eb;
+/* Gradient headline text: violet → sky */
+@utility text-gradient {
+  background: linear-gradient(90deg, #7c3aed, #4f8fdd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.prose h3 {
-  color: #111827;
+/* Blurred lavender glow blob (positioned by the caller) */
+@utility glow-blob {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(196, 181, 253, 0.45), transparent 70%);
+}
+
+/* Violet glow used inside dark panels */
+@utility glow-violet {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.5), transparent 70%);
+}
+
+/* Logo orb */
+@utility logo-orb {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, #c4b5fd, #a5d8f3, #f3c6e2, #c4b5fd);
+}
+
+/* Card hover transition (border + shadow) */
+@utility card-transition {
+  transition-property: border-color, box-shadow, color, background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+/* ---------------------------------------------------------------------------
+   Article body (gemstone sub-pages, blog, learn) — sub-page design tokens
+   --------------------------------------------------------------------------- */
+.article {
+  max-width: 680px;
+  color: var(--color-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Lede: first paragraph */
+.article > p:first-child {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.article p {
+  margin: 16px 0 0;
+}
+
+.article h2 {
+  color: var(--color-ink);
   font-weight: 600;
-  font-size: 1.25em;
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
-  line-height: 1.4;
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 44px 0 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.14);
+  scroll-margin-top: 20px;
 }
 
-.prose h4 {
-  color: #111827;
+.article h3 {
+  color: var(--color-ink);
   font-weight: 600;
-  font-size: 1.1em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+  scroll-margin-top: 20px;
 }
 
-/* Paragraphs */
-.prose p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
-.prose p:first-child {
-  margin-top: 0;
-}
-
-/* Links */
-.prose a {
-  color: #7c3aed;
-  text-decoration: underline;
+.article h4 {
+  color: var(--color-ink);
   font-weight: 500;
+  font-size: 15.5px;
+  margin: 24px 0 0;
 }
 
-.prose a:hover {
-  color: #6d28d9;
+.article h2 + p,
+.article h3 + p,
+.article h4 + p,
+.article h2 + ul,
+.article h3 + ul,
+.article h2 + ol,
+.article h3 + ol {
+  margin-top: 16px;
 }
 
-/* Bold / Emphasis */
-.prose strong {
-  color: #111827;
-  font-weight: 600;
-}
-
-/* Lists */
-.prose ul {
-  list-style-type: disc;
-  padding-left: 1.625em;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
-.prose ol {
-  list-style-type: decimal;
-  padding-left: 1.625em;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
-.prose li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-.prose li::marker {
-  color: #6b7280;
-}
-
-.prose ol > li::marker {
-  color: #6b7280;
+.article a {
+  color: var(--color-violet-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(124, 58, 237, 0.35);
+  text-underline-offset: 2px;
   font-weight: 400;
 }
 
-/* Nested lists reduce spacing */
-.prose li > ul,
-.prose li > ol {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+.article a:hover {
+  color: var(--color-violet-deeper);
+  text-decoration-color: currentColor;
 }
 
-/* Images */
-.prose img {
+.article strong {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.article ul,
+.article ol {
+  margin: 16px 0 0;
+  padding-left: 1.5em;
+}
+
+.article ul { list-style-type: disc; }
+.article ol { list-style-type: decimal; }
+
+.article li {
+  margin-top: 6px;
+}
+
+.article li::marker {
+  color: var(--color-violet);
+}
+
+.article li > ul,
+.article li > ol {
+  margin-top: 6px;
+}
+
+.article img {
+  display: block;
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  border-radius: 14px;
+  margin: 28px 0 0;
 }
 
-.prose figure {
-  margin-top: 2em;
-  margin-bottom: 2em;
+.article figure {
+  margin: 28px 0 0;
 }
 
-.prose figure img {
-  margin-top: 0;
-  margin-bottom: 0;
+.article figure img {
+  margin: 0;
 }
 
-.prose figcaption {
-  color: #6b7280;
-  font-size: 0.875em;
-  line-height: 1.4;
-  margin-top: 0.75em;
+.article figcaption {
+  color: var(--color-faint);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 10px;
   text-align: center;
 }
 
-/* Blockquotes */
-.prose blockquote {
+.article blockquote {
+  margin: 24px 0 0;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--color-violet);
+  color: var(--color-ui);
   font-style: italic;
-  color: #4b5563;
-  border-left: 3px solid #7c3aed;
-  padding-left: 1em;
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
 }
 
-/* Horizontal rules */
-.prose hr {
-  border-color: #e5e7eb;
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
-/* prose-lg size adjustments */
-.prose-lg {
-  font-size: 1.125rem;
-}
-
-@media (min-width: 768px) {
-  .prose-lg {
-    font-size: 1.175rem;
-  }
-}
-
-/* Remove excessive spacing between consecutive lists (TOC-like) */
-.prose ul + ul,
-.prose ol + ol {
+.article blockquote p {
   margin-top: 0;
 }
 
-/* Ensure the first element after a heading has no extra top margin */
-.prose h2 + p,
-.prose h3 + p,
-.prose h2 + ul,
-.prose h3 + ul,
-.prose h2 + ol,
-.prose h3 + ol,
-.prose h2 + figure,
-.prose h3 + figure {
-  margin-top: 0.75em;
+.article hr {
+  border: 0;
+  border-top: 1px solid rgba(124, 58, 237, 0.14);
+  margin: 40px 0;
 }
 
-/* Responsive images in content */
-@media (max-width: 640px) {
-  .prose {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
+/* Legacy WordPress table-of-contents blocks duplicate the sidebar TOC */
+.article nav,
+.article .wp-block-table-of-contents,
+.article .ez-toc-container,
+.article .lwptoc {
+  display: none;
+}
 
-  .prose h2 {
-    font-size: 1.35em;
-  }
-
-  .prose h3 {
-    font-size: 1.15em;
-  }
-
-  .prose img {
-    border-radius: 0.375rem;
-  }
+/* Hide native search-input decorations inside the hero pill */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }

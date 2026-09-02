@@ -1,1 +1,3 @@
-<%= render partial: "shared/article_list", locals: { articles: @articles, title: "Blog" } %>
+<% title = @category ? @category.name : "Blog" %>
+<% crumbs = @category ? [["Home", root_path], ["Blog", blog_path], [@category.name, nil]] : [["Home", root_path], ["Blog", nil]] %>
+<%= render partial: "shared/article_list", locals: { articles: @articles, title: title, crumbs: crumbs, subtitle: (@category&.description.presence || "Guides, comparisons and stories from the atlas of stones.") } %>

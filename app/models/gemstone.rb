@@ -20,7 +20,8 @@ class Gemstone < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :alphabetical, -> { order(:name) }
-  scope :starting_with, ->(letter) { where("name LIKE ?", "#{letter}%") }
+  scope :starting_with, ->(letter) { where("gemstones.name LIKE ?", "#{letter}%") }
+  scope :search, ->(q) { where("LOWER(gemstones.name) LIKE ? OR LOWER(gemstones.subtitle) LIKE ?", *(["%#{sanitize_sql_like(q.to_s.downcase)}%"] * 2)) }
   scope :by_color, ->(slug) { joins(:colors).where(colors: { slug: slug }) }
   scope :by_shape, ->(slug) { joins(:shapes).where(shapes: { slug: slug }) }
   scope :by_cut, ->(slug) { joins(:cuts).where(cuts: { slug: slug }) }
@@ -29,25 +30,27 @@ class Gemstone < ApplicationRecord
   scope :by_lustre, ->(slug) { joins(:lustre).where(lustres: { slug: slug }) }
   scope :by_birth_month, ->(name_val) { joins(:birth_month).where("LOWER(birth_months.name) = ?", name_val.downcase) }
   scope :by_zodiac, ->(slug) { joins(:zodiac_signs).where(zodiac_signs: { slug: slug }) }
-  scope :by_element, ->(el) { where("LOWER(element) = ?", el.downcase) }
-  scope :by_planet, ->(pl) { where("LOWER(ruling_planet) = ?", pl.downcase) }
+  scope :by_element, ->(el) { where("LOWER(gemstones.element) = ?", el.downcase) }
+  scope :by_planet, ->(pl) { where("LOWER(gemstones.ruling_planet) = ?", pl.downcase) }
 
   def to_param; slug; end
 
+  # title_tpl → full SEO title (h1 of the sub-page); short → label used in
+  # hub guide cards and sidebars where the stone name is already implied.
   SUB_PAGES = [
-    { title_tpl: "%{name} Meaning, Properties & Benefits", path: "meaning", icon: "✨" },
-    { title_tpl: "Who Should Not Wear %{name}", path: "who-should-not-wear", icon: "⚠️" },
-    { title_tpl: "Can %{name} Go in Water?", path: "can-go-in-water", icon: "💧" },
-    { title_tpl: "How to Tell if %{name} is Real", path: "how-to-identify", icon: "🔍" },
-    { title_tpl: "Sleeping With %{name} Under Pillow", path: "sleeping-with", icon: "🌙" },
-    { title_tpl: "How to Cleanse & Charge %{name}", path: "how-to-cleanse", icon: "🔄" },
-    { title_tpl: "Best Crystal Combinations for %{name}", path: "combinations", icon: "💎" },
-    { title_tpl: "%{name} Affirmations", path: "affirmations", icon: "🙏" },
-    { title_tpl: "Is %{name} Expensive? Price Guide", path: "price-guide", icon: "💰" },
+    { title_tpl: "%{name} Meaning, Properties & Benefits", short: "Meaning, Properties & Benefits", path: "meaning", icon: "✨" },
+    { title_tpl: "Who Should Not Wear %{name}", short: "Who Should Not Wear", path: "who-should-not-wear", icon: "⚠️" },
+    { title_tpl: "Can %{name} Go in Water?", short: "Can It Go in Water?", path: "can-go-in-water", icon: "💧" },
+    { title_tpl: "How to Tell if %{name} is Real", short: "How to Tell if It's Real", path: "how-to-identify", icon: "🔍" },
+    { title_tpl: "Sleeping With %{name} Under Pillow", short: "Sleeping With It Under Pillow", path: "sleeping-with", icon: "🌙" },
+    { title_tpl: "How to Cleanse & Charge %{name}", short: "How to Cleanse & Charge", path: "how-to-cleanse", icon: "🔄" },
+    { title_tpl: "Best Crystal Combinations for %{name}", short: "Best Crystal Combinations", path: "combinations", icon: "💎" },
+    { title_tpl: "%{name} Affirmations", short: "Affirmations", path: "affirmations", icon: "🙏" },
+    { title_tpl: "Is %{name} Expensive? Price Guide", short: "Is It Expensive? Price Guide", path: "price-guide", icon: "💰" },
   ].freeze
 
   def hub_sub_pages
-    SUB_PAGES.map { |sp| { title: sp[:title_tpl] % { name: name }, path: sp[:path], icon: sp[:icon] } }
+    SUB_PAGES.map { |sp| { title: sp[:title_tpl] % { name: name }, short: sp[:short], path: sp[:path], icon: sp[:icon] } }
   end
 
   private

@@ -1,22 +1,37 @@
-<div class="max-w-7xl mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold text-gray-900 mb-8"><%= title %></h1>
-  <% if articles.respond_to?(:any?) && articles.any? %>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <% articles.each do |article| %>
-        <a href="<%= blog_post_path(article) %>" class="bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-md transition group overflow-hidden">
-          <% if article.featured_image_url.present? %>
-            <div class="w-full h-40 overflow-hidden">
-              <img src="<%= article.featured_image_url %>" alt="<%= article.title %>" class="w-full h-full object-cover" loading="lazy">
+<%# locals: articles, title, (optional) crumbs, subtitle %>
+<% crumbs = local_assigns.fetch(:crumbs, [["Home", root_path], [title, nil]]) %>
+<% list = articles.respond_to?(:to_a) ? articles.to_a : [] %>
+
+<section class="px-5 pb-6 pt-9 sm:px-11">
+  <%= render "shared/breadcrumb", crumbs: crumbs %>
+  <h1 class="mt-3 text-[30px] font-light text-ink sm:text-[36px]"><%= title %> <span class="text-gradient font-semibold">— <%= list.size %> <%= "article".pluralize(list.size) %></span></h1>
+  <% if local_assigns[:subtitle] %><p class="mt-2 text-[14px] font-light text-muted"><%= subtitle %></p><% end %>
+</section>
+
+<section class="px-5 pb-14 pt-2 sm:px-11">
+  <% if list.any? %>
+    <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+      <% list.each do |article| %>
+        <a href="<%= blog_post_path(article) %>" class="block rounded-[20px] border border-violet/10 bg-white/80 p-3 shadow-card card-transition hover:border-violet/35 hover:shadow-card-hover">
+          <div class="relative flex h-[140px] items-end justify-end overflow-hidden rounded-[14px] bg-[linear-gradient(145deg,#b48fd0,#5f9bc0)] p-2">
+            <% if article.featured_image_url.present? %>
+              <img src="<%= image_url_for(article.featured_image_url) %>" alt="<%= article.title %>" class="absolute inset-0 h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+            <% else %>
+              <span class="relative font-mono text-[9px] tracking-[0.08em] text-white/90">PHOTO</span>
+            <% end %>
+          </div>
+          <div class="px-2 pb-2 pt-[14px]">
+            <div class="text-[15.5px] font-semibold leading-[1.3] text-ink"><%= article.title %></div>
+            <% if article.excerpt.present? %><p class="mt-[6px] line-clamp-2 text-[11.5px] font-light leading-[1.6] text-muted"><%= strip_tags(article.excerpt) %></p><% end %>
+            <div class="mt-3 flex flex-wrap items-center gap-[5px]">
+              <% if article.category %><span class="rounded-full bg-violet/8 px-[10px] py-1 text-[10px] leading-none text-violet-deep"><%= article.category.name %></span><% end %>
+              <% if article.published_at %><span class="rounded-full bg-sky/10 px-[10px] py-1 text-[10px] leading-none text-sky-text"><%= article.published_at.strftime("%b %Y") %></span><% end %>
             </div>
-          <% end %>
-          <div class="p-5">
-            <h3 class="font-semibold text-gray-900 group-hover:text-purple-700"><%= article.title %></h3>
-            <p class="text-sm text-gray-500 mt-2 line-clamp-2"><%= article.excerpt %></p>
           </div>
         </a>
       <% end %>
     </div>
   <% else %>
-    <p class="text-gray-500 text-center py-12">Content coming soon.</p>
+    <div class="py-16 text-center font-light text-muted">Nothing here yet. <a href="<%= gemstones_path %>" class="font-medium text-violet-deep">Explore the gemstone directory</a></div>
   <% end %>
-</div>
+</section>

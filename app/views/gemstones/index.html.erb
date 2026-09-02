@@ -1,47 +1,91 @@
-<div class="max-w-7xl mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold text-gray-900 mb-2">Gemstone Directory</h1>
-  <p class="text-gray-600 mb-8">Explore our collection of <%= @gemstones.count %> gemstones. Use filters to find your perfect crystal.</p>
-  <div class="flex flex-col lg:flex-row gap-8">
-    <!-- Sidebar -->
-    <aside class="lg:w-72 flex-shrink-0">
-      <div class="bg-white rounded-xl border border-gray-200 p-5 sticky top-20 space-y-5">
-        <h2 class="font-bold text-gray-900">Filters</h2>
-        <% if @colors.any? %>
-        <div><h3 class="text-sm font-semibold text-gray-700 mb-2">Color</h3>
-          <div class="flex flex-wrap gap-1.5"><% @colors.each do |c| %>
-            <a href="<%= gemstones_by_color_path(color: c.slug) %>" class="text-xs px-2.5 py-1 rounded-full border border-gray-300 text-gray-600 hover:border-purple-500 hover:text-purple-700 transition"><%= c.name %></a>
-          <% end %></div></div>
+<% content_for :container_class, "max-w-[1280px]" %>
+<%
+  active = @active || {}
+  has_active = active.any?
+  sidebar_keys = %i[color healing transparency zodiac letter]
+  crumbs = [["Home", root_path], ["Gemstones", has_active && @filter_name ? gemstones_path : nil]]
+  crumbs << [@filter_name, nil] if @filter_name
+  panel_class = "rounded-[18px] border border-violet/10 bg-white/80 px-5 py-[18px]"
+  eyebrow_class = "mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+%>
+
+<section class="px-5 pb-6 pt-9 sm:px-11" data-screen-label="Directory header">
+  <%= render "shared/breadcrumb", crumbs: crumbs %>
+  <h1 class="mt-3 text-[30px] font-light text-ink sm:text-[36px]"><%= @heading %> <span class="text-gradient font-semibold">— <%= @gemstones.size %> of <%= @total_count %> stones</span></h1>
+  <p class="mt-2 text-[14px] font-light text-muted">
+    <% if active[:q].present? %>Showing stones matching “<%= active[:q] %>”. <% end %>Filter by color, healing power, transparency, zodiac, birth month, or letter.
+  </p>
+</section>
+
+<div class="grid items-start gap-8 px-5 pb-14 pt-2 sm:px-11 lg:grid-cols-[260px_1fr]">
+  <!-- Filters -->
+  <aside class="flex flex-col gap-[22px] lg:sticky lg:top-4" data-screen-label="Filters">
+    <% if has_active %>
+      <a href="<%= gemstones_path %>" class="rounded-full bg-violet/8 px-4 py-[10px] text-center text-[12px] font-medium text-violet-deep hover:bg-violet/12">Clear all filters ✕</a>
+    <% end %>
+
+    <div id="filter-color" class="<%= panel_class %> scroll-mt-4">
+      <div class="<%= eyebrow_class %>">Color</div>
+      <div class="flex flex-wrap gap-2">
+        <% @colors.each do |color| %>
+          <% selected = active[:color] == color.slug %>
+          <a href="<%= toggle_filter_path(active, :color, color.slug) %>" title="<%= color.name %>" aria-label="<%= color.name %>" aria-pressed="<%= selected %>"
+             class="box-border block size-[26px] rounded-full border-2 card-transition <%= selected ? "border-violet-deep" : "border-ui/18 hover:border-violet/50" %>"
+             style="background:<%= color_swatch(color) %>"></a>
         <% end %>
-        <% if @healing_powers.any? %>
-        <div><h3 class="text-sm font-semibold text-gray-700 mb-2">Healing Power</h3>
-          <div class="flex flex-wrap gap-1.5"><% @healing_powers.each do |hp| %>
-            <a href="<%= gemstones_by_healing_path(value: hp.slug) %>" class="text-xs px-2.5 py-1 rounded-full border border-gray-300 text-gray-600 hover:border-purple-500 hover:text-purple-700 transition"><%= hp.name %></a>
-          <% end %></div></div>
-        <% end %>
-        <% if @birth_months.any? %>
-        <div><h3 class="text-sm font-semibold text-gray-700 mb-2">Birth Month</h3>
-          <div class="flex flex-wrap gap-1.5"><% @birth_months.each do |bm| %>
-            <a href="<%= gemstones_by_birth_month_path(value: bm.name.downcase) %>" class="text-xs px-2.5 py-1 rounded-full border border-gray-300 text-gray-600 hover:border-purple-500 hover:text-purple-700 transition"><%= bm.name %></a>
-          <% end %></div></div>
-        <% end %>
-        <% if @zodiac_signs.any? %>
-        <div><h3 class="text-sm font-semibold text-gray-700 mb-2">Zodiac</h3>
-          <div class="flex flex-wrap gap-1.5"><% @zodiac_signs.each do |z| %>
-            <a href="<%= gemstones_by_zodiac_path(value: z.slug) %>" class="text-xs px-2.5 py-1 rounded-full border border-gray-300 text-gray-600 hover:border-purple-500 hover:text-purple-700 transition"><%= z.name %></a>
-          <% end %></div></div>
-        <% end %>
-        <% if @letters.any? %>
-        <div><h3 class="text-sm font-semibold text-gray-700 mb-2">A-Z</h3>
-          <div class="flex flex-wrap gap-1"><% @letters.each do |l| %>
-            <a href="<%= gemstones_by_letter_path(value: l.downcase) %>" class="w-8 h-8 flex items-center justify-center text-xs rounded border border-gray-300 text-gray-600 hover:bg-purple-700 hover:text-white hover:border-purple-700 transition font-semibold"><%= l %></a>
-          <% end %></div></div>
-        <% end %>
-        <a href="<%= gemstones_path %>" class="block text-center text-sm text-purple-700 hover:text-purple-800">Clear All Filters</a>
       </div>
-    </aside>
-    <!-- Grid -->
-    <div class="flex-1">
-      <%= render partial: "gemstones/grid", locals: { gemstones: @gemstones } %>
     </div>
+
+    <div id="filter-healing" class="<%= panel_class %> scroll-mt-4">
+      <div class="<%= eyebrow_class %>">Healing power</div>
+      <div class="flex flex-wrap gap-[6px]">
+        <% @healing_powers.each do |power| %>
+          <a href="<%= toggle_filter_path(active, :healing, power.slug) %>" class="<%= filter_pill_class(active[:healing] == power.slug) %>"><%= power.name %></a>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="filter-transparency" class="<%= panel_class %> scroll-mt-4">
+      <div class="<%= eyebrow_class %>">Transparency</div>
+      <div class="flex flex-wrap gap-[6px]">
+        <% @transparencies.each do |t| %>
+          <a href="<%= toggle_filter_path(active, :transparency, t.slug) %>" class="<%= filter_pill_class(active[:transparency] == t.slug) %>"><%= t.name %></a>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="filter-zodiac" class="<%= panel_class %> scroll-mt-4">
+      <div class="<%= eyebrow_class %>">Zodiac</div>
+      <div class="grid grid-cols-4 gap-[6px]">
+        <% @zodiac_signs.each do |sign| %>
+          <% selected = active[:zodiac] == sign.slug %>
+          <a href="<%= toggle_filter_path(active, :zodiac, sign.slug) %>" title="<%= sign.name %>" aria-label="<%= sign.name %>"
+             class="flex items-center justify-center rounded-[10px] border py-2 text-[15px] leading-none card-transition <%= selected ? "border-violet/90 bg-violet/90 text-white hover:text-white" : "border-ui/14 bg-pill-off/90 text-ui hover:border-violet/35 hover:text-violet-deep" %>"><%= text_glyph(sign.symbol) %></a>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="filter-letter" class="<%= panel_class %> scroll-mt-4">
+      <div class="<%= eyebrow_class %>">A – Z</div>
+      <div class="flex flex-wrap gap-1">
+        <% @letters.each do |letter| %>
+          <% selected = active[:letter] == letter %>
+          <a href="<%= toggle_filter_path(active, :letter, letter) %>" class="flex size-[26px] items-center justify-center rounded-[8px] font-mono text-[11px] card-transition <%= selected ? "bg-violet/90 text-white hover:text-white" : "text-ui hover:bg-violet/8 hover:text-violet-deep" %>"><%= letter %></a>
+        <% end %>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Results -->
+  <div>
+    <% if @gemstones.any? %>
+      <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3" data-screen-label="Results grid">
+        <% @gemstones.each do |gemstone| %>
+          <%= render "gemstones/stone_card", gemstone: gemstone, variant: :directory %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="py-16 text-center font-light text-muted">No stones match this combination. <a href="<%= gemstones_path %>" class="font-medium text-violet-deep">Clear filters</a></div>
+    <% end %>
   </div>
 </div>

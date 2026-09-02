@@ -1,0 +1,7 @@
+<%# locals: crumbs — array of [label, path_or_nil]; last item rendered as plain text %>
+<nav class="font-mono text-[10.5px] uppercase tracking-[0.2em] text-faint" aria-label="Breadcrumb">
+  <% crumbs.each_with_index do |(label, path), i| %>
+    <% if i.positive? %> / <% end %>
+    <% if path %><a href="<%= path %>" class="text-faint hover:text-violet-deep"><%= label %></a><% else %><span><%= label %></span><% end %>
+  <% end %>
+</nav>
