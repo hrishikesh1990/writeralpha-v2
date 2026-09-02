@@ -42,8 +42,8 @@ module WriteralphaV2
     # gzip HTML/CSS/JS responses (Fly's proxy does not compress for us).
     config.middleware.use Rack::Deflater
 
-    # 301 www./trailing-slash variants to the canonical apex URL (see lib/middleware).
-    require_relative "../lib/middleware/canonical_host"
+    # 301 www./trailing-slash variants to the canonical apex URL (see lib/canonical_host.rb).
+    require_relative "../lib/canonical_host"
     config.middleware.insert_before Rack::Runtime, CanonicalHost
   end
 end
