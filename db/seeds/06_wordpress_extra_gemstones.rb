@@ -37,6 +37,14 @@ NAMES = {
 
 CONTENT_FIELDS = %w[meaning_content water_safety_content who_should_not_wear_content sleeping_with_content].freeze
 
+# Featured photos that exist in public/images/posts (and on Tigris) for the
+# imported stones. The original WordPress uploads for the rest were never
+# rehosted, so they keep the gradient placeholder.
+FEATURED_IMAGES = {
+  "ruby-zoisite" => "/images/posts/ruby-zoisite-meaning.jpeg",
+  "larvikite" => "/images/posts/larvikite-vs-labradorite.png"
+}.freeze
+
 created = 0
 updated = 0
 
@@ -61,6 +69,11 @@ data.each do |key, attrs|
     next if value.blank? || gem.send(field).present?
 
     gem.send("#{field}=", value)
+    changed = true
+  end
+
+  if gem.featured_image_url.blank? && FEATURED_IMAGES[slug]
+    gem.featured_image_url = FEATURED_IMAGES[slug]
     changed = true
   end
 
