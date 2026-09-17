@@ -32,7 +32,7 @@ Length is decided by the answer, not a quota. Typical: stone sub-pages 700–1,2
 
 ## 4. Internal links
 
-Use the `links_out` list you are given. Each link must sit in the passage where the reader needs it, with a descriptive anchor (what they will find there), in markdown form `[anchor](/path)`. Do not add a "related posts" list. You may add a link to a URL from the site inventory if the passage needs it; do not invent URLs. All links are relative paths starting with `/`.
+Use the `links_out` list you are given. Each link must sit in the passage where the reader needs it, with a descriptive anchor (what they will find there), in markdown form `[anchor](/path)`. Do not add a "related posts" list. You may add a link to a URL from the site inventory if the passage needs it; do not invent URLs. All links are relative paths starting with `/`. In purpose guides, pairing, comparison and learn articles, link the first mention of each named stone to its hub `/gemstones/<slug>` when that hub exists in `/agent/workspace/data/known_urls.json` (85 hubs exist; check the slug). One link per stone, at first mention, anchor = the stone name.
 
 ## 5. Output format (one markdown file per piece)
 
