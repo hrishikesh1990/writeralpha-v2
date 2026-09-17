@@ -1,0 +1,228 @@
+page_id,url,template,audience,intent_id,main_entities,status,source_date
+L-0001,/gemstones/agate,gemstone hub,enthusiast/buyer,INT-agate-hub,Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0002,/gemstones/amazonite,gemstone hub,enthusiast/buyer,INT-amazonite-hub,Amazonite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0003,/gemstones/amethyst,gemstone hub,enthusiast/buyer,INT-amethyst-hub,Amethyst,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0004,/gemstones/angel-aura-quartz,gemstone hub,enthusiast/buyer,INT-angel-aura-quartz-hub,Angel Aura Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0005,/gemstones/aquamarine,gemstone hub,enthusiast/buyer,INT-aquamarine-hub,Aquamarine,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0006,/gemstones/aventurine,gemstone hub,enthusiast/buyer,INT-aventurine-hub,Aventurine,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0007,/gemstones/black-agate,gemstone hub,enthusiast/buyer,INT-black-agate-hub,Black Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0008,/gemstones/black-moonstone,gemstone hub,enthusiast/buyer,INT-black-moonstone-hub,Black Moonstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0009,/gemstones/black-obsidian,gemstone hub,enthusiast/buyer,INT-black-obsidian-hub,Black Obsidian,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0010,/gemstones/black-onyx,gemstone hub,enthusiast/buyer,INT-black-onyx-hub,Black Onyx,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0011,/gemstones/black-tourmaline,gemstone hub,enthusiast/buyer,INT-black-tourmaline-hub,Black Tourmaline,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0012,/gemstones/blue-lace-agate,gemstone hub,enthusiast/buyer,INT-blue-lace-agate-hub,Blue Lace Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0013,/gemstones/blue-onyx,gemstone hub,enthusiast/buyer,INT-blue-onyx-hub,Blue Onyx,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0014,/gemstones/blue-sandstone,gemstone hub,enthusiast/buyer,INT-blue-sandstone-hub,Blue Sandstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0015,/gemstones/blue-tigers-eye,gemstone hub,enthusiast/buyer,INT-blue-tigers-eye-hub,Blue Tiger's Eye,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0016,/gemstones/botswana-agate,gemstone hub,enthusiast/buyer,INT-botswana-agate-hub,Botswana Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0017,/gemstones/brazilian-agate,gemstone hub,enthusiast/buyer,INT-brazilian-agate-hub,Brazilian Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0018,/gemstones/calcite,gemstone hub,enthusiast/buyer,INT-calcite-hub,Calcite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0019,/gemstones/caribbean-calcite,gemstone hub,enthusiast/buyer,INT-caribbean-calcite-hub,Caribbean Calcite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0020,/gemstones/carnelian,gemstone hub,enthusiast/buyer,INT-carnelian-hub,Carnelian,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0021,/gemstones/carnelian-agate,gemstone hub,enthusiast/buyer,INT-carnelian-agate-hub,Carnelian Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0022,/gemstones/cats-eye,gemstone hub,enthusiast/buyer,INT-cats-eye-hub,Cat's Eye,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0023,/gemstones/cherry-quartz,gemstone hub,enthusiast/buyer,INT-cherry-quartz-hub,Cherry Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0024,/gemstones/citrine,gemstone hub,enthusiast/buyer,INT-citrine-hub,Citrine,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0025,/gemstones/clear-quartz,gemstone hub,enthusiast/buyer,INT-clear-quartz-hub,Clear Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0026,/gemstones/crackle-quartz,gemstone hub,enthusiast/buyer,INT-crackle-quartz-hub,Crackle Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0027,/gemstones/crazy-lace-agate,gemstone hub,enthusiast/buyer,INT-crazy-lace-agate-hub,Crazy Lace Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0028,/gemstones/diamond,gemstone hub,enthusiast/buyer,INT-diamond-hub,Diamond,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0029,/gemstones/druzy-quartz,gemstone hub,enthusiast/buyer,INT-druzy-quartz-hub,Druzy Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0030,/gemstones/emerald,gemstone hub,enthusiast/buyer,INT-emerald-hub,Emerald,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0031,/gemstones/enhydro-agate,gemstone hub,enthusiast/buyer,INT-enhydro-agate-hub,Enhydro Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0032,/gemstones/fancy-jasper,gemstone hub,enthusiast/buyer,INT-fancy-jasper-hub,Fancy Jasper,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0033,/gemstones/flower-agate,gemstone hub,enthusiast/buyer,INT-flower-agate-hub,Flower Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0034,/gemstones/fluorite,gemstone hub,enthusiast/buyer,INT-fluorite-hub,Fluorite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0035,/gemstones/garden-quartz,gemstone hub,enthusiast/buyer,INT-garden-quartz-hub,Garden Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0036,/gemstones/garnet,gemstone hub,enthusiast/buyer,INT-garnet-hub,Garnet,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0037,/gemstones/grape-agate,gemstone hub,enthusiast/buyer,INT-grape-agate-hub,Grape Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0038,/gemstones/green-goldstone,gemstone hub,enthusiast/buyer,INT-green-goldstone-hub,Green Goldstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0039,/gemstones/green-opal,gemstone hub,enthusiast/buyer,INT-green-opal-hub,Green Opal,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0040,/gemstones/hematite,gemstone hub,enthusiast/buyer,INT-hematite-hub,Hematite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0041,/gemstones/hematite-rings,gemstone hub,enthusiast/buyer,INT-hematite-rings-hub,Hematite Rings,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0042,/gemstones/hematoid-quartz,gemstone hub,enthusiast/buyer,INT-hematoid-quartz-hub,Hematoid Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0043,/gemstones/honey-calcite,gemstone hub,enthusiast/buyer,INT-honey-calcite-hub,Honey Calcite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0044,/gemstones/howlite,gemstone hub,enthusiast/buyer,INT-howlite-hub,Howlite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0045,/gemstones/indian-agate,gemstone hub,enthusiast/buyer,INT-indian-agate-hub,Indian Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0046,/gemstones/jade,gemstone hub,enthusiast/buyer,INT-jade-hub,Jade,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0047,/gemstones/kyanite,gemstone hub,enthusiast/buyer,INT-kyanite-hub,Kyanite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0048,/gemstones/labradorite,gemstone hub,enthusiast/buyer,INT-labradorite-hub,Labradorite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0049,/gemstones/lapis-lazuli,gemstone hub,enthusiast/buyer,INT-lapis-lazuli-hub,Lapis Lazuli,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0050,/gemstones/larimar,gemstone hub,enthusiast/buyer,INT-larimar-hub,Larimar,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0051,/gemstones/larvikite,gemstone hub,enthusiast/buyer,INT-larvikite-hub,Larvikite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0052,/gemstones/lava-stone,gemstone hub,enthusiast/buyer,INT-lava-stone-hub,Lava Stone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0053,/gemstones/lepidolite,gemstone hub,enthusiast/buyer,INT-lepidolite-hub,Lepidolite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0054,/gemstones/malachite,gemstone hub,enthusiast/buyer,INT-malachite-hub,Malachite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0055,/gemstones/moldavite,gemstone hub,enthusiast/buyer,INT-moldavite-hub,Moldavite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0056,/gemstones/moonstone,gemstone hub,enthusiast/buyer,INT-moonstone-hub,Moonstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0057,/gemstones/moss-agate,gemstone hub,enthusiast/buyer,INT-moss-agate-hub,Moss Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0058,/gemstones/obsidian,gemstone hub,enthusiast/buyer,INT-obsidian-hub,Obsidian,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0059,/gemstones/opal,gemstone hub,enthusiast/buyer,INT-opal-hub,Opal,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0060,/gemstones/opalite,gemstone hub,enthusiast/buyer,INT-opalite-hub,Opalite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0061,/gemstones/peach-moonstone,gemstone hub,enthusiast/buyer,INT-peach-moonstone-hub,Peach Moonstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0062,/gemstones/peridot,gemstone hub,enthusiast/buyer,INT-peridot-hub,Peridot,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0063,/gemstones/pink-agate,gemstone hub,enthusiast/buyer,INT-pink-agate-hub,Pink Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0064,/gemstones/pyrite,gemstone hub,enthusiast/buyer,INT-pyrite-hub,Pyrite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0065,/gemstones/rainbow-hematite,gemstone hub,enthusiast/buyer,INT-rainbow-hematite-hub,Rainbow Hematite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0066,/gemstones/red-agate,gemstone hub,enthusiast/buyer,INT-red-agate-hub,Red Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0067,/gemstones/red-jasper,gemstone hub,enthusiast/buyer,INT-red-jasper-hub,Red Jasper,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0068,/gemstones/red-tigers-eye,gemstone hub,enthusiast/buyer,INT-red-tigers-eye-hub,Red Tiger's Eye,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0069,/gemstones/rhodonite,gemstone hub,enthusiast/buyer,INT-rhodonite-hub,Rhodonite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0070,/gemstones/rose-quartz,gemstone hub,enthusiast/buyer,INT-rose-quartz-hub,Rose Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0071,/gemstones/ruby,gemstone hub,enthusiast/buyer,INT-ruby-hub,Ruby,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0072,/gemstones/ruby-zoisite,gemstone hub,enthusiast/buyer,INT-ruby-zoisite-hub,Ruby Zoisite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0073,/gemstones/sapphire,gemstone hub,enthusiast/buyer,INT-sapphire-hub,Sapphire,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0074,/gemstones/selenite,gemstone hub,enthusiast/buyer,INT-selenite-hub,Selenite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0075,/gemstones/smoky-quartz,gemstone hub,enthusiast/buyer,INT-smoky-quartz-hub,Smoky Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0076,/gemstones/sodalite,gemstone hub,enthusiast/buyer,INT-sodalite-hub,Sodalite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0077,/gemstones/strawberry-quartz,gemstone hub,enthusiast/buyer,INT-strawberry-quartz-hub,Strawberry Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0078,/gemstones/sunstone,gemstone hub,enthusiast/buyer,INT-sunstone-hub,Sunstone,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0079,/gemstones/tiger-eye,gemstone hub,enthusiast/buyer,INT-tiger-eye-hub,Tiger Eye,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0080,/gemstones/tortoise-ring,gemstone hub,enthusiast/buyer,INT-tortoise-ring-hub,Tortoise Ring,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0081,/gemstones/tree-agate,gemstone hub,enthusiast/buyer,INT-tree-agate-hub,Tree Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0082,/gemstones/turquoise,gemstone hub,enthusiast/buyer,INT-turquoise-hub,Turquoise,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0083,/gemstones/white-agate,gemstone hub,enthusiast/buyer,INT-white-agate-hub,White Agate,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0084,/gemstones/white-quartz,gemstone hub,enthusiast/buyer,INT-white-quartz-hub,White Quartz,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0085,/gemstones/yellow-calcite,gemstone hub,enthusiast/buyer,INT-yellow-calcite-hub,Yellow Calcite,live; body copy thin for most (out of scope),sitemap 2026-09-17
+L-0086,/gemstones/agate/can-go-in-water,gemstone sub-page,enthusiast,INT-agate-can-go-in-water,Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0087,/gemstones/amazonite/can-go-in-water,gemstone sub-page,enthusiast,INT-amazonite-can-go-in-water,Amazonite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0088,/gemstones/amethyst/can-go-in-water,gemstone sub-page,enthusiast,INT-amethyst-can-go-in-water,Amethyst,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0089,/gemstones/amethyst/meaning,gemstone sub-page,enthusiast,INT-amethyst-meaning,Amethyst,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0090,/gemstones/amethyst/sleeping-with,gemstone sub-page,enthusiast,INT-amethyst-sleeping-with,Amethyst,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0091,/gemstones/amethyst/who-should-not-wear,gemstone sub-page,enthusiast,INT-amethyst-who-should-not-wear,Amethyst,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0092,/gemstones/angel-aura-quartz/meaning,gemstone sub-page,enthusiast,INT-angel-aura-quartz-meaning,Angel Aura Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0093,/gemstones/aquamarine/can-go-in-water,gemstone sub-page,enthusiast,INT-aquamarine-can-go-in-water,Aquamarine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0094,/gemstones/aquamarine/who-should-not-wear,gemstone sub-page,enthusiast,INT-aquamarine-who-should-not-wear,Aquamarine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0095,/gemstones/aventurine/can-go-in-water,gemstone sub-page,enthusiast,INT-aventurine-can-go-in-water,Aventurine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0096,/gemstones/aventurine/meaning,gemstone sub-page,enthusiast,INT-aventurine-meaning,Aventurine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0097,/gemstones/aventurine/sleeping-with,gemstone sub-page,enthusiast,INT-aventurine-sleeping-with,Aventurine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0098,/gemstones/black-agate/meaning,gemstone sub-page,enthusiast,INT-black-agate-meaning,Black Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0099,/gemstones/black-moonstone/meaning,gemstone sub-page,enthusiast,INT-black-moonstone-meaning,Black Moonstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0100,/gemstones/black-obsidian/meaning,gemstone sub-page,enthusiast,INT-black-obsidian-meaning,Black Obsidian,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0101,/gemstones/black-onyx/can-go-in-water,gemstone sub-page,enthusiast,INT-black-onyx-can-go-in-water,Black Onyx,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0102,/gemstones/black-onyx/meaning,gemstone sub-page,enthusiast,INT-black-onyx-meaning,Black Onyx,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0103,/gemstones/black-onyx/who-should-not-wear,gemstone sub-page,enthusiast,INT-black-onyx-who-should-not-wear,Black Onyx,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0104,/gemstones/black-tourmaline/can-go-in-water,gemstone sub-page,enthusiast,INT-black-tourmaline-can-go-in-water,Black Tourmaline,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0105,/gemstones/black-tourmaline/meaning,gemstone sub-page,enthusiast,INT-black-tourmaline-meaning,Black Tourmaline,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0106,/gemstones/black-tourmaline/sleeping-with,gemstone sub-page,enthusiast,INT-black-tourmaline-sleeping-with,Black Tourmaline,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0107,/gemstones/blue-lace-agate/can-go-in-water,gemstone sub-page,enthusiast,INT-blue-lace-agate-can-go-in-water,Blue Lace Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0108,/gemstones/blue-lace-agate/meaning,gemstone sub-page,enthusiast,INT-blue-lace-agate-meaning,Blue Lace Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0109,/gemstones/blue-onyx/meaning,gemstone sub-page,enthusiast,INT-blue-onyx-meaning,Blue Onyx,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0110,/gemstones/blue-sandstone/meaning,gemstone sub-page,enthusiast,INT-blue-sandstone-meaning,Blue Sandstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0111,/gemstones/blue-tigers-eye/meaning,gemstone sub-page,enthusiast,INT-blue-tigers-eye-meaning,Blue Tiger's Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0112,/gemstones/botswana-agate/meaning,gemstone sub-page,enthusiast,INT-botswana-agate-meaning,Botswana Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0113,/gemstones/brazilian-agate/meaning,gemstone sub-page,enthusiast,INT-brazilian-agate-meaning,Brazilian Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0114,/gemstones/calcite/can-go-in-water,gemstone sub-page,enthusiast,INT-calcite-can-go-in-water,Calcite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0115,/gemstones/caribbean-calcite/meaning,gemstone sub-page,enthusiast,INT-caribbean-calcite-meaning,Caribbean Calcite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0116,/gemstones/carnelian/can-go-in-water,gemstone sub-page,enthusiast,INT-carnelian-can-go-in-water,Carnelian,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0117,/gemstones/carnelian-agate/meaning,gemstone sub-page,enthusiast,INT-carnelian-agate-meaning,Carnelian Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0118,/gemstones/cats-eye/who-should-not-wear,gemstone sub-page,enthusiast,INT-cats-eye-who-should-not-wear,Cat's Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0119,/gemstones/cherry-quartz/meaning,gemstone sub-page,enthusiast,INT-cherry-quartz-meaning,Cherry Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0120,/gemstones/citrine/can-go-in-water,gemstone sub-page,enthusiast,INT-citrine-can-go-in-water,Citrine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0121,/gemstones/citrine/who-should-not-wear,gemstone sub-page,enthusiast,INT-citrine-who-should-not-wear,Citrine,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0122,/gemstones/clear-quartz/can-go-in-water,gemstone sub-page,enthusiast,INT-clear-quartz-can-go-in-water,Clear Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0123,/gemstones/crackle-quartz/meaning,gemstone sub-page,enthusiast,INT-crackle-quartz-meaning,Crackle Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0124,/gemstones/crazy-lace-agate/meaning,gemstone sub-page,enthusiast,INT-crazy-lace-agate-meaning,Crazy Lace Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0125,/gemstones/druzy-quartz/meaning,gemstone sub-page,enthusiast,INT-druzy-quartz-meaning,Druzy Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0126,/gemstones/emerald/who-should-not-wear,gemstone sub-page,enthusiast,INT-emerald-who-should-not-wear,Emerald,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0127,/gemstones/enhydro-agate/meaning,gemstone sub-page,enthusiast,INT-enhydro-agate-meaning,Enhydro Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0128,/gemstones/fancy-jasper/meaning,gemstone sub-page,enthusiast,INT-fancy-jasper-meaning,Fancy Jasper,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0129,/gemstones/flower-agate/can-go-in-water,gemstone sub-page,enthusiast,INT-flower-agate-can-go-in-water,Flower Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0130,/gemstones/flower-agate/meaning,gemstone sub-page,enthusiast,INT-flower-agate-meaning,Flower Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0131,/gemstones/fluorite/can-go-in-water,gemstone sub-page,enthusiast,INT-fluorite-can-go-in-water,Fluorite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0132,/gemstones/garden-quartz/meaning,gemstone sub-page,enthusiast,INT-garden-quartz-meaning,Garden Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0133,/gemstones/garnet/can-go-in-water,gemstone sub-page,enthusiast,INT-garnet-can-go-in-water,Garnet,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0134,/gemstones/garnet/who-should-not-wear,gemstone sub-page,enthusiast,INT-garnet-who-should-not-wear,Garnet,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0135,/gemstones/grape-agate/meaning,gemstone sub-page,enthusiast,INT-grape-agate-meaning,Grape Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0136,/gemstones/green-goldstone/meaning,gemstone sub-page,enthusiast,INT-green-goldstone-meaning,Green Goldstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0137,/gemstones/green-opal/meaning,gemstone sub-page,enthusiast,INT-green-opal-meaning,Green Opal,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0138,/gemstones/hematite/can-go-in-water,gemstone sub-page,enthusiast,INT-hematite-can-go-in-water,Hematite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0139,/gemstones/hematite/meaning,gemstone sub-page,enthusiast,INT-hematite-meaning,Hematite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0140,/gemstones/hematite-rings/meaning,gemstone sub-page,enthusiast,INT-hematite-rings-meaning,Hematite Rings,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0141,/gemstones/hematoid-quartz/meaning,gemstone sub-page,enthusiast,INT-hematoid-quartz-meaning,Hematoid Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0142,/gemstones/honey-calcite/meaning,gemstone sub-page,enthusiast,INT-honey-calcite-meaning,Honey Calcite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0143,/gemstones/howlite/can-go-in-water,gemstone sub-page,enthusiast,INT-howlite-can-go-in-water,Howlite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0144,/gemstones/indian-agate/meaning,gemstone sub-page,enthusiast,INT-indian-agate-meaning,Indian Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0145,/gemstones/jade/can-go-in-water,gemstone sub-page,enthusiast,INT-jade-can-go-in-water,Jade,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0146,/gemstones/jade/meaning,gemstone sub-page,enthusiast,INT-jade-meaning,Jade,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0147,/gemstones/jade/who-should-not-wear,gemstone sub-page,enthusiast,INT-jade-who-should-not-wear,Jade,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0148,/gemstones/labradorite/can-go-in-water,gemstone sub-page,enthusiast,INT-labradorite-can-go-in-water,Labradorite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0149,/gemstones/labradorite/meaning,gemstone sub-page,enthusiast,INT-labradorite-meaning,Labradorite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0150,/gemstones/lapis-lazuli/can-go-in-water,gemstone sub-page,enthusiast,INT-lapis-lazuli-can-go-in-water,Lapis Lazuli,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0151,/gemstones/lapis-lazuli/who-should-not-wear,gemstone sub-page,enthusiast,INT-lapis-lazuli-who-should-not-wear,Lapis Lazuli,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0152,/gemstones/larimar/can-go-in-water,gemstone sub-page,enthusiast,INT-larimar-can-go-in-water,Larimar,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0153,/gemstones/larimar/meaning,gemstone sub-page,enthusiast,INT-larimar-meaning,Larimar,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0154,/gemstones/larvikite/meaning,gemstone sub-page,enthusiast,INT-larvikite-meaning,Larvikite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0155,/gemstones/lava-stone/meaning,gemstone sub-page,enthusiast,INT-lava-stone-meaning,Lava Stone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0156,/gemstones/lava-stone/who-should-not-wear,gemstone sub-page,enthusiast,INT-lava-stone-who-should-not-wear,Lava Stone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0157,/gemstones/lepidolite/can-go-in-water,gemstone sub-page,enthusiast,INT-lepidolite-can-go-in-water,Lepidolite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0158,/gemstones/lepidolite/meaning,gemstone sub-page,enthusiast,INT-lepidolite-meaning,Lepidolite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0159,/gemstones/malachite/can-go-in-water,gemstone sub-page,enthusiast,INT-malachite-can-go-in-water,Malachite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0160,/gemstones/moldavite/can-go-in-water,gemstone sub-page,enthusiast,INT-moldavite-can-go-in-water,Moldavite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0161,/gemstones/moldavite/meaning,gemstone sub-page,enthusiast,INT-moldavite-meaning,Moldavite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0162,/gemstones/moldavite/sleeping-with,gemstone sub-page,enthusiast,INT-moldavite-sleeping-with,Moldavite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0163,/gemstones/moonstone/can-go-in-water,gemstone sub-page,enthusiast,INT-moonstone-can-go-in-water,Moonstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0164,/gemstones/moonstone/meaning,gemstone sub-page,enthusiast,INT-moonstone-meaning,Moonstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0165,/gemstones/moss-agate/can-go-in-water,gemstone sub-page,enthusiast,INT-moss-agate-can-go-in-water,Moss Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0166,/gemstones/moss-agate/meaning,gemstone sub-page,enthusiast,INT-moss-agate-meaning,Moss Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0167,/gemstones/obsidian/can-go-in-water,gemstone sub-page,enthusiast,INT-obsidian-can-go-in-water,Obsidian,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0168,/gemstones/opal/can-go-in-water,gemstone sub-page,enthusiast,INT-opal-can-go-in-water,Opal,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0169,/gemstones/opal/who-should-not-wear,gemstone sub-page,enthusiast,INT-opal-who-should-not-wear,Opal,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0170,/gemstones/opalite/can-go-in-water,gemstone sub-page,enthusiast,INT-opalite-can-go-in-water,Opalite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0171,/gemstones/opalite/meaning,gemstone sub-page,enthusiast,INT-opalite-meaning,Opalite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0172,/gemstones/peach-moonstone/meaning,gemstone sub-page,enthusiast,INT-peach-moonstone-meaning,Peach Moonstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0173,/gemstones/peridot/who-should-not-wear,gemstone sub-page,enthusiast,INT-peridot-who-should-not-wear,Peridot,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0174,/gemstones/pink-agate/meaning,gemstone sub-page,enthusiast,INT-pink-agate-meaning,Pink Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0175,/gemstones/pyrite/can-go-in-water,gemstone sub-page,enthusiast,INT-pyrite-can-go-in-water,Pyrite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0176,/gemstones/pyrite/who-should-not-wear,gemstone sub-page,enthusiast,INT-pyrite-who-should-not-wear,Pyrite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0177,/gemstones/rainbow-hematite/meaning,gemstone sub-page,enthusiast,INT-rainbow-hematite-meaning,Rainbow Hematite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0178,/gemstones/red-agate/meaning,gemstone sub-page,enthusiast,INT-red-agate-meaning,Red Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0179,/gemstones/red-jasper/can-go-in-water,gemstone sub-page,enthusiast,INT-red-jasper-can-go-in-water,Red Jasper,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0180,/gemstones/red-tigers-eye/meaning,gemstone sub-page,enthusiast,INT-red-tigers-eye-meaning,Red Tiger's Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0181,/gemstones/rhodonite/can-go-in-water,gemstone sub-page,enthusiast,INT-rhodonite-can-go-in-water,Rhodonite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0182,/gemstones/rose-quartz/can-go-in-water,gemstone sub-page,enthusiast,INT-rose-quartz-can-go-in-water,Rose Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0183,/gemstones/rose-quartz/meaning,gemstone sub-page,enthusiast,INT-rose-quartz-meaning,Rose Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0184,/gemstones/rose-quartz/sleeping-with,gemstone sub-page,enthusiast,INT-rose-quartz-sleeping-with,Rose Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0185,/gemstones/rose-quartz/who-should-not-wear,gemstone sub-page,enthusiast,INT-rose-quartz-who-should-not-wear,Rose Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0186,/gemstones/ruby-zoisite/meaning,gemstone sub-page,enthusiast,INT-ruby-zoisite-meaning,Ruby Zoisite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0187,/gemstones/selenite/can-go-in-water,gemstone sub-page,enthusiast,INT-selenite-can-go-in-water,Selenite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0188,/gemstones/smoky-quartz/can-go-in-water,gemstone sub-page,enthusiast,INT-smoky-quartz-can-go-in-water,Smoky Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0189,/gemstones/smoky-quartz/meaning,gemstone sub-page,enthusiast,INT-smoky-quartz-meaning,Smoky Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0190,/gemstones/sodalite/can-go-in-water,gemstone sub-page,enthusiast,INT-sodalite-can-go-in-water,Sodalite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0191,/gemstones/strawberry-quartz/can-go-in-water,gemstone sub-page,enthusiast,INT-strawberry-quartz-can-go-in-water,Strawberry Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0192,/gemstones/strawberry-quartz/meaning,gemstone sub-page,enthusiast,INT-strawberry-quartz-meaning,Strawberry Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0193,/gemstones/sunstone/can-go-in-water,gemstone sub-page,enthusiast,INT-sunstone-can-go-in-water,Sunstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0194,/gemstones/sunstone/meaning,gemstone sub-page,enthusiast,INT-sunstone-meaning,Sunstone,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0195,/gemstones/tiger-eye/can-go-in-water,gemstone sub-page,enthusiast,INT-tiger-eye-can-go-in-water,Tiger Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0196,/gemstones/tiger-eye/meaning,gemstone sub-page,enthusiast,INT-tiger-eye-meaning,Tiger Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0197,/gemstones/tiger-eye/sleeping-with,gemstone sub-page,enthusiast,INT-tiger-eye-sleeping-with,Tiger Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0198,/gemstones/tiger-eye/who-should-not-wear,gemstone sub-page,enthusiast,INT-tiger-eye-who-should-not-wear,Tiger Eye,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0199,/gemstones/tortoise-ring/who-should-not-wear,gemstone sub-page,enthusiast,INT-tortoise-ring-who-should-not-wear,Tortoise Ring,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0200,/gemstones/tree-agate/meaning,gemstone sub-page,enthusiast,INT-tree-agate-meaning,Tree Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0201,/gemstones/turquoise/who-should-not-wear,gemstone sub-page,enthusiast,INT-turquoise-who-should-not-wear,Turquoise,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0202,/gemstones/white-agate/meaning,gemstone sub-page,enthusiast,INT-white-agate-meaning,White Agate,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0203,/gemstones/white-quartz/meaning,gemstone sub-page,enthusiast,INT-white-quartz-meaning,White Quartz,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0204,/gemstones/yellow-calcite/meaning,gemstone sub-page,enthusiast,INT-yellow-calcite-meaning,Yellow Calcite,live (legacy WP text; not redrafted in this pass),sitemap 2026-09-17
+L-0205,/crystals/11-best-crystals-for-grief,article,enthusiast,INT-crystals-11-best-crystals-for-grief,,live legacy article,sitemap 2026-09-17
+L-0206,/learn/are-rocks-alive,article,enthusiast,INT-learn-are-rocks-alive,,live legacy article,sitemap 2026-09-17
+L-0207,/learn/aura-quartz-healing-properties,article,enthusiast,INT-learn-aura-quartz-healing-properties,,live legacy article,sitemap 2026-09-17
+L-0208,/crystals/best-crystals-for-connection-with-others,article,enthusiast,INT-crystals-best-crystals-for-connection-with-others,,live legacy article,sitemap 2026-09-17
+L-0209,/crystals/best-crystals-for-sleep-enhance-sleep-quality-naturally,article,enthusiast,INT-crystals-best-crystals-for-sleep-enhance-sleep-quality-naturally,,live legacy article,sitemap 2026-09-17
+L-0210,/compare/black-tourmaline-vs-obsidian,article,enthusiast,INT-compare-black-tourmaline-vs-obsidian,,live legacy article,sitemap 2026-09-17
+L-0211,/crystals/crystals-for-anxiety,article,enthusiast,INT-crystals-crystals-for-anxiety,,live legacy article,sitemap 2026-09-17
+L-0212,/crystals/crystals-for-independence,article,enthusiast,INT-crystals-crystals-for-independence,,live legacy article,sitemap 2026-09-17
+L-0213,/crystals/crystals-for-jealousy,article,enthusiast,INT-crystals-crystals-for-jealousy,,live legacy article,sitemap 2026-09-17
+L-0214,/crystals/crystals-for-nurses,article,enthusiast,INT-crystals-crystals-for-nurses,,live legacy article,sitemap 2026-09-17
+L-0215,/crystals/crystals-for-protection,article,enthusiast,INT-crystals-crystals-for-protection,,live legacy article,sitemap 2026-09-17
+L-0216,/learn/crystals-to-sleep-with-under-your-pillow,article,enthusiast,INT-learn-crystals-to-sleep-with-under-your-pillow,,live legacy article,sitemap 2026-09-17
+L-0217,/learn/how-to-charge-crystals,article,enthusiast,INT-learn-how-to-charge-crystals,,live legacy article,sitemap 2026-09-17
+L-0218,/learn/how-to-cleanse-crystals,article,enthusiast,INT-learn-how-to-cleanse-crystals,,live legacy article,sitemap 2026-09-17
+L-0219,/learn/how-to-identify-kimberlite,article,enthusiast,INT-learn-how-to-identify-kimberlite,,live legacy article,sitemap 2026-09-17
+L-0220,/learn/how-to-know-if-a-chakra-bracelet-is-real,article,enthusiast,INT-learn-how-to-know-if-a-chakra-bracelet-is-real,,live legacy article,sitemap 2026-09-17
+L-0221,/learn/how-to-tell-if-black-tourmaline-is-real,article,enthusiast,INT-learn-how-to-tell-if-black-tourmaline-is-real,,live legacy article,sitemap 2026-09-17
+L-0222,/compare/larvikite-vs-labradorite,article,enthusiast,INT-compare-larvikite-vs-labradorite,,live legacy article,sitemap 2026-09-17
+L-0223,/compare/purple-quartz-vs-amethyst,article,enthusiast,INT-compare-purple-quartz-vs-amethyst,,live legacy article,sitemap 2026-09-17
+L-0224,/learn/salt-safe-crystals,article,enthusiast,INT-learn-salt-safe-crystals,,live legacy article,sitemap 2026-09-17
+L-0225,/learn/sun-safe-crystals,article,enthusiast,INT-learn-sun-safe-crystals,,live legacy article,sitemap 2026-09-17
+L-0226,/compare/tree-agate-vs-moss-agate,article,enthusiast,INT-compare-tree-agate-vs-moss-agate,,live legacy article,sitemap 2026-09-17
+L-0227,/learn/what-crystals-can-go-in-water,article,enthusiast,INT-learn-what-crystals-can-go-in-water,,live legacy article,sitemap 2026-09-17

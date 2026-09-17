@@ -1,0 +1,24 @@
+{
+ "site_key": "writeralpha.com",
+ "canonical_origin": "https://writeralpha.com",
+ "business_model": "none yet; traffic-first (informational). Monetization deferred; no page carries a commercial role.",
+ "audience": "English-speaking crystal and gemstone enthusiasts (beginner to intermediate); buyers researching stones; practitioners of crystal healing, astrology-adjacent readers; some Indian-language demand observed in GSC for wearing guidance",
+ "offering": "Reference atlas: 85 stone hubs with 9 sub-page types, purpose guides, pairings, comparisons, care and science explainers",
+ "geography_language": "Global / English",
+ "platform": "Rails 8.1 app, SQLite, articles table (published boolean) + gemstone content fields; admin panel; repo hrishikesh1990/writeralpha-v2",
+ "objective": "Build topical authority on crystals and gemstones; publish useful, evidence-labelled answers; grow organic traffic",
+ "evidence_sources": [
+  "docs/content_backlog.csv (GSC impressions 16 months per stone/intent)",
+  "docs/Gemstones_Topical_Map_COMPLETE.csv",
+  "sitemap.xml 2026-09-17",
+  "db/wordpress_data/transformed_gemstones.json (legacy WP text)",
+  "db/seeds.rb attributes for 36 stones"
+ ],
+ "scope": "Topical map + drafts for all articles and gemstone sub-page gaps; drafts to Google Drive; nothing published",
+ "assumptions": [
+  "Live hubs (85) are the stone set; hub body copy is out of scope",
+  "Legacy WP content is site-owned and may be rewritten",
+  "No hands-on testing exists; all recommendations are research-based and metaphysical claims are stated as tradition/belief"
+ ],
+ "recorded": "2026-09-17"
+}
