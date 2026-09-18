@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_19_090000) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_19_100000) do
   create_table "articles", force: :cascade do |t|
     t.integer "category_id", null: false
     t.text "content"
@@ -135,7 +135,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_19_090000) do
     t.string "ruling_planet"
     t.text "sleeping_with_content"
     t.string "slug"
-    t.json "sub_page_meta"
+    t.text "sub_page_meta"
     t.string "subtitle"
     t.integer "transparency_id"
     t.datetime "updated_at", null: false

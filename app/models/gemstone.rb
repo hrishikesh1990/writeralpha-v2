@@ -14,6 +14,10 @@ class Gemstone < ApplicationRecord
   has_many :gemstone_zodiac_signs, dependent: :destroy
   has_many :zodiac_signs, through: :gemstone_zodiac_signs
 
+  # Per-sub-page title/meta (see #sub_page_meta_for), stored as JSON text so
+  # Postgres can still DISTINCT over gemstones.* (json has no equality operator).
+  serialize :sub_page_meta, coder: JSON, type: Hash
+
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
   before_validation :generate_slug, if: -> { slug.blank? && name.present? }
