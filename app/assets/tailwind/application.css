@@ -191,6 +191,39 @@
   margin-top: 6px;
 }
 
+.article table {
+  width: 100%;
+  margin: 20px 0 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.article th,
+.article td {
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.14);
+}
+
+.article th {
+  color: var(--color-ink);
+  font-weight: 500;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.article table strong {
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .article table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
 .article img {
   display: block;
   max-width: 100%;

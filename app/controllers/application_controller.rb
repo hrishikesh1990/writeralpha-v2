@@ -18,7 +18,16 @@ class ApplicationController < ActionController::Base
   # Articles have one canonical URL (Article#canonical_path). Any other route
   # that resolves the same slug 301s there, so no duplicate URLs get indexed.
   def render_article_or_redirect(article)
-    return render_not_found unless article
+    unless article
+      # Consolidated or renamed legacy articles live in the redirects table
+      # (db/seeds/05_redirects.rb); the section routes match before the
+      # catch-all resolver, so consult it here.
+      if (entry = Redirect.find_by(old_path: request.path))
+        redirect_to entry.new_path, status: (entry.status_code || 301)
+        return false
+      end
+      return render_not_found
+    end
 
     if request.path != article.canonical_path
       redirect_to article.canonical_path, status: :moved_permanently

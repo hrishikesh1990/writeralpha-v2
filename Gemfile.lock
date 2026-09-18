@@ -84,6 +84,7 @@ GEM
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
     crass (1.0.6)
+    csv (3.3.6)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -108,6 +109,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.18.1)
+    kramdown (2.5.2)
+      rexml (>= 3.4.4)
     logger (1.7.0)
     loofah (2.25.0)
       crass (~> 1.0.2)
@@ -210,6 +213,7 @@ GEM
       tsort
     reline (0.6.3)
       io-console (~> 0.5)
+    rexml (3.4.4)
     securerandom (0.4.1)
     sqlite3 (2.9.1-aarch64-linux-gnu)
     sqlite3 (2.9.1-aarch64-linux-musl)
@@ -265,9 +269,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  csv (~> 3.3)
   debug
   dockerfile-rails (>= 1.7)
   importmap-rails
+  kramdown (~> 2.5)
   pg (~> 1.5)
   propshaft
   puma (>= 5.0)
@@ -300,6 +306,7 @@ CHECKSUMS
   concurrent-ruby (1.3.6) sha256=6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab
   connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
   crass (1.0.6) sha256=dc516022a56e7b3b156099abc81b6d2b08ea1ed12676ac7a5657617f012bd45d
+  csv (3.3.6) sha256=aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456
   date (3.5.1) sha256=750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0
   debug (1.11.1) sha256=2e0b0ac6119f2207a6f8ac7d4a73ca8eb4e440f64da0a3136c30343146e952b6
   dockerfile-rails (1.7.10) sha256=04163273792ec6c6560244d32c0b44bbed705384a47b8063adcbf0d7bc8abd26
@@ -312,6 +319,7 @@ CHECKSUMS
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.17.0) sha256=168c4ddb93d8a361a045c41d92b2952c7a118fa73f23fe14e55609eb7a863aae
   json (2.18.1) sha256=fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986
+  kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   loofah (2.25.0) sha256=df5ed7ac3bac6a4ec802df3877ee5cc86d027299f8952e6243b3dac446b060e6
   mail (2.9.0) sha256=6fa6673ecd71c60c2d996260f9ee3dd387d4673b8169b502134659ece6d34941
@@ -351,6 +359,7 @@ CHECKSUMS
   rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
   rdoc (7.2.0) sha256=8650f76cd4009c3b54955eb5d7e3a075c60a57276766ebf36f9085e8c9f23192
   reline (0.6.3) sha256=1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835
+  rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   sqlite3 (2.9.1-aarch64-linux-gnu) sha256=85535ddf1c37f116ebebe0330bbbffc2ccb55d09f69717a565f8cfb35142f136
   sqlite3 (2.9.1-aarch64-linux-musl) sha256=646a28a655fc0298ff4266de0af89b66477a2d9ad65cebb5abad190bb64ed092

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  ALLOWED_TAGS = %w[h2 h3 h4 p ul ol li br strong em a nav div span img figure figcaption blockquote].freeze
+  ALLOWED_TAGS = %w[h2 h3 h4 p ul ol li br strong em a nav div span img figure figcaption blockquote table thead tbody tr th td].freeze
   ALLOWED_ATTRS = %w[href class id src alt loading width height decoding].freeze
   SITE_NAME = "WriterAlpha"
   DEFAULT_OG_IMAGE = "/og-default.png"

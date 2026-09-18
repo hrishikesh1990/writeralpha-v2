@@ -23,3 +23,7 @@ group :development do
 end
 
 gem "dockerfile-rails", ">= 1.7", group: :development
+
+gem "kramdown", "~> 2.5"
+
+gem "csv", "~> 3.3"

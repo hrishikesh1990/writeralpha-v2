@@ -27,9 +27,14 @@ class GemstonesController < ApplicationController
     # A guide that was never written is a 404, not a placeholder page.
     return render_not_found if @sub_page.nil? || @content.blank?
 
-    @page_title = @sub_page[:title_tpl] % { name: @gemstone.name }
+    # Drafted sub-pages carry their own title and meta (sub_page_meta JSON,
+    # written by sro:import); legacy ones fall back to the template title.
+    own = @gemstone.sub_page_meta_for(path)
+    @page_title = own["title"].presence || @sub_page[:title_tpl] % { name: @gemstone.name }
     @page_icon = @sub_page[:icon]
-    @meta = { title: @page_title, description: helpers.meta_description(@content), type: "article", image: @gemstone.featured_image_url }
+    @meta = { title: own["meta_title"].presence || @page_title,
+              description: own["meta_description"].presence || helpers.meta_description(@content),
+              type: "article", image: @gemstone.featured_image_url }
     render "gemstones/sub_page"
   end
 

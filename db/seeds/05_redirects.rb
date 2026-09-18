@@ -158,3 +158,14 @@ redirect!("/gemstones/lava", "/gemstones/lava-stone")
 redirect!("/gemstones/lava/who-should-not-wear", "/gemstones/lava-stone/who-should-not-wear")
 
 puts "  #{Redirect.count} redirects active"
+
+# ---- SRO consolidation (docs/sro/PUBLISHING-PLAN.md) --------------------
+# Legacy article URLs whose intent moved to a rewritten owner. The rows are
+# inert while the old article is still published (its route matches first);
+# they take effect once sro:import renames or unpublishes the legacy row.
+redirect!("/crystals/11-best-crystals-for-grief", "/crystals/crystals-for-grief")
+redirect!("/crystals/best-crystals-for-connection-with-others", "/crystals/crystals-for-connection")
+redirect!("/crystals/best-crystals-for-sleep-enhance-sleep-quality-naturally", "/crystals/crystals-for-sleep")
+redirect!("/learn/crystals-to-sleep-with-under-your-pillow", "/crystals/crystals-for-sleep")
+redirect!("/learn/how-to-tell-if-black-tourmaline-is-real", "/gemstones/black-tourmaline/how-to-identify")
+redirect!("/learn/aura-quartz-healing-properties", "/gemstones/angel-aura-quartz/meaning")

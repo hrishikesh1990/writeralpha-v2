@@ -61,6 +61,13 @@ class Gemstone < ApplicationRecord
     field && self[field].presence
   end
 
+  # Per-sub-page title/meta_title/meta_description keyed by path, e.g.
+  # {"meaning" => {"title" => ..., "meta_description" => ...}}. Empty for
+  # legacy sub-pages.
+  def sub_page_meta_for(path)
+    (sub_page_meta || {}).fetch(path.to_s.tr("_", "-"), {})
+  end
+
   def hub_sub_pages
     SUB_PAGES.map { |sp| { title: sp[:title_tpl] % { name: name }, short: sp[:short], path: sp[:path], icon: sp[:icon] } }
   end
