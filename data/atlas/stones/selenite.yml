@@ -1,0 +1,118 @@
+slug: selenite
+name: Selenite
+aka: [satin spar]
+kind: variety
+species: Gypsum
+family: gypsum
+formula: CaSO4·2H2O
+crystal_system: monoclinic
+mohs: [2, 2]
+colors: [white, colorless]
+origins: [Morocco, Mexico, United States, Australia]
+summary: >-
+  A soft, crystalline variety of gypsum; most "selenite" wands and towers are
+  the fibrous satin spar form. It dissolves slowly in water and scratches with
+  a fingernail, so keep it dry and handle it gently.
+
+safety:
+  water:
+    verdict: avoid
+    reason: Gypsum is slightly soluble. Water dissolves the surface, leaves it cloudy and makes fibrous pieces splinter. Never soak or rinse it.
+  salt:
+    verdict: avoid
+    reason: Salt water dissolves it and dry salt scratches it. Cleanse selenite with sound, smoke or moonlight instead.
+  sun:
+    verdict: limit
+    reason: Brief sunlight is harmless, but strong heat can dehydrate gypsum and leave it chalky and brittle.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand. Its softness means it can break or shed splinters under a pillow, so a flat slab beside the bed works better.
+  wear:
+    verdict: special
+    reason: At Mohs 2 a fingernail scratches it. Selenite is best kept as a home or altar piece rather than worn.
+  toxicity:
+    level: none
+    reason: Calcium sulfate is non-toxic; it is the same mineral used for plaster and drywall.
+  elixir: never
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [taurus, cancer]
+  intentions: [peace-calm, clarity, spiritual-growth, protection, emotional-balance]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals with water
+    why: Selenite dissolves. Rinsing, soaking or leaving it in a humid bathroom slowly destroys the surface.
+    basis: physical
+  - who: People wanting a stone to wear every day
+    why: It scratches with a fingernail and snaps easily, so it does not survive rings, bracelets or pockets.
+    basis: physical
+  - who: Homes with small children
+    why: Fibrous satin spar sheds thin, sharp splinters when it breaks. Keep wands and towers out of reach.
+    basis: physical
+  - who: People who expect it to cleanse every stone in contact
+    why: Tradition says selenite never needs cleansing and charges other stones, but this is belief, not a physical effect. It will not replace cleaning dirty jewellery.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Satin spar gypsum sold as clear selenite (still gypsum, a different form)
+    - Ulexite sold as selenite
+    - Glass or acrylic towers
+  tests:
+    - id: hardness
+      weight: 3
+      how: Press a fingernail into a hidden edge.
+      real: A fingernail leaves a mark (Mohs 2).
+      fake: Glass and acrylic resist a fingernail; ulexite is similarly soft but looks different.
+    - id: light
+      weight: 2
+      how: Turn the piece under a lamp, or lay a polished end on printed text.
+      real: Satin spar shows a silky glow that moves along the fibres. It does not project text upward.
+      fake: Ulexite ("TV stone") projects the text onto its top surface; glass shows no silky sheen.
+    - id: temperature
+      weight: 1
+      how: Touch it to your cheek and compare with a piece of quartz or glass.
+      real: Feels slightly warm, not icy cold, because gypsum conducts heat poorly.
+      fake: Glass feels distinctly colder.
+    - id: magnification
+      weight: 2
+      how: Look at a broken or unpolished end with a loupe.
+      real: Parallel fibres or flat, layered cleavage sheets.
+      fake: Bubbles, mould lines or a uniform cast surface.
+    - id: weight
+      weight: 1
+      how: Compare it with a quartz piece of similar size.
+      real: Lighter than quartz (specific gravity about 2.3).
+      fake: Glass feels similar or heavier; acrylic is much lighter.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Selenite cleanses amethyst without water or sun, both of which can harm amethyst's colour.
+    - slug: clear-quartz
+      why: A traditional pairing for clarity and meditation, with crown-chakra stones on both sides.
+    - slug: black-tourmaline
+      why: Tradition pairs selenite's light with tourmaline's grounding protection.
+    - slug: moonstone
+      why: Both are Moon stones in tradition, used together for intuition.
+    - slug: rose-quartz
+      why: A gentle calming pair for bedrooms and meditation spaces.
+  avoid: []
+
+price:
+  tier: budget
+  note: Wands, towers and charging plates are cheap and widely available. Clear, large, undamaged crystals are rarer and cost more.
+
+names:
+  es: Selenita
+
+sources:
+  - https://www.mindat.org/min-1784.html
+  - https://www.minerals.net/mineral/gypsum.aspx
+  - https://geology.com/minerals/gypsum.shtml

@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+# Validate Atlas stone files without booting Rails.
+#   bin/atlas-validate                    # every file in data/atlas/stones (or $ATLAS_DIR)
+#   bin/atlas-validate path/to/x.yml ...  # specific files
+#   bin/atlas-validate --coverage         # also list live stones with no file
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+require "atlas"
+require "atlas/stone"
+require "atlas/validator"
+
+live = File.readlines(File.expand_path("../data/atlas/live_slugs.txt", __dir__), chomp: true).reject(&:empty?)
+coverage = ARGV.delete("--coverage")
+files = ARGV.empty? ? Dir.glob(File.join(Atlas.dir, "*.yml")).sort : ARGV
+bad = 0
+files.each do |f|
+  data = begin
+    YAML.safe_load_file(f, permitted_classes: [], aliases: false)
+  rescue => e
+    puts "FAIL #{f}: YAML #{e.message}"; bad += 1; next
+  end
+  errors, warnings = Atlas::Validator.validate(data, known_slugs: live)
+  base = File.basename(f, ".yml")
+  errors << "filename '#{base}' != slug '#{data['slug']}'" if data.is_a?(Hash) && data["slug"] != base
+  errors << "slug '#{base}' is not a live stone" unless live.include?(base)
+  if errors.empty?
+    puts "PASS #{base}#{warnings.any? ? "  (#{warnings.size} warn: #{warnings.join('; ')})" : ''}"
+  else
+    bad += 1
+    puts "FAIL #{base}"
+    errors.each { |e| puts "  - #{e}" }
+  end
+end
+if coverage
+  have = Dir.glob(File.join(Atlas.dir, "*.yml")).map { |f| File.basename(f, ".yml") }
+  missing = live - have
+  puts "\nCoverage: #{(have & live).size}/#{live.size} live stones. Missing (#{missing.size}): #{missing.join(' ')}"
+end
+puts "\n#{files.size - bad}/#{files.size} PASS"
+exit(bad.zero? ? 0 : 1)

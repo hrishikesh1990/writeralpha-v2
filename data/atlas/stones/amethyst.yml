@@ -1,0 +1,137 @@
+slug: amethyst
+name: Amethyst
+aka: [purple quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [purple, violet, lavender]
+origins: [Brazil, Uruguay, Zambia, Madagascar, India]
+summary: >-
+  The purple variety of quartz, coloured by trace iron and natural irradiation.
+  Hard enough for daily wear and safe in water, but its colour fades in strong
+  sunlight and turns yellow if heated.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and does not dissolve, so rinsing or a short soak is fine. Dry it afterwards if it sits in a metal setting.
+  salt:
+    verdict: safe
+    reason: Salt does not attack quartz. Rinse the salt off afterwards and keep salt water away from silver or glued settings.
+  sun:
+    verdict: limit
+    reason: Ultraviolet light destroys the colour centres that make amethyst purple, so weeks on a sunny windowsill slowly fade it. A few hours is fine.
+  sleep:
+    verdict: ok
+    reason: Physically safe under a pillow or on a nightstand. Tradition says it can make dreams more vivid, which some sleepers dislike.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it resists everyday scratches. Keep it away from steam cleaners and heat, which can permanently change the colour.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is chemically inert and non-toxic to handle.
+  elixir: direct
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air, water]
+  planets: [jupiter, neptune]
+  vedic_planet: shani
+  zodiac: [pisces, aquarius, capricorn, virgo]
+  intentions: [peace-calm, intuition, sleep, anxiety, spiritual-growth, clarity]
+  energy: calming
+  birth_months:
+    modern: [february]
+    traditional: [february]
+
+cautions:
+  - who: People who leave jewellery in sunny windows or hot cars
+    why: Prolonged UV exposure fades amethyst and heat above roughly 300 °C turns it yellow or brown. The change is permanent.
+    basis: physical
+  - who: Anyone advised by a Vedic astrologer to avoid Saturn stones
+    why: In Jyotish, amethyst (Jamunia/Katela) is worn as a substitute for blue sapphire, a Saturn stone. Practitioners usually recommend it for Capricorn and Aquarius ascendants and caution signs ruled by the Sun or Mars.
+    basis: tradition
+  - who: Light sleepers bothered by vivid dreams
+    why: Crystal tradition holds that amethyst under the pillow intensifies dreaming. If that disturbs your sleep, keep it in another room.
+    basis: tradition
+  - who: People looking for an energising, motivating stone
+    why: Amethyst is traditionally a calming, sedating stone. For drive and motivation, tradition points to carnelian, citrine or tiger eye instead.
+    basis: tradition
+zodiac_cautions:
+  - sign: aries
+    why: Aries is ruled by Mars, which Vedic astrology treats as an enemy of Saturn, the planet amethyst represents.
+  - sign: leo
+    why: Leo is ruled by the Sun, traditionally hostile to Saturn, so Saturn stones are usually not advised for Leo ascendants.
+
+identify:
+  common_fakes:
+    - Purple glass
+    - Dyed quartz or dyed chalcedony
+    - Lab-grown (hydrothermal) amethyst sold as natural
+    - Purple fluorite sold as amethyst
+  tests:
+    - id: color
+      weight: 2
+      how: Hold the stone over white paper in daylight and look through it from several angles.
+      real: Colour is usually uneven, with darker zones or bands near the crystal tips and lighter or clear patches elsewhere.
+      fake: Perfectly even, saturated colour throughout. Note that good lab-grown amethyst can also look even, so combine this with other tests.
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe or a phone macro lens.
+      real: Natural inclusions such as feathers, needle-like crystals or zebra-like colour stripes. No round bubbles.
+      fake: Round or elongated gas bubbles and swirl lines, which point to glass.
+    - id: temperature
+      weight: 1
+      how: Touch the stone to your lip or cheek and hold it for ten seconds.
+      real: Feels cold at first and warms up slowly.
+      fake: Glass and plastic feel less cold and warm up within seconds.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch a piece of plain glass with the stone. This can chip a faceted stone, so use it on rough or tumbled pieces only.
+      real: Amethyst (Mohs 7) scratches glass easily.
+      fake: Glass will barely mark glass, and fluorite (Mohs 4) cannot scratch glass at all.
+    - id: acetone
+      weight: 2
+      how: Rub an inconspicuous spot with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Purple colour on the swab means the stone is dyed.
+    - id: price
+      weight: 1
+      how: Compare the price with the size and colour of the stone.
+      real: Raw and tumbled amethyst is inexpensive, so low prices on small pieces are normal.
+      fake: A large, flawless, deep purple faceted stone at a bargain price is very likely lab-grown or glass.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies amethyst's calming energy; both are quartz and share the same care rules.
+    - slug: rose-quartz
+      why: A classic calming pair for emotional healing and sleep, both safe in water.
+    - slug: selenite
+      why: Selenite is used to cleanse amethyst without water or sun, which protects amethyst's colour.
+    - slug: lepidolite
+      why: A popular pairing for anxiety and sleep; both are calming purple stones.
+    - slug: black-tourmaline
+      why: Pairs amethyst's intuition with tourmaline's protection, a common combination for meditation.
+    - slug: citrine
+      why: Heated amethyst and citrine are the same mineral; together they balance calm with optimism.
+  avoid:
+    - slug: carnelian
+      why: Traditionally opposed energies. Carnelian is stimulating and amethyst is calming, so they are not paired for sleep or meditation.
+
+price:
+  tier: budget
+  note: Tumbled and raw amethyst costs a few dollars. Fine faceted stones with deep "Siberian" colour can reach tens of dollars per carat.
+
+names:
+  hi: Jamunia (जमुनिया), Katela (कटेला)
+  bn: Katela (কাটেলা)
+  es: Amatista
+
+sources:
+  - https://www.mindat.org/min-198.html
+  - https://www.gia.edu/amethyst
+  - https://www.gemsociety.org/article/amethyst-jewelry-and-gemstone-information/

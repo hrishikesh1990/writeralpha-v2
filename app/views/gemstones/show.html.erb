@@ -51,6 +51,8 @@
   </div>
 </section>
 
+<%= tool_embeds(:hub, nil, gemstone: gemstone, entry: atlas_entry_for(gemstone)) %>
+
 <!-- Guides (only those with content) -->
 <% guides = gemstone.available_sub_pages %>
 <% if guides.any? %>

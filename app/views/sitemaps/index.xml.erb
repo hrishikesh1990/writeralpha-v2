@@ -14,6 +14,13 @@
   <% @articles.each do |a| %>
   <url><loc><%= canonical_url(a.canonical_path) %></loc><lastmod><%= a.updated_at.strftime("%Y-%m-%d") %></lastmod><priority>0.8</priority></url>
   <% end %>
+  <url><loc><%= canonical_url(tools_path) %></loc><priority>0.8</priority></url>
+  <% ToolsHelper::TOOLS.each do |tool| %>
+  <url><loc><%= canonical_url(public_send(tool[:route])) %></loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <% end %>
+  <% 12.times do |i| %>
+  <url><loc><%= canonical_url(tools_moon_month_path(month: (Date.current.beginning_of_month >> i).strftime("%Y-%m"))) %></loc><priority>0.6</priority></url>
+  <% end %>
   <% %w[/about /contact /write-for-us].each do |path| %>
   <url><loc><%= canonical_url(path) %></loc><priority>0.3</priority></url>
   <% end %>

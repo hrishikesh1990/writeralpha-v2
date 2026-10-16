@@ -54,6 +54,29 @@ Rails.application.routes.draw do
   get "angel-numbers", to: "angel_numbers#index", as: :angel_numbers
   get "angel-numbers/:number", to: "angel_numbers#show", as: :angel_number
 
+  # ===== TOOLS (Atlas-powered; see app/helpers/tools_helper.rb) =====
+  get "tools", to: "tools#index", as: :tools
+  scope "tools", module: "tools", as: "tools" do
+    get "stone-finder", to: "stone_finder#show", as: :stone_finder
+    get "crystal-safety", to: "safety#show", as: :safety
+    get "compatibility", to: "compatibility#show", as: :compatibility
+    get "real-or-fake", to: "real_or_fake#show", as: :real_or_fake
+    post "real-or-fake/photo", to: "real_or_fake#photo", as: :real_or_fake_photo
+    get "birthstone-calculator", to: "birthstone#show", as: :birthstone
+    get "moon-calendar", to: "moon#show", as: :moon
+    get "moon-calendar/feed.ics", to: "moon#feed", as: :moon_feed, format: false, defaults: { format: :ics }
+    get "moon-calendar/:month", to: "moon#month", as: :moon_month, constraints: { month: /\d{4}-\d{2}/ }
+  end
+
+  # ===== OPEN DATA =====
+  get "developers", to: "developers#show", as: :developers
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get "stones", to: "stones#index", as: :stones
+      get "stones/:slug", to: "stones#show", as: :stone
+    end
+  end
+
   # ===== SHARED =====
   get "blog", to: "blog#index", as: :blog
   get "blog/:slug", to: "blog#show", as: :blog_post

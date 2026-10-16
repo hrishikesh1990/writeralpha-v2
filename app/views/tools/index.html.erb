@@ -1,0 +1,16 @@
+<%= tool_header(title: "Gemstone & crystal tools", eyebrow: "— free, no sign-up",
+                lede: "Everything on WriterAlpha is built on one sourced atlas of #{Atlas.stones.size} stones: hardness, safety, identification tests and tradition. These tools put that atlas to work on your question.",
+                crumbs: [["Home", root_path], ["Tools", nil]]) %>
+
+<section class="px-5 pb-16 pt-6 sm:px-11" data-screen-label="Tools grid">
+  <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+    <% tools_list.each do |tool| %>
+      <a href="<%= tool[:path] %>" class="group flex flex-col rounded-[20px] border border-violet/10 bg-white/85 p-6 shadow-card card-transition hover:border-violet/35 hover:shadow-card-hover">
+        <span class="flex size-[44px] items-center justify-center rounded-[14px] bg-violet/8 font-mono text-[17px] text-violet-deep"><%= tool[:icon] %></span>
+        <span class="mt-4 text-[17px] font-semibold text-ink"><%= tool[:name] %></span>
+        <span class="mt-2 text-[13px] font-light leading-[1.65] text-ui"><%= tool[:blurb] %></span>
+        <span class="mt-auto pt-5 text-[12.5px] font-medium text-violet-deep group-hover:text-violet-deeper">Open →</span>
+      </a>
+    <% end %>
+  </div>
+</section>

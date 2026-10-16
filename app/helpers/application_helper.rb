@@ -186,6 +186,7 @@ module ApplicationHelper
     when :crystals      then controller_name == "crystals"
     when :learn         then controller_name == "learn" || (controller_name == "blog" && params[:category] == "learn")
     when :blog          then controller_name == "blog" && params[:category] != "learn"
+    when :tools         then controller_path.start_with?("tools") || controller_name == "developers"
     else false
     end
   end

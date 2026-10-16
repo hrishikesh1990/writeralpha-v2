@@ -1,0 +1,119 @@
+slug: malachite
+name: Malachite
+aka: []
+kind: mineral
+species: Malachite
+family: copper carbonate
+formula: Cu2CO3(OH)2
+crystal_system: monoclinic
+mohs: [3.5, 4]
+colors: [green]
+origins: [Democratic Republic of the Congo, Zambia, Russia, Australia]
+summary: >-
+  A banded green copper carbonate. Soft and porous, it should stay dry and out
+  of drinking water: polished pieces are safe to handle, but its dust is toxic.
+
+safety:
+  water:
+    verdict: avoid
+    reason: Malachite is soft and porous. Soaking dulls the polish and can draw out copper compounds. Wipe it with a dry or barely damp cloth.
+  salt:
+    verdict: avoid
+    reason: Salt crystals scratch a Mohs 3.5 surface and salt water corrodes it. Never use salt or salt water.
+  sun:
+    verdict: limit
+    reason: The green colour is fairly stable, but heat from long sun exposure can dull the surface. Short periods in indirect light are fine.
+  sleep:
+    verdict: caution
+    reason: A polished piece is safe on a nightstand, but tradition calls malachite an intense stone. Keep raw or dusty pieces out of the bedroom.
+  wear:
+    verdict: care
+    reason: At Mohs 3.5 to 4 it scratches easily and reacts with acids, perfume and sweat. Pendants and earrings fare better than rings or bracelets.
+  toxicity:
+    level: caution
+    reason: Malachite is a copper mineral. Its dust is toxic if inhaled or swallowed, so never cut or sand it without a mask, and wash hands after handling raw pieces.
+  elixir: never
+
+tradition:
+  chakras: [heart, solar_plexus]
+  elements: [earth]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [scorpio, capricorn, taurus]
+  intentions: [transformation, protection, emotional-balance, healing, courage]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone planning to make a crystal elixir or bath soak
+    why: Copper leaches into water. Never put malachite in drinking water, tea or a bath, even polished.
+    basis: physical
+  - who: Households with young children or pets
+    why: Small tumbled pieces can be mouthed or swallowed, and copper is toxic in that case. Keep malachite out of reach.
+    basis: physical
+  - who: People cutting, carving or polishing raw malachite
+    why: The dust is the main hazard. Work it wet, wear a mask and clean surfaces afterwards.
+    basis: physical
+  - who: People who want a ring for everyday wear
+    why: Malachite is too soft for knocks and hand washing. Choose a pendant, or a harder green stone such as jade or aventurine.
+    basis: physical
+  - who: People who feel overwhelmed by intense stones
+    why: Crystal tradition says malachite brings emotions to the surface quickly. Some people prefer to start with gentler stones.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Reconstituted malachite (powder bound with resin)
+    - Plastic or resin beads printed with bands
+    - Green glass with painted stripes
+  tests:
+    - id: weight
+      weight: 3
+      how: Weigh the piece in your palm against a glass or plastic bead of the same size.
+      real: Noticeably heavy for its size (specific gravity about 3.6 to 4.0).
+      fake: Plastic and resin feel light; glass is somewhere in between.
+    - id: color
+      weight: 2
+      how: Look closely at the bands and follow them around the stone.
+      real: Concentric, irregular bands in many shades of green that curve and vary in width, including near-black rings.
+      fake: Bands that repeat too regularly, stop abruptly at the edges, or look printed on the surface.
+    - id: magnification
+      weight: 2
+      how: Use a 10x loupe on the bands and any drill holes.
+      real: Fine fibrous, silky texture inside the bands.
+      fake: Grainy, compressed texture, bubbles or a uniform plastic surface.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek for ten seconds.
+      real: Cool to the touch at first.
+      fake: Plastic and resin feel close to room temperature immediately.
+    - id: flame
+      weight: 2
+      how: Heat a pin and touch it briefly inside a drill hole or on the back of the piece.
+      real: Nothing happens.
+      fake: Resin or plastic softens, marks or gives off an acrid smell.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: Tradition uses rose quartz to soften malachite's intensity in emotional work.
+    - slug: smoky-quartz
+      why: A grounding partner that tradition says helps transmute what malachite brings up.
+    - slug: lapis-lazuli
+      why: A classic blue-and-green pairing for intuition and expression.
+    - slug: black-tourmaline
+      why: Both are protection stones in tradition; tourmaline adds grounding.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and beads are inexpensive. Large solid carvings and fine polished slabs with crisp banding cost much more.
+
+names:
+  hi: Dana-e-Firang (दाना-ए-फ़िरंग)
+  es: Malaquita
+
+sources:
+  - https://www.mindat.org/min-2550.html
+  - https://www.gemsociety.org/article/malachite-jewelry-and-gemstone-information/
+  - https://www.minerals.net/mineral/malachite.aspx

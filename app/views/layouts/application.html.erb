@@ -23,6 +23,7 @@
   <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/icon.png">
   <%= yield :jsonld %>
+  <%= yield :head %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +44,7 @@
         <%= link_to "Gemstones", gemstones_path, class: nav_link_class(nav_active?(:gemstones)) %>
         <%= link_to "Crystals for", gemstones_by_healing_path(value: "protection"), class: nav_link_class(nav_active?(:crystals)) %>
         <%= link_to "Learn", blog_path(category: "learn"), class: nav_link_class(nav_active?(:learn)) %>
+        <%= link_to "Tools", tools_path, class: nav_link_class(nav_active?(:tools)) %>
         <%= link_to "Blog", blog_path, class: nav_link_class(nav_active?(:blog)) %>
         <% if content_for?(:nav_cta) %>
           <a href="<%= gemstones_path %>" class="ml-[10px] hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-ink hover:text-white sm:inline-block">Find your stone</a>

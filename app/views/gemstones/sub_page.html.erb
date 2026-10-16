@@ -24,6 +24,7 @@
     </div>
 
     <div class="article mt-8"><%= render_content(html) %></div>
+    <%= tool_embeds(:sub_page, @sub_page&.dig(:path), gemstone: gemstone, entry: atlas_entry_for(gemstone), guide: @sub_page&.dig(:path)) %>
   </article>
 
   <!-- Sidebar -->
