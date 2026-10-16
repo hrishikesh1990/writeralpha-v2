@@ -1,0 +1,32 @@
+<%# locals: ref, lang, badges ([[text, css], ...]), reasons ([text]), summary (default true), tile (default true) %>
+<% badges = local_assigns[:badges] || [] %>
+<% reasons = local_assigns[:reasons] || [] %>
+<% summary = local_assigns[:summary].nil? ? true : local_assigns[:summary] %>
+<% tile = local_assigns[:tile].nil? ? true : local_assigns[:tile] %>
+<li class="flex gap-3 border-t border-violet/8 py-[14px] first:border-t-0 first:pt-0 last:pb-0">
+  <% if tile %><%= render "tools/birthstone/thumb", ref: ref %><% end %>
+  <div class="min-w-0 flex-1">
+    <div class="flex flex-wrap items-center gap-x-[10px] gap-y-[6px]">
+      <span class="text-[15.5px] font-semibold leading-[1.3] text-ink"><%= render "tools/birthstone/name", ref: ref, lang: lang %></span>
+      <% badges.each do |text, css| %>
+        <span class="inline-flex items-center whitespace-nowrap rounded-full px-[10px] py-[4px] text-[11px] font-medium leading-none <%= css %>"><%= text %></span>
+      <% end %>
+    </div>
+    <% if summary && ref.summary.present? %>
+      <p class="mt-[6px] text-[12.5px] font-light leading-[1.7] text-ui"><%= ref.summary %></p>
+    <% end %>
+    <% if reasons.any? %>
+      <div class="mt-2 flex flex-wrap gap-[5px]">
+        <% reasons.each do |r| %><span class="rounded-full bg-violet/6 px-[9px] py-[4px] text-[10.5px] font-light leading-none text-muted"><%= r %></span><% end %>
+      </div>
+    <% end %>
+    <% if ref.live? %>
+      <a href="<%= ref.path %>" class="mt-2 inline-block text-[12px] font-medium"><%= ref.name %> guide →</a>
+    <% elsif ref.related.any? %>
+      <p class="mt-2 text-[12px] font-light text-muted">
+        We have no page for <%= ref.name.downcase %> itself yet. Related:
+        <% ref.related.each_with_index do |rel, i| %><%= ", " if i.positive? %><a href="<%= rel.path %>" class="font-medium"><%= rel.name %></a><% end %>.
+      </p>
+    <% end %>
+  </div>
+</li>

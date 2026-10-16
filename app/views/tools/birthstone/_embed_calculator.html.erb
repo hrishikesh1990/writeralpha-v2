@@ -1,0 +1,43 @@
+<%# Embed for /learn/birthstone-guide: compact date form to the tool, plus the 12-month table. locals: article %>
+<% catalog = AtlasEntry.all %>
+<% calc = BirthstoneCalculator.new(catalog: catalog) %>
+<section class="mt-10 rounded-[20px] border border-violet/10 bg-white/85 p-5 shadow-card sm:p-6" data-screen-label="Birthstone calculator embed" aria-labelledby="bs-embed-h">
+  <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Free tool</div>
+  <h2 id="bs-embed-h" class="mt-2 text-[21px] font-semibold text-ink">Find your birthstone, zodiac stones and Vedic ratna</h2>
+  <p class="mt-2 text-[13.5px] font-light leading-[1.7] text-ui">Enter your date of birth for your modern and traditional birthstone, your Western zodiac stones, your rashi's Navaratna stone and your weekday stone. Available in English, Hindi and Bengali.</p>
+
+  <%= form_with url: tools_birthstone_path(anchor: "results"), method: :get, class: "mt-4 flex flex-wrap items-end gap-3", data: { turbo_frame: "_top" } do %>
+    <div class="min-w-[180px] flex-1">
+      <label for="bs-embed-dob" class="mb-[6px] block text-[12.5px] font-medium text-ink">Date of birth</label>
+      <%= date_field_tag :dob, "", id: "bs-embed-dob", required: true, min: "1900-01-01", max: "2100-12-31", autocomplete: "bday",
+                         class: "w-full rounded-[14px] border border-violet/15 bg-white px-4 py-3 text-[14px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20" %>
+    </div>
+    <button type="submit" class="rounded-full bg-ink px-6 py-[13px] text-[13px] font-medium text-white card-transition hover:bg-violet-deeper hover:text-white">Show my stones</button>
+  <% end %>
+  <p class="mt-3 text-[12px] font-light text-muted">Know your rashi? <a href="<%= tools_birthstone_path(anchor: "rashi-chart") %>" class="font-medium">See the rashi and ratna chart</a>, or <a href="<%= tools_birthstone_path(lang: "hi") %>" lang="hi" hreflang="hi" class="font-medium">हिन्दी</a> / <a href="<%= tools_birthstone_path(lang: "bn") %>" lang="bn" hreflang="bn" class="font-medium">বাংলা</a>.</p>
+
+  <h3 class="mt-7 text-[15px] font-semibold text-ink">Birthstones by month</h3>
+  <div class="mt-3 overflow-x-auto rounded-[14px] border border-violet/10" role="region" aria-label="Birthstones by month" tabindex="0">
+    <table class="w-full min-w-[520px] border-collapse text-left text-[12.5px]">
+      <caption class="sr-only">Modern and traditional birthstone for each month</caption>
+      <thead>
+        <tr class="border-b border-violet/10 font-mono text-[9.5px] uppercase tracking-[0.16em] text-faint">
+          <th scope="col" class="px-3 py-[10px] font-normal">Month</th>
+          <th scope="col" class="px-3 py-[10px] font-normal">Modern</th>
+          <th scope="col" class="px-3 py-[10px] font-normal">Traditional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% BirthstoneCalculator::MONTHS.each do |month| %>
+          <% bm = calc.month_stones(month) %>
+          <tr class="border-b border-violet/8 last:border-0 align-top">
+            <th scope="row" class="px-3 py-[9px] font-medium"><a href="<%= gemstones_by_birth_month_path(value: month) %>"><%= month.capitalize %></a></th>
+            <td class="px-3 py-[9px] text-ui"><%= safe_join(bm.modern.map { |s| render("tools/birthstone/name", ref: s, lang: "en") }, ", ") %></td>
+            <td class="px-3 py-[9px] text-ui"><%= safe_join(bm.traditional.map { |s| render("tools/birthstone/name", ref: s, lang: "en") }, ", ") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-3 text-[11.5px] font-light leading-[1.6] text-faint">Modern: American Gem Trade Association and Jewelers of America. Traditional: the pre-1912 list. <a href="<%= tools_birthstone_path %>">Full calculator →</a></p>
+</section>

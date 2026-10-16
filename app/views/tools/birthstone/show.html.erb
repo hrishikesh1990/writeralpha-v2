@@ -1,0 +1,128 @@
+<%# Birthstone & Navaratna calculator. GET params: dob, rashi, lang. Results render inside a Turbo Frame. %>
+<%
+  lang = @lang
+  lang_q = lang == "en" ? {} : { lang: lang }
+  title_en = "Birthstone & Navaratna Calculator"
+  description_en = "Your modern and traditional birthstone, Western zodiac stones, Vedic ratna and weekday stone from your date of birth, side by side and labelled by tradition."
+  options = BirthstoneCalculator.rashi_options
+  t = ->(key, **vars) { s = BirthstoneCalculator::Labels.t(key, lang, **vars); lang != "en" && BirthstoneCalculator::Labels.has?(key, lang) ? tag.span(s, lang: lang) : s }
+
+  faqs = [
+    ["What is my birthstone?",
+     "Your birthstone is set by the month you were born. Modern lists, published by the American Gem Trade Association and Jewelers of America, give some months two or three stones. Traditional lists from before 1912 name one stone per month. This calculator shows both."],
+    ["What is the difference between a birthstone and a Navaratna stone?",
+     "A birthstone comes from your birth month. In Vedic astrology (Jyotish) a ratna comes from your rashi, usually the sign your Moon was in at birth, and the planet that rules it. The nine Navaratna gems are ruby, pearl, red coral, emerald, yellow sapphire, diamond, blue sapphire, hessonite and cat's eye, one for each of the nine grahas."],
+    ["Why is my Vedic sign different from my Western sign?",
+     "Western astrology measures signs from the spring equinox. Vedic astrology uses the fixed stars, and the two have drifted about 24 degrees apart, so most dates fall one sign earlier in Jyotish. Jyotish also normally uses the Moon sign, not the Sun sign."],
+    ["How do I find my rashi?",
+     "Your rashi is the sign the Moon was in when you were born, shown on a kundli (Vedic birth chart) made from your birth date, time and place. Many families also know it from the first letter of the name given at birth. If you do not know it, this calculator estimates from the Sun sign on your date and says so."],
+    ["Should I wear a ratna without asking an astrologer?",
+     "Tradition says no. Astrologers usually look at the whole birth chart, and precious stones such as blue sapphire (Neelam) are customarily tried for a short period first. Nothing on this page is a prescription, and no stone replaces medical care."]
+  ]
+  content_for(:jsonld, tag.script({ "@context" => "https://schema.org", "@type" => "FAQPage",
+    "mainEntity" => faqs.map { |q, a| { "@type" => "Question", "name" => q, "acceptedAnswer" => { "@type" => "Answer", "text" => a } } } }.to_json.html_safe, type: "application/ld+json"))
+%>
+<% tool_jsonld(name: title_en, description: description_en) %>
+<% noindex_when_params!(:dob, :rashi) %>
+<% content_for :head do %>
+  <% if lang != "en" %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400..600&family=Noto+Sans+Bengali:wght@400..600&display=swap">
+  <% end %>
+  <style>
+    /* Devanagari and Bengali: Sora has neither script. Use real script fonts, no letter-spacing (it breaks conjuncts), and a taller line. */
+    .bs-root [lang="hi"] { font-family: "Noto Sans Devanagari", "Nirmala UI", "Kohinoor Devanagari", "Mangal", "Devanagari Sangam MN", system-ui, sans-serif; }
+    .bs-root [lang="bn"] { font-family: "Noto Sans Bengali", "Nirmala UI", "Kohinoor Bangla", "Vrinda", "Bangla Sangam MN", system-ui, sans-serif; }
+    .bs-root [lang="hi"], .bs-root [lang="bn"] { letter-spacing: 0; text-transform: none; line-height: 1.65; font-style: normal; }
+    .bs-indic .font-light { font-weight: 400; }
+    .bs-root details > summary { list-style: none; cursor: pointer; }
+    .bs-root details > summary::-webkit-details-marker { display: none; }
+  </style>
+<% end %>
+
+<div class="bs-root <%= "bs-indic" unless lang == "en" %>" data-controller="birthstone-form">
+  <%= tool_header(title: title_en, eyebrow: "— birthstones · zodiac · navaratna",
+                  lede: "Your birth-month stone, your zodiac stones and your Vedic ratna in one place, each labelled with the tradition it comes from. In English, Hindi and Bengali.") %>
+  <% if lang != "en" %>
+    <p class="px-5 text-[17px] font-medium text-ink sm:px-11"><span lang="<%= lang %>"><%= BirthstoneCalculator::Labels.t(:title, lang) %></span></p>
+  <% end %>
+
+  <!-- Form -->
+  <section class="px-5 pb-2 pt-5 sm:px-11" data-screen-label="Calculator form">
+    <div class="rounded-[22px] border border-violet/10 bg-white/85 p-5 shadow-card sm:p-7">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Your details</div>
+        <nav class="flex gap-1 rounded-full bg-violet/6 p-1" aria-label="Language">
+          <% BirthstoneCalculator::LANGS.each do |code| %>
+            <% q = request.query_parameters.slice("dob", "rashi").merge(code == "en" ? {} : { "lang" => code }) %>
+            <a href="<%= tools_birthstone_path(q) %>" lang="<%= code %>" hreflang="<%= code %>" data-turbo-frame="_top"
+               <%= "aria-current=page".html_safe if code == lang %>
+               class="rounded-full px-[14px] py-[7px] text-[12.5px] leading-none card-transition <%= code == lang ? "bg-ink font-medium text-white hover:text-white" : "text-ui hover:bg-white hover:text-violet-deep" %>"><%= BirthstoneCalculator::LANG_NAMES[code] %></a>
+          <% end %>
+        </nav>
+      </div>
+
+      <%= form_with url: tools_birthstone_path(anchor: "results"), method: :get, class: "mt-5 grid gap-4 sm:grid-cols-[1fr_1.25fr_auto] sm:items-end",
+                    data: { turbo_frame: "birthstone-results", turbo_action: "advance", birthstone_form_target: "form", action: "change->birthstone-form#changed" } do %>
+        <% unless lang == "en" %><%= hidden_field_tag :lang, lang, id: nil %><% end %>
+        <div>
+          <label for="bs-dob" class="mb-[7px] block text-[12.5px] font-medium text-ink"><%= t.(:dob) %></label>
+          <%= date_field_tag :dob, (BirthstoneCalculator.parse_date(@dob).first&.iso8601 || ""), id: "bs-dob", min: "1900-01-01", max: "2100-12-31", autocomplete: "bday",
+                             data: { birthstone_form_target: "date" },
+                             class: "w-full rounded-[14px] border border-violet/15 bg-white px-4 py-3 text-[14px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20" %>
+        </div>
+        <div>
+          <label for="bs-rashi" class="mb-[7px] block text-[12.5px] font-medium text-ink"><%= t.(:rashi_select) %></label>
+          <%= render "tools/birthstone/rashi_select", id: "bs-rashi", selected: @rashi, options: options, lang: lang, unknown_label: BirthstoneCalculator::Labels.t(:rashi_unknown, lang) %>
+        </div>
+        <button type="submit" class="rounded-full bg-ink px-6 py-[13px] text-[13px] font-medium text-white card-transition hover:bg-violet-deeper hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"><%= t.(:submit) %></button>
+      <% end %>
+      <p class="mt-3 text-[11.5px] font-light leading-[1.6] text-faint">Your date goes into the page address so you can bookmark or share the result. Only the date is used; no name or place is asked for.</p>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="scroll-mt-4 px-5 pb-4 pt-5 sm:px-11" data-screen-label="Results">
+    <%= turbo_frame_tag "birthstone-results", target: "_top", data: { turbo_action: "advance", birthstone_form_target: "frame" } do %>
+      <% if @submitted %>
+        <%= render "tools/birthstone/results", calc: @calc, lang: lang, dob: @dob, options: options %>
+      <% else %>
+        <%= render "tools/birthstone/intro", lang: lang %>
+      <% end %>
+    <% end %>
+  </section>
+
+  <!-- Always-crawlable reference: 12 months -->
+  <%= render "tools/birthstone/month_grid", lang: lang, catalog: @entries %>
+
+  <!-- Rashi and ratna chart -->
+  <%= render "tools/birthstone/rashi_chart", lang: lang, options: options, catalog: @entries %>
+
+  <!-- FAQ and method -->
+  <section class="px-5 pb-16 pt-8 sm:px-11" data-screen-label="FAQ">
+    <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <h2 class="text-[21px] font-semibold text-ink">Questions people ask</h2>
+        <div class="mt-4 flex flex-col gap-3">
+          <% faqs.each do |q, a| %>
+            <details class="group rounded-[16px] border border-violet/10 bg-white/80 px-5 py-4">
+              <summary class="flex items-start justify-between gap-4 text-[14px] font-medium leading-[1.5] text-ink">
+                <span><%= q %></span><span class="mt-[2px] text-violet-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              </summary>
+              <p class="mt-3 text-[13.5px] font-light leading-[1.75] text-ui"><%= a %></p>
+            </details>
+          <% end %>
+        </div>
+      </div>
+      <aside class="self-start rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+        <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">How this is calculated</div>
+        <ul class="flex flex-col gap-[10px] text-[12.5px] font-light leading-[1.65] text-ui">
+          <li><span class="font-medium text-ink">Birthstone lists.</span> Modern: the American Gem Trade Association and Jewelers of America list, as published by <a href="https://www.gia.edu/birthstones" target="_blank" rel="noopener noreferrer">GIA</a>. Traditional: the pre-1912 list. Trade bodies differ in small ways, for example in whether March includes bloodstone.</li>
+          <li><span class="font-medium text-ink">Sun sign.</span> Computed from the Sun's position on your date at noon UTC with standard astronomical formulae, so a birth within a day of a sign change is flagged as a cusp.</li>
+          <li><span class="font-medium text-ink">Vedic sign.</span> The sidereal sign using the Lahiri ayanamsa. It is the Sun's sign, an estimate of your rashi, unless you choose your own.</li>
+          <li><span class="font-medium text-ink">Dates.</span> 1900 to 2100.</li>
+        </ul>
+        <%= tradition_note %>
+      </aside>
+    </div>
+  </section>
+</div>
