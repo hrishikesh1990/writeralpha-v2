@@ -1,0 +1,58 @@
+<%# locals: plan (CrystalSafety::Plan), multi (bool) %>
+<%# Three tiers: safe for every stone, only with care, not for this set. %>
+<div class="grid gap-[14px] <%= multi ? "" : "md:grid-cols-2" %>">
+  <% if plan.safe.any? %>
+    <div class="rounded-[16px] border border-emerald-600/20 bg-emerald-500/6 px-[18px] py-4 <%= "md:col-span-2" if !multi && plan.blocked.empty? && plan.caution.empty? %>">
+      <div class="flex flex-wrap items-center gap-2">
+        <%= verdict_badge(nil, label: multi ? "Safe for all #{plan.rows.size}" : "Safe", tone: :good) %>
+        <span class="text-[12px] text-muted">No physical risk to <%= multi ? "any of these stones" : "this stone" %></span>
+      </div>
+      <ul class="mt-3 flex flex-wrap gap-[6px]">
+        <% plan.safe.each do |m| %>
+          <li class="rounded-full bg-white/80 px-3 py-[6px] text-[12.5px] text-ink ring-1 ring-inset ring-emerald-600/20"><span aria-hidden="true">✓ </span><%= m.label %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if plan.caution.any? %>
+    <div class="rounded-[16px] border border-amber-600/25 bg-amber-500/8 px-[18px] py-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <%= verdict_badge(nil, label: "Only with care", tone: :warn) %>
+        <span class="text-[12px] text-muted">Nobody must avoid these, but keep them short</span>
+      </div>
+      <ul class="mt-3 flex flex-col gap-3">
+        <% plan.caution.each do |m| %>
+          <li>
+            <div class="text-[13px] font-medium text-ink"><%= m.label %></div>
+            <% m.blockers.each do |b| %>
+              <p class="mt-1 text-[12.5px] font-light leading-[1.65] text-ui"><% if multi %><strong class="font-medium text-ink"><%= b.row.name %>:</strong> <% end %><%= b.reason %></p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if plan.blocked.any? %>
+    <div class="rounded-[16px] border border-rose-600/20 bg-rose-500/6 px-[18px] py-4 <%= "md:col-span-2" if !multi && plan.safe.empty? %>">
+      <div class="flex flex-wrap items-center gap-2">
+        <%= verdict_badge(nil, label: multi ? "Not for this set" : "Avoid", tone: :bad) %>
+        <span class="text-[12px] text-muted"><%= multi ? "At least one stone should not have these" : "These can damage this stone" %></span>
+      </div>
+      <ul class="mt-3 flex flex-col gap-4">
+        <% plan.blocked.each do |m| %>
+          <li>
+            <div class="text-[13px] font-medium text-ink"><span aria-hidden="true">✕ </span><%= m.label %></div>
+            <% m.blockers.each do |b| %>
+              <p class="mt-1 text-[12.5px] font-light leading-[1.65] text-ui"><% if multi %><strong class="font-medium text-ink"><%= b.row.name %><%= b.level == :limit ? " (briefly only)" : "" %>:</strong> <% end %><%= b.reason %></p>
+            <% end %>
+            <% if multi && m.allowed.any? %>
+              <p class="mt-1 text-[12px] text-muted">Fine for <%= CrystalSafety.join_list(m.allowed.map(&:name)) %> on their own, if you cleanse them separately.</p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

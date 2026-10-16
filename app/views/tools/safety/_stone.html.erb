@@ -1,0 +1,95 @@
+<%# locals: entry (AtlasEntry), row (CrystalSafety::Row) %>
+<% plan = CrystalSafety.common_methods([entry]) %>
+<% elixir = CrystalSafety.elixir_guidance(row) %>
+<% hosts = entry.sources.map { |u| [u, (URI.parse(u).host.to_s.sub(/\Awww\./, "") rescue u)] } %>
+<article class="overflow-hidden rounded-[22px] border border-violet/10 bg-white/85 shadow-card" aria-labelledby="stone-title" data-screen-label="Stone safety card">
+  <div class="relative flex flex-wrap items-center gap-5 bg-ink/97 px-[22px] py-6 sm:px-8">
+    <div class="glow-violet -right-10 -top-10 h-[180px] w-[320px] blur-[30px]" aria-hidden="true"></div>
+    <% if entry.image_url.present? %>
+      <img src="<%= image_url_for(entry.image_url) %>" alt="" width="84" height="84" loading="lazy" class="relative size-[84px] flex-none rounded-[18px] object-cover ring-1 ring-white/20">
+    <% end %>
+    <div class="relative min-w-0 flex-1">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">Safety card<%= " · Mohs #{row.mohs_label}" if row.mohs_label %></div>
+      <h2 id="stone-title" class="mt-2 text-[24px] font-semibold leading-[1.2] text-white sm:text-[30px]"><%= entry.name %></h2>
+      <% if entry.summary.present? %>
+        <p class="mt-2 max-w-[640px] text-[13.5px] font-light leading-[1.7] text-lavender/90"><%= entry.summary %></p>
+      <% end %>
+    </div>
+    <div class="relative flex flex-wrap gap-2" data-controller="safety-copy">
+      <button type="button" data-action="safety-copy#copy" data-safety-copy-target="button" class="rounded-full bg-white/10 px-4 py-[8px] text-[12px] font-medium text-white ring-1 ring-inset ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link</button>
+      <span class="sr-only" data-safety-copy-target="status" role="status"></span>
+    </div>
+  </div>
+
+  <div class="px-[22px] py-6 sm:px-8">
+    <!-- Verdicts with their reasons -->
+    <h3 class="font-mono text-[10px] font-normal uppercase tracking-[0.18em] text-faint">Verdicts and why</h3>
+    <dl class="mt-3 grid gap-[10px] sm:grid-cols-2 lg:grid-cols-3">
+      <% [["water", "Water"], ["salt", "Salt and salt water"], ["sun", "Sun"], ["sleep", "Sleeping with it"], ["wear", "Wearing it"]].each do |key, label| %>
+        <div class="rounded-[14px] border border-violet/10 bg-white/80 px-4 py-3">
+          <dt class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-[12.5px] font-medium text-ink"><%= label %></span>
+            <%= row.verdict(key) ? verdict_badge(row.verdict(key)) : verdict_badge(nil, label: "Not rated", tone: :info) %>
+          </dt>
+          <dd class="mt-2 text-[12.5px] font-light leading-[1.65] text-ui"><%= row.reason(key).presence || "No verdict is recorded for this stone yet." %></dd>
+        </div>
+      <% end %>
+      <div class="rounded-[14px] border <%= row.toxicity == "caution" ? "border-rose-600/25 bg-rose-500/6" : "border-violet/10 bg-white/80" %> px-4 py-3">
+        <dt class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-[12.5px] font-medium text-ink">Toxicity</span>
+          <%= verdict_badge(row.toxicity, label: { "none" => "Non-toxic", "low" => "Low risk", "caution" => "Toxic: take care" }[row.toxicity]) %>
+        </dt>
+        <dd class="mt-2 text-[12.5px] font-light leading-[1.65] text-ui"><%= row.toxicity_reason.presence || "No toxicity note is recorded for this stone yet." %></dd>
+      </div>
+    </dl>
+
+    <% if elixir %>
+      <div class="mt-[10px] rounded-[14px] border border-violet/10 bg-white/80 px-4 py-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-[12.5px] font-medium text-ink">Crystal elixirs (stone in drinking water)</span>
+          <%= verdict_badge(elixir[:verdict], label: elixir[:label]) %>
+        </div>
+        <p class="mt-2 text-[12.5px] font-light leading-[1.65] text-ui"><%= elixir[:text] %></p>
+      </div>
+    <% end %>
+
+    <!-- Cleansing -->
+    <h3 class="mt-8 text-[16px] font-semibold text-ink">How to cleanse <%= entry.name %> safely</h3>
+    <p class="mt-1 text-[12.5px] font-light text-muted">Every method that would not damage this stone, and every one that would.</p>
+    <div class="mt-3"><%= render "tools/safety/methods", plan: plan, multi: false %></div>
+
+    <!-- Q&A -->
+    <h3 class="mt-8 text-[16px] font-semibold text-ink">Can <%= entry.name %> go in…</h3>
+    <div class="mt-3 divide-y divide-violet/10 rounded-[16px] border border-violet/10 bg-white/70">
+      <% CrystalSafety.faq(row).each do |qa| %>
+        <div class="px-4 py-3">
+          <h4 class="text-[13.5px] font-medium text-ink"><%= qa.question %></h4>
+          <p class="mt-1 text-[13px] font-light leading-[1.7] text-ui">
+            <% if qa.verdict %><span class="mr-1 inline-block align-[1px]"><%= verdict_badge(qa.verdict, label: qa.lead) %></span><% else %><strong class="font-medium text-ink"><%= qa.lead %>.</strong><% end %>
+            <%= qa.answer %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Links -->
+    <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] font-medium">
+      <a href="<%= entry.path %>" data-turbo-frame="_top"><%= entry.name %> meaning and properties →</a>
+      <% if entry.guide?("can-go-in-water") %><a href="<%= entry.guide_path("can-go-in-water") %>" data-turbo-frame="_top">Can <%= entry.name %> go in water? the full guide →</a><% end %>
+      <% if entry.guide?("how-to-cleanse") %><a href="<%= entry.guide_path("how-to-cleanse") %>" data-turbo-frame="_top">How to cleanse <%= entry.name %> →</a><% end %>
+      <% if entry.guide?("sleeping-with") %><a href="<%= entry.guide_path("sleeping-with") %>" data-turbo-frame="_top">Sleeping with <%= entry.name %> →</a><% end %>
+      <a href="<%= tools_safety_path(stones: [entry.slug], anchor: "plan") %>">Plan a cleanse with other stones →</a>
+    </div>
+
+    <% if hosts.any? %>
+      <div class="mt-6 border-t border-violet/10 pt-4">
+        <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Sources for these facts</div>
+        <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
+          <% hosts.each do |url, host| %>
+            <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer nofollow" data-turbo-frame="_top"><%= host %> ↗</a></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</article>

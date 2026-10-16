@@ -1,0 +1,67 @@
+<%# locals: article, focus ("water" | "salt" | "sun" | "mohs") %>
+<% entries = AtlasEntry.all %>
+<% focus = local_assigns[:focus].to_s %>
+<% if entries.any? && %w[water salt sun mohs].include?(focus) %>
+  <% rows = CrystalSafety.rows(entries) %>
+  <% titles = { "water" => "Which crystals can go in water?", "salt" => "Which crystals are salt safe?", "sun" => "Which crystals are sun safe?", "mohs" => "Crystal hardness on the Mohs scale" } %>
+  <% ledes = { "water" => "Every stone in our atlas, grouped by what water does to it. Quick rinse only is not safe: never soak those.",
+               "salt" => "Every stone in our atlas, grouped by whether salt or salt water harms it. Anything that cannot go in water cannot go in salt water.",
+               "sun" => "Every stone in our atlas, grouped by what strong light and heat do to it. A short time on a sunny sill is not the same as weeks of it.",
+               "mohs" => "Every stone in our atlas placed on the scale. A stone with a range, such as 6 to 7, appears on each rung it covers." } %>
+  <section class="mt-10 max-w-[760px] rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 shadow-card-soft" aria-labelledby="matrix-embed-title" data-screen-label="Safety list: <%= focus %>">
+    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Crystal Safety Checker · <%= rows.size %> stones</div>
+    <h2 id="matrix-embed-title" class="mt-2 text-[18px] font-semibold leading-[1.3] text-ink"><%= titles[focus] %></h2>
+    <p class="mt-2 text-[13px] font-light leading-[1.7] text-ui"><%= ledes[focus] %></p>
+
+    <% if focus == "mohs" %>
+      <% ladder = CrystalSafety.mohs_ladder(rows) %>
+      <% unrated = rows.reject(&:mohs?) %>
+      <ol class="mt-4 divide-y divide-violet/10 rounded-[14px] border border-violet/10 bg-white/70">
+        <% ladder.each do |rung| %>
+          <li class="grid grid-cols-[44px_minmax(0,1fr)] gap-x-3 px-3 py-3 sm:grid-cols-[52px_130px_minmax(0,1fr)]">
+            <span class="font-mono text-[18px] font-medium text-violet-deep"><%= rung[:rung] %></span>
+            <span class="text-[12px] leading-[1.5] text-muted sm:pt-[3px]"><%= rung[:scale] %><span class="sr-only"> is the reference mineral for this rung</span></span>
+            <span class="col-span-2 mt-2 sm:col-span-1 sm:mt-0">
+              <% if rung[:rows].empty? %>
+                <span class="text-[12px] text-faint">None of our stones sit here</span>
+              <% else %>
+                <span class="flex flex-wrap gap-[6px] [&_a]:rounded-full [&_a]:bg-violet/8 [&_a]:px-[10px] [&_a]:py-[5px] [&_a]:text-[12px] [&_a]:leading-none [&_a]:text-violet-deep [&_a:hover]:bg-violet/14 [&_small]:ml-1 [&_small]:font-mono [&_small]:text-[10px] [&_small]:opacity-60">
+                  <% rung[:rows].each do |r| %><a href="<%= r.path %>"><%= r.name %><% if r.mohs_min != r.mohs_max %><small><%= r.mohs_label %></small><% end %></a><% end %>
+                </span>
+              <% end %>
+            </span>
+          </li>
+        <% end %>
+      </ol>
+      <% if unrated.any? %>
+        <p class="mt-3 text-[12px] text-muted">Hardness not yet recorded: <%= unrated.map(&:name).join(", ") %>.</p>
+      <% end %>
+      <p class="mt-3 text-[12px] font-light leading-[1.7] text-faint">Scale minerals (talc to diamond) define each whole number. Hardness measures scratch resistance, not toughness: a hard stone can still chip.</p>
+    <% else %>
+      <% groups = CrystalSafety.group(rows, focus) %>
+      <div class="mt-4 flex flex-col gap-3">
+        <% groups.each do |g| %>
+          <% big = g.count > 24 %>
+          <details class="rounded-[14px] border border-violet/10 bg-white/70" <%= "open" unless big %>>
+            <summary class="flex cursor-pointer flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3 marker:text-violet">
+              <span><%= verdict_badge(nil, label: g.label, tone: g.tone) %></span>
+              <span class="font-mono text-[11px] text-muted"><%= g.count %> <%= g.count == 1 ? "stone" : "stones" %></span>
+              <span class="basis-full text-[12px] font-light text-muted sm:ml-auto sm:basis-auto"><%= g.description %></span>
+            </summary>
+            <ul class="grid gap-x-6 gap-y-[10px] border-t border-violet/10 px-4 py-3 sm:grid-cols-2 [&_li]:text-[12.5px] [&_li]:leading-[1.55] [&_li]:text-ui [&_li_a]:font-medium [&_li_span]:font-light [&_li_span]:text-muted">
+              <% g.rows.each do |r| %>
+                <% reason = CrystalSafety.blurb(r.reason(focus)) %>
+                <li><a href="<%= r.path %>"><%= r.name %></a><% if reason.present? %><span> — <%= reason %></span><% end %></li>
+              <% end %>
+            </ul>
+          </details>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] font-medium">
+      <a href="<%= tools_safety_path(f: focus == "water" ? ["water"] : focus == "salt" ? ["salt"] : focus == "sun" ? ["sun"] : nil, sort: focus == "mohs" ? "hardest" : nil, anchor: "matrix") %>">Filter and search all <%= rows.size %> stones →</a>
+      <a href="<%= tools_safety_path(anchor: "plan") %>">Cleansing several stones together? →</a>
+    </div>
+  </section>
+<% end %>

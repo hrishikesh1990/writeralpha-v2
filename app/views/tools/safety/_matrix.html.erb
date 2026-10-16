@@ -1,0 +1,117 @@
+<%# locals: rows, visible, filters, query, sort, stone, plan_slugs %>
+<% visible_slugs = visible.map(&:slug).to_set %>
+<% ordered = CrystalSafety.sort(rows, sort) %>
+<% counts = CrystalSafety.filter_counts(rows) %>
+<% tox_labels = { "none" => "Non-toxic", "low" => "Low risk", "caution" => "Caution" } %>
+<% cols = [["water", "Water"], ["salt", "Salt"], ["sun", "Sun"], ["sleep", "Sleep"], ["wear", "Wear"]] %>
+<style>
+  /* Matrix rows: stacked cards on phones and tablets, one table row per stone from 1280px.
+     Written once here (not as utility classes per cell) to keep 85 rows light. */
+  .csm-list{display:grid;gap:12px;margin:16px 0 0;padding:0;list-style:none}
+  @media (min-width:640px){.csm-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .csr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px;border:1px solid rgba(124,58,237,.1);border-radius:16px;background:rgba(255,255,255,.8)}
+  @media (min-width:1024px){.csr{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .csn{grid-column:1/-1;min-width:0}
+  .csname{font-size:14.5px;font-weight:600;color:var(--color-ink)}
+  .csname:hover{color:var(--color-violet-deep)}
+  .csn small{display:block;margin-top:2px;font-size:11.5px;color:var(--color-muted)}
+  .csn small a{font-weight:500}
+  .csc::before{display:block;margin-bottom:4px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-faint)}
+  .csc:nth-child(2)::before{content:"Water"}.csc:nth-child(3)::before{content:"Salt"}.csc:nth-child(4)::before{content:"Sun"}
+  .csc:nth-child(5)::before{content:"Sleep"}.csc:nth-child(6)::before{content:"Wear"}.csc:nth-child(7)::before{content:"Toxicity"}
+  /* b.g good, b.w warn, b.r bad, b.i info (same tones as the shared verdict_badge) */
+  .csb{display:inline-flex;align-items:center;white-space:nowrap;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:500;line-height:1;box-shadow:inset 0 0 0 1px}
+  .csb.g{background:rgba(16,185,129,.1);color:#047857;box-shadow:inset 0 0 0 1px rgba(5,150,105,.2)}
+  .csb.w{background:rgba(245,158,11,.12);color:#92400e;box-shadow:inset 0 0 0 1px rgba(217,119,6,.25)}
+  .csb.r{background:rgba(244,63,94,.1);color:#be123c;box-shadow:inset 0 0 0 1px rgba(225,29,72,.2)}
+  .csb.i{background:rgba(124,58,237,.08);color:var(--color-violet-deep);box-shadow:inset 0 0 0 1px rgba(124,58,237,.2)}
+  @media (min-width:1280px){
+    .csm-list{display:block;margin:0;border:1px solid rgba(124,58,237,.1);border-top:0;border-radius:0 0 14px 14px;background:rgba(255,255,255,.7)}
+    .csr{grid-template-columns:200px repeat(6,minmax(0,1fr));column-gap:12px;align-items:center;padding:12px 16px;border:0;border-bottom:1px solid rgba(124,58,237,.1);border-radius:0;background:transparent}
+    .csr:last-child{border-bottom:0}
+    .csr:hover{background:rgba(124,58,237,.03)}
+    .csn{grid-column:auto}
+    .csc::before{display:none}
+  }
+</style>
+<section id="matrix" class="px-5 pb-6 pt-10 sm:px-11" data-screen-label="Safety matrix" aria-labelledby="matrix-title">
+  <%= turbo_frame_tag "safety_matrix", data: { turbo_action: "advance" } do %>
+    <div data-controller="safety-matrix" data-safety-matrix-total-value="<%= rows.size %>">
+      <div class="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h2 id="matrix-title" class="text-[21px] font-semibold text-ink">Every stone at a glance</h2>
+          <p class="mt-1 text-[13px] font-light text-muted">Tap a stone for the reason behind each verdict.</p>
+        </div>
+        <p class="text-[13px] font-medium text-ink" aria-live="polite" data-safety-matrix-target="count">Showing <%= visible.size %> of <%= rows.size %> stones</p>
+      </div>
+
+      <%= form_with url: tools_safety_path, method: :get, class: "mt-4", data: { safety_matrix_target: "form", action: "submit->safety-matrix#submit", turbo_frame: "safety_matrix", turbo_action: "advance" } do %>
+        <% if stone %><input type="hidden" name="stone" value="<%= stone.slug %>"><% end %>
+        <% plan_slugs.each do |s| %><input type="hidden" name="stones[]" value="<%= s %>"><% end %>
+        <div class="flex flex-col gap-3 md:flex-row md:items-end">
+          <div class="min-w-0 flex-1">
+            <label for="matrix-q" class="block text-[12px] font-medium text-ink">Search stones</label>
+            <input id="matrix-q" type="search" name="q" value="<%= query %>" autocomplete="off" placeholder="Try selenite, quartz or jade" data-safety-matrix-target="query" data-action="input->safety-matrix#apply"
+                   class="mt-1 block w-full rounded-[12px] border border-violet/20 bg-white px-3 py-[10px] text-[13.5px] text-ink placeholder:text-placeholder focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/25">
+          </div>
+          <div>
+            <label for="matrix-sort" class="block text-[12px] font-medium text-ink">Sort by</label>
+            <select id="matrix-sort" name="sort" data-safety-matrix-target="sort" data-action="change->safety-matrix#apply" class="mt-1 block w-full rounded-[12px] border border-violet/20 bg-white px-3 py-[10px] text-[13.5px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/25">
+              <% CrystalSafety::SORTS.each do |k, label| %><option value="<%= k %>" <%= "selected" if sort == k %>><%= label %></option><% end %>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="mt-4">
+          <legend class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Show only stones that are</legend>
+          <ul class="mt-2 flex flex-wrap gap-2">
+            <% CrystalSafety::FILTERS.each do |f| %>
+              <li>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="f[]" value="<%= f.key %>" class="peer sr-only" <%= "checked" if filters.include?(f.key) %> data-safety-matrix-target="chip" data-action="change->safety-matrix#apply">
+                  <span class="inline-flex items-center gap-[6px] rounded-full bg-pill-off/90 px-[14px] py-[8px] text-[12.5px] leading-none text-ui ring-1 ring-inset ring-violet/10 card-transition hover:bg-violet/10 peer-checked:bg-ink peer-checked:text-white peer-checked:ring-ink peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-violet">
+                    <%= f.label %>
+                    <span class="font-mono text-[10px] opacity-60"><%= counts[f.key] %></span>
+                  </span>
+                </label>
+              </li>
+            <% end %>
+          </ul>
+        </fieldset>
+
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <button type="submit" data-safety-matrix-target="apply" class="rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-violet-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet">Apply filters</button>
+          <a href="<%= tools_safety_path(stone: stone&.slug, stones: plan_slugs.presence, anchor: "matrix") %>" class="text-[12.5px] font-medium text-violet-deep hover:underline" data-safety-matrix-target="reset" data-action="safety-matrix#reset">Reset</a>
+          <button type="button" class="hidden rounded-full border border-violet/20 bg-white/80 px-4 py-[8px] text-[12px] font-medium text-violet-deep hover:bg-violet/8 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet" data-safety-matrix-target="copy" data-action="safety-matrix#copyLink">Copy link to this view</button>
+        </div>
+      <% end %>
+
+      <details class="mt-5 rounded-[14px] border border-violet/10 bg-white/60 px-4 py-3 text-[12.5px] font-light leading-[1.7] text-ui">
+        <summary class="cursor-pointer text-[12.5px] font-medium text-ink">How to read the verdicts</summary>
+        <ul class="mt-2 grid gap-x-6 gap-y-1 sm:grid-cols-2">
+          <li><strong class="font-medium text-ink">Water.</strong> Safe: rinse or soak. Quick rinse only: never soak, dry it straight away. Avoid: keep dry.</li>
+          <li><strong class="font-medium text-ink">Salt.</strong> Salt and salt water. Anything that cannot go in water cannot go in salt water.</li>
+          <li><strong class="font-medium text-ink">Sun.</strong> Limit: fades or heats with long exposure, a few hours at most. Avoid: fades quickly.</li>
+          <li><strong class="font-medium text-ink">Sleep.</strong> Physical safety on a nightstand or under a pillow: toxic, sharp or very fragile stones get a caution.</li>
+          <li><strong class="font-medium text-ink">Wear.</strong> Daily, with care (scratches or reacts to chemicals) or occasional only (too soft or fragile).</li>
+          <li><strong class="font-medium text-ink">Toxicity.</strong> Non-toxic, low risk (no elixirs), or caution (toxic dust or leaching).</li>
+        </ul>
+      </details>
+
+      <!-- Column headers (wide screens only; on narrow screens each cell is labelled) -->
+      <div class="mt-5 hidden rounded-t-[14px] border border-violet/10 bg-white/90 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-faint xl:sticky xl:top-0 xl:z-10 xl:grid xl:grid-cols-[200px_repeat(6,minmax(0,1fr))] xl:gap-x-3" aria-hidden="true">
+        <span>Stone</span>
+        <% cols.each do |_, label| %><span><%= label %></span><% end %>
+        <span>Toxicity</span>
+      </div>
+
+      <ol class="csm-list" data-safety-matrix-target="list" data-turbo-frame="_top">
+        <% ordered.each do |r| %>
+          <% href = tools_safety_path(stone: r.slug) %>
+<li class="csr" data-name="<%= ([r.name] + Array(r.entry.aka)).join(" ").downcase %>" data-label="<%= r.name.downcase %>" data-flags="<%= CrystalSafety.flags(r).join(" ") %>" data-mn="<%= r.mohs_min || 99 %>" data-mx="<%= r.mohs_max || -1 %>"<%= " hidden" unless visible_slugs.include?(r.slug) %>><div class="csn"><a class="csname" href="<%= href %>"><%= r.name %></a><small><%= r.mohs_label ? "Mohs #{r.mohs_label}" : "Mohs n/a" %> · <a href="<%= href %>" aria-hidden="true" tabindex="-1">Reasons →</a></small></div><% cols.each do |key, _| %><div class="csc"><%= matrix_badge(r.verdict(key)) %></div><% end %><div class="csc"><%= matrix_badge(r.toxicity, label: tox_labels[r.toxicity]) %></div></li>
+        <% end %>
+      </ol>
+      <p class="mt-4 rounded-[14px] border border-violet/10 bg-white/70 px-4 py-4 text-[13px] text-muted" data-safety-matrix-target="empty" <%= "hidden" if visible.any? %>>No stones match those filters. Try removing one.</p>
+    </div>
+  <% end %>
+</section>
