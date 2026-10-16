@@ -42,9 +42,9 @@
       </a>
       <nav class="flex min-w-0 items-center gap-1 overflow-x-auto text-[13.5px] text-ui [scrollbar-width:none]" aria-label="Primary">
         <%= link_to "Gemstones", gemstones_path, class: nav_link_class(nav_active?(:gemstones)) %>
+        <%= link_to "Tools", tools_path, class: nav_link_class(nav_active?(:tools)) %>
         <%= link_to "Crystals for", gemstones_by_healing_path(value: "protection"), class: nav_link_class(nav_active?(:crystals)) %>
         <%= link_to "Learn", blog_path(category: "learn"), class: nav_link_class(nav_active?(:learn)) %>
-        <%= link_to "Tools", tools_path, class: nav_link_class(nav_active?(:tools)) %>
         <%= link_to "Blog", blog_path, class: nav_link_class(nav_active?(:blog)) %>
         <% if content_for?(:nav_cta) %>
           <a href="<%= tools_stone_finder_path %>" class="ml-[10px] hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-ink hover:text-white sm:inline-block">Find your stone</a>
