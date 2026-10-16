@@ -1,0 +1,33 @@
+<%# locals: entry, outcome (AuthenticityPhotoCheck::Outcome, ok), check (AuthenticityCheck or nil) %>
+<% titles = (check ? check.tests : []).index_by(&:id) %>
+<div class="mt-3 rounded-[18px] border border-violet/10 bg-white/85 px-[22px] py-5" aria-live="polite">
+  <div class="flex flex-wrap items-center gap-2.5">
+    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">From your photo</div>
+    <%= verdict_badge(nil, label: outcome.label, tone: outcome.tone) %>
+    <span class="text-[11.5px] font-light text-muted">Confidence: <%= outcome.confidence %> (a photo can only show so much)</span>
+  </div>
+  <% if outcome.observations.any? %>
+    <h3 class="mt-4 text-[13px] font-semibold text-ink">What we can see</h3>
+    <ul class="mt-1.5 grid gap-1 text-[13.5px] font-light leading-[1.65] text-ui"><% outcome.observations.each do |o| %><li class="flex gap-2"><span class="text-violet" aria-hidden="true">·</span><span><%= o %></span></li><% end %></ul>
+  <% end %>
+  <% if outcome.consistent_signs.any? %>
+    <h3 class="mt-4 text-[13px] font-semibold text-ink">Fits genuine <%= entry.name %></h3>
+    <ul class="mt-1.5 grid gap-1 text-[13.5px] font-light leading-[1.65] text-ui"><% outcome.consistent_signs.each do |o| %><li class="flex gap-2"><span class="text-emerald-700" aria-hidden="true">+</span><span><%= o %></span></li><% end %></ul>
+  <% end %>
+  <% if outcome.red_flags.any? %>
+    <h3 class="mt-4 text-[13px] font-semibold text-ink">Worth a closer look</h3>
+    <ul class="mt-1.5 grid gap-1 text-[13.5px] font-light leading-[1.65] text-ui"><% outcome.red_flags.each do |o| %><li class="flex gap-2"><span class="text-amber-700" aria-hidden="true">!</span><span><%= o %></span></li><% end %></ul>
+  <% end %>
+  <% if outcome.observations.empty? && outcome.consistent_signs.empty? && outcome.red_flags.empty? %>
+    <p class="mt-3 text-[13.5px] font-light leading-[1.65] text-ui">We could not make out enough in that photo to say anything useful. Try a sharper, closer shot in daylight, or use the checklist above.</p>
+  <% end %>
+  <% tests = outcome.next_tests.filter_map { |id| titles[id] } %>
+  <% if tests.any? %>
+    <h3 class="mt-4 text-[13px] font-semibold text-ink">Tests that would help most</h3>
+    <ul class="mt-1.5 flex flex-wrap gap-2">
+      <% tests.each do |t| %><li><a href="#test-<%= t.id %>" data-turbo="false" class="inline-flex min-h-[40px] items-center rounded-full bg-violet/8 px-4 text-[12.5px] font-medium text-violet-deep hover:bg-violet/14"><%= t.title %></a></li><% end %>
+    </ul>
+  <% end %>
+  <p class="mt-4 border-t border-violet/10 pt-3 text-[12.5px] font-medium leading-[1.65] text-ink"><%= AuthenticityCheck::CAVEAT %></p>
+  <% if AuthenticityCheck.lab_grown_caveat?(entry) %><p class="mt-1.5 text-[12.5px] font-light leading-[1.65] text-ui"><%= AuthenticityCheck::LAB_GROWN_NOTE %></p><% end %>
+</div>

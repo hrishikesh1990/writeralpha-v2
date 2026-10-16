@@ -1,0 +1,8 @@
+<% noindex_when_params! %>
+<% tool_jsonld(name: "Real or Fake? Gemstone & Crystal Authenticity Checker",
+               description: "Step-by-step home tests that separate real from fake gemstones, scored honestly as you answer.") %>
+<% if @entry %>
+  <%= render "tools/real_or_fake/checker" %>
+<% else %>
+  <%= render "tools/real_or_fake/picker" %>
+<% end %>

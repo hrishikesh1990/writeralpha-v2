@@ -1,0 +1,31 @@
+<%# AI photo check (Turbo Frame "rof-photo"). locals: entry, outcome, error, check. Only rendered when a key is set. %>
+<% entry = local_assigns[:entry]; outcome = local_assigns[:outcome]; error = local_assigns[:error]; check = local_assigns[:check] %>
+<%= turbo_frame_tag "rof-photo", target: "_top", class: "mt-4 block" do %>
+  <% if entry %>
+    <%= form_with url: tools_real_or_fake_photo_path(anchor: "photo"), method: :post, multipart: true, id: "rof-photo-form",
+                  class: "rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5",
+                  data: { turbo_frame: "rof-photo", controller: "real-or-fake-photo",
+                          action: "submit->real-or-fake-photo#submitting change->real-or-fake-photo#picked" } do %>
+      <%= hidden_field_tag :stone, entry.slug, id: nil %>
+      <label for="rof-photo-file" class="text-[14px] font-medium text-ink">Photo of your <%= entry.name.downcase %></label>
+      <p class="mt-1 text-[12.5px] font-light leading-[1.6] text-muted">A sharp, well-lit close-up on a plain background works best. JPEG, PNG or WebP, up to 5 MB.</p>
+      <input id="rof-photo-file" type="file" name="photo" accept="image/jpeg,image/png,image/webp" required data-real-or-fake-photo-target="file"
+             class="mt-3 block w-full min-h-[48px] cursor-pointer rounded-[14px] border border-violet/15 bg-white text-[13px] text-ui file:mr-4 file:min-h-[48px] file:cursor-pointer file:border-0 file:bg-violet/10 file:px-5 file:text-[13px] file:font-medium file:text-violet-deep">
+      <img alt="Preview of the chosen photo" hidden data-real-or-fake-photo-target="preview" class="mt-3 max-h-[220px] rounded-[14px] border border-violet/10">
+      <p class="mt-2 hidden text-[12.5px] text-rose-700" role="alert" data-real-or-fake-photo-target="problem"></p>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <button type="submit" data-real-or-fake-photo-target="button" class="min-h-[48px] rounded-full bg-ink px-6 text-[13.5px] font-medium text-white card-transition hover:bg-violet-deep disabled:opacity-60">Check this photo</button>
+        <span class="hidden text-[12.5px] font-light text-muted" role="status" data-real-or-fake-photo-target="busy">Looking closely… this takes a few seconds.</span>
+      </div>
+      <p class="mt-3 text-[11.5px] font-light leading-[1.6] text-faint">Your photo is sent to an AI service (Anthropic) to be looked at, and we do not keep it. Please do not upload photos of people.</p>
+    <% end %>
+
+    <% if error %>
+      <div class="mt-3 rounded-[16px] border border-amber-600/25 bg-amber-500/10 px-5 py-4 text-[13.5px] leading-[1.65] text-amber-900" role="alert"><%= error %></div>
+    <% elsif outcome && !outcome.ok? %>
+      <div class="mt-3 rounded-[16px] border border-amber-600/25 bg-amber-500/10 px-5 py-4 text-[13.5px] leading-[1.65] text-amber-900" role="alert"><%= outcome.error_message %></div>
+    <% elsif outcome %>
+      <%= render "tools/real_or_fake/photo_result", entry: entry, outcome: outcome, check: check %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,19 @@
+<%# Inline verdict inside the how-to-identify embed (Turbo Frame "rof-embed-result"). Uses @entry/@check/@result. %>
+<%= turbo_frame_tag "rof-embed-result", target: "_top" do %>
+  <% if @entry && @result && @result.started? %>
+    <% r = @result %>
+    <div class="rounded-[16px] bg-ink/97 px-5 py-4 text-white" aria-live="polite">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">So far · <%= r.answered %> answered</div>
+      <div class="mt-1.5 text-[18px] font-semibold <%= rof_panel_accent(r.verdict) %>"><%= r.label %></div>
+      <p class="mt-1.5 text-[13px] font-light leading-[1.65] text-white/85"><%= r.summary %></p>
+      <% if r.pointing_to.any? %><p class="mt-1.5 text-[12.5px] text-amber-200">Points towards: <%= r.pointing_to.join(" or ") %></p><% end %>
+      <p class="mt-2.5 text-[12px] font-light leading-[1.6] text-white/70"><%= r.caveat %></p>
+      <% if r.lab_note %><p class="mt-1.5 text-[12px] font-light leading-[1.6] text-white/70"><%= r.lab_note %></p><% end %>
+      <a href="<%= rof_path(@entry, @check.answers, anchor: "rof-verdict") %>" class="mt-3 inline-flex min-h-[44px] items-center rounded-full bg-white px-5 text-[12.5px] font-medium text-ink hover:bg-white hover:text-violet-deep">
+        Continue with the full checklist →
+      </a>
+    </div>
+  <% else %>
+    <p class="text-[12.5px] font-light leading-[1.6] text-muted">Answer at least one test to see what it suggests.</p>
+  <% end %>
+<% end %>
