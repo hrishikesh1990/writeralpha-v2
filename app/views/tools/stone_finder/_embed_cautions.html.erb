@@ -1,0 +1,84 @@
+<%# locals: gemstone, entry, guide %>
+<%
+  entry = local_assigns[:entry]
+  statuses = entry ? StoneFinder.sign_statuses(entry) : []
+  cautions = entry ? StoneFinder.ordered_cautions(entry) : []
+  has_signs = entry && (entry.zodiac.any? || entry.zodiac_cautions.any?)
+%>
+<% if entry && (has_signs || cautions.any?) %>
+  <%
+    vocab = StoneFinder::Vocab
+    name = entry.name
+    recommended = statuses.select { |s| s[:status] == :recommended }
+    advised = statuses.select { |s| s[:status] == :advised_against }
+    names = ->(list) { vocab.list_phrase(list.map { |s| vocab.sign_name(s[:sign]) }) }
+    chip = {
+      recommended: ["Traditionally recommended", :good],
+      advised_against: ["Traditionally advised against", :warn],
+      neutral: ["No strong tradition either way", :info]
+    }
+    first_intention = entry.intentions.first
+    cta = tools_stone_finder_path(first_intention ? { i: [first_intention] } : {})
+    physical = cautions.select { |c| c[:basis] == "physical" }
+    traditional = cautions.select { |c| c[:basis] == "tradition" }
+    eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+  %>
+  <section class="mt-10 max-w-[680px] rounded-[20px] border border-violet/10 bg-white/85 px-5 py-6 shadow-card sm:px-7" aria-labelledby="can-wear-<%= entry.slug %>" data-screen-label="Can your sign wear <%= name %>">
+    <div class="<%= eyebrow %> !text-violet">✦ Stone Finder</div>
+    <h2 id="can-wear-<%= entry.slug %>" class="mt-2 text-[22px] font-semibold leading-[1.25] text-ink">Can your sign wear <%= name %>?</h2>
+
+    <% if has_signs %>
+      <p class="mt-3 text-[14px] font-light leading-[1.75] text-ui">
+        <% if recommended.any? %>
+          Astrological tradition most often links <%= name %> to <strong class="font-medium text-ink"><%= names.(recommended) %></strong>.
+        <% else %>
+          Astrological tradition does not single out particular signs for <%= name %>.
+        <% end %>
+        <% if advised.any? %>
+          Some traditions, mostly Vedic, advise <strong class="font-medium text-ink"><%= names.(advised) %></strong> against it.
+        <% end %>
+        For every other sign, there is no strong tradition either way, so physical care matters more than your sign.
+      </p>
+
+      <ul class="mt-5 grid grid-cols-2 gap-[8px] sm:grid-cols-3" aria-label="Zodiac signs and <%= name %>">
+        <% statuses.each do |s| %>
+          <% label, tone = chip[s[:status]] %>
+          <li class="flex flex-col gap-[7px] rounded-[14px] border border-violet/10 bg-white px-3 py-[10px]">
+            <a href="<%= gemstones_by_zodiac_path(value: s[:sign]) %>" class="text-[13px] font-medium text-ink hover:text-violet-deep"><span class="mr-1 text-violet" aria-hidden="true"><%= vocab.sign_glyph(s[:sign]) %>&#xFE0E;</span><%= vocab.sign_name(s[:sign]) %></a>
+            <span class="self-start"><%= verdict_badge(nil, label: label, tone: tone) %></span>
+          </li>
+        <% end %>
+      </ul>
+
+      <% if advised.any? %>
+        <div class="mt-5 flex flex-col gap-3">
+          <% advised.each do |s| %>
+            <p class="rounded-[14px] border border-amber-600/20 bg-amber-500/8 px-4 py-3 text-[13px] font-light leading-[1.7] text-ui"><strong class="font-medium text-ink"><%= vocab.sign_name(s[:sign]) %>:</strong> <%= s[:why] %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <p class="mt-3 text-[11.5px] font-light leading-[1.6] text-faint">Vedic advice is normally read from your Moon sign or ascendant, which needs your birth time and place. This grid uses Western sun signs, so treat it as a starting point.</p>
+    <% end %>
+
+    <% if cautions.any? %>
+      <h3 class="mt-7 text-[16px] font-semibold text-ink">Who should take care with <%= name %></h3>
+      <ul class="mt-3 flex flex-col gap-[10px]">
+        <% (physical + traditional).each do |c| %>
+          <li class="rounded-[14px] border border-violet/10 bg-white px-4 py-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[13px] font-medium text-ink"><%= c[:who] %></span>
+              <%= verdict_badge(nil, label: (c[:basis] == "physical" ? "Physical fact" : "Tradition"), tone: (c[:basis] == "physical" ? :bad : :info)) %>
+            </div>
+            <p class="mt-[6px] text-[13px] font-light leading-[1.7] text-ui"><%= c[:why] %></p>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="mt-6 flex flex-col gap-3 rounded-[16px] bg-violet/6 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-[13px] font-light leading-[1.6] text-callout-text">Not sure it suits you? Add your birthday and what you want help with for a personal match.</p>
+      <a href="<%= cta %>" class="flex-none rounded-full bg-violet px-[18px] py-[10px] text-center text-[12.5px] font-medium !text-white card-transition hover:bg-violet-deep">Find my stones →</a>
+    </div>
+    <%= tradition_note "Zodiac associations come from astrological tradition and are not scientific claims. Physical care facts are from our sourced stone atlas. No stone replaces medical care." %>
+  </section>
+<% end %>

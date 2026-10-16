@@ -1,0 +1,48 @@
+<%# locals: query, entries %>
+<%
+  vocab = StoneFinder::Vocab
+  info = query.sign_info
+  name = vocab.sign_name(query.sign)
+  month = query.month_name&.downcase
+  birthstones = month ? entries.select { |e| Array(e.birth_months["modern"]).include?(month) } : []
+  sidereal = query.dob ? Atlas::Astro.sidereal_sign(query.dob) : nil
+%>
+<section class="relative overflow-hidden rounded-[20px] bg-ink/97 px-5 py-6 text-white shadow-card sm:px-7" aria-labelledby="sign-heading">
+  <div class="glow-violet -right-10 -top-16 h-[200px] w-[320px] blur-[40px]" aria-hidden="true"></div>
+  <div class="relative flex items-start gap-4">
+    <span class="flex size-[56px] flex-none items-center justify-center rounded-[16px] bg-white/10 text-[30px] text-lavender" aria-hidden="true"><%= vocab.sign_glyph(query.sign) %>&#xFE0E;</span>
+    <div class="min-w-0">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender"><%= query.sign_from_date? ? "Your sun sign" : "Your sign" %></div>
+      <h2 id="sign-heading" class="mt-1 text-[24px] font-semibold leading-tight"><%= name %> <span class="font-light text-lavender">· <%= query.element.capitalize %> sign</span></h2>
+      <p class="mt-1 text-[13px] font-light leading-[1.6] text-white/75">
+        <% if query.sign_from_date? %>
+          Born <%= query.dob.strftime("%-d %B %Y") %>, with the Sun at <%= info[:degree].floor %>&deg; of <%= name %>.
+          <% if month %>Your birth month is <%= month.capitalize %>.<% end %>
+        <% else %>
+          You chose <%= name %> (<%= Atlas::Astro::SIGN_DATES[query.sign] %>). Add your birthday for a birthstone match.
+        <% end %>
+      </p>
+    </div>
+  </div>
+
+  <% if info[:cusp] && info[:cusp_with] %>
+    <p class="relative mt-4 rounded-[12px] bg-white/8 px-4 py-3 text-[12.5px] font-light leading-[1.7] text-white/85">
+      <strong class="font-medium text-white">You are on the cusp.</strong> The Sun was very close to the edge between <%= name %> and <%= vocab.sign_name(info[:cusp_with]) %> on your birth date, and the exact hour decides which side you fall on. Read <a href="<%= gemstones_by_zodiac_path(value: info[:cusp_with]) %>" data-turbo-frame="_top" class="font-medium !text-lavender underline"><%= vocab.sign_name(info[:cusp_with]) %></a> too and see which feels like you.
+    </p>
+  <% end %>
+
+  <% if birthstones.any? %>
+    <p class="relative mt-4 text-[13px] font-light leading-[1.7] text-white/85">
+      <%= month.capitalize %> birthstone<%= "s" if birthstones.size > 1 %> in our atlas:
+      <% birthstones.each_with_index do |e, i| %><a href="<%= e.path %>" data-turbo-frame="_top" class="font-medium !text-lavender underline"><%= e.name %></a><%= i < birthstones.size - 1 ? ", " : "." %><% end %>
+    </p>
+  <% end %>
+
+  <p class="relative mt-4 text-[12px] font-light leading-[1.7] text-white/60">
+    <% if sidereal && sidereal[:sign] != query.sign %>
+      In Vedic astrology, which uses the sidereal zodiac, your Sun falls in <%= vocab.sign_name(sidereal[:sign]) %>.
+    <% end %>
+    Vedic stone advice is normally read from your Moon sign or ascendant, which needs your birth time and place. Treat the tradition-based skips below as a prompt to ask a Jyotishi before buying a costly gem.
+  </p>
+  <a href="<%= gemstones_by_zodiac_path(value: query.sign) %>" data-turbo-frame="_top" class="relative mt-4 inline-block text-[12.5px] font-medium !text-lavender hover:!text-white">All stones for <%= name %> →</a>
+</section>

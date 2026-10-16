@@ -1,0 +1,68 @@
+<%# locals: filter_type, value, article %>
+<%
+  intent = if local_assigns[:article]
+          StoneFinder::Vocab.article_intention(article.try(:slug))
+        else
+          Atlas::INTENTIONS.include?(local_assigns[:value].to_s) ? value.to_s : nil
+        end
+  picks = intent ? StoneFinder.for_intention(AtlasEntry.all, intent) : []
+  beginners = intent == :beginners
+%>
+<% if picks.any? %>
+  <%
+    vocab = StoneFinder::Vocab
+    topic = beginners ? "beginners" : vocab.intention_name(intent)
+    heading = beginners ? "Easiest stones to start with" : "Top stones for #{topic}, ranked"
+    eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+    cta = beginners ? tools_stone_finder_path(f: %w[water kids]) : tools_stone_finder_path(i: [intent])
+    wrap = local_assigns[:article] ? "mt-10 max-w-[680px]" : "mx-5 mb-2 mt-2 max-w-[820px] sm:mx-11"
+  %>
+  <section class="<%= wrap %> rounded-[20px] border border-violet/10 bg-white/85 px-5 py-6 shadow-card sm:px-7" aria-labelledby="intention-embed" data-screen-label="Stone Finder for <%= topic %>">
+    <div class="<%= eyebrow %> !text-violet">✦ Stone Finder</div>
+    <h2 id="intention-embed" class="mt-2 text-[22px] font-semibold leading-[1.25] text-ink"><%= heading %></h2>
+    <p class="mt-2 text-[13.5px] font-light leading-[1.7] text-ui">
+      <% if beginners %>
+        These stones are safe in water, tough enough to wear daily, non-toxic and safe to sleep near, so there is little to get wrong. The ones that list the most uses come first.
+      <% else %>
+        Ranked by how central <%= topic %> is to each stone in crystal tradition, then by how easy it is to live with. Badges show the physical facts.
+      <% end %>
+    </p>
+    <ol class="mt-5 flex flex-col gap-[10px]">
+      <% picks.each_with_index do |pick, i| %>
+        <% e = beginners ? pick : pick.entry %>
+        <li class="rounded-[14px] border border-violet/10 bg-white px-4 py-3">
+          <div class="flex items-start gap-3">
+            <span class="mt-[2px] w-[22px] flex-none font-mono text-[11px] text-faint"><%= i + 1 %></span>
+            <div class="min-w-0 flex-1">
+              <a href="<%= e.path %>" class="text-[14px] font-semibold text-ink hover:text-violet-deep"><%= e.name %></a>
+              <% others = (e.intentions - [intent.to_s]).first(2).map { |x| vocab.intention_name(x) } %>
+              <p class="mt-[3px] text-[12.5px] font-light leading-[1.65] text-ui">
+                <% if beginners %>
+                  Traditionally used for <%= vocab.list_phrase(e.intentions.first(3).map { |x| vocab.intention_name(x) }) %>.
+                <% elsif e.intentions.index(intent.to_s).to_i < 2 %>
+                  A core purpose of <%= e.name %> in tradition.<%= " Also linked to #{vocab.list_phrase(others)}." if others.any? %>
+                <% else %>
+                  Also used for <%= topic %> in tradition.<%= " Mainly linked to #{vocab.list_phrase(e.intentions.first(2).map { |x| vocab.intention_name(x) })}." %>
+                <% end %>
+              </p>
+              <div class="mt-2 flex flex-wrap gap-[6px]">
+                <%= verdict_badge(e.safety("water"), label: "Water: #{verdict_label(e.safety('water'))}") if e.safety("water").present? %>
+                <%= verdict_badge(e.safety("sleep"), label: "Sleep: #{verdict_label(e.safety('sleep'))}") if e.safety("sleep").present? %>
+                <% if e.safety("wear").present? %><%= verdict_badge(e.safety("wear")) %><% end %>
+                <% if e.toxicity.present? && e.toxicity != "none" %><%= verdict_badge(e.toxicity, label: "Toxicity: #{verdict_label(e.toxicity)}") %><% end %>
+              </div>
+              <% if e.toxicity == "caution" %>
+                <p class="mt-2 text-[12px] font-light leading-[1.6] text-amber-900"><strong class="font-medium">Handle with care.</strong> <%= vocab.first_sentence(e.toxicity_reason) %></p>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+    <div class="mt-6 flex flex-col gap-3 rounded-[16px] bg-violet/6 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-[13px] font-light leading-[1.6] text-callout-text">Add your birthday, budget and how you will use it, and we will rank these for you and tell you which to skip.</p>
+      <a href="<%= cta %>" class="flex-none rounded-full bg-violet px-[18px] py-[10px] text-center text-[12.5px] font-medium !text-white card-transition hover:bg-violet-deep">Find my stones →</a>
+    </div>
+    <%= tradition_note "Intentions and energies come from crystal-healing tradition, not scientific claims, and no stone replaces medical care. Water, sleep and wear badges are physical facts from our sourced atlas." %>
+  </section>
+<% end %>

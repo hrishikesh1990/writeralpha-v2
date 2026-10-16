@@ -1,0 +1,103 @@
+<%# locals: query %>
+<%
+  today = Date.current
+  card = "rounded-[20px] border border-violet/10 bg-white/85 px-5 py-5 shadow-card sm:px-6"
+  eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+  chip = "relative inline-flex min-h-[38px] cursor-pointer select-none items-center gap-[6px] rounded-full border border-violet/15 bg-white px-[14px] py-[8px] text-[12.5px] leading-none text-ui card-transition hover:border-violet/40 has-[:checked]:border-violet has-[:checked]:bg-violet has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-violet/40 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-45"
+  tick = "hidden text-[11px] group-has-[:checked]/chip:inline"
+  all_intentions = StoneFinder::Vocab.intentions
+%>
+<form action="<%= tools_stone_finder_path %>" method="get" class="<%= card %> flex flex-col gap-7" aria-label="Stone Finder"
+      data-controller="stone-finder-form" data-stone-finder-form-max-value="<%= StoneFinder::Vocab::MAX_INTENTIONS %>"
+      data-turbo-frame="finder-results" data-turbo-action="advance"
+      data-action="change->stone-finder-form#changed submit->stone-finder-form#submitted">
+
+  <fieldset>
+    <legend class="<%= eyebrow %>">1 · Your birthday</legend>
+    <label for="dob" class="mt-3 block text-[13px] font-medium text-ink">When were you born?</label>
+    <input type="date" id="dob" name="dob" value="<%= query.dob&.iso8601 %>" min="1900-01-01" max="<%= today.iso8601 %>"
+           autocomplete="bday" aria-describedby="dob-help<%= ' dob-error' if query.errors.any? %>" aria-invalid="<%= query.errors.any? %>"
+           class="mt-2 block w-full rounded-[12px] border border-violet/15 bg-white px-[14px] py-[10px] text-[14px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/30">
+    <% if query.errors.any? %>
+      <p id="dob-error" role="alert" class="mt-2 rounded-[10px] bg-amber-500/12 px-3 py-2 text-[12.5px] leading-[1.5] text-amber-900"><%= query.errors.first %></p>
+    <% end %>
+    <p id="dob-help" class="mt-2 text-[11.5px] font-light leading-[1.6] text-faint">Used for your sun sign and birthstone. Nothing is stored; it only lives in the page address.</p>
+
+    <label for="sign" class="mt-4 block text-[12.5px] text-muted">Prefer not to share a date? Pick your sign instead</label>
+    <select id="sign" name="sign" class="mt-2 block w-full rounded-[12px] border border-violet/15 bg-white px-[14px] py-[10px] text-[13.5px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/30">
+      <option value="">No sign</option>
+      <% Atlas::ZODIAC.each do |s| %>
+        <option value="<%= s %>" <%= "selected" if query.sign == s && !query.dob %>><%= StoneFinder::Vocab.sign_glyph(s) %>&#xFE0E; <%= StoneFinder::Vocab.sign_name(s) %> (<%= Atlas::Astro::SIGN_DATES[s] %>)</option>
+      <% end %>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend class="<%= eyebrow %>">2 · What do you want help with?</legend>
+    <p class="mt-3 flex items-baseline justify-between text-[12.5px] text-muted">
+      <span>Pick up to <%= StoneFinder::Vocab::MAX_INTENTIONS %></span>
+      <span class="font-mono text-[11px] text-violet-deep" data-stone-finder-form-target="count" aria-live="polite"><%= query.intentions.size %> of <%= StoneFinder::Vocab::MAX_INTENTIONS %></span>
+    </p>
+    <div class="mt-3 flex flex-wrap gap-[8px]">
+      <% all_intentions.each do |slug| %>
+        <label class="group/chip <%= chip %>">
+          <input type="checkbox" name="i[]" value="<%= slug %>" class="sr-only" data-stone-finder-form-target="intention" <%= "checked" if query.intentions.include?(slug) %>>
+          <span class="<%= tick %>" aria-hidden="true">✓</span><%= StoneFinder::Vocab.intention_title(slug) %>
+        </label>
+      <% end %>
+    </div>
+    <p class="mt-2 hidden text-[11.5px] text-amber-800" data-stone-finder-form-target="note" role="status">That is three. Untick one to swap it.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend class="<%= eyebrow %>">3 · How will you use it?</legend>
+    <div class="mt-3 flex flex-wrap gap-[8px]">
+      <label class="group/chip <%= chip %>">
+        <input type="radio" name="use" value="" class="sr-only" <%= "checked" if query.use.nil? %>>
+        <span class="<%= tick %>" aria-hidden="true">✓</span>No preference
+      </label>
+      <% StoneFinder::Vocab::USES.each do |slug, u| %>
+        <label class="group/chip <%= chip %>" title="<%= u[:hint] %>">
+          <input type="radio" name="use" value="<%= slug %>" class="sr-only" <%= "checked" if query.use == slug %>>
+          <span class="<%= tick %>" aria-hidden="true">✓</span><%= u[:label] %>
+        </label>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="<%= eyebrow %>">4 · Budget</legend>
+    <p class="mt-3 text-[12.5px] text-muted">We show stones up to and including this price tier.</p>
+    <div class="mt-3 flex flex-wrap gap-[8px]">
+      <label class="group/chip <%= chip %>">
+        <input type="radio" name="budget" value="" class="sr-only" <%= "checked" if query.budget.nil? %>>
+        <span class="<%= tick %>" aria-hidden="true">✓</span>Any budget
+      </label>
+      <% StoneFinder::Vocab::BUDGETS.each do |slug, b| %>
+        <label class="group/chip <%= chip %>" title="<%= b[:hint] %>">
+          <input type="radio" name="budget" value="<%= slug %>" class="sr-only" <%= "checked" if query.budget == slug %>>
+          <span class="<%= tick %>" aria-hidden="true">✓</span><%= b[:label] %>
+        </label>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="<%= eyebrow %>">5 · Good to know</legend>
+    <div class="mt-3 flex flex-col gap-[8px]">
+      <% StoneFinder::Vocab::FLAGS.each do |slug, label| %>
+        <label class="group/chip <%= chip %> !justify-start">
+          <input type="checkbox" name="f[]" value="<%= slug %>" class="sr-only" <%= "checked" if query.flags.include?(slug) %>>
+          <span class="<%= tick %>" aria-hidden="true">✓</span><%= label %>
+        </label>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <div class="flex flex-wrap items-center gap-3">
+    <button type="submit" class="rounded-full bg-violet px-[22px] py-[12px] text-[13.5px] font-medium text-white card-transition hover:bg-violet-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-violet/50 focus-visible:ring-offset-2">Show my stones</button>
+    <% if query.active? || query.errors.any? %>
+      <a href="<%= tools_stone_finder_path %>" data-turbo-frame="_top" class="text-[12.5px] font-medium text-muted hover:text-violet-deep">Start over</a>
+    <% end %>
+  </div>
+</form>

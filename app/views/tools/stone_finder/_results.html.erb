@@ -1,0 +1,98 @@
+<%# locals: result, query, entries %>
+<%
+  vocab = StoneFinder::Vocab
+  picks = result.picks
+  skips = result.skips
+  card = "rounded-[20px] border border-violet/10 bg-white/85 px-5 py-5 shadow-card sm:px-6"
+  eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+  share_url = tools_stone_finder_url(query.to_params)
+
+  summary = []
+  summary << "#{vocab.sign_glyph(query.sign)}\uFE0E #{vocab.sign_name(query.sign)}" if query.sign
+  query.intentions.each { |i| summary << vocab.intention_title(i) }
+  summary << StoneFinder::Vocab::USES[query.use][:label] if query.use
+  summary << (query.budget == "budget" ? "Budget stones only" : "Up to #{StoneFinder::Vocab::BUDGETS[query.budget][:label].downcase} price") if query.budget
+  query.flags.each { |f| summary << StoneFinder::Vocab::FLAGS[f] }
+%>
+
+<div class="flex flex-col gap-6" data-controller="stone-finder-share" data-turbo-frame="_top">
+  <% if query.sign %>
+    <%= render "tools/stone_finder/sign_card", query: query, entries: entries %>
+  <% end %>
+
+  <div class="<%= card %>">
+    <div class="<%= eyebrow %>">Your answers</div>
+    <% if summary.any? %>
+      <ul class="mt-3 flex flex-wrap gap-[6px]" aria-label="Your answers">
+        <% summary.each do |s| %><li class="rounded-full bg-violet/8 px-[12px] py-[6px] text-[11.5px] leading-none text-violet-deep"><%= s %></li><% end %>
+      </ul>
+    <% end %>
+    <p class="mt-3 text-[13px] font-light leading-[1.7] text-ui">
+      <% if picks.any? %>
+        <strong class="font-medium text-ink"><%= picks.size %> <%= "stone".pluralize(picks.size) %></strong> fit<%= "s" if picks.size == 1 %> you best out of <%= result.considered %> <%= "stone".pluralize(result.considered) %> we checked.
+        <% if skips.any? %><%= skips.size %> <%= skips.size == 1 ? "is" : "are" %> on your skip list below.<% end %>
+      <% else %>
+        None of the <%= result.considered %> <%= "stone".pluralize(result.considered) %> we have profiled so far fit all of this.
+      <% end %>
+    </p>
+    <div class="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <label class="sr-only" for="share-url">Link to this result</label>
+      <input id="share-url" type="text" readonly value="<%= share_url %>" data-stone-finder-share-target="source"
+             class="min-w-0 flex-1 truncate rounded-full border border-violet/12 bg-white px-[14px] py-[8px] font-mono text-[11px] text-muted focus:border-violet focus:outline-none">
+      <button type="button" data-action="click->stone-finder-share#copy" data-stone-finder-share-target="button"
+              class="hidden rounded-full border border-violet/25 px-[16px] py-[8px] text-[12px] font-medium text-violet-deep card-transition hover:bg-violet/8 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet/40" aria-live="polite">Copy link</button>
+    </div>
+  </div>
+
+  <% if picks.any? %>
+    <section aria-labelledby="picks-heading">
+      <h2 id="picks-heading" class="text-[21px] font-semibold text-ink">Your best matches</h2>
+      <p class="mt-1 text-[13px] font-light text-muted">Ranked by fit. Each score shows how it was built, and nothing is hidden.</p>
+      <ol class="mt-5 flex flex-col gap-4">
+        <% picks.each_with_index do |pick, i| %>
+          <li><%= render "tools/stone_finder/pick", pick: pick, rank: i + 1, query: query %></li>
+        <% end %>
+      </ol>
+    </section>
+  <% else %>
+    <section class="<%= card %>" aria-labelledby="empty-heading">
+      <h2 id="empty-heading" class="text-[18px] font-semibold text-ink">No stone fits all of that yet</h2>
+      <p class="mt-2 text-[13.5px] font-light leading-[1.7] text-ui">
+        <% if result.considered.zero? %>
+          We are still adding stone profiles to the atlas. Check back soon, or browse the <a href="<%= gemstones_path %>">gemstone directory</a>.
+        <% else %>
+          Your choices rule out every stone we have profiled so far. That is useful to know, and it is easy to loosen.
+        <% end %>
+      </p>
+    </section>
+  <% end %>
+
+  <% if result.hints.any? %>
+    <section class="rounded-[20px] border border-violet/16 bg-violet/6 px-5 py-5 sm:px-6" aria-labelledby="hints-heading">
+      <h2 id="hints-heading" class="<%= eyebrow %> !text-violet">Want more options?</h2>
+      <ul class="mt-3 flex flex-col gap-2">
+        <% result.hints.each do |hint| %>
+          <li class="text-[13.5px] font-light leading-[1.6] text-callout-text">
+            <a href="<%= tools_stone_finder_path(hint.query.to_params) %>" class="font-medium"><%= hint.text %></a>
+            to see <%= hint.gain %> more <%= "stone".pluralize(hint.gain) %>.
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% if skips.any? %>
+    <%= render "tools/stone_finder/skips", skips: skips, query: query %>
+  <% end %>
+
+  <% if picks.any? || skips.any? %>
+    <div class="<%= card %>">
+      <div class="<%= eyebrow %>">How the fit score works</div>
+      <p class="mt-3 text-[12.5px] font-light leading-[1.75] text-ui">
+        Each stone earns points for the things you told us: your goals (up to <%= StoneFinder::WEIGHTS[:intentions] %>), your sign (up to <%= StoneFinder::WEIGHTS[:sign] %>), your birthstone month (up to <%= StoneFinder::WEIGHTS[:birthstone] %>), how you will use it (up to <%= StoneFinder::WEIGHTS[:use] %>), and any practical needs you ticked. Every stone also earns up to <%= StoneFinder::WEIGHTS[:easy] %> for being easy to live with. The fit score is points earned divided by points available, so it only judges you on what you shared. Stones that break a safety rule or your budget, or that a tradition advises against for your sign, are skipped, never scored. Same answers, same result, every time.
+      </p>
+    </div>
+  <% end %>
+
+  <%= tradition_note "Sign, element, planet and birthstone matches come from crystal-healing and astrological tradition, and Vedic advice is normally based on a full birth chart. They are not scientific claims, and no stone replaces medical care. Physical facts such as water, toxicity and hardness come from our sourced atlas." %>
+</div>

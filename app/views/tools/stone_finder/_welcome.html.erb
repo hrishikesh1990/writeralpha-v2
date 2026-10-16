@@ -1,0 +1,42 @@
+<%# locals: examples, query, count %>
+<div class="flex flex-col gap-6" data-turbo-frame="_top">
+  <section class="relative overflow-hidden rounded-[20px] border border-violet/10 bg-white/85 px-5 py-6 shadow-card sm:px-7" aria-labelledby="welcome-heading">
+    <div class="glow-blob -right-10 -top-12 h-[180px] w-[300px] blur-[30px]" aria-hidden="true"></div>
+    <div class="relative">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">How it works</div>
+      <h2 id="welcome-heading" class="mt-2 text-[22px] font-semibold leading-tight text-ink">A personal answer, not a generic list</h2>
+      <ol class="mt-5 grid gap-4 sm:grid-cols-3">
+        <% [["1", "Tell us about you", "Your birthday or sign, what you want help with, and how you will use the stone. Every question is optional."],
+            ["2", "We match and explain", "Each stone gets a fit score from your goals, sign, birthstone and use, with the reasons written out."],
+            ["3", "We tell you what to skip", "Water-sensitive, toxic, fragile or over-budget stones, and the signs a tradition advises against a stone, with the reason."]].each do |n, title, body| %>
+          <li class="flex flex-col gap-2">
+            <span class="flex size-[28px] items-center justify-center rounded-full bg-violet/10 font-mono text-[12px] text-violet-deep" aria-hidden="true"><%= n %></span>
+            <span class="text-[14px] font-medium text-ink"><%= title %></span>
+            <span class="text-[12.5px] font-light leading-[1.65] text-ui"><%= body %></span>
+          </li>
+        <% end %>
+      </ol>
+      <p class="mt-5 text-[12px] font-light leading-[1.7] text-faint">Matched against <%= count %> <%= "stone".pluralize(count) %> with full safety profiles. Free, no sign-up, nothing stored.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="popular-heading">
+    <h2 id="popular-heading" class="text-[18px] font-semibold text-ink">Popular questions</h2>
+    <p class="mt-1 text-[13px] font-light text-muted">Tap one to see a finished result, then make it yours.</p>
+    <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+      <% examples.each do |ex| %>
+        <li>
+          <a href="<%= tools_stone_finder_path(ex[:query].to_params) %>" class="group flex h-full flex-col rounded-[16px] border border-violet/10 bg-white/85 px-4 py-4 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+            <span class="text-[14px] font-medium text-ink"><%= ex[:title] %></span>
+            <% if ex[:top].any? %>
+              <span class="mt-1 text-[12px] font-light leading-[1.6] text-muted">Top matches: <%= ex[:top].to_sentence(two_words_connector: " and ", last_word_connector: ", and ") %></span>
+            <% end %>
+            <span class="mt-auto pt-3 text-[12px] font-medium text-violet-deep group-hover:text-violet-deeper">See the result →</span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <%= tradition_note %>
+</div>
