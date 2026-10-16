@@ -30,6 +30,9 @@ export default class extends Controller {
     }
 
     if (this.explicitValue || isUtc || same) return
+    // Never auto-navigate crawlers: ?tz= pages are noindex, and a rendering bot
+    // (Googlebot renders in a non-UTC zone) must index the clean URL it asked for.
+    if (/bot|crawl|spider|slurp|bingpreview|lighthouse|headless/i.test(navigator.userAgent) || navigator.webdriver) return
     try {
       if (sessionStorage.getItem("moon-tz-tried")) return
       sessionStorage.setItem("moon-tz-tried", "1")
