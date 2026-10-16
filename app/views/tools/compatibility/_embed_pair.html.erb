@@ -1,0 +1,38 @@
+<%# locals: (article: nil, **) %>
+
+<% slugs = article && CrystalCompatibility.split_pair_slug(article.slug) %>
+<% if slugs %>
+  <% by_slug = AtlasEntry.all.index_by(&:slug) %>
+  <% a = by_slug[slugs[0]] %>
+  <% b = by_slug[slugs[1]] %>
+  <% result = a && b && CrystalCompatibility.check(a, b) %>
+  <% if result %>
+    <aside class="mt-10" data-screen-label="Compatibility embed" aria-labelledby="compat-pair-title">
+      <div class="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h2 id="compat-pair-title" class="text-[19px] font-semibold text-ink">Compatibility check: <%= a.name %> and <%= b.name %></h2>
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Atlas verdict</span>
+      </div>
+      <%= render "tools/compatibility/verdict_card", result: result, compact: true %>
+
+      <% top_plus = result.plus.reject { |x| x.equal?(result.top_reason) && %i[great good].include?(result.verdict) }.first(2) %>
+      <% top_minus = result.minus.first(1) %>
+      <% care = result.practical.select { |p| p.tone == :warn }.first(2) %>
+      <% if (top_plus + top_minus + care).any? %>
+        <ul class="mt-4 flex flex-col gap-3 rounded-[18px] border border-violet/10 bg-white/80 px-[18px] py-4">
+          <% (top_plus + top_minus + care).each do |reason| %>
+            <li class="flex gap-3">
+              <%= compat_reason_icon(reason) %>
+              <p class="text-[13px] font-light leading-[1.65] text-ui"><%= reason.text %> <span class="ml-1 align-middle"><%= compat_basis_chip(reason.basis) %></span></p>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
+        <%= link_to "See the full reasoning →", compat_pair_path(a, b), class: "font-medium" %>
+        <%= link_to "Try another pair", tools_compatibility_path(a: a.slug), class: "font-medium" %>
+      </div>
+      <%= tradition_note %>
+    </aside>
+  <% end %>
+<% end %>

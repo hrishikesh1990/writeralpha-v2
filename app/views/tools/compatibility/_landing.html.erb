@@ -1,0 +1,41 @@
+<%# locals: (examples:, conflicts:) %>
+<div class="flex flex-col gap-10">
+  <% if examples.any? %>
+    <section aria-labelledby="examples-title">
+      <h2 id="examples-title" class="text-[20px] font-semibold text-ink">Pairs people ask about</h2>
+      <p class="mt-2 text-[13px] font-light text-muted">Tap one to see the full reasoning.</p>
+      <div class="mt-4 grid gap-[14px] sm:grid-cols-2 lg:grid-cols-3">
+        <% examples.each do |res| %>
+          <a href="<%= compat_pair_path(res.a, res.b) %>" class="group flex flex-col rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-[14px] font-semibold leading-[1.35] text-ink"><%= res.a.name %> + <%= res.b.name %></span>
+              <span class="text-[15px] font-semibold text-ink"><%= res.score %></span>
+            </div>
+            <div class="mt-2"><%= compat_pill(res.verdict) %></div>
+            <p class="mt-3 text-[12.5px] font-light leading-[1.65] text-ui"><%= truncate(res.headline, length: 110, separator: " ") %></p>
+          </a>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if conflicts.any? %>
+    <section aria-labelledby="conflicts-title">
+      <h2 id="conflicts-title" class="text-[20px] font-semibold text-ink">Pairs tradition keeps apart</h2>
+      <p class="mt-2 max-w-[620px] text-[13px] font-light leading-[1.7] text-muted">From the Vedic rule on planetary enemies and from the atlas entries for each stone.</p>
+      <ul class="mt-4 grid gap-[10px] sm:grid-cols-2">
+        <% conflicts.each do |res| %>
+          <li>
+            <a href="<%= compat_pair_path(res.a, res.b) %>" class="group flex h-full items-start gap-3 rounded-[16px] border border-violet/10 bg-white/80 px-5 py-4 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+              <span class="mt-[2px] flex size-[22px] flex-none items-center justify-center rounded-full bg-rose-500/12 font-mono text-[12px] text-rose-700" aria-hidden="true">✕</span>
+              <span class="min-w-0">
+                <span class="block text-[14px] font-medium text-ink"><%= res.a.name %> and <%= res.b.name %></span>
+                <span class="mt-[3px] block text-[12.5px] font-light leading-[1.6] text-muted"><%= truncate(res.headline, length: 100, separator: " ") %></span>
+              </span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+</div>

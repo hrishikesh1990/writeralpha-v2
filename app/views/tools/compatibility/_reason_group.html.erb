@@ -1,0 +1,22 @@
+<%# locals: (title:, reasons:, hint: nil) %>
+<% if reasons.any? %>
+  <section class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+    <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= title %></h3>
+    <% if hint %><p class="mt-1 text-[12px] font-light text-muted"><%= hint %></p><% end %>
+    <ul class="mt-4 flex flex-col gap-4">
+      <% reasons.each do |reason| %>
+        <li class="flex gap-3">
+          <%= compat_reason_icon(reason) %>
+          <div class="min-w-0">
+            <p class="text-[13.5px] font-light leading-[1.7] text-ui"><%= reason.text %></p>
+            <div class="mt-[7px] flex flex-wrap items-center gap-x-3 gap-y-1">
+              <%= compat_basis_chip(reason.basis) %>
+              <% if reason.source %><span class="text-[11.5px] text-faint"><%= reason.source %></span><% end %>
+              <% if reason.points.to_i != 0 %><span class="<%= reason.plus? ? 'text-emerald-600' : 'text-rose-600' %>"><%= compat_strength(reason.points) %></span><% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

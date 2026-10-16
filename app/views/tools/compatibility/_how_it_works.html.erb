@@ -1,0 +1,25 @@
+<section class="mt-14" aria-labelledby="how-title" data-screen-label="How it works">
+  <h2 id="how-title" class="text-[21px] font-semibold text-ink">How the verdict is worked out</h2>
+  <p class="mt-2 max-w-[680px] text-[13.5px] font-light leading-[1.75] text-ui">Every verdict lists its reasons, and each reason says where it comes from. Tradition and physical fact are kept apart, so you can weigh them yourself.</p>
+  <div class="mt-6 grid gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
+    <% [["Curated pairings", :tradition, "Each stone's atlas entry lists the partners it is traditionally paired with, and the ones it is kept away from, with the reason. This is the strongest signal."],
+        ["Vedic planets", :vedic, "If both stones belong to a graha, we use the classical friendship table (naisargika maitri). Enemy planets mean Vedic astrology advises against wearing them together, whatever else scores well."],
+        ["Tradition match", :tradition, "Shared intentions, same or neighbouring chakras, supporting elements (fire and air, earth and water) and a matching energy tone raise the score. Clashes lower it a little."],
+        ["Practical care", :physical, "Hardness (one stone scratching another), cleansing methods that are safe for both, and toxicity. These come from physical facts and do not change the score."]].each do |title, basis, text| %>
+      <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+        <%= compat_basis_chip(basis) %>
+        <h3 class="mt-3 text-[15px] font-semibold text-ink"><%= title %></h3>
+        <p class="mt-2 text-[12.5px] font-light leading-[1.7] text-ui"><%= text %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="mt-6 grid max-w-[760px] grid-cols-2 gap-[10px] sm:grid-cols-4">
+    <% CrystalCompatibility::VERDICTS.to_a.reverse.each do |key, v| %>
+      <div class="rounded-[14px] border border-violet/10 bg-white/80 px-[14px] py-3">
+        <div class="font-mono text-[8.5px] uppercase tracking-[0.16em] text-faint"><%= key == :avoid ? "Under 40" : "#{v[:min]} and up" %></div>
+        <div class="mt-[6px]"><%= compat_pill(key) %></div>
+      </div>
+    <% end %>
+  </div>
+  <p class="mt-5 max-w-[680px] text-[12.5px] font-light leading-[1.75] text-muted">Traditions are not one voice. Where the atlas entries for two stones disagree, or where crystal tradition and Vedic astrology disagree, the verdict says so rather than hiding it. If you wear stones on an astrologer's advice, their reading of your chart comes first.</p>
+</section>

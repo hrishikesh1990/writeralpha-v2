@@ -1,0 +1,40 @@
+<%# locals: (entries:, stones:, context: nil) %>
+<% extra_open = stones.size > 2 %>
+<%= form_with url: tools_compatibility_path, method: :get, id: "compat-form", class: "rounded-[22px] border border-violet/10 bg-white/80 p-5 shadow-card sm:p-7",
+              data: { controller: "compatibility-form", turbo_frame: "compat-result", turbo_action: "advance", action: "change->compatibility-form#changed" } do %>
+  <div class="grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-end">
+    <%= render "tools/compatibility/picker", name: "a", label: "First stone", entries: entries, selected: stones[0] %>
+    <div class="hidden pb-[13px] text-[20px] font-light text-violet sm:block" aria-hidden="true">+</div>
+    <%= render "tools/compatibility/picker", name: "b", label: "Second stone", entries: entries, selected: stones[1] %>
+  </div>
+
+  <details class="group mt-4" <%= "open" if extra_open %>>
+    <summary class="inline-flex cursor-pointer list-none items-center gap-2 rounded-full bg-violet/8 px-4 py-[9px] text-[12.5px] font-medium text-violet-deep card-transition hover:bg-violet/14 [&::-webkit-details-marker]:hidden">
+      <span class="text-[15px] leading-none group-open:hidden" aria-hidden="true">+</span><span class="hidden text-[15px] leading-none group-open:inline" aria-hidden="true">−</span>
+      Add a third or fourth stone
+    </summary>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <%= render "tools/compatibility/picker", name: "c", label: "Third stone", entries: entries, selected: stones[2], optional: true %>
+      <%= render "tools/compatibility/picker", name: "d", label: "Fourth stone", entries: entries, selected: stones[3], optional: true %>
+    </div>
+  </details>
+
+  <fieldset class="mt-6">
+    <legend class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Where will you use them?</legend>
+    <div class="mt-3 flex flex-wrap gap-2">
+      <% [["", "Anywhere"], *CrystalCompatibility::CONTEXTS.map { |k, v| [k, v[:label]] }].each do |value, label| %>
+        <label class="cursor-pointer">
+          <input type="radio" name="ctx" value="<%= value %>" class="peer sr-only" <%= "checked" if context.to_s == value %>>
+          <span class="inline-block rounded-full border border-violet/15 bg-white/90 px-[14px] py-[8px] text-[12.5px] text-ui card-transition peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-violet/40 hover:border-violet/40"><%= label %></span>
+        </label>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <div class="mt-6 flex flex-wrap items-center gap-4">
+    <button type="submit" class="rounded-full bg-ink px-6 py-[12px] text-[13px] font-medium text-white card-transition hover:bg-violet-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-violet/50">Check compatibility</button>
+    <% if stones.any? %>
+      <%= link_to "Start over", tools_compatibility_path, class: "text-[12.5px] font-medium", data: { turbo_frame: "_top" } %>
+    <% end %>
+  </div>
+<% end %>
