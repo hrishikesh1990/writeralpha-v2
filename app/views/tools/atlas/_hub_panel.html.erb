@@ -1,0 +1,304 @@
+<%# locals: gemstone:, entry: (AtlasEntry or nil). Renders nothing for stones without an Atlas file. %>
+<% if entry %>
+<%
+  stone = entry.stone
+  name = stone.name
+  slug = stone.slug
+  guide = ->(path) { gemstone&.sub_page_content(path).present? }
+  vedic = atlas_vedic(stone)
+  langs = atlas_lang_names(stone)
+  physical_cautions = stone.cautions.select { |c| c["basis"] == "physical" }
+  other_cautions = stone.cautions - physical_cautions
+  cautions = (physical_cautions + other_cautions).first(5)
+  tox = stone.toxicity
+  tox_label = { "none" => "Non-toxic", "low" => "Low toxicity", "caution" => "Toxic: take care" }.fetch(tox, tox.to_s.humanize)
+  tox_tone = { "none" => :good, "low" => :warn, "caution" => :bad }.fetch(tox, :info)
+  care_rows = AtlasPanelHelper::CARE_ROWS.select { |r| stone.safety(r[:key]).present? }
+  safe_methods = stone.safe_cleanse_methods
+  unsafe_methods = stone.unsafe_cleanse_methods
+  identity = [
+    ["Type", atlas_kind_label(stone)],
+    ["Species", stone.species.presence],
+    ["Formula", stone.formula.presence],
+    ["Crystal system", stone.crystal_system.presence&.capitalize],
+    ["Colours", stone.colors.map(&:capitalize).to_sentence.presence],
+    ["Found in", stone.origins.to_sentence.presence],
+    ["Price", stone.price_tier ? AtlasPanelHelper::PRICE_LABELS.fetch(stone.price_tier, stone.price_tier.humanize) : nil]
+  ].reject { |_, v| v.blank? }
+  has_tradition = stone.chakras.any? || stone.elements.any? || stone.planets.any? || vedic || stone.zodiac.any? || stone.any_birthstone_for.any?
+  card = "rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5"
+  eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+  chip = "inline-flex items-center rounded-full bg-violet/8 px-[13px] py-[6px] text-[11.5px] leading-none text-violet-deep"
+  dark_chip = "inline-flex items-center gap-[7px] rounded-full bg-white/10 px-[13px] py-[7px] text-[11.5px] leading-none text-white ring-1 ring-inset ring-white/15"
+  dark_link = "#{dark_chip} card-transition hover:bg-white/20 hover:text-white"
+  summary_style = "flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden"
+%>
+<% jsonld(atlas_stone_jsonld(entry)) %>
+
+<section class="px-5 pb-2 pt-11 sm:px-11" aria-labelledby="atlas-glance-title" data-screen-label="At a glance">
+  <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
+    <div>
+      <div class="<%= eyebrow %>">From the WriterAlpha Atlas</div>
+      <h2 id="atlas-glance-title" class="mt-[6px] text-[21px] font-semibold text-ink"><%= name %> at a glance</h2>
+    </div>
+    <a href="<%= api_v1_stone_path(slug: slug) %>" rel="nofollow" class="font-mono text-[10.5px] uppercase tracking-[0.14em] text-faint hover:text-violet-deep">Open data · JSON →</a>
+  </div>
+  <p class="mb-5 mt-2 max-w-[640px] text-[13px] font-light leading-[1.65] text-muted">Physical care facts come first and each has a stated reason. Tradition follows, labelled as tradition.</p>
+
+  <!-- Care -->
+  <div class="<%= card %>">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <h3 class="<%= eyebrow %>">Care and safety</h3>
+      <% if (badge = atlas_unnatural_badge(stone)) %>
+        <%= verdict_badge(nil, label: badge, tone: :info) %>
+      <% end %>
+    </div>
+    <ul class="mt-2 divide-y divide-violet/10">
+      <% if tox != "none" %>
+        <li class="-mx-3 my-1 grid gap-x-5 gap-y-2 rounded-[14px] bg-rose-500/6 px-3 py-[14px] sm:grid-cols-[170px_150px_1fr] sm:items-start">
+          <div class="flex items-center justify-between gap-3 sm:contents">
+            <span class="flex items-center gap-[9px] text-[13px] font-medium text-ink"><span class="flex size-[28px] items-center justify-center rounded-[9px] bg-rose-500/10 text-[14px]" aria-hidden="true">⚠️</span>Toxicity</span>
+            <span><%= verdict_badge(nil, label: tox_label, tone: tox_tone) %></span>
+          </div>
+          <p class="text-[12.5px] font-light leading-[1.65] text-ui"><%= stone.toxicity_reason %></p>
+        </li>
+      <% end %>
+      <% care_rows.each do |row| %>
+        <li class="grid gap-x-5 gap-y-2 py-[14px] sm:grid-cols-[170px_150px_1fr] sm:items-start">
+          <div class="flex items-center justify-between gap-3 sm:contents">
+            <span class="flex items-center gap-[9px] text-[13px] font-medium text-ink"><span class="flex size-[28px] items-center justify-center rounded-[9px] bg-violet/8 text-[14px]" aria-hidden="true"><%= row[:icon] %></span><%= row[:label] %></span>
+            <span><%= verdict_badge(stone.safety(row[:key])) %></span>
+          </div>
+          <p class="text-[12.5px] font-light leading-[1.65] text-ui"><%= stone.safety_reason(row[:key]) %></p>
+        </li>
+      <% end %>
+      <% if tox == "none" %>
+        <li class="grid gap-x-5 gap-y-2 py-[14px] sm:grid-cols-[170px_150px_1fr] sm:items-start">
+          <div class="flex items-center justify-between gap-3 sm:contents">
+            <span class="flex items-center gap-[9px] text-[13px] font-medium text-ink"><span class="flex size-[28px] items-center justify-center rounded-[9px] bg-violet/8 text-[14px]" aria-hidden="true">🧪</span>Toxicity</span>
+            <span><%= verdict_badge(nil, label: tox_label, tone: tox_tone) %></span>
+          </div>
+          <p class="text-[12.5px] font-light leading-[1.65] text-ui"><%= stone.toxicity_reason %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <!-- Hardness, cleansing, identity -->
+  <div class="mt-[14px] grid gap-[14px] md:grid-cols-2 lg:grid-cols-3">
+    <% if stone.mohs.any? %>
+      <div class="<%= card %>">
+        <h3 class="<%= eyebrow %>">Hardness</h3>
+        <p class="mt-3 flex items-baseline gap-2"><span class="text-[34px] font-semibold leading-none text-ink"><%= stone.mohs_label %></span><span class="text-[12px] font-light text-muted">on the Mohs scale</span></p>
+        <div class="mt-4" role="img" aria-label="Mohs hardness <%= stone.mohs_label %> on a scale of 1 to 10">
+          <div class="grid grid-cols-10 gap-[3px]" aria-hidden="true">
+            <% atlas_mohs_cells(stone).each do |on| %>
+              <span class="h-[10px] rounded-[3px] <%= on ? 'bg-violet' : 'bg-violet/10' %>"></span>
+            <% end %>
+          </div>
+          <div class="mt-[6px] flex justify-between font-mono text-[9px] uppercase tracking-[0.1em] text-faint" aria-hidden="true"><span>1 talc</span><span>10 diamond</span></div>
+        </div>
+        <p class="mt-3 text-[12.5px] font-light leading-[1.65] text-ui"><%= atlas_mohs_caption(stone) %></p>
+      </div>
+    <% end %>
+
+    <div class="<%= card %>">
+      <h3 class="<%= eyebrow %>">Safe ways to cleanse</h3>
+      <ul class="mt-3 flex flex-wrap gap-[6px]" aria-label="Safe cleansing methods">
+        <% safe_methods.each do |key| %>
+          <% main, detail = atlas_cleanse_parts(key) %>
+          <li class="inline-flex items-center rounded-full bg-emerald-500/10 px-[11px] py-[6px] text-[11.5px] leading-none text-emerald-700 ring-1 ring-inset ring-emerald-600/20" <%= tag.attributes(title: detail) if detail %>><%= main %></li>
+        <% end %>
+      </ul>
+      <% if unsafe_methods.any? %>
+        <p class="mt-4 font-mono text-[9.5px] uppercase tracking-[0.14em] text-faint">Skip these</p>
+        <ul class="mt-2 flex flex-wrap gap-[6px]" aria-label="Cleansing methods to skip">
+          <% unsafe_methods.each do |key| %>
+            <li class="inline-flex items-center rounded-full bg-rose-500/8 px-[11px] py-[6px] text-[11.5px] leading-none text-rose-700 ring-1 ring-inset ring-rose-600/15"><%= atlas_cleanse_parts(key).first %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <p class="mt-4 flex flex-wrap items-center gap-2 text-[12.5px] font-light leading-[1.6] text-ui">Gem elixir (steeped in water) <%= verdict_badge(stone.elixir) %></p>
+      <% if guide.call("how-to-cleanse") %>
+        <a href="<%= entry.guide_path('how-to-cleanse') %>" class="mt-3 inline-block text-[12.5px] font-medium">How to cleanse <%= name %> →</a>
+      <% end %>
+    </div>
+
+    <div class="<%= card %> md:col-span-2 lg:col-span-1">
+      <h3 class="<%= eyebrow %>">Identity</h3>
+      <dl class="mt-3 grid grid-cols-[96px_1fr] gap-x-4 gap-y-[9px] text-[12.5px] leading-[1.55]">
+        <% identity.each do |label, value| %>
+          <dt class="font-light text-faint"><%= label %></dt>
+          <dd class="font-medium text-ink"><%= value %></dd>
+        <% end %>
+      </dl>
+      <% if (note = atlas_kind_note(stone)) %>
+        <p class="mt-4 rounded-[12px] bg-violet/6 px-3 py-[10px] text-[12px] font-light leading-[1.6] text-ui"><%= note %></p>
+      <% end %>
+      <% if stone.aka.any? %>
+        <p class="mt-4 text-[12px] font-light leading-[1.6] text-muted">Also called <%= stone.aka.to_sentence(two_words_connector: " or ", last_word_connector: ", or ") %>.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Tradition -->
+  <% if has_tradition %>
+    <div class="relative mt-[14px] overflow-hidden rounded-[22px] bg-ink/97 px-[22px] py-6 sm:px-8 sm:py-7">
+      <div class="glow-violet -right-10 -top-16 h-[220px] w-[360px] opacity-50 blur-[30px]" aria-hidden="true"></div>
+      <div class="relative">
+        <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">In tradition</h3>
+        <p class="mt-1 text-[13px] font-light text-white/70">What crystal-healing, astrological and birthstone tradition says about <%= name %>.</p>
+        <div class="mt-5 grid gap-x-10 gap-y-6 md:grid-cols-2">
+          <div class="space-y-5">
+            <% if stone.chakras.any? %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80">Chakras</p>
+                <ul class="mt-2 flex flex-wrap gap-[6px]">
+                  <% stone.chakras.each do |c| %>
+                    <li class="<%= dark_chip %>"><span class="size-[8px] rounded-full" style="background:<%= AtlasPanelHelper::CHAKRA_COLORS[c] || '#c4b5fd' %>" aria-hidden="true"></span><%= Atlas::CHAKRA_LABELS.fetch(c, c.humanize) %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <% if stone.elements.any? || stone.energy.present? %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80">Elements and energy</p>
+                <ul class="mt-2 flex flex-wrap gap-[6px]">
+                  <% stone.elements.each do |el| %><li class="<%= dark_chip %>"><%= el.capitalize %></li><% end %>
+                  <% if stone.energy.present? %><li class="<%= dark_chip %>"><%= stone.energy.capitalize %> energy</li><% end %>
+                </ul>
+              </div>
+            <% end %>
+            <% if stone.planets.any? %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80">Western planets</p>
+                <ul class="mt-2 flex flex-wrap gap-[6px]">
+                  <% stone.planets.each do |pl| %><li class="<%= dark_chip %>"><%= pl.capitalize %></li><% end %>
+                </ul>
+              </div>
+            <% end %>
+            <% if vedic %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80">In Vedic astrology (Jyotish)</p>
+                <p class="mt-2 text-[13px] font-light leading-[1.65] text-white/85">
+                  Linked to <span lang="hi" class="font-medium text-white"><%= vedic[:hindi] %></span>, the planet <%= vedic[:planet] %>.
+                  <% if vedic[:role] %><%= vedic[:role] %><% end %>
+                </p>
+              </div>
+            <% end %>
+          </div>
+          <div class="space-y-5">
+            <% if stone.zodiac.any? %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80">Zodiac signs</p>
+                <ul class="mt-2 flex flex-wrap gap-[6px]">
+                  <% stone.zodiac.each do |sign| %>
+                    <li><a href="<%= gemstones_by_zodiac_path(value: sign) %>" class="<%= dark_link %>"><%= sign.capitalize %></a></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <% modern_months = stone.modern_birthstone_for
+               trad_months = stone.traditional_birthstone_for - modern_months
+               other_months = Array(stone.birth_months["other"]) - modern_months - trad_months
+               { (trad_months.empty? && other_months.empty? ? "Birthstone for" : "Modern birthstone for") => modern_months,
+                 "Traditional birthstone for" => trad_months, "Also cited for" => other_months }.each do |label, months| %>
+              <% next if months.empty? %>
+              <div>
+                <p class="font-mono text-[9.5px] uppercase tracking-[0.14em] text-lavender/80"><%= label %></p>
+                <ul class="mt-2 flex flex-wrap gap-[6px]">
+                  <% months.each do |m| %>
+                    <li><a href="<%= gemstones_by_birth_month_path(value: m) %>" class="<%= dark_link %>"><%= m.capitalize %></a></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <% if stone.zodiac_cautions.any? %>
+              <details class="group rounded-[14px] bg-white/6 px-4 py-3 ring-1 ring-inset ring-white/10">
+                <summary class="<%= summary_style %>">
+                  <span class="text-[12.5px] font-light leading-[1.55] text-white/85">Tradition advises some signs to skip it: <span class="font-medium text-white"><%= stone.zodiac_cautions.map { |z| z["sign"].to_s.capitalize }.to_sentence %></span></span>
+                  <span class="text-[11px] text-lavender group-open:rotate-180" aria-hidden="true">▾</span>
+                </summary>
+                <ul class="mt-3 space-y-2 text-[12px] font-light leading-[1.6] text-white/75">
+                  <% stone.zodiac_cautions.each do |z| %><li><span class="font-medium text-white/90"><%= z["sign"].to_s.capitalize %>:</span> <%= z["why"] %></li><% end %>
+                </ul>
+              </details>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= tradition_note %>
+  <% end %>
+
+  <!-- Cautions + names -->
+  <% show_names = langs.any? %>
+  <% show_cautions = cautions.any? %>
+  <% if show_names || show_cautions %>
+    <div class="mt-[14px] grid gap-[14px] <%= 'lg:grid-cols-2' if show_names && show_cautions %>">
+      <% if show_cautions %>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Who should take care</h3>
+          <ul class="mt-3 space-y-[10px]">
+            <% cautions.each do |c| %>
+              <li class="flex items-start gap-[10px] text-[12.5px] leading-[1.6]">
+                <span class="mt-[7px] size-[6px] flex-none rounded-full <%= c['basis'] == 'physical' ? 'bg-amber-500' : 'bg-violet/40' %>" aria-hidden="true"></span>
+                <span class="font-medium text-ink"><%= c["who"] %><% if c["basis"] != "physical" %> <span class="ml-1 whitespace-nowrap rounded-full bg-violet/8 px-2 py-[2px] align-middle font-mono text-[9px] font-normal uppercase tracking-[0.1em] text-violet-deep">Tradition</span><% end %></span>
+              </li>
+            <% end %>
+          </ul>
+          <% if guide.call("who-should-not-wear") %>
+            <a href="<%= entry.guide_path('who-should-not-wear') %>" class="mt-4 inline-block text-[12.5px] font-medium">Who should not wear <%= name %>, in full →</a>
+          <% end %>
+        </div>
+      <% end %>
+      <% if show_names %>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Local names</h3>
+          <dl class="mt-3 grid grid-cols-[90px_1fr] gap-x-4 gap-y-[10px] text-[13px] leading-[1.55]">
+            <% langs.each do |lang, label, value| %>
+              <dt class="font-light text-faint"><%= label %></dt>
+              <dd class="font-medium text-ink" lang="<%= lang %>"><%= value %></dd>
+            <% end %>
+          </dl>
+          <p class="mt-4 text-[12px] font-light leading-[1.6] text-muted">The names jewellers and astrologers use in India and elsewhere, so you can ask for the right stone.</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <!-- Tools -->
+  <div class="<%= card %> mt-[14px]">
+    <h3 class="<%= eyebrow %>">Tools for <%= name %></h3>
+    <ul class="mt-3 flex flex-wrap gap-[8px]">
+      <% [["💧", "Is it safe? Check care", tools_safety_path(stone: slug)],
+          ["🔍", "Real or fake?", tools_real_or_fake_path(stone: slug)],
+          ["∞", "Pair with another stone", tools_compatibility_path(a: slug)],
+          ["✦", "Find your stone", tools_stone_finder_path]].each do |icon, label, path| %>
+        <li><a href="<%= path %>" class="inline-flex items-center gap-2 rounded-full bg-violet/8 px-[15px] py-[9px] text-[12px] font-medium leading-none text-violet-deep card-transition hover:bg-violet/14"><span aria-hidden="true"><%= icon %></span><%= label %></a></li>
+      <% end %>
+    </ul>
+
+    <% if stone.sources.any? %>
+      <details class="group mt-5 border-t border-violet/10 pt-4">
+        <summary class="<%= summary_style %> text-[12.5px] font-medium text-ink">
+          <span>Sources (<%= stone.sources.size %>)</span>
+          <span class="text-[11px] text-faint group-open:rotate-180" aria-hidden="true">▾</span>
+        </summary>
+        <ul class="mt-3 space-y-[6px] text-[12px] font-light leading-[1.5]">
+          <% stone.sources.each do |url| %>
+            <li class="break-words"><a href="<%= url %>" target="_blank" rel="noopener noreferrer" class="underline decoration-violet/30 underline-offset-2"><%= atlas_source_host(url) %></a> <span class="text-faint"><%= URI.parse(url).path.to_s.truncate(48) rescue "" %></span></li>
+          <% end %>
+        </ul>
+      </details>
+    <% end %>
+  </div>
+
+  <p class="mt-4 text-[11.5px] font-light leading-[1.6] text-faint">
+    This panel is read from the open WriterAlpha Gemstone Atlas, licensed CC BY 4.0.
+    <a href="<%= api_v1_stone_path(slug: slug) %>" rel="nofollow">Get <%= name %> as JSON</a> or
+    <a href="<%= developers_path %>">use the dataset</a>.
+    Care facts are general guidance for typical stones; test an unseen spot and ask a gemmologist about valuable pieces.
+  </p>
+</section>
+<% end %>
