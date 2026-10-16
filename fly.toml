@@ -10,7 +10,7 @@ console_command = '/rails/bin/rails console'
 [build]
 
 [deploy]
-  release_command = './bin/rails db:prepare'
+  release_command = './bin/rails db:prepare atlas:validate atlas:sync'
 
 [env]
   RAILS_ENV = 'production'

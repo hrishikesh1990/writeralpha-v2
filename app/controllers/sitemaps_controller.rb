@@ -24,7 +24,9 @@ class SitemapsController < ApplicationController
       .each { |slug| pages << gemstones_by_zodiac_path(value: slug) }
     Transparency.joins(:gemstones).merge(listed).group("transparencies.id").having("COUNT(*) >= ?", MIN_STONES_FOR_FILTER_PAGE).pluck(:slug)
       .each { |slug| pages << gemstones_by_transparency_path(value: slug) }
-    BirthMonth.joins(:gemstones).merge(listed).group("birth_months.id").having("COUNT(*) >= ?", MIN_STONES_FOR_FILTER_PAGE).pluck(:name)
+    # Every month page carries the birthstone calculator's modern and
+    # traditional lists, so all 12 are worth indexing regardless of count.
+    BirthMonth.order(:month_number).pluck(:name)
       .each { |name| pages << gemstones_by_birth_month_path(value: name.downcase) }
     pages
   end

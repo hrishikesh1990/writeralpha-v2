@@ -89,7 +89,7 @@ module GemstonesHelper
   # Quick facts shown on the hub hero (4×2) — label/value pairs, "—" when unknown.
   def gemstone_facts(gemstone)
     [
-      ["Mohs hardness", format_mohs(gemstone.mohs_hardness)&.then { |m| "#{m} / 10" }],
+      ["Mohs hardness", (Atlas[gemstone.slug]&.mohs_label || format_mohs(gemstone.mohs_hardness))&.then { |m| "#{m} / 10" }],
       ["Transparency", gemstone.transparency&.name],
       ["Lustre", gemstone.lustre&.name],
       ["Birth month", gemstone.birth_month&.name],

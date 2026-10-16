@@ -47,7 +47,7 @@
         <%= link_to "Tools", tools_path, class: nav_link_class(nav_active?(:tools)) %>
         <%= link_to "Blog", blog_path, class: nav_link_class(nav_active?(:blog)) %>
         <% if content_for?(:nav_cta) %>
-          <a href="<%= gemstones_path %>" class="ml-[10px] hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-ink hover:text-white sm:inline-block">Find your stone</a>
+          <a href="<%= tools_stone_finder_path %>" class="ml-[10px] hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-ink hover:text-white sm:inline-block">Find your stone</a>
         <% end %>
       </nav>
     </header>

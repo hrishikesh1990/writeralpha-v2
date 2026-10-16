@@ -45,6 +45,32 @@
   </div>
 </section>
 
+<!-- Tools -->
+<section class="px-5 pb-6 pt-8 sm:px-11" data-screen-label="Tools">
+  <div class="relative overflow-hidden rounded-[26px] bg-ink/97 px-6 py-8 shadow-hero sm:px-10 sm:py-10">
+    <div class="glow-violet -right-16 -top-20 h-[260px] w-[420px] blur-[40px]" aria-hidden="true"></div>
+    <div class="relative flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-lavender">Free tools · no sign-up</div>
+        <h2 class="mt-2 text-[24px] font-semibold text-white sm:text-[28px]">Answers for your stone, not stones in general</h2>
+        <p class="mt-2 max-w-[560px] text-[13.5px] font-light leading-[1.7] text-white/70">Every tool reads one sourced atlas of <%= Atlas.stones.size %> stones: hardness, safety, identification tests and tradition.</p>
+      </div>
+      <a href="<%= tools_path %>" class="text-[12.5px] font-medium text-lavender hover:text-white">All tools →</a>
+    </div>
+    <div class="relative mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <% tools_list.first(6).each do |tool| %>
+        <a href="<%= tool[:path] %>" class="group flex items-start gap-4 rounded-[18px] border border-white/10 bg-white/[0.04] px-5 py-4 card-transition hover:border-lavender/50 hover:bg-white/[0.08]">
+          <span class="flex size-[38px] flex-none items-center justify-center rounded-[12px] bg-white/10 font-mono text-[15px] text-lavender"><%= tool[:icon] %></span>
+          <span>
+            <span class="block text-[14px] font-semibold text-white"><%= tool[:name] %></span>
+            <span class="mt-1 block text-[12px] font-light leading-[1.55] text-white/65"><%= tool[:blurb] %></span>
+          </span>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</section>
+
 <!-- Featured stones -->
 <% if @featured_gemstones.any? %>
 <section class="px-5 pb-6 pt-8 sm:px-11" data-screen-label="Featured stones">
