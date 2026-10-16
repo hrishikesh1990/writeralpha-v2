@@ -1,0 +1,99 @@
+<%# locals: guide (MoonCalendar::Guidance::Result), heading (string), id (string) %>
+<% ev = guide.event %>
+<section id="<%= local_assigns[:id] %>" class="scroll-mt-6" data-screen-label="Guidance">
+  <h2 class="text-[21px] font-semibold text-ink"><%= heading %></h2>
+  <p class="mt-3 max-w-[720px] text-[14px] font-light leading-[1.75] text-ui"><%= guide.intro %> <%= guide.element_note %></p>
+  <% if guide.name_note.present? %>
+    <p class="mt-2 max-w-[720px] text-[13px] font-light leading-[1.7] text-muted"><%= guide.name_note %><%= " #{MoonCalendar::Guidance::BLUE_NOTE}" if guide.blue %></p>
+  <% elsif guide.blue %>
+    <p class="mt-2 max-w-[720px] text-[13px] font-light leading-[1.7] text-muted"><%= MoonCalendar::Guidance::BLUE_NOTE %></p>
+  <% end %>
+
+  <div class="mt-6 grid items-start gap-[18px] lg:grid-cols-2">
+    <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= ev.new? ? "Stones to cleanse and set intentions with" : "Stones to charge" %></div>
+      <% if guide.charge.any? %>
+        <ul class="mt-4 space-y-3">
+          <% guide.charge.each do |pick| %>
+            <li class="grid items-baseline gap-x-3 gap-y-1 sm:grid-cols-[10rem_1fr]">
+              <span class="justify-self-start"><%= render "tools/moon/stone_pill", stone: pick.stone %></span>
+              <span class="text-[12px] font-light leading-[1.5] text-muted"><%= pick.why.to_s.sub(/\A./, &:upcase) %></span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-4 text-[13px] font-light leading-[1.7] text-ui">Any stone you own. Moonlight suits all of them.</p>
+      <% end %>
+      <div class="mt-5 border-t border-violet/10 pt-4">
+        <div class="text-[12px] font-medium text-ink">Always welcome</div>
+        <div class="mt-2 flex flex-wrap gap-[6px]">
+          <% guide.always.each do |pick| %><%= render "tools/moon/stone_pill", stone: pick.stone %><% end %>
+        </div>
+        <p class="mt-3 text-[12px] font-light leading-[1.6] text-muted">Moonstone and selenite are the classic Moon stones in tradition and are welcome under any moon. Check the moon water lists below before putting either in a bowl. Matches above come from each stone's traditional zodiac, element, planet and intentions in our atlas of <%= guide.stone_count.positive? ? "#{guide.stone_count} stones" : "stones" %>.</p>
+      </div>
+    </div>
+
+    <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Moonlight is safe for every stone</div>
+      <p class="mt-3 text-[13px] font-light leading-[1.7] text-ui"><%= guide.moonlight_note %></p>
+      <% if guide.fade_stones.any? %>
+        <p class="mt-3 text-[12.5px] font-medium text-ink">Stones that fade or suffer in strong sun, so moonlight is the better choice</p>
+        <div class="mt-2 flex flex-wrap gap-[6px]">
+          <% guide.fade_stones.first(8).each do |s| %><%= render "tools/moon/stone_pill", stone: s %><% end %>
+        </div>
+      <% end %>
+      <p class="mt-4 text-[12.5px] font-light leading-[1.65] text-muted"><%= guide.weather_note %></p>
+    </div>
+  </div>
+
+  <div class="mt-[18px] rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Moon water: who can, who must not</div>
+    </div>
+    <p class="mt-3 max-w-[720px] text-[13px] font-light leading-[1.7] text-ui">Moon water is water left out under the full moon, with or without a stone in it. Only put a stone in the water if the atlas lists its water verdict as safe. Even then, treat the water as ritual water for plants and rinsing, and make a drinking elixir only with a stone marked Direct OK, or by the indirect method (stone in a sealed glass inside the water).</p>
+    <div class="mt-5 grid gap-6 md:grid-cols-2">
+      <div>
+        <div class="flex items-center gap-2"><%= verdict_badge("safe") %><span class="text-[12.5px] font-medium text-ink">Can sit in the bowl</span></div>
+        <% if guide.water_ok.any? || guide.water_indirect.any? %>
+          <div class="mt-3 flex flex-wrap gap-[6px]">
+            <% guide.water_ok.first(10).each do |s| %><%= render "tools/moon/stone_pill", stone: s %><% end %>
+          </div>
+          <% if guide.water_indirect.any? %>
+            <p class="mt-3 text-[12px] font-light text-muted">Indirect method only (stone in a sealed glass, never loose in the water):</p>
+            <div class="mt-2 flex flex-wrap gap-[6px]">
+              <% guide.water_indirect.first(8).each do |s| %><%= render "tools/moon/stone_pill", stone: s %><% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="mt-3 text-[12.5px] font-light leading-[1.65] text-muted">No stone in the atlas qualifies yet. You can always make plain moon water with no stone in it.</p>
+        <% end %>
+      </div>
+      <div>
+        <div class="flex items-center gap-2"><%= verdict_badge("avoid", label: "Never in moon water") %><span class="text-[12.5px] font-medium text-ink">Keep these dry</span></div>
+        <% if guide.water_no.any? %>
+          <ul class="mt-3 space-y-[10px]">
+            <% guide.water_no.first(6).each do |pick| %>
+              <li class="text-[12.5px] font-light leading-[1.6] text-ui"><span class="font-medium text-ink"><%= pick.stone.name %>:</span> <%= pick.why %></li>
+            <% end %>
+          </ul>
+          <% if guide.water_no.size > 6 %>
+            <p class="mt-3 text-[12px] font-light text-muted">Also keep dry: <%= guide.water_no.drop(6).map { |p| p.stone.name }.to_sentence %>.</p>
+          <% end %>
+        <% else %>
+          <p class="mt-3 text-[12.5px] font-light leading-[1.65] text-muted">As a rule, keep soft, porous, glued, iron-bearing and toxic stones out of water. The <a href="<%= tools_safety_path %>">Crystal Safety Checker</a> has the verdict for each stone.</p>
+        <% end %>
+      </div>
+    </div>
+    <p class="mt-5 text-[12px] font-light text-muted">Full water, salt, sun and toxicity verdicts for every stone: <a href="<%= tools_safety_path %>">Crystal Safety Checker</a>.</p>
+  </div>
+
+  <div class="mt-[18px] rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= ev.new? ? "A simple new moon ritual" : (ev.full? ? "A simple full moon ritual" : "At the #{ev.label.downcase}") %></div>
+    <ol class="mt-4 space-y-3">
+      <% guide.steps.each_with_index do |step, i| %>
+        <li class="flex gap-3 text-[13px] font-light leading-[1.7] text-ui"><span class="flex size-[22px] flex-none items-center justify-center rounded-full bg-violet/8 font-mono text-[10.5px] text-violet-deep"><%= i + 1 %></span><span><%= step %></span></li>
+      <% end %>
+    </ol>
+  </div>
+  <%= tradition_note("Moon signs, elements, names and rituals come from astrological and crystal tradition, using the tropical (Western) zodiac. They are not scientific claims, and no stone or ritual replaces medical care. Water, sun and toxicity verdicts are physical facts from the atlas.") %>
+</section>
