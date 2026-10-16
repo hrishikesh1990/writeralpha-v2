@@ -1,0 +1,42 @@
+<%# locals: angle (0-360, 0 new, 180 full), size (px), uid (unique per page), label, simple (skip craters) %>
+<%
+  size = local_assigns[:size] || 160
+  uid = local_assigns[:uid] || "m#{rand(10_000)}"
+  a = angle.to_f % 360
+  waxing = a < 180
+  elong = waxing ? a : 360 - a
+  c = Math.cos(elong * Math::PI / 180)
+  rx = [(50 * c.abs).round(2), 0.01].max
+  sweep = c > 0 ? 0 : 1
+  lit = "M50,0 A50,50 0 0 1 50,100 A#{rx},50 0 0 #{sweep} 50,0 Z"
+  flip = waxing ? nil : "translate(100,0) scale(-1,1)"
+%>
+<% if local_assigns[:simple] %>
+<svg viewBox="0 0 100 100" width="<%= size %>" height="<%= size %>" role="img" class="block max-w-full" aria-label="<%= local_assigns[:label] || "Moon phase" %>">
+  <circle cx="50" cy="50" r="49" fill="#4a4478"/>
+  <path d="<%= lit %>" transform="<%= flip %>" fill="#f1ead8"/>
+</svg>
+<% else %>
+<svg viewBox="-12 -12 124 124" width="<%= size %>" height="<%= size %>" role="img" class="block max-w-full" aria-label="<%= local_assigns[:label] || "Moon phase" %>">
+  <defs>
+    <radialGradient id="<%= uid %>-lit" cx="38%" cy="34%" r="80%">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.7" stop-color="#ece4d2"/>
+      <stop offset="1" stop-color="#d6ccb4"/>
+    </radialGradient>
+    <radialGradient id="<%= uid %>-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0.55" stop-color="#c4b5fd" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="<%= uid %>-clip"><path d="<%= lit %>" transform="<%= flip %>"/></clipPath>
+  </defs>
+  <circle cx="50" cy="50" r="62" fill="url(#<%= uid %>-halo)" opacity="<%= (0.25 + 0.75 * (1 - Math.cos(elong * Math::PI / 180)) / 2).round(2) %>"/>
+  <circle cx="50" cy="50" r="50" fill="#4a4478"/>
+  <circle cx="50" cy="50" r="50" fill="none" stroke="#c4b5fd" stroke-opacity="0.28" stroke-width="0.8"/>
+  <path d="<%= lit %>" transform="<%= flip %>" fill="url(#<%= uid %>-lit)"/>
+    <g clip-path="url(#<%= uid %>-clip)" fill="#8b7fb0" fill-opacity="0.2">
+    <circle cx="36" cy="34" r="11"/><circle cx="62" cy="28" r="7"/><circle cx="58" cy="58" r="14"/>
+    <circle cx="30" cy="66" r="8"/><circle cx="72" cy="76" r="6"/><circle cx="46" cy="84" r="5"/><circle cx="80" cy="46" r="5"/>
+  </g>
+</svg>
+<% end %>
