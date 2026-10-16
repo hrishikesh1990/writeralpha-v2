@@ -1,0 +1,24 @@
+<%# locals: (name:, label:, entries:, selected: nil, optional: false) %>
+<% id = "compat-#{name}" %>
+<div data-controller="compatibility-picker"
+     data-compatibility-picker-input-class="w-full rounded-[14px] border border-violet/20 bg-white px-4 py-[13px] text-[14px] text-ink shadow-card-soft placeholder:text-placeholder focus:border-violet/60 focus:outline-none focus:ring-2 focus:ring-violet/20"
+     data-compatibility-picker-list-class="absolute inset-x-0 top-[calc(100%+6px)] z-30 max-h-[280px] overflow-y-auto rounded-[14px] border border-violet/15 bg-white p-[6px] shadow-card-hover"
+     data-compatibility-picker-option-class="cursor-pointer rounded-[10px] px-3 py-[9px] text-[13.5px] text-ui"
+     data-compatibility-picker-active-class="bg-violet/10 text-violet-deep"
+     data-compatibility-picker-empty-class="px-3 py-[9px] text-[13px] text-muted">
+  <label for="<%= id %>" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= label %><% if optional %> <span class="normal-case tracking-normal text-faint/80">(optional)</span><% end %></label>
+  <div class="relative mt-2" data-compatibility-picker-target="holder">
+    <select id="<%= id %>" name="<%= name %>" data-compatibility-picker-target="select"
+            class="w-full appearance-none rounded-[14px] border border-violet/20 bg-white bg-[length:12px] bg-[right_16px_center] bg-no-repeat px-4 py-[13px] pr-10 text-[14px] text-ink shadow-card-soft focus:border-violet/60 focus:outline-none focus:ring-2 focus:ring-violet/20"
+            style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%236d28d9' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;)">
+      <option value=""><%= optional ? "None" : "Choose a stone" %></option>
+      <% entries.group_by { |e| e.name[0].upcase }.sort.each do |letter, list| %>
+        <optgroup label="<%= letter %>">
+          <% list.each do |e| %>
+            <option value="<%= e.slug %>" <%= "selected" if selected&.slug == e.slug %>><%= e.name %></option>
+          <% end %>
+        </optgroup>
+      <% end %>
+    </select>
+  </div>
+</div>

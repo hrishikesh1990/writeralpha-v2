@@ -1,0 +1,18 @@
+<%# locals: (result:, stone:, rank: nil, context: nil) %>
+<% other = result.other(stone) %>
+<% brief = result.avoid? ? (result.minus.find { |m| %i[vedic pairing].include?(m.topic) } || result.minus.first) : result.top_reason %>
+<li>
+  <a href="<%= compat_pair_path(stone, other, context) %>" class="group flex items-center gap-3 rounded-[16px] border border-violet/10 bg-white/80 px-4 py-3 card-transition hover:border-violet/35 hover:shadow-guide-hover sm:gap-4 sm:px-5">
+    <% if rank %><span class="w-5 flex-none text-center font-mono text-[11px] text-faint"><%= rank %></span><% end %>
+    <%= compat_avatar(other, size: 42) %>
+    <span class="min-w-0 flex-1">
+      <span class="block text-[14px] font-medium text-ink"><%= other.name %></span>
+      <% if brief %><span class="mt-[2px] block text-[12.5px] font-light leading-[1.55] text-muted"><%= truncate(brief.text.to_s, length: 120, separator: " ") %></span><% end %>
+    </span>
+    <span class="flex flex-none flex-col items-end gap-[6px]">
+      <span class="text-[15px] font-semibold text-ink"><%= result.score %><span class="text-[10px] font-normal text-faint">/100</span></span>
+      <%= compat_pill(result.verdict) %>
+    </span>
+    <span class="hidden text-arrow card-transition group-hover:text-violet sm:block" aria-hidden="true">→</span>
+  </a>
+</li>

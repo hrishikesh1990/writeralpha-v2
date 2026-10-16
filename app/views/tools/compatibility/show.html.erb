@@ -1,0 +1,36 @@
+<% noindex_when_params!(:a, :b, :c, :d, :ctx) %>
+<% tool_jsonld(name: "Crystal Compatibility Checker", description: "Check whether two or more crystals work together: tradition, chakras, elements, the Vedic rule on planetary enemies, and practical care.", path: tools_compatibility_path) %>
+<%= tool_header(title: "Crystal compatibility checker", eyebrow: "— tradition and care, kept separate",
+                lede: "Can you wear these stones together? Pick two for a reasoned verdict, one for its best partners, or up to four for a pair-by-pair matrix. Includes the Vedic rule on planetary enemies, and the practical side: scratching and cleansing.") %>
+
+<section class="px-5 pb-16 pt-6 sm:px-11" data-screen-label="Compatibility checker">
+  <% if @entries.size < 2 %>
+    <div class="max-w-[640px] rounded-[18px] border border-violet/16 bg-violet/6 px-[26px] py-[22px]">
+      <div class="mb-[10px] font-mono text-[10px] uppercase tracking-[0.18em] text-violet">✦ Coming soon</div>
+      <p class="text-[14.5px] leading-[1.7] text-callout-text">The compatibility checker needs at least two stones in the atlas. They are being added now, so check back shortly.</p>
+    </div>
+  <% else %>
+    <div class="max-w-[980px]">
+      <%= render "tools/compatibility/form", entries: @entries, stones: @stones, context: @context %>
+
+      <% @notes.each do |note| %>
+        <p class="mt-4 rounded-[14px] border border-amber-600/25 bg-amber-500/10 px-4 py-3 text-[13px] text-amber-900" role="status"><%= note %></p>
+      <% end %>
+
+      <%= turbo_frame_tag "compat-result", target: "_top", autoscroll: true, aria: { live: "polite" }, class: "mt-8 block [&[busy]]:opacity-60", data: { autoscroll_block: "start" } do %>
+        <% case @mode %>
+        <% when :pair %>
+          <%= render "tools/compatibility/pair", result: @result, article: @article, context: @context %>
+        <% when :matrix %>
+          <%= render "tools/compatibility/matrix", matrix: @matrix, group_cleanse: @group_cleanse, context: @context %>
+        <% when :partners %>
+          <%= render "tools/compatibility/partners", stone: @stone, best: @best, avoid: @avoid, context: @context %>
+        <% else %>
+          <%= render "tools/compatibility/landing", examples: @examples, conflicts: @conflicts %>
+        <% end %>
+      <% end %>
+
+      <%= render "tools/compatibility/how_it_works" %>
+    </div>
+  <% end %>
+</section>

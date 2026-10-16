@@ -1,0 +1,56 @@
+<%# locals: (gemstone: nil, entry: nil, guide: nil, **) %>
+
+<% if entry %>
+  <% others = AtlasEntry.all.reject { |e| e.slug == entry.slug } %>
+  <% report = CrystalCompatibility.partner_report(entry, limit: 6, among: others) %>
+  <% best = report.best %>
+  <% avoid = report.avoid.first(5) %>
+  <% if best.any? %>
+    <aside class="mt-10 rounded-[22px] border border-violet/10 bg-white/85 px-5 py-6 shadow-card sm:px-7" data-screen-label="Compatibility embed" aria-labelledby="compat-embed-title">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-violet">Compatibility checker</div>
+      <h2 id="compat-embed-title" class="mt-2 text-[21px] font-semibold leading-[1.2] text-ink">Best partners for <%= entry.name %></h2>
+      <p class="mt-2 text-[13px] font-light leading-[1.7] text-muted">Ranked by tradition, chakra, element and energy. Select one for the full reasoning and practical care.</p>
+
+      <ol class="mt-5 flex flex-col gap-2">
+        <% best.each_with_index do |res, i| %>
+          <% other = res.other(entry) %>
+          <% brief = res.top_reason %>
+          <li>
+            <a href="<%= compat_pair_path(entry, other) %>" class="group flex items-center gap-3 rounded-[14px] border border-violet/10 bg-white/80 px-3 py-[10px] card-transition hover:border-violet/35 hover:shadow-guide-hover sm:px-4">
+              <span class="w-4 flex-none text-center font-mono text-[10px] text-faint"><%= i + 1 %></span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-[13.5px] font-medium text-ink"><%= other.name %></span>
+                <% if brief %><span class="mt-[2px] block text-[12px] font-light leading-[1.5] text-muted"><%= truncate(brief.text.to_s, length: 105, separator: " ") %></span><% end %>
+              </span>
+              <span class="flex flex-none flex-col items-end gap-[5px]">
+                <span class="text-[14px] font-semibold text-ink"><%= res.score %><span class="text-[9.5px] font-normal text-faint">/100</span></span>
+                <%= compat_pill(res.verdict) %>
+              </span>
+            </a>
+          </li>
+        <% end %>
+      </ol>
+
+      <% if avoid.any? %>
+        <p class="mt-5 text-[13px] font-light leading-[1.7] text-ui">
+          <span class="font-medium text-ink">Avoid with:</span>
+          <%= safe_join(avoid.map { |res| link_to(res.other(entry).name, compat_pair_path(entry, res.other(entry)), class: "font-medium") }, ", ") %>.
+          <span class="text-muted">Tradition or Vedic astrology says to keep these apart.</span>
+        </p>
+      <% end %>
+
+      <%= form_with url: tools_compatibility_path, method: :get, class: "mt-6 flex flex-wrap items-end gap-3 border-t border-violet/10 pt-5", data: { turbo: false } do %>
+        <input type="hidden" name="a" value="<%= entry.slug %>">
+        <div class="min-w-[200px] flex-1">
+          <label for="compat-embed-b" class="text-[12.5px] font-medium text-ink">Check <%= entry.name %> with…</label>
+          <select id="compat-embed-b" name="b" required class="mt-2 w-full rounded-[12px] border border-violet/20 bg-white px-3 py-[10px] text-[13.5px] text-ink focus:border-violet/60 focus:outline-none focus:ring-2 focus:ring-violet/20">
+            <option value="">Choose a stone</option>
+            <% others.sort_by(&:name).each do |o| %><option value="<%= o.slug %>"><%= o.name %></option><% end %>
+          </select>
+        </div>
+        <button type="submit" class="rounded-full bg-ink px-5 py-[11px] text-[12.5px] font-medium text-white card-transition hover:bg-violet-deep">Check pair</button>
+        <%= link_to "Open the full tool →", tools_compatibility_path(a: entry.slug), class: "w-full text-[12.5px] font-medium sm:ml-auto sm:w-auto" %>
+      <% end %>
+    </aside>
+  <% end %>
+<% end %>

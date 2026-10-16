@@ -1,0 +1,53 @@
+<%# locals: (result:) %>
+<% r = result %>
+<section class="rounded-[18px] border border-sky/25 bg-white/80 px-[22px] py-5" aria-labelledby="compat-practical">
+  <div class="flex flex-wrap items-center gap-3">
+    <h3 id="compat-practical" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Practical care</h3>
+    <%= compat_basis_chip(:physical) %>
+  </div>
+  <p class="mt-1 text-[12px] font-light text-muted">Physical facts about the stones themselves. These never change the verdict above.</p>
+
+  <% notes = r.practical.reject { |p| p.topic == :cleanse } %>
+  <% if notes.any? %>
+    <ul class="mt-4 flex flex-col gap-4">
+      <% notes.each do |reason| %>
+        <li class="flex gap-3">
+          <%= compat_reason_icon(reason) %>
+          <div class="min-w-0">
+            <p class="text-[13.5px] font-light leading-[1.7] text-ui"><%= reason.text %></p>
+            <% if reason.source %><p class="mt-[5px] text-[11.5px] text-faint"><%= reason.source %></p><% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="mt-6 rounded-[14px] bg-pill-off/90 px-4 py-4 sm:px-5">
+    <h4 class="text-[13.5px] font-semibold text-ink">Cleansing them together</h4>
+    <% if r.cleanse.shared.any? %>
+      <p class="mt-1 text-[12px] font-light text-muted">Methods that are safe for both stones:</p>
+      <ul class="mt-3 flex flex-wrap gap-[7px]">
+        <% r.cleanse.shared.each do |m| %>
+          <li class="inline-flex items-center gap-[6px] rounded-full bg-emerald-500/10 px-3 py-[6px] text-[12px] text-emerald-800 ring-1 ring-inset ring-emerald-600/20"><span aria-hidden="true">✓</span><%= compat_method_label(m) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% if r.cleanse.blocked.any? %>
+      <p class="mt-4 text-[12px] font-light text-muted">Not for both:</p>
+      <ul class="mt-2 flex flex-col gap-3">
+        <% r.cleanse.blocked.each do |bl| %>
+          <li class="rounded-[12px] bg-white/80 px-4 py-3 ring-1 ring-inset ring-rose-500/15">
+            <div class="flex items-center gap-2 text-[13px] font-medium text-ink"><span class="text-rose-600" aria-hidden="true">✕</span><%= compat_method_label(bl[:method]) %></div>
+            <ul class="mt-[6px] flex flex-col gap-[6px]">
+              <% bl[:who].each do |w| %>
+                <li class="text-[12.5px] font-light leading-[1.65] text-ui"><span class="font-medium text-ink"><%= w[:stone].name %>:</span> <%= w[:reason] %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="mt-3 text-[12.5px] font-light text-ui">Nothing blocks any cleansing method for this pair.</p>
+    <% end %>
+  </div>
+</section>

@@ -1,0 +1,108 @@
+<%# locals: (matrix:, group_cleanse:, context: nil) %>
+<% m = matrix %>
+<% colors = compat_colors(m.verdict) %>
+<%= compat_ring_css %>
+<div class="flex flex-col gap-5">
+  <section class="relative overflow-hidden rounded-[24px] bg-ink/97 p-6 text-white shadow-hero sm:p-9" aria-label="Group verdict">
+    <div class="glow-violet -right-20 -top-24 h-[280px] w-[420px] opacity-60 blur-[40px]" aria-hidden="true"></div>
+    <div class="relative">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">Group verdict · <%= m.stones.size %> stones<% if context %> · <%= CrystalCompatibility::CONTEXTS[context][:label] %><% end %></div>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <% m.stones.each_with_index do |s, i| %>
+          <% if i.positive? %><span class="text-[18px] font-light text-lavender" aria-hidden="true">+</span><% end %>
+          <a href="<%= s.path %>" class="flex items-center gap-[10px] py-1 pr-2 text-white hover:text-lavender"><%= compat_avatar(s, size: 40) %><span class="text-[14px] font-medium"><%= s.name %></span></a>
+        <% end %>
+      </div>
+      <div class="mt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
+        <%= compat_ring(m.score, m.verdict, size: 120) %>
+        <div class="min-w-0 flex-1">
+          <span class="inline-flex items-center rounded-full px-[12px] py-[6px] text-[12px] font-medium leading-none ring-1 ring-inset <%= colors[:pill] %>"><%= m.label %></span>
+          <h2 class="mt-3 text-[21px] font-semibold leading-[1.25] text-white sm:text-[25px]">
+            <% if m.verdict == :avoid %>This set has a pair tradition keeps apart.<% elsif m.verdict == :great || m.verdict == :good %>These stones work well as a group.<% else %>This group is a mixed bag.<% end %>
+          </h2>
+          <p class="mt-3 text-[14px] font-light leading-[1.8] text-white/80">
+            The group score blends the average with the weakest pair, because one bad pairing spoils a set. The weakest link is <strong class="font-medium text-white"><%= m.worst.a.name %> with <%= m.worst.b.name %></strong> (<%= m.worst.score %>/100, <%= m.worst.label.downcase %>).
+          </p>
+        </div>
+      </div>
+      <%= compat_bands(m.score, m.verdict) %>
+    </div>
+  </section>
+
+  <section class="rounded-[18px] border border-violet/10 bg-white/80 px-4 py-5 sm:px-[22px]" aria-labelledby="matrix-title">
+    <h3 id="matrix-title" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Pair by pair</h3>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full min-w-[420px] border-separate border-spacing-[5px] text-center">
+        <caption class="sr-only">Compatibility score for every pair of the chosen stones. Select a score for the full reasoning.</caption>
+        <thead>
+          <tr>
+            <td></td>
+            <% m.stones.each do |col| %><th scope="col" class="px-1 pb-1 text-[11.5px] font-medium text-ink"><%= col.name %></th><% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% m.stones.each do |row| %>
+            <tr>
+              <th scope="row" class="pr-2 text-left text-[11.5px] font-medium text-ink"><%= row.name %></th>
+              <% m.stones.each do |col| %>
+                <% cell = m.cell(row, col) %>
+                <% if cell %>
+                  <td>
+                    <a href="<%= compat_pair_path(row, col, context) %>" class="block rounded-[12px] px-1 py-[10px] ring-1 ring-inset card-transition hover:shadow-guide-hover <%= CompatibilityHelper::COMPAT_LIGHT[cell.verdict] %>">
+                      <span class="block text-[16px] font-semibold"><%= cell.score %></span>
+                      <span class="mt-[2px] block text-[9.5px] leading-[1.2]"><%= cell.label %></span>
+                    </a>
+                  </td>
+                <% else %>
+                  <td class="rounded-[12px] bg-pill-off/90 text-[12px] text-faint" aria-label="Same stone">–</td>
+                <% end %>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid gap-[14px] sm:grid-cols-2">
+    <% m.results.sort_by(&:score).each do |res| %>
+      <a href="<%= compat_pair_path(res.a, res.b, context) %>" class="group flex flex-col rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+        <div class="flex items-center justify-between gap-3">
+          <span class="text-[14px] font-semibold text-ink"><%= res.a.name %> + <%= res.b.name %></span>
+          <%= compat_pill(res.verdict) %>
+        </div>
+        <p class="mt-2 text-[13px] font-light leading-[1.65] text-ui"><%= res.headline %></p>
+        <% warn = res.practical.find { |p| p.tone == :warn } %>
+        <% if warn %><p class="mt-2 text-[12px] font-light leading-[1.6] text-muted"><span class="font-medium text-amber-800">Care:</span> <%= truncate(warn.text, length: 130, separator: " ") %></p><% end %>
+        <span class="mt-auto pt-3 text-[12px] font-medium text-violet-deep group-hover:text-violet-deeper">Full reasoning →</span>
+      </a>
+    <% end %>
+  </div>
+
+  <section class="rounded-[18px] border border-sky/25 bg-white/80 px-[22px] py-5">
+    <div class="flex flex-wrap items-center gap-3">
+      <h3 class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Practical care for the set</h3>
+      <%= compat_basis_chip(:physical) %>
+    </div>
+    <% if m.store_apart.any? %>
+      <ul class="mt-4 flex flex-col gap-3">
+        <% m.store_apart.each do |res| %>
+          <% p = res.practical.find { |x| x.topic == :hardness && x.tone == :warn } %>
+          <li class="flex gap-3"><%= compat_reason_icon(p) %><p class="text-[13.5px] font-light leading-[1.7] text-ui"><%= p.text %></p></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="mt-3 text-[13.5px] font-light text-ui">No pair differs by two or more on the Mohs scale, so none of them will scratch another in normal storage.</p>
+    <% end %>
+    <% if group_cleanse.any? %>
+      <h4 class="mt-5 text-[13.5px] font-semibold text-ink">Cleanse them all together with</h4>
+      <ul class="mt-3 flex flex-wrap gap-[7px]">
+        <% group_cleanse.each do |meth| %>
+          <li class="inline-flex items-center gap-[6px] rounded-full bg-emerald-500/10 px-3 py-[6px] text-[12px] text-emerald-800 ring-1 ring-inset ring-emerald-600/20"><span aria-hidden="true">✓</span><%= compat_method_label(meth) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+
+  <%= tradition_note %>
+</div>
