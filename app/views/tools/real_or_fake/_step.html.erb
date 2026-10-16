@@ -1,0 +1,51 @@
+<%# locals: test (AuthenticityCheck::Test), number, answer ("real"/"fake"/"unsure"/"skipped"/nil) %>
+<fieldset id="test-<%= test.id %>" data-step data-answered="<%= answer.present? %>"
+          class="group/step scroll-mt-4 rounded-[18px] border border-violet/10 bg-white/80 px-[18px] py-5 card-transition has-[:checked]:border-violet/25 sm:px-[22px] <%= 'border-amber-600/20' if test.destructive? %>">
+  <legend class="sr-only"><%= test.title %> test, step <%= number %></legend>
+  <div class="flex items-start gap-3.5">
+    <span class="flex size-8 flex-none items-center justify-center rounded-full bg-violet/8 font-mono text-[12px] text-violet-deep card-transition group-has-[:checked]/step:bg-violet group-has-[:checked]/step:text-white" aria-hidden="true">
+      <span class="group-has-[:checked]/step:hidden"><%= number %></span><span class="hidden group-has-[:checked]/step:inline">✓</span>
+    </span>
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <h3 class="text-[16.5px] font-semibold leading-snug text-ink"><%= test.title %></h3>
+        <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+          <span class="flex gap-[3px]" aria-hidden="true"><%= rof_dots(test.weight) %></span><%= test.weight_label %>
+        </span>
+        <% if test.destructive? %><%= verdict_badge(nil, label: "May mark the stone", tone: :warn) %><% end %>
+      </div>
+      <% if test.how.present? %>
+        <p class="mt-2.5 text-[14px] font-light leading-[1.75] text-ui"><span class="font-medium text-ink">What to do: </span><%= test.how %></p>
+      <% end %>
+      <% if test.real.present? || test.fake.present? %>
+        <dl class="mt-3.5 grid gap-2.5 sm:grid-cols-2">
+          <% if test.real.present? %>
+            <div class="rounded-[12px] bg-emerald-500/7 px-3.5 py-3">
+              <dt class="font-mono text-[9.5px] uppercase tracking-[0.16em] text-emerald-800">Real usually looks like</dt>
+              <dd class="mt-1.5 text-[13.5px] font-light leading-[1.65] text-ui"><%= test.real %></dd>
+            </div>
+          <% end %>
+          <% if test.fake.present? %>
+            <div class="rounded-[12px] bg-amber-500/9 px-3.5 py-3">
+              <dt class="font-mono text-[9.5px] uppercase tracking-[0.16em] text-amber-800">A fake often looks like</dt>
+              <dd class="mt-1.5 text-[13.5px] font-light leading-[1.65] text-ui"><%= test.fake %></dd>
+            </div>
+          <% end %>
+        </dl>
+      <% end %>
+
+      <div class="mt-4 grid grid-cols-3 gap-2" role="radiogroup" aria-label="What did you see for <%= test.title.downcase %>?">
+        <% RealOrFakeHelper::ROF_CHOICES.each do |value, label| %>
+          <label class="block">
+            <input type="radio" name="a[<%= test.id %>]" value="<%= value %>" class="peer sr-only" <%= "checked" if answer == value %>>
+            <span class="<%= rof_choice_pill(value) %>"><%= label %></span>
+          </label>
+        <% end %>
+      </div>
+      <label class="mt-2.5 inline-flex min-h-[36px] cursor-pointer items-center gap-2 text-[12.5px] font-light text-muted hover:text-violet-deep">
+        <input type="radio" name="a[<%= test.id %>]" value="skipped" class="size-[15px] accent-violet" <%= "checked" if answer == "skipped" %>>
+        Skip this test
+      </label>
+    </div>
+  </div>
+</fieldset>

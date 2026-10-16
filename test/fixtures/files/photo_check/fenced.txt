@@ -1,0 +1,7 @@
+Here is my assessment:
+
+```json
+{"observations":["Clear angular crystal terminations","Feather-like inclusion"],"consistent_signs":["Natural-looking feather"],"red_flags":[],"verdict":"consistent_with_genuine","confidence":"high","next_tests":["magnification"]}
+```
+
+Hope that helps {not json}.
