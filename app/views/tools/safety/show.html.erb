@@ -1,0 +1,47 @@
+<% noindex_when_params! %>
+<% tool_jsonld(name: "Crystal Safety Checker", description: "Check every crystal for water, salt, sun, sleep and toxicity, and find a cleansing method that is safe for several stones at once.") %>
+
+<%= tool_header(title: "Crystal Safety Checker",
+                eyebrow: "— water · salt · sun · sleep · toxicity",
+                lede: "Can this crystal go in water, salt or sun? Every stone in the atlas, checked one by one, with the reason behind each verdict. Pick several stones and we will find the cleansing methods that are safe for all of them.",
+                crumbs: [["Home", root_path], ["Tools", tools_path], ["Crystal Safety Checker", nil]]) %>
+
+<% if @entries.empty? %>
+  <section class="px-5 pb-16 pt-6 sm:px-11">
+    <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 text-[14px] font-light leading-[1.7] text-ui">
+      The safety atlas is still being written. Check back soon, or read the <a href="/learn/what-crystals-can-go-in-water" class="font-medium">guide to what crystals can go in water</a> in the meantime.
+    </div>
+  </section>
+<% else %>
+  <section id="plan" class="px-5 pb-2 pt-4 sm:px-11" data-screen-label="Checker" aria-label="Check one stone or plan a cleanse">
+    <%= turbo_frame_tag "safety_result", data: { turbo_action: "advance" } do %>
+      <% if @notices.any? %>
+        <div class="mb-4 rounded-[14px] border border-amber-600/25 bg-amber-500/10 px-4 py-3 text-[13px] leading-[1.6] text-amber-900" role="status">
+          <% @notices.each do |n| %><p><%= n %></p><% end %>
+        </div>
+      <% end %>
+
+      <%# With a result, show it first (it is what the visitor came for) and the pickers below it. %>
+      <% if @plan %>
+        <%= render "tools/safety/plan", plan: @plan, entries: @entries %>
+      <% elsif @stone %>
+        <%= render "tools/safety/stone", entry: @stone, row: @rows_by_slug[@stone.slug] %>
+      <% end %>
+
+      <div class="<%= "mt-[14px]" if @plan || @stone %>">
+        <%= render "tools/safety/picker", entries: @entries, stone: @stone, plan_slugs: @plan_slugs, framed: true, counts: CrystalSafety.filter_counts(@rows) %>
+      </div>
+    <% end %>
+  </section>
+
+  <%= render "tools/safety/matrix", rows: @rows, visible: @visible, filters: @filters, query: @query, sort: @sort, stone: @stone, plan_slugs: @plan_slugs %>
+
+  <section class="px-5 pb-16 pt-6 sm:px-11" data-screen-label="About the data">
+    <div class="max-w-[760px] rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">How these verdicts are made</div>
+      <p class="mt-3 text-[13px] font-light leading-[1.75] text-ui">
+        Every verdict is a physical fact about the stone, taken from our sourced atlas of <%= @entries.size %> stones: how hard it is, whether it dissolves, rusts, fades or leaches. We are strict on purpose. "Quick rinse only" is not "safe", and a stone that is safe in water is not automatically safe in salt, sun or a bath. Whether cleansing, charging or sleeping with a crystal does anything beyond that is tradition, and we label it that way. Nothing here is medical advice.
+      </p>
+    </div>
+  </section>
+<% end %>

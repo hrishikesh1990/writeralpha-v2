@@ -1,0 +1,23 @@
+<%# locals: entries, selected, frame_attrs, compact, uid %>
+<%# Pick 2 to 10 stones; server-rendered checkboxes, enhanced by the safety-picker Stimulus controller. %>
+<%= form_with url: tools_safety_path, method: :get, class: "mt-3",
+              data: frame_attrs.merge(controller: "safety-picker", action: "change->safety-picker#toggle", safety_picker_min_value: 2, safety_picker_max_value: 10) do %>
+  <p class="text-[12.5px] font-light leading-[1.6] text-muted">Choose 2 to 10 stones you keep together. We will show the cleansing methods that are safe for every one of them, and which stone rules out each of the others.</p>
+  <label for="plan-search-<%= uid %>" class="mt-3 block text-[12px] font-medium text-ink">Find a stone</label>
+  <input id="plan-search-<%= uid %>" type="search" autocomplete="off" placeholder="Type to narrow the list" data-safety-picker-target="search" data-action="input->safety-picker#filter"
+         class="mt-1 block w-full rounded-[12px] border border-violet/20 bg-white px-3 py-[9px] text-[13.5px] text-ink placeholder:text-placeholder focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/25">
+  <fieldset class="mt-3">
+    <legend class="sr-only">Stones to cleanse together</legend>
+    <div class="<%= compact ? "max-h-[132px]" : "max-h-[168px]" %> overflow-y-auto rounded-[12px] border border-violet/10 bg-white/60 p-2" data-safety-picker-target="list">
+      <div class="flex flex-wrap gap-[6px] [&_label>span]:inline-block [&_label>span]:rounded-full [&_label>span]:bg-pill-off/90 [&_label>span]:px-3 [&_label>span]:py-[6px] [&_label>span]:text-[12px] [&_label>span]:leading-none [&_label>span]:text-ui [&_label>span]:ring-1 [&_label>span]:ring-inset [&_label>span]:ring-violet/10 [&_label>span:hover]:bg-violet/10 [&_input:checked+span]:bg-ink [&_input:checked+span]:text-white [&_input:checked+span]:ring-ink [&_input:focus-visible+span]:outline-2 [&_input:focus-visible+span]:outline-offset-2 [&_input:focus-visible+span]:outline-violet [&_input:disabled+span]:cursor-not-allowed [&_input:disabled+span]:opacity-40 [&_label]:cursor-pointer">
+<% entries.each do |e| %><label><input type="checkbox" name="stones[]" value="<%= e.slug %>" class="peer sr-only"<%= " checked" if selected.include?(e.slug) %> data-safety-picker-target="input"><span><%= e.name %></span></label><% end %>
+      </div>
+      <p class="hidden px-2 py-3 text-[12.5px] text-muted" data-safety-picker-target="empty">No stone matches that search.</p>
+    </div>
+  </fieldset>
+  <div class="mt-3 flex flex-wrap items-center gap-3">
+    <button type="submit" data-safety-picker-target="submit" class="rounded-full bg-ink px-5 py-[10px] text-[12.5px] font-medium text-white hover:bg-violet-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet disabled:cursor-not-allowed disabled:opacity-50">Find a safe cleanse</button>
+    <span class="text-[12px] text-muted" data-safety-picker-target="count" aria-live="polite"><%= selected.size %> selected</span>
+    <button type="button" class="hidden text-[12px] font-medium text-violet-deep underline-offset-2 hover:underline" data-safety-picker-target="clear" data-action="safety-picker#clear">Clear</button>
+  </div>
+<% end %>
