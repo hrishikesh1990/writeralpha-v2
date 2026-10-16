@@ -1,0 +1,277 @@
+<%
+  base = @base
+  entries = @entries
+  example = @example
+  count = entries.size
+  filters = AtlasApi::FILTERS
+  chips = "mt-2 flex flex-wrap gap-[5px] [&>code]:rounded-[8px] [&>code]:bg-violet/8 [&>code]:px-[8px] [&>code]:py-[3px] [&>code]:font-mono [&>code]:text-[11px] [&>code]:leading-[1.4] [&>code]:text-violet-deep"
+  eyebrow = "font-mono text-[10px] uppercase tracking-[0.18em] text-faint"
+  card = "rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5"
+  h2 = "scroll-mt-6 text-[23px] font-semibold leading-[1.3] text-ink"
+  prose = "mt-3 max-w-[680px] text-[14.5px] font-light leading-[1.8] text-body"
+  inline_code = "rounded-[6px] bg-violet/8 px-[6px] py-[1px] font-mono text-[12.5px] text-violet-deep"
+  sections = [["about", "What it is"], ["quickstart", "Quick start"], ["endpoints", "Endpoints"], ["filters", "Filters"],
+              ["response", "Example response"], ["fields", "Field reference"], ["behaviour", "Errors, caching, limits"],
+              ["licence", "Licence and attribution"], ["changelog", "Changelog"], ["download", "Download"]]
+  examples = [
+    ["Stones safe in water and salt", { water: "safe", salt: "safe" }],
+    ["Stones to keep out of water", { water: "avoid" }],
+    ["Toxic or leaching stones", { toxicity: "caution" }],
+    ["Stones for Aries", { zodiac: "aries" }],
+    ["Third eye chakra stones", { chakra: "third_eye" }],
+    ["Stones for sleep", { intention: "sleep" }],
+    ["Hard stones (Mohs 8 and up)", { mohs_min: 8 }],
+    ["Anything quartz", { q: "quartz" }]
+  ]
+  list_url = "#{base}/api/v1/stones"
+  example_list = example ? AtlasApi.envelope([AtlasApi.summary(example, base: base)], count: 1, filters: { "q" => [example.slug] }, base: base) : nil
+  example_detail = example ? AtlasApi.envelope(AtlasApi.detail(example, base: base), count: 1, base: base) : nil
+  fields_vocab = AtlasApi::FIELDS
+  dataset = {
+    "@context" => "https://schema.org",
+    "@type" => "Dataset",
+    "name" => "WriterAlpha Gemstone Atlas",
+    "description" => "A sourced, open dataset of #{count} gemstones and crystals: Mohs hardness, water, salt and sun safety, toxicity, cleansing methods, identification tests, common fakes, pairings, local names, and (labelled as tradition) chakras, zodiac, planets, Vedic grahas and birthstone months.",
+    "url" => canonical_url("/developers"),
+    "license" => AtlasApi::LICENSE_URL,
+    "isAccessibleForFree" => true,
+    "version" => AtlasApi::VERSION,
+    "inLanguage" => "en",
+    "keywords" => ["gemstones", "crystals", "minerals", "Mohs hardness", "crystal safety", "birthstones", "Navaratna", "open data"],
+    "creator" => { "@type" => "Organization", "name" => "WriterAlpha", "url" => canonical_url("/") },
+    "publisher" => { "@type" => "Organization", "name" => "WriterAlpha", "url" => canonical_url("/") },
+    "citation" => AtlasApi::ATTRIBUTION,
+    "variableMeasured" => ["Mohs hardness", "Water safety", "Salt safety", "Sunlight safety", "Toxicity", "Chemical formula", "Crystal system"],
+    "distribution" => [
+      { "@type" => "DataDownload", "encodingFormat" => "application/json", "name" => "Full dataset (JSON)", "contentUrl" => "#{base}/api/v1/stones?full=1" },
+      { "@type" => "DataDownload", "encodingFormat" => "application/json", "name" => "Stone list (JSON)", "contentUrl" => "#{base}/api/v1/stones" }
+    ]
+  }
+  jsonld(dataset)
+%>
+
+<%= tool_header(title: "Open Gemstone Data", eyebrow: "— free JSON API · CC BY 4.0",
+                lede: "Hardness, water, salt and sun safety, toxicity, identification tests and tradition for #{count} gemstones, as a documented JSON API and a dataset you may reuse with attribution. No key, no sign-up.",
+                crumbs: [["Home", root_path], ["Tools", tools_path], ["Open Gemstone Data", nil]]) %>
+
+<section class="px-5 pb-6 pt-5 sm:px-11" data-screen-label="Stats">
+  <dl class="grid grid-cols-2 gap-[10px] sm:grid-cols-4">
+    <% [[count.to_s, "stones in the atlas"], [(filters.size + 3).to_s, "query filters"], ["120 / min", "per IP, no key"], ["CC BY 4.0", "reuse with credit"]].each do |value, label| %>
+      <div class="rounded-[14px] border border-violet/10 bg-white/80 px-[16px] py-[14px]">
+        <dd class="text-[20px] font-semibold leading-none text-ink"><%= value %></dd>
+        <dt class="mt-[7px] font-mono text-[9px] uppercase tracking-[0.14em] text-faint"><%= label %></dt>
+      </div>
+    <% end %>
+  </dl>
+</section>
+
+<div class="grid gap-x-12 px-5 pb-16 sm:px-11 lg:grid-cols-[190px_minmax(0,1fr)]">
+  <nav aria-label="On this page" class="-mx-5 mb-8 overflow-x-auto px-5 [scrollbar-width:none] sm:-mx-11 sm:px-11 lg:sticky lg:top-6 lg:mx-0 lg:mb-0 lg:self-start lg:overflow-visible lg:px-0">
+    <p class="<%= eyebrow %> hidden lg:block">On this page</p>
+    <ul class="flex gap-2 lg:mt-3 lg:flex-col lg:gap-[2px]">
+      <% sections.each do |id, label| %>
+        <li class="flex-none"><a href="#<%= id %>" class="block whitespace-nowrap rounded-full bg-violet/8 px-[13px] py-[7px] text-[12px] text-violet-deep card-transition hover:bg-violet/14 lg:rounded-[10px] lg:bg-transparent lg:px-[10px] lg:py-[6px] lg:text-[12.5px] lg:text-muted lg:hover:bg-violet/8"><%= label %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <div class="min-w-0 space-y-14">
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h" class="<%= h2 %>">What it is</h2>
+      <p class="<%= prose %>">The WriterAlpha Gemstone Atlas is a curated, sourced record of every stone on this site. Each entry holds the physical facts people actually need (Mohs hardness, whether it can go in water, salt or sun, whether it is toxic, how to tell the real stone from the fakes) and, kept strictly apart and labelled as tradition, the chakras, zodiac signs, planets, Vedic grahas and birthstone months it is associated with.</p>
+      <div class="mt-5 grid gap-[14px] sm:grid-cols-3">
+        <div class="<%= card %>"><h3 class="<%= eyebrow %>">Sourced</h3><p class="mt-3 text-[13px] font-light leading-[1.7] text-ui">Mineralogy comes from references such as Mindat, GIA and the Gem Society. Every record lists its <span class="<%= inline_code %>">sources</span>.</p></div>
+        <div class="<%= card %>"><h3 class="<%= eyebrow %>">Honest about tradition</h3><p class="mt-3 text-[13px] font-light leading-[1.7] text-ui">Anything metaphysical sits under <span class="<%= inline_code %>">tradition</span>, never as fact. There are no medical claims.</p></div>
+        <div class="<%= card %>"><h3 class="<%= eyebrow %>">Honest about kind</h3><p class="mt-3 text-[13px] font-light leading-[1.7] text-ui">Glass, coated and lab-made stones are labelled as such in <span class="<%= inline_code %>">kind</span>, so a dyed or man-made stone is never passed off as natural.</p></div>
+      </div>
+      <p class="<%= prose %>">The same data powers the <a href="<%= tools_safety_path %>">Crystal Safety Checker</a>, <a href="<%= tools_real_or_fake_path %>">Real or Fake?</a> and the &ldquo;at a glance&rdquo; panel on every stone page. Found a mistake? <a href="/contact">Tell us</a> and we will fix the source.</p>
+    </section>
+
+    <!-- Quick start -->
+    <section id="quickstart" aria-labelledby="quickstart-h">
+      <h2 id="quickstart-h" class="<%= h2 %>">Quick start</h2>
+      <p class="<%= prose %>">Every request is a plain <span class="<%= inline_code %>">GET</span> that returns JSON. CORS is open, so it also works straight from a browser.</p>
+      <div class="mt-5 space-y-[14px]">
+        <%= render "developers/code", label: "curl", code: "# One stone\ncurl \"#{base}/api/v1/stones/amethyst?pretty=1\"\n\n# Stones that are safe in water but not in salt\ncurl \"#{base}/api/v1/stones?water=safe&salt=avoid\"" %>
+        <%= render "developers/code", label: "JavaScript", code: "const res = await fetch(\"#{base}/api/v1/stones?zodiac=aries&toxicity=none\");\nconst { data, meta } = await res.json();\n\nconsole.log(`${meta.count} stones`, data.map((s) => s.name));\nconsole.log(meta.attribution); // show this credit next to the data" %>
+        <%= render "developers/code", label: "Python", code: "import requests\n\nr = requests.get(\"#{base}/api/v1/stones/amethyst\", timeout=10)\nr.raise_for_status()\nstone = r.json()[\"data\"]\n\nprint(stone[\"name\"], stone[\"safety\"][\"water\"])  # Amethyst safe\nfor test in stone[\"identification\"][\"tests\"]:\n    print(test[\"id\"], test[\"how\"])" %>
+      </div>
+    </section>
+
+    <!-- Endpoints -->
+    <section id="endpoints" aria-labelledby="endpoints-h">
+      <h2 id="endpoints-h" class="<%= h2 %>">Endpoints</h2>
+      <div class="mt-5 space-y-[14px]">
+        <div class="<%= card %>">
+          <p class="font-mono text-[13px] text-ink"><span class="mr-2 rounded-[6px] bg-emerald-500/10 px-[7px] py-[2px] text-[11px] text-emerald-700">GET</span>/api/v1/stones</p>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui">Every stone as a lean record (identity, hardness, safety verdicts, chakras and zodiac, image), sorted by name. Narrow it with the <a href="#filters">filters</a> below. Add <span class="<%= inline_code %>">full=1</span> to get complete records for the whole set in one request.</p>
+        </div>
+        <div class="<%= card %>">
+          <p class="font-mono text-[13px] text-ink"><span class="mr-2 rounded-[6px] bg-emerald-500/10 px-[7px] py-[2px] text-[11px] text-emerald-700">GET</span>/api/v1/stones/:slug</p>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui">The full record for one stone, for example <a href="<%= api_v1_stone_path(slug: example&.slug || 'amethyst') %>?pretty=1" target="_blank" rel="nofollow noopener" class="font-mono text-[12.5px]">/api/v1/stones/<%= example&.slug || "amethyst" %></a>. An unknown slug returns a JSON 404.</p>
+        </div>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Options on both endpoints</h3>
+          <ul class="mt-3 space-y-2 text-[13.5px] font-light leading-[1.7] text-ui">
+            <li><span class="<%= inline_code %>">pretty=1</span> indents the JSON for reading.</li>
+            <li><span class="<%= inline_code %>">full=1</span> (list only) returns full records instead of lean ones.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section id="filters" aria-labelledby="filters-h">
+      <h2 id="filters-h" class="<%= h2 %>">Filters</h2>
+      <p class="<%= prose %>">Combine any filters on <span class="<%= inline_code %>">/api/v1/stones</span>. Different filters are combined with AND; give several values to one filter, comma separated, to match any of them (<span class="<%= inline_code %>">water=safe,brief</span>). Values are case-insensitive, and <span class="<%= inline_code %>">third-eye</span> and <span class="<%= inline_code %>">third_eye</span> are the same. An invalid value returns <span class="<%= inline_code %>">400</span> and lists what is allowed. The value lists below are generated from the Atlas vocabularies, so they are always current.</p>
+      <div class="mt-5 overflow-hidden rounded-[18px] border border-violet/10 bg-white/80">
+        <div class="hidden grid-cols-[110px_minmax(0,1fr)] gap-x-5 border-b border-violet/10 px-5 py-3 sm:grid <%= eyebrow %>"><span>Parameter</span><span>Allowed values</span></div>
+        <ul class="divide-y divide-violet/10">
+          <% filters.each do |name, spec| %>
+            <li class="grid gap-x-5 gap-y-2 px-5 py-4 sm:grid-cols-[110px_minmax(0,1fr)]">
+              <span class="font-mono text-[12.5px] font-medium text-ink"><%= name %></span>
+              <div>
+                <p class="text-[13px] font-light leading-[1.6] text-ui"><%= spec[:doc] %></p>
+                <p class="<%= chips %>"><% spec[:values].each do |v| %><code><%= v %></code><% end %></p>
+              </div>
+            </li>
+          <% end %>
+          <li class="grid gap-x-5 gap-y-2 px-5 py-4 sm:grid-cols-[110px_minmax(0,1fr)]">
+            <span class="font-mono text-[12.5px] font-medium text-ink">mohs_min<br>mohs_max</span>
+            <p class="text-[13px] font-light leading-[1.6] text-ui">A number from 1 to 10. <span class="<%= inline_code %>">mohs_min=8</span> keeps stones whose hardness reaches at least 8; <span class="<%= inline_code %>">mohs_max=3</span> keeps stones that are 3 or softer at the low end of their range.</p>
+          </li>
+          <li class="grid gap-x-5 gap-y-2 px-5 py-4 sm:grid-cols-[110px_minmax(0,1fr)]">
+            <span class="font-mono text-[12.5px] font-medium text-ink">q</span>
+            <p class="text-[13px] font-light leading-[1.6] text-ui">Free text, up to 80 characters, matched against name, other names, species, family and formula (<span class="<%= inline_code %>">q=quartz</span>).</p>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="mt-8 text-[16px] font-semibold text-ink">Try these</h3>
+      <ul class="mt-3 grid gap-[8px] sm:grid-cols-2">
+        <% examples.each do |label, query| %>
+          <% url = "#{api_v1_stones_path}?#{query.merge(pretty: 1).to_query}" %>
+          <li><a href="<%= url %>" target="_blank" rel="nofollow noopener" class="flex items-center justify-between gap-3 rounded-[14px] border border-violet/10 bg-white/80 px-4 py-3 card-transition hover:border-violet/35">
+            <span class="text-[13px] font-medium text-ink"><%= label %></span>
+            <span class="min-w-0 truncate font-mono text-[10.5px] text-faint"><%= query.to_query %></span>
+          </a></li>
+        <% end %>
+      </ul>
+    </section>
+
+    <!-- Response -->
+    <section id="response" aria-labelledby="response-h">
+      <h2 id="response-h" class="<%= h2 %>">Example response</h2>
+      <p class="<%= prose %>">Every success response is an envelope: <span class="<%= inline_code %>">data</span> holds the stone or stones and <span class="<%= inline_code %>">meta</span> carries the count, API version, licence and the attribution line to show. The examples below are generated live from the atlas.</p>
+      <% if example_list %>
+        <div class="mt-5 space-y-[14px]">
+          <%= render "developers/code", label: "GET /api/v1/stones?q=#{example.slug}  (list record, shortened to one stone)", code: JSON.pretty_generate(example_list), scroll: "max-h-[520px]" %>
+          <details class="group overflow-hidden rounded-[16px] border border-violet/10 bg-white/80">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 text-[13.5px] font-medium text-ink [&::-webkit-details-marker]:hidden">
+              <span>Full record: GET /api/v1/stones/<%= example.slug %></span>
+              <span class="text-[11px] text-faint group-open:rotate-180" aria-hidden="true">▾</span>
+            </summary>
+            <div class="border-t border-violet/10 p-3">
+              <%= render "developers/code", label: "GET /api/v1/stones/#{example.slug}", code: JSON.pretty_generate(example_detail), scroll: "max-h-[640px]" %>
+            </div>
+          </details>
+        </div>
+      <% end %>
+    </section>
+
+    <!-- Fields -->
+    <section id="fields" aria-labelledby="fields-h">
+      <h2 id="fields-h" class="<%= h2 %>">Field reference</h2>
+      <p class="<%= prose %>">A full record contains every list field with identical values and types, plus the fields marked <span class="rounded-full bg-violet/8 px-2 py-[2px] font-mono text-[10px] uppercase tracking-[0.08em] text-violet-deep">full</span>. Field names are stable within v1. Enumerated values are read from the Atlas vocabularies.</p>
+      <div class="mt-5 overflow-hidden rounded-[18px] border border-violet/10 bg-white/80">
+        <div class="hidden grid-cols-[210px_96px_minmax(0,1fr)] gap-x-5 border-b border-violet/10 px-5 py-3 sm:grid <%= eyebrow %>"><span>Field</span><span>Type</span><span>Meaning and allowed values</span></div>
+        <ul class="divide-y divide-violet/10">
+          <% fields_vocab.each do |f| %>
+            <li class="grid gap-x-5 gap-y-[6px] px-5 py-[14px] sm:grid-cols-[210px_96px_minmax(0,1fr)]">
+              <span class="break-words font-mono text-[12.5px] font-medium text-ink"><%= f[:path] %><% if f[:detail] %> <span class="ml-1 rounded-full bg-violet/8 px-2 py-[2px] align-middle font-mono text-[9px] font-normal uppercase tracking-[0.08em] text-violet-deep">full</span><% end %></span>
+              <span class="font-mono text-[11.5px] text-faint"><%= f[:type] %></span>
+              <div>
+                <p class="text-[13px] font-light leading-[1.6] text-ui"><%= f[:doc] %></p>
+                <% if f[:values] %>
+                  <p class="<%= chips %>"><% f[:values].each do |v| %><code><%= v %></code><% end %></p>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <p class="<%= prose %>">Chakras and zodiac signs are lower-case slugs; use <span class="<%= inline_code %>">third_eye</span> (underscore) in data and either spelling in filters. Two verdicts are easy to misread: <span class="<%= inline_code %>">brief</span> means a quick rinse and never a soak, and <span class="<%= inline_code %>">limit</span> means short exposure only.</p>
+    </section>
+
+    <!-- Behaviour -->
+    <section id="behaviour" aria-labelledby="behaviour-h">
+      <h2 id="behaviour-h" class="<%= h2 %>">Errors, caching and limits</h2>
+      <div class="mt-5 grid gap-[14px] md:grid-cols-2">
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Rate limit</h3>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui">120 requests per minute per IP address. Beyond that you receive <span class="<%= inline_code %>">429</span> with a <span class="<%= inline_code %>">Retry-After</span> header. To use everything, fetch <a href="<%= api_v1_stones_path %>?full=1" rel="nofollow">the full dataset</a> once and cache it; do not call the API per page view.</p>
+        </div>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Caching</h3>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui">Responses send <span class="<%= inline_code %>">Cache-Control: public, max-age=3600</span> and an <span class="<%= inline_code %>">ETag</span>. Send it back as <span class="<%= inline_code %>">If-None-Match</span> and unchanged data returns <span class="<%= inline_code %>">304</span> with no body.</p>
+        </div>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">CORS</h3>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui"><span class="<%= inline_code %>">Access-Control-Allow-Origin: *</span> on every response, so you can call the API from any web page. Responses carry <span class="<%= inline_code %>">X-Robots-Tag: noindex</span>; the human pages are what search engines index.</p>
+        </div>
+        <div class="<%= card %>">
+          <h3 class="<%= eyebrow %>">Errors</h3>
+          <p class="mt-3 text-[13.5px] font-light leading-[1.7] text-ui">Errors are JSON with an HTTP status: <span class="<%= inline_code %>">400</span> invalid parameter, <span class="<%= inline_code %>">404</span> unknown slug, <span class="<%= inline_code %>">429</span> rate limited.</p>
+        </div>
+      </div>
+      <div class="mt-[14px]">
+        <%= render "developers/code", label: "GET /api/v1/stones?water=soaking  (400)", code: JSON.pretty_generate(AtlasApi.error(status: 400, code: "invalid_parameter", message: AtlasApi::InvalidParameter.new("water", "soaking", AtlasApi::FILTERS["water"][:values]).message, allowed: AtlasApi::FILTERS["water"][:values], base: base)) %>
+      </div>
+    </section>
+
+    <!-- Licence -->
+    <section id="licence" aria-labelledby="licence-h">
+      <h2 id="licence-h" class="<%= h2 %>">Licence and attribution</h2>
+      <p class="<%= prose %>">The data is licensed <a href="<%= AtlasApi::LICENSE_URL %>" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 (CC BY 4.0)</a>. You may copy, redistribute and adapt it, including commercially, as long as you credit WriterAlpha and link back. Please paste the credit below wherever the data is shown (an app screen, a product page, a blog post).</p>
+      <div class="mt-5 space-y-[14px]">
+        <%= render "developers/code", label: "Attribution (plain text)", code: AtlasApi::ATTRIBUTION %>
+        <%= render "developers/code", label: "Attribution (HTML link)", code: AtlasApi::ATTRIBUTION_HTML %>
+      </div>
+      <p class="<%= prose %>">The attribution line is also in every response as <span class="<%= inline_code %>">meta.attribution</span>. Care and safety facts are general guidance for typical stones: treated, filled or unusually set stones can differ, so please keep a short disclaimer where the data drives advice.</p>
+    </section>
+
+    <!-- Changelog -->
+    <section id="changelog" aria-labelledby="changelog-h">
+      <h2 id="changelog-h" class="<%= h2 %>">Changelog</h2>
+      <div class="<%= card %> mt-5">
+        <div class="flex flex-wrap items-baseline gap-x-3">
+          <span class="text-[15px] font-semibold text-ink">v1</span>
+          <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-faint">16 October 2026 · initial release</span>
+        </div>
+        <ul class="mt-3 list-disc space-y-[6px] pl-5 text-[13.5px] font-light leading-[1.7] text-ui marker:text-violet/40">
+          <li><span class="<%= inline_code %>">GET /api/v1/stones</span> and <span class="<%= inline_code %>">GET /api/v1/stones/:slug</span>.</li>
+          <li>Filters for water, salt, sun, sleep, wear, toxicity, elixir, kind, zodiac, chakra, element, planet, intention, birth month, hardness and free text.</li>
+          <li>Full dataset in one request with <span class="<%= inline_code %>">full=1</span>; ETag and 304 support; open CORS.</li>
+        </ul>
+        <p class="mt-4 text-[12.5px] font-light leading-[1.7] text-muted">Within v1 we only add fields and stones; we never rename or remove them. A breaking change would ship as <span class="<%= inline_code %>">/api/v2</span> and v1 would keep working.</p>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" aria-labelledby="download-h">
+      <div class="relative overflow-hidden rounded-[22px] bg-ink/97 px-[22px] py-7 sm:px-8">
+        <div class="glow-violet -right-10 -top-16 h-[220px] w-[360px] opacity-50 blur-[30px]" aria-hidden="true"></div>
+        <div class="relative">
+          <h2 id="download-h" class="text-[23px] font-semibold leading-[1.3] text-white">Download the full dataset</h2>
+          <p class="mt-3 max-w-[560px] text-[14px] font-light leading-[1.75] text-white/80">All <%= count %> stones with every field, as one JSON file (around <%= (JSON.generate(entries.map { |e| AtlasApi.detail(e, base: base) }).bytesize / 1024.0).round %> KB), licensed CC BY 4.0.</p>
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <a href="<%= api_v1_stones_path %>?full=1" class="inline-block rounded-full bg-white px-5 py-[10px] text-[13px] font-medium text-ink hover:bg-lavender hover:text-ink">Download JSON</a>
+            <a href="<%= api_v1_stones_path %>?full=1&pretty=1" class="text-[12.5px] font-medium text-lavender hover:text-white">or read it formatted →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
