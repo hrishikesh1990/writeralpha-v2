@@ -174,15 +174,14 @@ class CrystalCompatibilityTest < ActiveSupport::TestCase
     assert_equal :avoid, CrystalCompatibility.check(ruby, sapphire, context: "bedroom").verdict
   end
 
-  test "two substitute stones get the milder-substitutes note, primary stones do not" do
+  test "two substitute stones get a soft Vedic caution, not a forced avoid; primary stones keep the hard rule" do
     clear = stone("clear-quartz", "tradition" => { "vedic_planet" => "shukra" })
     citrine = stone("citrine", "tradition" => { "vedic_planet" => "guru" }, "pairs" => { "good" => [{ "slug" => "clear-quartz", "why" => "Tradition pairs them." }] })
     r = CrystalCompatibility.check(clear, citrine)
-    assert_equal :avoid, r.verdict
-    assert r.contested?
+    refute_equal :avoid, r.verdict
     assert_equal [false, false], r.vedic.primary
     assert r.reasons.any? { |x| x.topic == :vedic_substitute }
-    assert_match(/Vedic astrology says no to Clear Quartz and Citrine, though crystal tradition pairs them/, r.headline)
+    assert r.reasons.any? { |x| x.topic == :vedic && x.minus? }
     ruby = stone("ruby", "tradition" => { "vedic_planet" => "surya" })
     sapphire = stone("sapphire", "tradition" => { "vedic_planet" => "shani" })
     r2 = CrystalCompatibility.check(ruby, sapphire)

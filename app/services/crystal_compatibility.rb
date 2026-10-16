@@ -322,16 +322,19 @@ class CrystalCompatibility
         text += " The table is lopsided here: one planet counts the other as an enemy and the reverse is not recorded, and most practitioners take the cautious reading." if asym
         notes = [vedic_role(a, ga), vedic_role(b, gb)].compact
         text += " #{notes.join(' ')}" if notes.any?
-        add(:minus, :vedic, :vedic, text, -40, tone: :warn)
+        # The hard rule applies when a main Navaratna gem is involved. Two
+        # substitutes (upratna) get a soft caution: most people wear them as
+        # crystals, not as planetary remedies.
+        add(:minus, :vedic, :vedic, text, primary.any? ? -40 : -12, tone: :warn)
         if %w[bedroom meditation].include?(ctx)
           add(:neutral, :vedic, :vedic_room,
               "This rule is about wearing both stones on the body. The classical sources are less clear about stones kept in the same room, so ask your astrologer if it matters to you.")
         end
         if primary.none?
           add(:neutral, :vedic, :vedic_substitute,
-              "Both are substitute stones (upratna), not the main Navaratna gems. Many astrologers treat substitutes as milder, so some are more relaxed about combining them. The rule is still the traditional default, so ask your astrologer if you wear them for planetary reasons.")
+              "Both are substitute stones (upratna), not the main Navaratna gems, so this only matters if you wear them as planetary remedies. Worn as crystals, the Vedic rule does not apply; if you follow Jyotish, ask your astrologer.")
         end
-        @forced = :vedic
+        @forced = :vedic if primary.any?
         if @reasons.any? { |r| r.topic == :pairing && r.plus? }
           @contested = true
           add(:neutral, :tradition, :contested,
