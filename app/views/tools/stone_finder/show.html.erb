@@ -1,0 +1,23 @@
+<% noindex_when_params!(:dob, :sign, :i, :use, :budget, :f) %>
+<% tool_jsonld(name: "Stone Finder", description: "Find the crystals and gemstones that suit your birthday, your goals and how you will use them, and see which stones to skip.") %>
+<% result = @result %>
+
+<%= tool_header(title: "Stone Finder", eyebrow: "— free, no sign-up",
+                lede: "Tell us a little about you. We rank the stones that fit, explain why in plain words, and list the ones to skip: for your sign, your home and your budget.",
+                crumbs: [["Home", root_path], ["Tools", tools_path], ["Stone Finder", nil]]) %>
+
+<section class="px-5 pb-16 pt-4 sm:px-11" data-screen-label="Stone Finder">
+  <div class="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)] lg:items-start lg:gap-10">
+    <div id="finder-form" class="<%= result ? 'order-2 lg:order-none' : '' %> scroll-mt-4">
+      <%= render "tools/stone_finder/form", query: @query %>
+    </div>
+
+    <%= turbo_frame_tag "finder-results", class: "block min-w-0 #{'order-1 lg:order-none' if result}", data: { turbo_action: "advance" } do %>
+      <% if result %>
+        <%= render "tools/stone_finder/results", result: result, query: @query, entries: @entries %>
+      <% else %>
+        <%= render "tools/stone_finder/welcome", examples: @examples, query: @query, count: @entries.size %>
+      <% end %>
+    <% end %>
+  </div>
+</section>
