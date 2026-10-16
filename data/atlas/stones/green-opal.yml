@@ -1,0 +1,123 @@
+slug: green-opal
+name: Green Opal
+aka: [prase opal, prasopal, pistachio opal, green common opal]
+kind: variety
+species: Opal
+family: silica
+formula: SiO2·nH2O
+crystal_system: amorphous
+mohs: [5.5, 6.5]
+colors: [green, apple green, yellow-green, olive]
+origins: [Tanzania, Madagascar, Peru, United States]
+summary: >-
+  Green common opal without play of colour. Apple-green Tanzanian prase opal is
+  coloured by nickel; yellow-green "pistachio" opal from Madagascar by iron-rich
+  inclusions. It holds water like all opal, so avoid heat and long soaks. Much
+  "green opal" is actually chrysoprase, dyed stone or glass.
+
+safety:
+  water:
+    verdict: brief
+    reason: A quick rinse in room-temperature water is fine. Opal is slightly porous and contains water, so long soaks, hot water and soapy water can cloud or craze it.
+  salt:
+    verdict: avoid
+    reason: Brine soaks into the porous opal and salt crystallises as it dries, stressing a stone that is already brittle. Never use salt.
+  sun:
+    verdict: limit
+    reason: Common opal is more stable than precious opal, but it still contains water. Long spells in hot sun can dry it and cause fine cracks.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand. Brittle, so better not under a pillow where it can be pressed or dropped.
+  wear:
+    verdict: care
+    reason: At Mohs 5.5 to 6.5 and brittle, green opal scratches and chips. Pendants and earrings suit it better than rings for daily use.
+  toxicity:
+    level: none
+    reason: Opal is hydrated silica. In prase opal the nickel is locked inside the silica and not released by handling; avoid breathing dust when cutting it.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [water, earth]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [cancer, libra]
+  intentions: [healing, emotional-balance, love, peace-calm, luck]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Buyers expecting the colour flashes of precious opal
+    why: Green opal is common opal, valued for its body colour. It shows no play of colour, so a "green opal" with rainbow flashes is a different material or a treated or synthetic stone.
+    basis: physical
+  - who: People who display stones in hot sun or near heaters
+    why: All opal holds water, and drying it out with heat can crack it. Keep it in steady room conditions.
+    basis: physical
+  - who: People who want a tough everyday ring
+    why: Green opal is brittle and softer than quartz. Chrysoprase, jade or aventurine handle knocks better.
+    basis: physical
+  - who: Anyone cleansing in salt water or soaking stones
+    why: Brine and long soaks are absorbed by the porous opal and can cloud or crack it. Use sound, smoke or moonlight.
+    basis: physical
+  - who: People seeking a strongly energising stone
+    why: Tradition treats green opal as a calm, soothing heart stone rather than a stimulating one.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Chrysoprase (green chalcedony) sold as green opal, or the reverse
+    - Dyed green agate or chalcedony
+    - Green glass or opalite
+    - Serpentine or jade sold as green opal
+  tests:
+    - id: weight
+      weight: 3
+      how: Compare it in your hand with a chalcedony or glass bead of the same size, or weigh it in air and in water.
+      real: Opal is noticeably light (specific gravity about 2.1).
+      fake: Chrysoprase and dyed agate (about 2.6) and most glass feel heavier.
+    - id: refractive
+      weight: 3
+      how: Ask a gemmologist to take a refractometer reading.
+      real: Green opal reads about 1.44 to 1.46.
+      fake: Chrysoprase and agate read about 1.53 to 1.54; glass usually reads 1.50 or higher.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Green on the swab means dyed chalcedony or stone.
+    - id: magnification
+      weight: 2
+      how: Examine the stone with a 10x loupe.
+      real: Waxy to glassy surface, sometimes with brown matrix or dark spots of inclusions.
+      fake: Round bubbles mean glass; colour concentrated in cracks means dye.
+    - id: hardness
+      weight: 1
+      how: Try to mark a hidden spot with a steel knife. This leaves a scratch on soft fakes.
+      real: Opal resists a steel knife with some effort.
+      fake: Serpentine is scratched easily.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: A traditional heart pairing for emotional healing. Rose quartz is harder, so store them apart.
+    - slug: moss-agate
+      why: Two green growth stones in tradition.
+    - slug: jade
+      why: Paired in tradition as green stones of luck and calm.
+    - slug: selenite
+      why: Selenite cleanses opal without water, salt or sun.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled and rough green opal is inexpensive. Bright apple-green, translucent Tanzanian prase opal cut as cabochons or faceted stones costs more.
+
+names:
+  es: Ópalo verde
+
+sources:
+  - https://www.mindat.org/min-3004.html
+  - https://www.gia.edu/gems-gemology/winter-2009-chrysoprase-prase-opal-shigley
+  - https://www.gemsociety.org/article/opal-jewelry-and-gemstone-information/

@@ -1,0 +1,132 @@
+slug: agate
+name: Agate
+aka: [banded agate, hakik, akik]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [grey, white, brown, red, orange, blue, black, multicolor]
+origins: [Brazil, Uruguay, India, Mexico, Botswana, Madagascar, United States]
+summary: >-
+  Banded chalcedony, a fine-grained form of quartz that forms in cavities of
+  volcanic rock. Hard and safe in plain water, but slightly porous, so it takes
+  dye easily. Much of the brightly coloured agate on sale is dyed, and those
+  colours can bleed or fade.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and natural agate can be rinsed or soaked briefly. Dyed pieces may bleed colour in a long soak, so keep those to a quick rinse.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into the pores and fine cracks and leaves salt crystals behind as it dries, which dulls the surface and can widen existing cracks. Dyed pieces also bleed.
+  sun:
+    verdict: limit
+    reason: Natural grey, white, brown and red agate keeps its colour. Dyed blue, pink, purple and green agate fades in strong sunlight, so avoid long sunny spells if you are unsure what you have.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and robust, so it is physically safe under a pillow or on a nightstand. Raw slices can have sharp edges.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it resists everyday scratches and knocks. Keep perfume and cleaning sprays off dyed pieces, which can lose colour.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is inert and safe to handle. Cutting or grinding agate makes fine silica dust, so lapidaries work it wet.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [mercury]
+  vedic_planet: null
+  zodiac: [gemini, virgo]
+  intentions: [grounding, protection, emotional-balance, concentration, peace-calm]
+  energy: grounding
+  birth_months:
+    other: [june]
+
+cautions:
+  - who: Anyone cleansing agate in salt water or a salt bowl
+    why: Agate is porous enough to take up brine. Salt crystallises in the pores and cracks as it dries and is hard to rinse out. Use plain water, smoke or sound instead.
+    basis: physical
+  - who: Owners of brightly coloured agate (neon blue, hot pink, purple, green)
+    why: These colours are almost always dye. Long soaks, sunlight, acetone and perfume can strip or fade them. Treat such pieces as dyed unless the seller proves otherwise.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled agate and small slices are a choking hazard. The stone itself is not toxic.
+    basis: physical
+  - who: People who want a strongly energising stone
+    why: Crystal tradition describes agate as slow, steady and stabilising rather than stimulating. For drive, tradition points to carnelian or red jasper instead.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed agate sold as natural colour
+    - Glass or resin slices printed or cast with bands
+    - Plastic beads with an agate pattern
+    - Onyx marble (banded calcite) sold as agate
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the colour in good daylight, especially along cracks, drill holes and the edges of bands.
+      real: Natural agate shows soft, earthy greys, whites, browns and reds that change gradually from band to band.
+      fake: Neon or candy colours, or colour that is darkest inside cracks and drill holes, point to dye. Dyed agate is still agate, but not natural colour.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or the drill hole with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab shows the piece has been dyed.
+    - id: light
+      weight: 2
+      how: Hold a thin edge or slice up to a torch.
+      real: Light glows through the bands unevenly, with some bands more translucent than others.
+      fake: Plastic and resin glow evenly. Printed patterns sit only on the surface and disappear in transmitted light.
+    - id: magnification
+      weight: 3
+      how: Examine the bands with a 10x loupe.
+      real: Fine, wavy layers that follow each other around the stone, sometimes with tiny quartz crystals in the centre.
+      fake: Round gas bubbles or swirl lines mean glass. Grainy printed dots or mould seams mean plastic.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot of a rough or tumbled piece, try to scratch a glass bottle. Do not do this on a finished bead or cabochon.
+      real: Agate scratches glass easily.
+      fake: Plastic cannot scratch glass. Banded calcite is scratched by a steel knife.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Plastic and resin feel close to room temperature almost at once.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Both are quartz and share the same care rules. Tradition says clear quartz amplifies agate's steadying energy.
+    - slug: carnelian
+      why: Carnelian is red chalcedony, the same material as agate, and adds a warmer, more energising note in tradition.
+    - slug: black-tourmaline
+      why: A classic grounding and protection combination in crystal tradition.
+    - slug: smoky-quartz
+      why: Both are grounding stones in tradition, and both are hard enough to store together without scratching.
+    - slug: moss-agate
+      why: Moss agate adds tradition's growth and abundance themes to plain agate's stability.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled agate, beads and dyed slices cost very little. Large natural geodes, fine landscape slices and well-known localities such as Laguna or Condor agate cost far more.
+
+names:
+  hi: Hakik (हकीक)
+  bn: Akik (আকিক)
+  es: Ágata
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://geology.com/gemstones/agate/
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates

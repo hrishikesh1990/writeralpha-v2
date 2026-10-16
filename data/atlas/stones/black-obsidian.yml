@@ -1,0 +1,134 @@
+slug: black-obsidian
+name: Black Obsidian
+aka: [volcanic glass, obsidian mirror, apache tear]
+kind: mineraloid
+species: null
+family: volcanic glass
+formula: null
+crystal_system: amorphous
+mohs: [5, 5.5]
+colors: [black]
+origins: [Mexico, United States, Armenia, Turkey, Iceland]
+summary: >-
+  Jet-black natural volcanic glass. Water, salt and sun do not harm it, but at
+  Mohs 5 to 5.5 it scratches and chips, and broken edges are razor-sharp. Much
+  cheap "black obsidian" jewellery is ordinary black glass, which is hard to tell
+  apart.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve, so rinsing or soaking does not harm it. Avoid sudden hot-to-cold changes, which can crack glass.
+  salt:
+    verdict: safe
+    reason: Salt and salt water do not attack glass, and salt crystals are too soft to scratch it. Use fine salt rather than gritty rock salt and rinse afterwards.
+  sun:
+    verdict: safe
+    reason: The black comes from microscopic mineral particles and bubbles in the glass, which light does not fade. A black stone in strong sun gets hot but is not damaged.
+  sleep:
+    verdict: caution
+    reason: Tumbled pieces are physically safe, but raw obsidian cuts. Tradition also calls black obsidian an intense stone and often advises against it under the pillow.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 5.5 it scratches against harder stones and metal and chips if knocked. Bracelets dull fastest; pendants last longer.
+  toxicity:
+    level: none
+    reason: Volcanic glass is inert and safe to handle. Sharp edges and dust from cutting or knapping are the only real hazards.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth, fire]
+  planets: [saturn, pluto]
+  vedic_planet: null
+  zodiac: [scorpio, capricorn, sagittarius]
+  intentions: [protection, grounding, transformation, clarity, courage, grief]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Homes with children or pets, and anyone handling raw pieces
+    why: Broken obsidian is sharper than a steel blade and can cut skin and paws. Keep raw pieces and flakes out of reach.
+    basis: physical
+  - who: People who want a bracelet for everyday wear
+    why: At Mohs 5 to 5.5 beads rub against each other and against metal and lose their polish. Expect wear, or choose black tourmaline or onyx for tougher daily wear.
+    basis: physical
+  - who: Anyone cleaning stones with hot water, steam or ultrasonic cleaners
+    why: Thermal shock and vibration can crack glass. Use room-temperature water and a soft cloth.
+    basis: physical
+  - who: People storing crystals together
+    why: Harder stones such as quartz and tourmaline scratch obsidian. Wrap it separately.
+    basis: physical
+  - who: People new to crystals or going through a hard time
+    why: Crystal tradition calls black obsidian a blunt mirror that surfaces difficult emotions fast. Many practitioners suggest gentler stones first, or pairing it with rose quartz.
+    basis: tradition
+  - who: Light sleepers
+    why: Tradition holds that black obsidian in the bedroom can unsettle sleep. Move it if you notice that.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Black glass beads and spheres
+    - Black plastic or resin
+    - Black onyx or black agate sold as obsidian
+    - Industrial slag glass
+  tests:
+    - id: light
+      weight: 2
+      how: Shine a strong torch through a thin edge or a chip.
+      real: Thin edges glow smoky grey to brown, sometimes with flow bands.
+      fake: Black glass often glows green or deep blue at thin edges; plastic stays opaque. Onyx and agate glow faintly brown with a waxy look.
+    - id: magnification
+      weight: 2
+      how: Examine a thin edge with a 10x loupe against a light.
+      real: Fine flow lines, dark mineral specks and tiny stretched bubbles.
+      fake: Very clean glass, or round bubbles and mould seams.
+    - id: hardness
+      weight: 1
+      how: On a hidden spot, try to mark it with a steel file or knife. This leaves a scratch.
+      real: Obsidian (about Mohs 5.5) is marked with some effort.
+      fake: Onyx and agate (Mohs 7) are not marked; plastic scratches very easily.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek next to a plastic bead.
+      real: Feels cool like glass.
+      fake: Plastic warms almost immediately.
+    - id: weight
+      weight: 1
+      how: Compare with plastic and with an onyx bead of the same size.
+      real: Slightly lighter than onyx (specific gravity about 2.35 to 2.6) and much heavier than plastic.
+      fake: Plastic feels light.
+    - id: shape
+      weight: 1
+      how: Look at any broken or raw surfaces.
+      real: Shell-like conchoidal fractures and a dull weathered rind on raw pieces.
+      fake: Seams, moulded shapes or perfectly uniform "raw" chunks.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: The two best-known protection stones in tradition. Tourmaline is harder, so store them apart.
+    - slug: rose-quartz
+      why: Tradition uses rose quartz to soften black obsidian's intensity. Keep them separated to avoid scratches.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition. Smoky quartz scratches obsidian, so wrap them separately.
+    - slug: selenite
+      why: Selenite cleanses obsidian without water and is soft enough not to scratch it.
+    - slug: hematite
+      why: Tradition pairs both for grounding. Hematite must stay dry, so cleanse them separately.
+  avoid: []
+
+price:
+  tier: budget
+  note: Black obsidian tumbled stones, spheres and bracelets are inexpensive. Large polished mirrors and carvings cost more. Very cheap bead bracelets are often glass.
+
+names:
+  es: Obsidiana negra
+
+sources:
+  - https://www.mindat.org/min-8519.html
+  - https://geology.com/rocks/obsidian.shtml
+  - https://www.gemsociety.org/article/obsidian-jewelry-and-gemstone-information/
+  - https://www.gemsociety.org/article/natural-glass/

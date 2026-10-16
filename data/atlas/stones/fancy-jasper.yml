@@ -1,0 +1,116 @@
+slug: fancy-jasper
+name: Fancy Jasper
+aka: [multicolour jasper, indian jasper]
+kind: rock
+species: null
+family: jasper
+formula: null
+crystal_system: null
+mohs: [6.5, 7]
+colors: [purple, green, red, cream, brown, yellow]
+origins: [India]
+summary: >-
+  A trade name for multicoloured jasper from India, mottled in purple, olive
+  green, red, cream and brown. Like all jasper it is an opaque microcrystalline
+  quartz rock with natural mineral colours, so it is tough, sun-stable and fine
+  in water. Skip salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Jasper is dense microcrystalline quartz that does not dissolve, and its mineral colours do not wash out, so rinsing or a short soak is fine.
+  salt:
+    verdict: avoid
+    reason: Jasper is slightly porous along grain boundaries and cracks. Salt crystallises there as brine dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: Its colours come from iron and manganese oxides and green silicate minerals, which do not fade in sunlight.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition calls it soothing.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it is tough enough for daily bracelets, malas and rings.
+  toxicity:
+    level: none
+    reason: Quartz with iron and manganese oxides is inert and safe to handle. Cutting it produces quartz dust, so lapidaries work it wet.
+  elixir: indirect
+
+tradition:
+  chakras: [root, solar_plexus, heart]
+  elements: [earth]
+  planets: []
+  vedic_planet: null
+  zodiac: [virgo]
+  intentions: [grounding, peace-calm, concentration, emotional-balance, anxiety]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Salt crystallises in the fine pores and cracks of jasper as brine dries, dulling the polish. Use plain water, smoke or sound.
+    basis: physical
+  - who: Buyers comparing "fancy jasper" between sellers
+    why: It is a loose trade name, and other multicoloured jaspers and dyed stones are sold under it. Very bright purple or pink should be checked for dye.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People wanting a fast-acting, energising stone
+    why: Tradition presents fancy jasper as a gentle, nurturing stone for calm and steadiness rather than stimulation.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Other multicoloured jaspers sold under the name
+    - Dyed stone in bright purple or pink
+    - Resin or reconstituted beads
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the pattern in daylight.
+      real: Soft, muted purple, olive green, rust red and cream in irregular patches and spots.
+      fake: Bright, saturated purple or pink, or colour concentrated in cracks, suggests dye.
+    - id: hardness
+      weight: 3
+      how: Try to mark a hidden spot or drill hole with a steel knife.
+      real: Steel does not mark jasper.
+      fake: Resin, howlite and magnesite scratch easily.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab means dye.
+    - id: magnification
+      weight: 2
+      how: Examine the surface with a 10x loupe.
+      real: Fine-grained opaque stone with natural, irregular colour boundaries and occasional quartz veins.
+      fake: Resin bubbles, or the even chips and binder of reconstituted stone.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Resin warms quickly.
+
+pairs:
+  good:
+    - slug: red-jasper
+      why: Another jasper with identical care, paired in tradition for grounding and stamina.
+    - slug: amethyst
+      why: Tradition pairs fancy jasper's purple zones with amethyst for calm. Both are quartz.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition with no care conflicts.
+    - slug: moss-agate
+      why: Two earthy, nurturing stones in tradition.
+  avoid: []
+
+price:
+  tier: budget
+  note: Fancy jasper is one of the cheaper jaspers, sold widely as tumbled stones, beads and malas. Large polished pieces with strong purple zones cost a little more.
+
+sources:
+  - https://www.mindat.org/min-2082.html
+  - https://www.gemsociety.org/article/jasper-gem-information/
+  - https://www.minerals.net/gemstone/jasper_gemstone.aspx

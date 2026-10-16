@@ -1,0 +1,119 @@
+slug: grape-agate
+name: Grape Agate
+aka: [grape chalcedony, manakarra, botryoidal amethyst, grape amethyst]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [purple, lavender, grey, green, white]
+origins: [Indonesia]
+summary: >-
+  Clusters of small purple spheres from West Sulawesi, Indonesia, sold since
+  about 2016. Despite the name it is not agate: studies show radially grown
+  quartz, amethyst when purple. Like amethyst, the purple fades in sun, and the
+  clusters are fragile.
+
+safety:
+  water:
+    verdict: brief
+    reason: Quartz does not dissolve, but clusters often hold clay in their crevices and some are glued or repaired. A quick rinse is fine; long soaks loosen dirt and glue.
+  salt:
+    verdict: avoid
+    reason: Salt crystals lodge between the spheres and are almost impossible to rinse out, and brine attacks any glue holding a cluster together.
+  sun:
+    verdict: limit
+    reason: Purple grape agate is coloured like amethyst, and that colour fades with long sun exposure. Dyed pieces fade faster.
+  sleep:
+    verdict: ok
+    reason: Non-toxic. Clusters are fragile and small spheres can snap off, so keep them on a shelf rather than in the bed.
+  wear:
+    verdict: care
+    reason: The quartz is hard (Mohs 7), but the spheres join at narrow necks and break off with knocks. Pendants fare better than rings or bracelets.
+  toxicity:
+    level: none
+    reason: Quartz is inert. Broken spheres are small enough for children and pets to swallow.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air, water]
+  planets: [jupiter, neptune]
+  vedic_planet: null
+  zodiac: [aquarius, pisces]
+  intentions: [intuition, spiritual-growth, peace-calm, sleep, clarity]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: People who display crystals on a sunny windowsill
+    why: Like amethyst, the purple fades with long exposure to sunlight. Display grape agate in bright but indirect light.
+    basis: physical
+  - who: Households with small children or pets
+    why: Spheres break off clusters easily and are a choking hazard.
+    basis: physical
+  - who: Anyone cleansing with salt or long soaks
+    why: Salt and dirt lodge between the spheres, and soaking can loosen glue in repaired clusters. Use sound, smoke or a soft brush.
+    basis: physical
+  - who: Buyers who want natural colour
+    why: Mindat notes that poorly coloured grey material is sometimes dyed violet. Very saturated, even purple at a low price deserves an acetone check.
+    basis: physical
+  - who: People looking for an energising stone
+    why: Tradition places grape agate with amethyst as a calming, dreamy stone for meditation and sleep rather than drive.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Grey or pale clusters dyed purple
+    - Broken spheres glued back into clusters
+    - Purple glass or resin bead clusters
+  tests:
+    - id: acetone
+      weight: 2
+      how: Touch a cotton swab with nail-polish remover to the base of a cluster, where dye would collect.
+      real: The swab stays clean.
+      fake: Purple on the swab means the cluster has been dyed.
+    - id: color
+      weight: 2
+      how: Look at colour across the cluster and inside crevices.
+      real: Colour varies from sphere to sphere, often with greyer spheres, green ones or a pale base.
+      fake: Every sphere the same intense purple, with darker colour pooled in the gaps, suggests dye.
+    - id: magnification
+      weight: 3
+      how: Examine the sphere surfaces and joins with a 10x loupe.
+      real: A fine sparkly druzy crust on the spheres and natural, irregular joins into the matrix.
+      fake: Smooth glassy spheres with bubbles, or shiny glue lines at the joins.
+    - id: shape
+      weight: 2
+      how: Look at the cluster as a whole.
+      real: Spheres of uneven size, from a few millimetres to about two centimetres, packed irregularly.
+      fake: Perfectly uniform spheres in a neat arrangement look manufactured.
+    - id: hardness
+      weight: 1
+      how: Gently try to mark the base with a steel knife. Do not scratch the spheres.
+      real: Steel does not mark quartz.
+      fake: Resin and plastic are scratched easily.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Purple grape agate is essentially botryoidal amethyst, so the two share tradition and the same sun care.
+    - slug: selenite
+      why: Selenite cleanses without water, salt or sun, all of which grape agate clusters should avoid. Keep the selenite dry.
+    - slug: lepidolite
+      why: Two calming purple stones paired in tradition for rest and anxiety.
+    - slug: clear-quartz
+      why: Tradition uses clear quartz to amplify grape agate's meditative energy.
+  avoid: []
+
+price:
+  tier: mid
+  note: Small clusters are affordable. Deep purple, glossy clusters and rare green-and-purple pieces cost much more, and good material has become scarcer as mining has slowed.
+
+sources:
+  - https://www.mindat.org/min-51479.html
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/chalcedony-jewelry-and-gemstone-information/

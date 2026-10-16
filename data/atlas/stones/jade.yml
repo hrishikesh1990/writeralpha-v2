@@ -1,0 +1,138 @@
+slug: jade
+name: Jade
+aka: [jadeite, nephrite, fei cui]
+kind: rock
+species: Jadeite or nephrite (tremolite-actinolite)
+family: pyroxene and amphibole
+formula: NaAlSi2O6 (jadeite); Ca2(Mg,Fe)5Si8O22(OH)2 (nephrite)
+crystal_system: monoclinic
+mohs: [6, 7]
+colors: [green, white, lavender, black, yellow, red]
+origins: [Myanmar, Guatemala, China, Canada, New Zealand, Russia]
+summary: >-
+  The name for two different tough rocks, jadeite and nephrite. Untreated jade
+  is durable and fine in water, but much market jade is bleached and
+  polymer-filled (B jade), dyed (C jade) or a different stone altogether, so a
+  lab report matters for valuable pieces.
+
+safety:
+  water:
+    verdict: safe
+    reason: Untreated jadeite and nephrite are tough and non-porous enough to wash in lukewarm soapy water. Avoid hot water, steam and cleaners on treated or waxed jade.
+  salt:
+    verdict: avoid
+    reason: Untreated jade tolerates salt, but polymer-filled and dyed jade, which is very common, can be damaged, and salt residue lodges in carvings. Use plain water.
+  sun:
+    verdict: limit
+    reason: Natural jade colour is stable, but dyed jade fades and the resin in B jade can yellow or craze with long sun and heat.
+  sleep:
+    verdict: ok
+    reason: Physically safe. Many people wear jade continuously by tradition, including at night.
+  wear:
+    verdict: daily
+    reason: Jade's interlocking crystal texture makes it exceptionally tough. Bangles can still crack if struck against a hard edge.
+  toxicity:
+    level: none
+    reason: Jadeite and nephrite are non-toxic silicates. Dyed or polymer-filled pieces should not go in drinking water.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [earth]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [taurus, libra, virgo]
+  intentions: [wealth, protection, emotional-balance, luck, peace-calm, healing, friendship]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Buyers paying jadeite prices
+    why: Dyed quartzite, serpentine, glass and bleached, polymer-filled B jade are routinely sold as natural jade. Only a lab report confirms untreated "A" jade.
+    basis: physical
+  - who: Owners who use ultrasonic cleaners, steam or hot water
+    why: Heat and vibration can damage the polymer in B jade, strip wax and loosen dye. Use lukewarm water and a soft cloth.
+    basis: physical
+  - who: People choosing a jade bangle
+    why: A solid bangle cannot be resized and can crack if knocked against a counter or doorframe. Choose a size you can remove with soap rather than force.
+    basis: physical
+  - who: Owners of dyed or treated jade who leave it in the sun
+    why: Dye fades and resin can yellow with long sunlight and heat. Store it out of direct sun.
+    basis: physical
+  - who: People who follow Chinese jade customs
+    why: Tradition says a jade piece protects its wearer and that a cracked piece has absorbed misfortune. Many also say jade should be received as a gift. These are customs, not physical effects.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed quartzite ("Malaysian jade")
+    - Serpentine ("new jade") and aventurine
+    - Glass
+    - Bleached and polymer-impregnated B jade, or dyed C jade, sold as untreated
+    - Dyed dolomite or marble ("mountain jade")
+  tests:
+    - id: certificate
+      weight: 3
+      how: For valuable jadeite, ask for a lab report that states the treatment type (A, B or C) and check it with the lab.
+      real: Report states natural jadeite with no polymer or dye (type A).
+      fake: Report states polymer impregnation (B), dye (C) or a different mineral.
+    - id: magnification
+      weight: 2
+      how: Look into the surface and any cracks with a 10x loupe and strong light.
+      real: Fine granular or fibrous texture; colour sits in natural patches.
+      fake: Colour concentrated in cracks and between grains (dye), round bubbles (glass) or a web of etched channels (B jade).
+    - id: weight
+      weight: 2
+      how: Compare it in your hand with a quartz piece of the same size.
+      real: Jadeite is noticeably heavy (specific gravity about 3.3); nephrite about 3.0.
+      fake: Quartzite and serpentine (about 2.6) feel lighter.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch it with a steel knife. This can mark a soft fake.
+      real: Jade resists a steel knife.
+      fake: Serpentine and marble scratch easily with steel.
+    - id: acetone
+      weight: 1
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Green colour on the swab means dyed material. Deep dye may not show, so a clean swab is not proof.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cool and stays cool for a while.
+      fake: Plastic and resin feel warm quickly.
+    - id: price
+      weight: 1
+      how: Compare price with colour, translucency and size.
+      real: Fine translucent green jadeite is extremely expensive; nephrite and opaque jadeite are moderate.
+      fake: Bright, glassy "imperial jade" at a bargain price is almost certainly treated or a different stone.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: A traditional heart-chakra pairing for love and emotional balance.
+    - slug: aventurine
+      why: Green luck and prosperity stones in tradition, often worn together.
+    - slug: moss-agate
+      why: A green, growth-themed pairing in tradition.
+    - slug: citrine
+      why: Tradition pairs jade's prosperity with citrine's abundance.
+    - slug: clear-quartz
+      why: Tradition says quartz amplifies jade's harmonising energy.
+    - slug: emerald
+      why: Two green heart stones associated with prosperity and love in tradition.
+  avoid: []
+
+price:
+  tier: mid
+  note: Nephrite and opaque jadeite are affordable to moderate. Translucent, intensely green untreated jadeite is among the most expensive gem materials.
+
+names:
+  hi: Yashab (यशब)
+  es: Jade
+
+sources:
+  - https://www.mindat.org/min-10403.html
+  - https://www.mindat.org/min-2062.html
+  - https://www.gia.edu/jade
+  - https://www.gemsociety.org/article/jadeite-jewelry-and-gemstone-information/

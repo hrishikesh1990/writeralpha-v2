@@ -1,0 +1,116 @@
+slug: cherry-quartz
+name: Cherry Quartz
+aka: [cherry quartz glass, red quartz]
+kind: glass
+species: null
+family: glass
+formula: null
+crystal_system: null
+mohs: [5, 6]
+colors: [red, cherry red, pink]
+origins: [China]
+summary: >-
+  Despite the name, cherry quartz sold today is man-made glass with red
+  streaks, not natural quartz. It is safe in water and stable in sunlight, but
+  softer than real quartz, so it scratches more easily.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve, so rinsing is fine. Avoid hot water or sudden temperature changes, which can crack glass.
+  salt:
+    verdict: safe
+    reason: Salt and salt water do not attack glass. Rinse afterwards; dry salt rubbed on the surface can dull a high polish over time.
+  sun:
+    verdict: safe
+    reason: The colour is fused into the glass and does not fade. A clear sphere can still focus sunlight, so keep spheres off sunny sills.
+  sleep:
+    verdict: ok
+    reason: Inert and smooth, so it is safe beside the bed or under a pillow.
+  wear:
+    verdict: care
+    reason: At about Mohs 5 to 6 glass is scratched by ordinary dust and grit (which is quartz, Mohs 7). Store it apart from harder stones.
+  toxicity:
+    level: none
+    reason: Finished glass is non-toxic to handle. The exact recipe is not disclosed, which is why an indirect elixir is recommended.
+  elixir: indirect
+
+tradition:
+  chakras: [heart, root]
+  elements: [fire]
+  planets: [venus, mars]
+  vedic_planet: null
+  zodiac: [aries, scorpio]
+  intentions: [love, energy, confidence, motivation]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who believes they are buying natural quartz
+    why: Cherry quartz is glass. It is fine to enjoy, but it should be sold and priced as glass, not as a rare natural stone.
+    basis: physical
+  - who: People who keep stones loose in a bag or pocket
+    why: Glass is softer than quartz and picks up scratches from harder stones and grit.
+    basis: physical
+  - who: People planning to drink water infused with it
+    why: The glass recipe is unknown and some art glass contains lead or other additives. Use the indirect method with the stone in a sealed container.
+    basis: physical
+  - who: People who expect the effects tradition gives natural stones
+    why: Many crystal practitioners hold that man-made glass does not carry the properties of natural minerals; others use it for its colour symbolism.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Cherry quartz itself is glass, sold as natural "cherry" or "strawberry" quartz
+    - Dyed red crackle quartz
+    - Red resin or plastic beads
+    - Natural strawberry quartz (sometimes labelled cherry quartz)
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe.
+      real: As sold, cherry quartz shows smooth red streaks and swirls in clear glass, often with small round bubbles. That is what it is meant to be.
+      fake: Individual red needles or flakes inside the stone mean natural strawberry quartz; colour lines in cracks mean dyed crackle quartz.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch it with a steel knife or a known quartz point.
+      real: Cherry quartz glass is scratched by quartz and marked by hard steel.
+      fake: Natural quartz resists steel and is not scratched by another quartz.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek and compare with a real quartz stone.
+      real: Glass feels slightly less cold than quartz and warms faster.
+      fake: Natural quartz stays cold longer; plastic feels warm at once.
+    - id: weight
+      weight: 1
+      how: Compare it in your palm with quartz of the same size.
+      real: Glass feels similar or slightly heavier, depending on the recipe.
+      fake: Resin and plastic feel noticeably light.
+    - id: price
+      weight: 1
+      how: Compare the price with the size and colour.
+      real: Glass cherry quartz is very cheap, even in large polished pieces.
+      fake: A high price for "rare natural cherry quartz" is a red flag; you are likely paying a quartz price for glass.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: A popular colour pairing for love and heart work.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies the intention set with any stone, including glass.
+    - slug: carnelian
+      why: Both are warm red-orange stones used for energy and motivation.
+    - slug: strawberry-quartz
+      why: The natural stone cherry quartz imitates; owning both makes the difference easy to see.
+  avoid: []
+
+price:
+  tier: budget
+  note: Glass cherry quartz is inexpensive in beads, tumbles, hearts and spheres. Higher prices usually reflect the setting or the labour, not the material.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-11402.html
+  - https://www.mindat.org/min-11401.html
+  - https://www.gemsociety.org/article/glass/

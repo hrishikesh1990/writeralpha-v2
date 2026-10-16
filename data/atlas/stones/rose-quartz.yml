@@ -1,0 +1,122 @@
+slug: rose-quartz
+name: Rose Quartz
+aka: [pink quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [pink, rose, pale pink]
+origins: [Brazil, Madagascar, South Africa, India, Mozambique]
+summary: >-
+  The pink variety of quartz, coloured by microscopic fibres of a mineral close
+  to dumortierite. It is hard and safe in water, but the pink fades in sunlight,
+  so keep it out of sunny windows.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and insoluble, so rinsing or a short soak does no harm. Hand-wash rather than using ultrasonic cleaners, as most pieces contain fractures.
+  salt:
+    verdict: safe
+    reason: Salt does not attack quartz. Rinse the salt off afterwards and keep salt water away from silver or glued settings.
+  sun:
+    verdict: avoid
+    reason: Rose quartz is sensitive to ultraviolet light and can lose colour noticeably in sunlight. Store it in the dark and display it away from windows.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth when tumbled, so it is safe under a pillow or on a nightstand.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it resists scratches. Many pieces are cloudy and fractured, so hard knocks can crack beads and cabochons.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with trace fibrous inclusions; non-toxic to handle.
+  elixir: direct
+
+tradition:
+  chakras: [heart]
+  elements: [water]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [taurus, libra]
+  intentions: [love, self-love, emotional-balance, peace-calm, grief, friendship]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who displays crystals on a sunny windowsill or car dashboard
+    why: Ultraviolet light fades the pink, sometimes within months. The change is permanent unless the stone is professionally irradiated.
+    basis: physical
+  - who: People who cleanse crystals by charging them in the sun
+    why: Sun charging is the one common cleansing method that damages rose quartz. Use moonlight, smoke or a water rinse instead.
+    basis: physical
+  - who: People buying very bright, evenly pink beads at low prices
+    why: Much cheap "rose quartz" is dyed quartz or pink glass, and dyed stones can bleed colour in water.
+    basis: physical
+  - who: People seeking a stone for drive or motivation
+    why: Tradition treats rose quartz as a soft, soothing stone. For energy and drive, tradition points to carnelian or tiger eye.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Pink glass
+    - Dyed quartz or dyed quartzite
+    - Pink resin or plastic beads
+    - Pink calcite sold as rose quartz
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the stone against white paper in daylight.
+      real: Soft, slightly hazy pink, often a little cloudy, with uneven depth of colour.
+      fake: Vivid candy pink, perfectly even, or with colour concentrated in cracks (a sign of dye).
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe.
+      real: Cloudy texture, small fractures and a milky haze; no round bubbles.
+      fake: Round bubbles or swirl lines mean glass; pink lines in cracks mean dye.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Pink colour on the swab means the stone is dyed.
+    - id: hardness
+      weight: 2
+      how: On a tumbled piece, try to scratch a glass bottle. Do not test faceted or polished jewellery.
+      real: Rose quartz (Mohs 7) scratches glass.
+      fake: Calcite (Mohs 3) cannot scratch glass; glass barely marks it.
+    - id: temperature
+      weight: 1
+      how: Hold the stone to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Glass and resin warm quickly.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: A classic calming pair for emotional healing and sleep; both are quartz and safe in water.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies rose quartz's gentle energy; same care rules.
+    - slug: rhodonite
+      why: Both are pink heart stones in tradition, paired for emotional healing.
+    - slug: moonstone
+      why: A traditional pairing for love and emotional balance.
+    - slug: selenite
+      why: Selenite cleanses rose quartz without sunlight, which protects its colour.
+    - slug: smoky-quartz
+      why: Tradition pairs rose quartz's softness with smoky quartz's grounding.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones, beads and rough are inexpensive. Translucent, well-coloured spheres and rare crystallised rose quartz from Brazil cost much more.
+
+names:
+  es: Cuarzo rosa
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/rose-quartz/
+  - https://geology.com/gemstones/rose-quartz/
+  - https://www.minerals.net/gemstone/rose-quartz

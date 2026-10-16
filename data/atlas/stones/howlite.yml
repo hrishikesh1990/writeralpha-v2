@@ -1,0 +1,130 @@
+slug: howlite
+name: Howlite
+aka: [white howlite, turquenite]
+kind: mineral
+species: Howlite
+family: borosilicate
+formula: Ca2B5SiO9(OH)5
+crystal_system: monoclinic
+mohs: [3, 3.5]
+colors: [white, gray, cream]
+origins: [United States, Canada]
+summary: >-
+  A soft, porous white borosilicate with grey or black veins. It soaks up dye
+  so readily that it is the most common imitation of turquoise and lapis.
+  Rinse it only briefly, keep salt and cosmetics off it, and expect much
+  "howlite" today to be magnesite.
+
+safety:
+  water:
+    verdict: brief
+    reason: Howlite is porous at Mohs 3 to 3.5. A quick rinse is fine, but soaking lets water and dissolved minerals into the pores and can loosen dye in coloured pieces.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the soft surface and brine soaks into the pores. Cleanse it with sound, smoke or moonlight.
+  sun:
+    verdict: limit
+    reason: Natural white howlite is stable, but dyed blue, green or pink howlite fades in sunlight. Keep coloured pieces out of direct sun.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and a traditional bedside stone for calm.
+  wear:
+    verdict: care
+    reason: Soft and porous, so it scratches easily and absorbs skin oils, lotion and perfume, which stain it. Beads and pendants are fine with care.
+  toxicity:
+    level: none
+    reason: Howlite is non-toxic to handle. Dyed pieces can stain skin when wet.
+  elixir: indirect
+
+tradition:
+  chakras: [crown]
+  elements: [air]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [gemini, virgo]
+  intentions: [peace-calm, sleep, anxiety, concentration, emotional-balance]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone buying "turquoise" or "lapis" at low prices
+    why: Howlite and magnesite are dyed blue to imitate turquoise and lapis lazuli. Dyed howlite is not dangerous, but it is a different, cheaper stone.
+    basis: physical
+  - who: People who wear howlite with lotion, perfume or sunscreen
+    why: The porous surface absorbs oils and cosmetics and discolours. Put jewellery on after skincare.
+    basis: physical
+  - who: Owners of dyed howlite who clean it with water or solvents
+    why: Water, alcohol and nail-polish remover pull dye out, which can stain skin and fabric and leave the stone patchy.
+    basis: physical
+  - who: People who want a durable ring stone
+    why: At Mohs 3 to 3.5 a key scratches it. It suits pendants and bracelets that are not knocked about.
+    basis: physical
+  - who: People seeking an energising stone
+    why: Tradition treats howlite as a quietening stone for sleep and patience. For drive, tradition points to carnelian or citrine.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Magnesite sold as howlite (now very common)
+    - White plastic or resin beads
+    - White glass or ceramic
+    - Dyed howlite sold as turquoise or lapis lazuli (the reverse fake)
+  tests:
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch it with a piece of fluorite or a copper coin edge and compare with a steel knife.
+      real: Howlite (Mohs 3 to 3.5) is scratched by fluorite and easily by steel.
+      fake: Magnesite is usually a little harder (up to about 4.5) and resists fluorite; glass resists steel.
+    - id: color
+      weight: 2
+      how: Look closely at the veins.
+      real: Dark grey to black web-like veins in a chalky white body.
+      fake: Light grey veins are more typical of magnesite; perfectly repeating patterns suggest plastic.
+    - id: uv
+      weight: 1
+      how: Shine a UV torch on it in a dark room.
+      real: Some howlite glows yellowish or orange.
+      fake: Many imitations stay dark; not all howlite glows, so treat this as a hint.
+    - id: acetone
+      weight: 2
+      how: For coloured pieces, rub a hidden spot with a cotton swab and nail-polish remover.
+      real: Natural white howlite leaves the swab clean.
+      fake: Colour on the swab means dyed howlite or magnesite, often sold as turquoise.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cool at first.
+      fake: Plastic and resin feel warm at once.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Howlite is cheap even in large pieces.
+      fake: Turquoise priced like howlite is usually dyed howlite or magnesite.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: A traditional sleep and calm pairing for the bedside.
+    - slug: lepidolite
+      why: Both are calming stones in tradition, combined for anxiety and rest.
+    - slug: selenite
+      why: White crown-chakra stones that both prefer dry cleansing.
+    - slug: rose-quartz
+      why: A gentle calming pair in tradition. Store apart, since quartz scratches howlite.
+    - slug: moonstone
+      why: Moon stones in tradition, used together for calm and intuition.
+    - slug: clear-quartz
+      why: Tradition says quartz amplifies howlite's calming energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: White howlite tumbled stones and beads are very inexpensive. Dyed howlite should cost about the same; it is not turquoise.
+
+names:
+  es: Howlita
+
+sources:
+  - https://www.mindat.org/min-1936.html
+  - https://www.gemsociety.org/article/howlite-jewelry-and-gemstone-information/
+  - https://www.mindat.org/article.php/5279/Howlite+Versus+Magnesite-+A+Case+Against+Healy-Feely+Turquoise%21

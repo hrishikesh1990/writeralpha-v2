@@ -1,0 +1,121 @@
+slug: red-tigers-eye
+name: Red Tiger's Eye
+aka: [bull's eye, red tiger eye, ox eye]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2 (with iron oxide fibres)
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [red, red-brown, mahogany]
+origins: [South Africa, Australia]
+summary: >-
+  Golden tiger eye that has usually been heated to turn its iron oxides red;
+  some is dyed. It is hard and fine with a quick rinse, but skip salt, heat and
+  long sun, which can fade dyed pieces.
+
+safety:
+  water:
+    verdict: brief
+    reason: The quartz is water-safe, but some red tiger's eye is dyed and can bleed in long soaks. Rinse quickly and dry well.
+  salt:
+    verdict: avoid
+    reason: The fibrous structure is slightly porous. Salt water can be drawn in, crystallise and dull the polish, and it lifts dye.
+  sun:
+    verdict: limit
+    reason: Heat-treated red is light-stable, but dyed red fades in sunlight. Avoid hot cars and heaters, which can alter the colour further.
+  sleep:
+    verdict: caution
+    reason: Physically safe on a nightstand. Tradition calls red tiger's eye an energising stone that can feel too stimulating at night.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles everyday wear. Hard knocks can split it along the fibres.
+  toxicity:
+    level: low
+    reason: Polished stones are safe to handle. Like golden tiger eye it formed from crocidolite asbestos, so cut or sand it only wet with a mask, and avoid direct elixirs.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral]
+  elements: [fire]
+  planets: [mars, sun]
+  vedic_planet: null
+  zodiac: [aries, leo, scorpio]
+  intentions: [courage, energy, motivation, confidence, grounding, protection]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: People who cut, drill or sand raw tiger's eye
+    why: The stone formed from crocidolite asbestos fibres. Dust from dry working can contain fibres, so work it wet with a respirator.
+    basis: physical
+  - who: People who use salt water or long soaks to cleanse
+    why: Salt and soaking can dull the polish and pull dye out of dyed pieces.
+    basis: physical
+  - who: Buyers wanting a natural colour
+    why: Almost all red tiger's eye is heat-treated golden tiger eye, and some is dyed. Heat-treated colour is stable; dye is not.
+    basis: physical
+  - who: Light sleepers or people feeling restless
+    why: Tradition calls red tiger's eye a fiery, motivating stone. Keep it out of the bedroom if it seems to disturb rest.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed red tiger eye (stable heat-treated colour is the norm)
+    - Red fibre-optic glass
+    - Resin beads with printed stripes
+    - Red jasper or red aventurine sold as red tiger's eye
+  tests:
+    - id: light
+      weight: 3
+      how: Rotate the stone slowly under a single light.
+      real: A silky band of light rolls across the stone and light and dark zones swap as you turn it.
+      fake: Fixed stripes (print), or no chatoyancy at all (jasper).
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: The swab stays clean on heat-treated stones.
+      fake: Red colour on the swab means dye.
+    - id: magnification
+      weight: 2
+      how: Examine the stone and any drill holes with a 10x loupe.
+      real: Fine wavy fibres with natural variation in red-brown tone.
+      fake: Colour concentrated in cracks or drill holes (dye), or a honeycomb pattern (glass).
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Cool at first, warming slowly.
+      fake: Resin feels warm at once.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz stone of similar size.
+      real: Feels like quartz.
+      fake: Resin feels noticeably lighter.
+
+pairs:
+  good:
+    - slug: tiger-eye
+      why: The untreated golden form; used together for courage and grounding.
+    - slug: carnelian
+      why: Two warm, energising stones paired in tradition for motivation.
+    - slug: red-jasper
+      why: Both are root-chakra stones in tradition, used for stamina and grounding.
+    - slug: garnet
+      why: A traditional red pairing for vitality and courage.
+    - slug: smoky-quartz
+      why: Tradition says smoky quartz grounds red tiger's eye's fiery energy.
+  avoid:
+    - slug: amethyst
+      why: Opposed energies in tradition. Red tiger's eye is stimulating and amethyst calming, so they are not combined for rest.
+
+price:
+  tier: budget
+  note: Beads, tumbles and cabochons are inexpensive. Untreated natural red material is rare and seldom offered.
+
+names:
+  es: Ojo de tigre rojo
+
+sources:
+  - https://www.mindat.org/min-3960.html
+  - https://www.gemsociety.org/article/tigers-eye-gem-information/
+  - https://www.minerals.net/gemstone/tiger-s-eye

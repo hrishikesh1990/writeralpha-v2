@@ -1,0 +1,134 @@
+slug: hematite
+name: Hematite
+aka: [haematite, specular hematite, kidney ore]
+kind: mineral
+species: Hematite
+family: iron oxide
+formula: Fe2O3
+crystal_system: trigonal
+mohs: [5, 6.5]
+colors: [silver-grey, black, gray, red-brown]
+origins: [Brazil, Australia, China, Morocco, United Kingdom]
+summary: >-
+  A heavy iron oxide with a metallic shine and a red-brown streak. Natural
+  hematite is only weakly magnetic; most strongly magnetic "hematite" is
+  synthetic hematine. Keep it dry and away from salt, and handle it gently,
+  since it is brittle.
+
+safety:
+  water:
+    verdict: brief
+    reason: Natural hematite is already iron oxide, but water can leave red-brown stains and dull the polish, and imitation hematine and metal findings can rust. Rinse quickly and dry.
+  salt:
+    verdict: avoid
+    reason: Salt and brine draw moisture onto the surface, stain and corrode iron-bearing material and pit metal fittings. Use sound, smoke or moonlight.
+  sun:
+    verdict: safe
+    reason: Hematite is opaque and does not fade. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Physically safe. Strongly magnetic pieces are probably hematine; keep those away from pacemakers and similar devices at night as well.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 6.5 it is fairly hard but brittle. Beads and rings crack or shatter if dropped on tiles or knocked against hard surfaces.
+  toxicity:
+    level: none
+    reason: Iron oxide is non-toxic in polished form. Dust from cutting or grinding is an irritant, so work it wet and avoid breathing the dust.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth, fire]
+  planets: [mars, saturn]
+  vedic_planet: null
+  zodiac: [aries, aquarius, capricorn]
+  intentions: [grounding, protection, confidence, concentration, courage, anxiety]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People with pacemakers, defibrillators or other implanted devices
+    why: Natural hematite is only weakly magnetic, but much "hematite" jewellery is magnetised hematine. Keep strongly magnetic pieces away from implanted devices and ask your doctor about magnet distances.
+    basis: physical
+  - who: Anyone who cleanses stones in water or salt
+    why: Water and salt leave rusty stains on hematite and its imitations and corrode metal clasps. Wipe with a dry cloth instead.
+    basis: physical
+  - who: People who drop or knock their jewellery
+    why: Hematite is brittle and breaks with sharp edges when it hits a hard floor. Take bracelets off for sport and manual work.
+    basis: physical
+  - who: Households with small children
+    why: Hematite beads and tumbled stones are small, heavy and easy to swallow, and magnetic beads are especially dangerous if more than one is swallowed.
+    basis: physical
+  - who: People told in astrology that they have too much Mars
+    why: Hematite is traditionally linked to Mars. Some astrologers say adding a Mars stone to a chart with a strong or afflicted Mars can increase restlessness or anger.
+    basis: tradition
+  - who: People already feeling tired or heavy
+    why: Crystal tradition describes hematite as strongly grounding and says some people find it draining when their energy is already low.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Hematine or Hemalyke (synthetic magnetic ferrite)
+    - Magnetised imitation beads sold as "magnetic hematite"
+    - Metal-coated plastic or glass beads
+    - Coated hematine sold as natural rainbow hematite
+  tests:
+    - id: streak
+      weight: 3
+      how: Rub a hidden spot or broken edge firmly across the back of an unglazed ceramic tile. This leaves a small mark on the stone.
+      real: Red to reddish-brown streak, the classic sign of hematite.
+      fake: Hematine leaves a black or dark grey streak; plastic leaves none.
+    - id: magnet
+      weight: 3
+      how: Bring a fridge magnet or small neodymium magnet close to the stone.
+      real: Natural hematite is not attracted by a fridge magnet, and only weakly by a strong magnet.
+      fake: Beads that snap to a fridge magnet, or to each other, are hematine.
+    - id: weight
+      weight: 2
+      how: Weigh the piece in your hand against glass or quartz of the same size.
+      real: Very heavy for its size (specific gravity about 5.3).
+      fake: Plastic and coated glass feel much lighter.
+    - id: shape
+      weight: 1
+      how: Compare several beads or pieces in a strand.
+      real: Natural pieces vary slightly and may show growth texture.
+      fake: Perfectly identical moulded shapes and complex pendants are typical of hematine.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cold, like metal, and warms slowly.
+      fake: Plastic feels warm almost at once.
+    - id: price
+      weight: 1
+      how: Compare the price with what is promised.
+      real: Natural hematite is inexpensive, and sellers who know usually say "natural, non-magnetic".
+      fake: Cheap strongly magnetic jewellery labelled "hematite" is almost always hematine.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: Two grounding protection stones in tradition. Both are best cleansed without salt.
+    - slug: smoky-quartz
+      why: A traditional root-chakra pairing for grounding and calm.
+    - slug: red-jasper
+      why: Iron-rich red jasper pairs with hematite in tradition for stamina and stability.
+    - slug: clear-quartz
+      why: Tradition balances hematite's heaviness with quartz's clarity.
+    - slug: tiger-eye
+      why: Paired in tradition for focus, confidence and protection.
+    - slug: pyrite
+      why: Both are iron minerals kept dry and paired in tradition for willpower and protection.
+  avoid: []
+
+price:
+  tier: budget
+  note: Natural hematite tumbled stones and beads are inexpensive; hematine imitations are cheaper still. Fine specular or kidney-ore specimens cost more.
+
+names:
+  es: Hematites
+
+sources:
+  - https://www.mindat.org/min-1856.html
+  - https://geology.com/minerals/hematite.shtml
+  - https://www.gemsociety.org/article/hematite-jewelry-and-gemstone-information/
+  - https://www.mindat.org/min-35948.html

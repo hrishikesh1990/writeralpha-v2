@@ -1,0 +1,142 @@
+slug: opal
+name: Opal
+aka: [precious opal, fire opal, ethiopian opal, australian opal, opal doublet, opal triplet]
+kind: mineraloid
+species: Opal
+family: silica
+formula: SiO2·nH2O
+crystal_system: amorphous
+mohs: [5.5, 6.5]
+colors: [white, black, multicolor, orange, colorless, blue]
+origins: [Australia, Ethiopia, Mexico, Brazil, United States]
+summary: >-
+  Hydrated silica holding about 3 to 21 percent water, with precious opal showing
+  flashes of colour. It is brittle and heat-sensitive: sudden temperature
+  changes, strong sun and dryness can make it craze. Doublets and triplets are
+  glued, so never soak them.
+
+safety:
+  water:
+    verdict: brief
+    reason: Solid opal tolerates a quick wash in room-temperature water. Never soak doublets or triplets, whose glue fails, or Ethiopian hydrophane opal, which absorbs water and dirt.
+  salt:
+    verdict: avoid
+    reason: Salt water draws into hydrophane opal and attacks the glue in doublets and triplets, and drying salt can stress the surface. Never use salt.
+  sun:
+    verdict: avoid
+    reason: Opal contains water. Heat from strong sun, hot lamps or a car dashboard can dry it out and cause crazing, a network of fine cracks that cannot be repaired.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand. Its brittleness means it is better not under a pillow, where it can be pressed or dropped.
+  wear:
+    verdict: care
+    reason: At Mohs 5.5 to 6.5 and brittle, opal scratches and chips. Rings need protective settings and should come off for chores, gym, swimming and hand washing.
+  toxicity:
+    level: none
+    reason: Opal is hydrated silica and safe to handle. Some opals glow green under UV light from trace uranium, but at levels far too low to matter.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, heart, sacral]
+  elements: [water, fire]
+  planets: [venus, neptune]
+  vedic_planet: shukra
+  zodiac: [libra, scorpio, pisces, cancer]
+  intentions: [creativity, love, intuition, emotional-balance, transformation]
+  energy: balancing
+  birth_months:
+    modern: [october]
+    traditional: [october]
+
+cautions:
+  - who: Owners of opal doublets and triplets
+    why: These are thin slices of opal glued to a backing, sometimes with a quartz or glass cap. Soaking, steam, ultrasonic cleaners and heat loosen the glue and let water in, which greys the stone.
+    basis: physical
+  - who: People who wear opal rings for daily tasks
+    why: Opal is brittle and softer than quartz dust. Knocks crack it and grit scratches it. Remove it for cleaning, gardening, gym and washing up.
+    basis: physical
+  - who: Owners of Ethiopian (Welo) opal
+    why: Much Ethiopian opal is hydrophane. It soaks up water, oils and lotions, can turn clear or lose its fire for a while, and may stain permanently. Keep creams and soapy water away.
+    basis: physical
+  - who: Anyone storing or displaying opal in heat or very dry air
+    why: Sunny windows, car dashboards, spotlights and long spells in dry safes can dry opal out and make it craze. Keep it at steady room temperature.
+    basis: physical
+  - who: People who follow the old opal superstition
+    why: European folklore, popularised by an 1829 novel, called opal unlucky except for those born in October. It is a superstition with no basis, but some people still avoid opal as a gift.
+    basis: tradition
+  - who: Anyone advised by a Vedic astrologer against Venus stones
+    why: In Jyotish, opal is widely worn as a substitute for diamond, the gem of Shukra (Venus). Astrologers usually avoid Venus stones for charts where Venus is unfavourable, such as some Leo ascendants.
+    basis: tradition
+
+zodiac_cautions:
+  - sign: leo
+    why: Leo is ruled by the Sun, which Vedic astrology treats as hostile to Venus, so Venus stones such as diamond and opal are usually not advised for Leo ascendants.
+
+identify:
+  common_fakes:
+    - Lab-created (Gilson-type) opal sold as natural
+    - Doublets and triplets sold as solid opal
+    - Plastic or resin imitation opal
+    - Opalite glass sold as opal
+    - Smoke-treated or dyed Ethiopian opal sold as natural black opal
+  tests:
+    - id: magnification
+      weight: 3
+      how: Look at the colour patches with a 10x loupe from several angles.
+      real: Irregular patches of colour with soft edges that shift as you tilt the stone.
+      fake: A regular honeycomb, "chicken wire" or snakeskin pattern of tidy cells points to lab-grown opal. Uniform glitter means glass or plastic.
+    - id: shape
+      weight: 3
+      how: Look at the stone side-on, at its edge.
+      real: Solid opal shows the same material from top to bottom, often with natural host rock on the back.
+      fake: A straight join line between a coloured layer and a black backing (doublet), or a clear dome on top (triplet).
+    - id: light
+      weight: 2
+      how: View the stone against a dark background, then hold it in front of a bright light.
+      real: Precious opal shows patches of spectral colour in reflected light that move as you tilt it.
+      fake: Opalite glass shows a milky blue glow on dark backgrounds and turns orange against light, with no patches of colour.
+    - id: weight
+      weight: 1
+      how: Compare it in your hand with a glass bead of similar size.
+      real: Opal feels light (specific gravity about 1.9 to 2.3).
+      fake: Glass feels heavier. Plastic feels even lighter.
+    - id: uv
+      weight: 1
+      how: Shine a UV torch on the stone in a dark room.
+      real: Many natural opals glow white, blue or green under UV.
+      fake: Many plastics and glass behave differently, but fluorescence alone is not conclusive.
+    - id: certificate
+      weight: 2
+      how: For any opal costing more than a modest sum, ask for a report from a recognised gem lab.
+      real: The report states natural opal and whether it is solid, a doublet or a triplet, and any treatment.
+      fake: No report, or a report from the seller's own "lab".
+
+pairs:
+  good:
+    - slug: moonstone
+      why: Two play-of-light stones paired in tradition for intuition. Both are softer stones needing gentle care.
+    - slug: rose-quartz
+      why: A traditional love pairing. Rose quartz is harder, so store them separately.
+    - slug: amethyst
+      why: Tradition pairs opal and amethyst for intuition and spiritual work.
+    - slug: labradorite
+      why: Two colour-flash stones in tradition, both linked to creativity and intuition.
+    - slug: selenite
+      why: Selenite cleanses opal without water, salt or sun. Keep the selenite dry too.
+  avoid: []
+
+price:
+  tier: premium
+  note: Doublets, triplets and common Ethiopian opal can be affordable. Fine Australian black and boulder opal, and bright crystal opal, can cost hundreds to thousands of dollars per carat.
+
+names:
+  hi: Opal (ओपल)
+  es: Ópalo
+
+sources:
+  - https://www.mindat.org/min-3004.html
+  - https://www.gia.edu/opal
+  - https://www.gemsociety.org/article/opal-jewelry-and-gemstone-information/
+  - https://geology.com/gemstones/opal/
+  - https://www.minerals.net/gemstone/opal_gemstone.aspx
+  - https://thevediccrystals.com/blogs/white-sapphire/preferred-astrological-substitutes-for-diamond-heera-for-venus

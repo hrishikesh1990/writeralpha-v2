@@ -1,0 +1,117 @@
+slug: garden-quartz
+name: Garden Quartz
+aka: [lodolite, scenic quartz, shamanic dream quartz, inclusion quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [green, red, brown, cream, colorless]
+origins: [Brazil, Madagascar]
+summary: >-
+  Clear quartz containing "landscapes" of other minerals, mainly green chlorite
+  with feldspar, iron oxides and clays. The inclusions are sealed inside, so it
+  is as easy to care for as clear quartz: safe in water, salt and sun.
+
+safety:
+  water:
+    verdict: safe
+    reason: The quartz host is non-porous and the inclusions are sealed inside, so rinsing or soaking is fine. Avoid hot water on cracked pieces.
+  salt:
+    verdict: safe
+    reason: Salt cannot reach sealed inclusions or attack quartz. Rinse it off afterwards and keep salt away from settings.
+  sun:
+    verdict: safe
+    reason: Chlorite and iron oxide inclusions do not fade. Do not leave polished spheres in sunny windows, as they can focus sunlight like a lens.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe beside the bed or under a pillow when smooth.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it handles everyday wear. Heavily included stones are a little more prone to cracking on hard knocks.
+  toxicity:
+    level: none
+    reason: Quartz with sealed chlorite and feldspar inclusions; non-toxic to handle.
+  elixir: direct
+
+tradition:
+  chakras: [crown, heart, root]
+  elements: [earth]
+  planets: [saturn]
+  vedic_planet: null
+  zodiac: [pisces, virgo]
+  intentions: [grounding, healing, grief, transformation, spiritual-growth, peace-calm]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Anyone displaying polished spheres in a sunny window
+    why: A clear quartz sphere focuses sunlight and can scorch nearby surfaces or start a fire.
+    basis: physical
+  - who: People buying garden quartz online
+    why: Resin and glass spheres with added "inclusions" are sold under the name. Check for bubbles and the cold feel of quartz.
+    basis: physical
+  - who: People who wash crystals in very hot water
+    why: Pieces with many inclusions and healed cracks can split under sudden temperature changes.
+    basis: physical
+  - who: People seeking an energising stone
+    why: Tradition treats garden quartz as a slow, grounding stone for reflection and grief work rather than a stimulating one.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Resin spheres with embedded material
+    - Glass with artificial inclusions
+    - Moss agate sold as garden quartz (natural, but chalcedony rather than crystal quartz)
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Look into the stone with a 10x loupe or strong torch from several angles.
+      real: Three-dimensional mineral "scenery" of green, red and cream material, with depth, layered phantoms and natural irregularity.
+      fake: Flat, glittery or perfectly suspended particles, or a pattern that looks printed.
+    - id: bubbles
+      weight: 2
+      how: Scan clear areas with the loupe.
+      real: No perfectly round gas bubbles (natural fluid inclusions are irregular).
+      fake: Round or tear-drop bubbles indicate resin or glass.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Resin feels warm almost immediately.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz piece of similar size.
+      real: Specific gravity about 2.65; feels solid.
+      fake: Resin feels noticeably light.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch glass with an edge.
+      real: Quartz (Mohs 7) scratches glass.
+      fake: Resin cannot scratch glass and is easily marked by a steel pin.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Same quartz host; tradition uses clear quartz to amplify garden quartz.
+    - slug: moss-agate
+      why: Two "garden" stones linked with growth and nature in tradition.
+    - slug: smoky-quartz
+      why: A traditional grounding pairing; both are quartz and safe in water.
+    - slug: amethyst
+      why: Paired for meditation and reflection; same care rules.
+    - slug: tree-agate
+      why: Another nature-themed stone traditionally used for grounding and growth.
+  avoid: []
+
+price:
+  tier: budget
+  note: Small tumbles and pendants are affordable. Clear spheres with vivid, well-spaced landscapes from Brazil can cost much more.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/quartz-jewelry-and-gemstone-information/
+  - https://geology.com/minerals/quartz.shtml

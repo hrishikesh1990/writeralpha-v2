@@ -1,0 +1,130 @@
+slug: rainbow-hematite
+name: Rainbow Hematite
+aka: [titanium hematite, rainbow hematine, iridescent hematite]
+kind: treated
+species: Hematite or hematine with a titanium-based coating
+family: iron oxide
+formula: Fe2O3
+crystal_system: null
+mohs: [5.5, 6.5]
+colors: [rainbow, purple, blue, gold, gray]
+origins: [China, Brazil]
+summary: >-
+  Grey hematite or synthetic hematine coated with a thin titanium-based film
+  that gives a metallic rainbow sheen. The coating is the fragile part: no
+  salt, no abrasives, no polishing cloths and no ultrasonic cleaners. Natural
+  iridescent hematite specimens also exist but are rarer.
+
+safety:
+  water:
+    verdict: brief
+    reason: A quick rinse is fine, but soaking can lift or dull the thin coating and leave rust spots on hematine. Pat it dry straight away.
+  salt:
+    verdict: avoid
+    reason: Salt crystals scratch the coating and brine attacks the iron oxide underneath. Avoid salt, salt water and the sea.
+  sun:
+    verdict: safe
+    reason: The titanium film and the grey core do not fade in daylight.
+  sleep:
+    verdict: ok
+    reason: Physically safe. Strongly magnetic beads are hematine; keep them away from implanted devices.
+  wear:
+    verdict: care
+    reason: The core is fairly hard but brittle, and the colour film wears through at edges and contact points with friction, sweat, perfume and cleaners.
+  toxicity:
+    level: low
+    reason: Safe to wear. The coating is an inert titanium compound, but the core is often hematine of variable composition, so keep it out of drinks.
+  elixir: never
+
+tradition:
+  chakras: [root, solar_plexus, crown]
+  elements: [earth, air]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aries, aquarius]
+  intentions: [grounding, emotional-balance, protection, peace-calm, transformation]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who polishes or scrubs jewellery
+    why: Jewellery polishing cloths, toothpaste, baking soda and brushes remove the rainbow film and leave grey patches. Wipe with a soft, dry cloth only.
+    basis: physical
+  - who: People who use ultrasonic cleaners or jewellery dips
+    why: Cavitation and chemical dips can strip the thin coating. Clean with a barely damp cloth.
+    basis: physical
+  - who: People with pacemakers or other implanted devices
+    why: Many rainbow beads are magnetised hematine. Keep strongly magnetic pieces away from implanted medical devices.
+    basis: physical
+  - who: Buyers who want natural colour
+    why: Most rainbow hematite is coated in a factory. Natural iridescent hematite exists but looks patchy and is sold mainly as raw specimens.
+    basis: physical
+  - who: People who wear bracelets while swimming or exercising
+    why: Chlorine, salt and sweat speed up wear of the coating and rusting of hematine cores.
+    basis: physical
+  - who: People who expect it to behave like natural hematite in tradition
+    why: Some crystal practitioners regard coated stones as carrying altered energy. Tradition varies, and this is belief rather than a physical effect.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Coated hematine sold as natural rainbow hematite
+    - Coated glass or plastic beads
+    - Coated quartz sold as rainbow hematite
+  tests:
+    - id: magnet
+      weight: 2
+      how: Bring a fridge magnet close to the beads.
+      real: Coated natural hematite barely reacts to a fridge magnet.
+      fake: Beads that snap to the magnet are coated hematine, which is still sold as rainbow hematite.
+    - id: magnification
+      weight: 2
+      how: Look at drill holes and bead edges with a 10x loupe.
+      real: Grey metallic core showing where the film is thin or worn.
+      fake: Clear glass or coloured plastic showing at worn spots.
+    - id: weight
+      weight: 2
+      how: Compare a strand in your hand with glass beads of the same size.
+      real: Heavy for its size, like all hematite and hematine.
+      fake: Coated glass and plastic feel much lighter.
+    - id: streak
+      weight: 2
+      how: Rub inside a drill hole or on a broken bead against unglazed tile. This damages the coating at that spot.
+      real: Red-brown streak means natural hematite underneath.
+      fake: Black or grey streak means hematine; glass leaves no coloured streak.
+    - id: color
+      weight: 1
+      how: Compare the colour across many beads.
+      real: Natural iridescent hematite has irregular, patchy colour on a grey surface.
+      fake: Identical, even rainbow colour on every bead is a factory coating.
+    - id: price
+      weight: 1
+      how: Compare price with description.
+      real: Coated rainbow hematite is cheap and honestly labelled as coated or titanium-treated by good sellers.
+      fake: High prices for "natural rainbow hematite" beads are not justified.
+
+pairs:
+  good:
+    - slug: hematite
+      why: Uncoated hematite shares the same grounding tradition and the same no-salt care.
+    - slug: black-tourmaline
+      why: Tradition pairs the two for protection and grounding.
+    - slug: angel-aura-quartz
+      why: Both are titanium- or metal-coated stones that need the same gentle, abrasive-free care.
+    - slug: clear-quartz
+      why: Tradition says quartz amplifies the balancing energy attributed to rainbow hematite.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition for calm and stability.
+  avoid: []
+
+price:
+  tier: budget
+  note: Coated rainbow hematite beads and tumbled stones are inexpensive. Natural iridescent hematite specimens are scarcer and cost more.
+
+names:
+  es: Hematita arcoíris
+
+sources:
+  - https://www.mindat.org/min-1856.html
+  - https://www.mindat.org/min-35948.html
+  - https://www.firemountaingems.com/learn/categories/essential-resources/tools-supplies/H80Q-article.html

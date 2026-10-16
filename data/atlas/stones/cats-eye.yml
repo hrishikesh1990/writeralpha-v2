@@ -1,0 +1,153 @@
+slug: cats-eye
+name: Cat's Eye
+aka: [lehsunia, lahsuniya, vaidurya, chrysoberyl cat's eye, cymophane, cats eye stone]
+kind: variety
+species: Chrysoberyl
+family: chrysoberyl
+formula: BeAl2O4
+crystal_system: orthorhombic
+mohs: [8.5, 8.5]
+colors: [honey yellow, greenish yellow, golden brown, green, gray]
+origins: [Sri Lanka, India, Brazil, Madagascar, Tanzania]
+summary: >-
+  True cat's eye is chrysoberyl showing a sharp band of light from fine
+  parallel inclusions; it is the Vedic Lehsunia, the Ketu stone. It is very hard
+  and easy to care for. Much cheap "cat's eye" is fibre-optic glass.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chrysoberyl is hard, non-porous and insoluble, so washing in warm soapy water is fine. Glass imitations are also water-safe.
+  salt:
+    verdict: safe
+    reason: Salt cannot scratch or attack chrysoberyl at Mohs 8.5. Rinse afterwards and keep salt water off silver or panchdhatu settings, which can tarnish.
+  sun:
+    verdict: safe
+    reason: Chrysoberyl's colour is stable and does not fade in sunlight. Avoid sudden extreme heat, which can crack any gem.
+  sleep:
+    verdict: ok
+    reason: Physically inert and safe. Vedic tradition treats Lehsunia as a powerful stone and advises wearing it only after an astrologer's consultation.
+  wear:
+    verdict: daily
+    reason: At Mohs 8.5 with good toughness it is one of the most durable jewellery stones and suits rings worn every day.
+  toxicity:
+    level: none
+    reason: A very stable beryllium aluminium oxide that is safe to handle and wear. Beryllium-bearing dust from cutting should not be inhaled, so cutters work wet.
+  elixir: indirect
+
+tradition:
+  chakras: [root, third_eye, crown]
+  elements: [earth, fire]
+  planets: []
+  vedic_planet: ketu
+  zodiac: [taurus, gemini, libra, capricorn, aquarius]
+  intentions: [protection, luck, intuition, spiritual-growth, wealth]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Buyers of cheap "cat's eye" from markets or online
+    why: Most low-cost cat's eye beads and cabochons are fibre-optic glass, made by fusing thin glass fibres. It is not chrysoberyl and has no Vedic standing.
+    basis: physical
+  - who: Anyone buying Lehsunia for astrological use
+    why: Vedic practice requires natural chrysoberyl. Ask for a report from an independent gem laboratory, as quartz, apatite and glass cat's eyes are common substitutes.
+    basis: physical
+  - who: People who cut or re-polish chrysoberyl
+    why: The stone contains beryllium. Wet cutting with dust control is standard practice; wearing or handling finished stones carries no such risk.
+    basis: physical
+  - who: Anyone whose Vedic chart shows a weak or troubling Ketu
+    why: In Jyotish, cat's eye is Ketu's stone and is said to act quickly. Astrologers usually recommend it only after a chart reading, and often suggest a short trial period.
+    basis: tradition
+  - who: People wearing ruby or pearl
+    why: Vedic tradition treats the Sun and Moon as enemies of Ketu, so cat's eye is not usually combined with ruby, pearl or moonstone.
+    basis: tradition
+  - who: Pregnant people following Vedic gem guidance
+    why: Some Vedic gem guides advise against starting a Ketu stone during pregnancy. This is a traditional rule, not a medical finding.
+    basis: tradition
+zodiac_cautions:
+  - sign: leo
+    why: Leo is ruled by the Sun, which Vedic astrology treats as an enemy of Ketu, so Lehsunia is usually not advised for Leo ascendants.
+  - sign: cancer
+    why: Cancer is ruled by the Moon, traditionally hostile to Ketu, so many astrologers advise against cat's eye for Cancer ascendants.
+  - sign: sagittarius
+    why: Many Indian gem guides caution Jupiter-ruled ascendants against Ketu's stone unless Ketu is well placed in the chart.
+  - sign: pisces
+    why: Also Jupiter-ruled; Indian gem guides commonly list Pisces among the signs that should wear cat's eye only on an astrologer's advice.
+
+identify:
+  common_fakes:
+    - Fibre-optic glass cat's eye
+    - Quartz cat's eye
+    - Other chatoyant stones such as apatite, tourmaline or sillimanite
+    - Tiger eye sold as cat's eye
+    - Lab-grown cat's eye chrysoberyl
+  tests:
+    - id: refractive
+      weight: 3
+      how: Have a jeweller or gem lab take a refractive index reading.
+      real: Chrysoberyl reads about 1.74 to 1.75.
+      fake: Glass, quartz and tiger eye read about 1.54 to 1.57; apatite about 1.63.
+    - id: magnification
+      weight: 3
+      how: Look at the side of the stone with a 10x loupe.
+      real: Very fine silk-like inclusions and a smooth, solid body.
+      fake: A honeycomb or grid of tiny hexagons seen from the side means fibre-optic glass.
+    - id: light
+      weight: 2
+      how: Shine a torch from the side across the dome of the cabochon.
+      real: Fine chrysoberyl shows a "milk and honey" effect, with the half nearest the light turning milky while the other half stays golden.
+      fake: Glass shows a bright but flat band that does not split this way; quartz cat's eye is dull by comparison.
+    - id: weight
+      weight: 2
+      how: Compare it in your palm with a quartz or glass stone of the same size, or have its specific gravity measured.
+      real: Noticeably heavy for its size (specific gravity about 3.7).
+      fake: Glass and quartz (about 2.5 to 2.7) feel light by comparison.
+    - id: uv
+      weight: 1
+      how: View the stone under a short-wave UV lamp, if available.
+      real: Chrysoberyl is usually inert or weak.
+      fake: Fibre-optic glass often glows a strong chalky blue-white.
+    - id: certificate
+      weight: 2
+      how: Ask for a report from an independent gemmological laboratory for any stone sold as Lehsunia.
+      real: The report names the stone as natural chrysoberyl (cat's eye).
+      fake: No report, or a report from the seller's own shop only.
+    - id: price
+      weight: 1
+      how: Compare the price with size, colour and sharpness of the eye.
+      real: Natural chrysoberyl cat's eye is costly, especially honey-coloured Sri Lankan stones with a sharp eye.
+      fake: A large, bright cat's eye for a few rupees or dollars is glass.
+
+pairs:
+  good:
+    - slug: sapphire
+      why: In Vedic astrology Saturn is friendly to Ketu, so blue sapphire and cat's eye can be prescribed together.
+    - slug: diamond
+      why: Venus is considered friendly to Ketu in Vedic tradition, so diamond is treated as compatible.
+    - slug: emerald
+      why: Mercury is usually treated as neutral to friendly with Ketu, and emerald is a common companion in Navaratna sets.
+    - slug: tiger-eye
+      why: Both show chatoyancy and are worn for protection; tiger eye is the budget choice for those not following Vedic rules.
+  avoid:
+    - slug: ruby
+      why: Vedic enmity. The Sun (ruby) is treated as an enemy of Ketu, so they are not worn together.
+    - slug: moonstone
+      why: Vedic enmity. Moonstone represents the Moon, which tradition treats as hostile to Ketu.
+
+price:
+  tier: premium
+  note: Natural chrysoberyl cat's eye ranges from affordable small Indian stones to fine Sri Lankan gems with sharp eyes that cost hundreds to thousands per carat. Glass imitations cost very little.
+
+names:
+  hi: Lehsunia (लहसुनिया), Vaidurya (वैदूर्य)
+  bn: Vaidurya (বৈদূর্য)
+  ta: Vaiduryam (வைடூரியம்)
+  te: Vaiduryam (వైడూర్యం)
+  es: Ojo de gato
+
+sources:
+  - https://www.mindat.org/min-7481.html
+  - https://www.mindat.org/min-1039.html
+  - https://www.gemsociety.org/article/chrysoberyl-jewelry-gemstone-information/
+  - https://www.gia.edu/gems-gemology/summer-2023-lab-notes-glass-imitation-cats-eye-chrysoberyl
+  - https://www.minerals.net/mineral/chrysoberyl

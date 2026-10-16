@@ -1,0 +1,123 @@
+slug: red-agate
+name: Red Agate
+aka: [red banded agate, lal hakik]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [red, red-brown, orange, white]
+origins: [Brazil, India, Uruguay, Botswana, China]
+summary: >-
+  Agate with red bands coloured by iron oxide. Much red agate is grey or brown
+  agate that has been heated or soaked in iron salts and heated, which is stable.
+  Cheaper bright red beads may carry organic dye that fades and bleeds. Hard,
+  but porous: no salt soaks.
+
+safety:
+  water:
+    verdict: brief
+    reason: The agate does not dissolve and iron-oxide red is stable, but dyed beads can bleed in a long soak. A quick rinse and dry suits every piece.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks in, can pull out dye and leaves salt crystals in the pores and cracks as it dries.
+  sun:
+    verdict: limit
+    reason: Natural and heat-treated red agate keeps its colour, but organic-dyed red fades in strong sun. If an acetone test shows dye, keep it out of sunny windows.
+  sleep:
+    verdict: ok
+    reason: Physically safe in the bedroom. Tradition calls red agate warming and energising, so some prefer it elsewhere at night.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear. Keep perfume and acetone off dyed pieces.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with iron oxide is inert. Dyes used on cheap beads are not food-safe.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral]
+  elements: [fire]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aries, scorpio]
+  intentions: [courage, energy, protection, motivation, grounding]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the porous agate, crystallises in its cracks and can pull out dye. Use plain water, smoke or sound.
+    basis: physical
+  - who: Owners of bright cherry-red beads
+    why: Very bright, even red often means organic dye. Test with acetone, and if colour comes off, avoid sun, long soaks and perfume.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone itself is not toxic.
+    basis: physical
+  - who: Light sleepers or anyone wanting calm
+    why: Tradition treats red agate as a stimulating Mars stone. For sleep, tradition points to amethyst or blue lace agate instead.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Organic-dyed red agate or chalcedony
+    - Red glass beads
+    - Dyed howlite or magnesite
+    - Carnelian or red jasper sold as red agate (and the reverse)
+  tests:
+    - id: acetone
+      weight: 2
+      how: Rub a drill hole or hidden spot with a cotton swab and nail-polish remover.
+      real: Natural and iron-treated red agate leaves the swab clean.
+      fake: Red on the swab means an organic dye.
+    - id: color
+      weight: 2
+      how: Look at the red along cracks and band edges in daylight.
+      real: Brick red to orange-red that follows the bands, with white or grey bands between.
+      fake: Raspberry or pink-tinged red, or red pooled in cracks and drill holes.
+    - id: light
+      weight: 2
+      how: Shine a torch through a thin edge.
+      real: Red bands glow translucent orange; opaque layers stay darker.
+      fake: Glass glows evenly; howlite and magnesite stay chalky and opaque.
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe.
+      real: Fine continuous bands and no bubbles.
+      fake: Bubbles mean glass. Grey web-like veins in a chalky body mean dyed howlite.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: Agate scratches glass.
+      fake: Howlite and magnesite cannot and are marked by a steel knife.
+
+pairs:
+  good:
+    - slug: carnelian
+      why: Carnelian is unbanded red chalcedony. Tradition uses both for courage, with identical care.
+    - slug: red-jasper
+      why: Two Mars stones in tradition, used for stamina and drive.
+    - slug: black-tourmaline
+      why: A grounding and protection pairing in tradition.
+    - slug: smoky-quartz
+      why: Smoky quartz calms red agate's fire in tradition. Both are hard quartz.
+  avoid:
+    - slug: amethyst
+      why: Opposed energies in tradition. Red agate is stimulating and amethyst calming, so they are not combined for sleep or meditation.
+
+price:
+  tier: budget
+  note: Red agate beads and tumbled stones are inexpensive. Natural, untreated red-banded agate and well-polished large pieces cost more.
+
+names:
+  es: Ágata roja
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://www.gemsociety.org/article/common-gemstone-treatments-cheat-sheet-2/

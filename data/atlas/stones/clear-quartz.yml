@@ -1,0 +1,132 @@
+slug: clear-quartz
+name: Clear Quartz
+aka: [rock crystal, crystal quartz, sphatik]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [colorless, white]
+origins: [Brazil, Madagascar, United States, China, India]
+summary: >-
+  Colourless, transparent quartz, also called rock crystal. It is hard, inert
+  and safe in water, salt and sun. The one real sun risk is that a clear sphere
+  can focus sunlight like a lens and scorch or ignite things nearby.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and does not dissolve, so rinsing or soaking is fine. Avoid plunging a warm crystal into cold water, which can crack it.
+  salt:
+    verdict: safe
+    reason: Salt and salt water do not attack quartz. Rinse afterwards and keep salt water away from silver, glued or wire-wrapped settings.
+  sun:
+    verdict: safe
+    reason: Clear quartz does not fade. Never leave a clear sphere or lens-shaped piece in a sunny window, because it can focus sunlight and start a fire.
+  sleep:
+    verdict: ok
+    reason: Inert and safe beside the bed. Raw points can be sharp, so keep them off the pillow itself.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it resists everyday scratches. Sharp blows can still chip a point or a faceted edge.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is chemically inert and non-toxic to handle. Only dry grinding dust is a hazard (silica dust).
+  elixir: direct
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air]
+  planets: [sun, moon]
+  vedic_planet: shukra
+  zodiac: [aries, leo]
+  intentions: [healing, clarity, concentration, energy, spiritual-growth, protection]
+  energy: balancing
+  birth_months:
+    other: [april]
+
+cautions:
+  - who: Anyone who displays crystal spheres on a sunny windowsill
+    why: A clear quartz sphere acts like a magnifying glass. It can scorch curtains, wood or paper and has caused house fires. Keep it out of direct sun.
+    basis: physical
+  - who: People who wash crystals in very hot water
+    why: Quartz is stable but sudden temperature changes can crack crystals with inclusions or healed fractures. Use lukewarm water.
+    basis: physical
+  - who: Homes with small children or pets
+    why: Raw points and broken pieces have glass-sharp edges and small tumbled stones are a choking hazard.
+    basis: physical
+  - who: Anyone advised by a Vedic astrologer to avoid Venus stones
+    why: In Indian practice, sphatik (clear quartz) is worn as an affordable substitute for diamond, a Shukra (Venus) stone. Astrologers apply the same chart rules they use for diamond.
+    basis: tradition
+  - who: People already feeling overstimulated
+    why: Crystal tradition calls clear quartz an amplifier that magnifies whatever energy is present. Some people prefer a calming stone such as amethyst instead.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Glass, including lead "crystal" glass spheres and points
+    - Acrylic or resin points
+    - Lab-grown (hydrothermal) quartz sold as natural
+  tests:
+    - id: magnification
+      weight: 3
+      how: Look into the stone with a 10x loupe or phone macro lens.
+      real: Natural quartz usually shows wispy veils, tiny fractures or mineral inclusions. Perfectly clear pieces exist but are less common and pricier.
+      fake: Round gas bubbles, swirl lines or mould seams point to glass or resin.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek or lip for ten seconds.
+      real: Feels cold at first and warms slowly.
+      fake: Glass warms faster; acrylic feels close to room temperature straight away.
+    - id: hardness
+      weight: 2
+      how: On rough or tumbled pieces only, try to scratch a glass bottle with an edge of the stone. This can chip polished points.
+      real: Quartz (Mohs 7) scratches glass easily.
+      fake: Glass barely marks glass; acrylic is scratched itself.
+    - id: weight
+      weight: 1
+      how: Compare it in your hand with a known quartz piece of the same size.
+      real: Specific gravity about 2.65.
+      fake: Lead glass feels heavier; acrylic feels noticeably light.
+    - id: refractive
+      weight: 2
+      how: Look at a thin line through a thick, clear piece while turning it, or use a refractometer if you have one.
+      real: Quartz is doubly refractive (RI about 1.54 to 1.55), so a line can look slightly doubled through thick crystals.
+      fake: Glass is singly refractive and never doubles a line; lead glass reads higher on a refractometer.
+    - id: price
+      weight: 1
+      how: Compare the price with size and clarity.
+      real: Small points and tumbles are cheap; large, flawless spheres cost much more.
+      fake: A large, perfectly clear "quartz" sphere at a low price is often glass.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Both are quartz with the same care rules, and tradition uses clear quartz to amplify amethyst's calm.
+    - slug: rose-quartz
+      why: A classic pairing for heart work; both are safe in water.
+    - slug: smoky-quartz
+      why: Tradition pairs clear quartz's amplifying energy with smoky quartz's grounding.
+    - slug: citrine
+      why: A common pairing for motivation and manifestation; both are quartz and share cleansing methods.
+    - slug: selenite
+      why: Tradition uses selenite to charge clear quartz; keep selenite dry when the quartz is washed.
+    - slug: black-tourmaline
+      why: Tradition pairs clear quartz for clarity with tourmaline for protection.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and small points cost very little. Water-clear spheres, large clusters and fine Arkansas or Himalayan points can cost hundreds of dollars.
+
+names:
+  hi: Sphatik (स्फटिक)
+  bn: Sphatik (স্ফটিক)
+  es: Cuarzo cristal
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/quartz-jewelry-and-gemstone-information/
+  - https://geology.com/minerals/quartz.shtml
+  - https://www.minerals.net/mineral/quartz

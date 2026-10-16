@@ -1,0 +1,123 @@
+slug: moss-agate
+name: Moss Agate
+aka: [mocha stone, green moss agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [green, white, colorless, brown, black]
+origins: [India, Brazil, United States, Uruguay, China]
+summary: >-
+  Clear to milky chalcedony full of green, moss-like inclusions of minerals such
+  as chlorite and hornblende. Strictly it is not banded agate but a chalcedony.
+  The green is natural mineral matter, so it is sun-stable and fine in water;
+  avoid salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and the green mineral inclusions are sealed inside, so rinsing or a short soak is fine. Dyed green fakes may bleed.
+  salt:
+    verdict: avoid
+    reason: Chalcedony is slightly porous. Brine soaks into pores and fine cracks and leaves salt crystals as it dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: The moss is made of green and dark minerals locked in the stone, which sunlight does not fade. Dyed green chalcedony is the exception.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe under a pillow or on a nightstand.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it suits everyday rings and bracelets. Large inclusions can be weak points, so avoid hard knocks on thin stones.
+  toxicity:
+    level: none
+    reason: Chalcedony is inert, and the moss minerals are sealed inside and not released by handling.
+  elixir: indirect
+
+tradition:
+  chakras: [heart, root]
+  elements: [earth]
+  planets: [mercury, venus]
+  vedic_planet: null
+  zodiac: [virgo, taurus, gemini]
+  intentions: [grounding, wealth, emotional-balance, creativity, luck, healing]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous chalcedony and crystallises in pores and cracks. Plain water, smoke or sound are safer.
+    basis: physical
+  - who: People buying moss agate engagement rings
+    why: Moss agate is hard enough to wear but softer and more brittle than sapphire or diamond. Choose a protective bezel setting and remove it for heavy work.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People wanting a fast, intense stone
+    why: Tradition calls moss agate the gardener's stone, linked to slow growth and patience rather than quick change.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed green chalcedony or quartz
+    - Glass with green swirls
+    - Resin with embedded moss or plant matter
+    - Tree agate or green aventurine sold as moss agate
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Hold the stone to a light and look into it with a 10x loupe.
+      real: Three-dimensional, branching green and dark inclusions at different depths in clear to milky chalcedony.
+      fake: Flat painted swirls, bubbles (glass), or real plant fibres in clear resin.
+    - id: color
+      weight: 2
+      how: Look at where the green sits.
+      real: The green is in distinct moss-like shapes with clear or white chalcedony between them.
+      fake: An even green tint over the whole stone, or green concentrated in cracks, points to dye.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Green on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: It scratches glass.
+      fake: Resin cannot scratch glass.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Resin warms quickly.
+
+pairs:
+  good:
+    - slug: tree-agate
+      why: Closely related green-included chalcedonies with the same care and similar growth themes in tradition.
+    - slug: aventurine
+      why: Two green luck and abundance stones in tradition. Both are quartz and share care.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies moss agate's growth energy.
+    - slug: rose-quartz
+      why: A heart-chakra pairing in tradition for gentle emotional healing.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition with no care conflicts.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and beads are inexpensive. Clear stones with crisp, dense green moss, cut for rings, cost more, and branded engagement rings carry a large mark-up for the setting.
+
+names:
+  es: Ágata musgo
+
+sources:
+  - https://www.mindat.org/min-2791.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/moss-agate-engagement-ring-guide/
+  - https://www.gemsociety.org/article/agate-gem-information/

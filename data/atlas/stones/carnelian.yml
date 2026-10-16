@@ -1,0 +1,137 @@
+slug: carnelian
+name: Carnelian
+aka: [cornelian, lal hakik, sard]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [orange, red-orange, red, brown-red]
+origins: [India, Brazil, Uruguay, Madagascar, Indonesia]
+summary: >-
+  Orange to red chalcedony coloured by iron oxide. Much of the market is grey or
+  brown chalcedony heated to turn it orange, a stable, accepted treatment; some
+  is dyed. Hard, sun-stable and safe in plain water, but slightly porous, so skip
+  salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, and iron-oxide colour does not wash out, so rinsing or a short soak is fine. Dyed imitations can bleed in a long soak.
+  salt:
+    verdict: avoid
+    reason: Carnelian is slightly porous. Brine soaks into the pores and leaves salt crystals behind as it dries, dulling the polish and opening fine cracks.
+  sun:
+    verdict: safe
+    reason: Its colour comes from iron oxide, which sunlight does not fade, and heat-treated carnelian is already colour-stable. Organic-dyed fakes may fade.
+  sleep:
+    verdict: ok
+    reason: Physically safe in the bedroom. Tradition calls carnelian stimulating, so some people keep it out of the bedroom if it seems to disturb sleep.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it is a durable ring and bead stone. Avoid sharp knocks against hard surfaces.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with a trace of iron oxide is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [sacral, root, solar_plexus]
+  elements: [fire]
+  planets: [mars, sun]
+  vedic_planet: mangal
+  zodiac: [aries, leo, virgo, taurus]
+  intentions: [courage, motivation, creativity, energy, confidence, career]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous stone and salt crystallises in pores and cracks. Plain water, smoke or sound are safer.
+    basis: physical
+  - who: Buyers who want untreated stone
+    why: Most carnelian sold is chalcedony heated to deepen the orange. It is stable and widely accepted, but if natural colour matters to you, ask the seller.
+    basis: physical
+  - who: Light sleepers
+    why: Crystal tradition describes carnelian as warming and energising. If you find it keeps you alert, move it out of the bedroom.
+    basis: tradition
+  - who: Anyone advised by a Vedic astrologer against Mars stones
+    why: In Jyotish, carnelian is worn as an upratna (substitute) for red coral, the gem of Mangal (Mars). Astrologers usually avoid Mars stones where Mars rules difficult houses, for example for Gemini and Virgo ascendants.
+    basis: tradition
+  - who: People using crystals for calm or meditation
+    why: Tradition treats carnelian as a stimulating stone and does not pair it with calming stones such as amethyst for sleep or meditation.
+    basis: tradition
+
+zodiac_cautions:
+  - sign: gemini
+    why: Gemini is ruled by Mercury, and Mars rules the 6th and 11th houses for a Gemini ascendant, so Vedic astrologers usually do not advise Mars stones such as coral or carnelian.
+
+identify:
+  common_fakes:
+    - Dyed agate or chalcedony
+    - Orange glass
+    - Orange resin or plastic beads
+    - Red jasper or red agate sold as carnelian
+  tests:
+    - id: light
+      weight: 2
+      how: Hold the stone in front of a torch or bright window.
+      real: Translucent orange glow. Natural carnelian looks cloudy; heat-treated agate may show faint straight bands.
+      fake: Glass glows very evenly and may show bubbles. Jasper stays opaque.
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe.
+      real: Fine, cloudy colour distribution or faint bands, with no bubbles.
+      fake: Round gas bubbles or swirl lines mean glass. Colour sitting in cracks means dye.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Orange or red on the swab means a surface dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Do not test finished jewellery.
+      real: Carnelian scratches glass.
+      fake: Resin and plastic cannot scratch glass.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Plastic warms almost immediately.
+    - id: price
+      weight: 1
+      how: Compare with typical prices for size.
+      real: Carnelian is inexpensive, so low prices are normal.
+      fake: Price alone will not reveal glass. Combine with the light and loupe tests.
+
+pairs:
+  good:
+    - slug: red-jasper
+      why: Both are Mars stones in tradition and both are cited as red coral substitutes. Same hardness and care.
+    - slug: citrine
+      why: A popular pairing in tradition for motivation, confidence and career goals.
+    - slug: tiger-eye
+      why: Tradition pairs the two for courage and drive. Both are hard quartz stones.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies carnelian's energy. Same care rules.
+    - slug: sunstone
+      why: Two warm, sun-associated stones that tradition uses for confidence.
+  avoid:
+    - slug: amethyst
+      why: Opposed energies in tradition. Carnelian is stimulating and amethyst is calming, so they are not combined for sleep or meditation.
+
+price:
+  tier: budget
+  note: Tumbled carnelian and beads are inexpensive. Deep, even, translucent red stones, natural untreated material from India and fine carvings cost more.
+
+names:
+  hi: Lal Hakik (लाल हकीक)
+  es: Cornalina
+
+sources:
+  - https://www.mindat.org/min-9333.html
+  - https://www.gemsociety.org/article/carnelian-gem-information/
+  - https://www.minerals.net/gemstone/carnelian_gemstone.aspx
+  - https://geology.com/gemstones/carnelian/
+  - https://www.navratan.com/blog/upratans-of-navratans-the-substitutes-of-nine-vedic-gems

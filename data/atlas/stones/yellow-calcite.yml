@@ -1,0 +1,129 @@
+slug: yellow-calcite
+name: Yellow Calcite
+aka: [lemon calcite, golden calcite]
+kind: variety
+species: Calcite
+family: carbonate
+formula: CaCO3
+crystal_system: trigonal
+mohs: [3, 3]
+colors: [yellow, lemon, golden]
+origins: [Mexico, Brazil, United States]
+summary: >-
+  A massive, often waxy-looking yellow calcite sold as tumbled stones, chunks
+  and carvings. It is soft at Mohs 3 and fizzes in acids, so keep it dry,
+  away from salt and lemon or vinegar cleaners, and out of rings.
+
+safety:
+  water:
+    verdict: brief
+    reason: A quick rinse does no harm, but calcite slowly dissolves and etches in slightly acidic water. Never soak it; dry it right away.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the soft surface and salt water etches it. Use sound, smoke or moonlight to cleanse.
+  sun:
+    verdict: limit
+    reason: Natural yellow calcite is fairly colour-stable, but dyed pieces fade and strong heat can crack it along its cleavage planes.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe in the bedroom. Tradition calls it energising, so some people keep it on a desk rather than by the bed.
+  wear:
+    verdict: special
+    reason: At Mohs 3 it scratches easily and chips if knocked. Occasional pendants are fine; rings and bracelets wear out quickly.
+  toxicity:
+    level: none
+    reason: Calcium carbonate is non-toxic to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [solar_plexus]
+  elements: [fire]
+  planets: [sun]
+  vedic_planet: null
+  zodiac: [leo, gemini]
+  intentions: [confidence, motivation, clarity, energy, wealth, concentration]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals in water, salt or vinegar
+    why: Calcite fizzes and etches in acids such as vinegar and lemon juice, and salt both scratches and etches it. A dry cloth is the safest cleaner.
+    basis: physical
+  - who: People wanting a stone for daily jewellery
+    why: It is too soft for rings and bracelets and scratches against almost every other crystal.
+    basis: physical
+  - who: Buyers of very bright, even yellow pieces
+    why: Some yellow calcite and look-alike stones are dyed. Dye can rub off on skin or fade in sunlight.
+    basis: physical
+  - who: Owners of large carvings and spheres
+    why: Calcite splits along cleavage planes, so a drop onto a hard floor often breaks off a clean chunk. Use a stand and a soft surface.
+    basis: physical
+  - who: People who are easily overstimulated
+    why: Tradition treats yellow calcite as an energising solar plexus stone. Those who want calm may prefer blue calcite or amethyst.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed calcite or dyed marble
+    - Yellow aragonite sold as calcite
+    - Yellow glass or resin
+    - Yellow calcite sold as citrine
+  tests:
+    - id: hardness
+      weight: 3
+      how: Try to scratch a hidden spot with a steel knife, then try to scratch glass with the stone.
+      real: Steel scratches it easily and it cannot scratch glass.
+      fake: Citrine and glass resist the knife, and citrine scratches glass.
+    - id: water_dissolve
+      weight: 3
+      how: Put a drop of vinegar on a hidden spot and watch. Mildly destructive; rinse off at once.
+      real: Tiny bubbles fizz on the surface.
+      fake: Glass, resin and citrine show no reaction.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Yellow colour on the swab means the stone is dyed.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz stone of similar size.
+      real: Feels similar to quartz (specific gravity about 2.7).
+      fake: Resin and plastic feel noticeably lighter.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cool at first.
+      fake: Resin and plastic feel warm almost at once.
+    - id: price
+      weight: 1
+      how: Compare the asking price with size.
+      real: Yellow calcite is cheap, even in large chunks.
+      fake: Yellow calcite priced or labelled as citrine is a misrepresentation.
+
+pairs:
+  good:
+    - slug: citrine
+      why: Tradition pairs these two yellow stones for confidence and abundance. Store citrine apart to avoid scratches.
+    - slug: pyrite
+      why: A traditional wealth and motivation pairing. Both must stay dry, so they share the same care.
+    - slug: tiger-eye
+      why: Both are solar plexus stones in tradition, used for willpower and focus.
+    - slug: honey-calcite
+      why: Same mineral and same care, often combined in tradition for study and focus.
+    - slug: carnelian
+      why: Tradition combines them for energy and creative drive.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies yellow calcite's energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and rough chunks are very inexpensive. Polished spheres, towers and carvings cost more but remain affordable.
+
+names:
+  es: Calcita amarilla
+
+sources:
+  - https://www.mindat.org/min-859.html
+  - https://www.minerals.net/mineral/calcite
+  - https://geology.com/minerals/calcite.shtml

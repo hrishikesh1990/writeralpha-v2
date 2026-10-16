@@ -1,0 +1,122 @@
+slug: enhydro-agate
+name: Enhydro Agate
+aka: [enhydro, water agate, enhydro geode]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [grey, white, brown, colorless]
+origins: [Brazil, Uruguay, Australia, Mexico]
+summary: >-
+  An agate nodule with water sealed in its hollow centre, often with a bubble
+  that moves when tilted. The chalcedony shell is slightly porous and often
+  thin, so the water can slowly escape. Keep it away from heat, sun, frost,
+  ultrasonic cleaners and long soaks.
+
+safety:
+  water:
+    verdict: brief
+    reason: A quick rinse in lukewarm water is fine for the shell. Avoid long soaks and hot or cold water, which stress the thin wall around the cavity.
+  salt:
+    verdict: avoid
+    reason: The shell is porous. Brine can seep in and leave salt in the shell, and the stone is too valuable to risk.
+  sun:
+    verdict: avoid
+    reason: Sun warms the trapped water, which expands and can crack the shell or drive water out through the pores. Keep it out of sunny windows and hot cars.
+  sleep:
+    verdict: ok
+    reason: Non-toxic. It is better on a nightstand than under a pillow, where pressure or a fall could crack a thin-walled nodule.
+  wear:
+    verdict: special
+    reason: Mostly sold as specimens. Knocks, body heat and steam can crack the cavity or slowly dry it out, so pendants are for occasional wear only.
+  toxicity:
+    level: none
+    reason: The chalcedony shell is inert. The trapped water is ancient groundwater with dissolved salts and must never be drunk.
+  elixir: never
+
+tradition:
+  chakras: [sacral, crown]
+  elements: [water]
+  planets: [moon, neptune]
+  vedic_planet: null
+  zodiac: [cancer, pisces]
+  intentions: [emotional-balance, peace-calm, intuition, healing, spiritual-growth]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleans stones in ultrasonic or steam cleaners
+    why: Vibration and heat can crack the thin wall and release the water permanently. Clean with a damp cloth only.
+    basis: physical
+  - who: People who display stones in sunny windows, hot cars or near heaters
+    why: Heat expands the trapped water and can crack the nodule. Over time warmth and dry air also let the water escape through the pores.
+    basis: physical
+  - who: Anyone storing stones outdoors or in unheated spaces in winter
+    why: If the water freezes it expands and can split the shell. Keep enhydros at room temperature.
+    basis: physical
+  - who: Buyers of very cheap enhydros with large bubbles
+    why: Some sellers keep enhydros in water to stop them drying, and drilled or glued fakes exist. Ask how it was stored and look for drill holes.
+    basis: physical
+  - who: Anyone making a crystal elixir
+    why: The stone is fragile in water and its contents are not drinkable. Use it only for display.
+    basis: physical
+  - who: People wanting an energising stone
+    why: Tradition treats enhydro agate as a calm, emotional, water stone rather than an energising one.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Drilled agate nodules filled with water and plugged
+    - Glass or acrylic spheres with an air bubble
+    - Ordinary agate geodes sold as enhydros after the water has gone
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Hold the nodule in front of a bright torch and tilt it slowly.
+      real: A pocket of water inside the agate, often with a bubble that drifts to the top when you tilt it.
+      fake: No movement means it has dried out or never held water. A perfectly round bubble in clear glass means a novelty item.
+    - id: magnification
+      weight: 3
+      how: Inspect the whole surface with a 10x loupe, especially any dimples or polished spots.
+      real: Unbroken chalcedony skin with natural bands.
+      fake: A tiny drill hole filled with glue or resin means the cavity was artificially refilled.
+    - id: shape
+      weight: 1
+      how: Look at the overall form.
+      real: A rounded, irregular nodule, often with one polished window to see inside.
+      fake: A perfect sphere of clear material is glass or acrylic, not agate.
+    - id: hardness
+      weight: 2
+      how: Try to mark a hidden spot with a steel knife, gently. Do not scratch-test thin-walled specimens against glass.
+      real: Steel does not mark chalcedony.
+      fake: Acrylic is scratched easily.
+    - id: seller
+      weight: 1
+      how: Ask where it was mined and how it has been stored.
+      real: Reputable sellers can say whether a stone was kept in water and how long it has held its bubble.
+      fake: Vague answers, or a refusal to show the stone backlit, are a warning sign.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Clear quartz can also hold fluid inclusions, and tradition pairs the two for clarity. Store them apart so harder points do not knock the nodule.
+    - slug: moonstone
+      why: Both are water and Moon stones in tradition, used for emotional calm.
+    - slug: selenite
+      why: Selenite cleanses without water or sun, both of which enhydros should avoid. Keep the soft selenite dry.
+    - slug: amethyst
+      why: A calming pairing in tradition. Amethyst often grows in the same volcanic cavities as enhydro agate.
+  avoid: []
+
+price:
+  tier: mid
+  note: Small nodules are affordable. Price rises sharply with a clearly visible moving bubble, a thin polished window and a large volume of water.
+
+sources:
+  - https://www.mindat.org/min-7596.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/agate-gem-information/

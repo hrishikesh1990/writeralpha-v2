@@ -1,0 +1,139 @@
+slug: peridot
+name: Peridot
+aka: [olivine, chrysolite, zabarjad]
+kind: variety
+species: Forsterite
+family: olivine
+formula: (Mg,Fe)2SiO4
+crystal_system: orthorhombic
+mohs: [6.5, 7]
+colors: [olive green, yellowish green, green]
+origins: [United States, Pakistan, Myanmar, China, Vietnam, Tanzania]
+summary: >-
+  The gem variety of the olivine mineral forsterite, coloured green by iron.
+  Safe in plain water and stable in sunlight, but it is etched by acids such
+  as lemon juice and can crack in ultrasonic cleaners.
+
+safety:
+  water:
+    verdict: safe
+    reason: Peridot does not dissolve or absorb water, so a wash in warm soapy water is fine. Keep acidic liquids such as lemon water and vinegar away from it.
+  salt:
+    verdict: safe
+    reason: Salt itself does not harm peridot. Rinse it off afterwards and never add vinegar or lemon to a salt cleanse, because acids etch the surface.
+  sun:
+    verdict: safe
+    reason: Peridot's iron-based colour is stable in daylight. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Physically safe in the bedroom. Take rings off at night to avoid knocks.
+  wear:
+    verdict: care
+    reason: At Mohs 6.5 to 7, dust and grit scratch it over time, and stress fractures can grow. Protective settings and gentle cleaning keep it bright.
+  toxicity:
+    level: none
+    reason: Magnesium iron silicate is stable and non-toxic to handle.
+  elixir: direct
+
+tradition:
+  chakras: [heart, solar_plexus]
+  elements: [earth]
+  planets: [sun, venus]
+  vedic_planet: budh
+  zodiac: [leo, virgo, gemini, libra]
+  intentions: [healing, emotional-balance, confidence, wealth, love, energy]
+  energy: energizing
+  birth_months:
+    modern: [august]
+
+cautions:
+  - who: People who clean jewellery with acids or dips
+    why: Peridot is etched by acids, including lemon juice, vinegar and some jewellery cleaning solutions. Repeated contact leaves a dull, frosted surface.
+    basis: physical
+  - who: Anyone using ultrasonic or steam cleaners
+    why: Many peridots contain disc-shaped "lily pad" inclusions and internal stress. Vibration and heat can crack the stone.
+    basis: physical
+  - who: People wanting a ring for heavy daily use
+    why: Peridot is softer than quartz-rich dust, so ring tables scratch and edges chip. Pendants and earrings stay bright longer.
+    basis: physical
+  - who: Anyone advised in Vedic astrology to avoid Mercury stones
+    why: In Indian practice, peridot is sold as an affordable substitute (upratna) for emerald, the gem of Budh (Mercury). The same chart considerations as emerald apply in tradition.
+    basis: tradition
+  - who: People who are hyperactive or easily overstimulated, in tradition
+    why: Crystal tradition calls peridot an energising, sunny stone. This is belief, not a physical effect.
+    basis: tradition
+zodiac_cautions:
+  - sign: aries
+    why: As an emerald substitute, peridot follows Mercury in Jyotish, and Mars (ruler of Aries) treats Mercury as an enemy.
+  - sign: scorpio
+    why: Scorpio is also Mars-ruled, so the same Mercury and Mars enmity applies in Vedic tradition.
+  - sign: cancer
+    why: Cancer is ruled by the Moon, which Mercury treats as an enemy in Jyotish, so Mercury stones are usually not advised.
+
+identify:
+  common_fakes:
+    - Green glass
+    - Synthetic spinel or cubic zirconia in green
+    - Green tourmaline or sapphire sold as peridot (and the reverse)
+    - Green YAG
+  tests:
+    - id: magnification
+      weight: 3
+      how: Look through the table toward the back facets with a 10x loupe, turning the stone slowly.
+      real: Back facet edges appear clearly doubled, because peridot is strongly doubly refractive. Disc-shaped "lily pad" inclusions are typical.
+      fake: Glass and spinel show single facet edges and may contain round bubbles.
+    - id: color
+      weight: 2
+      how: Look at the colour in daylight against white paper.
+      real: An olive to yellowish green with no blue tint, the same colour from every angle.
+      fake: Emerald-like bluish green, or a very saturated even green, suggests glass, YAG or another gem.
+    - id: refractive
+      weight: 3
+      how: Ask a jeweller to test the stone on a refractometer.
+      real: Readings around 1.65 to 1.69 with a large birefringence.
+      fake: Glass gives a single reading; cubic zirconia is above the scale.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your lip for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass and plastic warm up quickly.
+    - id: hardness
+      weight: 1
+      how: On rough material only, try to scratch plain glass.
+      real: Peridot scratches glass.
+      fake: Glass barely marks glass.
+    - id: price
+      weight: 1
+      how: Compare the price with the size.
+      real: Small peridot is inexpensive; clean stones above about 10 carats are scarce and priced accordingly.
+      fake: A huge, flawless peridot at a low price is likely glass.
+
+pairs:
+  good:
+    - slug: emerald
+      why: Peridot is a traditional affordable stand-in for emerald and shares its heart-centred symbolism.
+    - slug: citrine
+      why: Two sunny stones in tradition, paired for confidence and abundance.
+    - slug: rose-quartz
+      why: A traditional heart-chakra pairing for emotional healing.
+    - slug: aventurine
+      why: Green prosperity stones in tradition, often worn together for luck.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies peridot's energy. Both are water-safe.
+    - slug: moss-agate
+      why: A green, nature-themed pairing in tradition for growth and renewal.
+  avoid: []
+
+price:
+  tier: mid
+  note: Small peridot and beads are inexpensive. Large, clean stones with rich green colour, especially from Pakistan and Myanmar, command much higher per-carat prices.
+
+names:
+  hi: Zabarjad (ज़बरजद)
+  es: Peridoto
+
+sources:
+  - https://www.mindat.org/min-7710.html
+  - https://www.gia.edu/peridot
+  - https://www.gemsociety.org/article/peridot-jewelry-and-gemstone-information/
+  - https://geology.com/minerals/olivine.shtml

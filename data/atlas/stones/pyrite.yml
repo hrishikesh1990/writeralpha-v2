@@ -1,0 +1,134 @@
+slug: pyrite
+name: Pyrite
+aka: [fool's gold, iron pyrite]
+kind: mineral
+species: Pyrite
+family: sulfide
+formula: FeS2
+crystal_system: cubic
+mohs: [6, 6.5]
+colors: [brassy gold, gold, silver-grey]
+origins: [Peru, Spain, China, Italy, United States]
+summary: >-
+  An iron sulfide with a brassy metallic shine, often in natural cubes. Keep it
+  dry: in damp air pyrite oxidises to iron sulfates and sulfuric acid ("pyrite
+  disease"), which crumbles specimens. No water soaks, no salt and never in
+  drinking water.
+
+safety:
+  water:
+    verdict: avoid
+    reason: Moisture starts oxidation that forms iron sulfates and sulfuric acid, rusty stains and crumbling. Wipe with a dry cloth; if it gets wet, dry it thoroughly at once.
+  salt:
+    verdict: avoid
+    reason: Salt holds moisture against the surface and speeds corrosion and acid formation. Never use salt or salt water.
+  sun:
+    verdict: safe
+    reason: Light does not harm pyrite. Avoid hot, steamy places such as bathroom windowsills, where heat plus humidity speeds decay.
+  sleep:
+    verdict: ok
+    reason: Polished pieces are safe on a nightstand. Raw clusters are sharp, and decaying pieces with white or yellow crust should not be kept by the bed.
+  wear:
+    verdict: care
+    reason: Hard but brittle, and sweat, perfume and humidity tarnish it. Pendants and occasional wear suit it better than rings.
+  toxicity:
+    level: low
+    reason: Solid pyrite is safe to handle, but its decay crust is acidic and some pyrite carries traces of arsenic. Wash hands after handling crumbly pieces and never cut it dry.
+  elixir: never
+
+tradition:
+  chakras: [solar_plexus, root]
+  elements: [fire, earth]
+  planets: [mars, sun]
+  vedic_planet: null
+  zodiac: [leo, aries]
+  intentions: [wealth, confidence, protection, motivation, luck, career, energy]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals with water or salt
+    why: Water and salt start pyrite decay, which forms sulfuric acid and iron sulfates, stains surfaces and can destroy the specimen. Use sound, smoke or a dry selenite plate.
+    basis: physical
+  - who: People storing pyrite in bathrooms, kitchens or humid climates
+    why: Museums keep pyrite below about 45 percent humidity. In damp rooms it can develop a white or yellow powdery crust, a sulfur smell and cracks. Store it dry with silica gel.
+    basis: physical
+  - who: Homes with small children or pets
+    why: Raw clusters have sharp edges, small cubes can be swallowed, and decay crust is acidic. Keep pyrite out of reach.
+    basis: physical
+  - who: People cutting, grinding or breaking pyrite
+    why: The dust is irritating and some pyrite contains arsenic. Work wet, wear a mask and wash up afterwards.
+    basis: physical
+  - who: People who wear jewellery while sweating or swimming
+    why: Sweat, chlorine and salt water tarnish and corrode pyrite. Take it off for sport and swimming.
+    basis: physical
+  - who: People who are easily overstimulated
+    why: Tradition calls pyrite a strongly energising Mars and Sun stone and suggests limiting use if it feels restless or intense.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Marcasite (another iron sulfide) sold as pyrite, or pyrite sold as "marcasite" jewellery
+    - Chalcopyrite sold as pyrite
+    - Gold-painted or plated rocks and resin
+    - Brass or gold-tone metal beads
+  tests:
+    - id: streak
+      weight: 3
+      how: Rub a hidden spot or edge firmly on the back of an unglazed ceramic tile.
+      real: Greenish-black to brownish-black streak.
+      fake: Gold leaves a yellow streak; paint and plating leave no dark streak.
+    - id: shape
+      weight: 2
+      how: Look at the natural crystal faces.
+      real: Sharp cubes or pyritohedrons, often with fine parallel grooves (striations) on the faces.
+      fake: Rounded blobs, uniform moulded shapes or painted rock textures.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot of a raw piece, try to scratch glass. This can chip the piece.
+      real: Pyrite scratches glass weakly.
+      fake: Chalcopyrite, gold and brass are too soft to scratch glass.
+    - id: magnification
+      weight: 2
+      how: Examine edges and recesses with a 10x loupe.
+      real: Solid metallic colour all the way through at chips.
+      fake: Paint or plating flaking at edges, or a different colour underneath.
+    - id: weight
+      weight: 1
+      how: Weigh it in your hand against a quartz stone of the same size.
+      real: Very heavy for its size (specific gravity about 5).
+      fake: Resin and painted rock feel much lighter.
+    - id: price
+      weight: 1
+      how: Compare the price with size.
+      real: Pyrite is inexpensive, and sharp cube clusters from Spain or Peru cost a little more.
+      fake: Anything sold as "gold nuggets" cheaply is almost always pyrite or brass.
+
+pairs:
+  good:
+    - slug: citrine
+      why: The classic wealth pairing in tradition, used together on desks and in cash boxes.
+    - slug: tiger-eye
+      why: Tradition pairs them for confidence, willpower and protection.
+    - slug: yellow-calcite
+      why: A traditional motivation pair, and both must be kept dry.
+    - slug: hematite
+      why: Both are iron minerals kept away from water and salt, paired in tradition for grounding protection.
+    - slug: black-tourmaline
+      why: Tradition combines pyrite's shield with tourmaline's grounding.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies pyrite's manifesting energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled pyrite and raw chunks are inexpensive. Sharp cube specimens from Navajún (Spain) and large Peruvian clusters cost considerably more.
+
+names:
+  es: Pirita
+
+sources:
+  - https://www.mindat.org/min-3314.html
+  - https://geology.com/minerals/pyrite.shtml
+  - https://www.minerals.net/mineral/pyrite
+  - https://www.natsca.org/sites/default/files/publications-full/care-and-conservation-of-geological-specimens.pdf

@@ -1,0 +1,129 @@
+slug: lava-stone
+name: Lava Stone
+aka: [lava rock, basalt, volcanic stone, lava beads]
+kind: rock
+species: null
+family: basalt
+formula: null
+crystal_system: null
+mohs: [5, 6]
+colors: [black, grey, brown, red]
+origins: [Indonesia, China, Mexico, Iceland, United States]
+summary: >-
+  Porous volcanic rock, usually vesicular basalt full of gas holes. The pores
+  make it light and let it hold essential oils, which is why it is used in
+  diffuser bracelets. They also trap water, sweat and salt, so rinse it only
+  briefly, skip salt and let it dry fully.
+
+safety:
+  water:
+    verdict: brief
+    reason: Basalt does not dissolve, but the pores soak up water, stay damp, rot elastic cord and can grow mildew. Dyed beads may bleed. Rinse briefly and air-dry fully.
+  salt:
+    verdict: avoid
+    reason: Salt water soaks deep into the pores and salt crystals grow there as it dries. Salt weathering can crumble the edges of beads and is almost impossible to rinse out.
+  sun:
+    verdict: safe
+    reason: Natural black and grey lava does not fade. Coloured lava beads are dyed and can fade, and sun dries out any essential oil you have added.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and robust. The rough surface can snag fabric, and scented beads may disturb sleep for people sensitive to fragrance.
+  wear:
+    verdict: care
+    reason: The rock is reasonably hard but the rough, porous surface absorbs sweat, oils and lotions and abrades softer beads and watch faces next to it.
+  toxicity:
+    level: none
+    reason: Basalt is inert and safe to handle. Any hazard comes from what is added to it, such as undiluted essential oils.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [fire, earth]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aries, scorpio]
+  intentions: [grounding, courage, energy, protection, emotional-balance]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People using lava bracelets as essential oil diffusers
+    why: Put one or two drops of oil on the beads, not on your skin, and let them soak in before wearing. Undiluted essential oils can irritate skin, and oils weaken elastic cord.
+    basis: physical
+  - who: Households with cats and other pets
+    why: Some essential oils used on diffuser beads, such as tea tree, are toxic to cats and dogs if licked. Keep oiled beads away from pets.
+    basis: physical
+  - who: People with sensitive skin
+    why: The pores trap sweat, dirt and old oil. Clean the beads regularly and let them dry fully, or wear them over a sleeve.
+    basis: physical
+  - who: Anyone who swims, showers or cleanses with salt while wearing lava beads
+    why: Water and salt soak into the pores, salt crystallises inside and cords rot. Take lava bracelets off before water.
+    basis: physical
+  - who: People wearing lava next to softer stones or a watch
+    why: Its gritty surface scratches softer beads such as howlite, turquoise or opalite, and watch crystals.
+    basis: physical
+  - who: People wanting a calming, airy stone
+    why: Tradition treats lava stone as a fiery, grounding stone of strength. For calm, tradition points to amethyst or blue lace agate.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Plastic or resin beads moulded with a porous texture
+    - Dyed lava beads sold as natural colours
+    - Ceramic or clay beads
+  tests:
+    - id: weight
+      weight: 2
+      how: Weigh a bead in your hand against a solid stone bead of the same size.
+      real: Lava feels light for a stone because of its gas holes, but still heavier than plastic.
+      fake: Plastic is very light; ceramic is denser and heavier.
+    - id: magnification
+      weight: 3
+      how: Examine the holes with a 10x loupe.
+      real: Irregular pores of many sizes, some joined, with rough, glassy or mineral-speckled walls.
+      fake: Evenly spaced, similar-sized holes or a smooth skin over the texture suggest moulding.
+    - id: acetone
+      weight: 2
+      how: Rub a bead with a cotton swab and nail-polish remover.
+      real: Natural black or grey lava leaves the swab clean or only grey with dust.
+      fake: Strong colour on the swab means the bead has been dyed.
+    - id: flame
+      weight: 2
+      how: Touch a heated pin to the inside of a drill hole.
+      real: Nothing happens.
+      fake: Plastic or resin softens, marks or smells.
+    - id: hardness
+      weight: 1
+      how: Scratch a hidden spot firmly with a steel knife.
+      real: Basalt resists and may wear the knife edge slightly.
+      fake: Plastic and resin scratch easily.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: A common grounding pairing in tradition and in bracelets. Both tolerate brief rinsing.
+    - slug: tiger-eye
+      why: Tradition pairs lava's strength with tiger eye's confidence. Tiger eye is harder, so it is not scratched by lava.
+    - slug: red-jasper
+      why: Two root-chakra stones in tradition for stamina and grounding.
+    - slug: hematite
+      why: A traditional grounding pairing. Both should stay dry, so they share care.
+    - slug: smoky-quartz
+      why: Two grounding stones in tradition. Quartz is hard enough to sit beside lava without scratching.
+  avoid:
+    - slug: opalite
+      why: Lava's rough surface scratches the softer glass of opalite when strung together, dulling it quickly.
+
+price:
+  tier: budget
+  note: Lava beads and diffuser bracelets are among the cheapest crystal jewellery. Price mostly reflects the other beads, charms and cord used.
+
+names:
+  es: Piedra volcánica
+
+sources:
+  - https://www.mindat.org/min-48492.html
+  - https://geology.com/rocks/basalt.shtml
+  - https://www.gemsociety.org/article/gemstone-toxicity-table/

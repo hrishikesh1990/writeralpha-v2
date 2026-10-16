@@ -1,0 +1,120 @@
+slug: druzy-quartz
+name: Druzy Quartz
+aka: [drusy quartz, druse, sugar quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [colorless, white, purple, blue, rainbow, black]
+origins: [Brazil, Uruguay, United States, India, Morocco]
+summary: >-
+  A sparkling crust of tiny quartz crystals on a rock, often agate. The quartz
+  is hard, but the crust traps water and dirt, the base can be porous, and many
+  pieces are dyed or metal-coated, so rinse briefly and skip salt.
+
+safety:
+  water:
+    verdict: brief
+    reason: The quartz itself is water-safe, but water and grime get trapped between the tiny crystals and the matrix may be porous, dyed or glued. Rinse quickly and dry well.
+  salt:
+    verdict: avoid
+    reason: Salt crystals lodge between the druzy points and are hard to remove, and salt water can strip dye or coatings. Use dry methods instead.
+  sun:
+    verdict: limit
+    reason: Natural colourless druzy is sun-stable, but dyed and coated druzy, and amethyst druzy, can fade. Keep long sun exposure for undyed pieces only.
+  sleep:
+    verdict: ok
+    reason: Non-toxic. The crystal crust is rough, so it suits a nightstand better than a pillow.
+  wear:
+    verdict: care
+    reason: The tiny points can snag fabric and break off with knocks. Pendants and earrings in protective settings last longest.
+  toxicity:
+    level: none
+    reason: Quartz is non-toxic. Dyes and coatings on treated pieces should not be ingested, so avoid direct elixirs.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye, throat]
+  elements: [air, water]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [cancer, pisces]
+  intentions: [peace-calm, emotional-balance, creativity, spiritual-growth, communication]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals in salt water
+    why: Salt gets trapped in the crystal crust and can strip dyes or metal coatings. Most druzy is better cleansed with smoke, sound or moonlight.
+    basis: physical
+  - who: Buyers of brightly coloured druzy
+    why: Vivid blue, pink, rainbow or metallic druzy is usually dyed or vapour-coated quartz. Treat it like a coated stone and keep it dry.
+    basis: physical
+  - who: People wanting a ring or bracelet for daily wear
+    why: The tiny crystals break and snag clothing. Choose a pendant or earrings, or a smooth stone for rings.
+    basis: physical
+  - who: Homes with young children
+    why: Small druzy pieces and broken crystal fragments are sharp and easy to swallow.
+    basis: physical
+  - who: People expecting druzy to have one fixed meaning
+    why: Tradition reads druzy through the stone underneath and its colour, so a dyed or coated piece carries a different traditional meaning from natural druzy.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed druzy agate
+    - Titanium or other metal-coated druzy (aura druzy)
+    - Glitter set in resin
+    - Crushed glass glued onto a backing
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the crust with a 10x loupe.
+      real: Tiny six-sided quartz crystals with pointed tips, growing directly from the rock.
+      fake: Irregular glass shards, flat glitter flakes or particles sitting in a layer of resin or glue.
+    - id: acetone
+      weight: 2
+      how: Touch a hidden edge with a cotton swab dipped in nail-polish remover.
+      real: Nothing comes off natural druzy.
+      fake: Colour on the swab means dye; a softened or tacky surface means resin.
+    - id: color
+      weight: 2
+      how: Look at the colour where the crust meets the base rock.
+      real: Natural druzy is colourless, white, smoky or amethyst purple.
+      fake: Neon colours, or colour concentrated at the base and in cracks, point to dye; oily rainbow sheen means a coating.
+    - id: hardness
+      weight: 2
+      how: Drag a crystal-covered edge gently across a glass offcut.
+      real: Quartz points scratch glass.
+      fake: Resin and glitter crusts do not scratch glass.
+    - id: price
+      weight: 1
+      how: Compare the price with the size and colour.
+      real: Natural druzy is affordable but varies with crystal size and sparkle.
+      fake: Very cheap, vividly coloured druzy jewellery is almost always dyed or coated.
+
+pairs:
+  good:
+    - slug: agate
+      why: Most druzy grows on agate, and tradition pairs them for stability and calm.
+    - slug: amethyst
+      why: Amethyst druzy and geodes are a natural pairing for calm and meditation.
+    - slug: clear-quartz
+      why: Both are quartz; tradition says clear quartz amplifies druzy's energy.
+    - slug: selenite
+      why: Selenite gives a dry way to cleanse druzy, avoiding water trapped in the crust.
+  avoid: []
+
+price:
+  tier: budget
+  note: Small druzy pendants and cabochons are inexpensive. Large natural geode slices and fine-sparkle druzy in gold settings cost more.
+
+names:
+  es: Drusa de cuarzo
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gia.edu/gia-news-research/dreamy-drusy-minute-crystals-shimmer-dramatic-jewelry-designs
+  - https://www.gemsociety.org/article/quartz-jewelry-and-gemstone-information/

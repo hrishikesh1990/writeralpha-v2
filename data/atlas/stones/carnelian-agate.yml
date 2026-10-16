@@ -1,0 +1,119 @@
+slug: carnelian-agate
+name: Carnelian Agate
+aka: [banded carnelian]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [orange, red, white, cream, brown]
+origins: [Brazil, India, Madagascar, Botswana, Uruguay]
+summary: >-
+  Agate with orange to red carnelian bands alternating with white or cream
+  chalcedony. The red comes from iron oxide and is often deepened by heating.
+  Hard, sun-stable and fine in plain water, but slightly porous, so avoid salt
+  soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and iron-oxide colour does not wash out, so rinsing or a short soak is fine. Dyed imitations may bleed in a long soak.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks in and leaves salt crystals in the pores and cracks as it dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: Iron-oxide colour does not fade in sunlight, and heated material is already colour-stable. Organic-dyed fakes are the exception.
+  sleep:
+    verdict: ok
+    reason: Physically safe in the bedroom. Tradition calls it a warming, stimulating stone, so some people prefer it elsewhere at night.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles everyday wear. Avoid hard knocks along band boundaries, where old cracks sometimes run.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with a little iron oxide is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [sacral, root]
+  elements: [fire]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aries, leo]
+  intentions: [courage, motivation, creativity, confidence, energy, grounding]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous stone and crystallises in pores and cracks. Plain water, smoke or sound avoid that.
+    basis: physical
+  - who: Buyers who want untreated colour
+    why: Banded carnelian agate is often heated to brighten the red bands. It is stable and normal practice, but ask if natural colour matters to you.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The material is not toxic.
+    basis: physical
+  - who: Light sleepers or anyone wanting a calming stone
+    why: Tradition treats carnelian agate as stimulating. For calm and sleep, tradition points to amethyst or blue lace agate instead.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed agate with red bands
+    - Banded glass or resin
+    - Plain carnelian or red jasper sold under this name
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the red bands in daylight and along any cracks.
+      real: Orange to brick-red bands that blend into white or cream bands, with soft natural edges.
+      fake: Colour that pools in cracks or near drill holes, or a pinkish-purple red, suggests dye.
+    - id: light
+      weight: 2
+      how: Hold a thin edge up to a torch.
+      real: Red bands glow orange and translucent, white bands stay milkier.
+      fake: Resin and glass glow evenly with no change between bands.
+    - id: magnification
+      weight: 3
+      how: Examine the bands with a 10x loupe.
+      real: Continuous wavy bands, no bubbles.
+      fake: Bubbles or swirl lines mean glass; printed dots mean a printed or resin piece.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Red on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Do not test finished jewellery.
+      real: It scratches glass.
+      fake: Resin cannot scratch glass.
+
+pairs:
+  good:
+    - slug: carnelian
+      why: The same material without white bands. Tradition uses them together for courage, with identical care.
+    - slug: red-jasper
+      why: Two Mars stones in tradition, used together for stamina and motivation.
+    - slug: citrine
+      why: A traditional pairing for confidence and creative drive.
+    - slug: smoky-quartz
+      why: Smoky quartz grounds carnelian agate's warmth in tradition. Both are hard quartz stones.
+  avoid:
+    - slug: amethyst
+      why: Opposed energies in tradition, as with carnelian. Not combined for sleep or meditation.
+
+price:
+  tier: budget
+  note: Tumbled stones, slices and beads are inexpensive. Large polished pieces with crisp red-and-white banding, and cameo-grade material, cost more.
+
+sources:
+  - https://www.mindat.org/min-9333.html
+  - https://www.mindat.org/min-51.html
+  - https://www.gemsociety.org/article/carnelian-gem-information/
+  - https://www.gemsociety.org/article/agate-gem-information/

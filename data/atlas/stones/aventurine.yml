@@ -1,0 +1,126 @@
+slug: aventurine
+name: Aventurine
+aka: [green aventurine, aventurine quartz, indian jade]
+kind: rock
+species: Quartz (quartzite with mica)
+family: quartz
+formula: SiO2 (with fuchsite mica)
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [green, blue, red, orange, peach, yellow]
+origins: [India, Brazil, Russia, Chile, China]
+summary: >-
+  A quartz or quartzite (granular quartz rock) that sparkles from flakes of
+  mica; the green colour usually comes from fuchsite, a chromium-bearing mica.
+  It is durable and rinse-safe, but it is slightly porous and often dyed.
+
+safety:
+  water:
+    verdict: brief
+    reason: Quartz does not dissolve, but granular quartzite is slightly porous and many green beads are dyed or oiled. Rinse and dry; avoid long soaks.
+  salt:
+    verdict: avoid
+    reason: Salt water penetrates the grain boundaries, can lift dye or oil, and salt left in surface pits around mica flakes dulls the polish.
+  sun:
+    verdict: limit
+    reason: Natural fuchsite green is stable, but dyed aventurine fades in sunlight. If you are not sure your piece is undyed, keep sun exposure short.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth when polished, so it is safe beside the bed or under a pillow.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles everyday wear. Pieces rich in mica can be softer and pit or split more easily.
+  toxicity:
+    level: none
+    reason: Quartz with fuchsite mica. The chromium is locked in the mica as stable Cr3+ and handling is safe; only dry cutting dust (silica) is a hazard.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [earth]
+  planets: [venus, mercury]
+  vedic_planet: null
+  zodiac: [aries, leo, taurus, virgo]
+  intentions: [luck, wealth, career, healing, emotional-balance, confidence]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: People who cleanse stones in salt water
+    why: Aventurine is a slightly porous rock and many pieces are dyed or oiled. Salt water can strip colour and dull the surface.
+    basis: physical
+  - who: Buyers of deep emerald-green or blue beads
+    why: Much intense green and blue "aventurine" is dyed quartzite or glass. Dye can bleed in water and fade in sun.
+    basis: physical
+  - who: People cutting or sanding raw aventurine
+    why: Like all quartz rock it produces silica dust when ground dry. Work it wet. The chromium mica is not a handling hazard.
+    basis: physical
+  - who: People hoping for a quick financial windfall
+    why: Tradition calls green aventurine a lucky, prosperity stone, but this is belief only and no substitute for financial planning.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Green goldstone (aventurine glass)
+    - Dyed quartzite
+    - Green glass beads
+    - Jade, amazonite or chrysoprase confused with aventurine
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the sparkle with a 10x loupe.
+      real: Irregular, flat green mica flakes scattered unevenly through grainy, translucent quartz.
+      fake: Goldstone shows sharp, uniform triangular or hexagonal metallic crystals evenly spread through glass.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Green colour on the swab, or colour concentrated in cracks, means dye.
+    - id: color
+      weight: 2
+      how: Look at the stone in daylight against white paper.
+      real: Uneven green, with lighter and darker patches and visible sparkle.
+      fake: Perfectly even, glassy colour with no grain.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot of a tumbled piece, try to scratch glass.
+      real: Aventurine scratches glass.
+      fake: Glass imitations barely mark glass; dyed soft stones do not.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Cool at first, warming slowly.
+      fake: Glass warms a little faster; resin feels warm at once.
+    - id: price
+      weight: 1
+      how: Compare price with colour and size.
+      real: Natural green aventurine is common and inexpensive.
+      fake: A high price for "Indian jade" usually means you are paying a jade price for aventurine.
+
+pairs:
+  good:
+    - slug: citrine
+      why: A classic prosperity pairing in tradition; both are quartz-based.
+    - slug: rose-quartz
+      why: Two heart-chakra stones paired for emotional healing.
+    - slug: jade
+      why: Two green luck stones used together in tradition.
+    - slug: tiger-eye
+      why: Paired in tradition for career confidence and opportunity.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies aventurine's luck energy.
+    - slug: peridot
+      why: Two green heart stones paired for growth and renewal.
+  avoid: []
+
+price:
+  tier: budget
+  note: Green aventurine beads, tumbles and carvings are inexpensive. Translucent, evenly sparkling material and large carvings cost more.
+
+names:
+  es: Aventurina
+
+sources:
+  - https://www.mindat.org/min-436.html
+  - https://geology.com/gemstones/aventurine/
+  - https://www.minerals.net/gemstone/aventurine

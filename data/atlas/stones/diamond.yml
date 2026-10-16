@@ -1,0 +1,149 @@
+slug: diamond
+name: Diamond
+aka: [heera, hira]
+kind: mineral
+species: Diamond
+family: native element
+formula: C
+crystal_system: cubic
+mohs: [10, 10]
+colors: [colorless, white, yellow, brown, pink, blue, black]
+origins: [Russia, Botswana, Canada, Democratic Republic of the Congo, Australia, South Africa]
+summary: >-
+  Crystalline carbon and the hardest natural material. Safe in water, salt and
+  sun and suited to daily wear, but it can still chip along cleavage planes if
+  struck. Lab-grown diamond is real diamond; only a lab report tells them apart.
+
+safety:
+  water:
+    verdict: safe
+    reason: Diamond is inert and does not absorb water. Warm soapy water and a soft brush are the standard cleaning method. Fracture-filled stones should not go in hot water or steam.
+  salt:
+    verdict: safe
+    reason: Salt cannot harm diamond. Rinse afterwards, because salt and chlorine attack gold and silver settings and loosen prongs over time.
+  sun:
+    verdict: safe
+    reason: Diamond colour does not fade in daylight. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Physically safe. Take rings off at night if the prongs are sharp or catch on bedding.
+  wear:
+    verdict: daily
+    reason: Nothing in daily life scratches diamond, but a sharp knock on a girdle or point can split it along its cleavage. Check prongs yearly.
+  toxicity:
+    level: none
+    reason: Pure carbon, chemically inert and non-toxic.
+  elixir: direct
+
+tradition:
+  chakras: [crown]
+  elements: [fire, air]
+  planets: [venus, sun]
+  vedic_planet: shukra
+  zodiac: [aries, taurus, libra]
+  intentions: [love, confidence, courage, clarity, spiritual-growth, wealth]
+  energy: energizing
+  birth_months:
+    modern: [april]
+    traditional: [april]
+
+cautions:
+  - who: People who knock their hands during work or sport
+    why: Diamond resists scratches but has four cleavage directions. A hard blow on an edge or point can chip or split it. Take rings off for heavy work.
+    basis: physical
+  - who: Owners of clarity-enhanced (fracture-filled) diamonds
+    why: The glass filler can cloud, crack or leak with ultrasonic cleaners, steam, jeweller's torch heat or acids. Ask whether the stone is treated before cleaning or repair.
+    basis: physical
+  - who: Buyers who need a natural diamond
+    why: Lab-grown diamond is chemically and physically diamond, so home tests and basic testers cannot separate it from mined diamond. Only a laboratory report (GIA, IGI or similar) can.
+    basis: physical
+  - who: Anyone advised in Vedic astrology to avoid Venus stones
+    why: In Jyotish, diamond (Heera) is the gem of Shukra (Venus). Astrologers usually recommend it for Taurus and Libra ascendants and advise checking the chart first, especially when Venus is weak or afflicted.
+    basis: tradition
+  - who: People already wearing ruby or pearl for Vedic reasons
+    why: Vedic tradition treats the Sun and Moon as enemies of Venus, so diamond is traditionally not combined with ruby (Manik) or pearl (Moti) in the same ring.
+    basis: tradition
+zodiac_cautions:
+  - sign: leo
+    why: Leo is ruled by the Sun, which Vedic astrology counts as an enemy of Venus, the planet diamond represents.
+  - sign: cancer
+    why: Cancer is ruled by the Moon, also treated as hostile to Venus, so Venus stones are usually not advised for Cancer ascendants.
+
+identify:
+  common_fakes:
+    - Cubic zirconia
+    - Moissanite
+    - White sapphire or white topaz
+    - Glass
+    - Lab-grown diamond sold as mined (real diamond, misrepresented origin)
+  tests:
+    - id: certificate
+      weight: 3
+      how: Ask for a report from an independent laboratory and check the report number on the lab's website.
+      real: The report confirms natural or laboratory-grown diamond, with the number often laser-inscribed on the girdle.
+      fake: No report, a report from an unknown lab, or a number that does not match the stone.
+    - id: temperature
+      weight: 2
+      how: Use a jeweller's thermal diamond tester on a clean, dry stone.
+      real: Diamond conducts heat very fast and the tester reads diamond.
+      fake: Cubic zirconia, sapphire and glass fail. Moissanite also passes a thermal tester, so add a moissanite (electrical) test.
+    - id: magnification
+      weight: 2
+      how: Look through the side of the stone at the back facet edges with a 10x loupe.
+      real: Facet edges look single and sharp, with natural crystal inclusions if any.
+      fake: Moissanite shows doubled back facet edges; cubic zirconia often has rounded, slightly worn facet edges.
+    - id: light
+      weight: 1
+      how: For a loose round brilliant, lay it table-down on a printed line of text.
+      real: You cannot read the line through a well-cut diamond.
+      fake: The line is often visible through cubic zirconia and glass. Fancy cuts and some lab stones give mixed results.
+    - id: weight
+      weight: 1
+      how: Weigh a loose stone and compare its weight with its measured size on a diamond size chart.
+      real: Weight matches the chart for its dimensions.
+      fake: Cubic zirconia is about 1.7 times heavier than a diamond of the same size.
+    - id: uv
+      weight: 1
+      how: Shine a long-wave UV torch on the stone in the dark.
+      real: Many natural diamonds glow blue, but many do not.
+      fake: Not diagnostic on its own; use only as a supporting hint.
+    - id: price
+      weight: 1
+      how: Compare the price with current lab-grown and natural price guides.
+      real: Natural diamonds cost many times more than lab-grown stones of similar quality.
+      fake: A "natural" diamond priced like a lab-grown or simulant stone deserves a lab report before purchase.
+
+pairs:
+  good:
+    - slug: emerald
+      why: In Jyotish, Mercury is a friend of Venus, so emerald and diamond are a traditional compatible pairing.
+    - slug: sapphire
+      why: Blue sapphire's planet Saturn is a friend of Venus in Vedic tradition, and the two are often set together.
+    - slug: clear-quartz
+      why: Tradition calls clear quartz a gentle stand-in that amplifies diamond's clarity.
+    - slug: opal
+      why: Both are Venus stones in tradition. Opal is soft, so keep it away from diamond in a jewellery box.
+    - slug: rose-quartz
+      why: A traditional love pairing. Store separately, since diamond scratches quartz.
+  avoid:
+    - slug: ruby
+      why: Vedic astrology treats the Sun (ruby) and Venus (diamond) as enemies, so the two are traditionally not worn together.
+
+price:
+  tier: luxury
+  note: Natural diamond prices rise steeply with carat, colour, clarity and cut. Lab-grown diamonds now cost a fraction of natural ones of similar quality.
+
+names:
+  hi: Heera (हीरा)
+  bn: Hira (হীরা)
+  es: Diamante
+  ta: Vairam (வைரம்)
+  te: Vajram (వజ్రం)
+  mr: Hira (हिरा)
+
+sources:
+  - https://www.mindat.org/min-1282.html
+  - https://www.gia.edu/diamond
+  - https://geology.com/minerals/diamond.shtml
+  - https://www.gia.edu/gems-gemology/winter-1997-synthetic-moissanite-nassau
+  - https://en.wikipedia.org/wiki/Navratna

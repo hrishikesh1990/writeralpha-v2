@@ -1,0 +1,118 @@
+slug: crackle-quartz
+name: Crackle Quartz
+aka: [crackled quartz, fire and ice quartz, rainbow crackle quartz]
+kind: treated
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [colorless, pink, red, blue, green, purple, multicolor]
+origins: [Brazil, China, India]
+summary: >-
+  Quartz that has been heated and plunged into cold water to fill it with
+  cracks, then usually dyed. The cracks make it fragile and let water carry dye
+  out, so keep it out of salt, long soaks and strong sun.
+
+safety:
+  water:
+    verdict: brief
+    reason: The quartz does not dissolve, but water runs into the crack network and can leach dye or deepen cracks. A quick rinse and thorough drying is the limit.
+  salt:
+    verdict: avoid
+    reason: Salt water is drawn into the cracks and crystallises as it dries, which can widen them and lift dye. Never use salt.
+  sun:
+    verdict: avoid
+    reason: Most crackle quartz is dyed, and dyes fade quickly in sunlight. Undyed colourless pieces are sun-stable but are uncommon.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe beside the bed. It is more fragile than ordinary quartz, so it can crack if knocked off a nightstand.
+  wear:
+    verdict: care
+    reason: The quartz is Mohs 7 but the internal cracks make it brittle. Beads and pendants are fine; avoid rings that take knocks.
+  toxicity:
+    level: low
+    reason: The quartz is non-toxic, but unknown dyes sit in the cracks and can bleed into water. Handle normally; do not use it in drinking water.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air, fire]
+  planets: [sun]
+  vedic_planet: null
+  zodiac: [leo, aquarius]
+  intentions: [energy, creativity, transformation, clarity]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone making crystal water or bath soaks
+    why: Dye stored in the cracks can bleed into water. Use the indirect method or choose an untreated stone.
+    basis: physical
+  - who: People who cleanse with salt or long soaks
+    why: Liquid penetrates the crack network; salt crystallising inside can widen cracks and strip colour.
+    basis: physical
+  - who: People who drop or knock their jewellery
+    why: Heat-shocked quartz is far more brittle than ordinary quartz and can split along the cracks.
+    basis: physical
+  - who: Anyone displaying it in a sunny window
+    why: Dyed crackle quartz can lose much of its colour in sunlight.
+    basis: physical
+  - who: People who want natural, untreated stones
+    why: Crackle quartz is a man-made treatment of natural quartz. Tradition still uses it, but it should be sold as treated.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Crackled glass marbles and beads
+    - Dyed crackled glass sold as crackle quartz
+    - Resin with a printed crackle pattern
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a hidden spot, try to scratch a glass offcut with the bead or stone. Use light pressure, as crackle quartz is brittle.
+      real: Quartz (Mohs 7) scratches glass.
+      fake: Crackled glass barely marks glass; resin is scratched itself.
+    - id: bubbles
+      weight: 2
+      how: Look between the cracks with a 10x loupe.
+      real: Only flat, glittering fractures; no round bubbles.
+      fake: Round gas bubbles between the cracks point to glass.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass warms faster; resin feels warm at once.
+    - id: weight
+      weight: 1
+      how: Compare with a plain quartz bead of the same size.
+      real: Feels the same as quartz (specific gravity about 2.65).
+      fake: Resin feels much lighter.
+    - id: acetone
+      weight: 1
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: Dyed crackle quartz may tint the swab; that is expected, not a sign of fakery.
+      fake: A tacky or softened surface means resin rather than quartz.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: The untreated form of the same mineral; tradition pairs them for clarity.
+    - slug: selenite
+      why: Selenite allows dry cleansing, which suits crackle quartz better than water.
+    - slug: amethyst
+      why: A traditional crown-chakra pairing for meditation.
+    - slug: citrine
+      why: Paired in tradition for creativity and uplift.
+  avoid: []
+
+price:
+  tier: budget
+  note: Crackle quartz beads, spheres and tumbles are very cheap. Prices above ordinary quartz are rarely justified.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/quartz-jewelry-and-gemstone-information/
+  - https://www.gia.edu/gem-treatment

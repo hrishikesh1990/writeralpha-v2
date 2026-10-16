@@ -1,0 +1,134 @@
+slug: moonstone
+name: Moonstone
+aka: [adularia, chandrakant, rainbow moonstone, blue moonstone]
+kind: variety
+species: Feldspar (usually orthoclase or microcline)
+family: feldspar
+formula: KAlSi3O8
+crystal_system: monoclinic
+mohs: [6, 6.5]
+colors: [white, colorless, gray, blue sheen, peach, rainbow]
+origins: [Sri Lanka, India, Madagascar, Myanmar, Tanzania]
+summary: >-
+  A feldspar with a floating blue-white glow (adularescence) from thin
+  alternating layers inside the crystal. It has perfect cleavage, so a sharp
+  knock can split it. Washing is fine; avoid long soaks, salt and ultrasonic
+  cleaners.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so washing in warm soapy water is fine. Avoid long soaks and hot water, which can work into the cleavage cracks most moonstones have.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them. Use plain water, smoke or moonlight.
+  sun:
+    verdict: safe
+    reason: The glow is a structural light effect, not a pigment, so sunlight does not fade it. Avoid sudden heat, which can crack feldspar along its cleavage.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth, so it is safe under a pillow. Tradition calls it a calming, dream-friendly stone.
+  wear:
+    verdict: care
+    reason: At Mohs 6 with two perfect cleavages, a hard knock can chip or split it. Choose protective bezel settings for rings and take it off for sport or housework.
+  toxicity:
+    level: none
+    reason: Potassium aluminium silicate; non-toxic to handle and wear.
+  elixir: indirect
+
+tradition:
+  chakras: [third_eye, crown, sacral]
+  elements: [water]
+  planets: [moon]
+  vedic_planet: chandra
+  zodiac: [cancer, libra, scorpio]
+  intentions: [intuition, emotional-balance, creativity, peace-calm, sleep, love]
+  energy: calming
+  birth_months:
+    modern: [june]
+
+cautions:
+  - who: People who want a ring for heavy daily use
+    why: Moonstone has perfect cleavage and can split from one sharp knock against a door frame or counter. Pendants and earrings, or rings in protective bezels, last longer.
+    basis: physical
+  - who: Anyone using ultrasonic or steam jewellery cleaners
+    why: Vibration and heat can open cleavage cracks and shatter the stone. Clean it with warm soapy water and a soft brush.
+    basis: physical
+  - who: People who cleanse with salt water
+    why: Salt crystallising in cleavage cracks can widen them over time.
+    basis: physical
+  - who: Buyers comparing "rainbow moonstone" and opalite
+    why: Rainbow moonstone is usually white labradorite, a related feldspar with the same care needs. Opalite sold as moonstone is glass.
+    basis: physical
+  - who: Anyone advised by a Vedic astrologer about Moon stones
+    why: In Jyotish, moonstone is worn as an upratna (substitute) for pearl, a Chandra stone. It is traditionally not combined with cat's eye or hessonite.
+    basis: tradition
+  - who: People who feel emotionally heightened around the full moon
+    why: Crystal tradition says moonstone amplifies lunar and emotional cycles. Some people remove it at the full moon.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Opalite glass
+    - Milky glass or resin cabochons
+    - White chalcedony
+    - White labradorite sold as moonstone (natural, closely related feldspar)
+  tests:
+    - id: light
+      weight: 3
+      how: Tilt the stone slowly under a single light.
+      real: A soft blue or white glow floats across the surface and appears only at certain angles.
+      fake: Opalite glows blue over dark backgrounds and orange when backlit, at every angle; resin shows a flat, even sheen.
+    - id: inclusions
+      weight: 3
+      how: Look into the stone with a 10x loupe.
+      real: Small cleavage cracks in rows, called centipedes, and tiny inclusions.
+      fake: Round bubbles or swirl lines mean glass.
+    - id: hardness
+      weight: 1
+      how: Press a steel pin against a hidden spot. Do not use this on fine stones.
+      real: Moonstone (Mohs 6) resists steel.
+      fake: Resin and plastic are marked easily.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin feels warm at once.
+    - id: price
+      weight: 1
+      how: Compare price with size, transparency and the strength of the blue glow.
+      real: Milky Indian moonstone is cheap; clear Sri Lankan stones with strong blue sheen are expensive.
+      fake: A large, clear stone with an intense blue glow at a low price is likely glass.
+
+pairs:
+  good:
+    - slug: selenite
+      why: Two Moon stones in tradition, used together for intuition and calm.
+    - slug: labradorite
+      why: Closely related feldspars with the same care rules; paired for intuition.
+    - slug: rose-quartz
+      why: A traditional pairing for love and emotional balance.
+    - slug: amethyst
+      why: Paired in tradition for sleep and dreamwork.
+    - slug: peach-moonstone
+      why: The same feldspar in a warmer colour; paired for nurturing energy.
+    - slug: sunstone
+      why: Tradition pairs the Sun and Moon stones to balance energy and calm.
+  avoid:
+    - slug: cats-eye
+      why: Vedic enmity. Moonstone stands for the Moon, which Jyotish treats as hostile to Ketu, the planet of cat's eye.
+
+price:
+  tier: mid
+  note: Milky and rainbow moonstone beads are inexpensive. Transparent stones with a strong blue sheen, especially from Sri Lanka, can cost tens to hundreds of dollars per carat.
+
+names:
+  hi: Chandrakant (चंद्रकांत)
+  bn: Chandrakanta (চন্দ্রকান্ত)
+  es: Piedra de luna
+
+sources:
+  - https://www.mindat.org/min-2774.html
+  - https://www.gia.edu/moonstone
+  - https://www.gemsociety.org/article/moonstone-jewelry-gem-information/
+  - https://geology.com/gemstones/moonstone/

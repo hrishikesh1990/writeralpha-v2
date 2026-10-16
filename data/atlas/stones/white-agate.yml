@@ -1,0 +1,120 @@
+slug: white-agate
+name: White Agate
+aka: [safed hakik, milky agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [white, cream, light grey, pale blue]
+origins: [Brazil, India, Uruguay, China, Madagascar]
+summary: >-
+  Milky white to pale grey agate, often with faint bands. Its colour is natural,
+  so it is sun-stable and fine in plain water. Being slightly porous and pale,
+  it can stain from oils, dyes and salt, so keep salt soaks and cosmetics away.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, so rinsing or a short soak is fine. Use clean water; tea, coffee or coloured liquids can stain it.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into pores and fine cracks and leaves salt crystals as it dries, which dulls and greys the white surface.
+  sun:
+    verdict: safe
+    reason: Natural white and grey chalcedony does not fade. Sun is fine, though a hot windowsill gives no benefit.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition treats it as calm and soothing.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear. The pale surface can pick up stains from lotion and hair dye, so put jewellery on last.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [crown]
+  elements: [air, water]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [gemini, cancer]
+  intentions: [peace-calm, clarity, emotional-balance, protection, healing]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the porous agate and crystallises in pores and cracks, leaving a dull or greyish surface.
+    basis: physical
+  - who: People who wear pale stones with creams, hair dye or self-tan
+    why: Porous white agate absorbs coloured products and can stain permanently. Apply cosmetics first and remove jewellery for hair colouring.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People wanting an energising stone
+    why: Tradition treats white agate as a gentle, calming stone. For drive, tradition suggests carnelian or red jasper.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - White glass or milky glass beads
+    - Howlite or magnesite
+    - White plastic or resin
+    - Snow quartz sold as white agate
+  tests:
+    - id: light
+      weight: 2
+      how: Shine a torch through a thin edge.
+      real: A soft, milky glow, often with faint bands.
+      fake: Howlite and magnesite stay chalky and opaque; milky glass glows evenly.
+    - id: magnification
+      weight: 3
+      how: Examine the surface and edges with a 10x loupe.
+      real: Waxy polish, faint bands and no bubbles.
+      fake: Bubbles mean glass. Grey web-like veins in a chalky body mean howlite.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: White agate scratches glass.
+      fake: Howlite (Mohs 3.5) and plastic cannot.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Plastic warms almost immediately.
+    - id: weight
+      weight: 1
+      how: Compare with a plastic bead of the same size.
+      real: Noticeably heavier (specific gravity about 2.6).
+      fake: Plastic and resin feel light.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition pairs two clear-to-white crown stones for clarity. Same care rules.
+    - slug: moonstone
+      why: Both are Moon stones in tradition, used for calm and intuition. Moonstone is softer, so store them apart.
+    - slug: selenite
+      why: A traditional crown pairing. Selenite must stay dry, so cleanse them separately.
+    - slug: blue-lace-agate
+      why: Two gentle, calming agates in tradition with identical care.
+  avoid: []
+
+price:
+  tier: budget
+  note: White agate beads and tumbled stones are inexpensive. Large, evenly white polished pieces and carvings cost more.
+
+names:
+  hi: Safed Hakik (सफ़ेद हकीक)
+  es: Ágata blanca
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/agate-gem-information/

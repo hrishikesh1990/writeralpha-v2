@@ -1,0 +1,132 @@
+slug: black-tourmaline
+name: Black Tourmaline
+aka: [schorl]
+kind: mineral
+species: Schorl
+family: tourmaline
+formula: NaFe3Al6(Si6O18)(BO3)3(OH)3(OH)
+crystal_system: trigonal
+mohs: [7, 7.5]
+colors: [black]
+origins: [Brazil, Pakistan, Madagascar, Namibia, United States]
+summary: >-
+  The black, iron-rich member of the tourmaline group, called schorl. Hard and
+  water-safe, but its striated crystals are brittle and raw pieces splinter,
+  so handle rough sticks with care.
+
+safety:
+  water:
+    verdict: safe
+    reason: Schorl is hard and does not dissolve or rust. Rinsing or a short soak is fine. Dry raw specimens well, since cracks and mica matrix can hold water and dirt.
+  salt:
+    verdict: safe
+    reason: Salt does not attack tourmaline. Rinse it off afterwards; on raw, cracked specimens salt crystals can lodge in fractures, so a rinse in plain water is simpler.
+  sun:
+    verdict: safe
+    reason: Black tourmaline does not fade. Sunlight is physically harmless, though raw pieces in a hot window can crack from sudden temperature changes.
+  sleep:
+    verdict: ok
+    reason: Safe on a nightstand. Raw sticks have sharp, splintery edges, so a tumbled stone is better under a pillow.
+  wear:
+    verdict: daily
+    reason: Mohs 7 to 7.5 resists scratches. Tourmaline is brittle, so beads and tumbled pieces wear well while thin raw points can snap if knocked.
+  toxicity:
+    level: none
+    reason: Tourmaline is a stable borosilicate and safe to handle. Wash hands after handling crumbly raw pieces in mica or schist matrix.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [saturn, pluto]
+  vedic_planet: null
+  zodiac: [capricorn, scorpio, libra]
+  intentions: [protection, grounding, anxiety, peace-calm, emotional-balance]
+  energy: grounding
+  birth_months:
+    modern: [october]
+
+cautions:
+  - who: Homes with small children or pets
+    why: Raw black tourmaline sticks split into sharp, needle-like slivers when dropped. Keep raw pieces out of reach and choose tumbled stones for children's rooms.
+    basis: physical
+  - who: People who drop or knock their stones
+    why: Despite its hardness, tourmaline is brittle and splits across the crystal when struck. Thin raw points and carved pendants are the most vulnerable.
+    basis: physical
+  - who: Buyers who want genuine schorl
+    why: Black obsidian, black glass and dyed black chalcedony are sold as black tourmaline, especially as polished beads. Raw striated crystals are much harder to fake.
+    basis: physical
+  - who: People seeking an energising or uplifting stone
+    why: Tradition treats black tourmaline as heavy and grounding. For energy and motivation, tradition suggests carnelian, citrine or pyrite instead.
+    basis: tradition
+  - who: Anyone relying on it to block phone or Wi-Fi signals
+    why: Tradition calls it a shield against electromagnetic smog, but a stone on a desk does not measurably block radio signals. Treat this as belief, not protection.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Black obsidian or black glass
+    - Dyed black chalcedony sold as tourmaline beads
+    - Black kyanite or hornblende sold as tourmaline
+    - Black plastic beads
+  tests:
+    - id: shape
+      weight: 3
+      how: Look at raw crystals along their length and at the broken end.
+      real: Deep parallel grooves (striations) along the length and a rounded triangular cross-section.
+      fake: Obsidian and glass have smooth, curved shell-like breaks and no striations.
+    - id: light
+      weight: 2
+      how: Shine a bright torch through the thinnest edge.
+      real: Schorl stays opaque black even at thin edges.
+      fake: Obsidian and glass often show smoky brown or grey translucency at thin edges.
+    - id: weight
+      weight: 2
+      how: Compare it in your hand with an obsidian or glass piece of the same size.
+      real: Noticeably heavy for its size (specific gravity about 3.2).
+      fake: Obsidian and glass (about 2.4 to 2.5) feel lighter; plastic is much lighter.
+    - id: hardness
+      weight: 2
+      how: On a hidden part of a raw or tumbled piece, try to scratch plain glass. Do not test polished beads you want to keep.
+      real: Tourmaline scratches glass.
+      fake: Glass and obsidian scratch glass only weakly; plastic does not scratch it at all.
+    - id: magnification
+      weight: 1
+      how: Look at a chipped spot with a 10x loupe.
+      real: Rough, uneven fracture, sometimes with tiny cracks across the crystal.
+      fake: Glassy, smooth curved fractures or gas bubbles.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Black tourmaline is common and inexpensive, so low prices are normal.
+      fake: Perfectly uniform, glossy black beads sold in bulk are more often glass or dyed agate.
+
+pairs:
+  good:
+    - slug: smoky-quartz
+      why: The classic grounding pair in tradition. Both are hard and safe to rinse.
+    - slug: selenite
+      why: Tradition pairs selenite's light with tourmaline's protection. Keep selenite dry and away from tourmaline's hard edges.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies tourmaline's protective energy.
+    - slug: amethyst
+      why: A common meditation pair, combining protection with calm intuition.
+    - slug: hematite
+      why: Two grounding root-chakra stones in tradition, often worn together in bracelets.
+    - slug: black-obsidian
+      why: Both are protection stones in tradition and are often placed together by doors.
+    - slug: rose-quartz
+      why: Tradition balances tourmaline's protective energy with rose quartz's gentleness.
+  avoid: []
+
+price:
+  tier: budget
+  note: Raw sticks and tumbled stones are inexpensive. Large, well-terminated crystals on matrix and clean faceted schorl cost more.
+
+names:
+  es: Turmalina negra
+
+sources:
+  - https://www.mindat.org/min-3578.html
+  - https://geology.com/minerals/tourmaline.shtml
+  - https://www.gemsociety.org/article/tourmaline-jewelry-and-gemstone-information/

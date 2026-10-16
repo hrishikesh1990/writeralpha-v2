@@ -1,0 +1,127 @@
+slug: honey-calcite
+name: Honey Calcite
+aka: [amber calcite, golden calcite]
+kind: variety
+species: Calcite
+family: carbonate
+formula: CaCO3
+crystal_system: trigonal
+mohs: [3, 3]
+colors: [honey, amber, golden yellow, orange-brown]
+origins: [Mexico, United States, Brazil]
+summary: >-
+  A translucent golden to amber calcite, often sold as cleavage rhombs that
+  show calcite's strong double refraction. Soft at Mohs 3 and reactive to
+  acids, it should be kept dry, away from salt and out of rings.
+
+safety:
+  water:
+    verdict: brief
+    reason: Calcite dissolves only very slowly, so a quick rinse is fine. Soaking clouds the surface and acidic water etches it. Pat dry straight away.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the soft surface and salt water etches calcite. Use smoke, sound or moonlight instead.
+  sun:
+    verdict: limit
+    reason: The honey colour comes from trace iron and is fairly stable, but heat from long sun can crack calcite along its cleavage planes.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and fine on a nightstand. Rhombs have sharp edges that chip, so use a tumbled piece under a pillow.
+  wear:
+    verdict: special
+    reason: At Mohs 3 it scratches against keys and other stones and splits along cleavage planes if knocked. Better as a desk or pocket stone than jewellery.
+  toxicity:
+    level: none
+    reason: Calcium carbonate is non-toxic to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [solar_plexus, sacral]
+  elements: [fire, earth]
+  planets: [sun]
+  vedic_planet: null
+  zodiac: [leo]
+  intentions: [concentration, confidence, peace-calm, clarity, motivation]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals in water, salt or vinegar
+    why: Calcite reacts with acids, including vinegar, lemon juice and many cleaners, and salt etches and scratches it. Clean it with a dry, soft cloth.
+    basis: physical
+  - who: People who want a stone for rings or bracelets
+    why: It is too soft for daily wear and splits cleanly along cleavage planes when knocked.
+    basis: physical
+  - who: People keeping it in a crystal bowl with harder stones
+    why: Quartz, agate and most other crystals scratch it. Store it wrapped or apart.
+    basis: physical
+  - who: Buyers of rhombs that look perfectly clear
+    why: Yellow glass and resin are sometimes sold as honey calcite. Real calcite shows double images and breaks into rhombs.
+    basis: physical
+  - who: People wanting a deeply grounding stone
+    why: Tradition presents honey calcite as uplifting and focusing for study. For heavy grounding, tradition points to smoky quartz or hematite.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Yellow or amber glass
+    - Resin or amber imitations
+    - Yellow calcite dyed to a honey colour
+    - Citrine or heated amethyst confused with honey calcite (and the reverse)
+  tests:
+    - id: light
+      weight: 3
+      how: Lay a clear piece over a line of printed text and look straight down.
+      real: The line appears doubled, the strong double refraction of calcite.
+      fake: Glass, resin and citrine show a single line.
+    - id: hardness
+      weight: 3
+      how: Try to scratch a hidden spot with a steel knife, then try to scratch glass with the stone.
+      real: Steel scratches it easily and it cannot scratch glass.
+      fake: Citrine and glass resist the knife, and citrine scratches glass.
+    - id: shape
+      weight: 2
+      how: Look at the edges of rough pieces.
+      real: Slanted box shapes (rhombs) with flat, mirror-like cleavage faces.
+      fake: Glass and resin show curved, shell-like breaks or mould seams.
+    - id: water_dissolve
+      weight: 2
+      how: Put a drop of vinegar on a hidden spot and watch closely. Mildly destructive; rinse at once.
+      real: Tiny bubbles fizz on the surface.
+      fake: Glass, resin and quartz do not react.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek for ten seconds.
+      real: Feels cool at first.
+      fake: Resin and plastic feel warm almost immediately.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Honey calcite is inexpensive even in large pieces.
+      fake: High prices for "rare golden calcite" are not justified; very cheap glossy beads may be glass.
+
+pairs:
+  good:
+    - slug: citrine
+      why: Tradition pairs these golden stones for confidence and focus. Citrine is harder, so store them apart.
+    - slug: carnelian
+      why: A traditional pairing for motivation and creative energy.
+    - slug: tiger-eye
+      why: Both are solar plexus stones in tradition, used together for confidence and study.
+    - slug: clear-quartz
+      why: Tradition says quartz amplifies honey calcite's focus.
+    - slug: selenite
+      why: Both must stay dry, and selenite cleanses without water.
+  avoid: []
+
+price:
+  tier: budget
+  note: Rough rhombs and tumbled honey calcite are inexpensive. Large, clear, deeply coloured rhombs and carved spheres cost somewhat more.
+
+names:
+  es: Calcita miel
+
+sources:
+  - https://www.mindat.org/min-859.html
+  - https://www.minerals.net/mineral/calcite
+  - https://geology.com/minerals/calcite.shtml

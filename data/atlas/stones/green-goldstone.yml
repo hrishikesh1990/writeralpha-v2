@@ -1,0 +1,115 @@
+slug: green-goldstone
+name: Green Goldstone
+aka: [green aventurine glass, green sandstone, green sunstone]
+kind: glass
+species: null
+family: glass
+formula: null
+crystal_system: null
+mohs: [5.5, 6]
+colors: [dark green, bottle green]
+origins: [China, India, Italy]
+summary: >-
+  Man-made glass, coloured green by chromium, that sparkles with tiny metallic
+  crystals grown inside it as the melt cools. It is not a natural stone. Glass is water-safe and does
+  not fade, but it is softer than quartz and scratches easily.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve, so rinsing is fine. Avoid very hot water and sudden temperature changes, which can crack glass.
+  salt:
+    verdict: avoid
+    reason: The glass is unharmed, but metallic crystals cut through at the polished surface may dull or tarnish in salt water. Plain water does the job.
+  sun:
+    verdict: safe
+    reason: The colour and sparkle are part of the glass and do not fade in sunlight.
+  sleep:
+    verdict: ok
+    reason: Inert and smooth, so it is safe beside the bed or under a pillow.
+  wear:
+    verdict: care
+    reason: At about Mohs 5.5 to 6 it is scratched by grit and harder stones and can chip if dropped. Store it separately.
+  toxicity:
+    level: none
+    reason: Finished glass is non-toxic to handle. Metal crystals exposed at the surface are why indirect elixirs are recommended.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [earth]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [sagittarius, taurus]
+  intentions: [wealth, luck, healing, confidence, emotional-balance]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who believes they are buying a natural stone
+    why: Goldstone is glass and is sometimes sold as green aventurine or "green sunstone". Price it as glass.
+    basis: physical
+  - who: People who keep stones loose together
+    why: Glass is softer than quartz and picks up scratches from harder stones and grit.
+    basis: physical
+  - who: People making crystal water
+    why: Use the indirect method. Exposed metal crystals at the surface and an undisclosed glass recipe make direct contact unwise.
+    basis: physical
+  - who: People who work only with natural minerals
+    why: Some crystal traditions hold that man-made glass does not carry the properties of natural stones; others value goldstone as a "stone of ambition".
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Green goldstone itself is often sold as natural aventurine or sunstone
+    - Resin or plastic with glitter
+    - Green aventurine confused with green goldstone
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the sparkles with a 10x loupe under a bright light.
+      real: Goldstone shows many sharp, tiny triangular and hexagonal metallic crystals of similar size, evenly spread through the glass.
+      fake: Aventurine shows irregular, flat green mica flakes in grainy quartz; glitter resin shows flat cut flakes of uniform shape.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch it with a quartz point.
+      real: Quartz scratches goldstone glass.
+      fake: Quartz will not scratch natural aventurine; resin is marked even by a steel pin.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool, then warms within seconds.
+      fake: Resin feels warm immediately; quartz-based aventurine stays cold longer.
+    - id: weight
+      weight: 1
+      how: Compare with a glass bead of similar size.
+      real: Feels like glass.
+      fake: Resin feels noticeably light.
+    - id: color
+      weight: 2
+      how: Look at the stone in daylight.
+      real: Deep, uniform bottle green with dense, even sparkle throughout.
+      fake: Natural aventurine is paler and patchier, with uneven sparkle.
+
+pairs:
+  good:
+    - slug: aventurine
+      why: The natural green stone goldstone imitates; both are used for luck in tradition.
+    - slug: jade
+      why: Two green prosperity stones paired in tradition.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies the intention set with goldstone.
+    - slug: citrine
+      why: A traditional abundance pairing.
+  avoid: []
+
+price:
+  tier: budget
+  note: Green goldstone is inexpensive in beads, palm stones and spheres. Higher prices reflect carving or settings rather than the glass.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-11403.html
+  - https://geology.com/gemstones/goldstone/
+  - https://www.mindat.org/min-436.html

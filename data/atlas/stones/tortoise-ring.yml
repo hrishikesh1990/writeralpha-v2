@@ -1,0 +1,150 @@
+slug: tortoise-ring
+name: Tortoise Ring
+aka: [kachua ring, turtle ring, kachhua anguthi]
+kind: jewellery
+species: Sterling silver (usually); also gold, panchdhatu or ashtadhatu
+family: metal
+formula: null
+crystal_system: null
+mohs: [2.5, 3]
+colors: [silver, gold]
+origins: [India]
+summary: >-
+  A ring shaped like a tortoise, worn in Vastu and Feng Shui tradition for
+  luck, stability and wealth, usually made of sterling silver. Silver is soft
+  and tarnishes, so keep salt and chlorine off it, dry it after washing and
+  check the metal if you have allergies.
+
+safety:
+  water:
+    verdict: brief
+    reason: Silver itself is not harmed by water, but wet rings tarnish faster and any glued stone eyes or inlays can loosen. Dry the ring after hand washing.
+  salt:
+    verdict: avoid
+    reason: Salt and salt water speed tarnish, can pit silver and scratch the soft metal. Take the ring off for the sea and salt cleanses.
+  sun:
+    verdict: safe
+    reason: Sunlight does not harm silver or gold. Dyed or enamel inlays, if any, may fade over years.
+  sleep:
+    verdict: ok
+    reason: Physically safe to wear at night. Tradition says not to remove or turn the ring often once worn.
+  wear:
+    verdict: care
+    reason: Sterling silver (about Mohs 2.5 to 3) scratches and bends easily, and the raised tortoise shell catches. Remove it for heavy work and chemicals.
+  toxicity:
+    level: none
+    reason: Sterling silver is safe to wear. Cheaper plated or white-metal rings may contain nickel, a common skin allergen.
+  elixir: never
+
+tradition:
+  chakras: [root]
+  elements: [water, earth]
+  planets: []
+  vedic_planet: null
+  zodiac: [taurus, virgo, aquarius]
+  intentions: [wealth, luck, protection, peace-calm, grounding, career]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People with nickel or metal allergies
+    why: Plated brass, white metal and some alloys contain nickel, which causes itchy rashes in sensitive skin. Choose hallmarked 925 silver or solid gold.
+    basis: physical
+  - who: People who swim, use cleaning products or bathe in hot springs
+    why: Chlorine, bleach and sulfur-rich water blacken or pit silver quickly. Take the ring off first.
+    basis: physical
+  - who: People whose fingers swell or who do manual work
+    why: The raised tortoise design catches on gloves and machinery, and a tight ring on a swollen finger is hard to remove. Choose a comfortable size and remove it for heavy work.
+    basis: physical
+  - who: People looking for real tortoiseshell jewellery
+    why: A tortoise ring is shaped like a tortoise and is not made from shell. Genuine tortoiseshell comes from endangered hawksbill turtles, and international trade in it is banned.
+    basis: physical
+  - who: Anyone wearing it according to Vastu tradition
+    why: Tradition says the tortoise's head should face the wearer, not the fingertip, and that it is worn on the middle finger, usually of the right hand (some sources say left for women), put on first on a Friday, the day of Lakshmi.
+    basis: tradition
+  - who: Aries, Cancer, Scorpio and Pisces natives, in some astrological advice
+    why: Some Indian astrologers advise these signs to consult before wearing a tortoise ring, but other sources list the water signs as favoured. Tradition is inconsistent, so it is often worn only after personal advice.
+    basis: tradition
+  - who: People uncomfortable with Hindu ritual elements
+    why: Traditional practice includes washing the ring in milk or Gangajal and offering it to Lakshmi before wearing it. If that conflicts with your beliefs, the ring can simply be worn as jewellery.
+    basis: tradition
+zodiac_cautions:
+  - sign: aries
+    why: Some Indian astrology sources advise Aries natives to consult an astrologer before wearing a tortoise ring.
+  - sign: cancer
+    why: Some astrologers say the tortoise, a water creature, adds to Cancer's water element and advise caution; other sources disagree.
+  - sign: scorpio
+    why: Scorpio, a water sign, is cautioned by some astrologers for the same water-element reason; the advice is not universal.
+  - sign: pisces
+    why: Some sources say a silver tortoise ring adds to Pisces' cool, watery nature and advise against it without consultation.
+
+identify:
+  common_fakes:
+    - Silver-plated brass or copper sold as solid silver
+    - Nickel silver (German silver) or white metal
+    - Stainless steel sold as silver
+    - Gold-plated rings sold as solid gold
+  tests:
+    - id: certificate
+      weight: 3
+      how: Look inside the band for a hallmark with a magnifier.
+      real: A "925" stamp, or in India a BIS hallmark showing silver purity, from a known jeweller.
+      fake: No mark, or only "silver plated", "GS" or "alpaca" markings.
+    - id: magnet
+      weight: 2
+      how: Hold a strong magnet against the ring.
+      real: Silver and gold are not attracted.
+      fake: A ring that sticks to the magnet contains steel or nickel.
+    - id: scratch
+      weight: 2
+      how: Look closely at worn edges and the inside of the band, or rub a hidden spot with a silver polishing cloth.
+      real: The same silver colour throughout; black tarnish on the cloth is normal for silver.
+      fake: Yellow brass or pink copper showing at worn edges means plating.
+    - id: temperature
+      weight: 1
+      how: Place an ice cube on the ring and another on a steel spoon.
+      real: Ice melts noticeably fast on silver, which conducts heat very well.
+      fake: Ice melts more slowly on steel, nickel alloys and plated base metal.
+    - id: weight
+      weight: 1
+      how: Compare with a known silver ring of similar size.
+      real: Sterling silver has a solid, slightly heavy feel.
+      fake: Thin plated or white-metal rings often feel light.
+    - id: price
+      weight: 1
+      how: Compare price with weight and current silver prices.
+      real: Price roughly follows the silver weight plus making charges.
+      fake: A thick "pure silver" ring far below silver value is almost certainly plated.
+
+pairs:
+  good:
+    - slug: citrine
+      why: Both are wealth symbols in tradition and are often recommended together for prosperity.
+    - slug: pyrite
+      why: A traditional wealth-attracting companion on a desk or in a cash drawer; keep both dry.
+    - slug: jade
+      why: Jade is a Feng Shui luck stone and is sometimes set into tortoise rings.
+    - slug: aventurine
+      why: Green aventurine is a luck stone in tradition and pairs with the tortoise's prosperity symbolism.
+    - slug: moonstone
+      why: Silver and moonstone share lunar symbolism in tradition, and moonstone is gentle enough to wear alongside a silver ring.
+  avoid: []
+
+price:
+  tier: budget
+  note: Silver tortoise rings are inexpensive, priced mainly by silver weight. Gold, panchdhatu and designer versions cost more.
+
+names:
+  hi: Kachhua anguthi (कछुआ अंगूठी)
+  bn: Kochchhop angti (কচ্ছপ আংটি)
+  es: Anillo de tortuga
+  ta: Aamai mothiram (ஆமை மோதிரம்)
+  te: Tabelu ungaram (తాబేలు ఉంగరం)
+  mr: Kasav angathi (कासव अंगठी)
+
+sources:
+  - https://www.minerals.net/mineral/silver
+  - https://geology.com/minerals/silver.shtml
+  - https://blog.bluestone.com/how-to-wear-a-tortoise-ring-benefits-finger-placement-vastu-rules/
+  - https://www.india.com/astrology/tortoise-ring-benefits-who-should-wear-it-how-which-finger-wearing-tortoise-ring-good-or-bad-5491866/
+  - https://www.jagran.com/spiritual/religion-wearing-a-tortoise-ring-on-friday-attracting-prosperity-and-good-fortune-23954942.html

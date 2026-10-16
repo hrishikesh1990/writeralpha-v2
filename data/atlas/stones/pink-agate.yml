@@ -1,0 +1,124 @@
+slug: pink-agate
+name: Pink Agate
+aka: [pink lace agate, pink botswana agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [pink, peach, white, grey]
+origins: [Botswana, Brazil, China, Mexico]
+summary: >-
+  Agate with pink bands. Natural pink agate is a soft, dusty pink or peach, as in
+  some Botswana agate. Most bright pink beads and slices are dyed chalcedony,
+  and that dye fades in sunlight and can bleed in water. Treat any vivid pink as
+  dyed.
+
+safety:
+  water:
+    verdict: brief
+    reason: The agate does not dissolve, but most pink agate is dyed and the dye can bleed in a long soak. A quick rinse and dry is safe for all pieces.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks in, pulls dye out and leaves salt crystals in the pores and cracks as it dries.
+  sun:
+    verdict: avoid
+    reason: Pink dyes in agate fade quickly in direct sun, often within weeks on a windowsill. Natural pink is more stable but still pale and easily washed out.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom.
+  wear:
+    verdict: care
+    reason: The stone is hard (Mohs 6.5 to 7), but perfume, sweat, sunscreen and acetone can strip dye. Put jewellery on after cosmetics.
+  toxicity:
+    level: none
+    reason: The agate is inert. The dyes are not food-safe, so do not use pink agate directly in drinking water.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [water]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [libra, taurus]
+  intentions: [love, self-love, emotional-balance, peace-calm, friendship]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: People who display or charge crystals in sunlight
+    why: Dyed pink agate fades fast in direct sun. Keep it in indirect light and cleanse it with sound or smoke.
+    basis: physical
+  - who: Buyers who want natural colour
+    why: Vivid, even pink agate is almost always dyed. This is common practice, but natural pink agate is pale, banded and costs more.
+    basis: physical
+  - who: Anyone soaking stones or wearing them in the shower
+    why: Dyed pink can bleed into water, and soap and heat speed this up. Remove pink agate jewellery before washing.
+    basis: physical
+  - who: Anyone cleansing in salt water
+    why: Salt pulls dye out and crystallises in the porous stone.
+    basis: physical
+  - who: People looking for an energising stone
+    why: Tradition treats pink agate as soft and nurturing, a heart stone for comfort rather than drive.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed pink agate or chalcedony sold as natural
+    - Pink glass beads
+    - Dyed howlite or magnesite
+    - Pink resin or plastic beads
+  tests:
+    - id: acetone
+      weight: 3
+      how: Rub a drill hole or hidden spot firmly with a cotton swab and nail-polish remover.
+      real: Natural pink agate leaves the swab clean.
+      fake: Pink on the swab confirms dye. It is still agate if it passes the hardness test, but not natural colour.
+    - id: color
+      weight: 2
+      how: Look along cracks, drill holes and band edges in daylight.
+      real: Soft dusty pink, salmon or peach that changes gently from band to band.
+      fake: Bright bubblegum or magenta pink, darkest in cracks and around drill holes.
+    - id: magnification
+      weight: 2
+      how: Examine the bands with a 10x loupe.
+      real: Fine continuous agate bands, no bubbles.
+      fake: Bubbles mean glass; grey veins in a chalky body mean dyed howlite or magnesite.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: Agate scratches glass.
+      fake: Howlite and magnesite (Mohs 3.5 to 4) cannot, and a steel knife marks them.
+    - id: light
+      weight: 1
+      how: Shine a torch through a thin edge.
+      real: Bands glow with different translucency.
+      fake: Howlite and magnesite stay opaque; glass glows evenly.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: Two pink heart stones in tradition. Both fade in sun, so they share the same care.
+    - slug: botswana-agate
+      why: Natural pink agate often comes from Botswana, and tradition uses both for comfort.
+    - slug: rhodonite
+      why: A traditional heart-healing pairing for self-love and forgiveness.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies pink agate's gentle energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Dyed pink agate beads and slices are cheap. Natural pink-banded agate, especially fine Botswana material, costs noticeably more.
+
+names:
+  es: Ágata rosa
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://www.gemsociety.org/article/common-gemstone-treatments-cheat-sheet-2/

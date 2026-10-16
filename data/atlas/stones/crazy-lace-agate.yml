@@ -1,0 +1,119 @@
+slug: crazy-lace-agate
+name: Crazy Lace Agate
+aka: [mexican lace agate, laughter stone, ágata loca]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [cream, brown, red, black, grey, white]
+origins: [Mexico]
+summary: >-
+  A tightly folded, multicoloured agate from Chihuahua, Mexico, with twisting
+  bands of cream, red, brown and black. Its colours are natural iron and
+  manganese staining, so it is sun-stable and fine in plain water. Like all
+  agate, it is slightly porous: skip salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and its natural colours do not wash out, so rinsing or a short soak is fine.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into the pores and fine fractures and leaves salt crystals as it dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: Its colours come from iron and manganese oxides, which do not fade in sunlight.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition calls it cheerful and uplifting rather than sedating.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear in rings, bracelets and pendants.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with traces of iron and manganese oxides is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral, solar_plexus]
+  elements: [earth, fire]
+  planets: [mercury]
+  vedic_planet: null
+  zodiac: [gemini]
+  intentions: [confidence, emotional-balance, creativity, grounding, energy]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous agate and crystallises in pores and cracks. Plain water, smoke or sound are safer.
+    basis: physical
+  - who: Buyers of very bright "crazy lace" beads
+    why: Genuine crazy lace is earthy cream, red, brown and black. Pink, blue or purple versions are dyed agate, and those colours fade and bleed.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People wanting a quietening stone for sleep or meditation
+    why: Tradition calls crazy lace agate the laughter stone, lively and uplifting. For calm, tradition suggests blue lace agate or amethyst.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed agate in bright colours sold as crazy lace
+    - Other banded agates or jaspers from India or China
+    - Resin or glass with printed swirls
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the pattern in daylight.
+      real: Earthy cream, brick red, brown, grey and black, in tight, contorted, lacy bands with small eyes and loops.
+      fake: Hot pink, blue or purple tones, or colour pooling in cracks, means dyed agate.
+    - id: magnification
+      weight: 3
+      how: Examine the bands with a 10x loupe.
+      real: Fine continuous bands that bend and fold around each other, often with tiny quartz-filled pockets.
+      fake: Bubbles mean glass; repeating dots or a flat, perfect pattern mean a print or resin.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: It scratches glass easily.
+      fake: Resin and plastic do not scratch glass.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Resin warms quickly.
+
+pairs:
+  good:
+    - slug: carnelian
+      why: Tradition pairs the two for confidence and joy. Both are chalcedony with identical care.
+    - slug: citrine
+      why: A cheerful, uplifting pairing in tradition.
+    - slug: smoky-quartz
+      why: Smoky quartz grounds crazy lace's lively energy in tradition. Both are hard quartz.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies the stone's uplifting energy. Same care rules.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and beads are inexpensive. Polished slabs and cabochons with tight, colourful lace from the original Mexican deposits cost more.
+
+names:
+  es: Ágata loca
+
+sources:
+  - https://www.mindat.org/min-7595.html
+  - https://www.mindat.org/min-51.html
+  - https://www.gemsociety.org/article/agate-gem-information/

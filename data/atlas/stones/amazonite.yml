@@ -1,0 +1,125 @@
+slug: amazonite
+name: Amazonite
+aka: [amazon stone, amazonstone]
+kind: variety
+species: Microcline
+family: feldspar
+formula: KAlSi3O8
+crystal_system: triclinic
+mohs: [6, 6.5]
+colors: [green, blue-green, turquoise]
+origins: [Brazil, United States, Russia, Madagascar, Mozambique]
+summary: >-
+  A blue-green variety of microcline feldspar, usually coloured by traces of
+  lead. It is safe to handle and wear, but it has perfect cleavage and should
+  not be used in drinking water. Wash briefly and skip salt.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so a quick wash is fine. Avoid long soaks; cleavage cracks take up water, and its trace lead makes it unsuitable for water you drink.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them and dull the polish.
+  sun:
+    verdict: limit
+    reason: Amazonite's colour is heat-sensitive and pale pieces can change with long exposure; dyed imitations fade. A few hours of sun is fine.
+  sleep:
+    verdict: ok
+    reason: Safe to keep beside the bed. Tradition calls it a soothing stone.
+  wear:
+    verdict: care
+    reason: At Mohs 6 to 6.5 with two perfect cleavages, it can split or chip from knocks. Pendants and earrings, or bezel-set rings, fare best.
+  toxicity:
+    level: low
+    reason: The green colour is linked to trace lead (up to about 1% lead oxide) locked in the crystal. Handling and wearing are fine; do not make direct elixirs or inhale cutting dust.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, heart]
+  elements: [earth, water]
+  planets: [uranus]
+  vedic_planet: null
+  zodiac: [virgo, aquarius]
+  intentions: [communication, peace-calm, courage, emotional-balance, luck, anxiety]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone making crystal water, tea or bath soaks
+    why: Amazonite contains trace lead. Polished stones are safe to handle, but do not put them directly into anything you drink. Use the indirect method.
+    basis: physical
+  - who: People wanting a ring for heavy daily use
+    why: Two directions of perfect cleavage mean a sharp knock can split the stone. Choose protective settings or a pendant.
+    basis: physical
+  - who: Anyone using ultrasonic or steam cleaners
+    why: Vibration and heat can expand internal fractures and strip waxes or coatings used on treated pieces.
+    basis: physical
+  - who: People cutting or sanding raw amazonite
+    why: Work it wet and wear a mask; dust carries trace lead and silicate particles.
+    basis: physical
+  - who: People seeking a stimulating stone
+    why: Tradition calls amazonite a soothing "stone of hope" for calm speech, not a high-energy stone.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed howlite, magnesite or quartz
+    - Green or blue glass
+    - Chrysoprase, turquoise or jade confused with amazonite
+    - Wax-impregnated or coated amazonite (natural but treated)
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Examine the stone in daylight and with a 10x loupe.
+      real: White streaks and a fine grid or crosshatch pattern of paler feldspar running through the green.
+      fake: Perfectly even colour, grey spidery veins (dyed howlite), or bubbles (glass).
+    - id: light
+      weight: 2
+      how: Tilt the stone under a single light.
+      real: Flat cleavage surfaces catch the light with a slight pearly flash.
+      fake: Glass and dyed stones show no cleavage flash.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Green or blue on the swab means dye; a waxy residue means coating.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try to scratch glass firmly with an edge.
+      real: Amazonite (Mohs 6 to 6.5) can just scratch ordinary glass.
+      fake: Howlite and magnesite (Mohs 3.5 to 4) cannot.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin feels warm at once.
+
+pairs:
+  good:
+    - slug: aquamarine
+      why: Two blue-green throat-chakra stones paired for calm communication.
+    - slug: lapis-lazuli
+      why: A traditional pairing for truthful self-expression.
+    - slug: rose-quartz
+      why: Paired in tradition for gentle, heart-led communication.
+    - slug: sodalite
+      why: Two calming blue stones for clear thinking and speech.
+    - slug: larimar
+      why: A soothing sea-coloured pairing in tradition.
+    - slug: blue-lace-agate
+      why: A gentle throat-chakra combination for anxiety.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled amazonite and beads are inexpensive. Vivid blue-green Colorado crystals and fine cabochons cost more.
+
+names:
+  es: Amazonita
+
+sources:
+  - https://www.mindat.org/min-184.html
+  - https://www.gemsociety.org/article/amazonite/
+  - https://geology.com/gemstones/amazonite/
+  - https://www.minerals.net/mineral/microcline

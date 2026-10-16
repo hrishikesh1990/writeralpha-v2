@@ -1,0 +1,127 @@
+slug: black-agate
+name: Black Agate
+aka: [kala hakik, black hakik]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [black]
+origins: [Brazil, India, Uruguay, China]
+summary: >-
+  Black chalcedony. Naturally black agate is rare: nearly all solid black agate
+  beads are grey chalcedony dyed black with a sugar-and-acid carbon treatment,
+  which is permanent and standard trade practice. Hard and water-safe; avoid
+  salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, and the carbon used to blacken it is insoluble, so rinsing or a short soak is fine. Cheap surface-dyed beads may bleed, so check with acetone first.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Salt water soaks into the pores and leaves salt crystals behind as it dries, which dulls the polish and can open fine cracks.
+  sun:
+    verdict: safe
+    reason: Carbon-treated black agate does not fade in sunlight. Beads coloured with an organic dye or a surface coating can lose colour, which an acetone test reveals.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition calls it a calm, grounding stone.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear well. The black is permanent, though harsh acids and bleach can affect the polish.
+  toxicity:
+    level: none
+    reason: The finished stone is inert silica coloured by carbon. The acid used in treatment is washed out before sale.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [saturn]
+  vedic_planet: null
+  zodiac: [capricorn, scorpio]
+  intentions: [protection, grounding, courage, grief, emotional-balance]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Buyers who want naturally coloured stone
+    why: Almost all uniform black agate is dyed grey chalcedony. This is standard and stable, not fraud, but it is not natural colour. Ask the seller if this matters to you.
+    basis: physical
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous stone and salt crystallises in the pores and cracks. Use plain water, smoke or sound instead.
+    basis: physical
+  - who: Families with small children or pets
+    why: Black agate beads and tumbled stones are a choking hazard. The material itself is not toxic.
+    basis: physical
+  - who: People seeking a bright, uplifting stone
+    why: Tradition treats black agate as a heavy, protective, grounding stone. Those wanting cheer or motivation are usually pointed to carnelian or citrine instead.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Black glass beads
+    - Black plastic or resin beads
+    - Dyed howlite or other dyed stone
+    - Black obsidian sold as black agate
+  tests:
+    - id: light
+      weight: 2
+      how: Shine a bright torch through a thin edge or a drill hole.
+      real: Many dyed black agates show a faint brown or reddish glow at thin edges, or hints of banding.
+      fake: Glass may glow green or brown evenly. Plastic stays dead black or glows evenly with no structure.
+    - id: magnification
+      weight: 3
+      how: Examine the surface and drill holes with a 10x loupe.
+      real: Smooth waxy polish, sometimes faint bands, and clean conchoidal chips at the holes.
+      fake: Round bubbles mean glass. Mould seams or a soft, rounded drill hole mean plastic.
+    - id: acetone
+      weight: 2
+      how: Rub the drill hole or a hidden spot with a cotton swab and nail-polish remover.
+      real: Carbon-treated agate leaves the swab clean.
+      fake: Black on the swab means a surface dye or coating. That bead may still be stone, but its colour is not stable.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch a glass bottle on a hidden spot. Do not test finished beads.
+      real: Agate scratches glass.
+      fake: Plastic does not scratch glass. Obsidian and glass barely mark it.
+    - id: temperature
+      weight: 1
+      how: Hold the bead against your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Plastic feels warm almost immediately.
+    - id: weight
+      weight: 1
+      how: Compare it with a plastic bead of the same size.
+      real: Feels solid and noticeably heavier (specific gravity about 2.6).
+      fake: Plastic and resin feel light.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: Both are protection stones in tradition and are hard enough to store together.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies black agate's grounding. Both are quartz with the same care.
+    - slug: red-jasper
+      why: A traditional root-chakra pairing for stability and stamina.
+    - slug: smoky-quartz
+      why: Two grounding stones in tradition, often worn together in protection bracelets.
+  avoid: []
+
+price:
+  tier: budget
+  note: Black agate beads and tumbled stones are inexpensive because the dye process is cheap and reliable. Natural, untreated black or very dark banded agate is rarer and costs more.
+
+names:
+  hi: Kala Hakik (काला हकीक)
+  es: Ágata negra
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/min-2999.html
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates
+  - https://www.gemsociety.org/article/agate-gem-information/

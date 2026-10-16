@@ -1,0 +1,126 @@
+slug: tiger-eye
+name: Tiger Eye
+aka: [tiger's eye, tigers eye, golden tiger eye]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2 (with iron oxide fibres)
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [golden brown, yellow, brown, gold]
+origins: [South Africa, Australia, Namibia, India, Brazil]
+summary: >-
+  A chatoyant quartz from fibrous crocidolite whose iron has altered to golden
+  iron oxides, giving a moving band of light. It is hard and safe in water and
+  sun, but its fibrous texture is slightly porous, so skip salt.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz does not dissolve and the iron oxides are already oxidised, so rinsing or a short soak is fine. Dry it well, as the fibrous structure can hold a little water.
+  salt:
+    verdict: avoid
+    reason: Tiger eye is porous enough along its fibres to take up dye, so salt water can be drawn in and crystallise there, dulling the polish. Use plain water.
+  sun:
+    verdict: safe
+    reason: The golden-brown colour comes from stable iron oxides and does not fade in sunlight. Dyed colours are a separate case.
+  sleep:
+    verdict: caution
+    reason: Physically safe on a nightstand. Tradition calls tiger eye an energising, alertness stone that some people find too stimulating for sleep.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles everyday wear well. Hard knocks can split it along the fibres.
+  toxicity:
+    level: low
+    reason: Polished tiger eye is safe to handle and wear. It formed from crocidolite asbestos, so cut, drill or sand it only wet and with a mask, and avoid direct elixirs.
+  elixir: indirect
+
+tradition:
+  chakras: [solar_plexus, sacral, root]
+  elements: [fire, earth]
+  planets: [sun]
+  vedic_planet: null
+  zodiac: [leo, capricorn]
+  intentions: [courage, confidence, protection, grounding, wealth, concentration]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: People who cut, carve, drill or sand raw tiger eye
+    why: Tiger eye formed from crocidolite, a blue asbestos amphibole, and dust can contain fibres. Work it wet with a respirator. Polished stones are safe to wear.
+    basis: physical
+  - who: Anyone who cleanses with salt water
+    why: The fibrous structure is slightly porous; salt can crystallise in it and dull the shine. Use plain water, smoke or sound.
+    basis: physical
+  - who: People buying colourful tiger eye
+    why: Blue, red, pink, green and purple tiger eye is often dyed or heat-treated. Dyed stones can bleed colour in water.
+    basis: physical
+  - who: Light sleepers
+    why: Tradition calls tiger eye a stimulating stone for focus and drive. Keep it out of the bedroom if you sleep poorly.
+    basis: tradition
+  - who: People who already feel aggressive or impatient
+    why: In crystal tradition tiger eye boosts willpower and assertiveness. Some practitioners suggest a calmer stone in that case.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Fibre-optic "cat's eye" glass in brown or gold
+    - Dyed tiger eye in unnatural colours
+    - Resin or plastic beads printed with stripes
+    - Tiger iron sold as tiger eye (natural, but a different banded rock)
+  tests:
+    - id: light
+      weight: 3
+      how: Hold the stone under a single light and rotate it slowly.
+      real: Bands of silky light roll across the stone and light and dark zones swap places as you turn it.
+      fake: Printed stripes stay fixed; fibre-optic glass shows a very regular, too-bright band.
+    - id: magnification
+      weight: 2
+      how: Examine the side or a drill hole with a 10x loupe.
+      real: Fine, wavy parallel fibres in brown and gold bands of uneven width.
+      fake: A honeycomb or grid pattern seen end-on means fibre-optic glass; a smooth surface means print or resin.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz stone of the same size.
+      real: Feels like quartz (specific gravity about 2.6 to 2.7).
+      fake: Resin feels light.
+    - id: temperature
+      weight: 1
+      how: Hold the stone to your cheek for ten seconds.
+      real: Cool at first and warms slowly.
+      fake: Plastic and resin feel warm at once.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot of a tumbled stone, try to scratch glass.
+      real: Tiger eye scratches glass.
+      fake: Resin cannot; glass imitations barely mark it.
+
+pairs:
+  good:
+    - slug: citrine
+      why: Two traditional confidence and prosperity stones, both quartz and easy to care for.
+    - slug: carnelian
+      why: A warm, energising pairing in tradition for courage and motivation.
+    - slug: black-tourmaline
+      why: Tradition pairs tiger eye's courage with tourmaline's protection.
+    - slug: pyrite
+      why: A classic prosperity pairing. Keep pyrite dry when tiger eye is washed.
+    - slug: red-tigers-eye
+      why: The heat-treated form of the same stone; used together for drive and grounding.
+    - slug: smoky-quartz
+      why: A traditional grounding and protection combination.
+  avoid:
+    - slug: amethyst
+      why: Traditionally opposed energies for rest. Tiger eye is stimulating and amethyst calming, so they are not paired for sleep or meditation.
+
+price:
+  tier: budget
+  note: Tumbled stones, beads and cabochons are inexpensive. Large carvings and stones with a sharp, bright band of light cost more.
+
+names:
+  es: Ojo de tigre
+
+sources:
+  - https://www.mindat.org/min-3960.html
+  - https://www.gemsociety.org/article/tigers-eye-gem-information/
+  - https://www.minerals.net/gemstone/tiger-s-eye

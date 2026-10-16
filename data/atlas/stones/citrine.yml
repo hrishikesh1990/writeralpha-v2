@@ -1,0 +1,136 @@
+slug: citrine
+name: Citrine
+aka: [yellow quartz, sunela, madeira citrine]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [yellow, golden, orange, brown]
+origins: [Brazil, Uruguay, Madagascar, Bolivia, Democratic Republic of the Congo]
+summary: >-
+  Yellow to orange quartz. Natural citrine is pale and rare; most citrine sold
+  today is amethyst or smoky quartz that has been heated. It is safe in water
+  and salt, but avoid heat and long sun exposure.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and insoluble, so rinsing or soaking is fine. Avoid boiling or steam, which can change the colour.
+  salt:
+    verdict: safe
+    reason: Salt does not attack quartz. Rinse afterwards and keep salt water away from silver or glued settings.
+  sun:
+    verdict: limit
+    reason: Heated citrine is fairly light-stable, but natural citrine can pale with prolonged sunlight, and heat changes both. A few hours is fine; a sunny shelf for months is not.
+  sleep:
+    verdict: caution
+    reason: Physically safe beside the bed. Tradition calls citrine an energising stone that some people find too stimulating at night.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it resists everyday scratches. Keep it away from steam cleaners and high heat.
+  toxicity:
+    level: none
+    reason: Silicon dioxide coloured by trace iron; non-toxic to handle.
+  elixir: direct
+
+tradition:
+  chakras: [solar_plexus, sacral]
+  elements: [fire]
+  planets: [sun, jupiter]
+  vedic_planet: guru
+  zodiac: [aries, leo, gemini, sagittarius]
+  intentions: [wealth, confidence, motivation, creativity, energy, career]
+  energy: energizing
+  birth_months:
+    modern: [november]
+
+cautions:
+  - who: Buyers paying a premium for "natural citrine"
+    why: Most citrine on the market is heated amethyst or smoky quartz. It is real quartz, but the colour is a treatment and should be priced and labelled that way.
+    basis: physical
+  - who: People who leave crystals in sunny windows or hot cars
+    why: Heat and long UV exposure can pale or change the colour. Store citrine away from heaters and direct sun.
+    basis: physical
+  - who: People who sleep lightly or feel restless
+    why: Crystal tradition calls citrine stimulating. If it seems to disturb sleep, keep it out of the bedroom.
+    basis: tradition
+  - who: Anyone advised by a Vedic astrologer to avoid Jupiter stones
+    why: In Jyotish, citrine (Sunela) is worn as a substitute for yellow sapphire (Pukhraj), a Guru (Jupiter) stone. Astrologers usually caution ascendants ruled by Venus.
+    basis: tradition
+zodiac_cautions:
+  - sign: taurus
+    why: Taurus is ruled by Venus, which Vedic astrology treats as an enemy of Jupiter, the planet citrine represents.
+  - sign: libra
+    why: Libra is also ruled by Venus, so Jupiter stones are usually not advised for Libra ascendants.
+
+identify:
+  common_fakes:
+    - Heat-treated amethyst sold as natural citrine
+    - Yellow or orange glass
+    - Lab-grown citrine
+    - Yellow-dyed quartz
+    - Yellow topaz or calcite sold as citrine
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the stone in daylight, especially at the base of crystal points or clusters.
+      real: Natural citrine is usually pale lemon to smoky yellow, evenly spread.
+      fake: Heated amethyst is deep orange to reddish-brown, often darkest at the tips with a white base on geode pieces.
+    - id: magnification
+      weight: 3
+      how: Examine with a 10x loupe.
+      real: Natural inclusions, growth lines or small fractures.
+      fake: Round gas bubbles and swirl lines indicate glass.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Yellow colour on the swab means the stone is dyed.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch a glass bottle.
+      real: Citrine (Mohs 7) scratches glass.
+      fake: Glass barely marks glass; calcite cannot scratch it.
+    - id: temperature
+      weight: 1
+      how: Hold the stone to your cheek for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass and resin warm more quickly.
+    - id: price
+      weight: 1
+      how: Compare price with colour and size.
+      real: Genuine untreated citrine is pale and priced above heated material of the same size.
+      fake: Large, deep orange "natural citrine" clusters at low prices are almost always heated amethyst.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies citrine's energy; both are quartz with the same care rules.
+    - slug: amethyst
+      why: Heated amethyst becomes citrine, and together they balance calm with optimism.
+    - slug: smoky-quartz
+      why: Pairs grounding with optimism; both are quartz and safe in water.
+    - slug: tiger-eye
+      why: Two traditional confidence and prosperity stones, often worn together.
+    - slug: carnelian
+      why: A traditional pairing for motivation and creativity.
+    - slug: pyrite
+      why: A classic "money" pairing in tradition. Keep pyrite dry when citrine is washed.
+  avoid: []
+
+price:
+  tier: budget
+  note: Heated citrine is inexpensive in tumbles, points and faceted stones. Untreated natural citrine and fine "Madeira" orange gems cost noticeably more.
+
+names:
+  hi: Sunela (सुनेला)
+  bn: Sunela (সুনেলা)
+  es: Citrino
+
+sources:
+  - https://www.mindat.org/min-3337.html
+  - https://www.gia.edu/citrine
+  - https://www.gemsociety.org/article/citrine-jewelry-gemstone-information/
+  - https://geology.com/gemstones/citrine/

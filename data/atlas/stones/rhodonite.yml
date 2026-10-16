@@ -1,0 +1,127 @@
+slug: rhodonite
+name: Rhodonite
+aka: [pink manganese stone]
+kind: mineral
+species: Rhodonite
+family: pyroxenoid
+formula: CaMn3Mn[Si5O15]
+crystal_system: triclinic
+mohs: [5.5, 6.5]
+colors: [pink, rose red, black]
+origins: [Australia, Brazil, Russia, Peru, Madagascar]
+summary: >-
+  A pink manganese silicate, usually veined with black manganese oxide. It is
+  water-safe and fairly hard, but cleavage and the softer black veins mean no
+  salt, no ultrasonic or steam cleaning, and gentle wear.
+
+safety:
+  water:
+    verdict: safe
+    reason: Rhodonite does not dissolve or rust; a wash in lukewarm soapy water with a soft brush is fine. Dry it afterwards.
+  salt:
+    verdict: avoid
+    reason: The black manganese-oxide veins are softer than the pink body, and salt scratches them and lodges in cleavage cracks. Use plain water or dry methods.
+  sun:
+    verdict: safe
+    reason: Rhodonite's pink is generally stable in daylight; avoid strong heat, which can crack included pieces.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand.
+  wear:
+    verdict: care
+    reason: Massive rhodonite is tough enough for beads and cabochons, but cleavage makes faceted stones fragile, and Mohs 5.5 to 6.5 scratches with dust over time.
+  toxicity:
+    level: none
+    reason: Polished rhodonite is safe to handle. Wear a mask if cutting or sanding it, since manganese dust should not be inhaled.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [earth, fire]
+  planets: [venus, mars]
+  vedic_planet: null
+  zodiac: [taurus, libra]
+  intentions: [love, self-love, emotional-balance, healing, grief, anxiety]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: People who use ultrasonic or steam cleaners
+    why: Rhodonite has two good cleavage directions, and vibration or heat can crack it. Use a soft brush, mild soap and warm water.
+    basis: physical
+  - who: People wearing faceted rhodonite or rings for rough work
+    why: Faceted stones and thin pieces split along cleavage if knocked. Use protective settings and take rings off for manual tasks.
+    basis: physical
+  - who: People cutting or polishing raw rhodonite
+    why: Its dust contains manganese. Work wet, wear a mask and clean up afterwards.
+    basis: physical
+  - who: Buyers comparing rhodonite and rhodochrosite
+    why: Rhodochrosite is a softer pink carbonate that etches in acids and needs more care. Check the label, because the two are often confused.
+    basis: physical
+  - who: People not ready to revisit painful memories
+    why: Crystal tradition calls rhodonite a stone of emotional first aid that brings old hurts up to be healed. Some prefer gentler rose quartz at first.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed pink howlite or magnesite
+    - Pink dyed quartzite or marble
+    - Rhodochrosite sold as rhodonite (and the reverse)
+    - Pink glass or resin
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the pattern in daylight.
+      real: Rose pink with irregular black veins and patches of manganese oxide.
+      fake: Rhodochrosite shows pink-and-white bands without black veins; dyed stones show colour pooling in cracks.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, try a steel knife, then try to scratch glass with the stone.
+      real: Steel barely marks it and it scratches glass weakly.
+      fake: Rhodochrosite, howlite and marble are scratched easily by steel.
+    - id: weight
+      weight: 2
+      how: Compare it in your hand with a quartz stone of the same size.
+      real: Noticeably heavy (specific gravity about 3.6).
+      fake: Dyed howlite and quartzite (about 2.5 to 2.7) feel lighter.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Pink on the swab means dye.
+    - id: magnification
+      weight: 1
+      how: Look at the surface with a 10x loupe.
+      real: Granular crystalline texture with black dendritic veins.
+      fake: Bubbles, a uniform cast surface or colour concentrated along cracks.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Massive rhodonite is inexpensive; transparent gem rhodonite is rare and costly.
+      fake: Clear, bright pink "rhodonite" sold cheaply is likely glass or a different stone.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: The classic heart-healing pair in tradition, both used for self-love.
+    - slug: black-tourmaline
+      why: Tradition pairs rhodonite's emotional healing with tourmaline's grounding protection.
+    - slug: smoky-quartz
+      why: A traditional grounding companion for working through grief.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies rhodonite's heart energy.
+    - slug: garnet
+      why: Both are love and passion stones in tradition, paired for heart and root.
+  avoid: []
+
+price:
+  tier: budget
+  note: Massive rhodonite beads, tumbled stones and carvings are inexpensive. Transparent faceted rhodonite is a rare collector stone and costs far more.
+
+names:
+  es: Rodonita
+
+sources:
+  - https://www.mindat.org/min-3407.html
+  - https://www.gemsociety.org/article/rhodonite-jewelry-and-gemstone-information/
+  - https://www.minerals.net/mineral/rhodonite

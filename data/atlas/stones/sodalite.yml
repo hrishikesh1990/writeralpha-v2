@@ -1,0 +1,129 @@
+slug: sodalite
+name: Sodalite
+aka: [blue sodalite, hackmanite]
+kind: mineral
+species: Sodalite
+family: feldspathoid
+formula: Na4(Si3Al3)O12Cl
+crystal_system: cubic
+mohs: [5.5, 6]
+colors: [blue, white, gray, violet]
+origins: [Brazil, Canada, Namibia, India, Afghanistan]
+summary: >-
+  A royal blue feldspathoid, usually with white veins, often confused with
+  lapis lazuli. It does not dissolve, but it is moderately soft with fine
+  cracks, so rinse it briefly, skip salt and store it away from harder stones.
+
+safety:
+  water:
+    verdict: brief
+    reason: Sodalite is insoluble and releases nothing harmful into water. Soaking can work moisture into fine cracks and calcite veins, so rinse briefly and dry.
+  salt:
+    verdict: avoid
+    reason: Salt scratches a Mohs 5.5 to 6 surface and leaves crystals in cracks. Use plain water, sound or smoke.
+  sun:
+    verdict: safe
+    reason: Ordinary blue sodalite holds its colour in daylight. The rare hackmanite variety changes colour in sunlight and returns in the dark, which is harmless.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand.
+  wear:
+    verdict: care
+    reason: Quartz-rich dust and other stones scratch it, so polish dulls in rings and bracelets. Store it separately.
+  toxicity:
+    level: none
+    reason: Sodalite is a stable aluminosilicate. Its aluminium and chlorine are locked in the structure and do not leach in water.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [air, water]
+  planets: [mercury, venus]
+  vedic_planet: null
+  zodiac: [sagittarius, virgo]
+  intentions: [communication, concentration, intuition, clarity, peace-calm, anxiety]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: People wanting a ring for daily wear
+    why: At Mohs 5.5 to 6 sodalite scratches and its polish dulls in rings. Protective settings and pendants work better.
+    basis: physical
+  - who: Anyone using ultrasonic cleaners or chemical dips
+    why: Fine cracks and calcite veins can widen or etch. Clean with a soft cloth and plain water.
+    basis: physical
+  - who: Buyers of "lapis lazuli" at low prices
+    why: Sodalite is often sold as lapis. It is a genuine stone in its own right, but it is lighter, has white veins and lacks lapis's pyrite.
+    basis: physical
+  - who: People storing it loose with harder crystals
+    why: Quartz, agate and tourmaline scratch sodalite in a shared pouch or bowl.
+    basis: physical
+  - who: People looking for an energising stone
+    why: Tradition presents sodalite as a cool, logical and calming stone. For drive and warmth, tradition points to carnelian or citrine.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed howlite or magnesite
+    - Dyed jasper or quartzite
+    - Blue glass or resin
+    - Sodalite sold as lapis lazuli
+  tests:
+    - id: uv
+      weight: 2
+      how: Shine a long-wave UV torch on the stone in a dark room.
+      real: White veins and patches often glow bright orange.
+      fake: Dyed howlite, glass and lapis usually do not show orange glowing veins.
+    - id: streak
+      weight: 2
+      how: Rub a hidden edge on the back of an unglazed ceramic tile.
+      real: White streak.
+      fake: Lapis gives a light blue streak.
+    - id: color
+      weight: 2
+      how: Look at the stone in daylight.
+      real: Royal to violet blue with white or grey veins and usually no gold flecks.
+      fake: Even, saturated blue with no veins may be dyed; gold flecks point to lapis.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue on the swab means dye.
+    - id: weight
+      weight: 1
+      how: Compare in your hand with lapis or quartz of the same size.
+      real: Light for a stone (specific gravity about 2.3).
+      fake: Lapis feels a little heavier.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Sodalite is inexpensive.
+      fake: Sodalite sold at lapis prices is mislabelled.
+
+pairs:
+  good:
+    - slug: lapis-lazuli
+      why: Blue throat-chakra stones in tradition with the same gentle care; side by side they are easy to tell apart.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies sodalite's focus.
+    - slug: amethyst
+      why: A traditional pairing for calm, clear thinking and meditation.
+    - slug: kyanite
+      why: Tradition pairs them for honest communication.
+    - slug: fluorite
+      why: Both are study stones in tradition for focus and logic.
+    - slug: blue-lace-agate
+      why: A calming blue pairing in tradition for gentle speech.
+  avoid: []
+
+price:
+  tier: budget
+  note: Sodalite tumbled stones, beads and carvings are inexpensive. Transparent facet-grade sodalite is rare and costs more.
+
+names:
+  es: Sodalita
+
+sources:
+  - https://www.mindat.org/min-3701.html
+  - https://www.gemsociety.org/article/sodalite-jewelry-and-gemstone-information/
+  - https://www.minerals.net/mineral/sodalite

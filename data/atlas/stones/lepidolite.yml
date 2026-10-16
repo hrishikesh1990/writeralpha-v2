@@ -1,0 +1,123 @@
+slug: lepidolite
+name: Lepidolite
+aka: [lithium mica, purple mica, lilalite]
+kind: mineral
+species: Lepidolite (polylithionite-trilithionite series)
+family: mica
+formula: K(Li,Al)3(Si,Al)4O10(F,OH)2
+crystal_system: monoclinic
+mohs: [2.5, 3]
+colors: [lilac, purple, pink, gray]
+origins: [Brazil, United States, Madagascar, Zimbabwe, Russia]
+summary: >-
+  A soft lilac mica rich in lithium, coloured by manganese. It flakes along its
+  layers and is scratched by a coin, so keep it dry and handle it gently.
+  It is safe to touch; just do not use it in drinking water.
+
+safety:
+  water:
+    verdict: avoid
+    reason: Lepidolite is a layered mica. Water gets between the sheets, so soaking loosens flakes and dulls the surface. Wipe it with a dry or barely damp cloth.
+  salt:
+    verdict: avoid
+    reason: Salt grains scratch a Mohs 2.5 to 3 surface and salt water works between the mica layers. Never use salt.
+  sun:
+    verdict: limit
+    reason: Brief sunlight is harmless, but heat can dry and flake the mica and some pieces pale over long exposure. Keep it out of hot windows.
+  sleep:
+    verdict: ok
+    reason: Safe to keep beside the bed. Tradition uses it as a sleep and calm stone. Loose flakes can shed, so a smooth tumble works better than raw pieces.
+  wear:
+    verdict: special
+    reason: At Mohs 2.5 to 3 it scratches easily, and its flakes peel at edges. Beads wear quickly; it is better carried or kept at home.
+  toxicity:
+    level: low
+    reason: Contains lithium and fluorine bound in the mica. It is safe to handle and wear; lithium is not absorbed from a stone. Do not swallow flakes, make elixirs or breathe dust.
+  elixir: never
+
+tradition:
+  chakras: [third_eye, crown, heart]
+  elements: [water, air]
+  planets: [jupiter, neptune]
+  vedic_planet: null
+  zodiac: [libra, pisces, cancer]
+  intentions: [anxiety, peace-calm, sleep, emotional-balance, transformation]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals with water or salt
+    why: Water and salt get between the mica layers and make lepidolite flake. Use smoke, sound, moonlight or a selenite plate.
+    basis: physical
+  - who: People taking, or considering, lithium medication
+    why: Lepidolite does not release lithium into the body in any meaningful amount. It is not a substitute for prescribed treatment, and no medication should be changed because of it.
+    basis: physical
+  - who: People wanting a ring or bracelet for everyday wear
+    why: At Mohs 2.5 to 3 it scratches against metal, keys and harder beads, and edges flake. Choose a harder stone for daily jewellery.
+    basis: physical
+  - who: Homes with small children or pets
+    why: Flakes and small pieces can be swallowed, and lithium compounds should not be ingested. Keep lepidolite out of reach.
+    basis: physical
+  - who: People looking for an energising or motivating stone
+    why: Tradition treats lepidolite as a calming, sedating stone. For drive, tradition points to carnelian or citrine instead.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Pink or purple muscovite mica sold as lepidolite
+    - Dyed mica or dyed quartz
+    - Purple resin with glitter
+    - Lepidolite in quartz sold as solid lepidolite (natural, but harder and different care)
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a hidden spot, press a copper coin or a steel pin against the stone.
+      real: Pure lepidolite (Mohs 2.5 to 3) is marked by a copper coin and scratched easily by a pin.
+      fake: Dyed quartz resists both; lepidolite-in-quartz mixtures resist in places.
+    - id: magnification
+      weight: 2
+      how: Examine the surface with a 10x loupe.
+      real: Glittering flakes or tiny stacked sheets with a pearly lustre.
+      fake: Flat glitter suspended in resin, or dye collected in cracks.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Purple or pink colour on the swab means dye.
+    - id: flame
+      weight: 2
+      how: Destructive. Hold one tiny flake with tweezers in a lighter flame.
+      real: Lepidolite melts fairly easily and can tint the flame red from lithium.
+      fake: Muscovite does not melt; resin burns with an acrid smell.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool at first.
+      fake: Resin feels warm immediately.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: A popular pairing for anxiety and sleep; both are calming purple stones. Store them apart so amethyst does not scratch lepidolite.
+    - slug: selenite
+      why: Both must stay dry, so they share cleansing methods; tradition pairs them for calm.
+    - slug: rose-quartz
+      why: A gentle pairing for emotional healing; keep the harder rose quartz from rubbing against it.
+    - slug: howlite
+      why: Two calming stones traditionally used for sleep and stress.
+    - slug: moonstone
+      why: Paired in tradition for emotional balance.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and slabs are inexpensive. Rare gem-quality crystals and vivid purple pieces with pink tourmaline cost more.
+
+names:
+  es: Lepidolita
+
+sources:
+  - https://www.mindat.org/min-2380.html
+  - https://www.minerals.net/mineral/lepidolite
+  - https://geology.com/minerals/lepidolite.shtml
+  - https://www.gemsociety.org/article/lepidolite-jewelry-and-gemstone-information/

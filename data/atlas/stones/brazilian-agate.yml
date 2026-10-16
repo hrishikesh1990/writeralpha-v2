@@ -1,0 +1,128 @@
+slug: brazilian-agate
+name: Brazilian Agate
+aka: [rio grande do sul agate, agate slices, agate geode]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [grey, white, brown, orange, blue, pink, purple, green]
+origins: [Brazil]
+summary: >-
+  Agate from the basalt fields of Rio Grande do Sul, the world's largest source
+  of agate slices, geodes and coasters. Natural colours are greys, whites and
+  browns; the bright blue, pink, purple and green slices are dyed. Keep dyed
+  pieces out of long soaks and sun.
+
+safety:
+  water:
+    verdict: brief
+    reason: The agate itself does not dissolve, but so many slices are dyed that a long soak can make them bleed colour. A quick rinse and dry is safe for all pieces.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into the pores and leaves salt crystals as it dries, dulling the polish and pulling dye out of coloured slices.
+  sun:
+    verdict: limit
+    reason: Natural grey and brown agate is stable, but dyed blue, pink, purple and green slices fade in a sunny window within months.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard. Thin slices and broken geode edges can be sharp, so keep raw pieces off the pillow.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear. Keep perfume and acetone away from dyed pieces.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is inert. Dyes used on slices are not meant for ingestion, which is another reason to avoid direct elixirs.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [mercury]
+  vedic_planet: null
+  zodiac: [gemini]
+  intentions: [grounding, protection, emotional-balance, concentration]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People who display coloured agate slices in a sunny window
+    why: Dyed slices fade in direct sun, often unevenly. Hang them where they get bright but indirect light.
+    basis: physical
+  - who: Anyone soaking agate slices or coasters
+    why: Dyed slices can bleed into water and stain fabric or wood. Wipe them clean instead of soaking.
+    basis: physical
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into porous agate and crystallises in pores and cracks, and it strips dye from coloured pieces.
+    basis: physical
+  - who: Homes with small children
+    why: Thin slices can chip to sharp edges, and tumbled stones are a choking hazard.
+    basis: physical
+  - who: People seeking a stimulating stone
+    why: Tradition treats agate as steady and grounding rather than energising.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed agate slices sold as natural colour
+    - Resin or glass "agate" slices
+    - Printed ceramic coasters
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the colour in daylight, especially along cracks, the crystal centre and the rough outer rind.
+      real: Natural agate shows greys, whites, browns and soft reds. The outer rind is dull grey-brown.
+      fake: Neon blue, pink, purple or green, colour that pools in cracks, or a rind tinted the same colour as the bands means dye.
+    - id: acetone
+      weight: 2
+      how: Rub the edge of the slice with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab shows the slice is dyed.
+    - id: light
+      weight: 2
+      how: Hold the slice up to a window or lamp.
+      real: Bands glow with different translucency, and the quartz centre sparkles.
+      fake: Resin glows evenly and often has a perfectly flat, slightly soft surface.
+    - id: magnification
+      weight: 3
+      how: Examine bands and the crystal centre with a 10x loupe.
+      real: Fine continuous bands and small, sharp quartz crystals in the middle.
+      fake: Bubbles or swirl lines indicate glass or resin.
+    - id: hardness
+      weight: 2
+      how: Try to scratch the edge of the slice with a steel knife.
+      real: Agate is not marked by steel.
+      fake: Resin scratches easily and may smell when scratched.
+    - id: temperature
+      weight: 1
+      how: Touch the slice with the back of your hand.
+      real: Feels cool.
+      fake: Resin feels close to room temperature.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Much of the world's amethyst comes from the same Brazilian volcanic rocks, and geodes often hold both. Both are quartz.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies agate's steadying energy. Same care rules.
+    - slug: citrine
+      why: Another Brazilian quartz, paired in tradition for steadiness with optimism.
+    - slug: black-tourmaline
+      why: A classic grounding and protection combination in tradition.
+  avoid: []
+
+price:
+  tier: budget
+  note: Slices, coasters and tumbled stones are inexpensive and sold in bulk. Large natural-colour geodes and slices with crisp banding cost more than dyed ones.
+
+names:
+  es: Ágata brasileña
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://geology.com/gemstones/agate/

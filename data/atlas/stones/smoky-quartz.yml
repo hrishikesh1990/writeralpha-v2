@@ -1,0 +1,121 @@
+slug: smoky-quartz
+name: Smoky Quartz
+aka: [morion, cairngorm, brown quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [brown, gray, black, smoky brown]
+origins: [Brazil, Switzerland, United States, Madagascar, Scotland]
+summary: >-
+  Grey-brown to black quartz, coloured by natural radiation acting on trace
+  aluminium. Hard and safe in water and salt, but its colour pales with heat
+  and long ultraviolet exposure, so limit time in the sun.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and does not dissolve, so rinsing or soaking is fine. Avoid hot water and steam, which can pale the colour.
+  salt:
+    verdict: safe
+    reason: Salt does not attack quartz. Rinse afterwards and keep salt water away from metal or glued settings.
+  sun:
+    verdict: limit
+    reason: The smoky colour comes from radiation-damaged colour centres that bleach with prolonged UV or heat above about 200 °C. Short sun exposure is fine; a sunny window for months is not.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and physically safe beside the bed. Raw points can be sharp.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it resists everyday scratches. Keep it away from heat, which can lighten or change the colour.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is non-toxic. The colour comes from natural irradiation in the ground; the stone is not radioactive.
+  elixir: direct
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [saturn, pluto]
+  vedic_planet: null
+  zodiac: [capricorn, sagittarius, scorpio]
+  intentions: [grounding, protection, anxiety, peace-calm, transformation]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People who leave crystals in sunny windows or hot cars
+    why: Long UV exposure and heat bleach smoky quartz to a paler, sometimes yellowish tone. The change is permanent unless the stone is re-irradiated.
+    basis: physical
+  - who: Buyers paying extra for very dark, perfectly even smoky quartz
+    why: Some dark, evenly coloured smoky quartz is clear quartz irradiated in a laboratory. It is still quartz and stable, but the colour is not natural and should be disclosed.
+    basis: physical
+  - who: People worried that smoky quartz is radioactive
+    why: Its colour comes from radiation it received in the ground, but the stone itself is not radioactive and is safe to handle and wear.
+    basis: physical
+  - who: People looking for an uplifting, energising stone
+    why: Tradition calls smoky quartz a grounding, settling stone. For uplift, tradition suggests citrine or sunstone.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Brown or grey glass
+    - Laboratory-irradiated clear quartz (real quartz, artificial colour)
+    - Smoky-coloured resin
+    - Brown topaz or obsidian sold as smoky quartz
+  tests:
+    - id: color
+      weight: 2
+      how: Look through the stone towards a window and turn it slowly.
+      real: Colour often zoned, darker near the tip or in bands, and it shifts slightly from grey-brown to reddish-brown as you turn it.
+      fake: Perfectly even colour with no zoning; obsidian is opaque in thicker pieces.
+    - id: magnification
+      weight: 3
+      how: Examine with a 10x loupe.
+      real: Natural inclusions, veils or growth lines; no round bubbles.
+      fake: Round bubbles or swirls indicate glass.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass and resin warm more quickly.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch a glass bottle.
+      real: Smoky quartz (Mohs 7) scratches glass easily.
+      fake: Glass barely marks glass; resin is scratched itself.
+    - id: price
+      weight: 1
+      how: Compare price with size and clarity.
+      real: Natural smoky quartz is common and fairly cheap, even in large sizes.
+      fake: Very dark, flawless, uniform crystals at low prices are often irradiated.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition pairs clear quartz's amplification with smoky quartz's grounding; same care rules.
+    - slug: black-tourmaline
+      why: Two classic grounding and protection stones, often used together.
+    - slug: rose-quartz
+      why: Tradition pairs smoky quartz's grounding with rose quartz's softness.
+    - slug: citrine
+      why: Smoky quartz and citrine are both quartz and are paired to balance grounding with optimism.
+    - slug: hematite
+      why: A traditional grounding combination. Keep hematite out of the water when the quartz is washed.
+    - slug: malachite
+      why: Tradition says smoky quartz helps transmute what malachite brings up.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and points are inexpensive. Large, clear faceted gems and fine Swiss or Colorado crystals command higher prices.
+
+names:
+  es: Cuarzo ahumado
+
+sources:
+  - https://www.mindat.org/min-3689.html
+  - https://www.gemsociety.org/article/smoky-quartz/
+  - https://geology.com/gemstones/smoky-quartz/

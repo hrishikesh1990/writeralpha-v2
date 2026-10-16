@@ -1,0 +1,119 @@
+slug: hematoid-quartz
+name: Hematoid Quartz
+aka: [fire quartz, harlequin quartz, ferruginous quartz, eisenkiesel, red quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2 + Fe2O3
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [red, red-brown, orange, yellow, gold]
+origins: [Madagascar, Brazil, Spain, Morocco, India]
+summary: >-
+  Quartz coloured red, orange or gold by inclusions or coatings of hematite
+  and other iron oxides. The quartz is hard and water-safe; the surface iron
+  oxide on raw crystals can rub off and stain, so skip salt and scrubbing.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz does not dissolve and hematite is already fully oxidised, so rinsing is fine. Do not scrub raw crystals, as surface hematite can rub off and stain.
+  salt:
+    verdict: avoid
+    reason: Salt lodges in the pitted, iron-coated surface of raw crystals and can loosen or discolour the red coating. Use plain water or a dry method.
+  sun:
+    verdict: safe
+    reason: Iron oxide colours are light-stable and do not fade.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe beside the bed. Raw points can be sharp and may leave red dust on fabric.
+  wear:
+    verdict: daily
+    reason: The quartz is Mohs 7. Raw hematite-coated surfaces are softer and can rub off on skin and clothes, so polished pieces suit jewellery best.
+  toxicity:
+    level: none
+    reason: Quartz and iron oxide (hematite) are non-toxic. Red dust from raw crystals is a stain, not a poison.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral, solar_plexus]
+  elements: [fire, earth]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aries, leo, scorpio]
+  intentions: [grounding, energy, confidence, courage, protection, concentration]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People who cleanse crystals with salt or salt water
+    why: Raw hematoid quartz often has a hematite coating in its surface pits. Salt and scrubbing can loosen it and leave the stone patchy.
+    basis: physical
+  - who: People wearing raw points on pale clothing
+    why: Exposed hematite leaves a red-brown streak on fabric and skin. Polished pieces do not.
+    basis: physical
+  - who: Homes with small children or pets
+    why: Raw crystal points are sharp and small tumbled pieces are a choking hazard.
+    basis: physical
+  - who: People already feeling restless or agitated
+    why: Tradition links hematoid quartz with Mars and fire energy, and some practitioners prefer calmer stones in that case.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Clear quartz painted or dyed red
+    - Red glass
+    - Red jasper sold as hematoid quartz
+    - Resin-coated quartz points
+  tests:
+    - id: streak
+      weight: 2
+      how: Rub a raw, unpolished patch of red coating across the back of a white tile.
+      real: Hematite leaves a reddish-brown streak.
+      fake: Paint or dye leaves a coloured film or no streak; red jasper leaves little.
+    - id: magnification
+      weight: 3
+      how: Examine with a 10x loupe, looking through clear areas of the quartz.
+      real: Red, orange or golden flakes and films sitting inside or under the surface of the quartz.
+      fake: Colour only on the outer surface, pooled in cracks, or bubbles indicating glass.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab dipped in nail-polish remover.
+      real: The swab may pick up faint red-brown dust but no dye.
+      fake: Bright red or pink colour on the swab, or a softened coating, means dye or paint.
+    - id: hardness
+      weight: 2
+      how: On a hidden clear area of the quartz, try to scratch glass.
+      real: The quartz (Mohs 7) scratches glass.
+      fake: Glass or resin imitations will not.
+    - id: magnet
+      weight: 1
+      how: Hang the stone from a thread and bring a strong magnet close.
+      real: Hematite is at most very weakly magnetic, so the stone hardly reacts.
+      fake: A strong pull suggests magnetite or a man-made iron imitation, not hematoid quartz.
+
+pairs:
+  good:
+    - slug: hematite
+      why: Both carry hematite and are used together for grounding. Keep hematite out of water.
+    - slug: clear-quartz
+      why: Same quartz base; tradition says clear quartz amplifies its energy.
+    - slug: red-jasper
+      why: Two red grounding stones linked with the root chakra in tradition.
+    - slug: smoky-quartz
+      why: A traditional grounding and protection pairing.
+    - slug: carnelian
+      why: Paired in tradition for drive and courage.
+  avoid: []
+
+price:
+  tier: budget
+  note: Small points and tumbles are inexpensive. Clear Madagascar crystals with bright, well-defined internal hematite and fine Spanish eisenkiesel cost more.
+
+names:
+  es: Cuarzo hematoide
+
+sources:
+  - https://www.mindat.org/min-27247.html
+  - https://www.mindat.org/min-27246.html
+  - https://www.mindat.org/min-3337.html

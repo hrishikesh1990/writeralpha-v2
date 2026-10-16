@@ -1,0 +1,139 @@
+slug: garnet
+name: Garnet
+aka: [almandine, pyrope, red garnet]
+kind: mineral
+species: Garnet group (mostly almandine and pyrope)
+family: garnet
+formula: X3Y2(SiO4)3
+crystal_system: cubic
+mohs: [6.5, 7.5]
+colors: [red, dark red, purplish red, orange, green, brown]
+origins: [India, Sri Lanka, Madagascar, Tanzania, Mozambique, United States]
+summary: >-
+  A group of silicate minerals; most market garnet is deep red almandine or
+  pyrope. Hard, non-porous and without cleavage, it is safe in water and salt
+  and suits daily wear. Hessonite (Gomed) is the orange garnet of Vedic
+  astrology.
+
+safety:
+  water:
+    verdict: safe
+    reason: Garnet is non-porous and does not dissolve or rust, so washing in warm soapy water or a short soak is fine. Avoid sudden hot-to-cold changes.
+  salt:
+    verdict: safe
+    reason: Salt does not attack garnet. Rinse it off afterwards, because salt water tarnishes silver and wears gold settings.
+  sun:
+    verdict: safe
+    reason: Red garnet colour is stable in daylight. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Physically safe in the bedroom. Tradition calls garnet energising, so some keep it off the bedside table.
+  wear:
+    verdict: daily
+    reason: Mohs 6.5 to 7.5 with no cleavage makes it a good ring stone, though facet edges can chip with hard knocks.
+  toxicity:
+    level: none
+    reason: Garnets are stable silicates and safe to handle.
+  elixir: direct
+
+tradition:
+  chakras: [root, heart]
+  elements: [fire, earth]
+  planets: [mars]
+  vedic_planet: null
+  zodiac: [aquarius, capricorn, aries]
+  intentions: [courage, love, grounding, energy, confidence, motivation]
+  energy: energizing
+  birth_months:
+    modern: [january]
+    traditional: [january]
+
+cautions:
+  - who: Buyers of cheap faceted "garnet" jewellery
+    why: Red glass and garnet-topped glass doublets are common. A doublet can separate if heated or soaked in solvents.
+    basis: physical
+  - who: People who expose rings to sudden heat
+    why: Garnet can crack from thermal shock, for example under a jeweller's torch or when moved from hot water to cold. Let it change temperature gradually.
+    basis: physical
+  - who: People buying garnet as a Vedic Gomed stone
+    why: In Jyotish, only hessonite garnet (Gomed) is the gem of Rahu, and astrologers prescribe it from the birth chart. Most red garnet sold is almandine or pyrope, which tradition does not treat as Gomed.
+    basis: tradition
+  - who: Anyone advised to avoid Rahu stones in Vedic astrology
+    why: Hessonite is a powerful Rahu gem in tradition and is not combined with ruby or pearl. Astrologers usually advise a trial and a chart check before wearing it.
+    basis: tradition
+  - who: People who are easily overstimulated
+    why: Crystal tradition treats red garnet as a fiery, energising stone. Those who want calm may prefer rose quartz or amethyst.
+    basis: tradition
+zodiac_cautions:
+  - sign: leo
+    why: If the stone is hessonite (Gomed), Vedic tradition treats Rahu as an enemy of the Sun, so Leo ascendants are usually cautioned against it.
+  - sign: cancer
+    why: For hessonite, Rahu is also considered hostile to the Moon, so many astrologers caution Cancer ascendants.
+
+identify:
+  common_fakes:
+    - Red glass
+    - Garnet-topped glass doublets
+    - Synthetic ruby or spinel sold as garnet
+    - Dyed red quartz or agate
+  tests:
+    - id: magnet
+      weight: 2
+      how: Hang a loose stone on a thread or float it on a cork in water and bring a strong neodymium magnet close.
+      real: Most red garnets (almandine, pyrope) are pulled slightly toward the magnet because of their iron and manganese.
+      fake: Glass and ruby do not respond.
+    - id: magnification
+      weight: 2
+      how: Look into the stone with a 10x loupe.
+      real: Needle-like or rounded crystal inclusions, or a clean stone; no bubbles.
+      fake: Round gas bubbles or swirls mean glass. A colour change at a flat plane near the top points to a doublet.
+    - id: light
+      weight: 2
+      how: Place a faceted stone table-down on white paper and look at it from above.
+      real: Even red colour throughout.
+      fake: A red ring around the edge of the table suggests a garnet-topped doublet.
+    - id: color
+      weight: 1
+      how: Turn the stone and look through it from different directions.
+      real: Garnet looks the same colour from every direction (it is singly refractive).
+      fake: Ruby shows two shades; this helps separate ruby from garnet but not glass.
+    - id: hardness
+      weight: 1
+      how: On rough or tumbled pieces only, try to scratch plain glass. This can chip faceted stones.
+      real: Garnet scratches glass.
+      fake: Glass barely marks glass.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Red garnet is affordable, so modest prices are normal.
+      fake: Rare green tsavorite or demantoid offered cheaply is likely glass or another stone.
+
+pairs:
+  good:
+    - slug: ruby
+      why: Red stones paired in tradition for passion and vitality. Ruby scratches garnet, so store them apart.
+    - slug: smoky-quartz
+      why: A grounding pair in tradition for the root chakra.
+    - slug: black-tourmaline
+      why: Tradition combines garnet's energy with tourmaline's protection.
+    - slug: red-jasper
+      why: Both are root-chakra stamina stones in tradition.
+    - slug: rose-quartz
+      why: A traditional love pairing that balances garnet's fire with gentleness.
+    - slug: clear-quartz
+      why: Tradition says quartz amplifies garnet's energy. Both are water-safe.
+  avoid: []
+
+price:
+  tier: budget
+  note: Red almandine and pyrope garnet are affordable. Fine hessonite costs more, and rare green tsavorite and demantoid can reach premium prices.
+
+names:
+  hi: Tamda (तामड़ा); hessonite is Gomed (गोमेद)
+  es: Granate
+
+sources:
+  - https://www.mindat.org/min-10272.html
+  - https://www.gia.edu/garnet
+  - https://www.gemsociety.org/article/garnet-jewelry-and-gemstone-information/
+  - https://en.wikipedia.org/wiki/Navratna

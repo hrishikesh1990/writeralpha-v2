@@ -1,0 +1,131 @@
+slug: fluorite
+name: Fluorite
+aka: [fluorspar, rainbow fluorite]
+kind: mineral
+species: Fluorite
+family: halide
+formula: CaF2
+crystal_system: cubic
+mohs: [4, 4]
+colors: [purple, green, blue, yellow, colorless, pink, multicolor]
+origins: [China, Mexico, South Africa, Spain, United Kingdom, Argentina]
+summary: >-
+  Calcium fluoride, prized for its purple, green and banded colours. At Mohs 4
+  with perfect cleavage it scratches and splits easily, and its colours fade in
+  strong sunlight. Rinse it briefly, keep it out of salt and sun, and never use
+  it in drinking water.
+
+safety:
+  water:
+    verdict: brief
+    reason: Fluorite dissolves only very slightly, so a quick rinse in cool water is fine. Avoid soaking and hot water, which can crack it along cleavage planes.
+  salt:
+    verdict: avoid
+    reason: Salt crystals scratch a Mohs 4 surface and a salt soak dulls the polish. Cleanse it with smoke, sound or moonlight.
+  sun:
+    verdict: avoid
+    reason: Fluorite colours come from light-sensitive colour centres. Weeks of sun, or even bright indoor light over time, can bleach purple and green fluorite.
+  sleep:
+    verdict: ok
+    reason: Safe on a nightstand. Octahedrons have sharp points and chip easily, so a tumbled piece is better under a pillow.
+  wear:
+    verdict: special
+    reason: At Mohs 4 it scratches easily and splits along four cleavage directions if knocked. Best for pendants or earrings worn occasionally.
+  toxicity:
+    level: low
+    reason: Polished fluorite is safe to handle. It slowly releases fluoride into water, so keep it out of drinks and wear a mask if cutting or sanding it.
+  elixir: never
+
+tradition:
+  chakras: [third_eye, heart, throat, crown]
+  elements: [air]
+  planets: [mercury, neptune]
+  vedic_planet: null
+  zodiac: [pisces, capricorn]
+  intentions: [concentration, clarity, intuition, peace-calm, protection]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: People who display stones on sunny windowsills
+    why: Purple, green and blue fluorite fade in sunlight, and the change is permanent. Keep it out of direct sun.
+    basis: physical
+  - who: Anyone making crystal water, tea or bath soaks
+    why: Fluorite slowly releases fluoride ions into water, and water left on it for a long time can exceed drinking-water guidelines for fluoride. Do not put it in anything you drink.
+    basis: physical
+  - who: People who wash stones in hot water or move them between hot and cold
+    why: Sudden temperature changes crack fluorite along its cleavage planes. Use cool water briefly and dry at once.
+    basis: physical
+  - who: People wanting a ring or bracelet for daily wear
+    why: At Mohs 4 fluorite scratches against dust and keys and splits if knocked. It suits pendants and desk stones better.
+    basis: physical
+  - who: Homes with small children
+    why: Small tumbled pieces and sharp octahedrons can be swallowed or cut fingers. Keep them out of reach.
+    basis: physical
+
+identify:
+  common_fakes:
+    - Coloured or rainbow glass
+    - Dyed quartz
+    - Resin with swirled colours
+    - Purple fluorite sold as amethyst (and the reverse)
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a hidden spot, try to scratch the stone with a steel knife, then try to scratch glass with the stone.
+      real: Steel scratches fluorite, and fluorite cannot scratch glass.
+      fake: Glass and quartz resist the knife, and quartz scratches glass easily.
+    - id: shape
+      weight: 2
+      how: Look at broken corners and natural faces, or at octahedron shapes.
+      real: Flat, shiny cleavage planes in four directions, often visible as internal step-like planes or rainbow cracks.
+      fake: Glass shows curved, shell-like breaks and no internal cleavage planes.
+    - id: uv
+      weight: 2
+      how: Shine a long-wave UV torch on it in a dark room.
+      real: Many fluorites glow blue or violet; the word fluorescence comes from this mineral.
+      fake: Glass and quartz usually stay dark. Not all fluorite glows, so a dark stone is not proof of a fake.
+    - id: magnification
+      weight: 2
+      how: Look inside the stone with a 10x loupe.
+      real: Sharp colour bands, cleavage cracks and natural inclusions.
+      fake: Round gas bubbles and swirls mean glass or resin.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Feels cool at first.
+      fake: Resin feels warm almost immediately.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Fluorite is inexpensive; large rainbow towers cost more but remain affordable.
+      fake: Perfectly even, vivid rainbow banding on cheap mass-produced pieces suggests glass or resin.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Purple stones paired in tradition for focus and calm. Both should stay out of strong sun.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies fluorite's focus. Store apart, since quartz scratches fluorite.
+    - slug: lepidolite
+      why: A common pairing for calm concentration and anxiety in crystal practice.
+    - slug: sodalite
+      why: Both are traditional study stones for logic and focus.
+    - slug: selenite
+      why: Selenite cleanses without water or sun, which protects fluorite's colour.
+    - slug: black-tourmaline
+      why: Tradition pairs fluorite's clarity with tourmaline's grounding.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones, octahedrons and small towers are inexpensive. Fine crystal specimens from classic mines and large clear pieces cost much more.
+
+names:
+  es: Fluorita
+
+sources:
+  - https://www.mindat.org/min-1576.html
+  - https://www.minerals.net/mineral/fluorite
+  - https://geology.com/minerals/fluorite.shtml
+  - https://www.natsca.org/sites/default/files/publications-full/care-and-conservation-of-geological-specimens.pdf

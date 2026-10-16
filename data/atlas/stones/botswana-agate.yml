@@ -1,0 +1,119 @@
+slug: botswana-agate
+name: Botswana Agate
+aka: [bobonong agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [grey, pink, peach, white, brown, black]
+origins: [Botswana]
+summary: >-
+  A finely banded agate from eastern Botswana, known for tight, wavy bands in
+  grey, pink, peach and white. Its colours are natural and stable, so it is one
+  of the easier agates to care for: plain water and sun are fine, salt soaks are
+  not.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, so rinsing or a short soak is fine. Dry it well, especially if it sits in a metal setting.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into the pores and leaves salt crystals behind as it dries, which dulls the polish and can open fine cracks.
+  sun:
+    verdict: safe
+    reason: Its grey and pink banding comes from natural iron and the structure of the chalcedony, which sunlight does not fade. Dyed imitations are the exception.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Raw nodule halves can have rough edges.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it takes everyday wear well and needs no special handling beyond avoiding hard knocks.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is inert and safe to handle. Cutting it makes silica dust, so lapidaries work it wet.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral, crown]
+  elements: [fire]
+  planets: []
+  vedic_planet: null
+  zodiac: [scorpio]
+  intentions: [emotional-balance, grief, courage, creativity, confidence]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous stone and salt crystallises in pores and cracks. Plain water, smoke or sound work without that risk.
+    basis: physical
+  - who: Buyers looking for genuine Botswana material
+    why: Any finely banded grey or pink agate can be sold under this name. Strongly pink or purple pieces are often dyed agate from elsewhere.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are small enough to swallow. The stone itself is not toxic.
+    basis: physical
+  - who: People who want an intense, fast-acting stone
+    why: Tradition describes Botswana agate as gentle and supportive, a stone for slow emotional comfort rather than a quick energy lift.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Other banded agates sold under the Botswana name
+    - Dyed pink or purple agate
+    - Glass or resin with printed bands
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the colours in daylight and follow the bands around the stone.
+      real: Soft grey, peach, salmon pink and white in very fine, tightly packed, wavy bands, often with eye-like rings.
+      fake: Hot pink, bright purple or colours concentrated in cracks point to dyed agate.
+    - id: magnification
+      weight: 3
+      how: Examine the banding with a 10x loupe.
+      real: Very thin, continuous, parallel bands that follow every curve of the nodule.
+      fake: Bubbles or swirl lines mean glass. Printed dots or repeating patterns mean resin or a print.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab means dye.
+    - id: light
+      weight: 1
+      how: Hold a thin edge up to a torch.
+      real: Bands transmit light to different degrees, giving a layered glow.
+      fake: Resin and glass glow evenly with no layering.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: It scratches glass easily.
+      fake: Resin and plastic cannot scratch glass.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: Tradition pairs the two for emotional comfort, particularly after loss.
+    - slug: smoky-quartz
+      why: Both are steadying stones in tradition and share the same easy care.
+    - slug: carnelian
+      why: Carnelian adds warmth and courage in tradition. Both are chalcedony with identical care.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies Botswana agate's gentle energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and small nodules are inexpensive. Polished halves and spheres with fine pink banding, and well-matched jewellery cabochons, cost more.
+
+names:
+  es: Ágata de Botsuana
+
+sources:
+  - https://www.mindat.org/min-7592.html
+  - https://www.mindat.org/min-51.html
+  - https://www.gemsociety.org/article/agate-gem-information/

@@ -1,0 +1,121 @@
+slug: peach-moonstone
+name: Peach Moonstone
+aka: [orange moonstone, pink moonstone]
+kind: variety
+species: Feldspar (usually orthoclase or microcline)
+family: feldspar
+formula: KAlSi3O8
+crystal_system: monoclinic
+mohs: [6, 6.5]
+colors: [peach, orange, pink, cream]
+origins: [India, Madagascar, Sri Lanka]
+summary: >-
+  Moonstone feldspar with a natural peach to pinkish body colour and a soft
+  silvery sheen. It has the same perfect cleavage as white moonstone, so knocks
+  can split it. Wash briefly and skip salt and ultrasonic cleaners.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so a quick wash is fine. Avoid long soaks and hot water, which can work into the cleavage cracks.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them.
+  sun:
+    verdict: safe
+    reason: The peach colour comes from stable mineral inclusions and the sheen is structural, so sunlight does not fade it. Avoid sudden heat.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth, so it is safe under a pillow.
+  wear:
+    verdict: care
+    reason: At Mohs 6 with perfect cleavage it can chip or split from a hard knock. Bezel settings protect rings.
+  toxicity:
+    level: none
+    reason: Potassium aluminium silicate; non-toxic to handle and wear.
+  elixir: indirect
+
+tradition:
+  chakras: [sacral, heart]
+  elements: [water]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [cancer, libra]
+  intentions: [love, self-love, emotional-balance, creativity, peace-calm]
+  energy: calming
+  birth_months:
+    other: [june]
+
+cautions:
+  - who: People wanting a ring for heavy daily use
+    why: Perfect cleavage means one sharp knock can split the stone. Pendants, earrings or rings with protective bezels last longer.
+    basis: physical
+  - who: Anyone using ultrasonic or steam jewellery cleaners
+    why: Vibration and heat can open cleavage cracks. Clean with warm soapy water and a soft brush.
+    basis: physical
+  - who: People who cleanse with salt water
+    why: Salt crystallising in cleavage cracks can widen them over time.
+    basis: physical
+  - who: Buyers of bright orange stones sold as peach moonstone
+    why: Peach glass, opalite and sunstone are sometimes mislabelled. Real peach moonstone has a soft colour and a floating sheen.
+    basis: physical
+  - who: People looking for Vedic Moon remedies
+    why: Vedic practice cites white moonstone or pearl for Chandra. Peach moonstone is a modern crystal-healing stone without a recognised Navaratna role.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Peach or orange glass
+    - Opalite or resin in peach tones
+    - Sunstone or peach aventurine mislabelled
+  tests:
+    - id: light
+      weight: 3
+      how: Tilt the stone slowly under a single light.
+      real: A soft silvery-white or pale blue sheen floats across the surface at certain angles.
+      fake: No floating sheen, or glitter instead of a glow (sunstone, aventurine).
+    - id: inclusions
+      weight: 2
+      how: Look into the stone with a 10x loupe.
+      real: Small cleavage cracks (centipedes) and natural inclusions.
+      fake: Round bubbles or swirls mean glass.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin feels warm at once.
+    - id: hardness
+      weight: 1
+      how: Press a steel pin against a hidden spot.
+      real: Feldspar resists the pin.
+      fake: Resin is marked easily.
+    - id: color
+      weight: 1
+      how: Look at the colour in daylight.
+      real: Soft, slightly uneven peach with lighter and darker zones.
+      fake: Perfectly even, saturated orange or pink.
+
+pairs:
+  good:
+    - slug: moonstone
+      why: The same feldspar in white; paired for intuition and emotional balance.
+    - slug: rose-quartz
+      why: Two gentle heart stones in tradition, used for self-love.
+    - slug: carnelian
+      why: Paired in tradition for sacral-chakra creativity.
+    - slug: sunstone
+      why: A traditional sun and moon pairing for balanced, warm energy.
+    - slug: rhodonite
+      why: A traditional pairing for emotional healing and compassion.
+  avoid: []
+
+price:
+  tier: budget
+  note: Peach moonstone beads and cabochons are inexpensive. Translucent stones with a strong sheen cost more.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-2774.html
+  - https://www.gemsociety.org/article/moonstone-jewelry-gem-information/
+  - https://www.gemsociety.org/article/orthoclase/

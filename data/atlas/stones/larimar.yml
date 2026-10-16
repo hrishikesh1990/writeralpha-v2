@@ -1,0 +1,129 @@
+slug: larimar
+name: Larimar
+aka: [blue pectolite, atlantis stone, stefilia's stone]
+kind: variety
+species: Pectolite
+family: pectolite
+formula: NaCa2Si3O8(OH)
+crystal_system: triclinic
+mohs: [4.5, 5]
+colors: [blue, sky blue, white, blue-green]
+origins: [Dominican Republic]
+summary: >-
+  A sky-blue variety of pectolite found only in the Dominican Republic, with
+  white, fibrous "sea-wave" patterns. Soft and with good cleavage, it needs a
+  brief rinse only, no salt, and protection from heat, which bleaches its blue.
+
+safety:
+  water:
+    verdict: brief
+    reason: Pectolite does not dissolve, but it is soft and fibrous with cleavage. A quick rinse is fine; long soaks dull the polish and can open fine cracks.
+  salt:
+    verdict: avoid
+    reason: Salt scratches a Mohs 4.5 to 5 surface and brine works into fibres and cracks. Cleanse with sound, smoke or moonlight.
+  sun:
+    verdict: limit
+    reason: Heat clearly fades larimar's blue, and long strong sun is widely reported to pale it, although lab light tests found the colour fairly stable. Keep it out of hot sun.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and a traditional calming bedside stone.
+  wear:
+    verdict: care
+    reason: Soft enough for dust and keys to scratch, and it can chip along cleavage. Pendants and earrings fare better than rings and bracelets.
+  toxicity:
+    level: none
+    reason: Pectolite is a non-toxic silicate and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, heart, third_eye, crown]
+  elements: [water, air]
+  planets: [neptune, moon]
+  vedic_planet: null
+  zodiac: [pisces, leo]
+  intentions: [peace-calm, clarity, emotional-balance, communication, anxiety, healing]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: People who leave jewellery in hot cars, saunas or sunny windows
+    why: Heat bleaches larimar's blue, and a jeweller's torch turns it white and cracked. Store it cool and out of strong sun.
+    basis: physical
+  - who: Anyone who cleanses crystals in salt or salt water
+    why: Salt scratches the soft surface and brine works into its fibrous structure. Use a soft, barely damp cloth.
+    basis: physical
+  - who: People wanting a ring for everyday wear
+    why: At Mohs 4.5 to 5 it scratches and chips in rings. Choose a protective bezel setting or a pendant.
+    basis: physical
+  - who: People who wear it with perfume, lotion or chlorine
+    why: Chemicals dull the polish and can stain the white areas. Put larimar on after skincare and take it off to swim.
+    basis: physical
+  - who: Buyers of cheap "larimar"
+    why: Dyed howlite or magnesite, blue glass and resin are sold as larimar. Genuine larimar comes only from the Dominican Republic.
+    basis: physical
+
+identify:
+  common_fakes:
+    - Dyed howlite or magnesite
+    - Blue glass or resin with swirled patterns
+    - Blue chalcedony or blue calcite sold as larimar
+    - Reconstituted or dyed pectolite
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the pattern under daylight, turning the stone.
+      real: Light to deep sky blue with white, fibrous "turtle-back" or wave patterns and a silky sheen that moves.
+      fake: Flat, even blue, or swirls that look painted, with no fibrous sheen.
+    - id: magnification
+      weight: 3
+      how: Examine the surface with a 10x loupe.
+      real: Radiating fibres and needle-like structure throughout the blue and white areas.
+      fake: Bubbles (glass, resin), colour pooled in cracks (dye) or a granular chalky texture (howlite).
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue colour on the swab means a dyed stone.
+    - id: hardness
+      weight: 1
+      how: On a hidden spot, try a steel knife.
+      real: Steel scratches it with some effort (Mohs 4.5 to 5).
+      fake: Glass resists the knife; howlite scratches very easily.
+    - id: seller
+      weight: 1
+      how: Ask where the stone was mined.
+      real: The only source is the Barahona area of the Dominican Republic.
+      fake: Any other stated origin means it is not larimar.
+    - id: price
+      weight: 1
+      how: Compare price with colour and size.
+      real: Deep blue, strongly patterned larimar is costly; pale pieces are moderate.
+      fake: Intensely blue larimar at bargain prices is likely dyed or an imitation.
+
+pairs:
+  good:
+    - slug: aquamarine
+      why: Two sea-blue calming stones in tradition. Aquamarine is harder, so store them apart.
+    - slug: blue-lace-agate
+      why: A gentle throat-chakra pairing for calm communication.
+    - slug: amazonite
+      why: Tradition pairs these soothing blue-green stones for emotional balance.
+    - slug: moonstone
+      why: Water and moon stones in tradition, combined for intuition and calm.
+    - slug: caribbean-calcite
+      why: Similar sea-blue look and calming role; both are soft and kept out of water and heat.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies larimar's calm.
+  avoid: []
+
+price:
+  tier: mid
+  note: Pale and white-rich larimar is moderately priced. Deep "volcanic blue" pieces with strong patterns sell for much more, and supply is limited to one region.
+
+names:
+  es: Larimar
+
+sources:
+  - https://www.mindat.org/min-29025.html
+  - https://www.gia.edu/gems-gemology/winter-1989-blue-pectolite-woodruff
+  - https://www.mdpi.com/2075-163X/13/9/1221

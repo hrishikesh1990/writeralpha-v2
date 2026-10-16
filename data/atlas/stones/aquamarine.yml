@@ -1,0 +1,128 @@
+slug: aquamarine
+name: Aquamarine
+aka: [blue beryl, sea stone]
+kind: variety
+species: Beryl
+family: beryl
+formula: Be3Al2Si6O18
+crystal_system: hexagonal
+mohs: [7.5, 8]
+colors: [blue, light blue, blue-green, sea green]
+origins: [Brazil, Nigeria, Madagascar, Pakistan, Mozambique, Zambia]
+summary: >-
+  The blue to blue-green variety of beryl, coloured by trace iron. Hard,
+  non-porous and safe in water, it suits daily wear; the main risks are hard
+  knocks and steam or ultrasonic cleaners on included stones.
+
+safety:
+  water:
+    verdict: safe
+    reason: Beryl is non-porous and does not dissolve, so washing in warm soapy water or a short soak is fine. Water does not rust, yellow or weaken aquamarine.
+  salt:
+    verdict: safe
+    reason: Salt does not attack beryl. Rinse the salt off afterwards, and keep salt water away from silver settings, which tarnish.
+  sun:
+    verdict: safe
+    reason: The colour of natural and heat-treated aquamarine is stable in daylight. Dark blue "Maxixe" beryl, sometimes sold as aquamarine, is the exception and fades in light.
+  sleep:
+    verdict: ok
+    reason: Physically safe under a pillow or on a nightstand. Tradition treats it as a calming stone.
+  wear:
+    verdict: daily
+    reason: At Mohs 7.5 to 8 it resists everyday scratches. A hard knock can still chip a faceted edge, so rings benefit from a protective setting.
+  toxicity:
+    level: none
+    reason: The beryllium in aquamarine is locked into a stable silicate. Polished stones are safe to handle and wear.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, heart]
+  elements: [water]
+  planets: [neptune, moon]
+  vedic_planet: null
+  zodiac: [pisces, aquarius, gemini]
+  intentions: [peace-calm, communication, courage, anxiety, clarity, emotional-balance]
+  energy: calming
+  birth_months:
+    modern: [march]
+
+cautions:
+  - who: People who clean jewellery with steam or ultrasonic machines
+    why: Aquamarine often has fine liquid inclusions and can be clarity-filled in lower grades. Vibration and heat can crack included stones or loosen fillers. Warm soapy water and a soft brush are enough.
+    basis: physical
+  - who: Anyone wearing an aquamarine ring for manual work
+    why: Beryl is hard but can chip at facet edges or corners when knocked against stone, tiles or metal. Take rings off for gardening, gym work and DIY.
+    basis: physical
+  - who: Buyers of very cheap, very deep blue "aquamarine"
+    why: Blue topaz and blue glass are routinely sold as aquamarine, and dark irradiated Maxixe beryl fades in sunlight. Ask the seller what the stone is and whether it is treated.
+    basis: physical
+  - who: People looking for an energising, fiery stone
+    why: Crystal tradition treats aquamarine as cooling and calming. For drive and motivation, tradition points to carnelian, garnet or citrine instead.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Blue topaz (heat-treated and irradiated) sold as aquamarine
+    - Blue glass
+    - Synthetic blue spinel
+    - Irradiated "Maxixe" beryl that fades
+  tests:
+    - id: refractive
+      weight: 3
+      how: Ask a jeweller to check the stone on a refractometer, a quick non-destructive test.
+      real: Aquamarine reads about 1.57 to 1.58.
+      fake: Blue topaz reads about 1.61 to 1.63; glass and spinel give single readings at different values.
+    - id: color
+      weight: 2
+      how: Turn the stone slowly in daylight and look through it from the side and from the top.
+      real: Natural pleochroism, appearing slightly stronger blue in one direction and paler or almost colourless in another.
+      fake: Glass looks the same from every direction. Blue topaz shows only weak colour change.
+    - id: magnification
+      weight: 2
+      how: Examine the stone with a 10x loupe.
+      real: Long, thin tube-like or needle inclusions running parallel, or a nearly clean stone.
+      fake: Round gas bubbles or swirl marks, which point to glass.
+    - id: hardness
+      weight: 1
+      how: On rough or tumbled pieces only, try to scratch a piece of plain glass. This can chip faceted stones.
+      real: Aquamarine scratches glass easily.
+      fake: Glass barely marks glass. Note that blue topaz also scratches glass, so this only rules out glass.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your lip or cheek for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass and plastic feel less cold and warm within seconds.
+    - id: price
+      weight: 1
+      how: Compare price with size and colour.
+      real: Pale aquamarine is moderately priced. Saturated blue stones over a few carats are costly.
+      fake: A large, intensely blue, flawless stone at a bargain price is more likely blue topaz or glass.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies aquamarine's calm. Both are hard and water-safe, so they share the same care.
+    - slug: amethyst
+      why: A classic calming pair for meditation and sleep. Both tolerate water, though amethyst should stay out of strong sun.
+    - slug: lapis-lazuli
+      why: Both are throat-chakra stones in tradition, paired for communication. Keep lapis out of long soaks.
+    - slug: moonstone
+      why: A traditional water-and-moon pairing for emotional balance and intuition.
+    - slug: blue-lace-agate
+      why: A gentle blue pairing that tradition uses for calm, clear speech. Both are hard and water-safe.
+    - slug: larimar
+      why: Two sea-blue calming stones often worn together. Larimar is softer, so store them apart to avoid scratches.
+  avoid: []
+
+price:
+  tier: mid
+  note: Pale and included aquamarine is affordable. Clean stones with strong blue colour, especially above a few carats, cost far more per carat.
+
+names:
+  hi: Beruj (बेरुज)
+  es: Aguamarina
+
+sources:
+  - https://www.mindat.org/min-289.html
+  - https://www.gia.edu/aquamarine
+  - https://www.gemsociety.org/article/aquamarine-jewelry-and-gemstone-information/

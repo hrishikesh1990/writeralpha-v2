@@ -1,0 +1,144 @@
+slug: turquoise
+name: Turquoise
+aka: [firoza, feroza]
+kind: mineral
+species: Turquoise
+family: phosphate
+formula: CuAl6(PO4)4(OH)8·4H2O
+crystal_system: triclinic
+mohs: [5, 6]
+colors: [blue, sky blue, green, blue-green]
+origins: [Iran, United States, China, Mexico, Egypt]
+summary: >-
+  A porous copper aluminium phosphate, often stabilised with resin. It absorbs
+  oils, soaps and cosmetics, which change its colour, and it is the most faked
+  stone in the crystal trade. Rinse briefly, avoid salt and heat, and ask
+  whether it is natural, stabilised or reconstituted.
+
+safety:
+  water:
+    verdict: brief
+    reason: Turquoise is porous and absorbs water, soap and dissolved minerals that can discolour it. Wipe or rinse quickly and dry; never soak it.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the surface and brine soaks into the pores. Use a soft dry cloth, sound or smoke instead.
+  sun:
+    verdict: limit
+    reason: Long sun and heat can dry out natural turquoise and shift it toward green, and they soften the resin in stabilised stones.
+  sleep:
+    verdict: ok
+    reason: Safe on a nightstand and a common protective stone in tradition.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 6 it scratches, and skin oils, lotions, perfume and sweat stain it over time. Put it on last and take it off to wash.
+  toxicity:
+    level: low
+    reason: Polished turquoise is safe to wear, but it contains copper, so keep it out of drinking water and wear a mask when cutting or sanding it.
+  elixir: never
+
+tradition:
+  chakras: [throat, heart]
+  elements: [earth, air]
+  planets: [venus, jupiter]
+  vedic_planet: null
+  zodiac: [sagittarius, pisces, aquarius]
+  intentions: [communication, protection, healing, luck, friendship, peace-calm]
+  energy: balancing
+  birth_months:
+    modern: [december]
+    traditional: [december]
+
+cautions:
+  - who: People who wear turquoise with lotion, sunscreen, perfume or hairspray
+    why: Its pores absorb oils and chemicals, turning sky blue toward green and leaving blotches. Put it on after skincare and wipe it after wear.
+    basis: physical
+  - who: Anyone who cleanses stones in water, salt, steam or ultrasonic cleaners
+    why: Water and salt soak into the pores, and heat and vibration crack it or damage stabilising resin. Wipe it with a soft, dry cloth.
+    basis: physical
+  - who: Buyers who want natural turquoise
+    why: Dyed howlite or magnesite, reconstituted turquoise (powder and resin), plastic and stabilised stones are sold as turquoise. Ask the seller in writing which it is.
+    basis: physical
+  - who: People cutting, drilling or sanding turquoise
+    why: The dust contains copper. Work wet, wear a mask and clean up afterwards.
+    basis: physical
+  - who: People who leave turquoise in sun or hot cars
+    why: Heat dries natural turquoise, can crack it and softens resin in treated stones.
+    basis: physical
+  - who: Anyone who sees a colour change as a warning
+    why: Tradition says turquoise changes colour to warn of danger or illness. Physically, the change usually comes from absorbed oils, chemicals or dehydration.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed howlite or magnesite
+    - Reconstituted (block) turquoise made of powder and resin
+    - Plastic or resin
+    - Lab-made turquoise or ceramic imitations
+    - Dyed or heavily treated low-grade turquoise sold as natural
+  tests:
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean. A faint colour may come from surface wax on treated stones.
+      fake: Strong blue on the swab means dyed howlite, magnesite or dyed turquoise.
+    - id: flame
+      weight: 2
+      how: Heat a needle and touch it briefly to a hidden spot or inside a drill hole. This leaves a small mark.
+      real: Natural turquoise does not melt or smell.
+      fake: Plastic and resin melt, mark easily or give off an acrid smell; stabilised stones may show a slight mark.
+    - id: magnification
+      weight: 2
+      how: Look at the surface, veins and drill holes with a 10x loupe.
+      real: Natural matrix veins sit in the stone and colour is even into the drill hole.
+      fake: Blue colour concentrated in cracks or white showing inside drill holes (dyed howlite), or bubbles (plastic).
+    - id: color
+      weight: 2
+      how: Compare several beads in a strand.
+      real: Slight variation in shade and matrix from bead to bead.
+      fake: Identical colour and repeating spiderweb patterns across beads suggest reconstituted or block material.
+    - id: hardness
+      weight: 1
+      how: On a hidden spot, try a steel knife.
+      real: Steel marks turquoise only with effort (Mohs 5 to 6).
+      fake: Dyed howlite and plastic scratch very easily.
+    - id: seller
+      weight: 1
+      how: Ask whether the stone is natural, stabilised, enhanced or reconstituted, and get the answer in writing.
+      real: Reputable sellers disclose treatment and often the mine of origin.
+      fake: Vague answers or "genuine turquoise" with no further detail at very low prices.
+    - id: price
+      weight: 2
+      how: Compare price with size and quality.
+      real: Natural, untreated turquoise from named mines is expensive; stabilised material is moderate.
+      fake: Large bright blue beads at very low prices are almost always dyed howlite, magnesite or block.
+
+pairs:
+  good:
+    - slug: lapis-lazuli
+      why: A classic blue jewellery pairing in many cultures; both are soft and kept out of water.
+    - slug: amazonite
+      why: Tradition pairs these soothing blue-green stones for communication.
+    - slug: moonstone
+      why: A traditional protective pairing for travellers.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies turquoise's protective energy.
+    - slug: larimar
+      why: Two soft blue stones that share gentle, dry care and calming symbolism.
+    - slug: malachite
+      why: Copper stones paired in tradition for protection. Neither should go in water.
+  avoid: []
+
+price:
+  tier: mid
+  note: Stabilised and reconstituted turquoise is cheap. Natural, untreated stones from named mines such as Persian or classic American turquoise command high prices.
+
+names:
+  hi: Firoza (फ़िरोज़ा)
+  bn: Firoza (ফিরোজা)
+  es: Turquesa
+
+sources:
+  - https://www.mindat.org/min-4060.html
+  - https://www.gia.edu/turquoise
+  - https://www.minerals.net/mineral/turquoise
+  - https://www.mindat.org/a/best_turquoise

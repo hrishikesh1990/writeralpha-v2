@@ -52,8 +52,13 @@ class AtlasEntry
   def listed? = gemstone.listed
 
   # Does this stone have a published guide at /gemstones/<slug>/<path>?
+  # Works for both the lean AtlasEntry.all projection (has_* flags) and a full
+  # Gemstone record (hub and sub-page embeds), which has the content columns.
   def guide?(path)
-    v = gemstone.attributes["has_#{path.to_s.tr('-', '_')}"]
-    v == true || v == 1 || v == "t"
+    key = "has_#{path.to_s.tr('-', '_')}"
+    attrs = gemstone.attributes
+    return [true, 1, "t"].include?(attrs[key]) if attrs.key?(key)
+
+    gemstone.sub_page_content(path).present?
   end
 end

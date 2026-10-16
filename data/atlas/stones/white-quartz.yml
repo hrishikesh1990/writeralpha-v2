@@ -1,0 +1,119 @@
+slug: white-quartz
+name: White Quartz
+aka: [milky quartz, snow quartz, quartz]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [white, cream]
+origins: [Brazil, India, United States, China, Madagascar]
+summary: >-
+  Milky white quartz, clouded by countless tiny fluid and gas inclusions. It is
+  hard, inert and one of the easiest stones to care for: safe in water, salt
+  and sunlight. Rough pieces can have sharp edges.
+
+safety:
+  water:
+    verdict: safe
+    reason: Quartz is non-porous and insoluble, so rinsing or soaking is fine. Use lukewarm rather than hot water, as sudden heat can crack heavily included pieces.
+  salt:
+    verdict: safe
+    reason: Salt does not attack quartz. Rinse off the salt afterwards and keep salt water away from silver or glued settings.
+  sun:
+    verdict: safe
+    reason: The white colour comes from trapped fluid and gas inclusions, not a dye or colour centre, so it does not fade in sunlight.
+  sleep:
+    verdict: ok
+    reason: Inert and safe beside the bed. Smooth tumbled pieces are better than raw chunks, which can have sharp edges.
+  wear:
+    verdict: daily
+    reason: At Mohs 7 it handles everyday wear. Heavily included pieces can be slightly more prone to chipping than clear quartz.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is non-toxic. Only fine dust from dry grinding or cutting is a hazard.
+  elixir: direct
+
+tradition:
+  chakras: [crown, third_eye]
+  elements: [air, water]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [capricorn, cancer]
+  intentions: [peace-calm, clarity, healing, spiritual-growth, emotional-balance]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Homes with small children or pets
+    why: Raw milky quartz breaks into sharp, glassy fragments and small tumbled stones are a choking hazard.
+    basis: physical
+  - who: People who cleanse crystals in hot water or near a heater
+    why: Milky quartz is full of microscopic fluid pockets. Rapid heating can make them expand and crack the stone.
+    basis: physical
+  - who: People buying white stones for their meaning
+    why: White quartz is often confused with white agate, howlite or glass, which have different care needs. Confirm what you have before soaking or salting it.
+    basis: physical
+  - who: People expecting the effects of clear quartz
+    why: Crystal tradition treats milky quartz as a gentler, softer version of clear quartz, said to soothe rather than amplify.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Milky or frosted glass
+    - Howlite or white magnesite
+    - White agate or chalcedony (also quartz, but a different form)
+    - Resin or plastic beads
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a rough or tumbled piece, try to scratch a glass bottle. Avoid this on polished jewellery.
+      real: White quartz (Mohs 7) scratches glass easily.
+      fake: Howlite and magnesite (Mohs 3.5 to 4) cannot scratch glass; glass barely marks glass.
+    - id: magnification
+      weight: 2
+      how: Examine the surface and edges with a 10x loupe in strong light.
+      real: Cloudy zones, healed cracks and a glassy lustre on broken surfaces.
+      fake: Howlite shows a dull, porous surface with grey veins; glass shows round bubbles.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Plastic and resin feel warm almost immediately.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab dipped in nail-polish remover.
+      real: Nothing comes off.
+      fake: Colour or a waxy residue on the swab means the stone has been dyed or coated.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz piece of similar size.
+      real: Specific gravity about 2.65.
+      fake: Resin feels light; howlite feels similar, so use the hardness test as well.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Both are quartz; tradition pairs white quartz's softness with clear quartz's amplifying energy.
+    - slug: rose-quartz
+      why: A gentle calming combination for bedrooms; both are safe in water.
+    - slug: amethyst
+      why: A traditional meditation pairing, and both share the same quartz care rules.
+    - slug: selenite
+      why: Tradition uses selenite to charge white stones. Keep selenite dry when the quartz is washed.
+    - slug: moonstone
+      why: Both are Moon stones in tradition, used together for calm and intuition.
+  avoid: []
+
+price:
+  tier: budget
+  note: One of the cheapest crystals. Tumbles and rough chunks cost very little; carved spheres and large points cost more.
+
+names:
+  es: Cuarzo blanco
+
+sources:
+  - https://www.mindat.org/min-6129.html
+  - https://www.mindat.org/min-3337.html
+  - https://geology.com/minerals/quartz.shtml

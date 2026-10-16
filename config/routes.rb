@@ -75,6 +75,8 @@ Rails.application.routes.draw do
       get "stones", to: "stones#index", as: :stones
       get "stones/:slug", to: "stones#show", as: :stone
     end
+    # Unknown API paths answer in JSON, not the HTML 404 page.
+    match "*path", to: ->(_env) { [404, { "content-type" => "application/json", "access-control-allow-origin" => "*" }, ['{"error":{"status":404,"message":"Unknown endpoint. See https://writeralpha.com/developers"}}']] }, via: :all
   end
 
   # ===== SHARED =====

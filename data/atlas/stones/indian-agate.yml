@@ -1,0 +1,120 @@
+slug: indian-agate
+name: Indian Agate
+aka: [indian multicolour agate, hakik]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [red, brown, yellow, cream, green, grey, white]
+origins: [India]
+summary: >-
+  A trade name for the multicoloured, often mottled agate mined in the volcanic
+  Deccan Traps of western India and sold widely as tumbled stones and beads. Its
+  earthy colours are natural, so it is sun-stable and fine in water. Like all
+  agate, it is slightly porous: avoid salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and natural earth-tone colours do not wash out, so rinsing or a short soak is fine.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into pores and fine cracks and leaves salt crystals as it dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: Its reds, browns and yellows come from iron oxides, which do not fade in sunlight. Brightly dyed beads sold under the name are the exception.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it is durable enough for everyday bracelets, malas and rings.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with natural iron-oxide staining is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [mercury]
+  vedic_planet: null
+  zodiac: [gemini]
+  intentions: [grounding, protection, emotional-balance, courage, healing]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous agate and crystallises in pores and cracks. Plain water, smoke or sound are safer.
+    basis: physical
+  - who: Buyers comparing "Indian agate" between sellers
+    why: The name is a loose trade label, not a defined variety. Mixed agate, jasper and dyed beads can all be sold under it, so judge the stone, not the name.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and mala beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People seeking a quick energy boost
+    why: Tradition treats Indian agate as a slow, steadying stone for strength and endurance rather than stimulation.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed agate in bright colours
+    - Fancy jasper or other Indian jaspers sold as agate
+    - Glass or resin beads with printed patterns
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the colours in daylight and around drill holes.
+      real: Earthy red, brown, mustard, cream and grey-green, varying from bead to bead.
+      fake: Neon colours, or identical patterns on every bead, point to dye or printing.
+    - id: light
+      weight: 2
+      how: Shine a torch through a thin edge.
+      real: Agate zones glow translucent while jasper-like zones stay opaque, giving a patchy glow.
+      fake: Resin and glass glow evenly.
+    - id: magnification
+      weight: 3
+      how: Examine the pattern with a 10x loupe.
+      real: Fine bands, clouds and mineral spots with natural, irregular boundaries.
+      fake: Bubbles mean glass; dot patterns mean a print.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with nail-polish remover on a cotton swab.
+      real: The swab stays clean.
+      fake: Colour on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: It scratches glass.
+      fake: Resin and plastic cannot scratch glass.
+
+pairs:
+  good:
+    - slug: red-jasper
+      why: Both are Indian earth stones in tradition, used for stamina and grounding. Same care.
+    - slug: carnelian
+      why: Western India is a historic carnelian source too, and tradition pairs them for courage.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition, with no care conflicts.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies agate's steadying energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: One of the cheapest agates, sold by the kilo as tumbled stones and by the strand as beads. Larger polished pieces with strong patterns cost a little more.
+
+names:
+  hi: Hakik (हकीक)
+  es: Ágata india
+
+sources:
+  - https://www.mindat.org/min-51.html
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://geology.com/gemstones/agate/

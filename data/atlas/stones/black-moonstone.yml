@@ -1,0 +1,123 @@
+slug: black-moonstone
+name: Black Moonstone
+aka: [grey moonstone, gray moonstone, dark moonstone]
+kind: variety
+species: Feldspar (variable, orthoclase or plagioclase)
+family: feldspar
+formula: KAlSi3O8 to (Na,Ca)Al(Si,Al)Si2O8
+crystal_system: null
+mohs: [6, 6.5]
+colors: [black, dark gray, charcoal, silver sheen]
+origins: [Madagascar, India]
+summary: >-
+  A trade name for dark grey to black feldspar with a silvery or bronze sheen,
+  darkened by tiny iron oxide inclusions. It is not one species and can be
+  confused with larvikite. Like all moonstone it has cleavage, so avoid hard
+  knocks and salt.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so a quick wash is fine. Avoid long soaks and hot water, which can work into cleavage cracks.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them.
+  sun:
+    verdict: safe
+    reason: The dark colour comes from stable mineral inclusions and the sheen is structural, so sunlight does not fade it.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth, so it is safe under a pillow or on a nightstand.
+  wear:
+    verdict: care
+    reason: At Mohs 6 with perfect cleavage it can chip or split from a hard knock. Bezel settings protect rings.
+  toxicity:
+    level: none
+    reason: Feldspar with iron oxide inclusions; non-toxic to handle and wear.
+  elixir: indirect
+
+tradition:
+  chakras: [root, third_eye]
+  elements: [water, earth]
+  planets: [moon, pluto]
+  vedic_planet: null
+  zodiac: [scorpio, capricorn, cancer]
+  intentions: [protection, grounding, intuition, transformation, sleep]
+  energy: grounding
+  birth_months:
+    other: [june]
+
+cautions:
+  - who: People wanting a ring for heavy daily use
+    why: Perfect cleavage means one sharp knock can split the stone. Choose pendants, earrings or rings with protective bezels.
+    basis: physical
+  - who: Anyone using ultrasonic or steam jewellery cleaners
+    why: Vibration and heat can open cleavage cracks. Clean with warm soapy water and a soft brush.
+    basis: physical
+  - who: Buyers comparing black moonstone, larvikite and black labradorite
+    why: These dark feldspar stones are often mixed up. All share similar care, but prices and names should match what you get.
+    basis: physical
+  - who: People looking for a Vedic Moon remedy
+    why: Vedic practice cites white moonstone or pearl for Chandra; black moonstone has no recognised Navaratna role.
+    basis: tradition
+  - who: People seeking a bright, uplifting stone
+    why: Tradition treats black moonstone as a protective, inward-looking stone for new-moon work rather than an energising one.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Larvikite sold as black moonstone
+    - Black or dark grey glass with a coated sheen
+    - Dyed or coated resin
+  tests:
+    - id: light
+      weight: 3
+      how: Tilt the stone under a single light.
+      real: A soft silvery or bronze sheen glides across the whole stone at certain angles.
+      fake: Larvikite flashes from separate interlocking crystals with darker grains between them; coated glass shows an oily rainbow film.
+    - id: magnification
+      weight: 2
+      how: Examine the surface with a 10x loupe.
+      real: Fine dark inclusions and small cleavage cracks within one continuous stone.
+      fake: A granular rock texture (larvikite), bubbles (glass) or a surface film.
+    - id: hardness
+      weight: 1
+      how: Press a steel pin against a hidden spot.
+      real: Feldspar resists the pin.
+      fake: Resin is marked easily.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin feels warm at once.
+    - id: acetone
+      weight: 1
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: Nothing comes off.
+      fake: A coloured or tacky residue indicates a coating or resin.
+
+pairs:
+  good:
+    - slug: moonstone
+      why: The white form; tradition pairs them for full-moon and new-moon cycles.
+    - slug: black-tourmaline
+      why: Two protective black stones in tradition.
+    - slug: labradorite
+      why: Related feldspars with the same care rules; paired for intuition.
+    - slug: larvikite
+      why: Similar-looking dark feldspar stones, paired for grounding and protection.
+    - slug: smoky-quartz
+      why: A traditional grounding pairing.
+  avoid: []
+
+price:
+  tier: budget
+  note: Black moonstone beads and cabochons are affordable. Stones with a strong, even sheen cost more.
+
+names:
+  es: Piedra de luna negra
+
+sources:
+  - https://www.mindat.org/min-2774.html
+  - https://www.gemsociety.org/article/feldspars-jewelry-gemstone-information/
+  - https://geology.com/gemstones/moonstone/

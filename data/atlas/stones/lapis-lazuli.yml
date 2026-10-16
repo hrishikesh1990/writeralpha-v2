@@ -1,0 +1,145 @@
+slug: lapis-lazuli
+name: Lapis Lazuli
+aka: [lapis, lajward]
+kind: rock
+species: Lazurite (haüyne) with calcite, pyrite and diopside
+family: feldspathoid
+formula: null
+crystal_system: null
+mohs: [5, 5.5]
+colors: [blue, deep blue, white, gold]
+origins: [Afghanistan, Chile, Russia, Pakistan]
+summary: >-
+  A deep blue rock made mostly of lazurite, with white calcite and brassy
+  pyrite flecks. Fairly soft, it reacts to acids through its calcite, its
+  pyrite can rust, and many pieces are dyed. Rinse it briefly, never soak it,
+  and keep salt away.
+
+safety:
+  water:
+    verdict: brief
+    reason: A quick rinse and soft cloth are fine. Soaking etches the calcite, can rust the pyrite flecks and makes dye run in treated stones.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the surface, and brine attacks calcite and pyrite. Use sound, smoke or moonlight.
+  sun:
+    verdict: limit
+    reason: Natural lazurite blue is fairly lightfast, but dyed lapis fades and the wax or resin used on many pieces softens with heat.
+  sleep:
+    verdict: ok
+    reason: Safe on a nightstand. Tradition links it to vivid dreams and intuition.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 5.5 it scratches and loses polish in rings and bracelets, and perfume, sweat and cleaners attack the calcite. Pendants fare best.
+  toxicity:
+    level: low
+    reason: Safe to handle and wear. It contains pyrite and calcite and is often dyed or waxed, so keep it out of drinking water.
+  elixir: never
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [water, air]
+  planets: [jupiter, venus]
+  vedic_planet: shani
+  zodiac: [sagittarius, pisces, capricorn, aquarius, libra]
+  intentions: [communication, intuition, peace-calm, clarity, spiritual-growth, friendship]
+  energy: calming
+  birth_months:
+    other: [september]
+
+cautions:
+  - who: Anyone who cleanses crystals in water, salt or vinegar
+    why: The calcite in lapis etches in acids such as vinegar and lemon juice, its pyrite rusts when kept wet, and dye can bleed. A damp cloth is enough.
+    basis: physical
+  - who: People wanting a ring or bracelet for daily wear
+    why: At Mohs 5 to 5.5 lapis scratches against dust and hard surfaces and needs repolishing. Protective settings and occasional wear help.
+    basis: physical
+  - who: Buyers of bright, uniform blue lapis at low prices
+    why: Dyed lapis, dyed howlite or jasper, reconstituted lapis and sodalite are sold as lapis. Dye can rub off on skin and clothes.
+    basis: physical
+  - who: People who wear lapis with perfume, lotion or hairspray
+    why: Cosmetics and sweat dull the polish and attack the calcite. Put lapis on after skincare.
+    basis: physical
+  - who: Anyone advised in Vedic astrology to avoid Saturn stones
+    why: In Indian practice, lapis (Lajward) is sold as an affordable substitute for blue sapphire, the gem of Shani (Saturn). Astrologers usually recommend checking the chart, as for Neelam.
+    basis: tradition
+zodiac_cautions:
+  - sign: aries
+    why: As a Saturn substitute in Jyotish, lapis is usually not advised for Aries ascendants, because Mars treats Saturn as an enemy.
+  - sign: scorpio
+    why: Scorpio is also Mars-ruled, so the same Mars and Saturn enmity applies in Vedic tradition.
+  - sign: leo
+    why: Leo is ruled by the Sun, Saturn's traditional enemy, so Saturn stones are usually not recommended.
+  - sign: cancer
+    why: Cancer is ruled by the Moon, considered hostile to Saturn in Jyotish.
+
+identify:
+  common_fakes:
+    - Dyed lapis (low-grade grey lapis coloured blue)
+    - Sodalite sold as lapis
+    - Dyed howlite, magnesite or jasper ("Swiss lapis")
+    - Reconstituted lapis (powder bound in resin)
+    - Glass or ceramic imitations with metallic flecks
+  tests:
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue on the swab means the stone is dyed.
+    - id: streak
+      weight: 2
+      how: Rub a hidden edge on the back of an unglazed ceramic tile.
+      real: Light blue streak.
+      fake: Sodalite and dyed howlite give a white streak.
+    - id: magnification
+      weight: 2
+      how: Look at the gold flecks and the blue body with a 10x loupe.
+      real: Irregular brassy pyrite grains and soft white calcite patches in an even blue.
+      fake: Regular glittery or copper-coloured flakes (glass or resin), or a grainy compressed texture (reconstituted).
+    - id: color
+      weight: 2
+      how: Compare the blue in daylight with a known piece of sodalite.
+      real: Intense ultramarine blue, often with pyrite flecks.
+      fake: Sodalite is a darker royal or violet blue with white veins and rarely any pyrite.
+    - id: weight
+      weight: 1
+      how: Compare in your hand with a quartz stone of the same size.
+      real: Similar to or slightly heavier than quartz (specific gravity about 2.7 to 2.9).
+      fake: Sodalite (about 2.3) and resin feel lighter.
+    - id: price
+      weight: 1
+      how: Compare price with colour and uniformity.
+      real: Fine deep blue Afghan lapis with little calcite costs more than pale Chilean or grey material.
+      fake: Perfectly uniform deep blue beads at very low prices are usually dyed.
+
+pairs:
+  good:
+    - slug: sodalite
+      why: Blue throat-chakra stones in tradition with the same gentle care; useful side by side for telling them apart.
+    - slug: amethyst
+      why: Tradition pairs them for intuition and meditation.
+    - slug: kyanite
+      why: A traditional communication pairing for the throat chakra.
+    - slug: turquoise
+      why: A classic blue jewellery pairing in many traditions; both are soft and kept out of water.
+    - slug: sapphire
+      why: In Indian tradition both are Saturn stones, with lapis as the affordable stand-in for Neelam.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies lapis's insight.
+  avoid:
+    - slug: ruby
+      why: As a Saturn substitute in Jyotish, lapis follows the traditional Saturn and Sun enmity and is not paired with ruby.
+
+price:
+  tier: mid
+  note: Pale or calcite-rich lapis and dyed beads are cheap. Even, deep blue Afghan lapis with fine pyrite costs considerably more.
+
+names:
+  hi: Lajward (लाजवर्द)
+  es: Lapislázuli
+
+sources:
+  - https://www.mindat.org/min-2330.html
+  - https://www.gia.edu/lapis-lazuli
+  - https://www.gemsociety.org/article/lapis-lazuli-jewelry-and-gemstone-information/
+  - https://geology.com/gemstones/lapis-lazuli/

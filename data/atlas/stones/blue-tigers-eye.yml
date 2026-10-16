@@ -1,0 +1,122 @@
+slug: blue-tigers-eye
+name: Blue Tiger's Eye
+aka: [hawk's eye, falcon's eye, blue tiger eye]
+kind: variety
+species: Quartz
+family: quartz
+formula: SiO2 (with crocidolite fibres)
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [blue, blue-gray, gray-green]
+origins: [South Africa, Namibia]
+summary: >-
+  Natural hawk's eye is quartz enclosing blue crocidolite fibres that never
+  oxidised to gold. Polished stones are safe to wear; the fibres are asbestos,
+  so never sand or cut it dry. Bright blue pieces are often dyed.
+
+safety:
+  water:
+    verdict: brief
+    reason: The quartz does not dissolve, but bright blue stones are often dyed tiger eye that bleeds colour. Rinse quickly and dry; do not soak.
+  salt:
+    verdict: avoid
+    reason: The fibrous structure is slightly porous, and salt water can lift dye and leave salt in the fibres. Use plain water or a dry method.
+  sun:
+    verdict: limit
+    reason: Natural blue-grey hawk's eye is fairly stable, but dyed blue stones fade in sunlight. Avoid long sunny-window displays.
+  sleep:
+    verdict: caution
+    reason: An intact polished stone is safe on a nightstand. Keep chipped, cracked or raw pieces out of the bedroom, as broken surfaces can expose fibres.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles everyday wear. Retire any piece that chips or cracks rather than polishing it at home.
+  toxicity:
+    level: caution
+    reason: It contains unaltered crocidolite, a blue asbestos. Polished stones are safe to handle and wear because the fibres are sealed in quartz; dust from cutting or sanding is the hazard.
+  elixir: never
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [water, air]
+  planets: [neptune, saturn]
+  vedic_planet: null
+  zodiac: [capricorn, sagittarius, cancer]
+  intentions: [peace-calm, anxiety, communication, clarity, protection, concentration]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: People who cut, carve, drill, sand or tumble raw blue tiger's eye
+    why: The blue fibres are crocidolite asbestos. Dust from dry working is a real inhalation hazard. Work it wet with a respirator and clean up wet.
+    basis: physical
+  - who: Anyone making crystal water or elixirs
+    why: Do not put it in drinking water. Use another stone or keep it outside the water in a sealed container.
+    basis: physical
+  - who: Households where stones might be chewed or broken
+    why: Keep it away from small children and pets. Broken surfaces can release fibres in a way a polished stone does not.
+    basis: physical
+  - who: People buying very bright, uniform blue beads
+    why: Vivid blue "tiger's eye" is usually bleached and dyed golden tiger eye. It bleeds in water and fades in sun.
+    basis: physical
+  - who: People looking for an energising stone
+    why: Tradition calls blue tiger's eye the calm, cooling version of tiger eye, used to slow down rather than energise.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Golden tiger eye bleached and dyed blue
+    - Blue fibre-optic "cat's eye" glass
+    - Blue resin beads with printed stripes
+    - Dumortierite or sodalite sold as blue tiger's eye
+  tests:
+    - id: color
+      weight: 2
+      how: Compare the stone in daylight with photos of natural hawk's eye.
+      real: Dark, muted blue-grey to grey-green, often with golden or brownish zones where the fibres partly oxidised.
+      fake: Bright royal or turquoise blue that is perfectly even.
+    - id: light
+      weight: 3
+      how: Rotate the stone under a single light.
+      real: A silky, rolling band of light that moves across the fibres.
+      fake: No moving band (printed or resin), or an unnaturally sharp, glassy band (fibre-optic glass).
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue colour on the swab means the stone is dyed.
+    - id: magnification
+      weight: 2
+      how: Examine the sides and drill holes with a 10x loupe.
+      real: Fine wavy fibres; any dye-free, natural colour variation follows the fibres.
+      fake: Dye concentrated in cracks and drill holes, or a honeycomb pattern (glass).
+    - id: weight
+      weight: 1
+      how: Compare with a quartz stone of the same size.
+      real: Feels like quartz.
+      fake: Resin feels light.
+
+pairs:
+  good:
+    - slug: tiger-eye
+      why: The golden form of the same stone; tradition pairs calm with confidence.
+    - slug: sodalite
+      why: Two blue throat-chakra stones used for calm communication.
+    - slug: lapis-lazuli
+      why: A traditional pairing for clarity and self-expression.
+    - slug: black-tourmaline
+      why: Tradition pairs blue tiger's eye's calm with tourmaline's protection.
+    - slug: blue-lace-agate
+      why: A gentle blue pairing for anxiety and soothing speech.
+  avoid: []
+
+price:
+  tier: budget
+  note: Natural hawk's eye beads and tumbles are inexpensive. Fine, even-chatoyancy cabochons cost more; very cheap bright blue strands are usually dyed.
+
+names:
+  es: Ojo de halcón
+
+sources:
+  - https://www.mindat.org/min-3960.html
+  - https://www.mindat.org/min-38866.html
+  - https://www.gemsociety.org/article/tigers-eye-gem-information/

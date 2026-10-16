@@ -1,0 +1,127 @@
+slug: ruby-zoisite
+name: Ruby Zoisite
+aka: [anyolite, ruby in zoisite]
+kind: rock
+species: Zoisite with ruby (corundum) and black amphibole
+family: zoisite
+formula: null
+crystal_system: null
+mohs: [5.5, 9]
+colors: [green, red, pink, black]
+origins: [Tanzania, Kenya]
+summary: >-
+  A metamorphic rock from Tanzania called anyolite: green zoisite with pink to
+  red ruby crystals and black amphibole. Its minerals differ in hardness, so it
+  polishes unevenly and can pit. Rinse it briefly; skip salt and ultrasonic
+  cleaners.
+
+safety:
+  water:
+    verdict: brief
+    reason: None of its minerals dissolve in water, so a rinse is fine. Polished pieces often have pits and resin-filled cracks where ruby meets zoisite, so avoid long soaks.
+  salt:
+    verdict: avoid
+    reason: Salt lodges in pits and grain boundaries and can scratch the softer amphibole. Many pieces are also resin-stabilised. Use plain water or dry methods.
+  sun:
+    verdict: safe
+    reason: The opaque green and red colours are stable in daylight. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe in the bedroom.
+  wear:
+    verdict: care
+    reason: The ruby grains are much harder than the matrix, so surfaces wear unevenly and ruby can pluck out on impact. Fine for pendants and beads with care.
+  toxicity:
+    level: none
+    reason: Zoisite, corundum and amphibole are stable silicates and oxides, safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [heart, root]
+  elements: [earth, fire]
+  planets: [mars, venus]
+  vedic_planet: null
+  zodiac: [aries, gemini]
+  intentions: [love, healing, energy, emotional-balance, motivation, creativity]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: People who clean stones in ultrasonic or steam cleaners
+    why: Zoisite has perfect cleavage and the rock contains filled cracks, so vibration and heat can open fractures or loosen ruby grains. Use a soft brush and lukewarm water.
+    basis: physical
+  - who: Anyone wearing it as a ring or heavy-use bracelet
+    why: Knocks can chip the matrix around the harder ruby grains and leave pits. Choose pendants or beads.
+    basis: physical
+  - who: Buyers expecting gem ruby
+    why: The ruby in this rock is opaque and not gem grade, which is why it is affordable. It is not equivalent to a faceted ruby.
+    basis: physical
+  - who: People hoping to use it as a Vedic ruby (Manik)
+    why: Jyotish prescribes clear, high-quality ruby for the Sun. Tradition does not treat ruby zoisite as a substitute for Manik.
+    basis: tradition
+  - who: People sensitive to stimulating stones
+    why: Tradition describes the ruby in it as energising and the zoisite as balancing. Those wanting pure calm may prefer rose quartz.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Ruby in fuchsite (a green mica from India) sold as ruby zoisite
+    - Ruby in kyanite sold as ruby zoisite
+    - Dyed stones or resin composites
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a hidden spot of the green matrix, press a needle point and try to lift a flake.
+      real: Zoisite resists the needle and does not flake.
+      fake: Fuchsite is a mica and gives off thin, soft flakes easily.
+    - id: color
+      weight: 2
+      how: Look at the green matrix and the area around the red crystals.
+      real: Darker, even green zoisite with black amphibole specks around the ruby.
+      fake: Light green, sparkly matrix and blue-green rims around the ruby suggest ruby in fuchsite with kyanite.
+    - id: uv
+      weight: 2
+      how: Shine a long-wave UV torch on it in the dark.
+      real: The ruby grains glow red while the zoisite stays dark.
+      fake: Dyed or resin imitations do not show red glowing grains.
+    - id: magnification
+      weight: 2
+      how: Look at the surface with a 10x loupe.
+      real: Natural granular texture, with ruby standing slightly proud or showing pits where grains wore differently.
+      fake: Glittering mica plates, or a uniform resin surface with bubbles.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz stone of similar size.
+      real: Feels heavier than quartz (specific gravity about 3.3 or more).
+      fake: Resin composites feel lighter.
+    - id: price
+      weight: 1
+      how: Compare price with size.
+      real: Ruby zoisite is inexpensive as tumbled stones and beads.
+      fake: High prices marketed as "ruby" are not justified for this opaque rock.
+
+pairs:
+  good:
+    - slug: ruby
+      why: Shares ruby's symbolism of vitality in tradition. Ruby is much harder, so store the two apart.
+    - slug: rose-quartz
+      why: A traditional heart-chakra pairing for love and emotional healing.
+    - slug: garnet
+      why: Red-and-green energy stones in tradition, used for passion and stamina.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies ruby zoisite's balancing energy.
+    - slug: moss-agate
+      why: Green, growth-themed stones in tradition, paired for renewal.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones, beads and cabochons are affordable. Large carvings and slabs with big, bright ruby crystals cost more.
+
+names:
+  es: Zoisita con rubí
+
+sources:
+  - https://www.mindat.org/min-27151.html
+  - https://www.mindat.org/min-3473.html
+  - https://www.mindat.org/a/best_zoisite

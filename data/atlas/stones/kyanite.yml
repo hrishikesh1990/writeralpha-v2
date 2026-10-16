@@ -1,0 +1,130 @@
+slug: kyanite
+name: Kyanite
+aka: [disthene, blue kyanite, black kyanite]
+kind: mineral
+species: Kyanite
+family: aluminium silicate
+formula: Al2SiO5
+crystal_system: triclinic
+mohs: [4.5, 7]
+colors: [blue, green, black, orange, gray]
+origins: [Brazil, Nepal, India, Kenya, United States]
+summary: >-
+  A bladed aluminium silicate with unusual directional hardness, about 4.5 to
+  5.5 along the blade and 6.5 to 7 across it. Perfect cleavage makes blades
+  split and splinter, so rinse it only briefly, skip salt and handle raw
+  pieces gently.
+
+safety:
+  water:
+    verdict: brief
+    reason: Kyanite does not dissolve, but water works into its cleavage cracks, and wet blades split more easily. A quick rinse is fine; do not soak it.
+  salt:
+    verdict: avoid
+    reason: Salt scratches the soft direction of the blade and lodges in cleavage cracks. Use sound, smoke or moonlight.
+  sun:
+    verdict: safe
+    reason: Blue and black kyanite are colour-stable in daylight. Sunlight is physically harmless.
+  sleep:
+    verdict: ok
+    reason: Non-toxic. Raw blades shed sharp slivers, so keep them on a dish rather than under a pillow.
+  wear:
+    verdict: care
+    reason: The soft direction scratches easily and blades split along cleavage when knocked. Pendants and earrings suit it better than rings.
+  toxicity:
+    level: none
+    reason: Aluminium silicate is non-toxic to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [air, water]
+  planets: [mercury, venus]
+  vedic_planet: null
+  zodiac: [aries, taurus, libra]
+  intentions: [communication, intuition, peace-calm, clarity, spiritual-growth, emotional-balance]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Homes with small children or pets
+    why: Raw kyanite blades split into thin, sharp slivers. Keep raw pieces out of reach.
+    basis: physical
+  - who: People who want a ring for daily wear
+    why: Along the blade it is soft enough for a steel knife to scratch, and it splits easily. Rings need protective settings and gentle use.
+    basis: physical
+  - who: Anyone using ultrasonic or steam cleaners
+    why: Kyanite is often included and has perfect cleavage, so vibration and heat can split it. Clean with a soft brush and mild soapy water, then dry.
+    basis: physical
+  - who: People who drop or knock raw blades
+    why: Blades break across easily and fray along their length. Store them flat and wrapped.
+    basis: physical
+  - who: People who never cleanse kyanite because tradition says it needs none
+    why: Tradition says kyanite never holds negative energy, but this is belief. Dust and skin oils still need gentle cleaning.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Blue glass
+    - Dyed quartz or dyed agate
+    - Black tourmaline sold as black kyanite (and the reverse)
+    - Blue aventurine or dumortierite sold as kyanite
+  tests:
+    - id: hardness
+      weight: 3
+      how: On a hidden part of a raw blade, draw a steel needle along the length, then across the width.
+      real: The needle scratches along the blade but not across it, a distinctive kyanite trait.
+      fake: Glass and quartz resist the needle in every direction.
+    - id: shape
+      weight: 2
+      how: Look at the overall form and broken ends.
+      real: Flat, bladed crystals with lengthwise striations, splintery ends and pearly cleavage faces.
+      fake: Glass has curved shell-like breaks; tourmaline is rounded-triangular with striations along its length.
+    - id: color
+      weight: 1
+      how: Look along the blade in daylight.
+      real: Blue often uneven or zoned, darker in the centre, with a pearly sheen.
+      fake: Perfectly even blue throughout suggests glass or dye.
+    - id: weight
+      weight: 1
+      how: Compare with a quartz piece of the same size.
+      real: Slightly heavier than quartz (specific gravity about 3.6).
+      fake: Glass and dyed quartz feel lighter.
+    - id: magnification
+      weight: 2
+      how: Examine an end or surface with a 10x loupe.
+      real: Fibrous, layered structure and cleavage steps.
+      fake: Bubbles or swirls (glass) or colour pooled in cracks (dye).
+    - id: price
+      weight: 1
+      how: Compare with size.
+      real: Raw blue kyanite blades are inexpensive; clean facet-grade kyanite costs more.
+      fake: Cheap stones sold as blue sapphire may be kyanite; kyanite itself is rarely faked.
+
+pairs:
+  good:
+    - slug: lapis-lazuli
+      why: Blue throat-chakra stones in tradition, paired for honest communication.
+    - slug: sodalite
+      why: A traditional study pairing for logic and clear speech.
+    - slug: amethyst
+      why: Tradition pairs them for meditation and intuition.
+    - slug: aquamarine
+      why: Both are calming blue stones for the throat chakra in tradition.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies kyanite's aligning energy.
+    - slug: black-tourmaline
+      why: Tradition balances kyanite's high-vibration image with tourmaline's grounding.
+  avoid: []
+
+price:
+  tier: budget
+  note: Raw blades and tumbled kyanite are inexpensive. Clean, well-coloured faceted kyanite, such as Nepalese material, is scarcer and costs more.
+
+names:
+  es: Cianita
+
+sources:
+  - https://www.mindat.org/min-2303.html
+  - https://geology.com/minerals/kyanite.shtml
+  - https://www.gemsociety.org/article/kyanite-jewelry-and-gemstone-information/

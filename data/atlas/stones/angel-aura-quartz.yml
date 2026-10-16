@@ -1,0 +1,118 @@
+slug: angel-aura-quartz
+name: Angel Aura Quartz
+aka: [opal aura quartz, aura quartz, angel aura]
+kind: treated
+species: Quartz
+family: quartz
+formula: SiO2 (metal-coated)
+crystal_system: trigonal
+mohs: [7, 7]
+colors: [white, iridescent, pastel rainbow, silver]
+origins: [Brazil, United States, China]
+summary: >-
+  Natural clear quartz coated in a vacuum chamber with a nanometre-thin metal
+  film, usually described as platinum and silver, which gives a pale rainbow
+  sheen. The quartz is tough; the coating is the weak point, so no salt,
+  abrasives or ultrasonic cleaners.
+
+safety:
+  water:
+    verdict: brief
+    reason: The quartz is water-safe, but long soaks and hard-water deposits dull the film. Rinse briefly in lukewarm water and pat dry without rubbing.
+  salt:
+    verdict: avoid
+    reason: Salt grains scratch the metal film and salt water can tarnish the silver in it. Never use salt or salt water on aura quartz.
+  sun:
+    verdict: safe
+    reason: The metal film does not fade in light. Keep pieces off hot surfaces, as repeated heating and cooling is the bigger risk to the bond.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe beside the bed. Points and clusters are sharp, and rubbing against bedding slowly wears the coating.
+  wear:
+    verdict: care
+    reason: The quartz is Mohs 7 but the film is far softer and wears at edges and points. Avoid rings, keep it off other stones and remove it for washing or lotion.
+  toxicity:
+    level: none
+    reason: The quartz and the bonded metal film are non-toxic to handle. Avoid direct elixirs because worn coating can flake into water.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye, throat]
+  elements: [air]
+  planets: [neptune]
+  vedic_planet: null
+  zodiac: [pisces, aquarius, libra]
+  intentions: [spiritual-growth, peace-calm, intuition, healing, emotional-balance]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals with salt, scrubbing or ultrasonic cleaners
+    why: All three wear through the metal film and leave dull, clear patches. Use smoke, sound, moonlight or a soft dry cloth.
+    basis: physical
+  - who: People who keep stones loose together in a bag
+    why: Harder stones and grit scratch the coating. Store angel aura wrapped or in its own compartment.
+    basis: physical
+  - who: People who want only natural, untreated stones
+    why: The colour is a man-made coating on natural quartz, not a natural variety. It should be sold as treated.
+    basis: physical
+  - who: Purists in crystal practice
+    why: Some crystal traditions consider coated stones less "pure" and prefer untreated clear quartz; others value aura quartz for its added metals.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Iridescent glass points
+    - Quartz painted or lacquered with a pearlescent finish
+    - Coated glass or resin clusters
+  tests:
+    - id: hardness
+      weight: 3
+      how: On the base or a hidden edge, try to scratch a glass offcut. This may mark the coating, so test only an inconspicuous spot.
+      real: The quartz underneath (Mohs 7) scratches glass.
+      fake: Glass and resin imitations barely mark glass or are scratched themselves.
+    - id: magnification
+      weight: 2
+      how: Examine chips, edges and the base with a 10x loupe.
+      real: An even film following every crystal face, with clear quartz showing at chips or uncoated contact points.
+      fake: Paint pooled in crevices, brush marks, or bubbles inside the stone (glass).
+    - id: acetone
+      weight: 2
+      how: Wipe a tiny hidden area with a swab dipped in nail-polish remover.
+      real: A vapour-deposited metal film does not wipe off with solvent.
+      fake: Lacquer or paint softens, smears or comes away on the swab.
+    - id: color
+      weight: 1
+      how: Turn the piece slowly under a single light.
+      real: Soft pastel rainbow colours that shift with angle, like a soap bubble.
+      fake: Fixed colour that does not move, or a flat pearly paint.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek for ten seconds.
+      real: Quartz feels cold and warms slowly.
+      fake: Glass warms faster; resin feels warm at once.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: The same quartz underneath, uncoated; tradition pairs them for clarity and spiritual work.
+    - slug: selenite
+      why: Selenite gives a dry, abrasion-free way to cleanse aura quartz.
+    - slug: amethyst
+      why: A traditional crown-chakra pairing for meditation. Store them apart so amethyst does not scratch the coating.
+    - slug: moonstone
+      why: Paired in tradition for intuition and calm.
+    - slug: rose-quartz
+      why: A gentle calming pairing; keep them separated in storage to protect the coating.
+  avoid: []
+
+price:
+  tier: budget
+  note: Small points and clusters are inexpensive. Larger, evenly coated clusters cost more; very cheap pieces are more likely to be coated glass.
+
+names: {}
+
+sources:
+  - https://www.mindat.org/min-11537.html
+  - https://www.mindat.org/min-3337.html
+  - https://www.gemsociety.org/article/how-does-vapor-deposition-create-mystic-topaz-and-aqua-aura-quartz/

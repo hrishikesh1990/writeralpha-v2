@@ -1,0 +1,116 @@
+slug: flower-agate
+name: Flower Agate
+aka: [cherry blossom agate, plume agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [pink, peach, white, cream, orange]
+origins: [Madagascar]
+summary: >-
+  A pink to peach chalcedony from Madagascar with white and pink plume
+  inclusions that look like flowers floating in the stone. It reached the market
+  only around 2018. Hard and fine in plain water, but slightly porous, so avoid
+  salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, so rinsing or a short soak is fine for natural pieces. Dry it afterwards. Dyed pink imitations may bleed.
+  salt:
+    verdict: avoid
+    reason: Agate is slightly porous. Brine soaks into the pores and fine cracks and leaves salt crystals as it dries, dulling the polish.
+  sun:
+    verdict: safe
+    reason: The soft pink comes from traces of iron and manganese in the chalcedony, which normal sunlight does not fade. Dyed pink agate sold under this name does fade.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe on a nightstand or under a pillow.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it handles daily wear. Some palm stones have natural cracks, so avoid hard knocks.
+  toxicity:
+    level: none
+    reason: Silicon dioxide with trace iron and manganese is inert and safe to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [heart, sacral, root]
+  elements: [earth]
+  planets: [venus]
+  vedic_planet: null
+  zodiac: [taurus, libra]
+  intentions: [creativity, self-love, emotional-balance, transformation, confidence]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the slightly porous stone and crystallises in pores and cracks. Plain water, smoke or sound are safer.
+    basis: physical
+  - who: Buyers of very cheap, vivid pink "flower agate"
+    why: Real flower agate is a soft peach or pastel pink. Hot pink, perfectly even colour points to dyed agate or glass.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and small carvings can be swallowed. The stone is not toxic.
+    basis: physical
+  - who: People wanting a strongly grounding or protective stone
+    why: Tradition describes flower agate as a gentle stone of growth and self-love rather than a shield. For protection, tradition points to black tourmaline or obsidian.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed pink agate or chalcedony
+    - Pink glass or resin with painted or cast flower shapes
+    - Other plume or moss agates sold under the name
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Tilt the stone under a lamp and look into it from several angles.
+      real: Three-dimensional white and pink plumes that seem to float at different depths and change shape as you tilt.
+      fake: Flat, painted or printed flowers that stay the same from every angle.
+    - id: color
+      weight: 2
+      how: Look at the base colour in daylight.
+      real: Soft peach, pale pink and cream, often with carnelian-like orange zones.
+      fake: Bright hot pink, perfectly even colour, or colour pooled in cracks means dye.
+    - id: magnification
+      weight: 2
+      how: Examine the plumes with a 10x loupe.
+      real: Fine, branching, feathery edges and occasional tiny druzy quartz in pockets.
+      fake: Bubbles or swirl lines mean glass or resin.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Pink on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Do not test finished jewellery.
+      real: It scratches glass.
+      fake: Resin and plastic cannot scratch glass.
+
+pairs:
+  good:
+    - slug: rose-quartz
+      why: Both are gentle heart stones in tradition, often used together for self-love.
+    - slug: carnelian
+      why: Flower agate often contains carnelian-coloured zones, and tradition pairs them for creative drive. Same care.
+    - slug: moss-agate
+      why: Two growth stones in tradition, used together for new beginnings.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies flower agate's energy. Same care rules.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and palm stones are affordable. Spheres, towers and slabs with large, well-defined flowers cost noticeably more because the material comes from a single region.
+
+sources:
+  - https://www.mindat.org/min-26405.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/chalcedony-jewelry-and-gemstone-information/

@@ -1,0 +1,124 @@
+slug: sunstone
+name: Sunstone
+aka: [aventurine feldspar, heliolite, oregon sunstone]
+kind: variety
+species: Feldspar (usually oligoclase; also labradorite or orthoclase)
+family: feldspar
+formula: (Na,Ca)Al(Si,Al)Si2O8
+crystal_system: triclinic
+mohs: [6, 6.5]
+colors: [orange, peach, red, gold, brown, green]
+origins: [India, United States, Norway, Tanzania, Madagascar]
+summary: >-
+  A feldspar that glitters from tiny oriented plates of hematite, goethite or,
+  in Oregon sunstone, copper. Much "sunstone" sold cheaply is goldstone glass.
+  It has cleavage, so wash briefly and skip salt and ultrasonic cleaners.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so a quick wash is fine. Avoid long soaks, as water can work into cleavage cracks and along the inclusion planes.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them.
+  sun:
+    verdict: safe
+    reason: The colour comes from stable metal and iron oxide inclusions and does not fade in sunlight. Avoid sudden heat.
+  sleep:
+    verdict: caution
+    reason: Physically safe on a nightstand. Tradition calls sunstone an energising stone that may feel too stimulating at bedtime.
+  wear:
+    verdict: care
+    reason: At Mohs 6 to 6.5 with two cleavage directions, it can chip from a hard knock. Bezel-set rings and pendants fare best.
+  toxicity:
+    level: none
+    reason: Feldspar with iron oxide or copper inclusions; non-toxic to handle and wear.
+  elixir: indirect
+
+tradition:
+  chakras: [sacral, solar_plexus]
+  elements: [fire]
+  planets: [sun]
+  vedic_planet: null
+  zodiac: [leo, libra, aries]
+  intentions: [confidence, energy, motivation, creativity, self-love, career]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Buyers of cheap, glittering orange-brown "sunstone"
+    why: Reddish-brown goldstone glass is widely sold as sunstone. It is glass with copper crystals, not feldspar.
+    basis: physical
+  - who: People paying a premium for red or green Oregon sunstone
+    why: Some red and green feldspar on the market has been coloured by copper diffusion. Buy fine stones with a laboratory report or from a known Oregon source.
+    basis: physical
+  - who: People wanting a ring for heavy daily use
+    why: Feldspar cleavage means a sharp knock can chip or split the stone. Protective settings help.
+    basis: physical
+  - who: Anyone using ultrasonic or steam cleaners
+    why: Vibration and heat can open cleavage cracks. Use warm soapy water and a soft brush.
+    basis: physical
+  - who: People who sleep lightly
+    why: Tradition calls sunstone a bright, stimulating stone. Keep it out of the bedroom if it seems to disturb rest.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Goldstone glass sold as sunstone
+    - Copper-diffused andesine sold as Oregon sunstone
+    - Orange aventurine quartz mislabelled
+    - Dyed or coated feldspar
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the sparkle with a 10x loupe under a strong light.
+      real: Thin, flat plates of varying size, often hexagonal or irregular, aligned in planes so they flash together at certain angles.
+      fake: Goldstone shows dense, evenly spread, sharp triangular metallic crystals of similar size throughout glass.
+    - id: light
+      weight: 2
+      how: Rotate the stone under a single light.
+      real: Flashes of glitter appear strongly at particular angles and fade at others.
+      fake: Goldstone glitters evenly from every angle.
+    - id: bubbles
+      weight: 2
+      how: Look for small round bubbles with the loupe.
+      real: No round bubbles; cleavage cracks may be visible.
+      fake: Round bubbles indicate glass.
+    - id: hardness
+      weight: 1
+      how: Press a steel pin firmly against a hidden spot.
+      real: Feldspar (Mohs 6 to 6.5) resists the pin.
+      fake: Glass also resists, so combine with the magnification test.
+    - id: price
+      weight: 1
+      how: Compare the price with size and colour.
+      real: Indian sunstone is affordable; transparent Oregon sunstone is priced as a fine gem.
+      fake: Large, saturated red "Oregon" stones at low prices may be copper-diffused feldspar.
+
+pairs:
+  good:
+    - slug: moonstone
+      why: Tradition pairs the Sun and Moon stones to balance energy and calm; both are feldspars with the same care.
+    - slug: carnelian
+      why: Two warm, energising stones for creativity and courage.
+    - slug: citrine
+      why: A traditional pairing for confidence and abundance.
+    - slug: labradorite
+      why: Both are feldspars with light effects; paired for transformation.
+    - slug: tiger-eye
+      why: Paired in tradition for confidence and personal power.
+  avoid: []
+
+price:
+  tier: mid
+  note: Indian sunstone beads and cabochons are inexpensive. Transparent Oregon sunstone with copper schiller and faceted Tanzanian stones cost much more.
+
+names:
+  es: Piedra de sol
+
+sources:
+  - https://www.mindat.org/min-10984.html
+  - https://www.gia.edu/sunstone
+  - https://www.gemsociety.org/article/sunstone/
+  - https://geology.com/gemstones/sunstone/
+  - https://www.minerals.net/mineral/oligoclase

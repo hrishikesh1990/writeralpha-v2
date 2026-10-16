@@ -1,0 +1,117 @@
+slug: tree-agate
+name: Tree Agate
+aka: [dendritic agate]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [white, green]
+origins: [India]
+summary: >-
+  An opaque white chalcedony from India threaded with green, branching
+  inclusions that look like trees or ferns. Mindat treats it as a form of moss
+  agate. Its colours are natural minerals, so it is sun-stable and fine in plain
+  water; avoid salt soaks.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve and the green inclusions are sealed inside, so rinsing or a short soak is fine.
+  salt:
+    verdict: avoid
+    reason: Opaque white chalcedony is slightly porous. Brine soaks in and leaves salt crystals in pores and cracks as it dries, dulling and greying the white.
+  sun:
+    verdict: safe
+    reason: The green branches are mineral inclusions that do not fade in sunlight. Dyed green imitations are the exception.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition treats it as a calm, grounding stone.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it suits everyday bracelets and pendants. The white can absorb oils and dirt over time, so clean it occasionally with mild soap.
+  toxicity:
+    level: none
+    reason: Chalcedony is inert and the green minerals are sealed inside the stone.
+  elixir: indirect
+
+tradition:
+  chakras: [root, heart]
+  elements: [earth]
+  planets: []
+  vedic_planet: null
+  zodiac: [virgo, taurus]
+  intentions: [grounding, peace-calm, protection, spiritual-growth, emotional-balance]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Brine soaks into the porous white chalcedony and crystallises in pores and cracks, and can leave grey marks. Use plain water, smoke or sound.
+    basis: physical
+  - who: People who wear tree agate bracelets daily
+    why: The opaque white surface slowly picks up skin oils, lotion and dye from clothing. Remove it before applying creams.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: People wanting a fast, energising stone
+    why: Tradition presents tree agate as a slow, peaceful stone of growth and connection to nature rather than a stimulant.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed white stone with painted green veins
+    - Green-stained howlite or magnesite
+    - Moss agate or green aventurine sold as tree agate
+    - Glass or resin beads
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Examine the green markings with a 10x loupe.
+      real: Fine, branching green veins and patches that run into the stone at different depths.
+      fake: Green that sits only on the surface or in cracks, like paint, points to dye.
+    - id: acetone
+      weight: 2
+      how: Rub a green area with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Green on the swab means dye.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Not on finished jewellery.
+      real: Tree agate scratches glass.
+      fake: Howlite and magnesite cannot, and a steel knife marks them.
+    - id: light
+      weight: 1
+      how: Shine a torch through a thin edge.
+      real: White areas glow faintly at thin edges.
+      fake: Howlite stays chalky; glass glows evenly.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Resin and plastic warm quickly.
+
+pairs:
+  good:
+    - slug: moss-agate
+      why: A close relative with the same care. Tradition pairs both for growth and abundance.
+    - slug: aventurine
+      why: Two green nature and luck stones in tradition. Both are quartz.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition with no care conflicts.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies tree agate's calm, steady energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tree agate is one of the cheaper agates, sold widely as tumbled stones, beads and carvings. Pieces with crisp, dense green branching cost a little more.
+
+sources:
+  - https://www.mindat.org/min-2791.html
+  - https://www.mindat.org/min-7599.html
+  - https://www.gemsociety.org/article/agate-gem-information/

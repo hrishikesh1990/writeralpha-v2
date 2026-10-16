@@ -1,0 +1,126 @@
+slug: labradorite
+name: Labradorite
+aka: [spectrolite, black labradorite, labrador feldspar]
+kind: variety
+species: Plagioclase feldspar (labradorite)
+family: feldspar
+formula: (Ca,Na)[Al(Al,Si)Si2O8]
+crystal_system: triclinic
+mohs: [6, 6.5]
+colors: [gray, dark gray, blue flash, green flash, gold flash, multicolor]
+origins: [Madagascar, Finland, Canada, Russia, India]
+summary: >-
+  A plagioclase feldspar whose flashes of blue, green and gold come from
+  microscopic layers inside the crystal, not from pigment. The flash does not
+  fade, but the stone has cleavage: wash briefly, skip salt and avoid hard
+  knocks.
+
+safety:
+  water:
+    verdict: brief
+    reason: Feldspar does not dissolve, so washing in warm soapy water is fine. Avoid long soaks; many pieces have cleavage cracks, and some are resin-filled or backed.
+  salt:
+    verdict: avoid
+    reason: Salt water seeps into cleavage cracks and crystallises as it dries, which can widen them and dull fracture fillings.
+  sun:
+    verdict: safe
+    reason: Labradorescence is a structural light effect, so sunlight does not fade it. Avoid sudden heat, which can crack feldspar.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe under a pillow when smooth. Tradition says it can bring vivid dreams.
+  wear:
+    verdict: care
+    reason: At Mohs 6 to 6.5 with two cleavage directions, it can chip from knocks. Bezel settings and pendants hold up best.
+  toxicity:
+    level: none
+    reason: Calcium sodium aluminium silicate; non-toxic to handle and wear. As with any stone, do not inhale dust from dry cutting.
+  elixir: indirect
+
+tradition:
+  chakras: [third_eye, throat, crown]
+  elements: [water]
+  planets: [uranus, neptune]
+  vedic_planet: null
+  zodiac: [sagittarius, scorpio, leo]
+  intentions: [transformation, intuition, protection, spiritual-growth, clarity]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: People wanting a ring for heavy daily use
+    why: Cleavage means a sharp knock can split or chip labradorite. Choose protective settings or pendants.
+    basis: physical
+  - who: Anyone using ultrasonic or steam jewellery cleaners
+    why: Vibration and heat can open cleavage cracks and loosen fillings or backings. Use warm soapy water.
+    basis: physical
+  - who: People who cleanse with salt water or long soaks
+    why: Salt and prolonged water exposure can dull fracture fillings and widen existing cracks.
+    basis: physical
+  - who: Buyers of bright "rainbow" beads at low prices
+    why: Some cheap labradorite-look beads are coated glass or resin. Real labradorite flashes only at certain angles.
+    basis: physical
+  - who: Light sleepers sensitive to vivid dreams
+    why: Crystal tradition says labradorite stimulates dreaming and intuition. Move it out of the bedroom if sleep is disturbed.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Glass or resin with an iridescent coating
+    - Larvikite sold as labradorite
+    - Dyed or coated feldspar
+    - Abalone shell or opal triplets confused with labradorite
+  tests:
+    - id: light
+      weight: 3
+      how: Tilt the stone slowly under a single light.
+      real: Broad flashes of blue, green or gold appear only at certain angles and the stone looks plain grey at others.
+      fake: Coated glass shows an oily rainbow film at every angle; larvikite shows smaller silvery-blue flashes from separate grains.
+    - id: magnification
+      weight: 2
+      how: Examine the stone with a 10x loupe.
+      real: Dark needle-like inclusions, cleavage planes and twinning lines in a grey body.
+      fake: Round bubbles (glass) or a coloured film sitting on the surface.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: Nothing comes off.
+      fake: A coating or dye comes away, or the surface turns tacky.
+    - id: hardness
+      weight: 1
+      how: Press a steel pin firmly against a hidden spot.
+      real: Labradorite resists the pin.
+      fake: Resin is marked easily.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin and plastic feel warm at once.
+
+pairs:
+  good:
+    - slug: moonstone
+      why: Closely related feldspars with the same care rules; paired for intuition.
+    - slug: larvikite
+      why: Larvikite is rich in similar schiller feldspar; paired for protection and grounding.
+    - slug: amethyst
+      why: A traditional third-eye pairing for meditation and intuition.
+    - slug: black-tourmaline
+      why: Tradition pairs labradorite's shielding with tourmaline's grounding.
+    - slug: selenite
+      why: Selenite allows dry cleansing, which suits labradorite better than soaking.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies labradorite's energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones, palm stones and beads are inexpensive. Full-colour spectrolite from Finland and gem-quality Madagascar pieces cost much more.
+
+names:
+  es: Labradorita
+
+sources:
+  - https://www.mindat.org/min-2308.html
+  - https://www.gemsociety.org/article/labradorite-jewelry-and-gemstone-information/
+  - https://geology.com/gemstones/labradorite/
+  - https://www.minerals.net/mineral/labradorite

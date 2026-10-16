@@ -1,0 +1,116 @@
+slug: opalite
+name: Opalite
+aka: [sea opal, opal glass, moon opal, tiffany opal]
+kind: glass
+species: null
+family: glass
+formula: null
+crystal_system: null
+mohs: [5, 6]
+colors: [milky white, translucent blue, iridescent]
+origins: [China]
+summary: >-
+  Man-made opalescent glass that glows blue against dark backgrounds and
+  orange-gold against light. It is not natural opal. Glass is safe in water and
+  sunlight, but it is softer than quartz and scratches easily.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve, so rinsing is fine. Avoid very hot water or sudden temperature changes, which can crack glass.
+  salt:
+    verdict: safe
+    reason: Salt does not attack glass. Rinse it off afterwards; rubbing with dry salt can dull the polish over time.
+  sun:
+    verdict: safe
+    reason: The opalescence is part of the glass and does not fade. A clear sphere can focus sunlight, so keep spheres off sunny sills.
+  sleep:
+    verdict: ok
+    reason: Inert and smooth, so it is safe beside the bed or under a pillow.
+  wear:
+    verdict: care
+    reason: At about Mohs 5 to 6 it is scratched by dust and grit (quartz is Mohs 7) and chips if knocked. Store it apart from harder stones.
+  toxicity:
+    level: none
+    reason: Finished glass is non-toxic to handle. Its recipe is not disclosed, so indirect elixirs are the safer choice.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye, throat]
+  elements: [water]
+  planets: [moon]
+  vedic_planet: null
+  zodiac: [cancer, pisces]
+  intentions: [communication, emotional-balance, transformation, peace-calm, intuition]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who thinks they are buying natural opal or moonstone
+    why: Opalite is glass. It is often sold without disclosure as "sea opal" or even as moonstone. Price it as glass.
+    basis: physical
+  - who: People who carry stones together in a pouch
+    why: Harder stones and grit scratch opalite's surface and chip its edges.
+    basis: physical
+  - who: People making crystal water
+    why: The glass recipe is not disclosed and some decorative glass contains lead or other additives. Use the indirect method.
+    basis: physical
+  - who: People who want only natural stones in their practice
+    why: Some crystal traditions hold that man-made glass lacks the properties of natural minerals; others embrace opalite for its colour.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Plastic or resin "opalite"
+    - Natural common opal sold under the name opalite
+    - Opalite glass sold as moonstone or opal
+  tests:
+    - id: color
+      weight: 3
+      how: Hold the stone over black fabric, then over white paper.
+      real: Opalite glows milky blue over dark backgrounds and turns warm orange-gold when light shines through it.
+      fake: Moonstone shows a floating sheen only at certain angles; opal shows flashes of spectral colour.
+    - id: bubbles
+      weight: 2
+      how: Look inside with a 10x loupe.
+      real: Opalite glass often shows small round bubbles and swirls; that is expected.
+      fake: Natural moonstone shows cleavage cracks ("centipedes") instead; resin may show a soft, uneven surface.
+    - id: hardness
+      weight: 2
+      how: On a hidden spot, press a steel pin firmly against it.
+      real: Glass resists a pin but is scratched by quartz.
+      fake: Resin and plastic are marked by the pin.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Glass feels cool, then warms within seconds.
+      fake: Plastic feels warm immediately.
+    - id: weight
+      weight: 1
+      how: Weigh it in your palm against a glass marble or bead of the same size.
+      real: Feels like glass.
+      fake: Plastic feels noticeably light.
+
+pairs:
+  good:
+    - slug: moonstone
+      why: The natural stone opalite often imitates; both are linked with the Moon and intuition in tradition.
+    - slug: selenite
+      why: A traditional calming pairing for meditation spaces.
+    - slug: rose-quartz
+      why: A gentle pairing for emotional balance.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies the intention set with opalite.
+  avoid: []
+
+price:
+  tier: budget
+  note: Opalite is very cheap in beads, tumbles, hearts and towers. Prices above ordinary glass reflect craftsmanship or settings, not the material.
+
+names:
+  es: Opalita
+
+sources:
+  - https://geology.com/gemstones/opal/opalite.shtml
+  - https://www.gemsociety.org/article/glass/
+  - https://www.gemsociety.org/article/opal-simulants/

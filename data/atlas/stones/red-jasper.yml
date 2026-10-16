@@ -1,0 +1,135 @@
+slug: red-jasper
+name: Red Jasper
+aka: [brick red jasper]
+kind: rock
+species: null
+family: jasper
+formula: null
+crystal_system: null
+mohs: [6.5, 7]
+colors: [red, brick red, red-brown]
+origins: [India, South Africa, Brazil, Madagascar, United States]
+summary: >-
+  An opaque rock of microcrystalline quartz coloured brick red by fine hematite.
+  The colour is natural iron oxide, so it is sun-stable and fine in water. It is
+  widely imitated with dyed howlite or magnesite, which are much softer, so a
+  scratch test matters.
+
+safety:
+  water:
+    verdict: safe
+    reason: Jasper is dense microcrystalline quartz that does not dissolve, and its hematite colour does not wash out, so rinsing or a short soak is fine.
+  salt:
+    verdict: avoid
+    reason: Jasper is slightly porous along grain boundaries and cracks. Salt crystallises there as brine dries, dulling the polish, and dyed imitations bleed.
+  sun:
+    verdict: safe
+    reason: Hematite red is one of the most light-stable colours in nature and does not fade. Dyed howlite or magnesite sold as red jasper will fade.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom. Tradition calls it steady and grounding.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it is tough and suits everyday bracelets and rings.
+  toxicity:
+    level: none
+    reason: Quartz with hematite is inert and safe to handle. Cutting jasper produces quartz dust, so lapidaries work it wet.
+  elixir: indirect
+
+tradition:
+  chakras: [root, sacral]
+  elements: [earth, fire]
+  planets: [mars]
+  vedic_planet: mangal
+  zodiac: [aries, scorpio, taurus]
+  intentions: [courage, grounding, energy, motivation, protection]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Buyers of bright, glossy red "jasper" beads
+    why: Red jasper is often imitated by dyed howlite or magnesite, which are soft (Mohs 3.5 to 4), fade in sun and bleed in water. Check hardness before paying jasper prices.
+    basis: physical
+  - who: Anyone cleansing in salt water or a salt bowl
+    why: Salt crystallises in the fine pores and cracks of jasper as brine dries, dulling the polish. Use plain water, smoke or sound.
+    basis: physical
+  - who: Families with small children or pets
+    why: Tumbled stones and beads are a choking hazard. The stone is not toxic.
+    basis: physical
+  - who: Anyone advised by a Vedic astrologer against Mars stones
+    why: Some Jyotish practitioners suggest red jasper as an affordable substitute for red coral, the gem of Mangal (Mars). Where Mars is unfavourable, for example Gemini or Virgo ascendants, they usually advise against it.
+    basis: tradition
+  - who: People wanting a light, airy or calming stone
+    why: Tradition calls red jasper a slow, earthy stone of stamina. For calm, tradition points to blue lace agate or amethyst.
+    basis: tradition
+
+zodiac_cautions:
+  - sign: gemini
+    why: In Vedic astrology Mars rules the 6th and 11th houses for a Gemini ascendant, so Mars stones such as coral and its substitutes are usually not advised.
+  - sign: virgo
+    why: For a Virgo ascendant Mars rules the 3rd and 8th houses, and Vedic astrologers usually do not recommend Mars stones.
+
+identify:
+  common_fakes:
+    - Dyed howlite or magnesite
+    - Dyed quartzite
+    - Reconstituted stone (powder and resin)
+    - Red glass or resin beads
+  tests:
+    - id: hardness
+      weight: 3
+      how: Try to mark a hidden spot or drill hole with a steel knife.
+      real: Steel does not mark jasper (Mohs 6.5 to 7).
+      fake: Howlite and magnesite (Mohs 3.5 to 4) scratch easily. Resin also scratches.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Red on the swab means dyed howlite, magnesite or quartzite.
+    - id: magnification
+      weight: 2
+      how: Examine the surface and drill holes with a 10x loupe.
+      real: Even, fine-grained opaque red with occasional white quartz veins or darker spots.
+      fake: Dark web-like veins sitting in grooves (howlite), sparkly grains (dyed quartzite) or resin bubbles.
+    - id: color
+      weight: 1
+      how: Look at the colour inside drill holes and at chips.
+      real: The same brick red right through the stone.
+      fake: White or pale inside drill holes, or colour pooled in cracks.
+    - id: streak
+      weight: 2
+      how: Rub a hidden edge of a rough piece hard across unglazed white tile. This marks the stone slightly.
+      real: Leaves a reddish-brown streak from the hematite, or nothing at all.
+      fake: Dyed howlite leaves a white streak.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your cheek.
+      real: Feels cool and warms slowly.
+      fake: Resin and plastic warm quickly.
+
+pairs:
+  good:
+    - slug: carnelian
+      why: Both are Mars stones in tradition and both are cited as red coral substitutes. Same hardness and care.
+    - slug: black-tourmaline
+      why: A grounding and protection pairing in tradition.
+    - slug: smoky-quartz
+      why: Two root-chakra grounding stones in tradition with no care conflicts.
+    - slug: hematite
+      why: Red jasper is coloured by hematite, and tradition pairs them for grounding. Hematite must stay dry, so cleanse them separately.
+    - slug: tiger-eye
+      why: Tradition pairs the two for courage and steady motivation.
+  avoid: []
+
+price:
+  tier: budget
+  note: Red jasper tumbled stones and beads are inexpensive. Even, deep red material in larger carvings costs more. Unusually bright, glossy beads at very low prices are often dyed howlite.
+
+names:
+  es: Jaspe rojo
+
+sources:
+  - https://www.mindat.org/min-2082.html
+  - https://www.gemsociety.org/article/jasper-gem-information/
+  - https://www.minerals.net/gemstone/jasper_gemstone.aspx
+  - https://www.navratan.com/blog/upratans-of-navratans-the-substitutes-of-nine-vedic-gems

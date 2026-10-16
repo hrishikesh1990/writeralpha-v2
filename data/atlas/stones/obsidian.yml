@@ -1,0 +1,134 @@
+slug: obsidian
+name: Obsidian
+aka: [volcanic glass, mahogany obsidian, rainbow obsidian, gold sheen obsidian]
+kind: mineraloid
+species: null
+family: volcanic glass
+formula: null
+crystal_system: amorphous
+mohs: [5, 5.5]
+colors: [black, brown, mahogany, grey, green]
+origins: [Mexico, United States, Armenia, Turkey, Iceland, Italy]
+summary: >-
+  Natural volcanic glass, formed when silica-rich lava cools too fast to
+  crystallise. Water and salt do not harm it, but at Mohs 5 to 5.5 it scratches
+  and chips, and broken edges are razor-sharp. Bright clear or neon "obsidian"
+  is usually man-made glass.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve or react with water, so rinsing or soaking is fine. Avoid sudden hot-to-cold changes, which can crack glass.
+  salt:
+    verdict: safe
+    reason: Salt and salt water do not attack glass, and salt crystals are too soft to scratch it. Grit in coarse rock salt can mark a polish, so use fine salt and rinse after.
+  sun:
+    verdict: safe
+    reason: Obsidian's colour comes from tiny mineral particles and bubbles that sunlight does not fade. Black pieces get hot in strong sun but are not damaged.
+  sleep:
+    verdict: caution
+    reason: Polished pieces are physically safe, but raw obsidian has edges sharp enough to cut skin. Tradition also calls it an intense stone and many advise against it under the pillow.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 5.5 it scratches against quartz, metal and grit, and a hard knock chips it. Pendants and earrings last longer than rings and bracelets.
+  toxicity:
+    level: none
+    reason: Volcanic glass is inert and safe to handle. The real hazard is physical, from sharp edges and from glass dust when cutting or knapping.
+  elixir: indirect
+
+tradition:
+  chakras: [root]
+  elements: [fire, earth]
+  planets: [saturn, pluto]
+  vedic_planet: null
+  zodiac: [scorpio, sagittarius]
+  intentions: [protection, grounding, transformation, clarity, grief]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: Homes with children or pets, and anyone handling raw pieces
+    why: Broken obsidian has edges sharper than a steel blade. Raw chunks, flakes and arrowheads can cut fingers and paws. Keep them out of reach and handle by the faces, not the edges.
+    basis: physical
+  - who: People who want a ring or bracelet for daily wear
+    why: At Mohs 5 to 5.5 obsidian scratches and chips against desks, metal and harder stones. Choose a pendant, or accept that it will wear.
+    basis: physical
+  - who: Anyone cleaning stones with hot water, steam or ultrasonic cleaners
+    why: Sudden temperature changes and vibration can crack glass. Use room-temperature water and a soft cloth.
+    basis: physical
+  - who: People storing crystals together in one pouch
+    why: Quartz, agate and tourmaline are harder and will scratch obsidian. Wrap it separately.
+    basis: physical
+  - who: People new to crystals or feeling emotionally fragile
+    why: Crystal tradition calls obsidian a mirror stone that brings buried feelings to the surface quickly. Many practitioners suggest starting with gentler stones.
+    basis: tradition
+  - who: Light sleepers
+    why: Tradition holds that obsidian under the pillow can bring restless sleep or vivid dreams. Keep it in another room if that happens.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Man-made glass sold as "transparent" or brightly coloured obsidian
+    - Black glass or industrial slag
+    - Black plastic or resin
+    - Black onyx or dyed chalcedony mislabelled as obsidian
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the colour in daylight and at a thin edge.
+      real: Black, brown, mahogany, grey or dark green, often with smoky translucent edges. Sheen varieties show gold or rainbow sheen only at certain angles.
+      fake: Bright, clear blue, green, red or purple "obsidian" is almost always mass-produced glass.
+    - id: magnification
+      weight: 2
+      how: Examine a thin edge with a 10x loupe against a light.
+      real: Fine flow banding, specks of mineral matter and stretched microscopic bubbles.
+      fake: Perfectly clean, uniform glass, or large round bubbles and mould seams.
+    - id: temperature
+      weight: 1
+      how: Compare it against a plastic bead by holding both to your cheek.
+      real: Feels cool like glass.
+      fake: Plastic and resin feel warm almost immediately.
+    - id: weight
+      weight: 1
+      how: Compare with plastic and with a quartz piece of similar size.
+      real: Lighter than quartz but much heavier than plastic (specific gravity about 2.35 to 2.6).
+      fake: Plastic feels light. Lead glass can feel noticeably heavy.
+    - id: shape
+      weight: 1
+      how: Look at any broken surfaces.
+      real: Smooth, shell-like (conchoidal) fractures with very sharp edges, and natural weathered rinds on raw pieces.
+      fake: Moulded shapes with seams, or a perfectly smooth rind on a "raw" piece.
+    - id: price
+      weight: 1
+      how: Compare with typical prices.
+      real: Common black and mahogany obsidian is inexpensive.
+      fake: Unusual bright colours at premium prices are a sign of glass marketed as rare obsidian.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: Two classic protection stones in tradition. Tourmaline is harder, so store them apart.
+    - slug: smoky-quartz
+      why: A grounding pairing in tradition. Smoky quartz will scratch obsidian, so keep them separated.
+    - slug: hematite
+      why: Tradition pairs both for grounding. Hematite must stay dry, so cleanse them separately.
+    - slug: rose-quartz
+      why: Tradition uses rose quartz to soften obsidian's intensity. Store them apart.
+    - slug: selenite
+      why: Selenite is used to cleanse obsidian without water. Both are soft, so neither scratches the other badly.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled obsidian, spheres and Apache tears are inexpensive. Fine rainbow and gold sheen pieces and large polished mirrors cost more.
+
+names:
+  es: Obsidiana
+
+sources:
+  - https://www.mindat.org/min-8519.html
+  - https://geology.com/rocks/obsidian.shtml
+  - https://www.gemsociety.org/article/obsidian-jewelry-and-gemstone-information/
+  - https://www.gemsociety.org/article/natural-glass/

@@ -1,0 +1,129 @@
+slug: calcite
+name: Calcite
+aka: [iceland spar, optical calcite]
+kind: mineral
+species: Calcite
+family: carbonate
+formula: CaCO3
+crystal_system: trigonal
+mohs: [3, 3]
+colors: [white, colorless, orange, yellow, blue, green, pink, red]
+origins: [Mexico, Brazil, China, United States, Iceland, Madagascar]
+summary: >-
+  A soft calcium carbonate found in almost every colour. At Mohs 3 it scratches
+  easily, splits along three cleavage planes and fizzes in acids such as
+  vinegar and lemon juice, so keep it dry, away from salt and out of rings.
+
+safety:
+  water:
+    verdict: brief
+    reason: Calcite is only slightly soluble, so a quick rinse does no harm, but soaking dulls the polish and slightly acidic water etches it. Dry it straight away.
+  salt:
+    verdict: avoid
+    reason: Salt crystals scratch a Mohs 3 surface and salt water slowly etches it. Use sound, smoke or moonlight instead.
+  sun:
+    verdict: limit
+    reason: Most natural calcite colours are fairly stable, but some coloured and dyed pieces fade with long sun, and heat can crack it along its cleavage planes.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe on a nightstand. It chips easily, so a tumbled piece is better under a pillow than a sharp rhomb.
+  wear:
+    verdict: special
+    reason: A copper coin or a key scratches calcite, and a knock can split it along cleavage planes. Best as a pocket or display stone; pendants only with care.
+  toxicity:
+    level: none
+    reason: Calcium carbonate is non-toxic; it is the same mineral as limestone and chalk.
+  elixir: indirect
+
+tradition:
+  chakras: [crown, third_eye, solar_plexus]
+  elements: [earth, air]
+  planets: []
+  vedic_planet: null
+  zodiac: [cancer, leo]
+  intentions: [clarity, energy, emotional-balance, concentration, transformation, motivation]
+  energy: balancing
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals in water, salt or vinegar
+    why: Calcite reacts with acids, including vinegar, lemon juice, many bathroom cleaners and salty brine. A quick rinse is fine, but soaks and acidic cleansers leave a dull, etched surface.
+    basis: physical
+  - who: People who want a ring or bracelet for daily wear
+    why: At Mohs 3 calcite scratches against almost everything, including household dust, and splits cleanly along cleavage planes if knocked.
+    basis: physical
+  - who: Owners of brightly coloured calcite
+    why: Vivid blue, pink or purple calcite is sometimes dyed. Dye can rub off, fade in sunlight or bleed in water.
+    basis: physical
+  - who: People storing calcite with harder crystals
+    why: Quartz, agate and most other crystals scratch calcite in a shared pouch. Wrap it separately.
+    basis: physical
+  - who: People who want a strongly protective stone
+    why: Tradition treats calcite as a gentle amplifier and cleanser rather than a shield. For protection, tradition points to black tourmaline or obsidian.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed calcite sold as a natural colour
+    - Glass sold as optical calcite
+    - Aragonite sold as calcite
+    - Calcite sold as more valuable stones (onyx, jade, amber)
+  tests:
+    - id: hardness
+      weight: 3
+      how: Try to scratch a hidden spot with a steel knife or nail, then try to scratch glass with the stone.
+      real: Steel scratches calcite easily, and calcite cannot scratch glass.
+      fake: Glass resists the knife; quartz and many look-alikes scratch glass.
+    - id: water_dissolve
+      weight: 3
+      how: Put one drop of vinegar on a hidden, unpolished spot and watch closely. This is mildly destructive and leaves a dull mark, so rinse it off at once.
+      real: Tiny bubbles fizz on the surface, the reaction of a carbonate with acid.
+      fake: Glass, quartz and resin do not fizz.
+    - id: light
+      weight: 2
+      how: Place a clear piece over a printed line of text and look down through it.
+      real: Clear calcite shows the line doubled (strong double refraction).
+      fake: Glass and quartz show a single line.
+    - id: shape
+      weight: 2
+      how: Look at broken edges and natural faces.
+      real: Pieces break into slanted box shapes (rhombs) with flat, shiny cleavage faces.
+      fake: Glass breaks with curved, shell-like fractures.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab dipped in nail-polish remover.
+      real: The swab stays clean.
+      fake: Colour on the swab means the stone is dyed.
+    - id: uv
+      weight: 1
+      how: Shine a UV torch on the stone in a dark room.
+      real: Many calcites glow red, pink, orange or blue, though some do not.
+      fake: Glass usually stays dark; a glow is a supporting hint, not proof.
+
+pairs:
+  good:
+    - slug: selenite
+      why: Both should stay dry, and selenite is used to cleanse calcite without water.
+    - slug: clear-quartz
+      why: Tradition calls both stones amplifiers. Store them apart, since quartz scratches calcite.
+    - slug: citrine
+      why: Tradition pairs orange and yellow calcite with citrine for motivation and confidence.
+    - slug: amethyst
+      why: A traditional pairing for clarity and calm in meditation spaces.
+    - slug: black-tourmaline
+      why: Tradition balances calcite's cleansing energy with tourmaline's grounding.
+    - slug: carnelian
+      why: Paired in tradition for creativity, especially with orange calcite.
+  avoid: []
+
+price:
+  tier: budget
+  note: Calcite is one of the cheapest crystals; tumbled stones and rough chunks cost little. Large clear optical rhombs and fine crystal specimens cost more.
+
+names:
+  es: Calcita
+
+sources:
+  - https://www.mindat.org/min-859.html
+  - https://www.minerals.net/mineral/calcite
+  - https://geology.com/minerals/calcite.shtml

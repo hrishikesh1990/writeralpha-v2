@@ -1,0 +1,153 @@
+slug: ruby
+name: Ruby
+aka: [manik, red corundum]
+kind: variety
+species: Corundum
+family: corundum
+formula: Al2O3
+crystal_system: trigonal
+mohs: [9, 9]
+colors: [red, pinkish red, purplish red]
+origins: [Myanmar, Mozambique, Thailand, Sri Lanka, Madagascar, Tanzania]
+summary: >-
+  The red, chromium-coloured variety of corundum, second only to diamond in
+  hardness. Untreated and heated rubies are very durable, but many low-cost
+  rubies are lead-glass filled and must be kept away from heat, acids and
+  harsh cleaners.
+
+safety:
+  water:
+    verdict: safe
+    reason: Corundum does not absorb water and warm soapy water is always safe. If the ruby may be lead-glass filled, use plain water only and no soaking with cleaners.
+  salt:
+    verdict: avoid
+    reason: Salt does not harm corundum itself, but much affordable ruby is lead-glass filled and brine plus acids can etch the glass. Plain water does the job.
+  sun:
+    verdict: safe
+    reason: Ruby colour is stable in daylight. Sunlight is physically harmless to the stone.
+  sleep:
+    verdict: ok
+    reason: Physically safe. Tradition treats ruby as a stimulating stone, so some prefer to keep it off the bedside table.
+  wear:
+    verdict: daily
+    reason: At Mohs 9 very little scratches ruby. Glass-filled rubies are the exception and need gentle wear, with no heat and no chemicals.
+  toxicity:
+    level: none
+    reason: Aluminium oxide is inert. Lead-glass filling is locked in the stone during normal wear, but such stones should not be used in drinking water.
+  elixir: indirect
+
+tradition:
+  chakras: [root, heart]
+  elements: [fire]
+  planets: [sun, mars]
+  vedic_planet: surya
+  zodiac: [leo, aries, sagittarius]
+  intentions: [courage, love, confidence, energy, motivation, protection]
+  energy: energizing
+  birth_months:
+    modern: [july]
+    traditional: [july]
+
+cautions:
+  - who: Owners of inexpensive or very transparent "rubies"
+    why: Lead-glass filled ruby is widespread. Lemon juice, jewellery dips, steam, ultrasonic cleaners and a jeweller's torch can etch or melt the glass. Clean with a damp cloth only.
+    basis: physical
+  - who: Buyers who need a natural, untreated ruby
+    why: Lab-created ruby is real corundum and looks the same at home. Heating is normal; glass filling and diffusion lower value. Ask for a lab report stating origin and treatment.
+    basis: physical
+  - who: Anyone advised in Vedic astrology to avoid Sun stones
+    why: In Jyotish, ruby (Manik) is the gem of Surya (the Sun). Astrologers usually recommend it for Leo, Aries and Sagittarius ascendants and advise a chart reading before wearing it.
+    basis: tradition
+  - who: People wearing blue sapphire (Neelam) or diamond (Heera)
+    why: Vedic tradition treats Saturn and Venus as enemies of the Sun. Ruby is traditionally never combined with blue sapphire, and is usually kept apart from diamond and hessonite.
+    basis: tradition
+  - who: People with a fiery or quick temper, according to tradition
+    why: Tradition calls ruby a heating, energising stone and says it can amplify anger and restlessness. This is belief, not a physical effect.
+    basis: tradition
+zodiac_cautions:
+  - sign: taurus
+    why: Taurus is ruled by Venus, which Vedic astrology treats as an enemy of the Sun, so ruby is usually not advised for Taurus ascendants.
+  - sign: libra
+    why: Libra is also Venus-ruled, and the same Sun and Venus enmity applies.
+  - sign: capricorn
+    why: Capricorn is ruled by Saturn, the Sun's traditional enemy in Jyotish.
+  - sign: aquarius
+    why: Aquarius is also Saturn-ruled, so Vedic astrologers usually caution against ruby for Aquarius ascendants.
+
+identify:
+  common_fakes:
+    - Lead-glass filled ruby (composite ruby)
+    - Lab-created (flame-fusion) ruby sold as natural
+    - Red glass
+    - Red garnet or red spinel sold as ruby
+    - Dyed quartz or dyed low-grade corundum
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe, tilting it under a bright light.
+      real: Natural silk (fine needles), crystals and angular colour banding.
+      fake: Gas bubbles in fractures and blue or orange flashes mean glass filling. Curved growth lines and round bubbles point to flame-fusion synthetic.
+    - id: certificate
+      weight: 3
+      how: For any significant purchase, ask for a report from GIA or another recognised gem lab.
+      real: Report states natural ruby and any heating.
+      fake: Report states synthetic, glass filled or composite, or no report is available.
+    - id: uv
+      weight: 2
+      how: Shine a long-wave UV torch on the stone in a dark room.
+      real: Most rubies glow red, often strongly. Iron-rich Thai rubies glow weakly.
+      fake: Garnet and red glass stay dark. Synthetic ruby also glows, so this does not separate natural from lab.
+    - id: color
+      weight: 1
+      how: Turn the stone slowly and look through it from different directions.
+      real: Ruby shows two shades, purplish red and orangey red, depending on direction.
+      fake: Garnet and glass look the same from every angle.
+    - id: hardness
+      weight: 1
+      how: On rough material only, try to scratch a piece of quartz. Do not test faceted or set stones.
+      real: Ruby scratches quartz easily.
+      fake: Glass and garnet cannot scratch quartz reliably.
+    - id: price
+      weight: 2
+      how: Compare price with size and clarity.
+      real: Clean natural rubies are expensive, and fine untreated stones are rare.
+      fake: A large, clear, bright red ruby at a low price is almost always glass filled, synthetic or another stone.
+
+pairs:
+  good:
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies ruby's vitality without clashing planets.
+    - slug: garnet
+      why: Red stones paired in tradition for passion and courage. Ruby will scratch garnet, so store them apart.
+    - slug: carnelian
+      why: Mars stones in tradition, and Mars is a friend of the Sun in Jyotish.
+    - slug: moonstone
+      why: The Moon is a friend of the Sun in Vedic astrology, and moonstone is a common substitute for pearl.
+    - slug: red-jasper
+      why: Tradition pairs the two for grounded energy and stamina.
+    - slug: rose-quartz
+      why: A traditional love pairing that softens ruby's fiery energy.
+  avoid:
+    - slug: sapphire
+      why: Ruby (Sun) and blue sapphire (Saturn) are the classic Vedic enmity pair and are traditionally never worn together.
+    - slug: diamond
+      why: Vedic tradition treats the Sun and Venus as enemies, so ruby and diamond are usually kept apart.
+
+price:
+  tier: premium
+  note: Glass-filled and low-grade rubies are cheap; heated commercial stones are moderate. Fine untreated rubies with strong red colour are among the most expensive gems.
+
+names:
+  hi: Manik (माणिक)
+  bn: Chuni (চুনি)
+  es: Rubí
+  ta: Manikkam (மாணிக்கம்)
+  te: Kempu (కెంపు)
+  mr: Manik (माणिक)
+
+sources:
+  - https://www.mindat.org/min-3473.html
+  - https://www.gia.edu/ruby
+  - https://www.gia.edu/ruby-care-cleaning
+  - https://www.gia.edu/gems-gemology/spring-2006-identification-lead-glass-filled-rubies-mcclure
+  - https://en.wikipedia.org/wiki/Navratna

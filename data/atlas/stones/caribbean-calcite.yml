@@ -1,0 +1,128 @@
+slug: caribbean-calcite
+name: Caribbean Calcite
+aka: [blue aragonite, caribbean blue calcite]
+kind: rock
+species: Calcite with aragonite
+family: carbonate
+formula: CaCO3
+crystal_system: null
+mohs: [3, 4]
+colors: [blue, teal, white, brown]
+origins: [Pakistan]
+summary: >-
+  A trade name for a banded rock of blue calcite with white and brown aragonite,
+  found in Pakistan since about 2019. Both minerals are soft calcium carbonate,
+  so it scratches easily and etches in water, salt and acids.
+
+safety:
+  water:
+    verdict: brief
+    reason: Calcite and aragonite dissolve very slowly and etch in slightly acidic water. A quick rinse is fine; soaking dulls the polish and can open cracks. Dry it at once.
+  salt:
+    verdict: avoid
+    reason: Salt scratches a Mohs 3 surface and salt water etches carbonates. Cleanse it with sound, smoke or moonlight.
+  sun:
+    verdict: limit
+    reason: How well the blue colour holds up to long sunlight is not well documented, and heat can crack calcite along its cleavage. Keep it out of hot, sunny windows.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and safe in the bedroom. Spheres and towers are heavy and chip if knocked off a nightstand.
+  wear:
+    verdict: special
+    reason: At Mohs 3 to 4 it scratches against keys, dust and other stones, and the many small cavities chip. Display pieces and occasional pendants suit it best.
+  toxicity:
+    level: none
+    reason: Calcite and aragonite are calcium carbonate, the same material as limestone and seashell. Non-toxic to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, heart, third_eye]
+  elements: [water, air]
+  planets: [neptune]
+  vedic_planet: null
+  zodiac: [pisces, cancer, aquarius]
+  intentions: [peace-calm, communication, anxiety, emotional-balance, intuition, clarity]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Anyone who cleanses crystals in water, salt or vinegar
+    why: Calcium carbonate reacts with acids such as vinegar, lemon juice and many cleaning sprays, and salt baths etch and scratch it. Wipe with a dry cloth instead.
+    basis: physical
+  - who: People looking for a stone to wear every day
+    why: It is soft and often full of small cavities (vugs) with fragile crystal linings that chip. Keep it as a display stone or wear pendants occasionally.
+    basis: physical
+  - who: Buyers paying collector prices
+    why: The material has only one known source. Dyed calcite, dyed howlite or magnesite and plain blue aragonite are sometimes sold under the same name.
+    basis: physical
+  - who: People storing it with harder crystals
+    why: Quartz, agate and tourmaline scratch it in a shared bowl or pouch. Give spheres and towers their own space.
+    basis: physical
+  - who: People seeking an energising stone
+    why: Tradition presents Caribbean calcite as soothing and dreamy. For drive and motivation, tradition prefers carnelian or citrine.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Dyed calcite or dyed howlite or magnesite
+    - Plain blue aragonite sold as Caribbean calcite
+    - Resin or glass imitations
+    - Smithsonite or hemimorphite labels on this material (and the reverse)
+  tests:
+    - id: color
+      weight: 2
+      how: Look at the pattern across the whole piece.
+      real: Soft teal-blue calcite swirled and banded with white and light brown aragonite, often with small cavities.
+      fake: Single-colour blue with no brown or white banding usually means blue aragonite or a dyed stone.
+    - id: hardness
+      weight: 2
+      how: Try to scratch a hidden spot with a steel knife.
+      real: Steel scratches it easily.
+      fake: Glass resists the knife.
+    - id: water_dissolve
+      weight: 2
+      how: Place one drop of vinegar on a hidden spot and watch. Mildly destructive; rinse off immediately.
+      real: Fine bubbles fizz on both blue and white areas, showing carbonate.
+      fake: Glass and resin do not react. Dyed howlite reacts weakly or not at all.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue colour on the swab means the stone is dyed.
+    - id: magnification
+      weight: 1
+      how: Look into the cavities and along the bands with a 10x loupe.
+      real: Tiny sparkling crystals (druzy) in cavities and fibrous aragonite bands.
+      fake: Gas bubbles, a uniform cast surface or colour pooled in cracks.
+    - id: seller
+      weight: 1
+      how: Ask where the material comes from.
+      real: Genuine Caribbean calcite is sold as coming from Pakistan.
+      fake: Any other stated origin suggests blue aragonite or a different material.
+
+pairs:
+  good:
+    - slug: blue-lace-agate
+      why: A soft blue pairing for calm communication in tradition. Keep agate from scratching the calcite.
+    - slug: amazonite
+      why: Tradition pairs the two for soothing, ocean-like calm.
+    - slug: selenite
+      why: Both must stay dry, and selenite cleanses without water.
+    - slug: aquamarine
+      why: Two sea-themed calming stones in tradition. Aquamarine is much harder, so store them apart.
+    - slug: larimar
+      why: Similar sea-blue look and calming role in tradition; both are soft and kept out of water and sun.
+  avoid: []
+
+price:
+  tier: budget
+  note: Tumbled stones and small palm stones are inexpensive. Large spheres, towers and pieces with strong blue colour cost noticeably more.
+
+names:
+  es: Calcita caribeña
+
+sources:
+  - https://www.mindat.org/min-859.html
+  - https://www.minerals.net/mineral/aragonite
+  - https://rockseeker.com/caribbean-calcite/
+  - https://www.fossilera.com/minerals/3-05-polished-blue-caribbean-calcite-sphere-pakistan

@@ -1,0 +1,126 @@
+slug: hematite-rings
+name: Hematite Rings
+aka: [magnetic hematite ring, hematine ring, hemalyke ring]
+kind: jewellery
+species: Hematine (synthetic magnetic ferrite) or natural hematite
+family: iron oxide
+formula: null
+crystal_system: null
+mohs: [5.5, 6.5]
+colors: [silver-grey, black, gold, rainbow]
+origins: [China, Brazil]
+summary: >-
+  Band rings cut or moulded from shiny grey iron-oxide material. Most, and
+  every strongly magnetic one, are synthetic hematine rather than natural
+  hematite. They cannot be resized, snap rather than stretch, and should stay
+  away from water, salt and implanted medical devices.
+
+safety:
+  water:
+    verdict: brief
+    reason: Quick contact with water is fine, but repeated wetting dulls the shine, can leave rust spots on hematine and wears plated colour finishes. Dry the ring after hand washing.
+  salt:
+    verdict: avoid
+    reason: Salt water corrodes iron-oxide imitations and plated finishes and leaves stains. Take the ring off for the sea, pools and salt cleanses.
+  sun:
+    verdict: safe
+    reason: Grey hematite and hematine do not fade. Sunlight is physically harmless to the ring.
+  sleep:
+    verdict: ok
+    reason: Physically safe, but take the ring off if fingers swell at night, since it cannot stretch. Keep magnetic rings away from implanted devices while asleep.
+  wear:
+    verdict: care
+    reason: Brittle rather than flexible. A knock against a door frame, weights or tiles can crack or snap the band into sharp pieces, and it cannot be resized.
+  toxicity:
+    level: low
+    reason: Safe to wear. Natural hematite is inert; hematine is a ceramic ferrite whose exact composition varies by maker, so keep it out of drinks and food.
+  elixir: never
+
+tradition:
+  chakras: [root]
+  elements: [earth]
+  planets: [mars, saturn]
+  vedic_planet: null
+  zodiac: [aries, aquarius, capricorn]
+  intentions: [grounding, protection, anxiety, confidence, concentration]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People with pacemakers, defibrillators, insulin pumps or cochlear implants
+    why: Most "magnetic hematite" rings contain permanent magnets. Strong magnets near implanted medical devices can affect them; keep magnetic rings away and ask your doctor about safe distances.
+    basis: physical
+  - who: Anyone booked for an MRI scan
+    why: Magnetic and iron-oxide jewellery must be removed before an MRI. It can be pulled by the magnet and heat up.
+    basis: physical
+  - who: People whose fingers swell (heat, pregnancy, arthritis, salty meals)
+    why: The ring cannot stretch or be resized. If it becomes tight it may need to be broken off. Choose a size that is comfortable when fingers are slightly swollen.
+    basis: physical
+  - who: People doing manual work, weight training or contact sport
+    why: A knock snaps the band and can leave sharp fragments. Take it off for gym sessions, DIY and ball sports.
+    basis: physical
+  - who: People who carry mechanical watches or magnetic-stripe cards near the ring
+    why: Strong magnets can magnetise watch movements so they run fast, and can wipe old magnetic-stripe cards.
+    basis: physical
+  - who: People buying a magnetic ring to treat pain
+    why: Magnetic jewellery is often marketed for pain relief or circulation, but this is a belief rather than an established treatment. See a doctor for pain that persists.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Hematine or Hemalyke sold as natural hematite
+    - Steel or tungsten rings with a grey finish sold as hematite
+    - Plated plastic or resin bands
+  tests:
+    - id: magnet
+      weight: 3
+      how: Hold a fridge magnet or a paperclip near the ring.
+      real: Natural hematite does not grab a fridge magnet and attracts a strong magnet only weakly.
+      fake: A ring that snaps to a magnet or picks up a paperclip is magnetised hematine.
+    - id: streak
+      weight: 3
+      how: Rub the inside of the band firmly on the back of an unglazed tile. This leaves a small mark inside the ring.
+      real: A red-brown streak means natural hematite.
+      fake: A black or grey streak means hematine; steel or tungsten leaves almost nothing.
+    - id: weight
+      weight: 1
+      how: Compare the ring in your hand with a similar-sized glass or plastic ring.
+      real: Hematite and hematine both feel heavy for their size.
+      fake: Plated plastic feels light.
+    - id: shape
+      weight: 1
+      how: Look along the inside and edges with a loupe.
+      real: Natural hematite rings are cut and polished and may show small natural pits.
+      fake: Perfectly uniform faceted patterns and fine seam lines suggest a moulded product.
+    - id: price
+      weight: 1
+      how: Compare the price and description.
+      real: Natural hematite rings are often labelled "natural, non-magnetic" and cost a little more.
+      fake: Very cheap rings sold as "magnetic therapy hematite" are hematine.
+
+pairs:
+  good:
+    - slug: hematite
+      why: The natural stone version of the same grounding tradition, often worn alongside the ring.
+    - slug: black-tourmaline
+      why: A traditional grounding and protection pairing; both are cleansed without salt.
+    - slug: smoky-quartz
+      why: Tradition pairs the two for grounding and calm.
+    - slug: tiger-eye
+      why: A common bracelet companion in tradition for focus and confidence.
+    - slug: clear-quartz
+      why: Tradition says clear quartz lightens hematite's heavy energy.
+  avoid: []
+
+price:
+  tier: budget
+  note: Hematine rings are very cheap. Rings carved from natural hematite cost more and are usually sold as non-magnetic.
+
+names:
+  es: Anillo de hematita
+
+sources:
+  - https://www.mindat.org/min-1856.html
+  - https://www.mindat.org/min-35948.html
+  - https://www.firemountaingems.com/learn/categories/essential-resources/tools-supplies/H80Q-article.html
+  - https://geology.com/minerals/hematite.shtml

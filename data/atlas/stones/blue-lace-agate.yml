@@ -1,0 +1,128 @@
+slug: blue-lace-agate
+name: Blue Lace Agate
+aka: [blue lace chalcedony]
+kind: variety
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [pale blue, white, lavender]
+origins: [Namibia, Malawi, South Africa, Kenya]
+summary: >-
+  A pale blue agate with fine white lacy bands, best known from Namibia, where
+  the main mine has closed. Natural material is pale and soft-toned; bright or
+  dark blue "blue lace" is usually dyed chalcedony. Safe in plain water, but keep
+  salt away and limit strong sun.
+
+safety:
+  water:
+    verdict: safe
+    reason: Chalcedony does not dissolve, so natural blue lace agate can be rinsed or soaked briefly. Dyed pieces may bleed in a long soak.
+  salt:
+    verdict: avoid
+    reason: The stone is slightly porous. Brine soaks in and salt crystallises in the pores and fine cracks as it dries, dulling the surface. Dyed pieces also bleed.
+  sun:
+    verdict: limit
+    reason: Dyed blue chalcedony sold as blue lace agate fades in strong sun. Natural pale blue is more stable, but long sunny spells are not worth the risk if you cannot tell which you have.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is safe under a pillow or on a nightstand. Tradition calls it one of the gentlest, most calming stones.
+  wear:
+    verdict: daily
+    reason: At Mohs 6.5 to 7 it resists everyday scratches. Keep perfume and acetone off dyed pieces.
+  toxicity:
+    level: none
+    reason: Silicon dioxide is inert and non-toxic to handle.
+  elixir: indirect
+
+tradition:
+  chakras: [throat]
+  elements: [water, air]
+  planets: [mercury, neptune]
+  vedic_planet: null
+  zodiac: [pisces, gemini]
+  intentions: [communication, peace-calm, anxiety, emotional-balance, clarity]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Buyers paying a premium for "Namibian" blue lace agate
+    why: The classic Ysterputs mine in Namibia has closed and natural material has become scarcer. Bright, even, saturated blue at a low price is usually dyed chalcedony from elsewhere.
+    basis: physical
+  - who: Anyone who charges crystals on a sunny windowsill
+    why: Dyed blue fades in strong sun, and the pale natural colour is easily washed out by heat and light over time. Moonlight or sound are safer.
+    basis: physical
+  - who: Anyone cleansing in salt water
+    why: Salt soaks into the porous stone and crystallises in its cracks. Use plain water instead.
+    basis: physical
+  - who: People wanting an energising or motivating stone
+    why: Tradition treats blue lace agate as soothing and quietening. For drive, tradition suggests carnelian or citrine.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed blue chalcedony or agate
+    - Blue glass with painted or cast bands
+    - Dyed howlite or magnesite
+    - Blue resin beads
+  tests:
+    - id: color
+      weight: 2
+      how: Compare the blue against white paper in daylight and follow the bands.
+      real: Soft sky blue to pale lavender with crisp white lacy lines and darker blue edges in some bands.
+      fake: Deep, saturated or perfectly even blue, or blue that pools in cracks and drill holes, points to dye.
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab and nail-polish remover.
+      real: The swab stays clean.
+      fake: Blue on the swab means the stone is dyed.
+    - id: light
+      weight: 2
+      how: Shine a torch through a thin edge.
+      real: The bands are translucent to different degrees, giving a layered glow.
+      fake: Glass glows evenly. Howlite and magnesite stay opaque and chalky.
+    - id: magnification
+      weight: 3
+      how: Look at the bands with a 10x loupe.
+      real: Fine, wavy, continuous lace bands with no bubbles.
+      fake: Bubbles or swirls mean glass. Dark grey veins in a chalky body mean dyed howlite.
+    - id: hardness
+      weight: 2
+      how: On a rough or tumbled piece, try to scratch glass on a hidden spot. Do not test finished jewellery.
+      real: Blue lace agate scratches glass.
+      fake: Howlite (Mohs 3.5) and magnesite cannot scratch glass and are marked by a steel knife.
+    - id: price
+      weight: 1
+      how: Compare the price and colour with established dealers.
+      real: Good natural Namibian material now commands a premium.
+      fake: Large strands of vivid blue "blue lace agate" at bargain prices are almost always dyed.
+
+pairs:
+  good:
+    - slug: amethyst
+      why: Both are calming stones in tradition, often combined for stress and sleep. Both are quartz with similar care.
+    - slug: rose-quartz
+      why: A gentle calming pairing in tradition for emotional ease. Both fade in strong sun, so they share the same care.
+    - slug: sodalite
+      why: Tradition pairs two blue throat-chakra stones for clear, calm speech.
+    - slug: lapis-lazuli
+      why: A traditional communication pairing. Store separately, since agate is harder than lapis.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies blue lace agate's calm. Same care rules.
+  avoid: []
+
+price:
+  tier: mid
+  note: Small tumbled stones are still cheap. Fine natural Namibian slabs, spheres and bright-banded pieces have risen in price since the mine closed. Vivid blue bulk beads are usually dyed and inexpensive.
+
+names:
+  es: Ágata de encaje azul
+
+sources:
+  - https://www.mindat.org/min-699.html
+  - https://www.mindat.org/min-960.html
+  - https://www.gemsociety.org/article/agate-gem-information/
+  - https://www.gemsociety.org/article/chalcedony-jewelry-and-gemstone-information/

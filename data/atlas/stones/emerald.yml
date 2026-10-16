@@ -1,0 +1,145 @@
+slug: emerald
+name: Emerald
+aka: [panna, green beryl]
+kind: variety
+species: Beryl
+family: beryl
+formula: Be3Al2Si6O18
+crystal_system: hexagonal
+mohs: [7.5, 8]
+colors: [green, bluish green, yellowish green]
+origins: [Colombia, Zambia, Brazil, Zimbabwe, Afghanistan, Ethiopia]
+summary: >-
+  The green, chromium- or vanadium-coloured variety of beryl. Hard but brittle
+  and almost always oil- or resin-filled, so it needs a quick wash only: no
+  ultrasonic, no steam, no hot water and no long soaks.
+
+safety:
+  water:
+    verdict: brief
+    reason: Nearly all emeralds have surface-reaching fractures filled with oil or resin. Lukewarm soapy water and a quick rinse are fine, but soaking or hot water can draw out the filler.
+  salt:
+    verdict: avoid
+    reason: Salt and brine can work into filled fractures and leave residue, and salt water corrodes settings. Rinse in plain water instead.
+  sun:
+    verdict: limit
+    reason: Emerald colour is stable, but heat from hot sun can dry oil fillings and make fractures show. Avoid hot windowsills and car dashboards.
+  sleep:
+    verdict: ok
+    reason: Physically safe on a nightstand. Remove rings at night to avoid knocks against the bedframe.
+  wear:
+    verdict: care
+    reason: Mohs 7.5 to 8 resists scratches, but inclusions make emerald brittle. Knocks, heat and chemicals such as cleaners and solvents can damage it.
+  toxicity:
+    level: none
+    reason: Beryl is a stable silicate and safe to handle. Fillers are inert in normal wear.
+  elixir: indirect
+
+tradition:
+  chakras: [heart]
+  elements: [earth]
+  planets: [venus, mercury]
+  vedic_planet: budh
+  zodiac: [taurus, gemini, virgo]
+  intentions: [love, healing, intuition, wealth, communication, concentration]
+  energy: balancing
+  birth_months:
+    modern: [may]
+    traditional: [may]
+
+cautions:
+  - who: People who clean jewellery in ultrasonic or steam machines
+    why: Vibration and heat drive out the oil or resin in emerald fractures and can crack included stones. Use lukewarm soapy water, a soft brush and a quick rinse.
+    basis: physical
+  - who: Anyone who wears rings for manual work, cooking or cleaning
+    why: Emerald is brittle and its fillers react to solvents, detergents and heat. Take it off for housework, gardening and gym sessions.
+    basis: physical
+  - who: Buyers comparing emerald prices
+    why: Treatment is normal, but the degree of filling changes value and durability. Ask for treatment disclosure or a lab report, especially for expensive stones.
+    basis: physical
+  - who: Anyone advised in Vedic astrology to avoid Mercury stones
+    why: In Jyotish, emerald (Panna) is the gem of Budh (Mercury). Astrologers usually recommend it for Gemini and Virgo ascendants and advise a chart reading before wearing it.
+    basis: tradition
+  - who: People already wearing red coral or pearl for Vedic reasons
+    why: Vedic tradition treats Mars and the Moon as unfriendly to Mercury, so emerald is traditionally not combined with red coral (Moonga) or pearl (Moti).
+    basis: tradition
+zodiac_cautions:
+  - sign: aries
+    why: Aries is ruled by Mars, which treats Mercury as an enemy in Vedic astrology, so emerald is usually not advised for Aries ascendants.
+  - sign: scorpio
+    why: Scorpio is also Mars-ruled, and the same Mars and Mercury enmity applies in Vedic tradition.
+  - sign: cancer
+    why: Cancer is ruled by the Moon, which Mercury treats as an enemy in Jyotish, so many astrologers caution Cancer ascendants against emerald.
+
+identify:
+  common_fakes:
+    - Green glass
+    - Lab-grown (hydrothermal or flux) emerald sold as natural
+    - Doublets and triplets with a green layer
+    - Dyed green quartz or dyed pale beryl
+    - Heavily resin-filled low-grade emerald sold as fine
+  tests:
+    - id: magnification
+      weight: 3
+      how: Examine the stone with a 10x loupe, looking through the table and the sides.
+      real: A natural "garden" (jardin) of fractures, crystals and three-phase inclusions; most natural stones are visibly included.
+      fake: Round gas bubbles mean glass. Wispy veils or chevron-like growth lines suggest lab-grown emerald.
+    - id: light
+      weight: 2
+      how: Look at the stone from the side, along the girdle, under a bright light.
+      real: Colour runs through the whole stone.
+      fake: A visible join line or a colourless crown over a green layer reveals a doublet or triplet.
+    - id: certificate
+      weight: 3
+      how: For valuable stones, ask for a report from GIA or another recognised gem lab.
+      real: The report states natural emerald and the degree of clarity enhancement.
+      fake: No report, or a report stating synthetic or glass.
+    - id: color
+      weight: 1
+      how: View the stone through a Chelsea colour filter, if available.
+      real: Many emeralds, especially Colombian, appear pink to red through the filter.
+      fake: Glass usually stays green. Iron-rich natural emeralds may also stay green, so this is only a hint.
+    - id: temperature
+      weight: 1
+      how: Hold the stone against your lip for ten seconds.
+      real: Feels cold and warms slowly.
+      fake: Glass and plastic warm up quickly.
+    - id: price
+      weight: 2
+      how: Compare the price with size, colour and clarity.
+      real: Clean, vivid natural emeralds are expensive, and even included ones cost well above glass.
+      fake: A large, clean, vivid green stone at a low price is likely glass, a doublet or lab-grown.
+
+pairs:
+  good:
+    - slug: diamond
+      why: Venus is a friend of Mercury in Jyotish, so diamond and emerald are a traditional compatible pairing.
+    - slug: rose-quartz
+      why: A classic heart-chakra love pairing in crystal tradition.
+    - slug: jade
+      why: Two green prosperity stones in tradition; jade is tough enough to sit beside emerald.
+    - slug: clear-quartz
+      why: Tradition uses clear quartz to amplify emerald's heart energy.
+    - slug: aquamarine
+      why: Both are beryl and share most care rules, though emerald needs gentler cleaning.
+    - slug: peridot
+      why: Peridot is a traditional affordable substitute for emerald and shares its green, heart-centred symbolism.
+  avoid: []
+
+price:
+  tier: premium
+  note: Commercial included emeralds are moderately priced, while fine, lightly treated stones with vivid colour command very high prices per carat.
+
+names:
+  hi: Panna (पन्ना)
+  bn: Panna (পান্না)
+  es: Esmeralda
+  ta: Maragatham (மரகதம்)
+  te: Pachcha (పచ్చ)
+  mr: Pachu (पाचू)
+
+sources:
+  - https://www.mindat.org/min-1375.html
+  - https://www.gia.edu/emerald
+  - https://www.gemsociety.org/article/emerald-jewelry-and-gemstone-information/
+  - https://en.wikipedia.org/wiki/Navratna

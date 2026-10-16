@@ -1,0 +1,120 @@
+slug: larvikite
+name: Larvikite
+aka: [blue pearl granite, norwegian moonstone, black labradorite, emerald pearl]
+kind: rock
+species: null
+family: feldspar-rich igneous rock (monzonite / syenite)
+formula: null
+crystal_system: null
+mohs: [6, 6.5]
+colors: [gray, blue-gray, black, silver sheen]
+origins: [Norway]
+summary: >-
+  An igneous rock from Larvik, Norway, made mostly of feldspar crystals that
+  flash silvery blue. Durable enough for kitchen counters and facades, it is
+  safe to wash and does not fade, but skip salt.
+
+safety:
+  water:
+    verdict: safe
+    reason: Larvikite is a dense, low-porosity rock used for outdoor cladding and countertops. Rinsing or soaking does no harm; dry it afterwards.
+  salt:
+    verdict: avoid
+    reason: Salt water can work into grain boundaries and crystallise there, and the small iron-bearing grains in the rock can show rust spots after salt exposure.
+  sun:
+    verdict: safe
+    reason: The flash is a structural light effect in the feldspar and the rock is used outdoors, so sunlight does not fade it.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and smooth when polished, so it is safe beside the bed or under a pillow.
+  wear:
+    verdict: daily
+    reason: At about Mohs 6 it handles normal wear. Feldspar grains can chip at edges with hard knocks.
+  toxicity:
+    level: none
+    reason: A feldspar-rich rock with minor pyroxene, amphibole, mica and iron oxides; non-toxic to handle. Dust from dry cutting should not be inhaled.
+  elixir: indirect
+
+tradition:
+  chakras: [root, third_eye]
+  elements: [earth, water]
+  planets: [saturn, moon]
+  vedic_planet: null
+  zodiac: [leo, sagittarius]
+  intentions: [grounding, protection, intuition, sleep, emotional-balance]
+  energy: grounding
+  birth_months: {}
+
+cautions:
+  - who: People who cleanse stones in salt water
+    why: Salt can lodge in grain boundaries and the rock's minor iron minerals can spot with rust. Use plain water or a dry method.
+    basis: physical
+  - who: Buyers paying labradorite or moonstone prices
+    why: Larvikite is often sold as "black labradorite" or "Norwegian moonstone". It is a rock, not either gem, and is usually cheaper.
+    basis: physical
+  - who: People wearing heavy bead bracelets
+    why: Larvikite is dense, so large-bead bracelets are heavy and can knock against hard surfaces and chip.
+    basis: physical
+  - who: People looking for an uplifting, energising stone
+    why: Tradition calls larvikite a grounding, protective stone for calm and dreamwork rather than stimulation.
+    basis: tradition
+
+identify:
+  common_fakes:
+    - Labradorite sold as larvikite
+    - Coated or dyed grey glass
+    - Resin with a metallic sheen
+  tests:
+    - id: light
+      weight: 3
+      how: Tilt the stone under a single light.
+      real: Many separate interlocking feldspar crystals flash silvery blue at different angles, set in darker grains.
+      fake: Coated glass shows a uniform film; labradorite flashes in broader single sheets of colour.
+    - id: magnification
+      weight: 2
+      how: Examine the surface with a 10x loupe.
+      real: A coarse, granular rock texture of large feldspar crystals with small black mineral grains between them.
+      fake: Bubbles or swirls (glass), or a coloured layer on the surface.
+    - id: weight
+      weight: 1
+      how: Compare it in your palm with a quartz bead of the same size.
+      real: Feels slightly heavier than quartz (specific gravity about 2.7 to 2.8).
+      fake: Resin feels much lighter.
+    - id: temperature
+      weight: 1
+      how: Hold it to your cheek for ten seconds.
+      real: Feels cool and warms slowly.
+      fake: Resin feels warm at once.
+    - id: acetone
+      weight: 1
+      how: Rub a hidden spot with a swab dipped in nail-polish remover.
+      real: Nothing comes off.
+      fake: A coating or dye comes away, or the surface feels tacky.
+
+pairs:
+  good:
+    - slug: labradorite
+      why: Both owe their flash to schiller feldspar; paired for intuition and protection.
+    - slug: black-tourmaline
+      why: Two protective, grounding stones in tradition.
+    - slug: smoky-quartz
+      why: A traditional grounding pairing.
+    - slug: moonstone
+      why: Paired in tradition for dreamwork and intuition.
+    - slug: black-moonstone
+      why: Similar dark sheen stones, used together for grounding and protection.
+    - slug: hematite
+      why: A traditional grounding pair. Keep hematite out of water and salt.
+  avoid: []
+
+price:
+  tier: budget
+  note: Larvikite beads, tumbles and palm stones are among the cheapest schiller stones. Large polished slabs with strong flash cost more.
+
+names:
+  es: Larvikita
+
+sources:
+  - https://www.mindat.org/min-39944.html
+  - https://www.mindat.org/min-48196.html
+  - https://geology.com/minerals/feldspar.shtml

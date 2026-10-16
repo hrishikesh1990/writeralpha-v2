@@ -1,0 +1,127 @@
+slug: blue-onyx
+name: Blue Onyx
+aka: [dyed blue onyx, blue chalcedony onyx]
+kind: treated
+species: Quartz
+family: chalcedony
+formula: SiO2
+crystal_system: trigonal
+mohs: [6.5, 7]
+colors: [blue, light blue, white]
+origins: [Brazil, China, India]
+summary: >-
+  Blue onyx is dyed. Most is banded agate or chalcedony coloured blue, and some
+  carvings sold as blue onyx are dyed banded calcite (onyx marble), which is much
+  softer. The dye can fade in sun and bleed in water, so keep it out of sunny
+  windows, long soaks and salt.
+
+safety:
+  water:
+    verdict: brief
+    reason: The chalcedony does not dissolve, but the blue dye can bleed in a long soak, and calcite versions dull in water. Rinse quickly and dry.
+  salt:
+    verdict: avoid
+    reason: The stone is porous enough to take up brine, which pulls dye out and leaves salt crystals in pores and cracks.
+  sun:
+    verdict: avoid
+    reason: Blue dyes in agate fade in direct sun, often unevenly. Keep blue onyx in indirect light and never sun-charge it.
+  sleep:
+    verdict: ok
+    reason: Non-toxic and hard, so it is physically safe in the bedroom.
+  wear:
+    verdict: care
+    reason: Dyed chalcedony is hard (Mohs 6.5 to 7) but perfume, sweat and acetone strip the dye. Calcite blue onyx is soft and scratches easily.
+  toxicity:
+    level: none
+    reason: The stone is inert for handling. The dyes are not food-safe, so it should not go directly into drinking water.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [water]
+  planets: []
+  vedic_planet: null
+  zodiac: [sagittarius, capricorn]
+  intentions: [communication, peace-calm, clarity, emotional-balance, protection]
+  energy: calming
+  birth_months: {}
+
+cautions:
+  - who: Buyers told blue onyx is a natural blue stone
+    why: Blue onyx is dyed. That is normal for this material, but it should be sold as dyed, and it should not cost like a natural blue gem.
+    basis: physical
+  - who: People who display or charge stones in sunlight
+    why: The blue dye fades in direct sun. Use indirect light, sound or smoke instead.
+    basis: physical
+  - who: Anyone soaking stones or showering in jewellery
+    why: Dyed blue can bleed into water and stain fabric, and soap and heat speed this up.
+    basis: physical
+  - who: Anyone cleansing in salt water
+    why: Salt pulls dye out and crystallises in the porous stone.
+    basis: physical
+  - who: Owners of blue onyx carvings, bowls or bookends
+    why: Large carved pieces are often dyed calcite, which is Mohs 3 and etched by vinegar, lemon juice and many cleaners. Clean them with a dry cloth only.
+    basis: physical
+  - who: People looking for an energising stone
+    why: Tradition treats blue stones like blue onyx as cooling and calming rather than stimulating.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Dyed blue agate or chalcedony (this is what most blue onyx is)
+    - Dyed banded calcite (onyx marble) sold as blue onyx
+    - Blue glass with painted bands
+    - Dyed howlite or magnesite
+  tests:
+    - id: acetone
+      weight: 2
+      how: Rub a hidden spot or drill hole with a cotton swab and nail-polish remover.
+      real: Even genuine blue onyx is dyed, but well-fixed dye usually leaves only a faint trace.
+      fake: Strong blue on the swab means a weak surface dye that will fade and bleed quickly.
+    - id: hardness
+      weight: 3
+      how: Try to mark a hidden spot with a steel knife.
+      real: Dyed chalcedony is not marked by steel.
+      fake: Calcite onyx, howlite and magnesite are scratched easily.
+    - id: magnification
+      weight: 2
+      how: Examine the bands and drill holes with a 10x loupe.
+      real: Fine continuous agate bands with dye concentrated in the more porous layers.
+      fake: Bubbles mean glass; coarse sugary crystals mean calcite; grey veins in a chalky body mean howlite.
+    - id: color
+      weight: 1
+      how: Look at the colour along cracks and band edges.
+      real: Blue strongest in some bands and paler in others, following the agate structure.
+      fake: Blue pooled in cracks or painted over the surface.
+    - id: light
+      weight: 1
+      how: Shine a torch through a thin edge.
+      real: Bands glow translucent blue to different degrees.
+      fake: Howlite stays opaque; glass glows evenly.
+
+pairs:
+  good:
+    - slug: blue-lace-agate
+      why: Two blue throat stones in tradition. Both fade in sun, so they share care.
+    - slug: sodalite
+      why: A traditional pairing for calm, clear communication.
+    - slug: clear-quartz
+      why: Tradition says clear quartz amplifies blue onyx's calm.
+    - slug: selenite
+      why: Selenite cleanses without water, salt or sun, which suits dyed stones. Keep the selenite dry.
+  avoid: []
+
+price:
+  tier: budget
+  note: Blue onyx beads, cabochons and slices are inexpensive dyed material. Carvings in dyed calcite are cheap for their size. High prices for "natural blue onyx" are not justified.
+
+names:
+  es: Ónix azul
+
+sources:
+  - https://www.mindat.org/min-2999.html
+  - https://www.mindat.org/article.php/170/Historic+Methods+of+Artificially+Coloring+Agates
+  - https://www.gemsociety.org/article/black-onyx-jewelry-and-gemstone-information/
+  - https://www.gemsociety.org/article/common-gemstone-treatments-cheat-sheet-2/

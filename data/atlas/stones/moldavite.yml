@@ -1,0 +1,133 @@
+slug: moldavite
+name: Moldavite
+aka: [vltavin, tektite, bouteille stone]
+kind: mineraloid
+species: null
+family: tektite
+formula: null
+crystal_system: amorphous
+mohs: [5, 5.5]
+colors: [green, olive green, bottle green, brownish green]
+origins: [Czech Republic, Austria, Germany]
+summary: >-
+  A green natural glass formed about 15 million years ago when a meteorite
+  impact in Bavaria melted local rock and threw it across Central Europe. It is
+  earthly rock melted by an impact, not a meteorite. The market is flooded with
+  green glass fakes; real moldavite has bubbles, swirls and often lechatelierite.
+
+safety:
+  water:
+    verdict: safe
+    reason: Moldavite is non-porous glass and does not dissolve or react with water, so rinsing is fine. Use room-temperature water and dry its deep pits well.
+  salt:
+    verdict: safe
+    reason: Salt does not attack glass and salt crystals are too soft to scratch it. Salt lodges in the deep sculpted pits, so rinse thoroughly, and keep brine off silver or wire-wrapped settings.
+  sun:
+    verdict: safe
+    reason: Its green comes from iron in the glass, which sunlight does not fade. Avoid fierce heat sources and sudden temperature changes, which can crack natural glass.
+  sleep:
+    verdict: caution
+    reason: Physically safe on a nightstand. Crystal tradition calls moldavite one of the most intense stones and many users report vivid dreams or restlessness, so most keep it out of the bed.
+  wear:
+    verdict: care
+    reason: At Mohs 5 to 5.5 and brittle, it scratches and chips easily. Pendants and earrings in protective settings last; rings and bracelets suffer.
+  toxicity:
+    level: none
+    reason: Moldavite is silica-rich natural glass and safe to handle. Sharp fragments are the only physical hazard.
+  elixir: indirect
+
+tradition:
+  chakras: [heart, third_eye, crown]
+  elements: [fire]
+  planets: [pluto, uranus]
+  vedic_planet: null
+  zodiac: [scorpio, sagittarius, aquarius]
+  intentions: [transformation, spiritual-growth, intuition, energy, healing]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Anyone buying moldavite online or at a low price
+    why: Much moldavite sold online is green man-made glass. A large, bright, flawless faceted stone, or any piece with no visible bubbles, is very likely fake. Buy from specialists and check the identify tests.
+    basis: physical
+  - who: People who want a ring or bracelet for daily wear
+    why: Moldavite is soft for a gem (Mohs 5 to 5.5) and brittle. It scratches against harder stones and chips if knocked. Choose a pendant in a protective setting.
+    basis: physical
+  - who: Anyone cleaning moldavite with steam, ultrasonic cleaners or hot water
+    why: Its many inclusions and bubbles make it sensitive to vibration and thermal shock. Clean it with lukewarm water and a soft brush.
+    basis: physical
+  - who: People new to crystals or sensitive to strong stones
+    why: Crystal tradition describes a "moldavite flush" of heat, dizziness or emotion when first holding it. Many practitioners suggest short sessions and pairing it with a grounding stone.
+    basis: tradition
+  - who: Light sleepers
+    why: Tradition says moldavite in the bedroom can bring vivid dreams or insomnia. Keep it in another room if that happens.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Bright green man-made glass, often faceted
+    - Moulded or acid-etched glass made to look like raw moldavite
+    - Green bottle glass
+    - Green resin
+    - Other natural green glass sold as moldavite
+  tests:
+    - id: inclusions
+      weight: 3
+      how: Examine the stone with a 10x loupe or microscope against a bright light.
+      real: Fine wire- or worm-like inclusions of lechatelierite (melted silica) are a hallmark of genuine moldavite. Not every piece shows them.
+      fake: Imitation glass lacks lechatelierite. Cheap fakes may look perfectly clean.
+    - id: bubbles
+      weight: 3
+      how: Look for gas bubbles and swirls with a loupe.
+      real: Real moldavite has bubbles, usually many and often stretched or elongated, plus wavy "heat haze" flow swirls.
+      fake: No bubbles at all is a strong warning sign. Fakes that do have bubbles tend to show only round ones and no flow swirls.
+    - id: shape
+      weight: 2
+      how: Examine the surface of raw pieces.
+      real: Natural sculpting with deep, sharp, irregular grooves and pits, different on every piece.
+      fake: Repeating patterns, rounded shallow grooves, mould seams, or a smooth, uniform surface.
+    - id: color
+      weight: 2
+      how: Hold the piece up to daylight.
+      real: Bottle green to olive or brownish green, slightly uneven, never neon.
+      fake: Bright emerald or lime green, perfectly even, with high sparkle.
+    - id: weight
+      weight: 1
+      how: Compare with a man-made glass piece of the same size, or have a gemmologist measure specific gravity.
+      real: Specific gravity about 2.32 to 2.40, lighter than most man-made glass.
+      fake: Common and lead glasses are usually heavier.
+    - id: price
+      weight: 1
+      how: Compare the price per gram with established moldavite dealers.
+      real: Genuine moldavite is priced by the gram and large, well-sculpted pieces are expensive.
+      fake: Large pieces or faceted stones at bargain prices are almost always glass.
+
+pairs:
+  good:
+    - slug: black-tourmaline
+      why: Tradition uses black tourmaline to ground moldavite's intensity. Tourmaline is harder, so store them apart.
+    - slug: smoky-quartz
+      why: A grounding partner in tradition for moldavite's strong energy. Keep them separate to avoid scratches.
+    - slug: clear-quartz
+      why: Tradition pairs the two to amplify intention. Quartz will scratch moldavite, so store them apart.
+    - slug: labradorite
+      why: Two transformation stones in tradition, both used for intuition.
+    - slug: hematite
+      why: A grounding pairing in tradition. Hematite must stay dry, so cleanse them separately.
+  avoid: []
+
+price:
+  tier: mid
+  note: Genuine moldavite is sold by the gram, and prices have risen sharply with demand. Small rough pieces are moderately priced; large, well-sculpted pieces and faceted stones cost much more.
+
+names:
+  es: Moldavita
+
+sources:
+  - https://www.mindat.org/min-10860.html
+  - https://www.mindat.org/min-10859.html
+  - https://geology.com/gemstones/moldavite/
+  - https://www.gemsociety.org/article/moldavite-jewelry-and-gemstone-information/
+  - https://www.gemsociety.org/article/tektite-jewelry-and-gemstone-information/

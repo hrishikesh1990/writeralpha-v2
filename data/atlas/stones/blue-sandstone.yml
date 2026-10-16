@@ -1,0 +1,119 @@
+slug: blue-sandstone
+name: Blue Sandstone
+aka: [blue goldstone, blue aventurine glass, galaxy stone, stellaria]
+kind: glass
+species: null
+family: goldstone (aventurine glass)
+formula: null
+crystal_system: amorphous
+mohs: [5.5, 6]
+colors: [dark blue, navy, midnight blue]
+origins: [China, India, Italy]
+summary: >-
+  Not sandstone and not a natural stone. Blue sandstone is blue goldstone, a
+  man-made glass coloured with cobalt and filled with tiny metallic crystals,
+  mainly copper, that sparkle like stars. Safe to handle and fine in plain
+  water; it chips like glass and salt can tarnish surface sparkles.
+
+safety:
+  water:
+    verdict: safe
+    reason: Glass is non-porous and does not dissolve, so rinsing or a short soak is fine. Dry it afterwards, especially if it is strung on elastic or set in metal.
+  salt:
+    verdict: avoid
+    reason: Salt water can tarnish the copper crystals exposed at the polished surface, dulling the sparkle, and it corrodes metal settings and wire wraps.
+  sun:
+    verdict: safe
+    reason: Cobalt blue glass does not fade, and the metal crystals are sealed inside. Sunlight does no harm.
+  sleep:
+    verdict: ok
+    reason: Safe on a nightstand or under a pillow. It is smooth glass with no toxic surface.
+  wear:
+    verdict: care
+    reason: At Mohs 5.5 to 6 it scratches against harder stones and grit, and a hard knock chips it like any glass. Good for pendants and beads with some care.
+  toxicity:
+    level: low
+    reason: The cobalt and copper are locked inside the glass and are harmless to handle. As with any coloured glass, do not soak it in drinking water or grind it.
+  elixir: indirect
+
+tradition:
+  chakras: [throat, third_eye]
+  elements: [air]
+  planets: []
+  vedic_planet: null
+  zodiac: [sagittarius]
+  intentions: [confidence, motivation, intuition, career, communication]
+  energy: energizing
+  birth_months: {}
+
+cautions:
+  - who: Buyers told blue sandstone is a natural or rare stone
+    why: It is man-made glass, produced in quantity. It should be cheap, and it is not a form of sandstone, lapis lazuli or sodalite.
+    basis: physical
+  - who: Anyone cleansing in salt water or swimming in the sea with it
+    why: Brine can tarnish copper sparkles at the surface and corrodes the metal settings blue sandstone is often set in.
+    basis: physical
+  - who: People wanting a tough everyday ring
+    why: Glass chips and scratches. Remove it for sport, gardening and heavy work.
+    basis: physical
+  - who: Anyone making a crystal elixir
+    why: Coloured glass is not meant to sit in drinking water. Use the indirect method, with the stone in a sealed glass inside the water.
+    basis: physical
+  - who: People who only work with natural stones
+    why: Some crystal practitioners hold that only earth-formed stones carry energy, and so do not use goldstone. Others value it as a stone of ambition.
+    basis: tradition
+
+zodiac_cautions: []
+
+identify:
+  common_fakes:
+    - Lapis lazuli or sodalite confused with it (or the reverse)
+    - Blue resin with glitter
+    - Plain blue glass with painted sparkles
+  tests:
+    - id: magnification
+      weight: 3
+      how: Look at the sparkles with a 10x loupe.
+      real: Thousands of tiny, flat, sharply shaped metallic crystals evenly spread through translucent blue glass, at different depths.
+      fake: Glitter flakes of uneven size, rainbow-coloured glitter, or sparkle that sits only on the surface means resin or paint.
+    - id: inclusions
+      weight: 2
+      how: Compare with natural blue stones.
+      real: Even sparkle through a uniform, deep blue body.
+      fake: Lapis shows white calcite patches and irregular brassy pyrite; sodalite shows white veins and no sparkle.
+    - id: temperature
+      weight: 1
+      how: Hold it against your cheek next to a plastic bead.
+      real: Feels cool like glass.
+      fake: Resin warms quickly.
+    - id: hardness
+      weight: 1
+      how: Gently try to mark a hidden spot with a steel knife.
+      real: Glass resists a knife or takes only a faint line.
+      fake: Resin and plastic scratch easily.
+    - id: price
+      weight: 1
+      how: Compare the price with other glass beads.
+      real: Blue goldstone is inexpensive.
+      fake: A high price for "natural" blue sandstone means the buyer is being misled, not that the material is better.
+
+pairs:
+  good:
+    - slug: green-goldstone
+      why: The same aventurine glass coloured green, with identical care.
+    - slug: lapis-lazuli
+      why: Tradition pairs two night-sky blue stones for intuition. Lapis is softer and avoids water, so cleanse them separately.
+    - slug: clear-quartz
+      why: Tradition uses clear quartz to amplify goldstone's ambition. Quartz will scratch the glass, so store them apart.
+    - slug: sodalite
+      why: Two blue throat-chakra stones in tradition for confident speech.
+  avoid: []
+
+price:
+  tier: budget
+  note: Blue goldstone beads, tumbled stones and carvings are cheap and widely available. Price depends on size, workmanship and setting, not rarity.
+
+sources:
+  - https://www.mindat.org/article.php/112/%22Goldstone%22+-+Aventurine+Glass
+  - https://geology.com/gemstones/goldstone/
+  - https://www.gemsociety.org/article/gemstone-toxicity-table/
