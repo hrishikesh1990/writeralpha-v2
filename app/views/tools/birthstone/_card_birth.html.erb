@@ -1,0 +1,33 @@
+<%# locals: bm (BirthMonth), lang, t %>
+<% modern_keys = bm.modern.map(&:key) %>
+<% trad_keys = bm.traditional.map(&:key) %>
+<% rows = (bm.modern + bm.traditional).uniq(&:key).sort_by { |s| [(modern_keys.include?(s.key) && trad_keys.include?(s.key)) ? 0 : 1, modern_keys.index(s.key) || 99] } %>
+<article class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5" aria-labelledby="bs-birth-h" data-screen-label="Birthstone card">
+  <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Birth-month lists</div>
+  <h2 id="bs-birth-h" class="mt-2 text-[21px] font-semibold text-ink"><%= t.(:your_birthstone) %></h2>
+  <p class="mt-1 text-[13px] font-light text-muted"><%= t.(:born_in, month: BirthstoneCalculator.month_name(bm.month, lang)) %></p>
+
+  <ul class="mt-5">
+    <% rows.each do |ref| %>
+      <% badges = [] %>
+      <% badges << [BirthstoneCalculator::Labels.t(:modern, lang), "bg-violet/10 text-violet-deep"] if modern_keys.include?(ref.key) %>
+      <% badges << [BirthstoneCalculator::Labels.t(:traditional, lang), "bg-sky/12 text-sky-text"] if trad_keys.include?(ref.key) %>
+      <%= render "tools/birthstone/stone_row", ref: ref, lang: lang, badges: badges %>
+    <% end %>
+  </ul>
+
+  <% if bm.also.any? %>
+    <div class="mt-4 rounded-[14px] bg-violet/5 px-4 py-3">
+      <div class="mb-1 text-[11.5px] font-medium text-ink"><%= t.(:also_seen) %></div>
+      <ul>
+        <% bm.also.each do |ref| %><%= render "tools/birthstone/stone_row", ref: ref, lang: lang, tile: false %><% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <dl class="mt-5 grid gap-1 text-[11.5px] font-light leading-[1.6] text-faint">
+    <div><dt class="inline font-medium text-muted"><%= t.(:modern) %>:</dt> <dd class="inline"><%= t.(:modern_by) %></dd></div>
+    <div><dt class="inline font-medium text-muted"><%= t.(:traditional) %>:</dt> <dd class="inline"><%= t.(:traditional_by) %></dd></div>
+  </dl>
+  <a href="<%= gemstones_by_birth_month_path(value: bm.month) %>" class="mt-4 inline-block text-[12.5px] font-medium">All <%= BirthstoneCalculator.month_name(bm.month) %> birthstones →</a>
+</article>

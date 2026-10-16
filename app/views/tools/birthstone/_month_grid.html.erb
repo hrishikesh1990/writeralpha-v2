@@ -1,0 +1,23 @@
+<%# Twelve months, always rendered and crawlable. locals: lang, catalog %>
+<% calc = BirthstoneCalculator.new(lang: lang, catalog: catalog) %>
+<section id="months" class="px-5 pb-4 pt-9 sm:px-11" data-screen-label="Birthstones by month">
+  <div class="mb-[18px] flex flex-wrap items-baseline justify-between gap-2">
+    <h2 class="text-[21px] font-semibold text-ink"><%= lang == "en" ? BirthstoneCalculator::Labels.t(:all_months) : tag.span(BirthstoneCalculator::Labels.t(:all_months, lang), lang: lang) %></h2>
+    <span class="text-[12.5px] font-light text-muted">Modern and traditional lists</span>
+  </div>
+  <div class="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
+    <% BirthstoneCalculator::MONTHS.each do |month| %>
+      <% bm = calc.month_stones(month) %>
+      <a href="<%= gemstones_by_birth_month_path(value: month) %>" class="group flex flex-col rounded-[16px] border border-violet/10 bg-white/80 px-[18px] py-4 card-transition hover:border-violet/35 hover:shadow-guide-hover">
+        <span class="flex items-baseline justify-between">
+          <span class="text-[15px] font-semibold text-ink"><%= lang == "en" ? BirthstoneCalculator.month_name(month) : tag.span(BirthstoneCalculator.month_name(month, lang), lang: lang) %></span>
+          <span class="text-arrow" aria-hidden="true">→</span>
+        </span>
+        <span class="mt-2 text-[12.5px] font-light leading-[1.6] text-ui"><%= safe_join(bm.modern.map { |s| render("tools/birthstone/name", ref: s, lang: lang, link: false) }, ", ") %></span>
+        <% if bm.traditional.map(&:key).sort != bm.modern.map(&:key).sort %>
+          <span class="mt-1 text-[11.5px] font-light leading-[1.6] text-muted"><%= BirthstoneCalculator::Labels.t(:traditional, lang).then { |l| lang == "en" ? l : tag.span(l, lang: lang) } %>: <%= safe_join(bm.traditional.map { |s| render("tools/birthstone/name", ref: s, lang: lang, link: false) }, ", ") %></span>
+        <% end %>
+      </a>
+    <% end %>
+  </div>
+</section>

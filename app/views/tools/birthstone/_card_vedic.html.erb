@@ -1,0 +1,137 @@
+<%# locals: v (Vedic), lang, t, dob, options %>
+<% rn = v.ratna %>
+<% pair_of = ->(sign) { BirthstoneCalculator.sign_pair(sign, lang) } %>
+<% script_or_en = ->(pair, en) { lang == "en" ? en : (pair&.last || en) } %>
+<% big = script_or_en.(rn.pair(lang), rn.name) %>
+<% rashi_row = options.find { |o| o[:sign] == v.rashi } %>
+<% g = ->(names) { lang == "en" ? names[:en] : (names[lang.to_sym]&.last || names[:en]) } %>
+<% lord_name = g.(v.lord_names) %>
+<% ratna_name = script_or_en.(rn.pair(lang), rn.name) %>
+<article id="vedic" class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 lg:col-span-2" aria-labelledby="bs-vedic-h" data-screen-label="Vedic card">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Jyotish (Vedic astrology) · Navaratna</div>
+    <% if v.estimated? %>
+      <%= verdict_badge(nil, label: BirthstoneCalculator::Labels.t(:estimate, lang), tone: :warn) %>
+    <% else %>
+      <%= verdict_badge(nil, label: BirthstoneCalculator::Labels.t(:your_choice, lang), tone: :good) %>
+    <% end %>
+  </div>
+  <h2 id="bs-vedic-h" class="mt-2 text-[21px] font-semibold text-ink"><%= t.(:your_vedic) %></h2>
+
+  <div class="mt-5 grid gap-5 lg:grid-cols-[1.05fr_1fr]">
+    <!-- The ratna -->
+    <div class="relative overflow-hidden rounded-[18px] bg-ink/97 px-6 py-6">
+      <div class="glow-violet -right-[30px] -top-10 h-[160px] w-[200px] blur-[16px]" aria-hidden="true"></div>
+      <div class="relative font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">Ratna of <%= rn.graha_en %></div>
+      <div class="relative mt-3 text-[34px] font-semibold leading-[1.2] text-white sm:text-[40px]"><%= lang == "en" ? big : tag.span(big, lang: lang) %></div>
+      <div class="relative mt-3 flex flex-col gap-[6px] text-[13.5px] font-light text-lavender">
+        <% if lang != "en" %><div><%= rn.name %></div><% end %>
+        <% if lang != "hi" %><div class="flex items-baseline gap-2"><span lang="hi" class="text-[11px] text-lavender/70">हिन्दी</span> <span><%= render "tools/birthstone/pair", pair: rn.hi, code: "hi" %></span></div><% end %>
+        <% if lang != "bn" %><div class="flex items-baseline gap-2"><span lang="bn" class="text-[11px] text-lavender/70">বাংলা</span> <span><%= render "tools/birthstone/pair", pair: rn.bn, code: "bn" %></span></div><% end %>
+      </div>
+      <p class="relative mt-5 border-t border-white/12 pt-4 text-[13px] font-light leading-[1.7] text-white/85"><%= t.(:chain, rashi: script_or_en.(pair_of.(v.rashi), v.rashi.capitalize), lord: lord_name, ratna: ratna_name) %></p>
+      <% if rn.live? %>
+        <p class="relative mt-4 text-[12.5px] font-light leading-[1.7] text-white/70 "><%= rn.entry.summary %></p>
+        <a href="<%= rn.path %>" class="relative mt-3 inline-block text-[12.5px] font-medium text-lavender hover:text-white"><%= t.(:read_more, stone: rn.entry.name) %> →</a>
+      <% end %>
+    </div>
+
+    <!-- Rashi, lord, honesty note -->
+    <div class="flex flex-col gap-4">
+      <dl class="grid grid-cols-2 gap-[10px]">
+        <div class="rounded-[14px] border border-violet/10 bg-white/80 px-[14px] py-3">
+          <dt class="font-mono text-[8.5px] uppercase tracking-[0.16em] text-faint"><%= t.(:rashi) %></dt>
+          <dd class="mt-[5px] text-[14px] font-medium leading-[1.4] text-ink">
+            <%= lang == "en" ? v.rashi.capitalize : tag.span(pair_of.(v.rashi).last || v.rashi.capitalize, lang: lang) %>
+            <span class="mt-[2px] block text-[11.5px] font-light text-muted"><%= render "tools/birthstone/pair_both", hi: BirthstoneCalculator.split_pair(Atlas::Vedic::RASHI[v.rashi][:hi]), bn: BirthstoneCalculator.split_pair(Atlas::Vedic::RASHI[v.rashi][:bn]) %></span>
+          </dd>
+        </div>
+        <div class="rounded-[14px] border border-violet/10 bg-white/80 px-[14px] py-3">
+          <dt class="font-mono text-[8.5px] uppercase tracking-[0.16em] text-faint"><%= t.(:rashi_lord) %></dt>
+          <dd class="mt-[5px] text-[14px] font-medium leading-[1.4] text-ink">
+            <%= lang == "en" ? lord_name : tag.span(lord_name, lang: lang) %>
+            <span class="mt-[2px] block text-[11.5px] font-light text-muted"><%= render "tools/birthstone/pair_both", hi: v.lord_names[:hi], bn: v.lord_names[:bn] %></span>
+          </dd>
+        </div>
+      </dl>
+
+      <% if v.estimated? %>
+        <div class="rounded-[14px] border border-amber-600/25 bg-amber-500/8 px-4 py-3 text-[12.5px] leading-[1.7] text-amber-900">
+          <p><%= t.(:approx_note) %></p>
+          <% if v.cusp && v.cusp_with %>
+            <p class="mt-2"><%= t.(:cusp, a: script_or_en.(pair_of.(v.rashi), v.rashi.capitalize), b: script_or_en.(pair_of.(v.cusp_with), v.cusp_with.capitalize)) %></p>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="rounded-[14px] bg-violet/5 px-4 py-3 text-[12.5px] leading-[1.7] text-ui"><%= t.(:selected_note) %></p>
+      <% end %>
+
+      <%= form_with url: tools_birthstone_path(anchor: "vedic"), method: :get, class: "flex flex-wrap items-end gap-2",
+                    data: { turbo_frame: "birthstone-results", turbo_action: "advance", action: "change->birthstone-form#submitNow" } do %>
+        <% if dob.present? %><%= hidden_field_tag :dob, dob, id: nil %><% end %>
+        <% unless lang == "en" %><%= hidden_field_tag :lang, lang, id: nil %><% end %>
+        <div class="min-w-[180px] flex-1">
+          <label for="bs-rashi-card" class="mb-[6px] block text-[12px] font-medium text-ink"><%= t.(:rashi_select) %></label>
+          <%= render "tools/birthstone/rashi_select", id: "bs-rashi-card", selected: (v.estimated? ? nil : v.rashi), options: options, lang: lang, unknown_label: BirthstoneCalculator::Labels.t(:rashi_unknown, lang) %>
+        </div>
+        <button type="submit" class="rounded-full bg-ink px-5 py-[12px] text-[12.5px] font-medium text-white card-transition hover:bg-violet-deeper hover:text-white"><%= t.(:submit) %></button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mt-6 grid gap-6 border-t border-violet/8 pt-5 lg:grid-cols-2">
+    <!-- Substitutes -->
+    <div>
+      <h3 class="text-[14px] font-semibold text-ink"><%= t.(:substitutes) %></h3>
+      <% if rn.substitutes.any? %>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <% rn.substitutes.each do |s| %>
+            <% chip = "inline-flex items-center rounded-full border border-violet/12 bg-white/80 px-[13px] py-[7px] text-[12.5px] leading-none text-ink" %>
+            <% if s.live? %>
+              <a href="<%= s.path %>" class="<%= chip %> card-transition hover:border-violet/40 hover:text-violet-deep"><span><%= render "tools/birthstone/name", ref: s, lang: lang, link: false %></span></a>
+            <% else %>
+              <span class="<%= chip %> text-muted"><span><%= render "tools/birthstone/name", ref: s, lang: lang, link: false %></span></span>
+            <% end %>
+          <% end %>
+        </div>
+        <p class="mt-3 text-[12px] font-light leading-[1.65] text-muted">Upratna are the gems that Jyotish texts and jewellers treat as lower-cost alternatives. Tradition holds them to be milder than the main ratna.</p>
+      <% else %>
+        <p class="mt-3 text-[12.5px] font-light text-muted">No recognised substitutes are listed for this ratna.</p>
+      <% end %>
+    </div>
+
+    <!-- Avoid -->
+    <div>
+      <h3 class="text-[14px] font-semibold text-ink"><%= t.(:avoid) %></h3>
+      <% if v.avoid.any? %>
+        <ul class="mt-3 flex flex-col gap-3">
+          <% v.avoid.each do |a| %>
+            <% an = a.ratna %>
+            <li class="rounded-[14px] bg-rose-500/5 px-4 py-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[14px] font-medium text-ink"><%= lang == "en" ? an.name : tag.span(an.pair(lang)&.last || an.name, lang: lang) %><% if lang != "en" %> <span class="text-[11.5px] font-light text-faint"><%= an.name %></span><% end %></span>
+                <%= verdict_badge(nil, label: "Tradition advises against", tone: :bad) %>
+              </div>
+              <p class="mt-[6px] text-[12.5px] font-light leading-[1.7] text-ui"><%= t.(:enemy_reason, lord: lord_name, enemy: g.(a.graha_names), ratna: ratna_name) %></p>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-3 text-[12.5px] font-light leading-[1.7] text-ui"><%= t.(:no_enemies) %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Cautions -->
+  <div class="mt-6 rounded-[16px] bg-violet/5 px-5 py-4">
+    <h3 class="text-[14px] font-semibold text-ink"><%= t.(:caution_title) %></h3>
+    <ul class="mt-3 flex flex-col gap-[10px]">
+      <% v.cautions.each do |c| %>
+        <li class="flex gap-3 text-[12.5px] font-light leading-[1.7] text-ui">
+          <span class="mt-[7px] size-[5px] flex-none rounded-full bg-violet/50" aria-hidden="true"></span>
+          <span><%= c == :malefic ? t.(:caution_malefic, ratna: ratna_name, graha: lord_name) : t.(:"caution_#{c}") %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</article>

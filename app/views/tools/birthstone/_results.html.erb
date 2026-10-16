@@ -1,0 +1,32 @@
+<%# locals: calc (BirthstoneCalculator), lang, dob, options %>
+<% t = ->(key, **vars) { s = BirthstoneCalculator::Labels.t(key, lang, **vars); lang != "en" && BirthstoneCalculator::Labels.has?(key, lang) ? tag.span(s, lang: lang) : s } %>
+<% r = calc.result %>
+<% if r.nil? %>
+  <div class="rounded-[18px] border border-rose-500/25 bg-rose-500/6 px-5 py-4 text-[13.5px] leading-[1.6] text-rose-700" role="alert">
+    <%= calc.error || "Enter your date of birth, or choose your rashi, to see your stones." %>
+  </div>
+<% else %>
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3" data-screen-label="Result summary">
+    <p class="text-[13px] font-light text-muted">
+      <% if r.rashi_only? %>
+        <%= t.(:only_rashi) %>
+      <% else %>
+        <span class="font-medium text-ink"><%= BirthstoneCalculator.weekday_name(r.weekday.wday, lang).then { |d| lang == "en" ? d : tag.span(d, lang: lang) } %>, <%= r.date.day %> <%= BirthstoneCalculator.month_name(r.birth_month.month, lang).then { |m| lang == "en" ? m : tag.span(m, lang: lang) } %> <%= r.date.year %></span>
+      <% end %>
+    </p>
+    <button type="button" data-action="birthstone-form#copyLink" data-birthstone-form-target="copy" data-copied-label="<%= BirthstoneCalculator::Labels.t(:copied, lang) %>"
+            class="rounded-full border border-violet/15 bg-white/80 px-4 py-[8px] text-[12px] font-medium text-violet-deep card-transition hover:border-violet/35 hover:text-violet-deeper"><%= BirthstoneCalculator::Labels.t(:copy_link, lang) %></button>
+  </div>
+
+  <div class="grid items-start gap-[18px] lg:grid-cols-2">
+    <% if r.birth_month %><%= render "tools/birthstone/card_birth", bm: r.birth_month, lang: lang, t: t %><% end %>
+    <% if r.western %><%= render "tools/birthstone/card_zodiac", w: r.western, lang: lang, t: t, catalog_size: calc.catalog.size %><% end %>
+    <%= render "tools/birthstone/card_vedic", v: r.vedic, lang: lang, t: t, dob: (r.date&.iso8601 || ""), options: options %>
+    <% if r.weekday %><%= render "tools/birthstone/card_weekday", wd: r.weekday, lang: lang, t: t %><% end %>
+  </div>
+
+  <%= tradition_note %>
+  <% if lang != "en" %>
+    <p class="mt-2 text-[12px] font-light leading-[1.7] text-faint"><span lang="<%= lang %>"><%= BirthstoneCalculator::Labels.t(:tradition_short, lang) %></span></p>
+  <% end %>
+<% end %>

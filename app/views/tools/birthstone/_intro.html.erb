@@ -1,0 +1,19 @@
+<%# Shown before any date is entered: what you will get. locals: lang %>
+<% t = ->(key, **vars) { s = BirthstoneCalculator::Labels.t(key, lang, **vars); lang != "en" && BirthstoneCalculator::Labels.has?(key, lang) ? tag.span(s, lang: lang) : s } %>
+<div class="grid gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
+  <% [
+    ["01", :your_birthstone, "Birth-month lists", "Modern (AGTA and Jewelers of America) and traditional (pre-1912) stones for your month."],
+    ["02", :your_zodiac, "Western astrology", "Your Sun sign and the stones that tradition assigns to it, best fits first."],
+    ["03", :your_vedic, "Jyotish", "Your rashi, its ruling graha and the Navaratna stone, with substitutes and the stones tradition advises against."],
+    ["04", :your_weekday, "Weekday tradition", "The planet that rules the day you were born, and its gem."]
+  ].each do |num, key, eyebrow, text| %>
+    <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+      <div class="flex items-center justify-between">
+        <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= eyebrow %></span>
+        <span class="font-mono text-[11px] text-lavender" aria-hidden="true"><%= num %></span>
+      </div>
+      <h2 class="mt-3 text-[16px] font-semibold leading-[1.3] text-ink"><%= t.(key) %></h2>
+      <p class="mt-2 text-[12.5px] font-light leading-[1.7] text-ui"><%= text %></p>
+    </div>
+  <% end %>
+</div>

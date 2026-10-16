@@ -1,0 +1,1 @@
+<%# locals: pair ([roman, script]), code ("hi" or "bn"). Renders: Manik (माणिक) with the script tagged for its language. %><%= pair[0] %><% if pair[1] %> <span lang="<%= code %>">(<%= pair[1] %>)</span><% end %>

@@ -1,0 +1,5 @@
+<%# locals: ref (BirthstoneCalculator::StoneRef), lang, link (default true) %>
+<% link = true if local_assigns[:link].nil? %>
+<% script = ref.script(lang) %>
+<% inner = script ? safe_join([tag.span(script, lang: lang), " ", tag.span(ref.name, class: "text-[0.78em] font-light text-faint")]) : ref.name %>
+<%= link && ref.live? ? link_to(inner, ref.path, class: "text-inherit hover:text-violet-deep") : inner %>

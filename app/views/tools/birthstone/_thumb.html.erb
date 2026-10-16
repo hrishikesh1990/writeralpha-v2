@@ -1,0 +1,8 @@
+<%# locals: ref. A small stone tile: the hub photo when the stone is live, a quiet gradient otherwise. %>
+<% entry = ref.entry %>
+<% bg = entry.respond_to?(:gemstone) ? stone_gradient(entry.gemstone) : "linear-gradient(145deg,#ede9fe,#c4b5fd)" %>
+<span class="relative block size-[46px] flex-none overflow-hidden rounded-[13px]" style="background:<%= bg %>" aria-hidden="true">
+  <% if entry.respond_to?(:image_url) && entry.image_url.present? %>
+    <img src="<%= image_url_for(entry.image_url) %>" alt="" loading="lazy" width="46" height="46" class="absolute inset-0 size-full object-cover" onerror="this.remove()">
+  <% end %>
+</span>

@@ -1,0 +1,9 @@
+<%# locals: id, selected, options, lang, unknown_label, (optional) auto %>
+<select name="rashi" id="<%= id %>" data-birthstone-form-target="rashi"
+        class="w-full rounded-[14px] border border-violet/15 bg-white px-4 py-3 text-[14px] text-ink focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20">
+  <option value=""><%= unknown_label %></option>
+  <% options.each do |o| %>
+    <% names = { "en" => [o[:en], o[:hi].last, o[:bn].last], "hi" => [o[:hi].last, o[:en], o[:bn].last], "bn" => [o[:bn].last, o[:en], o[:hi].last] }.fetch(lang) %>
+    <option value="<%= o[:sign] %>"<%= " selected".html_safe if o[:sign] == selected %>><%= names.join(" · ") %></option>
+  <% end %>
+</select>
