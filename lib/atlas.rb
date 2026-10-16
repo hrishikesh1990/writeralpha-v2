@@ -73,13 +73,31 @@ module Atlas
 
       @stamp = stamp
       @index = Dir.glob(File.join(dir, "*.yml")).sort.each_with_object({}) do |file, h|
-        data = YAML.safe_load_file(file, permitted_classes: [], aliases: false) || {}
-        stone = Stone.new(data)
-        h[stone.slug] = stone
+        stone = load_file(file)
+        h[stone.slug] = stone if stone
       end.freeze
     end
 
     def reload! = (@index = nil)
+
+    # A malformed or half-written file is skipped (and logged), never fatal:
+    # one bad stone must not take every tool page down.
+    def load_file(file)
+      data = YAML.safe_load_file(file, permitted_classes: [], aliases: false)
+      unless data.is_a?(Hash) && data["slug"].is_a?(String) && data["name"].is_a?(String)
+        return warn_skip(file, "not a stone map")
+      end
+
+      Stone.new(data)
+    rescue Psych::Exception, SystemCallError => e
+      warn_skip(file, e.message)
+    end
+
+    def warn_skip(file, why)
+      msg = "[atlas] skipped #{File.basename(file)}: #{why}"
+      defined?(Rails) && Rails.respond_to?(:logger) && Rails.logger ? Rails.logger.warn(msg) : Kernel.warn(msg)
+      nil
+    end
 
     # Stones matching a predicate on any field, e.g. Atlas.where { |s| s.safety("water") == "avoid" }
     def where(&) = stones.select(&)
