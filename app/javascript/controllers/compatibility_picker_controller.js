@@ -53,6 +53,7 @@ export default class extends Controller {
     this.list.setAttribute("data-combo", "")
     this.list.setAttribute("role", "listbox")
     this.list.hidden = true
+    this.list.tabIndex = -1 // a scrollable list must not become a Tab stop
     this.list.className = this.listClasses.join(" ")
 
     // Hide the native select visually but keep it focusable-by-label for the form.

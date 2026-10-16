@@ -25,7 +25,7 @@
               <% if rung[:rows].empty? %>
                 <span class="text-[12px] text-faint">None of our stones sit here</span>
               <% else %>
-                <span class="flex flex-wrap gap-[6px] [&_a]:rounded-full [&_a]:bg-violet/8 [&_a]:px-[10px] [&_a]:py-[5px] [&_a]:text-[12px] [&_a]:leading-none [&_a]:text-violet-deep [&_a:hover]:bg-violet/14 [&_small]:ml-1 [&_small]:font-mono [&_small]:text-[10px] [&_small]:opacity-60">
+                <span class="flex flex-wrap gap-[6px] [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center [&_a]:rounded-full [&_a]:bg-violet/8 [&_a]:px-3 [&_a]:text-[12px] [&_a]:leading-none [&_a]:text-violet-deep [&_a:hover]:bg-violet/14 [&_small]:ml-1 [&_small]:font-mono [&_small]:text-[10px] [&_small]:opacity-60">
                   <% rung[:rows].each do |r| %><a href="<%= r.path %>"><%= r.name %><% if r.mohs_min != r.mohs_max %><small><%= r.mohs_label %></small><% end %></a><% end %>
                 </span>
               <% end %>
@@ -59,7 +59,7 @@
       </div>
     <% end %>
 
-    <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] font-medium">
+    <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-0 text-[12.5px] font-medium [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center">
       <a href="<%= tools_safety_path(f: focus == "water" ? ["water"] : focus == "salt" ? ["salt"] : focus == "sun" ? ["sun"] : nil, sort: focus == "mohs" ? "hardest" : nil, anchor: "matrix") %>">Filter and search all <%= rows.size %> stones →</a>
       <a href="<%= tools_safety_path(anchor: "plan") %>">Cleansing several stones together? →</a>
     </div>

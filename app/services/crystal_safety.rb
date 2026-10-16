@@ -203,15 +203,23 @@ module CrystalSafety
     MOHS_BANDS.find { |_, _, _, _, floor| row.mohs_min >= floor }
   end
 
-  # The Mohs ladder: rungs 1..10, each listing every stone whose range touches
-  # it (a 6 to 7 stone appears at rung 6 and 7). Returns
+  # The Mohs ladder: rungs 1..10, each listing every stone whose hardness range
+  # includes that whole number (a 6.5 to 7 stone sits on rung 7 only, because it
+  # scratches rung 6). A range that holds no whole number, such as 7.5 to 7.8,
+  # sits on the rung just below it. Returns
   # [{ rung:, scale:, rows: [Row] }, ...] hardest first.
   def mohs_ladder(rows)
     rated = rows.select(&:mohs?)
     (1..10).to_a.reverse.map do |rung|
-      members = rated.select { |r| r.mohs_min.floor.clamp(1, 10) <= rung && r.mohs_max.floor.clamp(1, 10) >= rung }
+      members = rated.select { |r| mohs_rungs(r).include?(rung) }
       { rung: rung, scale: MOHS_SCALE[rung], rows: members.sort_by { |r| [r.name.downcase] } }
     end
+  end
+
+  def mohs_rungs(row)
+    low = row.mohs_min.ceil.clamp(1, 10)
+    high = row.mohs_max.floor.clamp(1, 10)
+    low <= high ? (low..high).to_a : [row.mohs_min.floor.clamp(1, 10)]
   end
 
   # ---- Cleanse planner --------------------------------------------------------
@@ -249,7 +257,7 @@ module CrystalSafety
                else row.reason("water") end
       Blocker.new(row: row, level: :avoid, reason: fallback(reason, "Salt water is a soak, and no safe-soak verdict is recorded for this stone."))
     when "earth"
-      reason = if row.verdict("water") == "avoid" then "Soil holds damp and this stone must not get wet. #{row.reason('water')}"
+      reason = if row.verdict("water") == "avoid" then "Soil holds damp and this stone must not get wet."
                elsif row.mohs? then "At Mohs #{row.mohs_label} it is soft enough for grit in the soil to scratch it."
                else "No hardness is recorded for this stone." end
       Blocker.new(row: row, level: :avoid, reason: reason)
@@ -387,5 +395,5 @@ module CrystalSafety
 
   def fallback(text, default) = text.to_s.strip.empty? ? default : text
 
-  private_class_method :matches?, :qa, :moonlight_answer, :safe_call, :fallback, :tidy
+  private_class_method :mohs_rungs, :matches?, :qa, :moonlight_answer, :safe_call, :fallback, :tidy
 end

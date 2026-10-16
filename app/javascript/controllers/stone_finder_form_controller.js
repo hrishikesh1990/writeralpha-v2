@@ -29,6 +29,7 @@ export default class extends Controller {
   changed(event) {
     const el = event.target
     if (this.intentionTargets.includes(el)) this.limit(el)
+    this.exclusiveSign(el)
     this.sync()
     this.queueSubmit(el)
   }
@@ -42,6 +43,16 @@ export default class extends Controller {
     frame.addEventListener("turbo:frame-render", () => {
       frame.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" })
     }, { once: true })
+  }
+
+  // A date and a sign answer the same question and the date wins on the
+  // server, so choosing one clears the other instead of leaving them out of step.
+  exclusiveSign(el) {
+    const dob = this.element.querySelector("#dob")
+    const sign = this.element.querySelector("#sign")
+    if (!dob || !sign) return
+    if (el === dob && dob.value !== "") sign.value = ""
+    if (el === sign && sign.value !== "") dob.value = ""
   }
 
   limit(el) {

@@ -59,10 +59,10 @@ module Tools
     # Compact verdict pill for the 85-row matrix. Same tone and wording as the
     # shared verdict_badge, but styled by one CSS rule instead of ~230 bytes of
     # utility classes per cell (see the <style> block in _matrix.html.erb).
-    def matrix_badge(verdict, label: nil)
+    def matrix_badge(verdict, label: nil, tone: nil)
       return helpers.content_tag(:b, "Not rated", class: "csb i") if verdict.nil?
 
-      tone = { good: "g", warn: "w", bad: "r", info: "i" }[helpers.verdict_tone(verdict)]
+      tone = { good: "g", warn: "w", bad: "r", info: "i" }[tone || helpers.verdict_tone(verdict)]
       helpers.content_tag(:b, label || helpers.verdict_label(verdict), class: "csb #{tone}")
     end
 

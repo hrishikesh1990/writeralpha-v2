@@ -10,7 +10,7 @@
   <div class="flex items-start gap-4 px-5 pb-4 pt-5 sm:px-6">
     <a href="<%= e.path %>" class="relative block size-[68px] flex-none overflow-hidden rounded-[16px] sm:size-[84px]" style="background:<%= gem ? stone_gradient(gem) : 'linear-gradient(145deg,#c4b5fd,#8a6fd0)' %>" tabindex="-1" aria-hidden="true">
       <% if e.image_url.present? %>
-        <img src="<%= image_url_for(e.image_url) %>" alt="" width="84" height="84" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        <img src="<%= image_url_for(e.image_url) %>" alt="" width="84" height="84" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" onerror="this.remove()">
       <% end %>
     </a>
     <div class="min-w-0 flex-1">

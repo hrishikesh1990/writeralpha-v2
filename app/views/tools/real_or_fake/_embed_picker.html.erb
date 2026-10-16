@@ -3,7 +3,7 @@
 <% if entries.any? %>
   <% top = AuthenticityCheck.most_faked(entries, limit: 4) %>
   <section class="my-10 rounded-[22px] border border-violet/10 bg-white/85 p-5 shadow-card sm:p-6" aria-labelledby="rof-picker-h" data-screen-label="Check a stone">
-    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-violet">Free tool · real or fake?</div>
+    <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-violet">Free tool · real or fake?</div>
     <h2 id="rof-picker-h" class="mt-1.5 text-[20px] font-semibold leading-tight text-ink">Check a stone</h2>
     <p class="mt-1.5 text-[13.5px] font-light leading-[1.65] text-muted">Pick the stone you bought. We will walk you through the tests that separate it from its usual imitations, safest first.</p>
     <form action="<%= tools_real_or_fake_path %>" method="get" class="mt-4 flex flex-col gap-2.5 sm:flex-row">
@@ -16,12 +16,12 @@
     </form>
     <% if top.any? %>
       <div class="mt-3.5 flex flex-wrap items-center gap-2">
-        <span class="text-[12px] font-light text-faint">Most faked:</span>
+        <span class="text-[12px] font-light text-muted">Most faked:</span>
         <% top.each do |e| %>
           <a href="<%= tools_real_or_fake_path(stone: e.slug) %>" class="inline-flex min-h-[36px] items-center rounded-full bg-violet/8 px-3.5 text-[12.5px] font-medium text-violet-deep hover:bg-violet/14"><%= e.name %></a>
         <% end %>
       </div>
     <% end %>
-    <p class="mt-4 text-[12px] font-light leading-[1.65] text-faint">Home tests are guidance, not proof. Only a gemmologist (or a lab report) can confirm what a stone is.</p>
+    <p class="mt-4 text-[12px] font-light leading-[1.65] text-muted">Home tests are guidance, not proof. Only a gemmologist (or a lab report) can confirm what a stone is.</p>
   </section>
 <% end %>

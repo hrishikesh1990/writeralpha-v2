@@ -28,7 +28,9 @@ module ApplicationHelper
     return "".html_safe if text.blank?
 
     if text.match?(/<(h[2-4]|p|ul|ol|li)\b/)
+      # Tables scroll sideways on phones, so they must be keyboard-focusable.
       sanitize(rewrite_image_urls(optimize_images(text)), tags: ALLOWED_TAGS, attributes: ALLOWED_ATTRS)
+        .gsub(/<table(?=[\s>])/, '<table tabindex="0"').html_safe
     else
       simple_format(text)
     end

@@ -1,8 +1,8 @@
 <%# locals: stone (AtlasEntry, Atlas::Stone or a String name) %>
 <% if stone.is_a?(String) %>
-  <span class="rounded-full bg-violet/8 px-[13px] py-[6px] text-[12px] leading-none text-violet-deep"><%= stone %></span>
+  <span class="rounded-full bg-violet/8 px-[13px] py-2 text-[12px] leading-none text-violet-deep"><%= stone %></span>
 <% elsif stone.respond_to?(:path) %>
-  <a href="<%= stone.path %>" class="rounded-full bg-violet/8 px-[13px] py-[6px] text-[12px] leading-none text-violet-deep card-transition hover:bg-violet/14"><%= stone.name %></a>
+  <a href="<%= stone.path %>" class="inline-block rounded-full bg-violet/8 px-[13px] py-2 text-[12px] leading-none text-violet-deep card-transition hover:bg-violet/14"><%= stone.name %></a>
 <% else %>
-  <span class="rounded-full bg-violet/8 px-[13px] py-[6px] text-[12px] leading-none text-violet-deep"><%= stone.name %></span>
+  <span class="rounded-full bg-violet/8 px-[13px] py-2 text-[12px] leading-none text-violet-deep"><%= stone.name %></span>
 <% end %>

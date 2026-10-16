@@ -284,4 +284,26 @@ class MoonCalendarTest < ActiveSupport::TestCase
     assert_not_empty IcsStrict.check("BEGIN:VCALENDAR\nEND:VCALENDAR\n")
     assert_not_empty IcsStrict.check("BEGIN:VCALENDAR\r\nBEGIN:VEVENT\r\nEND:VCALENDAR\r\n")
   end
+
+  test "legacy zone names resolve to the current IANA name and read as friendly labels" do
+    f = MoonCalendar::Format
+    t = utc(2026, 10, 26, 4, 12)
+    assert_equal "Asia/Kolkata", f.zone_id(f.zone("Asia/Calcutta"))
+    assert_equal "Europe/Kyiv", f.zone_id(f.zone("Europe/Kiev"))
+    assert_equal "America/New_York", f.zone_id(f.zone("US/Eastern"))
+    assert_equal "India (IST, UTC+5:30)", f.zone_label(t, f.zone("Asia/Calcutta"))
+    assert_equal "US Eastern (EDT, UTC-4)", f.zone_label(t, f.zone("America/New_York"))
+    assert_equal "UK (GMT)", f.zone_label(utc(2026, 1, 5), f.zone("Europe/London"))
+    assert_equal "Buenos Aires (UTC-3)", f.zone_label(t, f.zone("America/Buenos_Aires"))
+    assert_equal "UTC", f.zone_label(t, f.zone("Etc/UTC"))
+    assert_nil f.zone("Not/AZone")
+    assert_nil f.zone("../../etc/passwd")
+  end
+
+  test "full moon name follows the month in the zone shown" do
+    full = MoonCalendar.next_phase(:full_moon, utc(2018, 1, 30)) # 31 Jan 13:27 UTC, 1 Feb in Auckland
+    assert_equal ["Wolf Moon", nil], MoonCalendar.full_moon_name(full)
+    assert_equal ["Wolf Moon", nil], MoonCalendar.full_moon_name(full, zone: MoonCalendar::Format.zone("Asia/Kolkata"))
+    assert_equal ["Snow Moon", nil], MoonCalendar.full_moon_name(full, zone: MoonCalendar::Format.zone("Pacific/Auckland"))
+  end
 end

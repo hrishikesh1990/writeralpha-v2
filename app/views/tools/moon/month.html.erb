@@ -5,7 +5,7 @@
   utc = fmt.utc_zone
   @guides.each do |f, g|
     when_utc = "#{fmt.date(f.minute, utc)} at #{fmt.clock(f.minute, utc)} UTC"
-    when_local = fmt.zone_id(zone) == "UTC" ? "" : ", which is #{fmt.date(f.minute, zone)} at #{fmt.clock(f.minute, zone)} #{fmt.abbr(f.minute, zone)} in #{fmt.zone_id(zone).tr('_', ' ')}"
+    when_local = fmt.zone_id(zone) == "UTC" ? "" : ", which is #{fmt.date(f.minute, zone)} at #{fmt.clock(f.minute, zone)} #{fmt.abbr(f.minute, zone)} in #{fmt.zone_name(zone)}"
     on = @guides.size > 1 ? " on #{fmt.day_month(f.minute, utc)}" : ""
     faq << ["When is the #{g.title_name} in #{@month_label}#{on}?", "#{when_utc}#{when_local}."]
     faq << ["Which sign is the Moon in at the #{g.name}#{on}?", "The Moon is in #{f.sign_label}, #{fmt.indefinite(f.element)} sign, in the tropical (Western) zodiac. At a full moon the Moon sits opposite the Sun, which is in #{Atlas::Astro.sign_for_longitude(f.sun_longitude).capitalize}."]
@@ -18,7 +18,7 @@
     "mainEntity" => faq.map { |q, a| { "@type" => "Question", "name" => q, "acceptedAnswer" => { "@type" => "Answer", "text" => a } } } }.to_json.html_safe, type: "application/ld+json"))
 %>
 <div data-controller="moon-timezone" data-moon-timezone-current-value="<%= tz_param %>" data-moon-timezone-explicit-value="<%= params[:tz].present? %>">
-<%= tool_header(title: (@full ? "Full Moon #{@month_label}" : "Moon Phases #{@month_label}"), eyebrow: "Moon Cleansing Calendar",
+<%= tool_header(title: (@full ? "Full Moon #{@month_label}" : "Moon Phases #{@month_label}"), eyebrow: "— moon cleansing calendar",
                 lede: (@full ? "The #{@guides.first&.last&.name} of #{@month_label}: exact date and time, the Moon's sign, what to charge and what to keep out of moon water." : "All four moon phases for #{@month_label} with the Moon's sign and what to do with your crystals."),
                 crumbs: [["Home", root_path], ["Tools", tools_path], ["Moon Calendar", tools_moon_path(tz: tz_param)], [@month_label, nil]]) %>
 
@@ -28,14 +28,14 @@
   <div class="relative overflow-hidden rounded-[26px] bg-ink/97 px-6 py-8 sm:px-10 sm:py-10">
     <div class="pointer-events-none absolute -right-16 -top-16 h-[320px] w-[420px] blur-[22px]" style="background:radial-gradient(ellipse,rgba(124,58,237,0.5),transparent 70%)" aria-hidden="true"></div>
     <div class="relative grid items-center gap-8 lg:grid-cols-[1fr_200px]">
-      <div>
+      <div class="min-w-0">
         <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-lavender"><%= g.name %> · <%= @month_label %></div>
         <h2 class="mt-3 text-[26px] font-semibold leading-[1.2] text-white sm:text-[32px]">
           <time datetime="<%= ft.iso8601 %>"><%= fmt.date(ft, zone) %>, <%= fmt.clock(ft, zone) %></time>
-          <span class="font-light text-white/70">in <%= fmt.zone_label(ft, zone) %></span>
+          <span class="mt-1 block text-[16px] font-light text-white/70 sm:text-[18px]"><%= fmt.zone_label(ft, zone) %></span>
         </h2>
         <p class="mt-4 max-w-[600px] text-[14px] font-light leading-[1.7] text-white/80">
-          <%= @full_moons.size > 1 ? "The first full moon of #{@month_label}" : "The #{@month_label} full moon" %> is the <strong class="font-medium text-white"><%= g.name %></strong><%= " (#{MoonCalendar.full_moon_name(f)[1]})" if MoonCalendar.full_moon_name(f)[1] %>. The Moon is in
+          <%= @full_moons.size > 1 ? "The first full moon of #{@month_label}" : "The #{@month_label} full moon" %> is the <strong class="font-medium text-white"><%= g.name %></strong><%= " (#{MoonCalendar.full_moon_name(f, zone: zone)[1]})" if MoonCalendar.full_moon_name(f, zone: zone)[1] %>. The Moon is in
           <strong class="font-medium text-white"><%= f.glyph %> <%= f.sign_label %></strong>, <%= fmt.indefinite(f.element) %> sign, at about <%= f.degree %>° <%= f.sign_label %> in the tropical zodiac.
           <% if @full_moons.size > 1 %>A second full moon follows on <%= fmt.day_month(@full_moons.last.minute, zone) %>, with the Moon in <%= @full_moons.last.sign_label %>. It is a Blue Moon: the second full moon in one calendar month.<% end %>
         </p>
@@ -53,7 +53,7 @@
   <% pf = MoonCalendar.previous_phase(:full_moon, @phases.first&.time || Time.utc(@year, @mon, 1)); nf = MoonCalendar.next_phase(:full_moon, @phases.last&.time || Time.utc(@year, @mon, 28)) %>
   <div class="relative overflow-hidden rounded-[26px] bg-ink/97 px-6 py-8 sm:px-10">
     <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-lavender">No full moon this month</div>
-    <p class="mt-3 max-w-[640px] text-[15px] font-light leading-[1.7] text-white/85">No full moon falls in <%= @month_label %> by <%= fmt.zone_id(zone).tr("_", " ") %> time. The nearest are <strong class="font-medium text-white"><%= fmt.date(pf.minute, zone) %></strong> and <strong class="font-medium text-white"><%= fmt.date(nf.minute, zone) %></strong>. The lunar cycle is 29.5 days, so only February, which is shorter, can occasionally miss a full moon.</p>
+    <p class="mt-3 max-w-[640px] text-[15px] font-light leading-[1.7] text-white/85">No full moon falls in <%= @month_label %> by <%= fmt.zone_name(zone) %> time. The nearest are <strong class="font-medium text-white"><%= fmt.date(pf.minute, zone) %></strong> and <strong class="font-medium text-white"><%= fmt.date(nf.minute, zone) %></strong>. The lunar cycle is 29.5 days, so only February, which is shorter, can occasionally miss a full moon.</p>
     <div class="mt-6"><%= render "tools/moon/tz_form", action: request.path, tone: :dark %></div>
   </div>
 </section>
@@ -62,7 +62,7 @@
 <!-- Phases -->
 <section class="px-5 pb-2 pt-10 sm:px-11" data-screen-label="Phases">
   <h2 class="text-[21px] font-semibold text-ink">Moon phases in <%= @month_label %></h2>
-  <p class="mb-5 mt-1 text-[13px] font-light text-muted">Times in <%= fmt.zone_label((@phases.first&.minute || Time.utc(@year, @mon, 15)), zone) %>. Moon signs use the tropical zodiac.</p>
+  <p class="mb-5 mt-1 text-[13px] font-light text-muted">Times in <%= fmt.zone_name(zone) %><%= ", with daylight saving applied" unless fmt.zone_id(zone) == "UTC" %>. Moon signs use the tropical zodiac.</p>
   <div class="grid gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
     <% @phases.each do |p| %>
       <% pt = p.minute %>
@@ -79,7 +79,7 @@
   </div>
 
   <% if @full %>
-  <div class="mt-[18px] overflow-x-auto rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
+  <div class="mt-[18px] overflow-x-auto rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet" tabindex="0" role="region" aria-label="<%= @month_label %> full moon time by city, scrollable table">
     <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">The <%= @month_label %> full moon around the world</div>
     <table class="mt-3 w-full min-w-[420px] text-left text-[13px]">
       <caption class="sr-only">Full moon time by city</caption>
@@ -119,14 +119,14 @@
 <!-- Prev / next -->
 <section class="px-5 pb-2 pt-12 sm:px-11" data-screen-label="Month navigation">
   <div class="flex flex-wrap items-center justify-between gap-3">
-    <% if @prev %><a href="<%= tools_moon_month_path(month: @prev, tz: tz_param) %>" class="rounded-full border border-violet/15 bg-white/80 px-5 py-[10px] text-[13px] font-medium text-ink hover:border-violet/40">← <%= Date.parse("#{@prev}-01").strftime("%B %Y") %></a><% else %><span></span><% end %>
-    <a href="<%= tools_moon_path(tz: tz_param) %>" class="text-[13px] font-medium">Next full moon and the 13-month list →</a>
-    <% if @next %><a href="<%= tools_moon_month_path(month: @next, tz: tz_param) %>" class="rounded-full border border-violet/15 bg-white/80 px-5 py-[10px] text-[13px] font-medium text-ink hover:border-violet/40"><%= Date.parse("#{@next}-01").strftime("%B %Y") %> →</a><% end %>
+    <% if @prev %><a href="<%= tools_moon_month_path(month: @prev, tz: tz_param) %>" class="rounded-full border border-violet/15 bg-white/80 px-5 py-[11px] text-[13px] font-medium text-ink hover:border-violet/40">← <%= Date.parse("#{@prev}-01").strftime("%B %Y") %></a><% else %><span></span><% end %>
+    <a href="<%= tools_moon_path(tz: tz_param) %>" class="inline-flex min-h-11 items-center text-[13px] font-medium">Next full moon and the 13-month list →</a>
+    <% if @next %><a href="<%= tools_moon_month_path(month: @next, tz: tz_param) %>" class="rounded-full border border-violet/15 bg-white/80 px-5 py-[11px] text-[13px] font-medium text-ink hover:border-violet/40"><%= Date.parse("#{@next}-01").strftime("%B %Y") %> →</a><% end %>
   </div>
   <div class="mt-6 flex flex-wrap gap-[6px]">
     <% (1..12).each do |m| %>
       <% key = fmt.month_param(@year, m) %>
-      <a href="<%= tools_moon_month_path(month: key, tz: tz_param) %>" class="rounded-full px-[13px] py-[6px] text-[11.5px] leading-none <%= m == @mon ? "bg-ink text-white hover:text-white" : "bg-violet/8 text-violet-deep hover:bg-violet/14" %>"><%= Date::ABBR_MONTHNAMES[m] %> <%= @year %></a>
+      <a href="<%= tools_moon_month_path(month: key, tz: tz_param) %>" class="rounded-full px-[13px] py-[9px] text-[12px] leading-none <%= m == @mon ? "bg-ink text-white hover:text-white" : "bg-violet/8 text-violet-deep hover:bg-violet/14" %>"><%= Date::ABBR_MONTHNAMES[m] %> <%= @year %></a>
     <% end %>
   </div>
 </section>

@@ -5,15 +5,15 @@
 <% rest = w.stones.drop(6) %>
 <% reason_label = { ruler: :why_ruler, element: :why_element, birthstone: :why_birthstone } %>
 <article class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5" aria-labelledby="bs-zodiac-h" data-screen-label="Zodiac card">
-  <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Western astrology</div>
+  <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-muted"><%= t.(:eyebrow_western) %></div>
   <h2 id="bs-zodiac-h" class="mt-2 text-[21px] font-semibold text-ink"><%= t.(:your_zodiac) %></h2>
 
   <div class="mt-4 flex items-center gap-4 rounded-[14px] bg-violet/5 px-4 py-3">
     <span class="flex size-[44px] flex-none items-center justify-center rounded-[13px] bg-white text-[22px] text-violet-deep" aria-hidden="true"><%= text_glyph(Atlas::Astro::SIGN_GLYPHS[w.sign]) %></span>
     <div class="min-w-0">
       <div class="text-[11px] font-light text-muted"><%= t.(:sun_sign) %></div>
-      <div class="text-[16px] font-semibold leading-[1.3] text-ink"><%= lang == "en" ? sign_label : tag.span(sign_label, lang: lang) %><% if lang != "en" %> <span class="text-[12px] font-light text-faint"><%= w.sign.capitalize %></span><% end %></div>
-      <div class="mt-[2px] text-[11.5px] font-light text-muted"><%= w.dates %> · <%= t.(:ruled_by, planet: BirthstoneCalculator.planet_label(w.ruler, lang)) %> · <%= BirthstoneCalculator::Labels.element(w.element, lang) %></div>
+      <div class="text-[16px] font-semibold leading-[1.3] text-ink"><%= lang == "en" ? sign_label : tag.span(sign_label, lang: lang) %><% if lang != "en" %> <span class="text-[12px] font-light text-muted"><%= w.sign.capitalize %></span><% end %></div>
+      <div class="mt-[2px] text-[11.5px] font-light text-muted"><%= BirthstoneCalculator.sign_dates(w.dates, lang) %> · <%= t.(:ruled_by, planet: BirthstoneCalculator.planet_label(w.ruler, lang)) %> · <%= BirthstoneCalculator::Labels.element(w.element, lang) %></div>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
     </ul>
     <% if rest.any? %>
       <details class="group mt-4 border-t border-violet/8 pt-4">
-        <summary class="flex items-center justify-between text-[12.5px] font-medium text-violet-deep"><span><%= t.(:show_all, n: w.stones.size) %></span><span class="transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+        <summary class="flex min-h-[40px] cursor-pointer items-center justify-between text-[12.5px] font-medium text-violet-deep"><span><%= t.(:show_all, n: w.stones.size) %></span><span class="transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
         <ul class="mt-4">
           <% rest.each do |z| %><%= render "tools/birthstone/stone_row", ref: z.ref, lang: lang, summary: false, tile: false %><% end %>
         </ul>
@@ -42,7 +42,7 @@
 
   <% if w.cautions.any? %>
     <details class="group mt-4 border-t border-violet/8 pt-4">
-      <summary class="flex items-center justify-between text-[12.5px] font-medium text-ink"><span><%= t.(:caution_for_sign) %> (<%= w.cautions.size %>)</span><span class="text-violet-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+      <summary class="flex min-h-[40px] cursor-pointer items-center justify-between text-[12.5px] font-medium text-ink"><span><%= t.(:caution_for_sign) %> (<%= w.cautions.size %>)</span><span class="text-violet-deep transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
       <ul class="mt-3 flex flex-col gap-3">
         <% w.cautions.each do |c| %>
           <li class="text-[12.5px] font-light leading-[1.7] text-ui"><span class="font-medium text-ink"><%= render "tools/birthstone/name", ref: c.ref, lang: lang %></span>: <%= c.why %></li>

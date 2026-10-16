@@ -1,5 +1,5 @@
 <%# No stone chosen: searchable picker + "most faked" quick links. Uses @entries (stones that have tests). %>
-<%= tool_header(title: "Real or fake? Check your stone",
+<%= tool_header(title: "Real or Fake? Check Your Stone",
                 eyebrow: "— authenticity checker",
                 lede: "Pick a stone and we will walk you through the home tests that separate the real thing from dyed, glass and resin imitations, scoring the evidence as you go. Calm, step by step, no sign-up.",
                 crumbs: [["Home", root_path], ["Tools", tools_path], ["Real or Fake?", nil]]) %>
@@ -18,16 +18,16 @@
   <% else %>
     <% top = AuthenticityCheck.most_faked(@entries, limit: 6) %>
     <div class="rounded-[22px] border border-violet/10 bg-white/85 p-5 shadow-card sm:p-7">
-      <label for="rof-search" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Which stone do you have?</label>
+      <label for="rof-search" class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">Which stone do you have?</label>
       <div class="mt-3 flex flex-col gap-3 sm:flex-row">
         <input id="rof-search" type="search" autocomplete="off" placeholder="Search: turquoise, amethyst, malachite…" hidden
                data-real-or-fake-picker-target="input" data-action="input->real-or-fake-picker#filter keydown.enter->real-or-fake-picker#go"
-               class="min-h-[52px] w-full rounded-full border border-violet/15 bg-white px-6 text-[15px] text-ink shadow-search placeholder:text-placeholder focus:border-violet/50 focus:outline-none focus:ring-2 focus:ring-violet/30">
+               class="min-h-[52px] w-full rounded-full border border-violet/15 bg-white px-6 text-[15px] text-ink shadow-search placeholder:text-muted focus:border-violet/50 focus:outline-none focus:ring-2 focus:ring-violet/30">
       </div>
 
       <% if top.any? %>
         <div class="mt-6">
-          <h2 class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Most faked stones</h2>
+          <h2 class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">Most faked stones</h2>
           <p class="mt-1 text-[13px] font-light text-muted">The ones where imitations are most common, so a check is most worthwhile.</p>
           <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-real-or-fake-picker-target="top">
             <% top.each do |e| %>
@@ -47,7 +47,7 @@
       <% end %>
 
       <div class="mt-7">
-        <h2 class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">All stones <span class="text-placeholder" data-real-or-fake-picker-target="count">(<%= @entries.size %>)</span></h2>
+        <h2 class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">All stones <span class="text-muted" data-real-or-fake-picker-target="count">(<%= @entries.size %>)</span></h2>
         <ul class="mt-3 flex flex-wrap gap-2" data-real-or-fake-picker-target="list">
           <% @entries.each do |e| %>
             <% search = ([e.name] + e.aka).join(" ").downcase %>
@@ -68,11 +68,11 @@
         ["2", "Do the safe tests first", "Each step says what to do, what real looks like and what fake looks like. Tests that could mark the stone come last and are clearly flagged."],
         ["3", "Get an honest read", "Strong tests count for more than weak ones. You get “consistent with genuine”, “inconclusive” or “signs of an imitation”, never false certainty."]].each do |n, title, body| %>
       <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
-        <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Step <%= n %></div>
+        <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">Step <%= n %></div>
         <h3 class="mt-2 text-[16px] font-semibold text-ink"><%= title %></h3>
         <p class="mt-2 text-[13.5px] font-light leading-[1.7] text-ui"><%= body %></p>
       </div>
     <% end %>
   </div>
-  <p class="mt-6 max-w-[720px] text-[12.5px] font-light leading-[1.7] text-faint">Home tests are guidance, not proof. Only a gemmologist (or a lab report) can confirm what a stone is, and for diamonds, rubies and sapphires no home test can separate lab-grown from natural.</p>
+  <p class="mt-6 max-w-[720px] text-[12.5px] font-light leading-[1.7] text-muted">Home tests are guidance, not proof. Only a gemmologist (or a lab report) can confirm what a stone is, and for diamonds, rubies and sapphires no home test can separate lab-grown from natural.</p>
 </section>

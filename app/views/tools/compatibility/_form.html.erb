@@ -9,7 +9,7 @@
   </div>
 
   <details class="group mt-4" <%= "open" if extra_open %>>
-    <summary class="inline-flex cursor-pointer list-none items-center gap-2 rounded-full bg-violet/8 px-4 py-[9px] text-[12.5px] font-medium text-violet-deep card-transition hover:bg-violet/14 [&::-webkit-details-marker]:hidden">
+    <summary class="inline-flex cursor-pointer list-none items-center gap-2 rounded-full bg-violet/8 px-4 py-[11px] text-[12.5px] font-medium text-violet-deep card-transition hover:bg-violet/14 [&::-webkit-details-marker]:hidden">
       <span class="text-[15px] leading-none group-open:hidden" aria-hidden="true">+</span><span class="hidden text-[15px] leading-none group-open:inline" aria-hidden="true">−</span>
       Add a third or fourth stone
     </summary>
@@ -25,7 +25,7 @@
       <% [["", "Anywhere"], *CrystalCompatibility::CONTEXTS.map { |k, v| [k, v[:label]] }].each do |value, label| %>
         <label class="cursor-pointer">
           <input type="radio" name="ctx" value="<%= value %>" class="peer sr-only" <%= "checked" if context.to_s == value %>>
-          <span class="inline-block rounded-full border border-violet/15 bg-white/90 px-[14px] py-[8px] text-[12.5px] text-ui card-transition peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-violet/40 hover:border-violet/40"><%= label %></span>
+          <span class="inline-block rounded-full border border-violet/15 bg-white/90 px-[14px] py-[10px] text-[12.5px] text-ui card-transition peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-violet/40 hover:border-violet/40"><%= label %></span>
         </label>
       <% end %>
     </div>

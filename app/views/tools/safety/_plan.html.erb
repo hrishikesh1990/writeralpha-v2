@@ -1,7 +1,7 @@
 <%# locals: plan, entries %>
 <% rows = plan.rows %>
 <% names = CrystalSafety.join_list(rows.map(&:name)) %>
-<article class="overflow-hidden rounded-[22px] border border-violet/10 bg-white/85 shadow-card" aria-labelledby="plan-title" data-screen-label="Cleanse plan">
+<article class="scroll-mt-4 overflow-hidden rounded-[22px] border border-violet/10 bg-white/85 shadow-card" aria-labelledby="plan-title" data-screen-label="Cleanse plan">
   <div class="relative bg-ink/97 px-[22px] py-6 sm:px-8">
     <div class="glow-violet -right-10 -top-10 h-[180px] w-[320px] blur-[30px]" aria-hidden="true"></div>
     <div class="relative">
@@ -18,7 +18,7 @@
         <% end %>
       </p>
       <div class="mt-4 flex flex-wrap items-center gap-2" data-controller="safety-copy">
-        <button type="button" data-action="safety-copy#copy" data-safety-copy-target="button" class="rounded-full bg-white/10 px-4 py-[8px] text-[12px] font-medium text-white ring-1 ring-inset ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link to this plan</button>
+        <button type="button" data-action="safety-copy#copy" data-safety-copy-target="button" class="min-h-10 rounded-full bg-white/10 px-4 py-[8px] text-[12px] font-medium text-white ring-1 ring-inset ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link to this plan</button>
         <span class="text-[11.5px] text-lavender/80" data-safety-copy-target="status" role="status"></span>
       </div>
     </div>
@@ -33,7 +33,7 @@
         <% single = CrystalSafety.common_methods([r.entry]) %>
         <li class="flex items-center justify-between gap-3 rounded-[14px] border border-violet/10 bg-white/70 px-4 py-[10px]">
           <a href="<%= tools_safety_path(stone: r.slug) %>" class="text-[13px] font-medium text-ink hover:text-violet-deep"><%= r.name %></a>
-          <span class="text-[11.5px] text-muted"><%= single.blocked.size + single.caution.size == 0 ? "Every method is safe" : "#{single.blocked.size} to avoid#{", #{single.caution.size} with care" if single.caution.any?}" %></span>
+          <span class="text-[11.5px] text-muted"><%= single.blocked.size + single.caution.size == 0 ? "Every method is safe" : [("#{single.blocked.size} #{single.blocked.size == 1 ? "method" : "methods"} to avoid" if single.blocked.any?), ("#{single.caution.size} with care" if single.caution.any?)].compact.join(", ") %></span>
         </li>
       <% end %>
     </ul>

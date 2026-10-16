@@ -2,15 +2,16 @@
 <% calc = BirthstoneCalculator.new(lang: lang, catalog: catalog) %>
 <section id="rashi-chart" class="px-5 pb-4 pt-10 sm:px-11" data-screen-label="Rashi and ratna chart">
   <h2 class="text-[21px] font-semibold text-ink"><%= lang == "en" ? BirthstoneCalculator::Labels.t(:chart_title) : tag.span(BirthstoneCalculator::Labels.t(:chart_title, lang), lang: lang) %></h2>
-  <p class="mt-2 max-w-[680px] text-[13.5px] font-light leading-[1.75] text-ui">In Jyotish each of the twelve rashis is ruled by a graha (planet), and each graha is linked to one of the Navaratna gems. This is the classical table, shown as tradition. Choose a row to see its full result.</p>
+  <% tt = ->(key) { lang == "en" ? BirthstoneCalculator::Labels.t(key) : tag.span(BirthstoneCalculator::Labels.t(key, lang), lang: lang) } %>
+  <p class="mt-2 max-w-[680px] text-[13.5px] font-light leading-[1.75] text-ui"><%= tt.(:chart_intro) %></p>
   <div class="mt-5 overflow-x-auto rounded-[18px] border border-violet/10 bg-white/80" role="region" aria-label="Rashi and ratna chart" tabindex="0">
     <table class="w-full min-w-[640px] border-collapse text-left text-[13px]">
       <caption class="sr-only">Each rashi with its ruling planet and Navaratna stone, in English, Hindi and Bengali</caption>
       <thead>
-        <tr class="border-b border-violet/10 font-mono text-[9.5px] uppercase tracking-[0.16em] text-faint">
-          <th scope="col" class="px-4 py-3 font-normal">Rashi</th>
-          <th scope="col" class="px-4 py-3 font-normal">Lord</th>
-          <th scope="col" class="px-4 py-3 font-normal">Ratna</th>
+        <tr class="border-b border-violet/10 font-mono text-[9.5px] uppercase tracking-[0.16em] text-muted">
+          <th scope="col" class="px-4 py-3 font-normal"><%= tt.(:rashi) %></th>
+          <th scope="col" class="px-4 py-3 font-normal"><%= tt.(:lord) %></th>
+          <th scope="col" class="px-4 py-3 font-normal"><%= tt.(:ratna) %></th>
         </tr>
       </thead>
       <tbody>
@@ -18,12 +19,12 @@
           <% rn = calc.ratna_for(o[:lord]) %>
           <tr class="border-b border-violet/8 last:border-0 align-top">
             <th scope="row" class="px-4 py-3 font-normal">
-              <a href="<%= tools_birthstone_path({ rashi: o[:sign] }.merge(lang == "en" ? {} : { lang: lang }).merge(anchor: "results")) %>" class="font-medium"><%= o[:en] %> →</a>
+              <a href="<%= tools_birthstone_path({ rashi: o[:sign] }.merge(lang == "en" ? {} : { lang: lang }).merge(anchor: "results")) %>" class="font-medium"><%= lang == "en" ? o[:en] : tag.span(o[lang.to_sym].last || o[:en], lang: lang) %> →</a>
               <span class="block text-[12px] font-light text-muted"><%= render "tools/birthstone/pair_both", hi: o[:hi], bn: o[:bn] %></span>
             </th>
-            <td class="px-4 py-3 text-ui"><%= rn.graha_en %>
+            <td class="px-4 py-3 text-ui"><%= lang == "en" ? rn.graha_en : tag.span(rn.graha_pair(lang).last || rn.graha_en, lang: lang) %>
               <span class="block text-[12px] font-light text-muted"><%= render "tools/birthstone/pair_both", hi: rn.graha_names[:hi], bn: rn.graha_names[:bn] %></span></td>
-            <td class="px-4 py-3 text-ui"><% if rn.live? %><a href="<%= rn.path %>" class="font-medium"><%= rn.name %></a><% else %><span class="font-medium text-ink"><%= rn.name %></span><% end %>
+            <td class="px-4 py-3 text-ui"><% rname = lang == "en" ? rn.name : tag.span(rn.pair(lang)&.last || rn.name, lang: lang) %><% if rn.live? %><a href="<%= rn.path %>" class="font-medium"><%= rname %></a><% else %><span class="font-medium text-ink"><%= rname %></span><% end %>
               <span class="block text-[12px] font-light text-muted"><%= render "tools/birthstone/pair_both", hi: rn.hi, bn: rn.bn %></span></td>
           </tr>
         <% end %>

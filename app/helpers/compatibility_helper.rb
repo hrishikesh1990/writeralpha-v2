@@ -106,7 +106,7 @@ module CompatibilityHelper
   def compat_avatar(entry, size: 52)
     style = "width:#{size}px;height:#{size}px"
     inner = if entry.image_url.present?
-              image_tag(image_url_for(entry.image_url), alt: "", loading: "lazy", width: size, height: size, class: "size-full object-cover")
+              image_tag(image_url_for(entry.image_url), alt: "", loading: "lazy", width: size, height: size, class: "size-full object-cover", onerror: "this.remove()")
             else
               ""
             end
@@ -126,7 +126,9 @@ module CompatibilityHelper
     v = result.vedic
     a, b = result.a, result.b
     case v.status
-    when :enemy then ["Enemies", :bad]
+    when :enemy
+      # The hard rule applies when a main Navaratna gem is involved; two substitutes get a soft caution.
+      Array(v.primary).any? ? ["Enemy planets: advised against", :bad] : ["Enemy planets: soft caution", :warn]
     when :friend then ["Friends", :good]
     when :same then ["Same planet", :good]
     when :neutral then ["No objection", :info]

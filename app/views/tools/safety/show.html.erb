@@ -1,4 +1,6 @@
 <% noindex_when_params! %>
+<%# Back/Forward after a frame advance must re-fetch, never restore a stale snapshot (see safety_frame_controller.js). %>
+<% content_for(:head, tag.meta(name: "turbo-cache-control", content: "no-cache")) %>
 <% tool_jsonld(name: "Crystal Safety Checker", description: "Check every crystal for water, salt, sun, sleep and toxicity, and find a cleansing method that is safe for several stones at once.") %>
 
 <%= tool_header(title: "Crystal Safety Checker",
@@ -13,8 +15,9 @@
     </div>
   </section>
 <% else %>
-  <section id="plan" class="px-5 pb-2 pt-4 sm:px-11" data-screen-label="Checker" aria-label="Check one stone or plan a cleanse">
+  <section id="plan" class="px-5 pb-2 pt-4 sm:px-11" data-controller="safety-frame" data-screen-label="Checker" aria-label="Check one stone or plan a cleanse">
     <%= turbo_frame_tag "safety_result", data: { turbo_action: "advance" } do %>
+      <span hidden data-safety-title="<%= @meta[:title] %>"></span>
       <% if @notices.any? %>
         <div class="mb-4 rounded-[14px] border border-amber-600/25 bg-amber-500/10 px-4 py-3 text-[13px] leading-[1.6] text-amber-900" role="status">
           <% @notices.each do |n| %><p><%= n %></p><% end %>

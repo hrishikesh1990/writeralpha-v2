@@ -11,7 +11,7 @@
   --color-body: #4b4568;         /* article body copy */
   --color-ui: #524b7a;           /* UI text */
   --color-muted: #6b6491;        /* secondary text */
-  --color-faint: #8a84ab;        /* meta / eyebrows */
+  --color-faint: #6f6896;        /* meta / eyebrows (4.5:1 on white and lavender) */
   --color-logo: #3b3563;         /* wordmark */
   --color-violet: #7c3aed;       /* accent */
   --color-violet-deep: #6d28d9;  /* link default / active pill text */
@@ -222,6 +222,12 @@
     display: block;
     overflow-x: auto;
   }
+}
+
+.article table:focus-visible {
+  outline: 2px solid var(--color-violet);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .article img {

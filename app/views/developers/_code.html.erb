@@ -2,7 +2,8 @@
 <div class="overflow-hidden rounded-[16px] bg-ink/97 shadow-card-soft" data-controller="developers-copy">
   <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-[9px]">
     <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-lavender"><%= label %></span>
-    <button type="button" hidden data-developers-copy-target="button" data-action="developers-copy#copy" class="rounded-full bg-white/10 px-3 py-[5px] font-mono text-[10px] uppercase tracking-[0.12em] text-white card-transition hover:bg-white/20">Copy</button>
+    <button type="button" hidden data-developers-copy-target="button" data-action="developers-copy#copy" aria-label="Copy code: <%= label.to_s.squish.truncate(70) %>" class="min-h-[32px] rounded-full bg-white/10 px-[14px] py-[5px] font-mono text-[10px] uppercase tracking-[0.12em] text-white card-transition hover:bg-white/20">Copy</button>
+    <span class="sr-only" role="status" data-developers-copy-target="status"></span>
   </div>
   <pre class="<%= local_assigns[:scroll] %> overflow-auto px-4 py-4 font-mono text-[12.5px] leading-[1.7] text-white/90" tabindex="0"><code data-developers-copy-target="source"><%= code %></code></pre>
 </div>

@@ -23,22 +23,43 @@ module AtlasPanelHelper
 
   PRICE_LABELS = { "budget" => "Budget", "mid" => "Mid-range", "premium" => "Premium", "luxury" => "Luxury" }.freeze
 
+  # Everyday reference points on the Mohs scale (standard teaching values).
+  MOHS_REFERENCES = [["Fingernail", "2.5"], ["Copper coin", "3.5"], ["Window glass", "5.5"], ["Steel file", "6.5"]].freeze
+
   # Friendly, honest label for the Atlas `kind`.
   def atlas_kind_label(stone)
-    species = stone.species.to_s
+    species = atlas_short_species(stone)
     case stone.kind
     when "mineral" then "Mineral"
-    when "variety" then species.present? ? "#{species} variety" : "Mineral variety"
+    when "variety" then species ? "#{species} variety" : "Mineral variety"
     when "rock" then "Rock"
     when "mineraloid" then "Mineraloid"
     when "organic" then "Organic gem material"
     when "glass" then "Man-made glass"
     when "synthetic" then "Lab-made (synthetic)"
-    when "treated" then species.present? ? "Treated #{species.downcase}" : "Treated stone"
+    when "treated" then species ? "Treated #{species.downcase}" : "Treated stone"
     when "jewellery" then "Jewellery"
     else stone.kind.to_s.humanize
     end
   end
+
+  # The species without parenthetical detail, or nil when what is left is
+  # still a sentence ("Hematite or hematine with a titanium-based coating").
+  def atlas_short_species(stone)
+    short = stone.species.to_s.sub(/\s*\(.*\)\s*\z/, "").strip
+    return nil if short.blank? || short.length > 28 || short.match?(/\b(or|with)\b/)
+
+    short
+  end
+
+  # "Al2O3" => "Al<sub>2</sub>O<sub>3</sub>": digits that follow a letter or a
+  # closing bracket are subscripts. Input is escaped first.
+  def atlas_formula_html(formula)
+    ERB::Util.html_escape(formula.to_s).gsub(/(?<=[A-Za-z)\]])(\d+)/) { "<sub>#{$1}</sub>" }.html_safe
+  end
+
+  # What the "Species" row of the Identity card is called for this kind.
+  def atlas_species_label(stone) = stone.kind == "jewellery" ? "Material" : "Species"
 
   # Badge text when the Atlas entry is not a natural stone, else nil.
   def atlas_unnatural_badge(stone)

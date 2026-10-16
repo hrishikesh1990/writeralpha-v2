@@ -3,7 +3,7 @@
 <% facts = gemstone_facts(gemstone).reject { |_, value| value == "—" } %>
 
 <!-- Hub hero -->
-<section class="px-5 pb-2 pt-7 sm:px-11" data-screen-label="Hub hero">
+<section class="overflow-x-clip px-5 pb-2 pt-7 sm:px-11" data-screen-label="Hub hero">
   <%= render "shared/breadcrumb", crumbs: [["Home", root_path], ["Gemstones", gemstones_path], [gemstone.name, nil]] %>
   <div class="mt-6 grid items-start gap-10 lg:grid-cols-[420px_1fr]">
     <div class="relative">
@@ -51,8 +51,6 @@
   </div>
 </section>
 
-<%= tool_embeds(:hub, nil, gemstone: gemstone, entry: atlas_entry_for(gemstone)) %>
-
 <!-- Guides (only those with content) -->
 <% guides = gemstone.available_sub_pages %>
 <% if guides.any? %>
@@ -70,6 +68,8 @@
   </div>
 </section>
 <% end %>
+
+<%= tool_embeds(:hub, nil, gemstone: gemstone, entry: atlas_entry_for(gemstone)) %>
 
 <!-- Similar stones -->
 <% if @similar_gemstones.any? %>

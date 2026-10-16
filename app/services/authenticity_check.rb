@@ -24,7 +24,7 @@ class AuthenticityCheck
 
   VERDICTS = {
     genuine: "Consistent with genuine",
-    inconclusive: "Inconclusive — try these next",
+    inconclusive: "Inconclusive so far",
     imitation: "Signs of an imitation"
   }.freeze
 
@@ -34,7 +34,7 @@ class AuthenticityCheck
   FAKE_POINTS = { 1 => 1.0, 2 => 2.5, 3 => 6.0 }.freeze
   REAL_POINTS = { 1 => 0.5, 2 => 1.25, 3 => 3.0 }.freeze
   IMITATION_NET = 3.0     # fake points minus real points needed for "signs of an imitation"
-  GENUINE_NET = -2.0      # likewise, the other way
+  GENUINE_NET = -3.0      # likewise, the other way (about three decent passes)
   STRONG_FAKE = 2.5       # a weight-2 fake answer, the point where "consistent with genuine" is off the table
 
   WEIGHT_LABELS = { 1 => "Weak hint", 2 => "Good evidence", 3 => "Near-conclusive" }.freeze
@@ -108,11 +108,20 @@ class AuthenticityCheck
     ANSWERS.include?(v) ? v : nil
   end
 
-  # "Most faked stones": ranked by how many imitations are on the market and
-  # whether the Atlas has a near-conclusive (weight 3) test for them.
+  # Stones that are famously sold in imitation (dyed howlite as turquoise, glass as moldavite,
+  # heated amethyst as citrine, ...), in the order we list them. Only those that have tests show.
+  # Anything else follows, ranked by how many imitations the Atlas lists.
+  HEADLINE_FAKES = %w[turquoise moldavite jade lapis-lazuli citrine diamond amethyst cats-eye opal emerald].freeze
+
+  # "Most faked stones": the headline list first, then by number of imitations on the market
+  # and whether the Atlas has a near-conclusive (weight 3) test for them.
   def self.most_faked(entries, limit: 8)
     entries.select { |e| Array(e.tests).any? }
-           .sort_by { |e| [-(Array(e.common_fakes).size + (Array(e.tests).any? { |t| t.is_a?(Hash) && t["weight"].to_i >= 3 } ? 1.5 : 0)), e.name.to_s] }
+           .sort_by do |e|
+             headline = HEADLINE_FAKES.index(e.slug.to_s) || HEADLINE_FAKES.size
+             strong = Array(e.tests).any? { |t| t.is_a?(Hash) && t["weight"].to_i >= 3 } ? 1.5 : 0
+             [headline, -(Array(e.common_fakes).size + strong), e.name.to_s]
+           end
            .first(limit)
   end
 
@@ -230,14 +239,17 @@ class AuthenticityCheck
       worst = fake_tests.max_by(&:weight)
       lead = fake_tests.size > 1 ? "Several tests looked fake" : "Your #{worst.title.downcase} result looked fake"
       base = "Your answers show signs of an imitation. #{lead}, and results like that are rarely a false alarm."
-      base += " The pattern points towards #{pointing.map(&:downcase).to_sentence(last_word_connector: ' or ', two_words_connector: ' or ')}." if pointing.any?
-      base + " Sellers often do not know what they are passing on, so this is worth a calm question, not an accusation."
+      base + " Sellers often pass these on without knowing, so ask calmly rather than accuse."
     else
-      return "Answer the first test to begin. Two or three clear answers are enough to start telling the story." if informative.zero?
+      if informative.zero?
+        return "Answer the first test to begin. Two or three clear answers are enough to start telling the story." if answers.empty?
+
+        return "Nothing has been clear enough to count yet. That is common with home tests, and skipping is always fine. The tests suggested next are the most telling ones left."
+      end
       return "You have one clear answer so far. We need at least two before we lean either way." if informative == 1
 
       case lean
-      when :imitation then "The evidence leans towards an imitation, but not strongly enough to say. One more clear result will settle it."
+      when :imitation then "The evidence leans towards an imitation, but not strongly enough to say. One more clear result would help."
       when :genuine then "The evidence leans towards a genuine stone, but not strongly enough to say. One more clear result on a stronger test would help."
       else "Your results point in different directions, which is common: some tests are hard to read at home. A stronger test should break the tie."
       end

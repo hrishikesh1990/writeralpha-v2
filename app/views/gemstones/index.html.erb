@@ -33,7 +33,7 @@
       <div class="flex flex-wrap gap-2">
         <% @colors.each do |color| %>
           <% selected = active[:color] == color.slug %>
-          <a href="<%= toggle_filter_path(active, :color, color.slug) %>" title="<%= color.name %>" aria-label="<%= color.name %>" aria-pressed="<%= selected %>"
+          <a href="<%= toggle_filter_path(active, :color, color.slug) %>" title="<%= color.name %>" aria-label="<%= color.name %>" <%= tag.attributes("aria-current": ("true" if selected)) %>
              class="box-border block size-[26px] rounded-full border-2 card-transition <%= selected ? "border-violet-deep" : "border-ui/18 hover:border-violet/50" %>"
              style="background:<%= color_swatch(color) %>"></a>
         <% end %>

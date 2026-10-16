@@ -13,9 +13,9 @@
     advised = statuses.select { |s| s[:status] == :advised_against }
     names = ->(list) { vocab.list_phrase(list.map { |s| vocab.sign_name(s[:sign]) }) }
     chip = {
-      recommended: ["Traditionally recommended", :good],
-      advised_against: ["Traditionally advised against", :warn],
-      neutral: ["No strong tradition either way", :info]
+      recommended: ["Recommended", :good],
+      advised_against: ["Advised against", :warn],
+      neutral: ["No strong view", :info]
     }
     first_intention = entry.intentions.first
     cta = tools_stone_finder_path(first_intention ? { i: [first_intention] } : {})
@@ -40,12 +40,13 @@
         For every other sign, there is no strong tradition either way, so physical care matters more than your sign.
       </p>
 
-      <ul class="mt-5 grid grid-cols-2 gap-[8px] sm:grid-cols-3" aria-label="Zodiac signs and <%= name %>">
+      <div class="<%= eyebrow %> mt-5">What astrological tradition says, by sun sign</div>
+      <ul class="mt-3 grid grid-cols-2 gap-[8px] sm:grid-cols-3" aria-label="What astrological tradition says about each sun sign and <%= name %>">
         <% statuses.each do |s| %>
           <% label, tone = chip[s[:status]] %>
-          <li class="flex flex-col gap-[7px] rounded-[14px] border border-violet/10 bg-white px-3 py-[10px]">
+          <li class="flex min-w-0 flex-col gap-[7px] rounded-[14px] border border-violet/10 bg-white px-3 py-[10px]">
             <a href="<%= gemstones_by_zodiac_path(value: s[:sign]) %>" class="text-[13px] font-medium text-ink hover:text-violet-deep"><span class="mr-1 text-violet" aria-hidden="true"><%= vocab.sign_glyph(s[:sign]) %>&#xFE0E;</span><%= vocab.sign_name(s[:sign]) %></a>
-            <span class="self-start"><%= verdict_badge(nil, label: label, tone: tone) %></span>
+            <span class="max-w-full self-start"><%= verdict_badge(nil, label: label, tone: tone) %></span>
           </li>
         <% end %>
       </ul>

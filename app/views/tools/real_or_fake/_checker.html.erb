@@ -1,7 +1,7 @@
 <%# A stone is chosen. Uses @entry, @check, @result (and @photo_* when the photo form was just submitted). %>
 <% entry = @entry; check = @check; result = @result %>
 <% howto = entry.guide?("how-to-identify") %>
-<%= tool_header(title: "Is your #{entry.name} real?",
+<%= tool_header(title: "Is Your #{entry.name} Real?",
                 eyebrow: "— real or fake?",
                 lede: "Work through the tests below with the stone in your hand. Safe tests come first, and your result updates as you answer. Skip anything you cannot do.",
                 crumbs: [["Home", root_path], ["Tools", tools_path], ["Real or Fake?", tools_real_or_fake_path], [entry.name, nil]]) %>
@@ -12,21 +12,22 @@
       <% if entry.image_url.present? %><img src="<%= image_url_for(entry.image_url) %>" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()"><% end %>
     </span>
     <div class="min-w-0">
-      <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Checking</div>
+      <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">Checking</div>
       <div class="text-[20px] font-semibold leading-tight text-ink"><%= entry.name %></div>
       <div class="mt-0.5 text-[12.5px] font-light text-muted">
         <%= [rof_kind_blurb(entry), pluralize(check.tests.size, "test"), pluralize(entry.common_fakes.size, "common fake")].compact.join(" · ") %>
       </div>
     </div>
-    <a href="<%= tools_real_or_fake_path %>" class="ml-auto flex min-h-[44px] flex-none items-center rounded-full border border-violet/15 bg-white px-4 text-[12.5px] font-medium text-ui card-transition hover:border-violet/40 hover:text-violet-deep">Change stone</a>
+    <a href="<%= tools_real_or_fake_path %>" class="ml-auto flex min-h-[44px] flex-none items-center rounded-full border border-violet/15 bg-white px-4 text-[12.5px] font-medium text-ui card-transition hover:border-violet/40 hover:text-violet-deep" aria-label="Change stone"><span class="sm:hidden">Change</span><span class="hidden sm:inline">Change stone</span></a>
   </div>
+  <a href="#rof-checklist" class="mt-2 inline-flex min-h-[44px] items-center text-[12.5px] font-medium lg:hidden">Skip to the checklist ↓</a>
 </section>
 
-<div class="grid items-start gap-8 px-5 pb-24 pt-7 sm:px-11 lg:grid-cols-[minmax(0,1fr)_380px] lg:pb-16">
+<div class="grid items-start gap-8 px-5 pb-12 pt-7 sm:px-11 lg:grid-cols-[minmax(0,1fr)_380px] lg:pb-16">
   <div class="min-w-0">
     <!-- What fakes look like -->
     <section aria-labelledby="rof-fakes" data-screen-label="Common fakes">
-      <h2 id="rof-fakes" class="text-[21px] font-semibold text-ink">What fakes of <%= entry.name %> look like</h2>
+      <h2 id="rof-fakes" class="text-balance text-[21px] font-semibold text-ink">What fakes of <%= entry.name %> look like</h2>
       <p class="mt-1 text-[13.5px] font-light leading-[1.7] text-muted">These are what is most often sold under this name. Plenty of sellers pass them on without knowing, so it is worth checking calmly.</p>
       <ul class="mt-4 grid gap-3 sm:grid-cols-2">
         <% entry.common_fakes.each do |fake| %>
@@ -45,7 +46,7 @@
     <!-- Kit -->
     <% kit = rof_kit(check) %>
     <section class="mt-8 rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5" aria-labelledby="rof-kit" data-screen-label="Kit">
-      <h2 id="rof-kit" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Handy to have</h2>
+      <h2 id="rof-kit" class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">Handy to have</h2>
       <ul class="mt-3 flex flex-wrap gap-2">
         <% kit.each do |item| %><li class="rounded-full bg-violet/8 px-3.5 py-[7px] text-[12.5px] leading-none text-violet-deep"><%= item %></li><% end %>
       </ul>
@@ -53,26 +54,33 @@
 
     <!-- Checklist -->
     <section class="mt-10" aria-labelledby="rof-checklist" data-screen-label="Checklist">
-      <h2 id="rof-checklist" class="text-[21px] font-semibold text-ink">Your checklist</h2>
+      <h2 id="rof-checklist" class="text-balance text-[21px] font-semibold text-ink">Your checklist</h2>
       <p class="mt-1 text-[13.5px] font-light leading-[1.7] text-muted">Safest tests first, most telling first. Answer what you can. “Couldn't tell” and “Skip” are always fine.</p>
 
       <%= form_with url: tools_real_or_fake_path(anchor: "rof-verdict"), method: :get, id: "rof-form", class: "mt-5",
                     data: { turbo_frame: "rof-result", turbo_action: "replace", controller: "real-or-fake-checklist",
                             action: "change->real-or-fake-checklist#answered" } do %>
         <%= hidden_field_tag :stone, entry.slug, id: nil %>
-        <% destructive_started = false %>
-        <ol class="grid gap-4">
-          <% check.tests.each_with_index do |test, i| %>
-            <% if test.destructive? && !destructive_started %>
-              <% destructive_started = true %>
-              <li class="list-none rounded-[16px] border border-amber-600/25 bg-amber-500/10 px-5 py-4" role="presentation">
-                <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-amber-800">Do these last</div>
-                <p class="mt-1.5 text-[13.5px] leading-[1.65] text-amber-900">The tests below can scratch, stain or heat the stone. Use a hidden spot, or skip them if the piece matters to you. The tests above are usually enough to start with.</p>
-              </li>
+        <p class="sr-only" role="status" data-real-or-fake-checklist-target="status"></p>
+        <% safe_tests, risky_tests = check.tests.partition { |t| !t.destructive? } %>
+        <% if safe_tests.any? %>
+          <ol class="grid gap-4">
+            <% safe_tests.each_with_index do |test, i| %>
+              <li><%= render "tools/real_or_fake/step", test: test, number: i + 1, answer: check.answer_for(test.id) %></li>
             <% end %>
-            <li class="list-none"><%= render "tools/real_or_fake/step", test: test, number: i + 1, answer: check.answer_for(test.id) %></li>
-          <% end %>
-        </ol>
+          </ol>
+        <% end %>
+        <% if risky_tests.any? %>
+          <div class="<%= safe_tests.any? ? 'mt-4' : '' %> rounded-[16px] border border-amber-600/25 bg-amber-500/10 px-5 py-4">
+            <h3 class="font-mono text-[10.5px] uppercase tracking-[0.16em] text-amber-800">Do these last</h3>
+            <p class="mt-1.5 text-[13.5px] leading-[1.65] text-amber-900">The tests below can scratch, stain or heat the stone. Use a hidden spot, or skip them if the piece matters to you.<%= " The tests above are usually enough to start with." if safe_tests.any? %></p>
+          </div>
+          <ol class="mt-4 grid gap-4" start="<%= safe_tests.size + 1 %>">
+            <% risky_tests.each_with_index do |test, i| %>
+              <li><%= render "tools/real_or_fake/step", test: test, number: safe_tests.size + i + 1, answer: check.answer_for(test.id) %></li>
+            <% end %>
+          </ol>
+        <% end %>
         <div class="mt-5" data-real-or-fake-checklist-target="submit">
           <button type="submit" class="min-h-[52px] w-full rounded-full bg-ink px-6 text-[14px] font-medium text-white card-transition hover:bg-violet-deep sm:w-auto">Show my result</button>
           <span class="ml-2 text-[12.5px] font-light text-muted">Your answers stay in the page address, so you can bookmark or share the result.</span>
@@ -82,7 +90,7 @@
 
     <% if @photo_enabled %>
       <section id="photo" class="mt-10 scroll-mt-4" aria-labelledby="rof-photo-h" data-screen-label="Photo check">
-        <h2 id="rof-photo-h" class="text-[21px] font-semibold text-ink">Optional: AI photo check</h2>
+        <h2 id="rof-photo-h" class="text-balance text-[21px] font-semibold text-ink">Optional: AI photo check</h2>
         <p class="mt-1 text-[13.5px] font-light leading-[1.7] text-muted">A close-up photo can show things like bubbles, printed bands or uneven dye. It is a second opinion on what is visible, never a verdict.</p>
         <%= render "tools/real_or_fake/photo", entry: entry, outcome: @photo_outcome, error: @photo_error, check: check %>
       </section>
@@ -94,7 +102,7 @@
 </div>
 
 <section class="px-5 pb-16 sm:px-11" data-screen-label="Footnote">
-  <p class="max-w-[760px] text-[12.5px] font-light leading-[1.7] text-faint">
+  <p class="max-w-[760px] text-[12.5px] font-light leading-[1.7] text-muted">
     How the score works: each test carries a weight from 1 (weak hint) to 3 (near-conclusive). A fake-looking result on a strong test outweighs several reassuring results on weak ones, because a good imitation can pass easy tests. We only ever say “consistent with genuine”, never “genuine”.
     <% if howto %><a href="<%= entry.guide_path("how-to-identify") %>" class="font-medium">More on telling real <%= entry.name %> from fake</a>.<% end %>
   </p>

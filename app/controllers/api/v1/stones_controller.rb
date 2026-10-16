@@ -16,7 +16,7 @@ module Api
 
       # GET /api/v1/stones
       def index
-        entries, applied, = AtlasApi.filter(AtlasEntry.all, params.to_unsafe_h.slice(*AtlasApi::FILTER_PARAMS))
+        entries, applied, = AtlasApi.filter(AtlasEntry.all, filter_params)
         full = truthy?(params[:full])
         data = entries.map { |e| full ? AtlasApi.detail(e, base:) : AtlasApi.summary(e, base:) }
         respond_cached(data, count: data.size, filters: applied.presence)
@@ -30,7 +30,30 @@ module Api
         respond_cached(AtlasApi.detail(entry, base:), count: 1)
       end
 
+      # Catch-all for unknown /api/* paths (see config/routes.rb): a JSON 404 in
+      # the same shape as every other error, and a permissive answer to CORS
+      # preflights so fetch() with custom headers works from any origin.
+      def not_found
+        if request.options?
+          response.set_header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS")
+          response.set_header("Access-Control-Allow-Headers", "*")
+          response.set_header("Access-Control-Max-Age", "86400")
+          return head :no_content
+        end
+
+        render_error(404, "not_found", "Unknown endpoint. The API has GET #{base}/api/v1/stones and GET #{base}/api/v1/stones/:slug.")
+      end
+
       private
+
+      # Only the documented filters; repeated keys (water[]=safe) are read as a
+      # comma list, anything else non-scalar is passed on as text so it fails
+      # validation with a readable 400.
+      def filter_params
+        params.to_unsafe_h.slice(*AtlasApi::FILTER_PARAMS).transform_values do |v|
+          v.is_a?(Array) ? v.flatten.join(",") : v
+        end
+      end
 
       def respond_cached(data, count:, filters: nil)
         expires_in 1.hour, public: true, stale_while_revalidate: 1.day

@@ -34,6 +34,20 @@ class RealOrFakeControllerTest < ActionDispatch::IntegrationTest
     AuthenticityPhotoCheck.singleton_class.send(:define_method, :post, original)
   end
 
+  test "checklist lists are valid lists and every answer is a full-size radio" do
+    ENV.delete("ANTHROPIC_API_KEY")
+    get tools_real_or_fake_path(stone: @stone.slug)
+    assert_response :success
+    assert_select "ol > :not(li)", 0
+    assert_select "[role=presentation]", 0
+    assert_select "fieldset[data-step]" do |steps|
+      assert_operator steps.size, :>, 2
+      # looked real, looked fake, couldn't tell, skip
+      steps.each { |step| assert_equal 4, step.css("input[type=radio]").size }
+    end
+    assert_select "[data-real-or-fake-checklist-target=status][role=status]", 1
+  end
+
   test "picker with no params, unknown stone and garbage params all render" do
     ENV.delete("ANTHROPIC_API_KEY")
     get tools_real_or_fake_path

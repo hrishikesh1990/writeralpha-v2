@@ -189,6 +189,32 @@ class CrystalCompatibilityTest < ActiveSupport::TestCase
     refute r2.reasons.any? { |x| x.topic == :vedic_substitute }
   end
 
+  test "a soft Vedic caution between substitutes is not a dispute, and the copy stays soft" do
+    clear = stone("clear-quartz", "tradition" => { "vedic_planet" => "shukra" })
+    citrine = stone("citrine", "tradition" => { "vedic_planet" => "guru" }, "pairs" => { "good" => [{ "slug" => "clear-quartz", "why" => "Tradition pairs them." }] })
+    r = CrystalCompatibility.check(clear, citrine)
+    refute r.contested?
+    refute r.reasons.any? { |x| x.topic == :contested }
+    refute_match(/Vedic astrology (says no|advises)/, "#{r.headline} #{r.summary} #{r.minus.map(&:text).join}")
+    assert_match(/caution/, r.summary)
+  end
+
+  test "soft clashes bottom out at neutral; only curated avoids and the hard Vedic rule reach avoid" do
+    calm = stone("calm", trad(energy: "calming", elements: %w[water]))
+    spark = stone("spark", trad(energy: "energizing", elements: %w[fire]))
+    r = CrystalCompatibility.check(calm, spark)
+    assert_equal :neutral, r.verdict
+    assert_operator r.score, :>=, 40
+  end
+
+  test "mirrored curated avoid reasons from both entries are shown once" do
+    why = ->(x, y) { "#{x} and #{y} are the classic Vedic enmity pair and are traditionally never worn together." }
+    ruby = stone("ruby", "tradition" => { "vedic_planet" => "surya" }, "pairs" => { "avoid" => [{ "slug" => "blue-sapphire", "why" => why.call("Ruby (Sun)", "blue sapphire (Saturn)") }] })
+    sapphire = stone("blue-sapphire", "tradition" => { "vedic_planet" => "shani" }, "pairs" => { "avoid" => [{ "slug" => "ruby", "why" => why.call("Blue sapphire (Saturn)", "ruby (Sun)") }] })
+    r = CrystalCompatibility.check(ruby, sapphire)
+    assert_equal 1, r.reasons.count { |x| x.topic == :pairing }
+  end
+
   test "Vedic substitute stones are named as substitutes" do
     amethyst = stone("amethyst", "tradition" => { "vedic_planet" => "shani" })
     ruby = stone("ruby", "tradition" => { "vedic_planet" => "surya" })

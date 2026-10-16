@@ -89,14 +89,16 @@ class CrystalSafetyTest < ActiveSupport::TestCase
     assert_equal %w[Opal Pyrite], groups[1].rows.map(&:name).sort
   end
 
-  test "mohs ladder places a stone on every rung its range touches" do
+  test "mohs ladder places a stone on every whole rung its range includes" do
     ladder = CrystalSafety.mohs_ladder(CrystalSafety.rows(@all))
     assert_equal (1..10).to_a.reverse, ladder.map { |l| l[:rung] }
     by = ladder.to_h { |l| [l[:rung], l[:rows].map(&:slug)] }
     assert_includes by[7], "amethyst"
     assert_includes by[2], "selenite"
-    assert_includes by[5], "opal"  # 5.5 to 6.5 spans rungs 5, 6
-    assert_includes by[6], "opal"
+    assert_includes by[6], "opal"  # 5.5 to 6.5 includes only the whole number 6
+    refute_includes by[5], "opal"
+    refute_includes by[5], "pyrite" # 6 to 6.5 does not reach rung 5 or 7
+    refute_includes by[7], "pyrite"
     assert_includes by[6], "pyrite"
     assert_empty by[10]
     assert_equal "Quartz", ladder.find { |l| l[:rung] == 7 }[:scale]

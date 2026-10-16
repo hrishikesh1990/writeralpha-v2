@@ -209,7 +209,7 @@ class BirthstoneCalculator
     def rashi_only? = date.nil?
   end
 
-  attr_reader :error, :lang, :date, :rashi, :catalog
+  attr_reader :error, :error_key, :lang, :date, :rashi, :catalog
 
   # dob: "YYYY-MM-DD" (String) or Date; rashi: sign slug or a Hindi/English
   # rashi name; lang: en / hi / bn. Bad input never raises: an unusable date
@@ -219,6 +219,7 @@ class BirthstoneCalculator
     @rashi = self.class.normalize_rashi(rashi)
     @catalog = catalog || Atlas.stones
     @date, @error = self.class.parse_date(dob)
+    @error_key = self.class.date_error_key(dob) if @error
     @by_slug = nil
   end
 
@@ -280,6 +281,29 @@ class BirthstoneCalculator
       return [nil, "That date does not exist on the calendar. Please check the day and month."] unless Date.valid_date?(y, mo, d)
 
       [Date.new(y, mo, d), nil]
+    end
+
+    # Label key (see Labels) for why `value` is not a usable date, or nil.
+    def date_error_key(value)
+      return nil if value.is_a?(Date)
+
+      str = value.is_a?(String) ? value.strip : ""
+      return nil if str.empty?
+
+      m = DATE_FORMAT.match(str) or return :err_format
+      y, mo, d = m.captures.map(&:to_i)
+      return :err_range unless YEARS.cover?(y)
+
+      Date.valid_date?(y, mo, d) ? nil : :err_invalid
+    end
+
+    # "Apr 20 – May 20" (Atlas::Astro::SIGN_DATES) in the reader's language: "20 अप्रैल – 20 मई".
+    def sign_dates(text, lang)
+      return text unless %w[hi bn].include?(lang.to_s)
+
+      m = /\A([A-Z][a-z]{2}) (\d+) – ([A-Z][a-z]{2}) (\d+)\z/.match(text.to_s) or return text
+      name = ->(abbr) { MONTH_NAMES.dig(lang.to_s, Date::ABBR_MONTHNAMES.index(abbr).to_i - 1) || abbr }
+      "#{m[2]} #{name.(m[1])} – #{m[4]} #{name.(m[3])}"
     end
 
     # "Manik (माणिक)" => ["Manik", "माणिक"]; "Amatista" => ["Amatista", nil]

@@ -3,7 +3,7 @@
 <section id="months" class="px-5 pb-4 pt-9 sm:px-11" data-screen-label="Birthstones by month">
   <div class="mb-[18px] flex flex-wrap items-baseline justify-between gap-2">
     <h2 class="text-[21px] font-semibold text-ink"><%= lang == "en" ? BirthstoneCalculator::Labels.t(:all_months) : tag.span(BirthstoneCalculator::Labels.t(:all_months, lang), lang: lang) %></h2>
-    <span class="text-[12.5px] font-light text-muted">Modern and traditional lists</span>
+    <span class="text-[12.5px] font-light text-muted"><%= BirthstoneCalculator::Labels.t(:months_sub, lang).then { |l| lang == "en" ? l : tag.span(l, lang: lang) } %></span>
   </div>
   <div class="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
     <% BirthstoneCalculator::MONTHS.each do |month| %>

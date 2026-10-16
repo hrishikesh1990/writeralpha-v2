@@ -9,7 +9,7 @@
     <p class="mt-2 max-w-[720px] text-[13px] font-light leading-[1.7] text-muted"><%= MoonCalendar::Guidance::BLUE_NOTE %></p>
   <% end %>
 
-  <div class="mt-6 grid items-start gap-[18px] lg:grid-cols-2">
+  <div class="mt-6 grid gap-[18px] lg:grid-cols-2">
     <div class="rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-5">
       <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint"><%= ev.new? ? "Stones to cleanse and set intentions with" : "Stones to charge" %></div>
       <% if guide.charge.any? %>
@@ -77,7 +77,8 @@
             <% end %>
           </ul>
           <% if guide.water_no.size > 6 %>
-            <p class="mt-3 text-[12px] font-light text-muted">Also keep dry: <%= guide.water_no.drop(6).map { |p| p.stone.name }.to_sentence %>.</p>
+            <% rest = guide.water_no.drop(6) %>
+            <p class="mt-3 text-[12px] font-light leading-[1.7] text-muted">Also keep dry: <%= rest.first(14).map { |p| p.stone.name }.to_sentence %><%= rest.size > 14 ? ", and #{rest.size - 14} more" : "" %>. The <a href="<%= tools_safety_path %>">Crystal Safety Checker</a> lists them all.</p>
           <% end %>
         <% else %>
           <p class="mt-3 text-[12.5px] font-light leading-[1.65] text-muted">As a rule, keep soft, porous, glued, iron-bearing and toxic stones out of water. The <a href="<%= tools_safety_path %>">Crystal Safety Checker</a> has the verdict for each stone.</p>

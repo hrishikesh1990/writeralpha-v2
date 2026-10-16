@@ -1,14 +1,18 @@
 <%# locals: action (path), tone (:dark | :light), frame (turbo frame id, optional) %>
 <% dark = local_assigns[:tone] == :dark %>
+<% ring = dark ? "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender" : "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet" %>
 <form action="<%= action %>" method="get" class="flex flex-wrap items-center gap-x-3 gap-y-2" data-moon-timezone-target="form"<%= %( data-turbo-frame="#{local_assigns[:frame]}").html_safe if local_assigns[:frame] %>>
-  <label for="moon-tz" class="text-[12px] <%= dark ? "text-white/70" : "text-muted" %>">Times shown in</label>
-  <select id="moon-tz" name="tz" data-moon-timezone-target="select" data-action="change->moon-timezone#change"
-          class="w-full max-w-[300px] rounded-full border px-4 py-[7px] text-[12.5px] <%= dark ? "border-white/20 bg-white/10 text-white" : "border-violet/20 bg-white text-ink" %>">
-    <% zone_options.each do |label, id| %>
-      <option value="<%= id %>" <%= "selected" if id == fmt.zone_id(zone) %> class="text-ink"><%= label %></option>
-    <% end %>
-  </select>
-  <button type="submit" class="rounded-full px-4 py-[7px] text-[12px] font-medium <%= dark ? "bg-white/15 text-white hover:bg-white/25" : "bg-violet/10 text-violet-deep hover:bg-violet/16" %>">Show</button>
+  <label for="moon-tz" class="text-[12px] <%= dark ? "text-white/75" : "text-muted" %>">Times shown in</label>
+  <div class="flex w-full min-w-0 items-center gap-2 sm:w-auto">
+    <select id="moon-tz" name="tz" data-moon-timezone-target="select" data-action="change->moon-timezone#change keydown->moon-timezone#keydown"
+            style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='<%= dark ? "%23ffffff" : "%236d28d9" %>' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 14px center"
+            class="h-10 min-w-0 flex-1 appearance-none rounded-full border py-0 pl-4 pr-9 text-[13px] sm:w-auto sm:max-w-[17rem] sm:flex-none <%= ring %> <%= dark ? "border-white/25 bg-white/10 text-white" : "border-violet/20 bg-white text-ink" %>">
+      <% zone_options.each do |label, id| %>
+        <option value="<%= id %>" <%= "selected" if id == fmt.zone_id(zone) %> class="text-ink"><%= label %></option>
+      <% end %>
+    </select>
+    <button type="submit" class="h-10 flex-none rounded-full px-5 text-[13px] font-medium <%= ring %> <%= dark ? "bg-white/15 text-white hover:bg-white/25" : "bg-violet/10 text-violet-deep hover:bg-violet/16" %>">Show</button>
+  </div>
   <button type="button" hidden data-moon-timezone-target="detected" data-action="moon-timezone#useDetected"
-          class="rounded-full border px-4 py-[7px] text-[12px] <%= dark ? "border-white/25 text-white/85 hover:text-white" : "border-violet/20 text-violet-deep" %>"></button>
+          class="min-h-10 rounded-full px-1 text-[12.5px] underline underline-offset-4 <%= ring %> <%= dark ? "text-lavender hover:text-white" : "text-violet-deep" %>"></button>
 </form>

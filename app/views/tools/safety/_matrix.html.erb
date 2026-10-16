@@ -14,8 +14,13 @@
   .csn{grid-column:1/-1;min-width:0}
   .csname{font-size:14.5px;font-weight:600;color:var(--color-ink)}
   .csname:hover{color:var(--color-violet-deep)}
+  .csr{position:relative}
+  .csname::after{content:"";position:absolute;inset:0;border-radius:inherit}
+  .csname:focus-visible{outline:none}
+  .csname:focus-visible::after{outline:2px solid var(--color-violet);outline-offset:-2px;border-radius:16px}
+  @media (max-width:1279.98px){.csr:has(.csname:hover){border-color:rgba(124,58,237,.3)}}
   .csn small{display:block;margin-top:2px;font-size:11.5px;color:var(--color-muted)}
-  .csn small a{font-weight:500}
+  .csgo{font-weight:500;color:var(--color-violet-deep)}
   .csc::before{display:block;margin-bottom:4px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-faint)}
   .csc:nth-child(2)::before{content:"Water"}.csc:nth-child(3)::before{content:"Salt"}.csc:nth-child(4)::before{content:"Sun"}
   .csc:nth-child(5)::before{content:"Sleep"}.csc:nth-child(6)::before{content:"Wear"}.csc:nth-child(7)::before{content:"Toxicity"}
@@ -30,11 +35,12 @@
     .csr{grid-template-columns:200px repeat(6,minmax(0,1fr));column-gap:12px;align-items:center;padding:12px 16px;border:0;border-bottom:1px solid rgba(124,58,237,.1);border-radius:0;background:transparent}
     .csr:last-child{border-bottom:0}
     .csr:hover{background:rgba(124,58,237,.03)}
+    .csname:focus-visible::after{border-radius:0}
     .csn{grid-column:auto}
     .csc::before{display:none}
   }
 </style>
-<section id="matrix" class="px-5 pb-6 pt-10 sm:px-11" data-screen-label="Safety matrix" aria-labelledby="matrix-title">
+<section id="matrix" class="px-5 pb-6 pt-10 sm:px-11" data-controller="safety-frame" data-screen-label="Safety matrix" aria-labelledby="matrix-title">
   <%= turbo_frame_tag "safety_matrix", data: { turbo_action: "advance" } do %>
     <div data-controller="safety-matrix" data-safety-matrix-total-value="<%= rows.size %>">
       <div class="flex flex-wrap items-end justify-between gap-3">
@@ -67,9 +73,9 @@
           <ul class="mt-2 flex flex-wrap gap-2">
             <% CrystalSafety::FILTERS.each do |f| %>
               <li>
-                <label class="cursor-pointer">
-                  <input type="checkbox" name="f[]" value="<%= f.key %>" class="peer sr-only" <%= "checked" if filters.include?(f.key) %> data-safety-matrix-target="chip" data-action="change->safety-matrix#apply">
-                  <span class="inline-flex items-center gap-[6px] rounded-full bg-pill-off/90 px-[14px] py-[8px] text-[12.5px] leading-none text-ui ring-1 ring-inset ring-violet/10 card-transition hover:bg-violet/10 peer-checked:bg-ink peer-checked:text-white peer-checked:ring-ink peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-violet">
+                <label class="relative block cursor-pointer">
+                  <input type="checkbox" name="f[]" value="<%= f.key %>" class="peer absolute inset-0 size-full cursor-pointer opacity-0" <%= "checked" if filters.include?(f.key) %> data-safety-matrix-target="chip" data-action="change->safety-matrix#apply">
+                  <span class="inline-flex items-center gap-[6px] rounded-full bg-pill-off/90 px-[14px] py-[8px] min-h-9 text-[12.5px] leading-none text-ui ring-1 ring-inset ring-violet/10 card-transition hover:bg-violet/10 peer-checked:bg-ink peer-checked:text-white peer-checked:ring-ink peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-violet">
                     <%= f.label %>
                     <span class="font-mono text-[10px] opacity-60"><%= counts[f.key] %></span>
                   </span>
@@ -80,9 +86,9 @@
         </fieldset>
 
         <div class="mt-4 flex flex-wrap items-center gap-3">
-          <button type="submit" data-safety-matrix-target="apply" class="rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-violet-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet">Apply filters</button>
-          <a href="<%= tools_safety_path(stone: stone&.slug, stones: plan_slugs.presence, anchor: "matrix") %>" class="text-[12.5px] font-medium text-violet-deep hover:underline" data-safety-matrix-target="reset" data-action="safety-matrix#reset">Reset</a>
-          <button type="button" class="hidden rounded-full border border-violet/20 bg-white/80 px-4 py-[8px] text-[12px] font-medium text-violet-deep hover:bg-violet/8 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet" data-safety-matrix-target="copy" data-action="safety-matrix#copyLink">Copy link to this view</button>
+          <button type="submit" data-safety-matrix-target="apply" class="min-h-10 rounded-full bg-ink px-5 py-[9px] text-[12.5px] font-medium text-white hover:bg-violet-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet">Apply filters</button>
+          <a href="<%= tools_safety_path(stone: stone&.slug, stones: plan_slugs.presence, anchor: "matrix") %>" class="inline-flex min-h-10 items-center px-2 text-[12.5px] font-medium text-violet-deep hover:underline" data-safety-matrix-target="reset" data-action="safety-matrix#reset">Reset</a>
+          <button type="button" class="hidden min-h-10 rounded-full border border-violet/20 bg-white/80 px-4 py-[8px] text-[12px] font-medium text-violet-deep hover:bg-violet/8 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet" data-safety-matrix-target="copy" data-action="safety-matrix#copyLink">Copy link to this view</button>
         </div>
       <% end %>
 
@@ -108,7 +114,7 @@
       <ol class="csm-list" data-safety-matrix-target="list" data-turbo-frame="_top">
         <% ordered.each do |r| %>
           <% href = tools_safety_path(stone: r.slug) %>
-<li class="csr" data-name="<%= ([r.name] + Array(r.entry.aka)).join(" ").downcase %>" data-label="<%= r.name.downcase %>" data-flags="<%= CrystalSafety.flags(r).join(" ") %>" data-mn="<%= r.mohs_min || 99 %>" data-mx="<%= r.mohs_max || -1 %>"<%= " hidden" unless visible_slugs.include?(r.slug) %>><div class="csn"><a class="csname" href="<%= href %>"><%= r.name %></a><small><%= r.mohs_label ? "Mohs #{r.mohs_label}" : "Mohs n/a" %> · <a href="<%= href %>" aria-hidden="true" tabindex="-1">Reasons →</a></small></div><% cols.each do |key, _| %><div class="csc"><%= matrix_badge(r.verdict(key)) %></div><% end %><div class="csc"><%= matrix_badge(r.toxicity, label: tox_labels[r.toxicity]) %></div></li>
+<li class="csr" data-name="<%= ([r.name] + Array(r.entry.aka) + r.entry.names.values).join(" ").downcase %>" data-label="<%= r.name.downcase %>" data-flags="<%= CrystalSafety.flags(r).join(" ") %>" data-mn="<%= r.mohs_min || 99 %>" data-mx="<%= r.mohs_max || -1 %>"<%= " hidden" unless visible_slugs.include?(r.slug) %>><div class="csn"><a class="csname" href="<%= href %>" data-turbo-frame="_top"><%= r.name %></a><small><%= r.mohs_label ? "Mohs #{r.mohs_label}" : "Mohs n/a" %> · <span class="csgo" aria-hidden="true">Reasons →</span></small></div><% cols.each do |key, _| %><div class="csc"><%= matrix_badge(r.verdict(key)) %></div><% end %><div class="csc"><%= matrix_badge(r.toxicity, label: tox_labels[r.toxicity], tone: (:bad if r.toxicity == "caution")) %></div></li>
         <% end %>
       </ol>
       <p class="mt-4 rounded-[14px] border border-violet/10 bg-white/70 px-4 py-4 text-[13px] text-muted" data-safety-matrix-target="empty" <%= "hidden" if visible.any? %>>No stones match those filters. Try removing one.</p>

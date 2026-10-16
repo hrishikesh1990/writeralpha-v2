@@ -16,7 +16,7 @@
   examples = [
     ["Stones safe in water and salt", { water: "safe", salt: "safe" }],
     ["Stones to keep out of water", { water: "avoid" }],
-    ["Toxic or leaching stones", { toxicity: "caution" }],
+    ["Stones with a toxicity warning", { toxicity: "caution" }],
     ["Stones for Aries", { zodiac: "aries" }],
     ["Third eye chakra stones", { chakra: "third_eye" }],
     ["Stones for sleep", { intention: "sleep" }],
@@ -27,6 +27,9 @@
   example_list = example ? AtlasApi.envelope([AtlasApi.summary(example, base: base)], count: 1, filters: { "q" => [example.slug] }, base: base) : nil
   example_detail = example ? AtlasApi.envelope(AtlasApi.detail(example, base: base), count: 1, base: base) : nil
   fields_vocab = AtlasApi::FIELDS
+  full_kb = Rails.cache.fetch(["developers-full-kb", AtlasApi::VERSION, count], expires_in: 1.hour) do
+    (JSON.generate(entries.map { |e| AtlasApi.detail(e, base: base) }).bytesize / 1024.0).round
+  end
   dataset = {
     "@context" => "https://schema.org",
     "@type" => "Dataset",
@@ -95,7 +98,7 @@
       <p class="<%= prose %>">Every request is a plain <span class="<%= inline_code %>">GET</span> that returns JSON. CORS is open, so it also works straight from a browser.</p>
       <div class="mt-5 space-y-[14px]">
         <%= render "developers/code", label: "curl", code: "# One stone\ncurl \"#{base}/api/v1/stones/amethyst?pretty=1\"\n\n# Stones that are safe in water but not in salt\ncurl \"#{base}/api/v1/stones?water=safe&salt=avoid\"" %>
-        <%= render "developers/code", label: "JavaScript", code: "const res = await fetch(\"#{base}/api/v1/stones?zodiac=aries&toxicity=none\");\nconst { data, meta } = await res.json();\n\nconsole.log(`${meta.count} stones`, data.map((s) => s.name));\nconsole.log(meta.attribution); // show this credit next to the data" %>
+        <%= render "developers/code", label: "JavaScript", code: "// Browser console, ES module or async function\nconst res = await fetch(\"#{base}/api/v1/stones?zodiac=aries&toxicity=none\");\nconst { data, meta } = await res.json();\n\nconsole.log(`${meta.count} stones`, data.map((s) => s.name));\nconsole.log(meta.attribution); // show this credit next to the data" %>
         <%= render "developers/code", label: "Python", code: "import requests\n\nr = requests.get(\"#{base}/api/v1/stones/amethyst\", timeout=10)\nr.raise_for_status()\nstone = r.json()[\"data\"]\n\nprint(stone[\"name\"], stone[\"safety\"][\"water\"])  # Amethyst safe\nfor test in stone[\"identification\"][\"tests\"]:\n    print(test[\"id\"], test[\"how\"])" %>
       </div>
     </section>
@@ -125,7 +128,7 @@
     <!-- Filters -->
     <section id="filters" aria-labelledby="filters-h">
       <h2 id="filters-h" class="<%= h2 %>">Filters</h2>
-      <p class="<%= prose %>">Combine any filters on <span class="<%= inline_code %>">/api/v1/stones</span>. Different filters are combined with AND; give several values to one filter, comma separated, to match any of them (<span class="<%= inline_code %>">water=safe,brief</span>). Values are case-insensitive, and <span class="<%= inline_code %>">third-eye</span> and <span class="<%= inline_code %>">third_eye</span> are the same. An invalid value returns <span class="<%= inline_code %>">400</span> and lists what is allowed. The value lists below are generated from the Atlas vocabularies, so they are always current.</p>
+      <p class="<%= prose %>">Combine any filters on <span class="<%= inline_code %>">/api/v1/stones</span>. Different filters are combined with AND; give several values to one filter, comma separated, to match any of them (<span class="<%= inline_code %>">water=safe,brief</span>). Values are case-insensitive, and <span class="<%= inline_code %>">third-eye</span> and <span class="<%= inline_code %>">third_eye</span> are the same. An invalid value returns <span class="<%= inline_code %>">400</span> and lists what is allowed; parameters the API does not know are ignored. The value lists below are generated from the Atlas vocabularies, so they are always current.</p>
       <div class="mt-5 overflow-hidden rounded-[18px] border border-violet/10 bg-white/80">
         <div class="hidden grid-cols-[110px_minmax(0,1fr)] gap-x-5 border-b border-violet/10 px-5 py-3 sm:grid <%= eyebrow %>"><span>Parameter</span><span>Allowed values</span></div>
         <ul class="divide-y divide-violet/10">
@@ -265,10 +268,10 @@
         <div class="glow-violet -right-10 -top-16 h-[220px] w-[360px] opacity-50 blur-[30px]" aria-hidden="true"></div>
         <div class="relative">
           <h2 id="download-h" class="text-[23px] font-semibold leading-[1.3] text-white">Download the full dataset</h2>
-          <p class="mt-3 max-w-[560px] text-[14px] font-light leading-[1.75] text-white/80">All <%= count %> stones with every field, as one JSON file (around <%= (JSON.generate(entries.map { |e| AtlasApi.detail(e, base: base) }).bytesize / 1024.0).round %> KB), licensed CC BY 4.0.</p>
+          <p class="mt-3 max-w-[560px] text-[14px] font-light leading-[1.75] text-white/80">All <%= count %> stones with every field, as one JSON file (around <%= full_kb %> KB), licensed CC BY 4.0.</p>
           <div class="mt-5 flex flex-wrap items-center gap-3">
             <a href="<%= api_v1_stones_path %>?full=1" class="inline-block rounded-full bg-white px-5 py-[10px] text-[13px] font-medium text-ink hover:bg-lavender hover:text-ink">Download JSON</a>
-            <a href="<%= api_v1_stones_path %>?full=1&pretty=1" class="text-[12.5px] font-medium text-lavender hover:text-white">or read it formatted →</a>
+            <a href="<%= api_v1_stones_path %>?full=1&pretty=1" class="inline-block py-2 text-[12.5px] font-medium text-lavender hover:text-white">or read it formatted →</a>
           </div>
         </div>
       </div>

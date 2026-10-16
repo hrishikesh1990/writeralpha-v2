@@ -2,7 +2,7 @@
 <% plan = CrystalSafety.common_methods([entry]) %>
 <% elixir = CrystalSafety.elixir_guidance(row) %>
 <% hosts = entry.sources.map { |u| [u, (URI.parse(u).host.to_s.sub(/\Awww\./, "") rescue u)] } %>
-<article class="overflow-hidden rounded-[22px] border border-violet/10 bg-white/85 shadow-card" aria-labelledby="stone-title" data-screen-label="Stone safety card">
+<article class="scroll-mt-4 overflow-hidden rounded-[22px] border border-violet/10 bg-white/85 shadow-card" aria-labelledby="stone-title" data-screen-label="Stone safety card">
   <div class="relative flex flex-wrap items-center gap-5 bg-ink/97 px-[22px] py-6 sm:px-8">
     <div class="glow-violet -right-10 -top-10 h-[180px] w-[320px] blur-[30px]" aria-hidden="true"></div>
     <% if entry.image_url.present? %>
@@ -16,7 +16,7 @@
       <% end %>
     </div>
     <div class="relative flex flex-wrap gap-2" data-controller="safety-copy">
-      <button type="button" data-action="safety-copy#copy" data-safety-copy-target="button" class="rounded-full bg-white/10 px-4 py-[8px] text-[12px] font-medium text-white ring-1 ring-inset ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link</button>
+      <button type="button" data-action="safety-copy#copy" data-safety-copy-target="button" class="min-h-10 rounded-full bg-white/10 px-4 py-[8px] text-[12px] font-medium text-white ring-1 ring-inset ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link</button>
       <span class="sr-only" data-safety-copy-target="status" role="status"></span>
     </div>
   </div>
@@ -37,7 +37,7 @@
       <div class="rounded-[14px] border <%= row.toxicity == "caution" ? "border-rose-600/25 bg-rose-500/6" : "border-violet/10 bg-white/80" %> px-4 py-3">
         <dt class="flex flex-wrap items-center justify-between gap-2">
           <span class="text-[12.5px] font-medium text-ink">Toxicity</span>
-          <%= verdict_badge(row.toxicity, label: { "none" => "Non-toxic", "low" => "Low risk", "caution" => "Toxic: take care" }[row.toxicity]) %>
+          <%= verdict_badge(row.toxicity, label: { "none" => "Non-toxic", "low" => "Low risk", "caution" => "Toxic: take care" }[row.toxicity], tone: (:bad if row.toxicity == "caution")) %>
         </dt>
         <dd class="mt-2 text-[12.5px] font-light leading-[1.65] text-ui"><%= row.toxicity_reason.presence || "No toxicity note is recorded for this stone yet." %></dd>
       </div>
@@ -73,7 +73,7 @@
     </div>
 
     <!-- Links -->
-    <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] font-medium">
+    <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-0 text-[12.5px] font-medium [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center">
       <a href="<%= entry.path %>" data-turbo-frame="_top"><%= entry.name %> meaning and properties →</a>
       <% if entry.guide?("can-go-in-water") %><a href="<%= entry.guide_path("can-go-in-water") %>" data-turbo-frame="_top">Can <%= entry.name %> go in water? the full guide →</a><% end %>
       <% if entry.guide?("how-to-cleanse") %><a href="<%= entry.guide_path("how-to-cleanse") %>" data-turbo-frame="_top">How to cleanse <%= entry.name %> →</a><% end %>
@@ -84,7 +84,7 @@
     <% if hosts.any? %>
       <div class="mt-6 border-t border-violet/10 pt-4">
         <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Sources for these facts</div>
-        <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
+        <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-0 text-[12px] [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center">
           <% hosts.each do |url, host| %>
             <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer nofollow" data-turbo-frame="_top"><%= host %> ↗</a></li>
           <% end %>

@@ -125,30 +125,33 @@ module MoonCalendar
     def charge_picks(event, stones, theme)
       sign_ruler = Atlas::Astro::SIGN_RULER[event.sign]
       scored = stones.filter_map do |s|
-        why = []
+        why = {}
         score = 0
         if s.zodiac.include?(event.sign)
           score += 4
-          why << "traditionally assigned to #{event.sign_label}"
+          why[:zodiac] = "traditionally assigned to #{event.sign_label}"
         end
         if s.elements.include?(event.element)
           score += 2
-          why << "#{Format.indefinite(event.element)}-element stone in tradition"
+          why[:element] = "#{Format.indefinite(event.element)}-element stone in tradition"
         end
         if s.planets.include?("moon") || s.planets.include?(sign_ruler)
           score += 2
-          why << (s.planets.include?("moon") ? "a Moon stone in tradition" : "linked to #{sign_ruler.capitalize}, which rules #{event.sign_label}")
+          why[:planet] = s.planets.include?("moon") ? "a Moon stone in tradition" : "linked to #{sign_ruler.capitalize}, which rules #{event.sign_label}"
         end
         shared = s.intentions & theme[:intentions]
         if shared.any?
           score += [shared.size, 3].min
-          why << "used for #{shared.first(2).map { |i| Atlas::INTENTION_LABELS[i].to_s.downcase }.join(' and ')}"
+          why[:intentions] = "used for #{shared.first(2).map { |i| Atlas::INTENTION_LABELS[i].to_s.downcase }.join(' and ')}"
         end
         next if score < 3
 
         [score, s, why]
       end
-      scored.sort_by { |score, s, _| [-score, s.name] }.first(6).map { |_, s, why| Pick.new(s, why.first(2).join("; ")) }
+      # The most specific reasons first (intentions, planet), so a row of stones does not repeat one phrase.
+      scored.sort_by { |score, s, _| [-score, s.name] }.first(6).map do |_, s, why|
+        Pick.new(s, %i[intentions planet zodiac element].filter_map { |k| why[k] }.first(2).join("; "))
+      end
     end
 
     # water verdict "safe" and elixir "direct": fine to sit in a bowl of moon water.

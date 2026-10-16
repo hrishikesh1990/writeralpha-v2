@@ -67,8 +67,15 @@ module Atlas
     def slugs = index.keys.sort
     def any? = !index.empty?
 
+    # Files never change in production, so load once. Elsewhere, re-check the
+    # directory at most once a second (pages do thousands of Atlas[] lookups).
+    def static? = defined?(Rails) && Rails.respond_to?(:env) && Rails.env.production?
+
     def index
-      stamp = Dir.glob(File.join(dir, "*.yml")).sum { |f| File.mtime(f).to_i }
+      return @index if @index && (static? || (@checked_at && Process.clock_gettime(Process::CLOCK_MONOTONIC) - @checked_at < 1))
+
+      @checked_at = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      stamp = [dir, *Dir.glob(File.join(dir, "*.yml")).map { |f| File.mtime(f).to_f }].hash
       return @index if @index && @stamp == stamp
 
       @stamp = stamp

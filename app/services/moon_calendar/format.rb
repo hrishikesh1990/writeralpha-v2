@@ -13,8 +13,8 @@ module MoonCalendar
       ["US Eastern (New York)", "America/New_York"], ["US Central (Chicago)", "America/Chicago"],
       ["US Mountain (Denver)", "America/Denver"], ["US Arizona (Phoenix)", "America/Phoenix"],
       ["US Pacific (Los Angeles)", "America/Los_Angeles"], ["Alaska (Anchorage)", "America/Anchorage"],
-      ["Hawaii (Honolulu)", "Pacific/Honolulu"], ["Canada (Toronto)", "America/Toronto"],
-      ["Canada (Vancouver)", "America/Vancouver"], ["Mexico City", "America/Mexico_City"],
+      ["Hawaii (Honolulu)", "Pacific/Honolulu"], ["Canada Eastern (Toronto)", "America/Toronto"],
+      ["Canada Pacific (Vancouver)", "America/Vancouver"], ["Mexico City", "America/Mexico_City"],
       ["Brazil (São Paulo)", "America/Sao_Paulo"], ["Nigeria (Lagos)", "Africa/Lagos"],
       ["South Africa (Johannesburg)", "Africa/Johannesburg"], ["Singapore", "Asia/Singapore"],
       ["Philippines (Manila)", "Asia/Manila"], ["Japan (Tokyo)", "Asia/Tokyo"],
@@ -26,12 +26,32 @@ module MoonCalendar
     COMPARE_ZONES = [["UTC", "UTC"], ["New York", "America/New_York"], ["Los Angeles", "America/Los_Angeles"],
                      ["London", "Europe/London"], ["Kolkata", "Asia/Kolkata"], ["Sydney", "Australia/Sydney"]].freeze
 
-    # A validated ActiveSupport::TimeZone for user input, or nil.
+    # Browsers and older systems still report legacy zone names ("Asia/Calcutta").
+    # They are shown and linked under the current IANA name.
+    LEGACY_ALIASES = {
+      "Asia/Calcutta" => "Asia/Kolkata", "Asia/Katmandu" => "Asia/Kathmandu", "Asia/Saigon" => "Asia/Ho_Chi_Minh",
+      "Asia/Rangoon" => "Asia/Yangon", "Asia/Dacca" => "Asia/Dhaka", "Asia/Thimbu" => "Asia/Thimphu",
+      "Asia/Ulan_Bator" => "Asia/Ulaanbaatar", "Asia/Macao" => "Asia/Macau", "Asia/Chongqing" => "Asia/Shanghai",
+      "Asia/Harbin" => "Asia/Shanghai", "Asia/Ujung_Pandang" => "Asia/Makassar", "Asia/Istanbul" => "Europe/Istanbul",
+      "Europe/Kiev" => "Europe/Kyiv", "America/Buenos_Aires" => "America/Argentina/Buenos_Aires",
+      "America/Indianapolis" => "America/Indiana/Indianapolis", "America/Godthab" => "America/Nuuk",
+      "America/Louisville" => "America/Kentucky/Louisville", "Atlantic/Faeroe" => "Atlantic/Faroe",
+      "Pacific/Samoa" => "Pacific/Pago_Pago", "Africa/Asmera" => "Africa/Asmara", "Australia/ACT" => "Australia/Sydney",
+      "Australia/NSW" => "Australia/Sydney", "Australia/Victoria" => "Australia/Melbourne",
+      "US/Eastern" => "America/New_York", "US/Central" => "America/Chicago", "US/Mountain" => "America/Denver",
+      "US/Pacific" => "America/Los_Angeles", "US/Alaska" => "America/Anchorage", "US/Hawaii" => "Pacific/Honolulu",
+      "US/Arizona" => "America/Phoenix", "Canada/Eastern" => "America/Toronto", "Canada/Pacific" => "America/Vancouver"
+    }.freeze
+
+    # A validated ActiveSupport::TimeZone for user input (current IANA name), or nil.
     def zone(name)
       return nil unless name.is_a?(String) && name.match?(%r{\A[A-Za-z][A-Za-z0-9_+\-/ ]{1,40}\z})
 
       z = ActiveSupport::TimeZone[name]
-      z && TZInfo::Timezone.all_identifiers.include?(z.tzinfo.name) ? z : nil
+      return nil unless z && TZInfo::Timezone.all_identifiers.include?(z.tzinfo.name)
+
+      current = LEGACY_ALIASES[z.tzinfo.name]
+      current && TZInfo::Timezone.all_identifiers.include?(current) ? ActiveSupport::TimeZone[current] : z
     rescue ArgumentError, TZInfo::InvalidTimezoneIdentifier
       nil
     end
@@ -60,8 +80,31 @@ module MoonCalendar
       "UTC#{secs.negative? ? '-' : '+'}#{h}#{m.zero? ? '' : format(':%02d', m)}"
     end
 
+    # "India", "US Eastern" or "Kyiv": a short place name for headings and sentences.
+    def zone_name(zone)
+      id = zone_id(zone)
+      return "UTC" if id == "UTC"
+
+      common = COMMON_ZONES.find { |_, zid| zid == id }&.first
+      return common.sub(/\s*\(.*\)\z/, "") if common&.include?("(")
+
+      (common || id.split("/").last.tr("_", " "))
+    end
+
+    # "India (IST, UTC+5:30)", "Buenos Aires (UTC-3)" or "UTC".
     def zone_label(time, zone)
-      zone_id(zone) == "UTC" ? "UTC" : "#{zone_id(zone).tr('_', ' ')} (#{abbr(time, zone)}, #{offset(time, zone)})"
+      return "UTC" if zone_id(zone) == "UTC"
+
+      ab = abbr(time, zone)
+      off = offset(time, zone)
+      detail = ab.start_with?("UTC") ? off : (off == "UTC" ? ab : "#{ab}, #{off}")
+      "#{zone_name(zone)} (#{detail})"
+    end
+
+    # Text for <option>: common zones keep their curated label, others "Kyiv (Europe)".
+    def zone_option_label(zone)
+      id = zone_id(zone)
+      COMMON_ZONES.find { |_, zid| zid == id }&.first || "#{zone_name(zone)} (#{id.split('/')[0..-2].join('/').tr('_', ' ').presence || id})"
     end
 
     def countdown(time, now)

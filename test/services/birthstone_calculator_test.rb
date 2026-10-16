@@ -319,6 +319,42 @@ class BirthstoneCalculatorTest < ActiveSupport::TestCase
 
   def related_to(keys) = keys.flat_map { |k| BirthstoneCalculator::RELATED.fetch(k, []) }
 
+  test "date errors carry a label key that exists in every language" do
+    { "2023-02-30" => :err_invalid, "1800-01-01" => :err_range, "garbage" => :err_format }.each do |dob, key|
+      c = calc(dob: dob)
+      assert_equal key, c.error_key
+      assert c.error.present?
+      %w[en hi bn].each { |l| assert BirthstoneCalculator::Labels.has?(key, l), "#{key} missing in #{l}" }
+    end
+    assert_nil calc(dob: "1990-04-20").error_key
+    assert_nil calc(dob: "").error_key
+  end
+
+  test "every label has English, Hindi and Bengali text with matching placeholders" do
+    BirthstoneCalculator::Labels::STRINGS.each do |key, row|
+      %i[en hi bn].each { |l| assert row[l].to_s.strip.present?, "#{key} has no #{l}" }
+      vars = row[:en].scan(/%\{(\w+)\}/).flatten.sort
+      %i[hi bn].each { |l| assert_equal vars, row[l].scan(/%\{(\w+)\}/).flatten.sort, "#{key}/#{l} placeholders differ" }
+    end
+  end
+
+  test "sign date ranges are localised for Hindi and Bengali and left alone otherwise" do
+    assert_equal "Apr 20 – May 20", BirthstoneCalculator.sign_dates("Apr 20 – May 20", "en")
+    assert_equal "20 अप्रैल – 20 मई", BirthstoneCalculator.sign_dates("Apr 20 – May 20", "hi")
+    assert_equal "22 ডিসেম্বর – 19 জানুয়ারি", BirthstoneCalculator.sign_dates("Dec 22 – Jan 19", "bn")
+    Atlas::Astro::SIGN_DATES.each_value { |v| assert_no_match(/[A-Za-z]/, BirthstoneCalculator.sign_dates(v, "hi")) }
+  end
+
+  test "all twelve rashis map to the Navaratna stone and enemies in Atlas::Vedic" do
+    c = calc
+    Atlas::ZODIAC.each do |sign|
+      lord = Atlas::Vedic::RASHI.fetch(sign)[:lord]
+      v = c.vedic_for(nil, sign)
+      assert_equal Atlas::Vedic::NAVARATNA.fetch(lord)[:stone], v.ratna.name, sign
+      assert_equal Atlas::Vedic::ENEMIES.fetch(lord), v.avoid.map(&:graha), sign
+    end
+  end
+
   # ---- Against the real Atlas ----------------------------------------------
 
   test "real atlas: birth months agree with the canonical table for stones that carry them" do

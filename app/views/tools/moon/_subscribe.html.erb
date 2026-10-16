@@ -1,27 +1,39 @@
 <%# Calendar subscription block; uses site_base_url from Tools::MoonController %>
 <%
-  https_url = "#{site_base_url}#{tools_moon_feed_path}"
-  webcal_url = https_url.sub(/\Ahttps?:/, "webcal:")
-  google_url = "https://calendar.google.com/calendar/r?cid=#{CGI.escape(webcal_url)}"
-  outlook_url = "https://outlook.live.com/calendar/0/addfromweb?url=#{CGI.escape(https_url)}&name=#{CGI.escape("Full & New Moon — WriterAlpha")}"
+  feed = lambda do |all|
+    https = "#{site_base_url}#{tools_moon_feed_path(phases: (all ? "all" : nil))}"
+    webcal = https.sub(/\Ahttps?:/, "webcal:")
+    { https: https, webcal: webcal,
+      google: "https://calendar.google.com/calendar/r?cid=#{CGI.escape(webcal)}",
+      outlook: "https://outlook.live.com/calendar/0/addfromweb?url=#{CGI.escape(https)}&name=#{CGI.escape(all ? "All Moon Phases — WriterAlpha" : "Full & New Moon — WriterAlpha")}" }
+  end
+  base = feed.call(false)
+  all = feed.call(true)
+  link = "inline-flex min-h-11 items-center rounded-full px-5 text-[13px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender"
+  ghost = "#{link} border border-white/25 text-white/90 hover:text-white"
 %>
-<section id="subscribe" class="scroll-mt-6" data-screen-label="Subscribe" data-controller="moon-copy" data-moon-copy-text-value="<%= https_url %>">
+<section id="subscribe" class="scroll-mt-6" data-screen-label="Subscribe" data-controller="moon-copy" data-moon-copy-text-value="<%= base[:https] %>" data-moon-copy-base-value="<%= base[:https] %>" data-moon-copy-all-value="<%= all[:https] %>">
   <div class="relative overflow-hidden rounded-[22px] bg-ink/97 px-6 py-7 sm:px-9 sm:py-8">
     <div class="pointer-events-none absolute -right-10 -top-12 h-[200px] w-[260px] blur-[18px]" style="background:radial-gradient(ellipse,rgba(124,58,237,0.5),transparent 70%)" aria-hidden="true"></div>
     <div class="relative">
       <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">Subscribe</div>
       <h2 class="mt-2 text-[22px] font-semibold leading-[1.25] text-white">Put every full and new moon in your calendar</h2>
-      <p class="mt-2 max-w-[640px] text-[13.5px] font-light leading-[1.7] text-white/75">Two years of full and new moons, each with the Moon's sign, what to charge and the moon water caution. Your calendar shows each event in your own time zone and refreshes by itself. <a href="<%= tools_moon_feed_path(phases: "all") %>" class="text-lavender hover:text-white">Want quarter moons too?</a></p>
+      <p class="mt-2 max-w-[640px] text-[13.5px] font-light leading-[1.7] text-white/75">Two years of full and new moons, each with the Moon's sign, what to charge and the moon water caution. Your calendar shows each event in your own time zone and refreshes by itself.</p>
+      <label class="mt-3 hidden min-h-10 items-center gap-2 text-[13px] text-white/85" data-moon-copy-target="quarters">
+        <input type="checkbox" data-action="moon-copy#toggleQuarters" class="size-4 rounded accent-lavender focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">
+        Include first and last quarter moons
+      </label>
+      <noscript><p class="mt-3 text-[13px] text-white/75"><a href="<%= all[:https] %>" class="text-lavender hover:text-white">Want quarter moons too? Use the all-phases feed.</a></p></noscript>
       <div class="mt-5 flex flex-wrap gap-[10px]">
-        <a href="<%= webcal_url %>" data-turbo="false" class="rounded-full bg-white px-5 py-[10px] text-[12.5px] font-medium text-ink hover:bg-lavender hover:text-ink">Apple Calendar &amp; others (webcal)</a>
-        <a href="<%= google_url %>" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/25 px-5 py-[10px] text-[12.5px] text-white/90 hover:text-white">Add to Google Calendar</a>
-        <a href="<%= outlook_url %>" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/25 px-5 py-[10px] text-[12.5px] text-white/90 hover:text-white">Add to Outlook</a>
-        <a href="<%= https_url %>" data-turbo="false" class="rounded-full border border-white/25 px-5 py-[10px] text-[12.5px] text-white/90 hover:text-white">Download .ics</a>
+        <a href="<%= base[:webcal] %>" data-turbo="false" data-moon-copy-target="link" data-base-href="<%= base[:webcal] %>" data-all-href="<%= all[:webcal] %>" class="<%= link %> bg-white font-medium text-ink hover:bg-lavender hover:text-ink">Apple Calendar &amp; others (webcal)</a>
+        <a href="<%= base[:google] %>" target="_blank" rel="noopener noreferrer" data-moon-copy-target="link" data-base-href="<%= base[:google] %>" data-all-href="<%= all[:google] %>" class="<%= ghost %>">Add to Google Calendar</a>
+        <a href="<%= base[:outlook] %>" target="_blank" rel="noopener noreferrer" data-moon-copy-target="link" data-base-href="<%= base[:outlook] %>" data-all-href="<%= all[:outlook] %>" class="<%= ghost %>">Add to Outlook</a>
+        <a href="<%= base[:https] %>" data-turbo="false" data-moon-copy-target="link" data-base-href="<%= base[:https] %>" data-all-href="<%= all[:https] %>" class="<%= ghost %>">Download .ics</a>
       </div>
       <div class="mt-5 flex flex-wrap items-center gap-3">
         <label for="feed-url" class="sr-only">Calendar feed address</label>
-        <input id="feed-url" type="text" readonly value="<%= https_url %>" onfocus="this.select()" class="min-w-0 flex-1 rounded-full border border-white/20 bg-white/10 px-4 py-[9px] font-mono text-[11.5px] text-white/90 sm:max-w-[460px]">
-        <button type="button" data-action="moon-copy#copy" data-moon-copy-target="button" class="rounded-full bg-white/15 px-4 py-[9px] text-[12px] font-medium text-white hover:bg-white/25">Copy link</button>
+        <input id="feed-url" type="text" readonly value="<%= base[:https] %>" data-moon-copy-target="input" onfocus="this.select()" class="h-11 min-w-0 flex-1 rounded-full border border-white/20 bg-white/10 px-4 font-mono text-[11.5px] text-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender sm:max-w-[460px]">
+        <button type="button" data-action="moon-copy#copy" data-moon-copy-target="button" aria-live="polite" class="min-h-11 rounded-full bg-white/15 px-5 text-[13px] font-medium text-white hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lavender">Copy link</button>
       </div>
       <dl class="mt-6 grid gap-4 text-[12.5px] font-light leading-[1.65] text-white/70 sm:grid-cols-3">
         <div><dt class="font-medium text-white">Apple Calendar</dt><dd>Tap the webcal button and choose Subscribe. On a Mac: File, New Calendar Subscription, paste the link.</dd></div>

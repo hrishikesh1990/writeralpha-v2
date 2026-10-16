@@ -181,9 +181,11 @@ module MoonCalendar
 
     # Name for a full moon: Harvest Moon, Hunter's Moon (the full moon after the
     # Harvest Moon, when that is in October), or the month's traditional name.
+    # The month is read in `zone` when given, so a page in New Zealand that shows
+    # the full moon on 1 February calls it the Snow Moon, not January's Wolf Moon.
     # Returns [name, also_called_or_nil].
-    def full_moon_name(event)
-      month = event.time.month
+    def full_moon_name(event, zone: nil)
+      month = zone ? event.time.in_time_zone(zone).month : event.time.month
       if harvest_moon?(event)
         ["Harvest Moon", month == 9 ? "also called the Corn Moon" : nil]
       elsif month == 10

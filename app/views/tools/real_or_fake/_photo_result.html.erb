@@ -2,7 +2,7 @@
 <% titles = (check ? check.tests : []).index_by(&:id) %>
 <div class="mt-3 rounded-[18px] border border-violet/10 bg-white/85 px-[22px] py-5" aria-live="polite">
   <div class="flex flex-wrap items-center gap-2.5">
-    <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">From your photo</div>
+    <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">From your photo</div>
     <%= verdict_badge(nil, label: outcome.label, tone: outcome.tone) %>
     <span class="text-[11.5px] font-light text-muted">Confidence: <%= outcome.confidence %> (a photo can only show so much)</span>
   </div>

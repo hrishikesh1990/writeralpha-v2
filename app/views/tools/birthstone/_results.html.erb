@@ -3,7 +3,8 @@
 <% r = calc.result %>
 <% if r.nil? %>
   <div class="rounded-[18px] border border-rose-500/25 bg-rose-500/6 px-5 py-4 text-[13.5px] leading-[1.6] text-rose-700" role="alert">
-    <%= calc.error || "Enter your date of birth, or choose your rashi, to see your stones." %>
+    <% msg = calc.error_key ? BirthstoneCalculator::Labels.t(calc.error_key, lang, from: BirthstoneCalculator::YEARS.first, to: BirthstoneCalculator::YEARS.last) : BirthstoneCalculator::Labels.t(:enter_prompt, lang) %>
+    <%= lang == "en" ? msg : tag.span(msg, lang: lang) %>
   </div>
 <% else %>
   <div class="mb-5 flex flex-wrap items-center justify-between gap-3" data-screen-label="Result summary">
@@ -15,18 +16,26 @@
       <% end %>
     </p>
     <button type="button" data-action="birthstone-form#copyLink" data-birthstone-form-target="copy" data-copied-label="<%= BirthstoneCalculator::Labels.t(:copied, lang) %>"
-            class="rounded-full border border-violet/15 bg-white/80 px-4 py-[8px] text-[12px] font-medium text-violet-deep card-transition hover:border-violet/35 hover:text-violet-deeper"><%= BirthstoneCalculator::Labels.t(:copy_link, lang) %></button>
+            class="min-h-[40px] rounded-full border border-violet/15 bg-white/80 px-4 text-[12.5px] font-medium text-violet-deep card-transition hover:border-violet/35 hover:text-violet-deeper"><%= BirthstoneCalculator::Labels.t(:copy_link, lang) %></button>
   </div>
 
+  <% vedic_card = render("tools/birthstone/card_vedic", v: r.vedic, lang: lang, t: t, dob: (r.date&.iso8601 || ""), options: options) %>
   <div class="grid items-start gap-[18px] lg:grid-cols-2">
-    <% if r.birth_month %><%= render "tools/birthstone/card_birth", bm: r.birth_month, lang: lang, t: t %><% end %>
+    <%# Hindi and Bengali readers most often come for the Vedic ratna, so it leads on those pages. %>
+    <% if lang != "en" %><%= vedic_card %><% end %>
+    <% if r.birth_month || r.weekday %>
+      <div class="flex flex-col gap-[18px]">
+        <% if r.birth_month %><%= render "tools/birthstone/card_birth", bm: r.birth_month, lang: lang, t: t %><% end %>
+        <% if r.weekday %><%= render "tools/birthstone/card_weekday", wd: r.weekday, lang: lang, t: t %><% end %>
+      </div>
+    <% end %>
     <% if r.western %><%= render "tools/birthstone/card_zodiac", w: r.western, lang: lang, t: t, catalog_size: calc.catalog.size %><% end %>
-    <%= render "tools/birthstone/card_vedic", v: r.vedic, lang: lang, t: t, dob: (r.date&.iso8601 || ""), options: options %>
-    <% if r.weekday %><%= render "tools/birthstone/card_weekday", wd: r.weekday, lang: lang, t: t %><% end %>
+    <% if lang == "en" %><%= vedic_card %><% end %>
   </div>
 
-  <%= tradition_note %>
-  <% if lang != "en" %>
-    <p class="mt-2 text-[12px] font-light leading-[1.7] text-faint"><span lang="<%= lang %>"><%= BirthstoneCalculator::Labels.t(:tradition_short, lang) %></span></p>
+  <% if lang == "en" %>
+    <%= tradition_note %>
+  <% else %>
+    <p class="mt-4 text-[12.5px] font-light leading-[1.7] text-muted"><span lang="<%= lang %>"><%= BirthstoneCalculator::Labels.t(:tradition_short, lang) %></span></p>
   <% end %>
 <% end %>

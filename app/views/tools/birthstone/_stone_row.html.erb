@@ -7,9 +7,9 @@
   <% if tile %><%= render "tools/birthstone/thumb", ref: ref %><% end %>
   <div class="min-w-0 flex-1">
     <div class="flex flex-wrap items-center gap-x-[10px] gap-y-[6px]">
-      <span class="text-[15.5px] font-semibold leading-[1.3] text-ink"><%= render "tools/birthstone/name", ref: ref, lang: lang %></span>
+      <span class="text-[15.5px] font-semibold leading-[1.3] text-ink"><%= render "tools/birthstone/name", ref: ref, lang: lang, link: !(summary && ref.live?) %><% if ref.live? && !summary %> <span class="font-normal text-violet-deep" aria-hidden="true">→</span><% end %></span>
       <% badges.each do |text, css| %>
-        <span class="inline-flex items-center whitespace-nowrap rounded-full px-[10px] py-[4px] text-[11px] font-medium leading-none <%= css %>"><%= text %></span>
+        <span class="inline-flex items-center whitespace-nowrap rounded-full px-[10px] py-[4px] text-[11px] font-medium leading-none <%= css %>"><%= lang == "en" ? text : tag.span(text, lang: lang) %></span>
       <% end %>
     </div>
     <% if summary && ref.summary.present? %>
@@ -17,14 +17,16 @@
     <% end %>
     <% if reasons.any? %>
       <div class="mt-2 flex flex-wrap gap-[5px]">
-        <% reasons.each do |r| %><span class="rounded-full bg-violet/6 px-[9px] py-[4px] text-[10.5px] font-light leading-none text-muted"><%= r %></span><% end %>
+        <% reasons.each do |r| %><span class="rounded-full bg-violet/6 px-[9px] py-[4px] text-[10.5px] font-light leading-none text-muted"><%= lang == "en" ? r : tag.span(r, lang: lang) %></span><% end %>
       </div>
     <% end %>
-    <% if ref.live? %>
-      <a href="<%= ref.path %>" class="mt-2 inline-block text-[12px] font-medium"><%= ref.name %> guide →</a>
+    <% if ref.live? && !summary %>
+      <%# compact rows: the name above is already the link; no second line %>
+    <% elsif ref.live? %>
+      <a href="<%= ref.path %>" class="mt-1 inline-flex min-h-[32px] items-center text-[12.5px] font-medium"><% stone = (lang == "en" ? ref.name : (ref.script(lang) || ref.name)) %><%= lang == "en" ? "#{stone} guide" : BirthstoneCalculator::Labels.t(:guide_link, lang, stone: stone) %> →</a>
     <% elsif ref.related.any? %>
       <p class="mt-2 text-[12px] font-light text-muted">
-        We have no page for <%= ref.name.downcase %> itself yet. Related:
+        <%= lang == "en" ? "We have no page for #{ref.name.downcase} itself yet. Related:" : BirthstoneCalculator::Labels.t(:no_page, lang, stone: (ref.script(lang) || ref.name)) %>
         <% ref.related.each_with_index do |rel, i| %><%= ", " if i.positive? %><a href="<%= rel.path %>" class="font-medium"><%= rel.name %></a><% end %>.
       </p>
     <% end %>

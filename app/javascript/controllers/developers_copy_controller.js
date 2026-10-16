@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Copy-to-clipboard for code blocks on /developers. The button is hidden in
 // the HTML and only revealed here, so without JavaScript there is no dead button.
 export default class extends Controller {
-  static targets = ["source", "button"]
+  static targets = ["source", "button", "status"]
 
   connect() {
     if (this.hasButtonTarget) this.buttonTarget.hidden = false
@@ -37,8 +37,12 @@ export default class extends Controller {
     const original = button.dataset.label || button.textContent
     button.dataset.label = original
     button.textContent = "Copied"
+    if (this.hasStatusTarget) this.statusTarget.textContent = "Copied to clipboard"
     clearTimeout(this.timer)
-    this.timer = setTimeout(() => { button.textContent = original }, 1600)
+    this.timer = setTimeout(() => {
+      button.textContent = original
+      if (this.hasStatusTarget) this.statusTarget.textContent = ""
+    }, 1600)
   }
 
   disconnect() {

@@ -55,4 +55,20 @@ class OpenDataTest < ActionDispatch::IntegrationTest
     assert_includes response.body, "Open Gemstone Data"
     assert_includes response.body, "application/ld+json"
   end
+
+  test "repeated filter keys read as a comma list" do
+    get "/api/v1/stones", params: { water: %w[safe brief] }
+    assert_response :ok
+    assert_equal({ "water" => %w[safe brief] }, JSON.parse(response.body)["meta"]["filters"]) if JSON.parse(response.body)["data"].any?
+    get "/api/v1/stones", params: { water: { a: "safe" } }
+    assert_response :bad_request
+  end
+
+  test "unknown stones and bad slugs never raise" do
+    ["NOPE", "a%20b", "x" * 300].each do |slug|
+      get "/api/v1/stones/#{slug}"
+      assert_response :not_found
+      assert_equal "not_found", JSON.parse(response.body)["error"]["code"]
+    end
+  end
 end

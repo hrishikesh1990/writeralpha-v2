@@ -81,7 +81,7 @@ class BirthstoneCalculator
       caution_quality: {
         en: "Gem quality and treatment matter more than the label. Ask for a lab report that states whether the stone is natural and whether it is heated, dyed or filled.",
         hi: "रत्न की गुणवत्ता और उपचार नाम से ज़्यादा मायने रखते हैं। लैब रिपोर्ट माँगें, जिसमें लिखा हो कि रत्न प्राकृतिक है या नहीं और उसे गर्म, रंगा या भरा गया है या नहीं।",
-        bn: "নামের চেয়ে রত্নের মান ও শোধন বেশি গুরুত্বপূর্ণ। ল্যাব রিপোর্ট চান, যাতে লেখা থাকে রত্নটি প্রাকৃতিক কিনা এবং তাতে তাপ, রং বা ফিলিং দেওয়া হয়েছে কিনা।"
+        bn: "নামের চেয়ে রত্নের মান ও ট্রিটমেন্ট বেশি গুরুত্বপূর্ণ। ল্যাব রিপোর্ট চান, যাতে লেখা থাকে রত্নটি প্রাকৃতিক কিনা এবং তাতে তাপ, রং বা ফিলিং দেওয়া হয়েছে কিনা।"
       },
       no_enemies: {
         en: "Classical tables name no natural enemy for the Moon, so this tradition lists no stone to avoid on that basis. An astrologer will still look at the whole chart.",
@@ -112,7 +112,65 @@ class BirthstoneCalculator
       all_months: { en: "Birthstones for every month", hi: "हर माह के जन्मरत्न", bn: "প্রতি মাসের জন্মরত্ন" },
       chart_title: { en: "Rashi and ratna chart", hi: "राशि और रत्न तालिका", bn: "রাশি ও রত্ন তালিকা" },
       only_rashi: { en: "Showing your Vedic ratna from the rashi you selected. Add your date of birth for the birthstone, zodiac and weekday cards.", hi: "आपकी चुनी हुई राशि से वैदिक रत्न दिखाया गया है। जन्मरत्न, राशि और वार के कार्ड के लिए जन्म तिथि जोड़ें।", bn: "আপনার বেছে নেওয়া রাশি থেকে বৈদিক রত্ন দেখানো হয়েছে। জন্মরত্ন, রাশি ও বারের কার্ডের জন্য জন্মতারিখ যোগ করুন।" },
-      no_atlas: { en: "No page for this stone yet", hi: "इस रत्न का पेज अभी नहीं है", bn: "এই রত্নের পেজ এখনও নেই" }
+      no_atlas: { en: "No page for this stone yet", hi: "इस रत्न का पेज अभी नहीं है", bn: "এই রত্নের পেজ এখনও নেই" },
+      # Page chrome and card copy (added in QA so the Hindi and Bengali pages are not half English).
+      details: { en: "Your details", hi: "आपका विवरण", bn: "আপনার তথ্য" },
+      lede: {
+        en: "Your birth-month stone, your zodiac stones and your Vedic ratna in one place, each labelled with the tradition it comes from. In English, Hindi and Bengali.",
+        hi: "आपका जन्म-माह का रत्न, पश्चिमी राशि के रत्न और वैदिक रत्न एक ही जगह, हर एक पर लिखा है कि वह किस परंपरा से आता है। अंग्रेज़ी, हिन्दी और बांग्ला में।",
+        bn: "আপনার জন্মমাসের রত্ন, পাশ্চাত্য রাশির রত্ন ও বৈদিক রত্ন এক জায়গায়, প্রতিটির পাশে লেখা আছে সেটি কোন ঐতিহ্য থেকে এসেছে। ইংরেজি, হিন্দি ও বাংলায়।"
+      },
+      privacy: {
+        en: "Your date goes into the page address so you can bookmark or share the result. Only the date is used; no name or place is asked for.",
+        hi: "आपकी तिथि पेज के पते में जुड़ जाती है, ताकि आप परिणाम को बुकमार्क या साझा कर सकें। केवल तिथि का उपयोग होता है; नाम या स्थान नहीं पूछा जाता।",
+        bn: "আপনার তারিখ পেজের ঠিকানায় যুক্ত হয়, যাতে ফলাফল বুকমার্ক বা শেয়ার করা যায়। শুধু তারিখ ব্যবহার করা হয়; নাম বা স্থান জিজ্ঞাসা করা হয় না।"
+      },
+      eyebrow_birth: { en: "Birth-month lists", hi: "जन्म-माह की सूचियाँ", bn: "জন্মমাসের তালিকা" },
+      eyebrow_western: { en: "Western astrology", hi: "पश्चिमी ज्योतिष", bn: "পাশ্চাত্য জ্যোতিষ" },
+      eyebrow_vedic: { en: "Jyotish (Vedic astrology) · Navaratna", hi: "ज्योतिष (वैदिक) · नवरत्न", bn: "জ্যোতিষ (বৈদিক) · নবরত্ন" },
+      eyebrow_weekday: { en: "Weekday tradition", hi: "वार की परंपरा", bn: "বারের ঐতিহ্য" },
+      ratna_of: { en: "Ratna of %{graha}", hi: "%{graha} का रत्न", bn: "%{graha} গ্রহের রত্ন" },
+      guide_link: { en: "%{stone} guide", hi: "%{stone} गाइड", bn: "%{stone} গাইড" },
+      all_month_link: { en: "All %{month} birthstones", hi: "%{month} के सभी जन्मरत्न", bn: "%{month} মাসের সব জন্মরত্ন" },
+      no_page: { en: "We have no page for %{stone} itself yet. Related:", hi: "%{stone} का अपना पेज अभी नहीं है। संबंधित:", bn: "%{stone}-এর নিজস্ব পেজ এখনও নেই। সম্পর্কিত:" },
+      upratna_note: {
+        en: "Upratna are the gems that Jyotish texts and jewellers treat as lower-cost alternatives. Tradition holds them to be milder than the main ratna.",
+        hi: "उपरत्न वे रत्न हैं जिन्हें ज्योतिष ग्रंथ और जौहरी कम कीमत के विकल्प मानते हैं। परंपरा में इन्हें मुख्य रत्न से हल्का माना जाता है।",
+        bn: "উপরত্ন হল সেই রত্ন, যেগুলিকে জ্যোতিষ গ্রন্থ ও জহুরিরা কম দামের বিকল্প বলে মনে করেন। ঐতিহ্য অনুযায়ী এগুলি মূল রত্নের চেয়ে মৃদু।"
+      },
+      no_substitutes: { en: "No recognised substitutes are listed for this ratna.", hi: "इस रत्न के लिए कोई मान्य उपरत्न सूचीबद्ध नहीं है।", bn: "এই রত্নের জন্য কোনো স্বীকৃত উপরত্ন তালিকাভুক্ত নেই।" },
+      advises_against: { en: "Tradition advises against", hi: "परंपरा बचने की सलाह देती है", bn: "ঐতিহ্য এড়াতে বলে" },
+      chart_intro: {
+        en: "In Jyotish each of the twelve rashis is ruled by a graha (planet), and each graha is linked to one of the Navaratna gems. This is the classical table, shown as tradition. Choose a row to see its full result.",
+        hi: "ज्योतिष में बारह राशियों में से हर एक का एक स्वामी ग्रह होता है, और हर ग्रह नवरत्न के एक रत्न से जुड़ा है। यह शास्त्रीय तालिका है, जिसे परंपरा के रूप में दिखाया गया है। पूरा परिणाम देखने के लिए कोई पंक्ति चुनें।",
+        bn: "জ্যোতিষে বারোটি রাশির প্রতিটির একজন অধিপতি গ্রহ আছে, আর প্রতিটি গ্রহ নবরত্নের একটি রত্নের সঙ্গে যুক্ত। এটি শাস্ত্রীয় তালিকা, ঐতিহ্য হিসেবে দেখানো হয়েছে। পুরো ফলাফল দেখতে একটি সারি বেছে নিন।"
+      },
+      months_sub: { en: "Modern and traditional lists", hi: "आधुनिक और पारंपरिक सूचियाँ", bn: "আধুনিক ও ঐতিহ্যবাহী তালিকা" },
+      lord: { en: "Lord", hi: "स्वामी", bn: "অধিপতি" },
+      intro_birth: {
+        en: "Modern (AGTA and Jewelers of America) and traditional (pre-1912) stones for your month.",
+        hi: "आपके माह के आधुनिक (AGTA और ज्वेलर्स ऑफ़ अमेरिका) और पारंपरिक (1912 से पहले के) रत्न।",
+        bn: "আপনার মাসের আধুনিক (AGTA ও জুয়েলার্স অব আমেরিকা) এবং ঐতিহ্যবাহী (১৯১২-এর আগের) রত্ন।"
+      },
+      intro_zodiac: {
+        en: "Your Sun sign and the stones that tradition assigns to it, best fits first.",
+        hi: "आपकी सूर्य राशि और परंपरा में उससे जुड़े रत्न, सबसे उपयुक्त पहले।",
+        bn: "আপনার সূর্য রাশি এবং ঐতিহ্যে তার সঙ্গে যুক্ত রত্ন, সবচেয়ে মানানসই আগে।"
+      },
+      intro_vedic: {
+        en: "Your rashi, its ruling graha and the Navaratna stone, with substitutes and the stones tradition advises against.",
+        hi: "आपकी राशि, उसका स्वामी ग्रह और नवरत्न का रत्न, उपरत्न और वे रत्न जिनसे परंपरा बचने की सलाह देती है।",
+        bn: "আপনার রাশি, তার অধিপতি গ্রহ ও নবরত্নের রত্ন, উপরত্ন এবং যে রত্নগুলি ঐতিহ্য অনুযায়ী এড়ানো উচিত।"
+      },
+      intro_weekday: {
+        en: "The planet that rules the day you were born, and its gem.",
+        hi: "आपके जन्म के वार का ग्रह और उसका रत्न।",
+        bn: "আপনার জন্মবারের গ্রহ এবং তার রত্ন।"
+      },
+      enter_prompt: { en: "Enter your date of birth, or choose your rashi, to see your stones.", hi: "अपने रत्न देखने के लिए जन्म तिथि दर्ज करें, या अपनी राशि चुनें।", bn: "আপনার রত্ন দেখতে জন্মতারিখ লিখুন, অথবা আপনার রাশি বেছে নিন।" },
+      err_format: { en: "Please enter your date of birth as YYYY-MM-DD, for example 1990-04-20.", hi: "कृपया जन्म तिथि YYYY-MM-DD रूप में लिखें, जैसे 1990-04-20।", bn: "অনুগ্রহ করে জন্মতারিখ YYYY-MM-DD আকারে লিখুন, যেমন 1990-04-20।" },
+      err_range: { en: "We calculate sun positions for the years %{from} to %{to}. Please enter a date in that range.", hi: "हम वर्ष %{from} से %{to} तक के लिए सूर्य की स्थिति निकालते हैं। कृपया इसी अवधि की तिथि दर्ज करें।", bn: "আমরা %{from} থেকে %{to} সাল পর্যন্ত সূর্যের অবস্থান হিসাব করি। অনুগ্রহ করে এই সময়ের মধ্যে একটি তারিখ দিন।" },
+      err_invalid: { en: "That date does not exist on the calendar. Please check the day and month.", hi: "यह तिथि कैलेंडर में नहीं है। कृपया दिन और माह जाँच लें।", bn: "এই তারিখটি ক্যালেন্ডারে নেই। অনুগ্রহ করে দিন ও মাস মিলিয়ে দেখুন।" }
     }.freeze
 
     ELEMENTS = {

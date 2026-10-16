@@ -253,6 +253,16 @@ class CrystalCompatibility
       :tradition
     end
 
+    # The two entries of a pair often say the same thing in mirrored words
+    # ("Ruby and sapphire are..." / "Sapphire and ruby are..."): treat those as one.
+    def same_reason?(x, y)
+      wx = x.downcase.scan(/[a-z]+/).uniq
+      wy = y.downcase.scan(/[a-z]+/).uniq
+      return false if wx.empty? || wy.empty?
+
+      (wx & wy).size.to_f / (wx | wy).size >= 0.7
+    end
+
     def explicit_pairs
       good = [[a, b], [b, a]].filter_map { |from, to| (p = from.pairs_good.find { |x| x["slug"] == to.slug }) && [from, p] }
       bad = [[a, b], [b, a]].filter_map { |from, to| (p = from.pairs_avoid.find { |x| x["slug"] == to.slug }) && [from, p] }
@@ -260,16 +270,19 @@ class CrystalCompatibility
       seen = []
       good.each_with_index do |(from, p), i|
         why = p["why"].to_s.strip
-        next if seen.include?(why)
+        next if seen.any? { |w| w == why || same_reason?(w, why) }
 
         seen << why
-        add(:plus, classify(why), :pairing, why, i.zero? ? (good.size > 1 ? 30 : 22) : 0, source: "Listed in #{from.name}'s pairings")
+        # A curated recommendation is tradition whatever its wording; physical facts never score.
+        basis = classify(why)
+        basis = :tradition if basis == :physical
+        add(:plus, basis, :pairing, why, i.zero? ? (good.size > 1 ? 30 : 22) : 0, source: "Listed in #{from.name}'s pairings")
       end
 
       seen = []
       bad.each_with_index do |(from, p), i|
         why = p["why"].to_s.strip
-        next if seen.include?(why)
+        next if seen.any? { |w| w == why || same_reason?(w, why) }
 
         seen << why
         basis = classify(why)
@@ -317,8 +330,12 @@ class CrystalCompatibility
 
       case rel
       when :enemy
-        text = "Vedic astrology advises against wearing #{a.name} (#{CrystalCompatibility.graha_name(ga)}) with #{b.name} (#{CrystalCompatibility.graha_name(gb)}). " \
-               "In the classical friendship table (naisargika maitri), #{ha} and #{hb} are enemies."
+        lead_in = if primary.any?
+                    "Vedic astrology advises against wearing #{a.name} (#{CrystalCompatibility.graha_name(ga)}) with #{b.name} (#{CrystalCompatibility.graha_name(gb)}). "
+                  else
+                    "Jyotish counsels some caution about wearing #{a.name} (#{CrystalCompatibility.graha_name(ga)}) with #{b.name} (#{CrystalCompatibility.graha_name(gb)}) as planetary remedies. "
+                  end
+        text = "#{lead_in}In the classical friendship table (naisargika maitri), #{ha} and #{hb} are enemies."
         text += " The table is lopsided here: one planet counts the other as an enemy and the reverse is not recorded, and most practitioners take the cautious reading." if asym
         notes = [vedic_role(a, ga), vedic_role(b, gb)].compact
         text += " #{notes.join(' ')}" if notes.any?
@@ -331,11 +348,12 @@ class CrystalCompatibility
               "This rule is about wearing both stones on the body. The classical sources are less clear about stones kept in the same room, so ask your astrologer if it matters to you.")
         end
         if primary.none?
+          @soft_vedic = true
           add(:neutral, :vedic, :vedic_substitute,
               "Both are substitute stones (upratna), not the main Navaratna gems, so this only matters if you wear them as planetary remedies. Worn as crystals, the Vedic rule does not apply; if you follow Jyotish, ask your astrologer.")
         end
         @forced = :vedic if primary.any?
-        if @reasons.any? { |r| r.topic == :pairing && r.plus? }
+        if primary.any? && @reasons.any? { |r| r.topic == :pairing && r.plus? }
           @contested = true
           add(:neutral, :tradition, :contested,
               "Crystal tradition and Vedic astrology disagree about this pair: the atlas lists it as a good combination, but the Vedic planetary rule says no. If you follow Jyotish, that rule normally wins.")
@@ -621,8 +639,16 @@ class CrystalCompatibility
       score = [score, VEDIC_ENEMY_CAP].min if @forced == :vedic
       score = [score, EXPLICIT_AVOID_CAP].min if @forced == :explicit && !@contested
       score = [score, CONTESTED_CAP].min if @contested && @forced == :explicit
+      hard_avoid = @forced == :vedic || (@forced == :explicit && !@contested)
+      # Soft clashes (element or energy tone, a Vedic caution between two
+      # substitute stones) never amount to "keep apart": that needs a curated
+      # avoid or the hard Vedic rule. They bottom out at the neutral band.
+      # The one exception is a strong contextual objection (calming with
+      # energising stones for sleep or meditation, -14).
+      strong = @reasons.any? { |r| r.minus? && r.points.to_i <= -14 }
+      score = [score, CrystalCompatibility::VERDICTS[:neutral][:min]].max unless hard_avoid || strong
       verdict = CrystalCompatibility.verdict_for(score)
-      verdict = :avoid if @forced == :vedic || (@forced == :explicit && !@contested)
+      verdict = :avoid if hard_avoid
 
       headline, summary = narrative(verdict)
       CrystalCompatibility::Result.new(
@@ -648,7 +674,9 @@ class CrystalCompatibility
                  when :great then "#{both} are a natural pair."
                  when :good then "#{both} work well together."
                  when :neutral
-                   if top_plus && !top_minus then "#{both} are a mild match."
+                   if top_minus&.basis == :vedic && top_plus then "Crystal tradition has no objection to #{both}, but Jyotish counsels caution."
+                   elsif top_minus&.basis == :vedic then "Jyotish counsels some caution about #{both}."
+                   elsif top_plus && !top_minus then "#{both} are a mild match."
                    elsif top_minus && !top_plus then "#{both} are a slightly awkward match."
                    elsif top_plus && top_minus then "Tradition is split on #{both}."
                    else "Nothing in tradition pulls #{both} together or apart."
@@ -656,6 +684,8 @@ class CrystalCompatibility
                  else
                    if @forced == :vedic && @contested then "Vedic astrology says no to #{both}, though crystal tradition pairs them."
                    elsif @forced == :vedic then "Vedic astrology advises against wearing #{both} together."
+                   elsif @forced.nil? && ctx == "bedroom" then "Tradition keeps #{both} out of the same bedroom."
+                   elsif @forced.nil? && ctx == "meditation" then "Tradition does not combine #{both} for meditation."
                    else "Tradition keeps #{both} apart."
                    end
                  end
@@ -673,6 +703,9 @@ class CrystalCompatibility
           sentences.join(" ")
         end
       body = [body, "Sources disagree, though: see the note below."].compact.join(" ") if @contested
+      if @soft_vedic && verdict != :avoid && !(verdict == :neutral && top_minus&.basis == :vedic)
+        body = [body, "Jyotish adds a soft caution if you wear them as planetary remedies: see the Vedic note below."].compact.join(" ")
+      end
       warn = lead.find { |r| r.practical? && r.tone == :warn && r.topic == :hardness } || lead.find { |r| r.practical? && r.tone == :warn }
       if warn
         note = warn.brief ? "#{warn.brief[0].upcase}#{warn.brief[1..]}" : first_sentence(warn.text)

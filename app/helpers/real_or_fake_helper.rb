@@ -8,12 +8,16 @@ module RealOrFakeHelper
     ["unsure", "Couldn't tell"]
   ].freeze
 
+  # The real radio sits invisibly over its pill, so the whole pill is the tap target.
+  ROF_INPUT = "peer scroll-mb-28 absolute inset-0 z-10 m-0 size-full cursor-pointer appearance-none opacity-0"
+  ROF_SKIP_PILL = "flex min-h-[44px] cursor-pointer select-none items-center rounded-full px-3.5 text-[13px] font-normal text-muted card-transition hover:bg-violet/6 hover:text-violet-deep peer-focus-visible:ring-2 peer-focus-visible:ring-violet/60 peer-checked:bg-violet/8 peer-checked:text-violet-deep peer-checked:before:mr-1.5 peer-checked:before:content-['✓']"
+
   # Choice pill classes (the pill is the span after a visually hidden radio).
-  ROF_CHOICE_BASE = "flex min-h-[48px] cursor-pointer select-none items-center justify-center rounded-[14px] border border-violet/15 bg-white px-2 text-center text-[13px] font-medium leading-tight text-ui card-transition before:mr-1.5 hover:border-violet/40 peer-focus-visible:ring-2 peer-focus-visible:ring-violet/60 peer-focus-visible:ring-offset-2 peer-checked:before:content-['✓']"
+  ROF_CHOICE_BASE = "relative flex min-h-[48px] w-full cursor-pointer select-none items-center justify-center rounded-[14px] border border-violet/15 bg-white px-2 text-center text-[13px] font-medium leading-tight text-ui card-transition hover:border-violet/40 peer-focus-visible:ring-2 peer-focus-visible:ring-violet/60 peer-focus-visible:ring-offset-2 peer-checked:before:absolute peer-checked:before:-right-1.5 peer-checked:before:-top-1.5 peer-checked:before:flex peer-checked:before:size-[18px] peer-checked:before:items-center peer-checked:before:justify-center peer-checked:before:rounded-full peer-checked:before:text-[10px] peer-checked:before:text-white peer-checked:before:content-['✓']"
   ROF_CHOICE_TONES = {
-    "real" => "peer-checked:border-emerald-600/50 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-800",
-    "fake" => "peer-checked:border-amber-600/50 peer-checked:bg-amber-500/12 peer-checked:text-amber-900",
-    "unsure" => "peer-checked:border-violet/50 peer-checked:bg-violet/10 peer-checked:text-violet-deep"
+    "real" => "peer-checked:border-emerald-600/50 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-800 peer-checked:before:bg-emerald-700",
+    "fake" => "peer-checked:border-amber-600/50 peer-checked:bg-amber-500/12 peer-checked:text-amber-900 peer-checked:before:bg-amber-700",
+    "unsure" => "peer-checked:border-violet/50 peer-checked:bg-violet/10 peer-checked:text-violet-deep peer-checked:before:bg-violet-deep"
   }.freeze
 
   # What you need in your hand, derived from the stone's own tests.

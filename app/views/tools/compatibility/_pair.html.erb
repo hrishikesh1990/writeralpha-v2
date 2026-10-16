@@ -20,15 +20,15 @@
 
   <%= tradition_note "Chakras, elements, energy and planetary friendships come from crystal-healing and Vedic astrological tradition, and traditions disagree with each other. They are not scientific claims, and no stone replaces medical care. The practical care notes are the part you can verify." %>
 
-  <nav class="flex flex-wrap items-center gap-x-5 gap-y-3 rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-4 text-[13px]" aria-label="Related pages">
+  <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 rounded-[18px] border border-violet/10 bg-white/80 px-[22px] py-3 text-[13px]" aria-label="Related pages">
     <% [r.a, r.b].each do |e| %>
-      <a href="<%= e.path %>" class="font-medium"><%= e.name %> guide →</a>
+      <a href="<%= e.path %>" class="inline-flex items-center py-2 font-medium"><%= e.name %> guide →</a>
     <% end %>
     <% [r.a, r.b].each do |e| %>
-      <% if e.guide?("combinations") %><a href="<%= e.guide_path('combinations') %>" class="font-medium"><%= e.name %> combinations →</a><% end %>
+      <% if e.guide?("combinations") %><a href="<%= e.guide_path('combinations') %>" class="inline-flex items-center py-2 font-medium"><%= e.name %> combinations →</a><% end %>
     <% end %>
-    <% if article %><a href="<%= article.canonical_path %>" class="font-medium">Read: <%= article.title %> →</a><% end %>
-    <button type="button" class="ml-auto rounded-full bg-violet/8 px-4 py-[8px] text-[12px] font-medium text-violet-deep card-transition hover:bg-violet/14"
+    <% if article %><a href="<%= article.canonical_path %>" class="inline-flex items-center py-2 font-medium">Read: <%= article.title %> →</a><% end %>
+    <button type="button" class="ml-auto rounded-full bg-violet/8 px-4 py-[11px] text-[12px] font-medium text-violet-deep card-transition hover:bg-violet/14"
             data-controller="compatibility-copy" data-action="compatibility-copy#copy" data-compatibility-copy-url-value="<%= compat_pair_path(r.a, r.b, r.context) %>">
       <span data-compatibility-copy-target="label">Copy link to this verdict</span>
     </button>

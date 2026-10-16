@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     get "birthstone-calculator", to: "birthstone#show", as: :birthstone
     get "moon-calendar", to: "moon#show", as: :moon
     get "moon-calendar/feed.ics", to: "moon#feed", as: :moon_feed, format: false, defaults: { format: :ics }
-    get "moon-calendar/:month", to: "moon#month", as: :moon_month, constraints: { month: /\d{4}-\d{2}/ }
+    get "moon-calendar/:month", to: "moon#month", as: :moon_month, constraints: { month: %r{[^/]+} } # controller 404s bad months
   end
 
   # ===== OPEN DATA =====
@@ -76,7 +76,7 @@ Rails.application.routes.draw do
       get "stones/:slug", to: "stones#show", as: :stone
     end
     # Unknown API paths answer in JSON, not the HTML 404 page.
-    match "*path", to: ->(_env) { [404, { "content-type" => "application/json", "access-control-allow-origin" => "*" }, ['{"error":{"status":404,"message":"Unknown endpoint. See https://writeralpha.com/developers"}}']] }, via: :all
+    match "*path", to: "v1/stones#not_found", via: :all
   end
 
   # ===== SHARED =====

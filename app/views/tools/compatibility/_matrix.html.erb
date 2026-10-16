@@ -13,17 +13,15 @@
           <a href="<%= s.path %>" class="flex items-center gap-[10px] py-1 pr-2 text-white hover:text-lavender"><%= compat_avatar(s, size: 40) %><span class="text-[14px] font-medium"><%= s.name %></span></a>
         <% end %>
       </div>
-      <div class="mt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
-        <%= compat_ring(m.score, m.verdict, size: 120) %>
-        <div class="min-w-0 flex-1">
-          <span class="inline-flex items-center rounded-full px-[12px] py-[6px] text-[12px] font-medium leading-none ring-1 ring-inset <%= colors[:pill] %>"><%= m.label %></span>
-          <h2 class="mt-3 text-[21px] font-semibold leading-[1.25] text-white sm:text-[25px]">
-            <% if m.verdict == :avoid %>This set has a pair tradition keeps apart.<% elsif m.verdict == :great || m.verdict == :good %>These stones work well as a group.<% else %>This group is a mixed bag.<% end %>
-          </h2>
-          <p class="mt-3 text-[14px] font-light leading-[1.8] text-white/80">
-            The group score blends the average with the weakest pair, because one bad pairing spoils a set. The weakest link is <strong class="font-medium text-white"><%= m.worst.a.name %> with <%= m.worst.b.name %></strong> (<%= m.worst.score %>/100, <%= m.worst.label.downcase %>).
-          </p>
-        </div>
+      <div class="mt-6 grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-4 sm:gap-x-8 sm:gap-y-0">
+        <div class="sm:row-span-3"><%= compat_ring(m.score, m.verdict, size: 120) %></div>
+        <div class="sm:self-end"><span class="inline-flex items-center rounded-full px-[12px] py-[6px] text-[12px] font-medium leading-none ring-1 ring-inset <%= colors[:pill] %>"><%= m.label %></span></div>
+        <h2 class="col-span-2 text-[21px] font-semibold leading-[1.25] text-white sm:col-span-1 sm:mt-3 sm:text-[25px]">
+          <% if m.verdict == :avoid %>This set includes a pair that tradition or Vedic astrology keeps apart.<% elsif m.verdict == :great || m.verdict == :good %>These stones work well as a group.<% else %>This group is a mixed bag.<% end %>
+        </h2>
+        <p class="col-span-2 text-[14px] font-light leading-[1.8] text-white/80 sm:col-span-1 sm:mt-3">
+          The group score blends the average with the weakest pair, because one bad pairing spoils a set. The weakest link is <strong class="font-medium text-white"><%= m.worst.a.name %> with <%= m.worst.b.name %></strong> (<%= m.worst.score %>/100, <%= m.worst.label.downcase %>).
+        </p>
       </div>
       <%= compat_bands(m.score, m.verdict) %>
     </div>
@@ -32,7 +30,7 @@
   <section class="rounded-[18px] border border-violet/10 bg-white/80 px-4 py-5 sm:px-[22px]" aria-labelledby="matrix-title">
     <h3 id="matrix-title" class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">Pair by pair</h3>
     <div class="mt-4 overflow-x-auto">
-      <table class="w-full min-w-[420px] border-separate border-spacing-[5px] text-center">
+      <table class="w-full border-separate border-spacing-[3px] text-center sm:min-w-[420px] sm:border-spacing-[5px]">
         <caption class="sr-only">Compatibility score for every pair of the chosen stones. Select a score for the full reasoning.</caption>
         <thead>
           <tr>
@@ -43,14 +41,14 @@
         <tbody>
           <% m.stones.each do |row| %>
             <tr>
-              <th scope="row" class="pr-2 text-left text-[11.5px] font-medium text-ink"><%= row.name %></th>
+              <th scope="row" class="w-[24%] pr-2 text-left text-[11.5px] font-medium text-ink sm:w-auto"><%= row.name %></th>
               <% m.stones.each do |col| %>
                 <% cell = m.cell(row, col) %>
                 <% if cell %>
                   <td>
                     <a href="<%= compat_pair_path(row, col, context) %>" class="block rounded-[12px] px-1 py-[10px] ring-1 ring-inset card-transition hover:shadow-guide-hover <%= CompatibilityHelper::COMPAT_LIGHT[cell.verdict] %>">
                       <span class="block text-[16px] font-semibold"><%= cell.score %></span>
-                      <span class="mt-[2px] block text-[9.5px] leading-[1.2]"><%= cell.label %></span>
+                      <span class="sr-only sm:not-sr-only sm:mt-[2px] sm:block sm:text-[9.5px] sm:leading-[1.2]"><%= cell.label %></span>
                     </a>
                   </td>
                 <% else %>

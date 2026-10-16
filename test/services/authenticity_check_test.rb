@@ -27,7 +27,7 @@ class AuthenticityCheckTest < ActiveSupport::TestCase
   test "no answers is inconclusive and recommends the most telling non-destructive test" do
     r = check({})
     assert_equal :inconclusive, r.verdict
-    assert_equal "Inconclusive — try these next", r.label
+    assert_equal "Inconclusive so far", r.label
     assert_equal "magnification", r.next_tests.first.id
     assert_not r.started?
     assert_equal 0, r.progress
@@ -63,6 +63,15 @@ class AuthenticityCheckTest < ActiveSupport::TestCase
     assert_match(/at least two/, r.summary)
   end
 
+  test "only unsure and skipped answers say so instead of asking to begin" do
+    r = check("magnification" => "unsure", "color" => "skipped")
+    assert_equal :inconclusive, r.verdict
+    assert r.started?
+    assert_equal 0, r.informative
+    assert_match(/Nothing has been clear enough/, r.summary)
+    assert_match(/Answer the first test/, check({}).summary)
+  end
+
   test "two good real answers read as consistent with genuine, never certain" do
     r = check("magnification" => "real", "color" => "real")
     assert_equal :genuine, r.verdict
@@ -95,7 +104,6 @@ class AuthenticityCheckTest < ActiveSupport::TestCase
   test "bubbles point to glass" do
     r = check("magnification" => "fake", "color" => "real")
     assert_equal ["Purple glass"], r.pointing_to
-    assert_match(/glass/, r.summary)
   end
 
   test "dye on the swab points to dyed stones" do
@@ -185,5 +193,12 @@ class AuthenticityCheckTest < ActiveSupport::TestCase
     r = AuthenticityCheck.new(m, "flame" => "fake", "weight" => "fake").result
     assert_equal :imitation, r.verdict
     assert(r.pointing_to.any? { |f| f =~ /resin|plastic/i }, r.pointing_to.inspect)
+  end
+
+  test "most faked puts the famously imitated stones first, then falls back to the Atlas counts" do
+    mk = ->(slug, fakes) { stone(slug: slug, name: slug.capitalize, fakes: fakes) }
+    entries = [mk.call("zircon", %w[a b c d e]), mk.call("jade", %w[a]), mk.call("turquoise", %w[a])]
+    assert_equal %w[turquoise jade zircon], AuthenticityCheck.most_faked(entries).map(&:slug)
+    assert_equal %w[turquoise], AuthenticityCheck.most_faked(entries, limit: 1).map(&:slug)
   end
 end

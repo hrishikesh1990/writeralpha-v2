@@ -5,23 +5,23 @@
   <% if entry && check && result %>
     <% accent = rof_panel_accent(result.verdict) %>
     <div id="rof-verdict" class="scroll-mt-4">
-      <div class="relative overflow-hidden rounded-[22px] bg-ink/97 px-6 pb-6 pt-6 text-white shadow-hero">
+      <div class="relative overflow-hidden rounded-[22px] bg-ink/97 px-6 pb-5 pt-5 text-white">
         <div class="glow-violet -right-10 -top-12 h-[160px] w-[260px] blur-[30px]" aria-hidden="true"></div>
         <div class="relative">
           <div class="flex items-center justify-between gap-3">
-            <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-lavender">Your result so far</div>
-            <div class="font-mono text-[10px] tracking-[0.1em] text-white/60"><%= result.answered %> of <%= result.total %> answered</div>
+            <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-lavender">Your result so far</div>
+            <div class="font-mono text-[10.5px] tracking-[0.1em] text-white/60"><%= result.answered %> of <%= result.total %> answered</div>
           </div>
           <div class="mt-3 h-[6px] overflow-hidden rounded-full bg-white/12" role="progressbar" aria-label="Tests answered" aria-valuemin="0" aria-valuemax="<%= result.total %>" aria-valuenow="<%= result.answered %>">
             <div class="h-full rounded-full bg-gradient-to-r from-violet to-sky transition-[width] duration-300" style="width:<%= result.progress %>%"></div>
           </div>
 
-          <div aria-live="polite" aria-atomic="true">
-            <h2 class="mt-5 text-[24px] font-semibold leading-[1.2] <%= accent %>"><%= result.started? ? result.label : "Not started yet" %></h2>
-            <p class="mt-2.5 text-[14px] font-light leading-[1.7] text-white/85"><%= result.summary %></p>
+          <div>
+            <h2 class="mt-4 text-[23px] font-semibold leading-[1.2] <%= accent %>"><%= result.started? ? result.label : "Not started yet" %></h2>
+            <p class="mt-2 text-[13.5px] font-light leading-[1.65] text-white/85"><%= result.summary %></p>
           </div>
 
-          <div class="mt-4 flex items-center gap-3 text-[11.5px] font-light text-white/70">
+          <div class="mt-3.5 flex items-center gap-3 text-[11.5px] font-light text-white/70">
             <span>Evidence gathered</span>
             <span class="flex gap-1" aria-hidden="true"><%= rof_evidence_pips(result.evidence) %></span>
             <span class="font-medium text-white/90"><%= { none: "none yet", thin: "a little", moderate: "some", good: "good" }[result.evidence] %></span>
@@ -29,34 +29,39 @@
         </div>
       </div>
 
-      <div class="mt-3 grid gap-3">
+      <div class="mt-3 grid gap-2.5">
+        <%# On large screens the answers are checked in the list beside this panel, so the recap is for small screens only. %>
         <% if result.why.any? %>
-          <div class="rounded-[18px] border border-violet/10 bg-white/85 px-[22px] py-4">
-            <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">What your answers show</div>
-            <ul class="mt-2.5 grid gap-1.5 text-[13.5px] font-light leading-[1.6] text-ui">
-              <% result.why.each do |line| %><li class="flex gap-2"><span class="text-violet" aria-hidden="true">·</span><span><%= line %></span></li><% end %>
+          <div class="rounded-[18px] border border-violet/10 bg-white/85 px-5 py-3.5 lg:hidden">
+            <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">What your answers show</div>
+            <ul class="mt-2.5 flex flex-wrap gap-1.5">
+              <% check.tests.each do |t| %>
+                <% a = check.answer_for(t.id) %>
+                <% next unless %w[real fake].include?(a) %>
+                <li class="rounded-full px-3 py-1 text-[12.5px] leading-snug <%= a == 'fake' ? 'bg-amber-500/12 text-amber-900' : 'bg-emerald-500/10 text-emerald-800' %>"><span class="font-medium"><%= t.title %></span> · looked <%= a %> <span class="sr-only">(<%= t.weight_label.downcase %>)</span></li>
+              <% end %>
             </ul>
           </div>
         <% end %>
 
         <% if result.pointing_to.any? %>
-          <div class="rounded-[18px] border border-amber-600/20 bg-amber-500/8 px-[22px] py-4">
-            <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-amber-800">This pattern points towards</div>
-            <ul class="mt-2 grid gap-1 text-[13.5px] leading-[1.6] text-amber-900">
+          <div class="rounded-[18px] border border-amber-600/20 bg-amber-500/10 px-5 py-3.5">
+            <div class="font-mono text-[10.5px] uppercase tracking-[0.16em] text-amber-800">This pattern points towards</div>
+            <ul class="mt-1.5 grid gap-0.5 text-[13px] leading-[1.55] text-amber-900">
               <% result.pointing_to.each do |fake| %><li><%= fake %></li><% end %>
             </ul>
           </div>
         <% end %>
 
-        <div class="rounded-[18px] border border-violet/10 bg-white/85 px-[22px] py-4">
-          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
+        <div class="rounded-[18px] border border-violet/10 bg-white/85 px-5 py-3.5">
+          <div class="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
             <%= result.next_tests.any? ? "Try next" : "What now" %>
           </div>
           <% if result.next_tests.any? %>
-            <ul class="mt-2.5 grid gap-1.5">
-              <% result.next_tests.each do |t| %>
-                <li>
-                  <a href="#test-<%= t.id %>" data-turbo="false" class="flex min-h-[44px] items-center justify-between gap-3 rounded-[12px] bg-violet/6 px-3.5 py-2 text-[13.5px] font-medium text-violet-deep card-transition hover:bg-violet/12">
+            <ul class="mt-2 grid gap-1.5">
+              <% result.next_tests.each_with_index do |t, i| %>
+                <li class="<%= 'lg:hidden' if i >= 2 %>">
+                  <a href="#test-<%= t.id %>" data-turbo="false" class="flex min-h-[44px] items-center justify-between gap-3 rounded-[12px] bg-violet/6 px-3.5 py-1 text-[13.5px] font-medium text-violet-deep card-transition hover:bg-violet/12">
                     <span><%= t.title %> <span class="font-light text-muted">· <%= t.weight_label.downcase %></span></span>
                     <% if t.destructive? %><%= verdict_badge(nil, label: "May mark", tone: :warn) %><% else %><span aria-hidden="true">↓</span><% end %>
                   </a>
@@ -64,12 +69,12 @@
               <% end %>
             </ul>
           <% end %>
-          <p class="mt-2.5 text-[13px] font-light leading-[1.65] text-muted"><%= result.next_step %></p>
+          <p class="mt-2 text-[12.5px] font-light leading-[1.6] text-muted"><%= result.next_step %></p>
         </div>
 
-        <div class="rounded-[18px] border border-violet/10 bg-white/70 px-[22px] py-4">
-          <p class="text-[13px] font-medium leading-[1.65] text-ink"><%= result.caveat %></p>
-          <% if result.lab_note %><p class="mt-2 text-[12.5px] font-light leading-[1.65] text-ui"><%= result.lab_note %></p><% end %>
+        <div class="px-5">
+          <p class="text-[12.5px] font-medium leading-[1.6] text-ink"><%= result.caveat %></p>
+          <% if result.lab_note %><p class="mt-1.5 text-[12px] font-light leading-[1.6] text-ui"><%= result.lab_note %></p><% end %>
         </div>
 
         <% if result.started? %>
@@ -84,8 +89,9 @@
 
     <% if result.started? %>
       <%# Mobile: a pinned summary so the verdict stays in view while you work down the list %>
-      <div class="fixed inset-x-3 bottom-3 z-30 lg:hidden">
-        <a href="#rof-verdict" data-turbo="false" class="flex min-h-[52px] items-center justify-between gap-3 rounded-full bg-ink/97 px-5 text-[13px] text-white shadow-hero">
+      <div class="fixed inset-x-3 bottom-3 z-30 transition-opacity duration-200 data-[away=true]:pointer-events-none data-[away=true]:opacity-0 lg:hidden"
+           data-controller="real-or-fake-bar" data-real-or-fake-bar-watch-value="#rof-verdict, [data-screen-label='Footnote'], body > footer, footer">
+        <a href="#rof-verdict" data-turbo="false" data-real-or-fake-bar-target="link" class="flex min-h-[52px] items-center justify-between gap-3 rounded-full bg-ink/97 px-5 text-[13px] text-white shadow-hero">
           <span class="font-medium <%= accent %>"><%= result.label %></span>
           <span class="font-mono text-[11px] text-white/70"><%= result.answered %>/<%= result.total %> ↑</span>
         </a>

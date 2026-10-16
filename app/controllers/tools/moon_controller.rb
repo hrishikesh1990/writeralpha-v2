@@ -24,7 +24,7 @@ module Tools
       @lunations = build_lunations(@now)
       @entries = load_entries
       @guide = guide_for(@next_full, @entries)
-      @next_name, @next_aka = MoonCalendar.full_moon_name(@next_full)
+      @next_name, @next_aka = MoonCalendar.full_moon_name(@next_full, zone: zone)
       @next_blue = MoonCalendar.blue_moon?(@next_full, zone: zone)
       @this_month = Format.month_param(@now.year, @now.month)
 
@@ -35,8 +35,17 @@ module Tools
     end
 
     def month
-      year, mon = params[:month].to_s.split("-").map(&:to_i)
-      return render_not_found unless year && mon && MoonCalendar.valid_month?(year, mon)
+      raw = params[:month].to_s
+      return render_not_found unless raw.match?(/\A\d{4}-\d{1,2}\z/)
+
+      year, mon = raw.split("-").map(&:to_i)
+      return render_not_found unless MoonCalendar.valid_month?(year, mon)
+
+      # One URL per month: /2026-5 -> /2026-05 (query string kept).
+      canonical = Format.month_param(year, mon)
+      if raw != canonical
+        return redirect_to(tools_moon_month_path(month: canonical, **request.query_parameters.symbolize_keys), status: :moved_permanently)
+      end
 
       @now = Time.current.utc
       @year = year
@@ -85,15 +94,21 @@ module Tools
       requested = params[:tz].presence
       @zone = Format.zone(requested.to_s) if requested
       @zone ||= Format.utc_zone
+      # A legacy name from the browser ("Asia/Calcutta") moves to the current one ("Asia/Kolkata").
+      canonical = Format.zone_id(@zone)
+      return unless request.get? && requested && canonical != "UTC" && requested != canonical && Format.zone(requested.to_s)
+
+      redirect_to url_for(request.query_parameters.merge(tz: canonical, only_path: true)), status: :moved_permanently
     end
 
     def zone = @zone
-    def tz_param = Format.zone_id(zone) == "UTC" ? nil : Format.zone_id(zone)
+    # nil for the default (UTC), unless the visitor asked for UTC, so their choice survives the next click.
+    def tz_param = Format.zone_id(zone) == "UTC" ? (params[:tz].present? ? "UTC" : nil) : Format.zone_id(zone)
     def fmt = Format
 
     def zone_options
       list = Format::COMMON_ZONES.dup
-      list << [Format.zone_id(zone).tr("_", " "), Format.zone_id(zone)] unless list.any? { |_, id| id == Format.zone_id(zone) }
+      list << [Format.zone_option_label(zone), Format.zone_id(zone)] unless list.any? { |_, id| id == Format.zone_id(zone) }
       list
     end
 
@@ -121,7 +136,7 @@ module Tools
     def entries_by_slug = @entries_by_slug ||= (@entries || []).index_by(&:slug)
 
     def guide_for(event, entries)
-      name, aka = event.full? ? MoonCalendar.full_moon_name(event) : [nil, nil]
+      name, aka = event.full? ? MoonCalendar.full_moon_name(event, zone: zone) : [nil, nil]
       note = name ? [MoonCalendar::Guidance::NAME_NOTES[name], aka && "It is #{aka}."].compact.join(" ") : nil
       MoonCalendar::Guidance.for_event(event, stones: entries, name: name, name_note: note,
                                                   blue: event.full? && MoonCalendar.blue_moon?(event, zone: zone))
@@ -130,7 +145,7 @@ module Tools
     # The next 13 full moons, each with the new moon that follows it.
     def build_lunations(now)
       MoonCalendar.next_full_moons(now, LUNATIONS).map do |full|
-        { full: full, name: MoonCalendar.full_moon_name(full), blue: MoonCalendar.blue_moon?(full, zone: zone),
+        { full: full, name: MoonCalendar.full_moon_name(full, zone: zone), blue: MoonCalendar.blue_moon?(full, zone: zone),
           new_moon: MoonCalendar.next_phase(:new_moon, full.time) }
       end
     end
